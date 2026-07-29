@@ -1,171 +1,165 @@
-import { ServiceProvider } from '../types';
+import { BusinessService } from '../types';
 
-export const SERVICES: ServiceProvider[] = [
-  // PERSONAL TRAINERS & INSTRUCTORS (3 Services)
+export const BUSINESS_SERVICES: BusinessService[] = [
   {
-    id: 's-master-trainer-network',
-    name: 'Marcus Vance, CSCS',
-    title: 'Head Strength Coach & Master Trainer Contracting',
-    company: 'Vance Performance Systems',
-    category: 'Personal Trainers & Instructors',
-    categoryId: 'certified-trainers',
-    experience: '14+ Years Commercial Experience',
-    rating: 4.98,
-    reviewCount: 38,
-    pricing: '$95 / hr',
-    pricingPeriod: 'Hourly / Retainer Placement',
-    location: 'Los Angeles, CA · Nationwide Dispatch',
-    badge: 'CSCS & NASM Master Certified',
-    image: 'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?auto=format&fit=crop&w=800&q=80',
-    bio: 'Former Division I head strength coach providing elite trainer placement, group program design, and coach certifications for commercial gym facilities.',
-    specialties: ['Hypertrophy Programming', 'Coach Onboarding', 'Olympic Weightlifting', 'Member Retention Workshops']
+    id: 'social-media-management',
+    name: 'Gym Social Media Management',
+    category: 'Digital Marketing',
+    badge: 'High Impact',
+    shortDesc: 'End-to-end content creation, daily posting, community management, and member showcase reels.',
+    overview: 'Complete hands-free social media management engineered specifically for commercial fitness clubs. We produce high-octane workout reels, trainer spotlights, member transformation stories, and event promotions.',
+    benefits: [
+      'Increases organic Instagram & Facebook follower engagement by up to 300%',
+      'Daily professional graphic posts & high-energy video reels',
+      '24/7 comment response & direct message inquiry routing'
+    ],
+    portfolioItems: [
+      { title: 'Reel Campaign for Apex Athletics', image: 'https://images.unsplash.com/photo-1517838277536-f5f99be501cd?auto=format&fit=crop&w=600&q=80' },
+      { title: 'Member Transformation Showcase', image: 'https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=600&q=80' }
+    ],
+    caseStudies: [
+      { clientGym: 'Vanguard Athletic Club', result: '+450 Membership Signups in 90 Days', quote: 'Tanush Social Media Management turned our Instagram into our #1 sales lead source.' }
+    ],
+    image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1000&q=80'
   },
   {
-    id: 's-group-fitness-collective',
-    name: 'Elena Rostova',
-    title: 'Lead HIIT & Functional Group Instructor',
-    company: 'Apex Pulse Instructors',
-    category: 'Personal Trainers & Instructors',
-    categoryId: 'certified-trainers',
-    experience: '9 Years Studio Instruction',
-    rating: 4.92,
-    reviewCount: 29,
-    pricing: '$75 / hr',
-    pricingPeriod: 'Per Class / Shift Contract',
-    location: 'Miami, FL · On-Site & Virtual',
-    badge: 'Group Fitness Director',
-    image: 'https://images.unsplash.com/photo-1517838277536-f5f99be501cd?auto=format&fit=crop&w=800&q=80',
-    bio: 'High-energy studio instructor specializing in rhythm cycling, bootcamps, and heart-rate zone group classes that drive 90%+ member attendance.',
-    specialties: ['HIIT Bootcamp', 'Rhythm Indoor Cycling', 'Music Cues', 'Studio Member Engagement']
+    id: 'meta-google-ads-leadgen',
+    name: 'Meta & Google Ads Lead Generation',
+    category: 'Paid Advertising',
+    badge: 'High ROI',
+    shortDesc: 'Hyper-targeted Meta (Instagram/Facebook) and Google Search ads driving paid 7-day trial signups.',
+    overview: 'Geofenced paid advertising funnels designed to capture local fitness seekers within a 5-mile radius of your gym door. Includes custom landing pages, instant lead notification SMS, and retargeting campaigns.',
+    benefits: [
+      'Average cost per lead (CPL) under ₹120',
+      'High-converting 3-Day & 7-Day VIP trial landing page funnels',
+      'Real-time lead delivery directly to your gym front desk team'
+    ],
+    portfolioItems: [
+      { title: 'Local Search Campaign', image: 'https://images.unsplash.com/photo-1557804506-669a67965ba0?auto=format&fit=crop&w=600&q=80' }
+    ],
+    caseStudies: [
+      { clientGym: 'OmniFit High Performance', result: '3.8x ROAS (Return on Ad Spend)', quote: 'We generated over 180 verified phone leads in our very first month.' }
+    ],
+    image: 'https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=1000&q=80'
   },
   {
-    id: 's-pilates-master-instructor',
-    name: 'Sarah Lin, PMA-CPT',
-    title: 'Commercial Pilates Reformer & Cadillac Specialist',
-    company: 'MindBody Ergometrics',
-    category: 'Personal Trainers & Instructors',
-    categoryId: 'certified-trainers',
-    experience: '12 Years Reformer Coaching',
-    rating: 4.96,
-    reviewCount: 41,
-    pricing: '$110 / hr',
-    pricingPeriod: 'Private & Group Workshops',
-    location: 'New York, NY · Regional Contract',
-    badge: 'PMA Master Instructor',
-    image: 'https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&fit=crop&w=800&q=80',
-    bio: 'PMA certified master instructor providing turnkey reformer studio curriculum setup, instructor training, and high-margin private client coaching.',
-    specialties: ['Reformer Class Formats', 'Post-Rehab Conditioning', 'Instructor Audits', 'Studio Launch']
-  },
-
-  // EQUIPMENT REPAIR & MAINTENANCE (3 Services)
-  {
-    id: 's-247-tech-dispatch',
-    name: 'ApexTech Commercial Equipment Repair',
-    title: '24/7 Rapid Emergency Technician Dispatch',
-    company: 'ApexTech Field Services',
-    category: 'Equipment Repair & Maintenance',
-    categoryId: 'equipment-repair',
-    experience: '20+ Years Field Contracting',
-    rating: 4.96,
-    reviewCount: 112,
-    pricing: '$120 / call',
-    pricingPeriod: 'Per Incident / Monthly Maintenance',
-    location: 'National Coverage (50 US States)',
-    badge: '24/7 Guaranteed Response',
-    image: 'https://images.unsplash.com/photo-15810092160607-ee22621dd758?auto=format&fit=crop&w=800&q=80',
-    bio: 'Certified factory technicians on call 24/7 for cable replacements, treadmill belt tensioning, motor drive diagnostics, and preventive maintenance retainers.',
-    specialties: ['Treadmill Motor Overhauls', 'Cable & Pulley Replacement', 'Upholstery Patching', 'Preventive Quarterly Service']
+    id: 'branding-logo-design',
+    name: 'Gym Branding & Logo Design',
+    category: 'Branding & Design',
+    badge: 'Identity Suite',
+    shortDesc: 'Ultra-premium brand identity, vector logos, typography guidelines, and apparel mockups.',
+    overview: 'Position your gym as an elite fitness destination. We craft aggressive, modern brand marks, merchandise design, wall graphic vectors, and brand identity rulebooks.',
+    benefits: [
+      'Full vector logo package (SVG, PNG, EPS, AI)',
+      'Custom color palette, typography guidelines & merchandise mockups',
+      'Signage and wall graphic print-ready vector files'
+    ],
+    portfolioItems: [
+      { title: 'Titan Gym Brand Refresh', image: 'https://images.unsplash.com/photo-1599305445671-ac291c95aaa9?auto=format&fit=crop&w=600&q=80' }
+    ],
+    caseStudies: [
+      { clientGym: 'Pinnacle Performance Center', result: 'Complete Brand Relaunch', quote: 'The new logo and wall graphics gave our gym a $10M enterprise feel overnight.' }
+    ],
+    image: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1000&q=80'
   },
   {
-    id: 's-cardio-console-diagnostics',
-    name: 'David Thorne, EE',
-    title: 'Cardio Touchscreen & Board Specialist',
-    company: 'CircuitPro Field Labs',
-    category: 'Equipment Repair & Maintenance',
-    categoryId: 'equipment-repair',
-    experience: '15 Years Electronics Tech',
-    rating: 4.91,
-    reviewCount: 45,
-    pricing: '$95 / hr',
-    pricingPeriod: 'On-Site Diagnostic',
-    location: 'Chicago, IL · Midwest Dispatch',
-    badge: 'Certified Board Technician',
-    image: 'https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=800&q=80',
-    bio: 'Specialist in component-level PCB repair, touchscreen console recalibration, embedded OS updates, and inverter motor board troubleshooting.',
-    specialties: ['Console Firmware Flashing', 'Inverter Board Repair', 'Touchscreen Glass Replacement', 'Network Connectivity']
+    id: 'website-app-development',
+    name: 'Gym Website & Mobile App Development',
+    category: 'Tech Solutions',
+    badge: 'Custom Tech',
+    shortDesc: 'Custom high-speed React/Next.js gym websites & iOS/Android member booking apps.',
+    overview: 'Engineered web applications and native mobile apps featuring class schedule booking, membership purchasing, personal trainer booking, and digital RFID barcode check-ins.',
+    benefits: [
+      'Lightning-fast 100/100 Google Lighthouse page speed rating',
+      'Integrated class booking, trainer scheduling & automated renewals',
+      'Custom iOS & Android mobile apps with push notification alerts'
+    ],
+    portfolioItems: [
+      { title: 'Custom Next.js Portal', image: 'https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=600&q=80' }
+    ],
+    caseStudies: [
+      { clientGym: 'IronEdge Health Club', result: '94% Member App Adoption', quote: 'Members love booking personal training and group classes straight from our custom app.' }
+    ],
+    image: 'https://images.unsplash.com/photo-1555774698-0b77e0d5fac6?auto=format&fit=crop&w=1000&q=80'
   },
   {
-    id: 's-preventive-maintenance-pack',
-    name: 'IronShield Quarterly PM Retainer',
-    title: 'Gym Equipment Health & Safety Audits',
-    company: 'IronShield Commercial Care',
-    category: 'Equipment Repair & Maintenance',
-    categoryId: 'equipment-repair',
-    experience: '18 Years Facility Maintenance',
-    rating: 4.95,
-    reviewCount: 78,
-    pricing: 'From $450 / mo',
-    pricingPeriod: 'Monthly Gym Retainer',
-    location: 'Dallas, TX · Multi-State Coverage',
-    badge: 'ISO Safety Certified',
-    image: 'https://images.unsplash.com/photo-1540497077202-7c8a3999166f?auto=format&fit=crop&w=800&q=80',
-    bio: 'Scheduled quarterly preventive inspection of all weight machines, cables, bolts, cardio decks, and emergency stops to ensure OSHA compliance.',
-    specialties: ['OSHA Compliance Audit', 'Bolt Torque Inspection', 'Deck Waxing & Calibration', 'Asset Depreciation Tracking']
-  },
-
-  // AI AUTOMATION & GYM SOFTWARE (3 Services)
-  {
-    id: 's-kinetix-ai-retention',
-    name: 'Kinetix AI Member Retention Suite',
-    title: 'AI Automated Member Engagement & Churn Prevention',
-    company: 'Kinetix Labs Inc',
-    category: 'AI Automation & Gym Software',
-    categoryId: 'ai-automation',
-    experience: 'Serving 450+ Gym Facilities',
-    rating: 4.97,
-    reviewCount: 88,
-    pricing: '$299 / mo',
-    pricingPeriod: 'Facility SaaS Subscription',
-    location: 'San Francisco, CA · Global SaaS',
-    badge: 'Enterprise AI Platform',
-    image: 'https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=800&q=80',
-    bio: 'Predictive machine learning algorithms analyze member check-in frequency to flag churn risk 30 days in advance and trigger automated SMS re-engagement workflows.',
-    specialties: ['Predictive Churn AI', 'Automated Lead SMS', 'Biometric Gate Access Sync', 'Revenue Analytics Dashboard']
+    id: 'interior-design-setup-consultation',
+    name: '3D Gym Interior Design & Setup Consultation',
+    category: 'Facility Engineering',
+    badge: '3D CAD Architectural',
+    shortDesc: 'Architectural floor plan layout, 3D CAD renders, zone flow optimization, and lighting layout.',
+    overview: 'Turn key facility space planning for new gym launches or expansions. Our architectural designers create 3D walk-through renders, biomechanical zone layouts, and equipment spacing blueprints.',
+    benefits: [
+      'Photorealistic 3D CAD walk-through renderings before buying equipment',
+      'Maximized floor space capacity and safe athlete traffic flow',
+      'Custom neon LED lighting and acoustic soundproofing schematics'
+    ],
+    portfolioItems: [
+      { title: '3D Render for Vanguard Club', image: 'https://images.unsplash.com/photo-1540497077202-7c8a3999166f?auto=format&fit=crop&w=600&q=80' }
+    ],
+    caseStudies: [
+      { clientGym: 'Apex Athletics 30,000 sq ft Club', result: 'Zero Space Waste Layout', quote: 'The 3D CAD walk-through prevented several layout mistakes prior to equipment delivery.' }
+    ],
+    image: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1000&q=80'
   },
   {
-    id: 's-smart-turnstile-ai',
-    name: 'OmniPass Biometric 24/7 Access AI',
-    title: 'Facial Recognition & RFID Keyless Access Integration',
-    company: 'OmniPass Tech',
-    category: 'AI Automation & Gym Software',
-    categoryId: 'ai-automation',
-    experience: '10 Years Access Engineering',
-    rating: 4.93,
-    reviewCount: 52,
-    pricing: 'From $1,450 / gate',
-    pricingPeriod: 'One-time Install + Cloud Pass',
-    location: 'Austin, TX · Nationwide Systems',
-    badge: '24/7 Unmanned Gym Access',
-    image: 'https://images.unsplash.com/photo-1558002038-1055907df827?auto=format&fit=crop&w=800&q=80',
-    bio: 'Transform your commercial gym into a 24/7 operating facility with zero night staff required. Instant facial recognition check-in syncs directly with member billing.',
-    specialties: ['Facial Recognition Gate', 'Tailgating Detection Camera', 'Mindbody / ABC Sync', 'Emergency Lockout Overrides']
+    id: 'ai-automation-crm-whatsapp',
+    name: 'AI Automation, Gym CRM & WhatsApp Bot Integration',
+    category: 'AI & Automation',
+    badge: '24/7 AI Sales Bot',
+    shortDesc: 'Automated WhatsApp lead follow-up bots, AI trial booking, and member retention triggers.',
+    overview: 'Automate 80% of front desk lead follow-up. Our AI WhatsApp bot answers price inquiries 24/7, books gym tours instantly into your CRM, and sends automated birthday & renewal reminders.',
+    benefits: [
+      'Instant 5-second WhatsApp response to late night Facebook/Instagram ad leads',
+      'Automated membership retention alerts for members absent > 7 days',
+      'Seamless integration with Zenoti, Mindbody, and custom gym CRMs'
+    ],
+    portfolioItems: [
+      { title: 'WhatsApp AI Bot Workflow', image: 'https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=600&q=80' }
+    ],
+    caseStudies: [
+      { clientGym: 'Aura Health & Fitness', result: '+42% Lead Conversion Rate', quote: 'The AI WhatsApp bot responds to ad leads instantly even at 2 AM, doubling our tour bookings.' }
+    ],
+    image: 'https://images.unsplash.com/photo-1531746790731-6c087fecd65a?auto=format&fit=crop&w=1000&q=80'
   },
   {
-    id: 's-ai-marketing-lead-gen',
-    name: 'GrowthFit AI Lead Nurture Engine',
-    title: 'Autonomous Meta & Google Ads AI Conversational Agent',
-    company: 'GrowthFit Media',
-    category: 'AI Automation & Gym Software',
-    categoryId: 'ai-automation',
-    experience: '$12M+ Ad Spend Managed',
-    rating: 4.89,
-    reviewCount: 36,
-    pricing: '$499 / mo',
-    pricingPeriod: 'Monthly Growth Engine',
-    location: 'Seattle, WA · Digital Direct',
-    badge: '3x Lead Conversion Guaranteed',
-    image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80',
-    bio: 'AI assistant responds to prospective gym leads within 15 seconds 24/7, answers questions about memberships, and books on-site tours directly into staff calendars.',
-    specialties: ['15-Second Lead Response AI', 'Trial Booking Automation', 'Google Local Map Pack SEO', 'Meta Ad Creative AI']
+    id: 'photography-videography-production',
+    name: 'Commercial Gym Photography & Shoot Production',
+    category: 'Media Production',
+    badge: 'Cinematic HD',
+    shortDesc: 'Professional 4K video promos, drone aerial facility tours, and athlete photography.',
+    overview: 'Showcase your commercial equipment and energy with cinema-grade photography and 4K video reels. Includes lighting crew, model sourcing, and professional color grading.',
+    benefits: [
+      'Ultra high-resolution photo library for website, ads, and brochures',
+      '4K cinematic promo video with custom licensed music track',
+      'Drone aerial shots of facility exterior and open functional floor'
+    ],
+    portfolioItems: [
+      { title: '4K Commercial Facility Reel', image: 'https://images.unsplash.com/photo-1517838277536-f5f99be501cd?auto=format&fit=crop&w=600&q=80' }
+    ],
+    caseStudies: [
+      { clientGym: 'Titan Performance Lab', result: 'High-Impact Promo Library', quote: 'The video production gave us high quality content for a full year of ad campaigns.' }
+    ],
+    image: 'https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?auto=format&fit=crop&w=1000&q=80'
+  },
+  {
+    id: 'local-seo-google-my-business',
+    name: 'Gym Local SEO & Google Maps Dominance',
+    category: 'SEO & Growth',
+    badge: 'Rank #1 Local',
+    shortDesc: 'Rank #1 on Google Maps for "Gym Near Me" and "Best Gym in [City]".',
+    overview: 'Drive organic foot traffic from nearby residents. We optimize your Google Business Profile, build local citations, manage review collection campaigns, and outrank local competitors.',
+    benefits: [
+      'Top 3 Google Maps pack placement for high-intent search terms',
+      'Automated Google review SMS request campaign for happy members',
+      'Monthly search traffic & call tracking reporting dashboard'
+    ],
+    portfolioItems: [
+      { title: 'Google Maps #1 Ranking', image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=600&q=80' }
+    ],
+    caseStudies: [
+      { clientGym: 'OmniFit High Performance', result: '+320 Monthly Map Calls', quote: 'We went from page 3 to #1 on Google Maps within 60 days.' }
+    ],
+    image: 'https://images.unsplash.com/photo-1432888498266-38ffec3eaf0a?auto=format&fit=crop&w=1000&q=80'
   }
 ];

@@ -14,11 +14,11 @@ export const CategoryGrid: React.FC = () => {
     <section className="py-20 sm:py-28 bg-white relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeader
-          subtitle="COMMERCIAL EQUIPMENT & SUPPLIES"
-          title="Explore 12 Marketplace Categories"
-          description="Source commercial power racks, precision cardio, wholesale supplements, and specialized facility gear directly from verified B2B manufacturers."
-          actionText="View Full Catalog"
-          onActionClick={() => navigateTo('marketplace')}
+          subtitle="COMMERCIAL EQUIPMENT CATEGORIES"
+          title="Explore 7 Equipment Pillars"
+          description="Source commercial power racks, precision cardio, urethane weights, functional rigs, rubber flooring, and lockers directly from verified B2B manufacturers."
+          actionText="View Full Equipment Catalog"
+          onActionClick={() => navigateTo('equipment')}
         />
 
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
@@ -31,11 +31,11 @@ export const CategoryGrid: React.FC = () => {
               transition={{ duration: 0.4, delay: idx * 0.05 }}
               onClick={() => {
                 setFilter('category', cat.id);
-                navigateTo('marketplace');
+                navigateTo('equipment');
               }}
               className="group relative rounded-3xl overflow-hidden bg-white border border-slate-200/90 hover:border-blue-500 transition-all duration-300 cursor-pointer flex flex-col justify-between shadow-stripe hover:shadow-2xl hover:-translate-y-1 text-slate-900"
             >
-              {/* Top Bright 100% Visible Photo */}
+              {/* Top Bright Photo */}
               <div className="relative aspect-[16/10] bg-slate-100 overflow-hidden border-b border-slate-100">
                 <img
                   src={cat.image}
@@ -46,27 +46,15 @@ export const CategoryGrid: React.FC = () => {
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                 />
 
-                {/* Top Badges */}
+                {/* Top Badge */}
                 <div className="absolute top-3 left-3">
-                  <span className="text-[10px] font-black uppercase tracking-wider px-2.5 py-1 rounded-full bg-slate-900/90 border border-slate-700 text-white backdrop-blur-md font-mono shadow-sm">
+                  <span className="text-[10px] font-black uppercase tracking-wider px-2.5 py-1 rounded-full bg-slate-900/90 text-white font-mono shadow-sm">
                     {cat.itemCount} Items
                   </span>
                 </div>
-
-                <div className="absolute top-3 right-3">
-                  {cat.isPopulated ? (
-                    <span className="text-[10px] font-bold px-2.5 py-0.5 rounded-full bg-emerald-500 text-white shadow-sm font-mono">
-                      Live Catalog
-                    </span>
-                  ) : (
-                    <span className="text-[10px] font-bold px-2.5 py-0.5 rounded-full bg-amber-500 text-white shadow-sm font-mono">
-                      Pre-Order
-                    </span>
-                  )}
-                </div>
               </div>
 
-              {/* Bottom White Card Content */}
+              {/* Bottom Card Content */}
               <div className="p-5 flex-1 flex flex-col justify-between space-y-3 bg-white">
                 <div>
                   <h3 className="text-base font-black text-slate-900 group-hover:text-blue-600 transition-colors leading-snug font-heading uppercase">
@@ -78,7 +66,7 @@ export const CategoryGrid: React.FC = () => {
                 </div>
 
                 <div className="pt-3 border-t border-slate-100 flex items-center justify-between text-xs font-black text-blue-600 uppercase tracking-wider font-mono group-hover:translate-x-1 transition-all">
-                  <span>Browse Category</span>
+                  <span>Explore Category</span>
                   <ArrowRight className="w-4 h-4 stroke-[3]" />
                 </div>
               </div>

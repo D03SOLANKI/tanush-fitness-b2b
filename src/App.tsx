@@ -2,37 +2,46 @@ import React from 'react';
 import { AppProvider, useApp } from './context/AppContext';
 import { Navbar } from './components/common/Navbar';
 import { Footer } from './components/common/Footer';
-import { QuickViewModal } from './components/common/QuickViewModal';
+import { EnquiryCartDrawer } from './components/cart/EnquiryCartDrawer';
 import { Toast } from './components/common/Toast';
-import { CartDrawer } from './components/cart/CartDrawer';
-import { RegisterGymModal } from './components/home/RegisterGymModal';
-import { ServiceBookingModal } from './components/services/ServiceBookingModal';
 import { HomePage } from './pages/HomePage';
-import { MarketplacePage } from './pages/MarketplacePage';
-import { ProductDetailPage } from './pages/ProductDetailPage';
+import { AboutPage } from './pages/AboutPage';
+import { EquipmentPage } from './pages/EquipmentPage';
+import { ManpowerPage } from './pages/ManpowerPage';
 import { ServicesPage } from './pages/ServicesPage';
+import { ContactPage } from './pages/ContactPage';
+import { AdminPage } from './pages/AdminPage';
 
-const AppContent: React.FC = () => {
+const MainContent: React.FC = () => {
   const { currentPage } = useApp();
 
+  const renderPage = () => {
+    switch (currentPage) {
+      case 'home':
+        return <HomePage />;
+      case 'about':
+        return <AboutPage />;
+      case 'equipment':
+        return <EquipmentPage />;
+      case 'manpower':
+        return <ManpowerPage />;
+      case 'services':
+        return <ServicesPage />;
+      case 'contact':
+        return <ContactPage />;
+      case 'admin':
+        return <AdminPage />;
+      default:
+        return <HomePage />;
+    }
+  };
+
   return (
-    <div className="min-h-screen bg-[#090909] text-white font-sans antialiased flex flex-col justify-between overflow-x-hidden selection:bg-[#D4AF37] selection:text-black">
+    <div className="min-h-screen bg-white text-slate-900 flex flex-col justify-between selection:bg-blue-500 selection:text-white font-sans antialiased">
       <Navbar />
-
-      <div className="flex-1">
-        {currentPage === 'home' && <HomePage />}
-        {currentPage === 'marketplace' && <MarketplacePage />}
-        {currentPage === 'product-detail' && <ProductDetailPage />}
-        {currentPage === 'services' && <ServicesPage />}
-      </div>
-
+      <div className="flex-1">{renderPage()}</div>
       <Footer />
-
-      {/* Global Modals, Drawers & Micro Toast */}
-      <CartDrawer />
-      <QuickViewModal />
-      <ServiceBookingModal />
-      <RegisterGymModal />
+      <EnquiryCartDrawer />
       <Toast />
     </div>
   );
@@ -41,7 +50,7 @@ const AppContent: React.FC = () => {
 export function App() {
   return (
     <AppProvider>
-      <AppContent />
+      <MainContent />
     </AppProvider>
   );
 }

@@ -1,71 +1,84 @@
-import React, { createContext, useContext, useState, useEffect } from 'react';
-import { Product, ServiceProvider, CartItem, FilterState } from '../types';
+import React, { createContext, useContext, useState } from 'react';
+import {
+  PageType,
+  Product,
+  CartItem,
+  FilterState,
+  JobListing,
+  JobApplication,
+  BusinessService,
+  EquipmentEnquiry,
+  ServiceEnquiry,
+  ContactEnquiry,
+} from '../types';
 import { PRODUCTS } from '../data/products';
+import { INITIAL_JOBS } from '../data/jobs';
+import { BUSINESS_SERVICES } from '../data/services';
 
-interface Toast {
-  id: string;
-  title: string;
-  subtitle?: string;
-  type?: 'cart' | 'wishlist' | 'info';
+interface ToastState {
+  message: string;
+  type: 'success' | 'info' | 'error';
+  visible: boolean;
 }
 
 interface AppContextType {
-  // Navigation & Page state
-  currentPage: 'home' | 'marketplace' | 'product-detail' | 'services';
+  currentPage: PageType;
+  navigateTo: (page: PageType, productId?: string) => void;
   selectedProductId: string | null;
-  navigateTo: (page: 'home' | 'marketplace' | 'product-detail' | 'services', productId?: string) => void;
 
-  // Cart state
-  cart: CartItem[];
-  addToCart: (product: Product, quantity?: number) => void;
-  removeFromCart: (productId: string) => void;
-  updateQuantity: (productId: string, quantity: number) => void;
-  clearCart: () => void;
-  cartTotal: number;
-  cartCount: number;
-  isCartOpen: boolean;
-  setIsCartOpen: (open: boolean) => void;
+  // Enquiry Cart (No monetary pricing)
+  enquiryCart: CartItem[];
+  addToEnquiryCart: (product: Product, quantity?: number) => void;
+  removeFromEnquiryCart: (productId: string) => void;
+  updateEnquiryCartQuantity: (productId: string, quantity: number) => void;
+  clearEnquiryCart: () => void;
+  isEnquiryCartOpen: boolean;
+  setIsEnquiryCartOpen: (open: boolean) => void;
 
-  // Wishlist state
+  // Wishlist
   wishlist: string[];
-  toggleWishlist: (id: string) => void;
-  isInWishlist: (id: string) => boolean;
-  isWishlistOpen: boolean;
-  setIsWishlistOpen: (open: boolean) => void;
+  toggleWishlist: (productId: string) => void;
+  isInWishlist: (productId: string) => boolean;
 
-  // Modals state
-  isQuickViewOpen: boolean;
+  // Filters for Equipment
+  filters: FilterState;
+  setFilter: (key: keyof FilterState, value: any) => void;
+  resetFilters: () => void;
+
+  // Quick View Modal
   quickViewProduct: Product | null;
   openQuickView: (product: Product) => void;
   closeQuickView: () => void;
 
-  isBookingModalOpen: boolean;
-  bookingService: ServiceProvider | null;
-  openBookingModal: (service: ServiceProvider) => void;
-  closeBookingModal: () => void;
+  // Manpower Services State
+  jobListings: JobListing[];
+  jobApplications: JobApplication[];
+  addJobListing: (job: Omit<JobListing, 'id' | 'createdAt' | 'applicationsCount'>) => void;
+  submitJobApplication: (app: Omit<JobApplication, 'id' | 'submittedAt' | 'status'>) => void;
 
-  isRegisterGymModalOpen: boolean;
-  setIsRegisterGymModalOpen: (open: boolean) => void;
+  // Service Enquiries
+  serviceEnquiries: ServiceEnquiry[];
+  selectedServiceModal: BusinessService | null;
+  openServiceModal: (service: BusinessService) => void;
+  closeServiceModal: () => void;
+  submitServiceEnquiry: (enquiry: Omit<ServiceEnquiry, 'id' | 'createdAt' | 'status'>) => void;
 
-  isVendorModalOpen: boolean;
-  setIsVendorModalOpen: (open: boolean) => void;
+  // Equipment Enquiries
+  equipmentEnquiries: EquipmentEnquiry[];
+  submitEquipmentEnquiry: (enquiry: Omit<EquipmentEnquiry, 'id' | 'createdAt' | 'status'>) => void;
 
-  // Filtering state
-  filters: FilterState;
-  setFilter: <K extends keyof FilterState>(key: K, value: FilterState[K]) => void;
-  resetFilters: () => void;
+  // Contact Form Submissions
+  contactEnquiries: ContactEnquiry[];
+  submitContactEnquiry: (enquiry: Omit<ContactEnquiry, 'id' | 'createdAt' | 'status'>) => void;
 
-  // Loading & Toast simulation
-  isLoading: boolean;
-  triggerLoading: (durationMs?: number) => void;
-  toast: Toast | null;
-  showToast: (title: string, subtitle?: string, type?: 'cart' | 'wishlist' | 'info') => void;
+  // Toast Banner
+  toast: ToastState;
+  showToast: (message: string, type?: 'success' | 'info' | 'error') => void;
 }
 
-const initialFilters: FilterState = {
+const defaultFilters: FilterState = {
   category: 'all',
   searchQuery: '',
-  priceRange: [0, 10000],
   brands: [],
   minRating: 0,
   inStockOnly: false,
@@ -75,177 +88,213 @@ const initialFilters: FilterState = {
 const AppContext = createContext<AppContextType | undefined>(undefined);
 
 export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
-  const [currentPage, setCurrentPage] = useState<'home' | 'marketplace' | 'product-detail' | 'services'>('home');
-  const [selectedProductId, setSelectedProductId] = useState<string | null>('titanforge-power-rack-pro');
+  const [currentPage, setCurrentPage] = useState<PageType>('home');
+  const [selectedProductId, setSelectedProductId] = useState<string | null>(null);
 
-  const [cart, setCart] = useState<CartItem[]>(() => [
-    { product: PRODUCTS[0], quantity: 2 },
-    { product: PRODUCTS[8], quantity: 1 }
-  ]);
-  const [isCartOpen, setIsCartOpen] = useState(false);
+  const [enquiryCart, setEnquiryCart] = useState<CartItem[]>([]);
+  const [isEnquiryCartOpen, setIsEnquiryCartOpen] = useState(false);
 
-  const [wishlist, setWishlist] = useState<string[]>(['titanforge-power-rack-pro', 'elitemotion-ultrarun-curved-treadmill']);
-  const [isWishlistOpen, setIsWishlistOpen] = useState(false);
-
-  const [isQuickViewOpen, setIsQuickViewOpen] = useState(false);
+  const [wishlist, setWishlist] = useState<string[]>([]);
+  const [filters, setFilters] = useState<FilterState>(defaultFilters);
   const [quickViewProduct, setQuickViewProduct] = useState<Product | null>(null);
 
-  const [isBookingModalOpen, setIsBookingModalOpen] = useState(false);
-  const [bookingService, setBookingService] = useState<ServiceProvider | null>(null);
+  // Manpower
+  const [jobListings, setJobListings] = useState<JobListing[]>(INITIAL_JOBS);
+  const [jobApplications, setJobApplications] = useState<JobApplication[]>([]);
 
-  const [isRegisterGymModalOpen, setIsRegisterGymModalOpen] = useState(false);
-  const [isVendorModalOpen, setIsVendorModalOpen] = useState(false);
+  // Services & Enquiries
+  const [serviceEnquiries, setServiceEnquiries] = useState<ServiceEnquiry[]>([]);
+  const [selectedServiceModal, setSelectedServiceModal] = useState<BusinessService | null>(null);
 
-  const [filters, setFilters] = useState<FilterState>(initialFilters);
-  const [isLoading, setIsLoading] = useState(false);
-  const [toast, setToast] = useState<Toast | null>(null);
+  // Equipment Enquiries
+  const [equipmentEnquiries, setEquipmentEnquiries] = useState<EquipmentEnquiry[]>([]);
 
-  // Scroll to top on page navigation
-  const navigateTo = (page: 'home' | 'marketplace' | 'product-detail' | 'services', productId?: string) => {
+  // Contact Enquiries
+  const [contactEnquiries, setContactEnquiries] = useState<ContactEnquiry[]>([]);
+
+  // Toast
+  const [toast, setToast] = useState<ToastState>({
+    message: '',
+    type: 'success',
+    visible: false,
+  });
+
+  const showToast = (message: string, type: 'success' | 'info' | 'error' = 'success') => {
+    setToast({ message, type, visible: true });
+    setTimeout(() => {
+      setToast(prev => ({ ...prev, visible: false }));
+    }, 3500);
+  };
+
+  const navigateTo = (page: PageType, productId?: string) => {
+    setCurrentPage(page);
     if (productId) {
       setSelectedProductId(productId);
     }
-    setCurrentPage(page);
     window.scrollTo({ top: 0, behavior: 'smooth' });
-    triggerLoading(600);
   };
 
-  const triggerLoading = (durationMs: number = 600) => {
-    setIsLoading(true);
-    setTimeout(() => setIsLoading(false), durationMs);
-  };
-
-  const showToast = (title: string, subtitle?: string, type: 'cart' | 'wishlist' | 'info' = 'info') => {
-    const id = Math.random().toString(36).substr(2, 9);
-    setToast({ id, title, subtitle, type });
-    setTimeout(() => setToast(null), 3500);
-  };
-
-  // Cart operations
-  const addToCart = (product: Product, quantity: number = 1) => {
-    setCart(prev => {
+  // Enquiry Cart Functions
+  const addToEnquiryCart = (product: Product, quantity = 1) => {
+    setEnquiryCart(prev => {
       const existing = prev.find(item => item.product.id === product.id);
       if (existing) {
         return prev.map(item =>
-          item.product.id === product.id
-            ? { ...item, quantity: item.quantity + quantity }
-            : item
+          item.product.id === product.id ? { ...item, quantity: item.quantity + quantity } : item
         );
       }
       return [...prev, { product, quantity }];
     });
-    showToast(`Added to B2B Cart`, `${product.name} (x${quantity})`, 'cart');
+    showToast(`Added ${product.name} to Enquiry Cart`);
   };
 
-  const removeFromCart = (productId: string) => {
-    setCart(prev => prev.filter(item => item.product.id !== productId));
+  const removeFromEnquiryCart = (productId: string) => {
+    setEnquiryCart(prev => prev.filter(item => item.product.id !== productId));
+    showToast('Item removed from Enquiry Cart', 'info');
   };
 
-  const updateQuantity = (productId: string, quantity: number) => {
+  const updateEnquiryCartQuantity = (productId: string, quantity: number) => {
     if (quantity <= 0) {
-      removeFromCart(productId);
+      removeFromEnquiryCart(productId);
       return;
     }
-    setCart(prev =>
+    setEnquiryCart(prev =>
       prev.map(item => (item.product.id === productId ? { ...item, quantity } : item))
     );
   };
 
-  const clearCart = () => setCart([]);
+  const clearEnquiryCart = () => setEnquiryCart([]);
 
-  const cartTotal = cart.reduce((sum, item) => {
-    const unitPrice = (item.product.bulkPrice && item.quantity >= (item.product.bulkThreshold || 3))
-      ? item.product.bulkPrice
-      : item.product.price;
-    return sum + unitPrice * item.quantity;
-  }, 0);
-
-  const cartCount = cart.reduce((sum, item) => sum + item.quantity, 0);
-
-  // Wishlist operations
-  const toggleWishlist = (id: string) => {
+  // Wishlist
+  const toggleWishlist = (productId: string) => {
     setWishlist(prev => {
-      const exists = prev.includes(id);
+      const exists = prev.includes(productId);
       if (exists) {
-        showToast('Removed from Wishlist', undefined, 'wishlist');
-        return prev.filter(item => item !== id);
-      } else {
-        showToast('Saved to B2B Wishlist', 'Item stored in your account saved items.', 'wishlist');
-        return [...prev, id];
+        showToast('Removed from Wishlist', 'info');
+        return prev.filter(id => id !== productId);
       }
+      showToast('Saved to Wishlist');
+      return [...prev, productId];
     });
   };
 
-  const isInWishlist = (id: string) => wishlist.includes(id);
+  const isInWishlist = (productId: string) => wishlist.includes(productId);
 
-  // Modal handlers
-  const openQuickView = (product: Product) => {
-    setQuickViewProduct(product);
-    setIsQuickViewOpen(true);
-  };
-
-  const closeQuickView = () => {
-    setIsQuickViewOpen(false);
-    setQuickViewProduct(null);
-  };
-
-  const openBookingModal = (service: ServiceProvider) => {
-    setBookingService(service);
-    setIsBookingModalOpen(true);
-  };
-
-  const closeBookingModal = () => {
-    setIsBookingModalOpen(false);
-    setBookingService(null);
-  };
-
-  // Filter state handlers
-  const setFilter = <K extends keyof FilterState>(key: K, value: FilterState[K]) => {
+  // Filters
+  const setFilter = (key: keyof FilterState, value: any) => {
     setFilters(prev => ({ ...prev, [key]: value }));
   };
 
-  const resetFilters = () => {
-    setFilters(initialFilters);
-    triggerLoading(500);
+  const resetFilters = () => setFilters(defaultFilters);
+
+  // Quick View
+  const openQuickView = (product: Product) => setQuickViewProduct(product);
+  const closeQuickView = () => setQuickViewProduct(null);
+
+  // Service Modal
+  const openServiceModal = (service: BusinessService) => setSelectedServiceModal(service);
+  const closeServiceModal = () => setSelectedServiceModal(null);
+
+  // Submit Handlers
+  const addJobListing = (newJobData: Omit<JobListing, 'id' | 'createdAt' | 'applicationsCount'>) => {
+    const newJob: JobListing = {
+      ...newJobData,
+      id: `job-${Date.now()}`,
+      createdAt: 'Just now',
+      applicationsCount: 0,
+    };
+    setJobListings(prev => [newJob, ...prev]);
+    showToast(`Job listing "${newJob.title}" posted successfully!`);
+  };
+
+  const submitJobApplication = (appData: Omit<JobApplication, 'id' | 'submittedAt' | 'status'>) => {
+    const newApp: JobApplication = {
+      ...appData,
+      id: `app-${Date.now()}`,
+      submittedAt: new Date().toLocaleDateString(),
+      status: 'Pending Review',
+    };
+    setJobApplications(prev => [newApp, ...prev]);
+
+    // Update applicationsCount on job
+    setJobListings(prev =>
+      prev.map(j => (j.id === appData.jobId ? { ...j, applicationsCount: j.applicationsCount + 1 } : j))
+    );
+
+    showToast('Job Application submitted successfully!');
+  };
+
+  const submitEquipmentEnquiry = (enquiryData: Omit<EquipmentEnquiry, 'id' | 'createdAt' | 'status'>) => {
+    const newEnquiry: EquipmentEnquiry = {
+      ...enquiryData,
+      id: `eq-${Date.now()}`,
+      createdAt: new Date().toLocaleString(),
+      status: 'New RFQ',
+    };
+    setEquipmentEnquiries(prev => [newEnquiry, ...prev]);
+    clearEnquiryCart();
+    setIsEnquiryCartOpen(false);
+    showToast('Quotation Request submitted! Sales team will email/WhatsApp your quote.');
+  };
+
+  const submitServiceEnquiry = (enquiryData: Omit<ServiceEnquiry, 'id' | 'createdAt' | 'status'>) => {
+    const newEnquiry: ServiceEnquiry = {
+      ...enquiryData,
+      id: `srv-${Date.now()}`,
+      createdAt: new Date().toLocaleString(),
+      status: 'New',
+    };
+    setServiceEnquiries(prev => [newEnquiry, ...prev]);
+    closeServiceModal();
+    showToast('Service Request received! A Tanush consultant will contact you within 2 hours.');
+  };
+
+  const submitContactEnquiry = (contactData: Omit<ContactEnquiry, 'id' | 'createdAt' | 'status'>) => {
+    const newContact: ContactEnquiry = {
+      ...contactData,
+      id: `cnt-${Date.now()}`,
+      createdAt: new Date().toLocaleString(),
+      status: 'Unread',
+    };
+    setContactEnquiries(prev => [newContact, ...prev]);
+    showToast('Message sent successfully! Our executive team will reach out shortly.');
   };
 
   return (
     <AppContext.Provider
       value={{
         currentPage,
-        selectedProductId,
         navigateTo,
-        cart,
-        addToCart,
-        removeFromCart,
-        updateQuantity,
-        clearCart,
-        cartTotal,
-        cartCount,
-        isCartOpen,
-        setIsCartOpen,
+        selectedProductId,
+        enquiryCart,
+        addToEnquiryCart,
+        removeFromEnquiryCart,
+        updateEnquiryCartQuantity,
+        clearEnquiryCart,
+        isEnquiryCartOpen,
+        setIsEnquiryCartOpen,
         wishlist,
         toggleWishlist,
         isInWishlist,
-        isWishlistOpen,
-        setIsWishlistOpen,
-        isQuickViewOpen,
-        quickViewProduct,
-        openQuickView,
-        closeQuickView,
-        isBookingModalOpen,
-        bookingService,
-        openBookingModal,
-        closeBookingModal,
-        isRegisterGymModalOpen,
-        setIsRegisterGymModalOpen,
-        isVendorModalOpen,
-        setIsVendorModalOpen,
         filters,
         setFilter,
         resetFilters,
-        isLoading,
-        triggerLoading,
+        quickViewProduct,
+        openQuickView,
+        closeQuickView,
+        jobListings,
+        jobApplications,
+        addJobListing,
+        submitJobApplication,
+        serviceEnquiries,
+        selectedServiceModal,
+        openServiceModal,
+        closeServiceModal,
+        submitServiceEnquiry,
+        equipmentEnquiries,
+        submitEquipmentEnquiry,
+        contactEnquiries,
+        submitContactEnquiry,
         toast,
         showToast,
       }}
@@ -257,6 +306,6 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
 
 export const useApp = () => {
   const context = useContext(AppContext);
-  if (!context) throw new Error('useApp must be used within an AppProvider');
+  if (!context) throw new Error('useApp must be used within AppProvider');
   return context;
 };
