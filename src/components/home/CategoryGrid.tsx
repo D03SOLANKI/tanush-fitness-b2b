@@ -1,0 +1,91 @@
+import React from 'react';
+import { useApp } from '../../context/AppContext';
+import { SectionHeader } from '../common/SectionHeader';
+import { EQUIPMENT_CATEGORIES } from '../../data/categories';
+import { ArrowRight } from 'lucide-react';
+import { motion } from 'framer-motion';
+
+export const CategoryGrid: React.FC = () => {
+  const { navigateTo, setFilter } = useApp();
+
+  const fallbackImage = 'https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=1000&q=80';
+
+  return (
+    <section className="py-20 sm:py-28 bg-white relative">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <SectionHeader
+          subtitle="COMMERCIAL EQUIPMENT & SUPPLIES"
+          title="Explore 12 Marketplace Categories"
+          description="Source commercial power racks, precision cardio, wholesale supplements, and specialized facility gear directly from verified B2B manufacturers."
+          actionText="View Full Catalog"
+          onActionClick={() => navigateTo('marketplace')}
+        />
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+          {EQUIPMENT_CATEGORIES.map((cat, idx) => (
+            <motion.div
+              key={cat.id}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.4, delay: idx * 0.05 }}
+              onClick={() => {
+                setFilter('category', cat.id);
+                navigateTo('marketplace');
+              }}
+              className="group relative rounded-3xl overflow-hidden bg-white border border-slate-200/90 hover:border-blue-500 transition-all duration-300 cursor-pointer flex flex-col justify-between shadow-stripe hover:shadow-2xl hover:-translate-y-1 text-slate-900"
+            >
+              {/* Top Bright 100% Visible Photo */}
+              <div className="relative aspect-[16/10] bg-slate-100 overflow-hidden border-b border-slate-100">
+                <img
+                  src={cat.image}
+                  alt={cat.name}
+                  onError={(e) => {
+                    (e.target as HTMLImageElement).src = fallbackImage;
+                  }}
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                />
+
+                {/* Top Badges */}
+                <div className="absolute top-3 left-3">
+                  <span className="text-[10px] font-black uppercase tracking-wider px-2.5 py-1 rounded-full bg-slate-900/90 border border-slate-700 text-white backdrop-blur-md font-mono shadow-sm">
+                    {cat.itemCount} Items
+                  </span>
+                </div>
+
+                <div className="absolute top-3 right-3">
+                  {cat.isPopulated ? (
+                    <span className="text-[10px] font-bold px-2.5 py-0.5 rounded-full bg-emerald-500 text-white shadow-sm font-mono">
+                      Live Catalog
+                    </span>
+                  ) : (
+                    <span className="text-[10px] font-bold px-2.5 py-0.5 rounded-full bg-amber-500 text-white shadow-sm font-mono">
+                      Pre-Order
+                    </span>
+                  )}
+                </div>
+              </div>
+
+              {/* Bottom White Card Content */}
+              <div className="p-5 flex-1 flex flex-col justify-between space-y-3 bg-white">
+                <div>
+                  <h3 className="text-base font-black text-slate-900 group-hover:text-blue-600 transition-colors leading-snug font-heading uppercase">
+                    {cat.name}
+                  </h3>
+                  <p className="mt-1.5 text-xs text-slate-600 line-clamp-2 leading-relaxed font-normal">
+                    {cat.description}
+                  </p>
+                </div>
+
+                <div className="pt-3 border-t border-slate-100 flex items-center justify-between text-xs font-black text-blue-600 uppercase tracking-wider font-mono group-hover:translate-x-1 transition-all">
+                  <span>Browse Category</span>
+                  <ArrowRight className="w-4 h-4 stroke-[3]" />
+                </div>
+              </div>
+            </motion.div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+};
