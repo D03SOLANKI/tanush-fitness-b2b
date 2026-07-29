@@ -1,23 +1,129 @@
 import React, { useState } from 'react';
 import { useApp } from '../context/AppContext';
 import { PRODUCTS } from '../data/products';
-import { EQUIPMENT_CATEGORIES } from '../data/categories';
-import { BUSINESS_SERVICES } from '../data/services';
-import { ShieldCheck, Dumbbell, Users, Briefcase, Mail, Plus, Trash2, CheckCircle2, Eye, FileText, Search } from 'lucide-react';
+import {
+  ShieldCheck,
+  Dumbbell,
+  Users,
+  Briefcase,
+  Mail,
+  Plus,
+  FileText,
+  Lock,
+  KeyRound,
+  LogOut,
+  ShieldAlert,
+  ArrowRight
+} from 'lucide-react';
 import { motion } from 'framer-motion';
 
 export const AdminPage: React.FC = () => {
   const {
+    isAdminAuthenticated,
+    loginAdmin,
+    logoutAdmin,
     equipmentEnquiries,
     jobListings,
     jobApplications,
     serviceEnquiries,
     contactEnquiries,
+    navigateTo,
   } = useApp();
 
-  const [activeTab, setActiveTab] = useState<'equipment' | 'equipment-enquiries' | 'manpower' | 'services' | 'contacts'>('equipment-enquiries');
-  const [searchFilter, setSearchFilter] = useState('');
+  const [activeTab, setActiveTab] = useState<'equipment-enquiries' | 'manpower' | 'services' | 'contacts' | 'equipment'>('equipment-enquiries');
+  const [passcode, setPasscode] = useState('');
+  const [authError, setAuthError] = useState(false);
 
+  const handleLoginSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    const success = loginAdmin(passcode);
+    if (!success) {
+      setAuthError(true);
+    } else {
+      setAuthError(false);
+      setPasscode('');
+    }
+  };
+
+  // RESTRICTED ACCESS SCREEN (If not authenticated)
+  if (!isAdminAuthenticated) {
+    return (
+      <main className="pt-32 pb-24 bg-slate-950 min-h-screen text-slate-100 font-mono flex items-center justify-center p-4">
+        <motion.div
+          initial={{ opacity: 0, scale: 0.95 }}
+          animate={{ opacity: 1, scale: 1 }}
+          className="max-w-md w-full rounded-3xl bg-slate-900 border border-slate-800 p-8 shadow-2xl space-y-6 text-center"
+        >
+          <div className="w-16 h-16 rounded-2xl bg-amber-500/10 border border-amber-500/30 text-amber-400 mx-auto flex items-center justify-center shadow-inner">
+            <Lock className="w-8 h-8" />
+          </div>
+
+          <div className="space-y-1">
+            <span className="text-[10px] font-bold text-amber-400 uppercase tracking-widest block font-mono">
+              RESTRICTED EXECUTIVE ACCESS
+            </span>
+            <h1 className="text-2xl font-black text-white font-heading uppercase">
+              Tanush Admin Authentication
+            </h1>
+            <p className="text-xs text-slate-400 leading-relaxed font-normal">
+              This panel is restricted exclusively to authorized Tanush Fitness directors, account managers, and system administrators.
+            </p>
+          </div>
+
+          <form onSubmit={handleLoginSubmit} className="space-y-4 text-left">
+            <div>
+              <label className="text-[10px] font-bold text-slate-400 uppercase font-mono block mb-1">
+                Enter Admin Security Passcode *
+              </label>
+              <div className="relative">
+                <input
+                  type="password"
+                  required
+                  placeholder="Enter passcode (Hint: admin2026)"
+                  value={passcode}
+                  onChange={(e) => {
+                    setPasscode(e.target.value);
+                    setAuthError(false);
+                  }}
+                  className={`w-full bg-slate-950 border rounded-xl py-3 px-4 pl-10 text-xs font-mono text-white placeholder-slate-500 focus:outline-none ${
+                    authError ? 'border-rose-500' : 'border-slate-800 focus:border-amber-400'
+                  }`}
+                />
+                <KeyRound className="w-4 h-4 text-slate-500 absolute left-3.5 top-3.5" />
+              </div>
+
+              {authError && (
+                <div className="text-[10px] text-rose-400 font-bold mt-1 flex items-center gap-1">
+                  <ShieldAlert className="w-3.5 h-3.5" />
+                  <span>Invalid security passcode. Access denied.</span>
+                </div>
+              )}
+            </div>
+
+            <button
+              type="submit"
+              className="w-full py-3.5 px-4 rounded-xl bg-amber-500 hover:bg-amber-400 text-slate-950 font-black text-xs uppercase tracking-wider font-mono flex items-center justify-center gap-2 shadow-lg transition-all"
+            >
+              <ShieldCheck className="w-4 h-4" />
+              <span>Authenticate & Access Console</span>
+            </button>
+          </form>
+
+          <div className="pt-4 border-t border-slate-800/80 flex items-center justify-between text-[10px] text-slate-500 font-mono">
+            <span>256-Bit SSL Encrypted Audit Log</span>
+            <button
+              onClick={() => navigateTo('home')}
+              className="text-slate-400 hover:text-white underline font-bold"
+            >
+              Return Home →
+            </button>
+          </div>
+        </motion.div>
+      </main>
+    );
+  }
+
+  // AUTHORIZED FULL ADMIN CONSOLE
   return (
     <main className="pt-28 pb-24 bg-slate-900 min-h-screen text-slate-100 font-mono">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -27,17 +133,27 @@ export const AdminPage: React.FC = () => {
             <div className="flex items-center gap-2">
               <ShieldCheck className="w-6 h-6 text-amber-400" />
               <h1 className="text-2xl sm:text-3xl font-black text-white font-heading uppercase tracking-wide">
-                Tanush Fitness Admin Console
+                Tanush Fitness Executive Console
               </h1>
             </div>
             <p className="text-xs text-slate-400 mt-1">
-              Internal Enterprise Dashboard • Manage Equipment, Enquiries, Manpower Jobs, Applications & Service RFQs
+              Authorized Executive Access Active • Manage Equipment RFQs, Job Applications & Service Queries
             </p>
           </div>
 
-          <div className="px-4 py-2 rounded-xl bg-slate-800 border border-slate-700 text-xs font-bold text-amber-400 flex items-center gap-2">
-            <span className="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-ping" />
-            <span>Admin Authenticated</span>
+          <div className="flex items-center gap-3">
+            <div className="px-3.5 py-2 rounded-xl bg-emerald-500/10 border border-emerald-500/30 text-xs font-bold text-emerald-400 flex items-center gap-2">
+              <span className="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-ping" />
+              <span>Admin Session Active</span>
+            </div>
+
+            <button
+              onClick={logoutAdmin}
+              className="px-4 py-2 rounded-xl bg-slate-800 hover:bg-rose-900/60 border border-slate-700 text-slate-300 hover:text-white text-xs font-bold font-mono uppercase flex items-center gap-1.5 transition-colors"
+            >
+              <LogOut className="w-4 h-4 text-rose-400" />
+              <span>End Admin Session</span>
+            </button>
           </div>
         </div>
 

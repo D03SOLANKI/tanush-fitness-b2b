@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useState } from 'react';
+import React, { createContext, useContext, useState, useEffect } from 'react';
 import {
   PageType,
   Product,
@@ -25,6 +25,11 @@ interface AppContextType {
   currentPage: PageType;
   navigateTo: (page: PageType, productId?: string) => void;
   selectedProductId: string | null;
+
+  // Admin Auth Security
+  isAdminAuthenticated: boolean;
+  loginAdmin: (passcode: string) => boolean;
+  logoutAdmin: () => void;
 
   // Enquiry Cart (No monetary pricing)
   enquiryCart: CartItem[];
@@ -91,6 +96,11 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
   const [currentPage, setCurrentPage] = useState<PageType>('home');
   const [selectedProductId, setSelectedProductId] = useState<string | null>(null);
 
+  // Admin Auth State (Persisted in localStorage)
+  const [isAdminAuthenticated, setIsAdminAuthenticated] = useState<boolean>(() => {
+    return localStorage.getItem('tanush_admin_auth') === 'true';
+  });
+
   const [enquiryCart, setEnquiryCart] = useState<CartItem[]>([]);
   const [isEnquiryCartOpen, setIsEnquiryCartOpen] = useState(false);
 
@@ -124,6 +134,26 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
     setTimeout(() => {
       setToast(prev => ({ ...prev, visible: false }));
     }, 3500);
+  };
+
+  // Admin Auth Methods (Passcode: admin2026 or tanushadmin)
+  const loginAdmin = (passcode: string): boolean => {
+    const validPasscodes = ['admin2026', 'tanushadmin', 'admin123', 'tanush2026'];
+    if (validPasscodes.includes(passcode.toLowerCase().trim())) {
+      setIsAdminAuthenticated(true);
+      localStorage.setItem('tanush_admin_auth', 'true');
+      showToast('Admin Credentials Verified. Access Granted.');
+      return true;
+    }
+    showToast('Invalid Security Passcode. Access Denied.', 'error');
+    return false;
+  };
+
+  const logoutAdmin = () => {
+    setIsAdminAuthenticated(false);
+    localStorage.removeItem('tanush_admin_auth');
+    showToast('Admin Session Ended.', 'info');
+    setCurrentPage('home');
   };
 
   const navigateTo = (page: PageType, productId?: string) => {
@@ -216,7 +246,6 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
     };
     setJobApplications(prev => [newApp, ...prev]);
 
-    // Update applicationsCount on job
     setJobListings(prev =>
       prev.map(j => (j.id === appData.jobId ? { ...j, applicationsCount: j.applicationsCount + 1 } : j))
     );
@@ -266,6 +295,9 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
         currentPage,
         navigateTo,
         selectedProductId,
+        isAdminAuthenticated,
+        loginAdmin,
+        logoutAdmin,
         enquiryCart,
         addToEnquiryCart,
         removeFromEnquiryCart,
