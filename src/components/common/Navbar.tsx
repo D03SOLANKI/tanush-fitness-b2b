@@ -7,11 +7,9 @@ import {
   Briefcase,
   PhoneCall,
   Info,
-  ShieldCheck,
   FileText,
   Menu,
   X,
-  ChevronDown,
   Sparkles
 } from 'lucide-react';
 
@@ -74,33 +72,20 @@ export const Navbar: React.FC = () => {
             })}
           </nav>
 
-          {/* Right Action Controls: Enquiry Cart & Admin Panel */}
+          {/* Right Action Controls: Enquiry Cart */}
           <div className="flex items-center gap-3">
             {/* Enquiry Cart Trigger */}
             <button
               onClick={() => setIsEnquiryCartOpen(true)}
-              className="relative p-2.5 rounded-xl bg-slate-100 hover:bg-slate-200 border border-slate-200 text-slate-800 font-mono text-xs font-bold flex items-center gap-2 transition-all shadow-sm"
+              className="relative p-2.5 px-4 rounded-xl bg-blue-600 hover:bg-blue-700 text-white font-mono text-xs font-black flex items-center gap-2 transition-all shadow-md"
             >
-              <FileText className="w-4 h-4 text-blue-600" />
-              <span className="hidden sm:inline font-black uppercase">Enquiry Cart</span>
+              <FileText className="w-4 h-4 text-white" />
+              <span className="uppercase">Enquiry Cart</span>
               {enquiryCount > 0 && (
-                <span className="w-5 h-5 rounded-full bg-blue-600 text-white text-[10px] font-black flex items-center justify-center font-mono animate-pulse">
+                <span className="w-5 h-5 rounded-full bg-white text-blue-600 text-[10px] font-black flex items-center justify-center font-mono">
                   {enquiryCount}
                 </span>
               )}
-            </button>
-
-            {/* Admin Panel Button */}
-            <button
-              onClick={() => navigateTo('admin')}
-              className={`px-4 py-2.5 rounded-xl font-black text-xs font-mono uppercase tracking-wider flex items-center gap-2 transition-all shadow-md ${
-                currentPage === 'admin'
-                  ? 'bg-slate-900 text-amber-400 border border-amber-500/50 shadow-lg'
-                  : 'bg-slate-900 hover:bg-slate-800 text-white'
-              }`}
-            >
-              <ShieldCheck className="w-4 h-4 text-amber-400" />
-              <span className="hidden md:inline">Admin Panel</span>
             </button>
 
             {/* Mobile Hamburger Toggle */}
@@ -134,17 +119,6 @@ export const Navbar: React.FC = () => {
               <span>{item.label}</span>
             </button>
           ))}
-
-          <button
-            onClick={() => {
-              navigateTo('admin');
-              setMobileMenuOpen(false);
-            }}
-            className="w-full py-3 px-4 rounded-xl bg-slate-900 text-amber-400 font-black text-xs uppercase font-mono tracking-wider text-left flex items-center gap-3 shadow-md"
-          >
-            <ShieldCheck className="w-4 h-4" />
-            <span>Admin Management Panel</span>
-          </button>
         </div>
       )}
     </header>

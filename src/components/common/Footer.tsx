@@ -1,7 +1,6 @@
 import React from 'react';
 import { useApp } from '../../context/AppContext';
-import { PageType } from '../../types';
-import { Dumbbell, ShieldCheck, PhoneCall, Mail, MapPin, Send, ArrowRight } from 'lucide-react';
+import { Dumbbell, ShieldCheck, PhoneCall, Mail, MapPin, Lock } from 'lucide-react';
 
 export const Footer: React.FC = () => {
   const { navigateTo } = useApp();
@@ -48,7 +47,7 @@ export const Footer: React.FC = () => {
               <li>
                 <button
                   onClick={() => navigateTo('equipment')}
-                  className="hover:text-white transition-colors"
+                  className="hover:text-white transition-colors text-left"
                 >
                   Commercial Gym Equipment
                 </button>
@@ -56,7 +55,7 @@ export const Footer: React.FC = () => {
               <li>
                 <button
                   onClick={() => navigateTo('manpower')}
-                  className="hover:text-white transition-colors"
+                  className="hover:text-white transition-colors text-left"
                 >
                   Manpower Hiring Platform
                 </button>
@@ -64,7 +63,7 @@ export const Footer: React.FC = () => {
               <li>
                 <button
                   onClick={() => navigateTo('services')}
-                  className="hover:text-white transition-colors"
+                  className="hover:text-white transition-colors text-left"
                 >
                   Gym Business Services
                 </button>
@@ -93,11 +92,6 @@ export const Footer: React.FC = () => {
                   Contact Us
                 </button>
               </li>
-              <li>
-                <button onClick={() => navigateTo('admin')} className="hover:text-amber-400 transition-colors font-bold">
-                  Admin Panel
-                </button>
-              </li>
             </ul>
           </div>
 
@@ -123,10 +117,18 @@ export const Footer: React.FC = () => {
           </div>
         </div>
 
-        {/* Bottom Bar */}
+        {/* Bottom Bar with discrete Admin Lock trigger */}
         <div className="pt-8 border-t border-slate-800 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-500 font-mono gap-4">
-          <div>
-            © {new Date().getFullYear()} Tanush Fitness B2B Pvt Ltd. All rights reserved.
+          <div className="flex items-center gap-2">
+            <span>© {new Date().getFullYear()} Tanush Fitness B2B Pvt Ltd. All rights reserved.</span>
+            {/* Discrete Lock Icon for Secret Authorized Admin Gate */}
+            <button
+              onClick={() => navigateTo('admin')}
+              title="Authorized Executive Access"
+              className="opacity-30 hover:opacity-100 transition-opacity p-1 text-slate-400 hover:text-amber-400"
+            >
+              <Lock className="w-3 h-3" />
+            </button>
           </div>
           <div className="flex items-center gap-6">
             <span className="hover:text-slate-300 cursor-pointer">Privacy Policy</span>
