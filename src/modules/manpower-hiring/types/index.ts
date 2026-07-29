@@ -34,6 +34,9 @@ export interface JobApplication {
   resumeFileName: string;
   experience: string;
   preferredLocation: string;
+  preferredCity?: string;
+  preferredSalary?: string;
+  skills?: string[];
   certifications: string;
   submittedAt: string;
   status: 'Pending Review' | 'Shortlisted' | 'Contacted' | 'Rejected';

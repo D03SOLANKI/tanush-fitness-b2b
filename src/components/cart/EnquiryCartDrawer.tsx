@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useApp } from '../../context/AppContext';
-import { X, Trash2, Plus, Minus, Send, CheckCircle2, Dumbbell } from 'lucide-react';
+import { X, Trash2, Send, ShieldCheck, Dumbbell, ArrowRight, Building2, CheckCircle2 } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 export const EnquiryCartDrawer: React.FC = () => {
@@ -8,285 +8,323 @@ export const EnquiryCartDrawer: React.FC = () => {
     enquiryCart,
     isEnquiryCartOpen,
     setIsEnquiryCartOpen,
-    updateEnquiryCartQuantity,
     removeFromEnquiryCart,
+    updateEnquiryCartQuantity,
     submitEquipmentEnquiry,
   } = useApp();
 
-  const [formData, setFormData] = useState({
+  const [formState, setFormState] = useState({
     name: '',
     companyGymName: '',
     mobile: '',
     email: '',
     city: '',
     requirements: '',
+    timeframe: 'Immediate (Within 15 days)',
   });
 
-  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isSubmitted, setIsSubmitted] = useState(false);
+  const [rfqRef, setRfqRef] = useState('');
+
+  const totalQuantity = enquiryCart.reduce((sum, item) => sum + item.quantity, 0);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    if (!formData.name || !formData.mobile || !formData.companyGymName) {
-      alert('Please fill in your Name, Gym Name, and Mobile Number.');
+
+    if (!formState.name || !formState.mobile || !formState.companyGymName) {
+      alert('Please fill in your Full Name, Gym/Company Name, and Mobile Number.');
       return;
     }
 
-    setIsSubmitting(true);
-    setTimeout(() => {
-      submitEquipmentEnquiry({
-        name: formData.name,
-        companyGymName: formData.companyGymName,
-        mobile: formData.mobile,
-        email: formData.email,
-        city: formData.city,
-        requirements: formData.requirements,
-        selectedProducts: enquiryCart.map(item => ({
-          id: item.product.id,
-          name: item.product.name,
-          quantity: item.quantity,
-        })),
-      });
+    if (enquiryCart.length === 0) {
+      alert('Your Enquiry Cart is empty. Please add products first.');
+      return;
+    }
 
-      setIsSubmitting(false);
-      setFormData({
-        name: '',
-        companyGymName: '',
-        mobile: '',
-        email: '',
-        city: '',
-        requirements: '',
-      });
-    }, 600);
+    const newRfqRef = `RFQ-2026-${Math.floor(1000 + Math.random() * 9000)}`;
+    setRfqRef(newRfqRef);
+
+    submitEquipmentEnquiry({
+      rfqReference: newRfqRef,
+      name: formState.name,
+      companyGymName: formState.companyGymName,
+      mobile: formState.mobile,
+      email: formState.email,
+      city: formState.city,
+      requirements: formState.requirements,
+      timeframe: formState.timeframe,
+      selectedProducts: enquiryCart.map(item => ({
+        id: item.product.id,
+        name: item.product.name,
+        quantity: item.quantity,
+      })),
+    });
+
+    setIsSubmitted(true);
   };
 
   if (!isEnquiryCartOpen) return null;
 
   return (
     <AnimatePresence>
-      <div className="fixed inset-0 z-50 overflow-hidden">
-        {/* Backdrop */}
+      <div className="fixed inset-0 z-50 overflow-hidden bg-slate-950/60 backdrop-blur-sm flex justify-end font-mono">
         <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
-          onClick={() => setIsEnquiryCartOpen(false)}
-          className="absolute inset-0 bg-slate-950/60 backdrop-blur-sm"
-        />
-
-        <div className="fixed inset-y-0 right-0 max-w-full flex pl-10">
-          <motion.div
-            initial={{ x: '100%' }}
-            animate={{ x: 0 }}
-            exit={{ x: '100%' }}
-            transition={{ type: 'spring', damping: 25, stiffness: 200 }}
-            className="w-screen max-w-lg bg-white shadow-2xl flex flex-col justify-between"
-          >
-            {/* Header */}
-            <div className="p-6 bg-slate-900 text-white flex items-center justify-between">
-              <div>
-                <div className="flex items-center gap-2">
-                  <Dumbbell className="w-5 h-5 text-blue-400" />
-                  <h2 className="text-lg font-black font-heading uppercase tracking-wide">
-                    Equipment Quotation Cart
-                  </h2>
-                </div>
-                <p className="text-xs text-slate-400 font-mono mt-0.5">
-                  No online payment. Formal sales quotation dispatched via Email/WhatsApp.
-                </p>
+          initial={{ x: '100%' }}
+          animate={{ x: 0 }}
+          exit={{ x: '100%' }}
+          transition={{ type: 'spring', damping: 25, stiffness: 200 }}
+          className="w-full max-w-lg bg-white h-full shadow-2xl flex flex-col justify-between overflow-hidden"
+        >
+          {/* Header */}
+          <div className="p-6 border-b border-slate-200 bg-slate-900 text-white flex items-center justify-between">
+            <div className="flex items-center gap-3">
+              <div className="w-10 h-10 rounded-2xl bg-blue-600 flex items-center justify-center text-white">
+                <Dumbbell className="w-5 h-5" />
               </div>
-              <button
-                onClick={() => setIsEnquiryCartOpen(false)}
-                className="p-2 rounded-xl bg-slate-800 text-slate-400 hover:text-white"
-              >
-                <X className="w-5 h-5" />
-              </button>
+              <div>
+                <h2 className="text-base font-black font-heading uppercase text-white leading-none">
+                  Equipment Enquiry Cart
+                </h2>
+                <span className="text-[10px] text-blue-400 font-bold block mt-1">
+                  Zero Online Prices • Direct B2B Quotation RFQ
+                </span>
+              </div>
             </div>
 
-            {/* Content Body */}
-            <div className="flex-1 overflow-y-auto p-6 space-y-6">
-              {enquiryCart.length === 0 ? (
-                <div className="py-16 text-center space-y-4">
-                  <div className="w-16 h-16 rounded-full bg-blue-50 text-blue-600 mx-auto flex items-center justify-center">
-                    <Dumbbell className="w-8 h-8" />
-                  </div>
-                  <h3 className="text-base font-black text-slate-900 uppercase font-heading">
-                    Your Enquiry Cart is Empty
-                  </h3>
-                  <p className="text-xs text-slate-500 max-w-xs mx-auto">
-                    Browse our commercial gym equipment catalog and click "Add to Enquiry Cart" to request wholesale pricing.
-                  </p>
+            <button
+              onClick={() => {
+                setIsEnquiryCartOpen(false);
+                setIsSubmitted(false);
+              }}
+              className="p-2 rounded-full bg-slate-800 text-slate-400 hover:text-white"
+            >
+              <X className="w-5 h-5" />
+            </button>
+          </div>
+
+          {/* Body Content */}
+          <div className="flex-1 overflow-y-auto p-6 space-y-6">
+            {isSubmitted ? (
+              /* RFQ Summary Card Confirmation */
+              <div className="p-6 rounded-3xl bg-blue-50 border border-blue-200 text-slate-900 space-y-4 text-center">
+                <div className="w-12 h-12 rounded-full bg-emerald-500 text-white mx-auto flex items-center justify-center shadow-lg">
+                  <CheckCircle2 className="w-6 h-6" />
                 </div>
-              ) : (
-                <>
-                  {/* Selected Equipment Items */}
-                  <div className="space-y-4">
-                    <h3 className="text-xs font-bold text-slate-500 uppercase font-mono tracking-wider">
-                      Selected Equipment ({enquiryCart.length} Items)
-                    </h3>
+                <div>
+                  <span className="text-[10px] font-bold text-blue-600 uppercase font-mono">
+                    RFQ SUMMARY GENERATED
+                  </span>
+                  <h3 className="text-xl font-black font-heading uppercase mt-0.5">
+                    Quotation Request Sent!
+                  </h3>
+                  <div className="text-xs font-mono font-bold text-slate-600 mt-1">
+                    Reference ID: <span className="text-blue-700 font-black">{rfqRef}</span>
+                  </div>
+                </div>
 
-                    {enquiryCart.map(item => (
-                      <div
-                        key={item.product.id}
-                        className="p-3.5 rounded-2xl bg-slate-50 border border-slate-200 flex items-center gap-4"
-                      >
-                        <img
-                          src={item.product.image}
-                          alt={item.product.name}
-                          className="w-14 h-14 object-cover rounded-xl border border-slate-200"
-                        />
-                        <div className="flex-1 min-w-0">
-                          <div className="text-[10px] font-bold uppercase text-blue-600 font-mono">
-                            {item.product.brand}
-                          </div>
-                          <h4 className="text-xs font-black text-slate-900 truncate">
-                            {item.product.name}
-                          </h4>
-                          <div className="text-[10px] text-slate-500 font-mono mt-0.5">
-                            RFQ Item • MOQ: {item.product.minOrderQty || 1}
-                          </div>
-                        </div>
+                <div className="p-4 bg-white rounded-2xl border border-blue-100 text-left space-y-2 text-xs">
+                  <div><strong>Gym Name:</strong> {formState.companyGymName}</div>
+                  <div><strong>Contact Mobile:</strong> {formState.mobile}</div>
+                  <div><strong>City:</strong> {formState.city || 'N/A'}</div>
+                  <div><strong>Timeframe:</strong> {formState.timeframe}</div>
+                </div>
 
-                        {/* Quantity Controls */}
-                        <div className="flex items-center gap-1.5 bg-white border border-slate-200 rounded-lg p-1">
-                          <button
-                            onClick={() =>
-                              updateEnquiryCartQuantity(item.product.id, item.quantity - 1)
-                            }
-                            className="p-1 text-slate-500 hover:text-slate-900"
-                          >
-                            <Minus className="w-3 h-3" />
-                          </button>
-                          <span className="w-6 text-center text-xs font-black font-mono">
-                            {item.quantity}
-                          </span>
-                          <button
-                            onClick={() =>
-                              updateEnquiryCartQuantity(item.product.id, item.quantity + 1)
-                            }
-                            className="p-1 text-slate-500 hover:text-slate-900"
-                          >
-                            <Plus className="w-3 h-3" />
-                          </button>
-                        </div>
+                <p className="text-xs text-slate-600 font-normal leading-relaxed">
+                  Our commercial sales team is reviewing your selected equipment specifications and will dispatch an official PDF quotation via WhatsApp & Email within 2 hours.
+                </p>
 
-                        <button
-                          onClick={() => removeFromEnquiryCart(item.product.id)}
-                          className="p-1.5 text-slate-400 hover:text-rose-600"
-                        >
-                          <Trash2 className="w-4 h-4" />
-                        </button>
-                      </div>
-                    ))}
+                <button
+                  onClick={() => {
+                    setIsEnquiryCartOpen(false);
+                    setIsSubmitted(false);
+                  }}
+                  className="w-full py-3 rounded-xl bg-blue-600 text-white font-black text-xs uppercase"
+                >
+                  Close & Continue Browsing
+                </button>
+              </div>
+            ) : (
+              <>
+                {/* Selected Cart Items */}
+                <div>
+                  <div className="flex items-center justify-between text-xs font-bold uppercase text-slate-600 mb-3">
+                    <span>Selected Commercial Gear ({enquiryCart.length})</span>
+                    <span>Total Units: {totalQuantity}</span>
                   </div>
 
-                  {/* 7-Field Equipment Enquiry Form */}
-                  <form onSubmit={handleSubmit} className="pt-6 border-t border-slate-200 space-y-4">
-                    <div className="flex items-center gap-2">
-                      <CheckCircle2 className="w-4 h-4 text-emerald-600" />
-                      <h3 className="text-xs font-black text-slate-900 uppercase font-mono tracking-wider">
-                        Business & Gym Details for Quotation
-                      </h3>
+                  {enquiryCart.length === 0 ? (
+                    <div className="py-12 text-center text-xs text-slate-400 border-2 border-dashed border-slate-200 rounded-2xl">
+                      Your Enquiry Cart is empty. Select equipment items from the catalog.
+                    </div>
+                  ) : (
+                    <div className="divide-y divide-slate-100 border border-slate-200 rounded-2xl overflow-hidden bg-slate-50">
+                      {enquiryCart.map(item => (
+                        <div key={item.product.id} className="p-3 bg-white flex items-center justify-between gap-3">
+                          <div className="flex items-center gap-3">
+                            <img
+                              src={item.product.image}
+                              alt={item.product.name}
+                              className="w-12 h-12 object-cover rounded-xl border border-slate-200"
+                            />
+                            <div>
+                              <div className="text-xs font-black text-slate-900 font-heading uppercase line-clamp-1">
+                                {item.product.name}
+                              </div>
+                              <div className="text-[10px] text-blue-600 font-bold">{item.product.brand}</div>
+                            </div>
+                          </div>
+
+                          <div className="flex items-center gap-3">
+                            {/* Quantity Controls */}
+                            <div className="flex items-center bg-slate-100 rounded-lg border border-slate-200 p-0.5">
+                              <button
+                                onClick={() => updateEnquiryCartQuantity(item.product.id, item.quantity - 1)}
+                                className="px-2 text-xs font-bold text-slate-600"
+                              >
+                                -
+                              </button>
+                              <span className="w-6 text-center text-xs font-black">{item.quantity}</span>
+                              <button
+                                onClick={() => updateEnquiryCartQuantity(item.product.id, item.quantity + 1)}
+                                className="px-2 text-xs font-bold text-slate-600"
+                              >
+                                +
+                              </button>
+                            </div>
+
+                            <button
+                              onClick={() => removeFromEnquiryCart(item.product.id)}
+                              className="text-slate-400 hover:text-rose-600 p-1"
+                            >
+                              <Trash2 className="w-4 h-4" />
+                            </button>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  )}
+                </div>
+
+                {/* Structured Business Enquiry Form */}
+                {enquiryCart.length > 0 && (
+                  <form onSubmit={handleSubmit} className="space-y-4 pt-4 border-t border-slate-200">
+                    <div className="text-xs font-black text-slate-900 font-heading uppercase">
+                      Fill Business Details For Quotation
                     </div>
 
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                    <div>
+                      <label className="text-[10px] font-bold text-slate-600 uppercase block mb-1">
+                        Your Full Name *
+                      </label>
+                      <input
+                        type="text"
+                        required
+                        placeholder="e.g. Vikram Singhania"
+                        value={formState.name}
+                        onChange={e => setFormState({ ...formState, name: e.target.value })}
+                        className="w-full bg-slate-50 border border-slate-200 rounded-xl p-2.5 text-xs text-slate-900 focus:outline-none focus:border-blue-600"
+                      />
+                    </div>
+
+                    <div className="grid grid-cols-2 gap-3">
                       <div>
-                        <label className="text-[10px] font-bold text-slate-600 uppercase font-mono block mb-1">
-                          Full Name *
+                        <label className="text-[10px] font-bold text-slate-600 uppercase block mb-1">
+                          Gym / Company Name *
                         </label>
                         <input
                           type="text"
                           required
-                          placeholder="e.g. Vikram Singhania"
-                          value={formData.name}
-                          onChange={e => setFormData({ ...formData, name: e.target.value })}
-                          className="w-full bg-slate-50 border border-slate-200 rounded-xl p-2.5 text-xs font-medium text-slate-900 focus:outline-none focus:border-blue-600"
+                          placeholder="Apex Fitness"
+                          value={formState.companyGymName}
+                          onChange={e => setFormState({ ...formState, companyGymName: e.target.value })}
+                          className="w-full bg-slate-50 border border-slate-200 rounded-xl p-2.5 text-xs text-slate-900 focus:outline-none focus:border-blue-600"
                         />
                       </div>
 
                       <div>
-                        <label className="text-[10px] font-bold text-slate-600 uppercase font-mono block mb-1">
-                          Company / Gym Name *
-                        </label>
-                        <input
-                          type="text"
-                          required
-                          placeholder="e.g. Apex Fitness Club"
-                          value={formData.companyGymName}
-                          onChange={e => setFormData({ ...formData, companyGymName: e.target.value })}
-                          className="w-full bg-slate-50 border border-slate-200 rounded-xl p-2.5 text-xs font-medium text-slate-900 focus:outline-none focus:border-blue-600"
-                        />
-                      </div>
-                    </div>
-
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                      <div>
-                        <label className="text-[10px] font-bold text-slate-600 uppercase font-mono block mb-1">
-                          Mobile Number (WhatsApp) *
+                        <label className="text-[10px] font-bold text-slate-600 uppercase block mb-1">
+                          Mobile (WhatsApp) *
                         </label>
                         <input
                           type="tel"
                           required
                           placeholder="+91 98765 43210"
-                          value={formData.mobile}
-                          onChange={e => setFormData({ ...formData, mobile: e.target.value })}
-                          className="w-full bg-slate-50 border border-slate-200 rounded-xl p-2.5 text-xs font-medium text-slate-900 focus:outline-none focus:border-blue-600"
+                          value={formState.mobile}
+                          onChange={e => setFormState({ ...formState, mobile: e.target.value })}
+                          className="w-full bg-slate-50 border border-slate-200 rounded-xl p-2.5 text-xs text-slate-900 focus:outline-none focus:border-blue-600"
                         />
                       </div>
+                    </div>
 
+                    <div className="grid grid-cols-2 gap-3">
                       <div>
-                        <label className="text-[10px] font-bold text-slate-600 uppercase font-mono block mb-1">
+                        <label className="text-[10px] font-bold text-slate-600 uppercase block mb-1">
                           Business Email
                         </label>
                         <input
                           type="email"
-                          placeholder="vikram@apexfitness.com"
-                          value={formData.email}
-                          onChange={e => setFormData({ ...formData, email: e.target.value })}
-                          className="w-full bg-slate-50 border border-slate-200 rounded-xl p-2.5 text-xs font-medium text-slate-900 focus:outline-none focus:border-blue-600"
+                          placeholder="vikram@apex.com"
+                          value={formState.email}
+                          onChange={e => setFormState({ ...formState, email: e.target.value })}
+                          className="w-full bg-slate-50 border border-slate-200 rounded-xl p-2.5 text-xs text-slate-900 focus:outline-none focus:border-blue-600"
+                        />
+                      </div>
+
+                      <div>
+                        <label className="text-[10px] font-bold text-slate-600 uppercase block mb-1">
+                          Facility City
+                        </label>
+                        <input
+                          type="text"
+                          placeholder="Gurugram / Mumbai"
+                          value={formState.city}
+                          onChange={e => setFormState({ ...formState, city: e.target.value })}
+                          className="w-full bg-slate-50 border border-slate-200 rounded-xl p-2.5 text-xs text-slate-900 focus:outline-none focus:border-blue-600"
                         />
                       </div>
                     </div>
 
                     <div>
-                      <label className="text-[10px] font-bold text-slate-600 uppercase font-mono block mb-1">
-                        City / Location
+                      <label className="text-[10px] font-bold text-slate-600 uppercase block mb-1">
+                        Installation Timeframe
                       </label>
-                      <input
-                        type="text"
-                        placeholder="e.g. Mumbai, Maharashtra"
-                        value={formData.city}
-                        onChange={e => setFormData({ ...formData, city: e.target.value })}
-                        className="w-full bg-slate-50 border border-slate-200 rounded-xl p-2.5 text-xs font-medium text-slate-900 focus:outline-none focus:border-blue-600"
-                      />
+                      <select
+                        value={formState.timeframe}
+                        onChange={e => setFormState({ ...formState, timeframe: e.target.value })}
+                        className="w-full bg-slate-50 border border-slate-200 rounded-xl p-2.5 text-xs text-slate-900 font-bold focus:outline-none focus:border-blue-600"
+                      >
+                        <option value="Immediate (Within 15 days)">Immediate (Within 15 days)</option>
+                        <option value="1 to 2 Months">1 to 2 Months</option>
+                        <option value="3+ Months (Planning Stage)">3+ Months (Planning Stage)</option>
+                      </select>
                     </div>
 
                     <div>
-                      <label className="text-[10px] font-bold text-slate-600 uppercase font-mono block mb-1">
-                        Special Requirements / Customization Notes
+                      <label className="text-[10px] font-bold text-slate-600 uppercase block mb-1">
+                        Special Specs / Layout Requirements
                       </label>
                       <textarea
                         rows={2}
-                        placeholder="Specify color preferences, installation timeline, or bulk freight requests..."
-                        value={formData.requirements}
-                        onChange={e => setFormData({ ...formData, requirements: e.target.value })}
-                        className="w-full bg-slate-50 border border-slate-200 rounded-xl p-2.5 text-xs font-medium text-slate-900 focus:outline-none focus:border-blue-600"
+                        placeholder="Mention color preferences, custom steel plate thickness, or flooring sq.ft..."
+                        value={formState.requirements}
+                        onChange={e => setFormState({ ...formState, requirements: e.target.value })}
+                        className="w-full bg-slate-50 border border-slate-200 rounded-xl p-2.5 text-xs text-slate-900 focus:outline-none focus:border-blue-600"
                       />
                     </div>
 
                     <button
                       type="submit"
-                      disabled={isSubmitting}
-                      className="w-full py-4 px-6 rounded-xl bg-blue-600 hover:bg-blue-700 text-white font-black text-xs uppercase tracking-wider font-mono flex items-center justify-center gap-2 shadow-lg transition-all"
+                      className="w-full py-4 px-6 rounded-xl bg-blue-600 hover:bg-blue-700 text-white font-black text-xs uppercase tracking-wider flex items-center justify-center gap-2 shadow-lg transition-all"
                     >
                       <Send className="w-4 h-4" />
-                      <span>{isSubmitting ? 'Submitting Request...' : 'Click Request Quotation'}</span>
+                      <span>Request Official RFQ Quotation</span>
                     </button>
                   </form>
-                </>
-              )}
-            </div>
-          </motion.div>
-        </div>
+                )}
+              </>
+            )}
+          </div>
+        </motion.div>
       </div>
     </AnimatePresence>
   );

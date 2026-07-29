@@ -10,6 +10,8 @@ export interface BusinessService {
   category: string;
   shortDesc: string;
   overview: string;
+  whatsIncluded?: string[];
+  deliverables?: string[];
   benefits: string[];
   portfolioItems: { title: string; image: string }[];
   caseStudies: ServiceCaseStudy[];
