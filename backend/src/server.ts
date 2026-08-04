@@ -1,0 +1,97 @@
+import express, { Application, Request, Response, Router } from 'express';
+import helmet from 'helmet';
+import cors from 'cors';
+import rateLimit from 'express-rate-limit';
+import path from 'path';
+import { env } from './config/env';
+import { logger } from './config/logger';
+import { connectDatabase, disconnectDatabase } from './config/database';
+import { HTTP_STATUS, SYSTEM_MESSAGES } from './config/constants';
+import { ApiResponse } from './utils/apiResponse';
+import { notFoundHandler } from './middlewares/notFound';
+import { errorHandler } from './middlewares/errorHandler';
+
+const app: Application = express();
+
+// 1. Security Middlewares
+app.use(helmet());
+
+const allowedOrigins = env.CORS_ORIGIN.split(',').map(o => o.trim());
+app.use(
+  cors({
+    origin: (origin, callback) => {
+      if (!origin || allowedOrigins.includes('*') || allowedOrigins.includes(origin)) {
+        callback(null, true);
+      } else {
+        callback(new Error(`Origin ${origin} not allowed by CORS`));
+      }
+    },
+    credentials: true,
+  })
+);
+
+// 2. Rate Limiting (100 requests per 15 minutes per IP)
+const limiter = rateLimit({
+  windowMs: 15 * 60 * 1000,
+  max: 100,
+  message: {
+    success: false,
+    message: 'Too many requests from this IP, please try again after 15 minutes',
+  },
+  standardHeaders: true,
+  legacyHeaders: false,
+});
+app.use('/api', limiter);
+
+// 3. Body Parsing & Static Uploads
+app.use(express.json({ limit: '10mb' }));
+app.use(express.urlencoded({ extended: true, limit: '10mb' }));
+app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
+
+// 4. API Versioning Router (/api/v1)
+const v1Router = Router();
+
+v1Router.get('/health', (_req: Request, res: Response) => {
+  return ApiResponse.success(res, SYSTEM_MESSAGES.SERVER_HEALTHY, {
+    environment: env.NODE_ENV,
+    uptime: process.uptime(),
+    timestamp: new Date().toISOString(),
+  });
+});
+
+// Mount /api/v1
+app.use('/api/v1', v1Router);
+
+// 5. 404 & Centralized Error Handler
+app.use(notFoundHandler);
+app.use(errorHandler);
+
+// 6. Server Initialization Lifecycle
+const startServer = async (): Promise<void> => {
+  await connectDatabase();
+
+  const server = app.listen(env.PORT, () => {
+    logger.info(
+      `🚀 Tanush Fitness B2B Backend Server running in [${env.NODE_ENV}] mode on port ${env.PORT}`
+    );
+    logger.info(`🔗 Health Check Endpoint: http://localhost:${env.PORT}/api/v1/health`);
+  });
+
+  const gracefulShutdown = async (signal: string) => {
+    logger.info(`Received ${signal}. Shutting down backend gracefully...`);
+    server.close(async () => {
+      await disconnectDatabase();
+      logger.info('👋 Express HTTP server closed.');
+      process.exit(0);
+    });
+  };
+
+  process.on('SIGTERM', () => gracefulShutdown('SIGTERM'));
+  process.on('SIGINT', () => gracefulShutdown('SIGINT'));
+};
+
+if (process.env.NODE_ENV !== 'test') {
+  startServer();
+}
+
+export default app;
