@@ -87,6 +87,24 @@ model User {
   jobSeekerProfile JobSeeker?
   notifications    Notification[]
   refreshTokens    RefreshToken[]
+  auditLogs        AuditLog[]
+  uploadedMedia    Media[]
+
+  // Inverse relations for createdBy/updatedBy
+  usersCreated             User[]              @relation("UserCreatedBy")
+  usersUpdated             User[]              @relation("UserUpdatedBy")
+  categoriesCreated        EquipmentCategory[] @relation("CategoryCreatedBy")
+  categoriesUpdated        EquipmentCategory[] @relation("CategoryUpdatedBy")
+  productsCreated          Product[]           @relation("ProductCreatedBy")
+  productsUpdated          Product[]           @relation("ProductUpdatedBy")
+  enquiriesCreated         EquipmentEnquiry[]  @relation("EnquiryCreatedBy")
+  enquiriesUpdated         EquipmentEnquiry[]  @relation("EnquiryUpdatedBy")
+  servicesCreated          BusinessService[]   @relation("ServiceCreatedBy")
+  servicesUpdated          BusinessService[]   @relation("ServiceUpdatedBy")
+  serviceEnquiriesCreated  ServiceEnquiry[]    @relation("ServiceEnquiryCreatedBy")
+  serviceEnquiriesUpdated  ServiceEnquiry[]    @relation("ServiceEnquiryUpdatedBy")
+  jobsCreated              Job[]               @relation("JobCreatedBy")
+  jobsUpdated              Job[]               @relation("JobUpdatedBy")
 
   // audit tracking (self‑referencing optional)
   createdById      String?
