@@ -1,5 +1,5 @@
-// Prisma Schema for Tanush Fitness B2B Enterprise Backend
-// Provider: PostgreSQL (Supabase Compatible)
+// Updated Prisma schema per new requirements
+// src/prisma/schema.prisma
 
 generator client {
   provider = "prisma-client-js"
@@ -22,16 +22,18 @@ enum UserRole {
 }
 
 enum EnquiryStatus {
-  NEW_RFQ
-  IN_PROGRESS
+  NEW
+  IN_REVIEW
   QUOTATION_SENT
-  CLOSED
+  NEGOTIATING
+  APPROVED
   REJECTED
+  CLOSED
 }
 
 enum ServiceStatus {
   NEW
-  IN_TOUCH
+  IN_REVIEW
   COMPLETED
   CANCELLED
 }
@@ -47,6 +49,20 @@ enum JobType {
   FULL_TIME
   PART_TIME
   CONTRACT
+}
+
+enum NotificationType {
+  RFQ
+  JOB
+  SERVICE
+  CONTACT
+  SYSTEM
+}
+
+enum NotificationPriority {
+  LOW
+  MEDIUM
+  HIGH
 }
 
 // --------------------------------------------------------
@@ -70,6 +86,13 @@ model User {
   gymOwnerProfile  GymOwner?
   jobSeekerProfile JobSeeker?
   notifications    Notification[]
+  refreshTokens    RefreshToken[]
+
+  // audit tracking (self‑referencing optional)
+  createdById      String?
+  createdBy        User?       @relation("UserCreatedBy", fields: [createdById], references: [id])
+  updatedById      String?
+  updatedBy        User?       @relation("UserUpdatedBy", fields: [updatedById], references: [id])
 
   @@index([email])
   @@index([role])
@@ -87,8 +110,8 @@ model GymOwner {
   createdAt   DateTime @default(now())
   updatedAt   DateTime @updatedAt
 
-  enquiries EquipmentEnquiry[]
-  jobs      Job[]
+  enquiries   EquipmentEnquiry[]
+  jobs        Job[]
 
   @@index([companyName])
 }
@@ -108,7 +131,7 @@ model JobSeeker {
   createdAt       DateTime @default(now())
   updatedAt       DateTime @updatedAt
 
-  applications JobApplication[]
+  applications    JobApplication[]
 
   @@index([fullName])
 }
@@ -130,6 +153,12 @@ model EquipmentCategory {
   updatedAt   DateTime  @updatedAt
 
   products Product[]
+
+  // audit tracking
+  createdById String?
+  createdBy   User?    @relation("CategoryCreatedBy", fields: [createdById], references: [id])
+  updatedById String?
+  updatedBy   User?    @relation("CategoryUpdatedBy", fields: [updatedById], references: [id])
 
   @@index([slug])
 }
@@ -160,6 +189,12 @@ model Product {
 
   images       ProductImage[]
   enquiryItems EquipmentEnquiryItem[]
+
+  // audit tracking
+  createdById String?
+  createdBy   User?    @relation("ProductCreatedBy", fields: [createdById], references: [id])
+  updatedById String?
+  updatedBy   User?    @relation("ProductUpdatedBy", fields: [updatedById], references: [id])
 
   @@index([brand])
   @@index([categoryId])
@@ -194,12 +229,18 @@ model EquipmentEnquiry {
   city           String?
   timeframe      String?       @default("Immediate")
   requirements   String?
-  status         EnquiryStatus @default(NEW_RFQ)
+  status         EnquiryStatus @default(NEW)
   deletedAt      DateTime?
   createdAt      DateTime      @default(now())
   updatedAt      DateTime      @updatedAt
 
   items EquipmentEnquiryItem[]
+
+  // audit tracking
+  createdById String?
+  createdBy   User?    @relation("EnquiryCreatedBy", fields: [createdById], references: [id])
+  updatedById String?
+  updatedBy   User?    @relation("EnquiryUpdatedBy", fields: [updatedById], references: [id])
 
   @@index([rfqReference])
   @@index([mobile])
@@ -241,6 +282,12 @@ model BusinessService {
 
   enquiries ServiceEnquiry[]
 
+  // audit tracking
+  createdById String?
+  createdBy   User?    @relation("ServiceCreatedBy", fields: [createdById], references: [id])
+  updatedById String?
+  updatedBy   User?    @relation("ServiceUpdatedBy", fields: [updatedById], references: [id])
+
   @@index([slug])
   @@index([category])
 }
@@ -259,6 +306,12 @@ model ServiceEnquiry {
   deletedAt              DateTime?
   createdAt              DateTime        @default(now())
   updatedAt              DateTime        @updatedAt
+
+  // audit tracking
+  createdById String?
+  createdBy   User?    @relation("ServiceEnquiryCreatedBy", fields: [createdById], references: [id])
+  updatedById String?
+  updatedBy   User?    @relation("ServiceEnquiryUpdatedBy", fields: [updatedById], references: [id])
 
   @@index([mobile])
   @@index([status])
@@ -289,6 +342,12 @@ model Job {
   updatedAt         DateTime  @updatedAt
 
   applications JobApplication[]
+
+  // audit tracking
+  createdById String?
+  createdBy   User?    @relation("JobCreatedBy", fields: [createdById], references: [id])
+  updatedById String?
+  updatedBy   User?    @relation("JobUpdatedBy", fields: [updatedById], references: [id])
 
   @@index([slug])
   @@index([category])
@@ -345,12 +404,14 @@ model Notification {
   user      User?    @relation(fields: [userId], references: [id], onDelete: Cascade)
   title     String
   message   String
-  type      String   @default("info") // 'rfq', 'application', 'service', 'info'
+  type      NotificationType @default(SYSTEM)
+  priority  NotificationPriority @default(MEDIUM)
   isRead    Boolean  @default(false)
   createdAt DateTime @default(now())
 
   @@index([userId])
   @@index([isRead])
+  @@index([type])
 }
 
 model Testimonial {
@@ -369,9 +430,60 @@ model Testimonial {
 model Setting {
   id          String   @id @default(uuid())
   key         String   @unique
-  value       String
+  value       Json
   description String?
   updatedAt   DateTime @updatedAt
 
   @@index([key])
+}
+
+// --------------------------------------------------------
+// 7. AUTHENTICATION - REFRESH TOKEN
+// --------------------------------------------------------
+
+model RefreshToken {
+  id        String   @id @default(uuid())
+  token     String   @unique
+  userId    String
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  expiresAt DateTime
+  revoked   Boolean  @default(false)
+  createdAt DateTime @default(now())
+
+  @@index([userId])
+  @@index([expiresAt])
+}
+
+// --------------------------------------------------------
+// 8. AUDIT LOG
+// --------------------------------------------------------
+
+model AuditLog {
+  id        String   @id @default(uuid())
+  adminId   String
+  admin     User     @relation(fields: [adminId], references: [id], onDelete: Cascade)
+  action    String
+  entity    String
+  entityId  String
+  createdAt DateTime @default(now())
+
+  @@index([adminId])
+  @@index([entity])
+}
+
+// --------------------------------------------------------
+// 9. REUSABLE MEDIA
+// --------------------------------------------------------
+
+model Media {
+  id        String   @id @default(uuid())
+  url       String
+  publicId  String?
+  mimeType  String
+  size      Int
+  uploadedBy String?
+  uploadedByUser User? @relation(fields: [uploadedBy], references: [id], onDelete: SetNull)
+  createdAt DateTime @default(now())
+
+  @@index([uploadedBy])
 }
