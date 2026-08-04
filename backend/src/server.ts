@@ -11,7 +11,12 @@ import { SYSTEM_MESSAGES } from './config/constants';
 import { ApiResponse } from './utils/apiResponse';
 import { notFoundHandler } from './middlewares/notFound';
 import { errorHandler } from './middlewares/errorHandler';
+
 import authRouter from './modules/auth/auth.routes';
+import equipmentRouter from './modules/equipment/equipment.routes';
+import servicesRouter from './modules/services/services.routes';
+import jobsRouter from './modules/jobs/jobs.routes';
+import adminRouter from './modules/admin/admin.routes';
 
 const app: Application = express();
 
@@ -64,6 +69,10 @@ v1Router.get('/health', (_req: Request, res: Response) => {
 
 // Feature Modules Routing
 v1Router.use('/auth', authRouter);
+v1Router.use('/equipment', equipmentRouter);
+v1Router.use('/services', servicesRouter);
+v1Router.use('/jobs', jobsRouter);
+v1Router.use('/admin', adminRouter);
 
 // Mount /api/v1
 app.use('/api/v1', v1Router);
@@ -81,7 +90,11 @@ const startServer = async (): Promise<void> => {
       `🚀 Tanush Fitness B2B Backend Server running in [${env.NODE_ENV}] mode on port ${env.PORT}`
     );
     logger.info(`🔗 Health Check Endpoint: http://localhost:${env.PORT}/api/v1/health`);
-    logger.info(`🔑 Auth Endpoint Base: http://localhost:${env.PORT}/api/v1/auth`);
+    logger.info(`🔑 Auth API: http://localhost:${env.PORT}/api/v1/auth`);
+    logger.info(`🏋️ Equipment API: http://localhost:${env.PORT}/api/v1/equipment`);
+    logger.info(`🛠️ Business Services API: http://localhost:${env.PORT}/api/v1/services`);
+    logger.info(`💼 Fitness Careers API: http://localhost:${env.PORT}/api/v1/jobs`);
+    logger.info(`🛡️ Admin API: http://localhost:${env.PORT}/api/v1/admin`);
   });
 
   const gracefulShutdown = async (signal: string) => {
