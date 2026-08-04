@@ -12,11 +12,22 @@ import {
   Menu,
   X,
   Sparkles,
-  Search
+  Search,
+  User,
+  LogOut,
+  LogIn
 } from 'lucide-react';
 
 export const Navbar: React.FC = () => {
-  const { currentPage, navigateTo, enquiryCart, setIsEnquiryCartOpen } = useApp();
+  const {
+    currentPage,
+    navigateTo,
+    enquiryCart,
+    setIsEnquiryCartOpen,
+    currentUser,
+    openAuthModal,
+    logoutUser,
+  } = useApp();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [isSearchOpen, setIsSearchOpen] = useState(false);
 
@@ -76,7 +87,7 @@ export const Navbar: React.FC = () => {
               })}
             </nav>
 
-            {/* Right Action Controls: Global Search + Enquiry Cart */}
+            {/* Right Action Controls: Global Search + User Profile + Enquiry Cart */}
             <div className="flex items-center gap-2 sm:gap-3">
               {/* Global Search Button Trigger */}
               <button
@@ -87,6 +98,38 @@ export const Navbar: React.FC = () => {
                 <Search className="w-4 h-4 text-blue-600" />
                 <span className="hidden sm:inline uppercase text-[11px]">Search</span>
               </button>
+
+              {/* User Account / Auth Trigger */}
+              {currentUser ? (
+                <div className="flex items-center gap-1.5 bg-slate-100 p-1.5 pr-3 rounded-xl border border-slate-200 text-xs font-mono">
+                  <div className="w-7 h-7 rounded-lg bg-blue-600 text-white font-bold flex items-center justify-center text-xs uppercase">
+                    {currentUser.role === 'GYM_OWNER' ? 'GO' : 'JS'}
+                  </div>
+                  <div className="hidden md:block text-left leading-tight">
+                    <div className="font-bold text-slate-900 truncate max-w-[100px]">
+                      {currentUser.name || currentUser.email.split('@')[0]}
+                    </div>
+                    <div className="text-[9px] font-bold text-blue-600 uppercase">
+                      {currentUser.role === 'GYM_OWNER' ? 'Gym Owner' : 'Job Seeker'}
+                    </div>
+                  </div>
+                  <button
+                    onClick={logoutUser}
+                    className="p-1 text-slate-400 hover:text-rose-600 transition-colors ml-1"
+                    title="Logout"
+                  >
+                    <LogOut className="w-4 h-4" />
+                  </button>
+                </div>
+              ) : (
+                <button
+                  onClick={() => openAuthModal('GYM_OWNER')}
+                  className="p-2.5 px-3 rounded-xl bg-slate-100 border border-slate-200 hover:bg-slate-200 text-slate-900 font-mono text-xs font-bold flex items-center gap-1.5 transition-all"
+                >
+                  <LogIn className="w-4 h-4 text-blue-600" />
+                  <span className="hidden sm:inline uppercase text-[11px]">Login</span>
+                </button>
+              )}
 
               {/* Enquiry Cart Trigger */}
               <button

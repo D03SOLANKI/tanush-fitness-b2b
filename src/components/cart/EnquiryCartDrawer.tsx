@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useApp } from '../../context/AppContext';
-import { X, Trash2, Send, ShieldCheck, Dumbbell, ArrowRight, Building2, CheckCircle2 } from 'lucide-react';
+import { X, Trash2, Send, Dumbbell, CheckCircle2, Lock, AlertCircle } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 export const EnquiryCartDrawer: React.FC = () => {
@@ -11,6 +11,9 @@ export const EnquiryCartDrawer: React.FC = () => {
     removeFromEnquiryCart,
     updateEnquiryCartQuantity,
     submitEquipmentEnquiry,
+    currentUser,
+    openAuthModal,
+    showToast,
   } = useApp();
 
   const [formState, setFormState] = useState({
@@ -25,26 +28,57 @@ export const EnquiryCartDrawer: React.FC = () => {
 
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [rfqRef, setRfqRef] = useState('');
+  const [submitting, setSubmitting] = useState(false);
+
+  // Auto-fill form when user logs in
+  useEffect(() => {
+    if (currentUser) {
+      setFormState(prev => ({
+        ...prev,
+        name: currentUser.name || prev.name,
+        email: currentUser.email || prev.email,
+        mobile: currentUser.mobile || prev.mobile,
+        companyGymName: currentUser.gymOwnerProfile?.companyName || prev.companyGymName,
+        city: currentUser.city || currentUser.gymOwnerProfile?.city || prev.city,
+      }));
+    }
+  }, [currentUser]);
 
   const totalQuantity = enquiryCart.reduce((sum, item) => sum + item.quantity, 0);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
+    // 1. Auth Gate Check
+    if (!currentUser) {
+      openAuthModal(
+        'GYM_OWNER',
+        'Login or Register as a Gym Owner to request official B2B RFQ quotations'
+      );
+      return;
+    }
+
+    // 2. Role Gate Check
+    if (currentUser.role !== 'GYM_OWNER') {
+      showToast('Only Gym Owners can submit equipment enquiries.', 'error');
+      return;
+    }
+
     if (!formState.name || !formState.mobile || !formState.companyGymName) {
-      alert('Please fill in your Full Name, Gym/Company Name, and Mobile Number.');
+      showToast('Please fill in your Full Name, Gym/Company Name, and Mobile Number.', 'error');
       return;
     }
 
     if (enquiryCart.length === 0) {
-      alert('Your Enquiry Cart is empty. Please add products first.');
+      showToast('Your Enquiry Cart is empty. Please add products first.', 'error');
       return;
     }
 
+    setSubmitting(true);
     const newRfqRef = `RFQ-2026-${Math.floor(1000 + Math.random() * 9000)}`;
     setRfqRef(newRfqRef);
 
-    submitEquipmentEnquiry({
+    const success = await submitEquipmentEnquiry({
       rfqReference: newRfqRef,
       name: formState.name,
       companyGymName: formState.companyGymName,
@@ -53,14 +87,12 @@ export const EnquiryCartDrawer: React.FC = () => {
       city: formState.city,
       requirements: formState.requirements,
       timeframe: formState.timeframe,
-      selectedProducts: enquiryCart.map(item => ({
-        id: item.product.id,
-        name: item.product.name,
-        quantity: item.quantity,
-      })),
     });
 
-    setIsSubmitted(true);
+    setSubmitting(false);
+    if (success) {
+      setIsSubmitted(true);
+    }
   };
 
   if (!isEnquiryCartOpen) return null;
@@ -112,7 +144,7 @@ export const EnquiryCartDrawer: React.FC = () => {
                 </div>
                 <div>
                   <span className="text-[10px] font-bold text-blue-600 uppercase font-mono">
-                    RFQ SUMMARY GENERATED
+                    RFQ SUMMARY GENERATED & SAVED IN SUPABASE
                   </span>
                   <h3 className="text-xl font-black font-heading uppercase mt-0.5">
                     Quotation Request Sent!
@@ -205,11 +237,42 @@ export const EnquiryCartDrawer: React.FC = () => {
                   )}
                 </div>
 
+                {/* Authentication Banner if Guest */}
+                {!currentUser && enquiryCart.length > 0 && (
+                  <div className="p-4 rounded-2xl bg-amber-50 border border-amber-200 text-amber-900 text-xs flex items-start gap-3">
+                    <Lock className="w-4 h-4 text-amber-600 shrink-0 mt-0.5" />
+                    <div>
+                      <div className="font-bold uppercase text-[11px]">Gym Owner Login Required</div>
+                      <div className="text-[11px] text-amber-800 mt-0.5 leading-snug">
+                        You can build your cart freely! Clicking "Request Quotation" below will prompt login/registration as a Gym Owner to process your B2B quotation.
+                      </div>
+                    </div>
+                  </div>
+                )}
+
+                {/* Role Warning if Logged in as Job Seeker */}
+                {currentUser && currentUser.role !== 'GYM_OWNER' && enquiryCart.length > 0 && (
+                  <div className="p-4 rounded-2xl bg-rose-50 border border-rose-200 text-rose-900 text-xs flex items-start gap-3">
+                    <AlertCircle className="w-4 h-4 text-rose-600 shrink-0 mt-0.5" />
+                    <div>
+                      <div className="font-bold uppercase text-[11px]">Job Seeker Account Detected</div>
+                      <div className="text-[11px] text-rose-800 mt-0.5 leading-snug">
+                        Only Gym Owners can submit commercial equipment RFQ enquiries. Please log in with a Gym Owner account.
+                      </div>
+                    </div>
+                  </div>
+                )}
+
                 {/* Structured Business Enquiry Form */}
                 {enquiryCart.length > 0 && (
                   <form onSubmit={handleSubmit} className="space-y-4 pt-4 border-t border-slate-200">
-                    <div className="text-xs font-black text-slate-900 font-heading uppercase">
-                      Fill Business Details For Quotation
+                    <div className="text-xs font-black text-slate-900 font-heading uppercase flex items-center justify-between">
+                      <span>Fill Business Details For Quotation</span>
+                      {currentUser && (
+                        <span className="text-[10px] text-blue-600 font-bold font-mono">
+                          Logged in: {currentUser.name || currentUser.email}
+                        </span>
+                      )}
                     </div>
 
                     <div>
@@ -314,10 +377,11 @@ export const EnquiryCartDrawer: React.FC = () => {
 
                     <button
                       type="submit"
-                      className="w-full py-4 px-6 rounded-xl bg-blue-600 hover:bg-blue-700 text-white font-black text-xs uppercase tracking-wider flex items-center justify-center gap-2 shadow-lg transition-all"
+                      disabled={submitting}
+                      className="w-full py-4 px-6 rounded-xl bg-blue-600 hover:bg-blue-700 text-white font-black text-xs uppercase tracking-wider flex items-center justify-center gap-2 shadow-lg transition-all disabled:opacity-50"
                     >
                       <Send className="w-4 h-4" />
-                      <span>Request Official RFQ Quotation</span>
+                      <span>{submitting ? 'Submitting to Backend...' : 'Request Official RFQ Quotation'}</span>
                     </button>
                   </form>
                 )}
