@@ -11,8 +11,18 @@ const envSchema = z.object({
   SUPABASE_URL: z.string().default('https://lpnfwludlkygysxtohkw.supabase.co'),
   SUPABASE_ANON_KEY: z.string().optional(),
   SUPABASE_SERVICE_ROLE_KEY: z.string().optional(),
-  JWT_SECRET: z.string({ required_error: 'JWT_SECRET is required' }).min(16).default('tanush-fitness-super-secret-jwt-key-32chars'),
+  
+  // JWT & Auth Settings
+  JWT_SECRET: z.string().min(16).default('tanush-fitness-super-secret-jwt-key-32chars'),
   JWT_EXPIRES_IN: z.string().default('7d'),
+  ACCESS_TOKEN_SECRET: z.string().min(16).default('tanush-fitness-access-token-secret-32chars-min'),
+  REFRESH_TOKEN_SECRET: z.string().min(16).default('tanush-fitness-refresh-token-secret-32chars-min'),
+  ACCESS_TOKEN_EXPIRES_IN: z.string().default('15m'),
+  REFRESH_TOKEN_EXPIRES_IN: z.string().default('30d'),
+  BCRYPT_ROUNDS: z.string().default('12').transform(val => parseInt(val, 10)),
+  COOKIE_SECRET: z.string().default('tanush-fitness-cookie-secret-key-32chars'),
+  FRONTEND_URL: z.string().default('http://localhost:5173'),
+
   CORS_ORIGIN: z.string().default('*'),
   CLOUDINARY_CLOUD_NAME: z.string().optional(),
   CLOUDINARY_API_KEY: z.string().optional(),

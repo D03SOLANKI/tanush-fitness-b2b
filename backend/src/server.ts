@@ -1,15 +1,17 @@
 import express, { Application, Request, Response, Router } from 'express';
 import helmet from 'helmet';
 import cors from 'cors';
+import cookieParser from 'cookie-parser';
 import rateLimit from 'express-rate-limit';
 import path from 'path';
 import { env } from './config/env';
 import { logger } from './config/logger';
 import { connectDatabase, disconnectDatabase } from './config/database';
-import { HTTP_STATUS, SYSTEM_MESSAGES } from './config/constants';
+import { SYSTEM_MESSAGES } from './config/constants';
 import { ApiResponse } from './utils/apiResponse';
 import { notFoundHandler } from './middlewares/notFound';
 import { errorHandler } from './middlewares/errorHandler';
+import authRouter from './modules/auth/auth.routes';
 
 const app: Application = express();
 
@@ -43,9 +45,10 @@ const limiter = rateLimit({
 });
 app.use('/api', limiter);
 
-// 3. Body Parsing & Static Uploads
+// 3. Body & Cookie Parsing & Static Uploads
 app.use(express.json({ limit: '10mb' }));
 app.use(express.urlencoded({ extended: true, limit: '10mb' }));
+app.use(cookieParser(env.COOKIE_SECRET));
 app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 
 // 4. API Versioning Router (/api/v1)
@@ -58,6 +61,9 @@ v1Router.get('/health', (_req: Request, res: Response) => {
     timestamp: new Date().toISOString(),
   });
 });
+
+// Feature Modules Routing
+v1Router.use('/auth', authRouter);
 
 // Mount /api/v1
 app.use('/api/v1', v1Router);
@@ -75,6 +81,7 @@ const startServer = async (): Promise<void> => {
       `🚀 Tanush Fitness B2B Backend Server running in [${env.NODE_ENV}] mode on port ${env.PORT}`
     );
     logger.info(`🔗 Health Check Endpoint: http://localhost:${env.PORT}/api/v1/health`);
+    logger.info(`🔑 Auth Endpoint Base: http://localhost:${env.PORT}/api/v1/auth`);
   });
 
   const gracefulShutdown = async (signal: string) => {
