@@ -11,18 +11,18 @@ interface GlobalSearchModalProps {
 }
 
 export const GlobalSearchModal: React.FC<GlobalSearchModalProps> = ({ isOpen, onClose }) => {
-  const { navigateTo, jobListings } = useApp();
+  const { products, navigateTo, jobListings } = useApp();
   const [query, setQuery] = useState('');
 
   const searchResults = useMemo(() => {
     if (!query.trim()) return { products: [], jobs: [], services: [] };
     const q = query.toLowerCase();
 
-    const matchingProducts = PRODUCTS.filter(
+    const matchingProducts = products.filter(
       p =>
         p.name.toLowerCase().includes(q) ||
         p.brand.toLowerCase().includes(q) ||
-        p.category.toLowerCase().includes(q)
+        p.category?.toLowerCase().includes(q)
     ).slice(0, 4);
 
     const matchingJobs = jobListings.filter(

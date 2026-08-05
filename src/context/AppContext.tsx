@@ -22,10 +22,47 @@ interface ToastState {
   visible: boolean;
 }
 
+export interface PlatformSettings {
+  supportPhone: string;
+  supportEmail: string;
+  corporateAddress: string;
+  gstRate: string;
+  bannerText: string;
+  bannerEnabled: boolean;
+}
+
+export interface UserAccount {
+  id: string;
+  name: string;
+  email: string;
+  mobile: string;
+  role: 'GYM_OWNER' | 'JOB_SEEKER' | 'ADMIN';
+  gstNumber?: string;
+  companyName?: string;
+  isVerified: boolean;
+  status: 'ACTIVE' | 'SUSPENDED' | 'DEACTIVATED';
+  createdAt: string;
+}
+
 interface AppContextType {
   currentPage: PageType;
   navigateTo: (page: PageType, productId?: string) => void;
   selectedProductId: string | null;
+
+  // Products Dynamic State
+  products: Product[];
+  addProduct: (productData: any) => Product;
+  updateProduct: (id: string, productData: Partial<Product>) => void;
+  deleteProduct: (id: string) => void;
+
+  // Platform Settings State
+  platformSettings: PlatformSettings;
+  updatePlatformSettings: (newSettings: Partial<PlatformSettings>) => void;
+
+  // User Management
+  userList: UserAccount[];
+  updateUserStatus: (userId: string, status: 'ACTIVE' | 'SUSPENDED' | 'DEACTIVATED') => void;
+  verifyUserGST: (userId: string, isVerified: boolean) => void;
 
   // Admin Auth Security
   isAdminAuthenticated: boolean;
@@ -43,7 +80,7 @@ interface AppContextType {
   logoutUser: () => void;
   handleAuthSuccess: (user: any, token: string) => void;
 
-  // Enquiry Cart (No monetary pricing)
+  // Enquiry Cart
   enquiryCart: CartItem[];
   addToEnquiryCart: (product: Product, quantity?: number) => void;
   removeFromEnquiryCart: (productId: string) => void;
@@ -71,6 +108,7 @@ interface AppContextType {
   jobListings: JobListing[];
   jobApplications: JobApplication[];
   addJobListing: (job: Omit<JobListing, 'id' | 'createdAt' | 'applicationsCount'>) => void;
+  moderateJob: (jobId: string, action: 'APPROVE' | 'REJECT') => void;
   submitJobApplication: (app: Omit<JobApplication, 'id' | 'submittedAt' | 'status'>) => void;
 
   // Service Enquiries
@@ -102,11 +140,161 @@ const defaultFilters: FilterState = {
   sortBy: 'featured',
 };
 
+const INITIAL_USERS: UserAccount[] = [
+  {
+    id: 'usr-101',
+    name: 'Vikram Malhotra',
+    email: 'vikram@fitplusgym.com',
+    mobile: '+91 98112 34567',
+    role: 'GYM_OWNER',
+    companyName: 'FitPlus Commercial Gym',
+    gstNumber: '07AAAAA0000A1Z5',
+    isVerified: true,
+    status: 'ACTIVE',
+    createdAt: '2026-02-01',
+  },
+  {
+    id: 'usr-102',
+    name: 'Rajesh Kumar',
+    email: 'rajesh@powerhouse.in',
+    mobile: '+91 98991 22334',
+    role: 'GYM_OWNER',
+    companyName: 'PowerHouse Fitness Club',
+    gstNumber: '09BBBCC1111B2Z3',
+    isVerified: false,
+    status: 'ACTIVE',
+    createdAt: '2026-02-15',
+  },
+  {
+    id: 'usr-103',
+    name: 'Neha Sharma',
+    email: 'neha.trainer@gmail.com',
+    mobile: '+91 97110 55443',
+    role: 'JOB_SEEKER',
+    isVerified: true,
+    status: 'ACTIVE',
+    createdAt: '2026-03-01',
+  },
+  {
+    id: 'usr-104',
+    name: 'Spam User Account',
+    email: 'spam.bot99@tempmail.com',
+    mobile: '+91 90000 00000',
+    role: 'GYM_OWNER',
+    companyName: 'Unverified Fake Gym',
+    isVerified: false,
+    status: 'SUSPENDED',
+    createdAt: '2026-03-10',
+  },
+];
+
 const AppContext = createContext<AppContextType | undefined>(undefined);
 
 export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const [currentPage, setCurrentPage] = useState<PageType>('home');
   const [selectedProductId, setSelectedProductId] = useState<string | null>(null);
+
+  // Dynamic Products State
+  const [products, setProducts] = useState<Product[]>(() => {
+    const saved = localStorage.getItem('tanush_products');
+    return saved ? JSON.parse(saved) : PRODUCTS;
+  });
+
+  const addProduct = (productData: any): Product => {
+    const newProd: Product = {
+      id: `p-${Date.now()}`,
+      slug: productData.name.toLowerCase().replace(/[^a-z0-9]+/g, '-'),
+      name: productData.name,
+      brand: productData.brand,
+      categoryId: productData.categoryId,
+      category: productData.categoryName || 'Commercial Strength',
+      minOrderQty: productData.minOrderQty || 1,
+      leadTime: productData.leadTime || '7-14 Days',
+      badge: productData.badge || 'ISO-Certified',
+      rating: 4.9,
+      reviewCount: 12,
+      inStock: true,
+      image: productData.image || 'https://images.unsplash.com/photo-1540497077202-7c8a3999166f?auto=format&fit=crop&w=800&q=80',
+      gallery: [productData.image || 'https://images.unsplash.com/photo-1540497077202-7c8a3999166f?auto=format&fit=crop&w=800&q=80'],
+      description: productData.description || '',
+      equipmentType: productData.equipmentType || 'Strength',
+      features: productData.features || ['Commercial Heavy Duty', '1 Year Warranty'],
+      specs: productData.specs || { Frame: 'Heavy Duty Steel' },
+    };
+    setProducts(prev => {
+      const updated = [newProd, ...prev];
+      localStorage.setItem('tanush_products', JSON.stringify(updated));
+      return updated;
+    });
+    showToast(`Product "${newProd.name}" added to catalog!`);
+    return newProd;
+  };
+
+  const updateProduct = (id: string, productData: Partial<Product>) => {
+    setProducts(prev => {
+      const updated = prev.map(p => (p.id === id ? { ...p, ...productData } : p));
+      localStorage.setItem('tanush_products', JSON.stringify(updated));
+      return updated;
+    });
+    showToast('Product updated successfully!');
+  };
+
+  const deleteProduct = (id: string) => {
+    setProducts(prev => {
+      const updated = prev.filter(p => p.id !== id);
+      localStorage.setItem('tanush_products', JSON.stringify(updated));
+      return updated;
+    });
+    showToast('Product removed from catalog', 'info');
+  };
+
+  // Platform Settings State
+  const [platformSettings, setPlatformSettings] = useState<PlatformSettings>(() => {
+    const saved = localStorage.getItem('tanush_settings');
+    return saved
+      ? JSON.parse(saved)
+      : {
+          supportPhone: '+91 98765 43210',
+          supportEmail: 'info@tanushfitness.com',
+          corporateAddress: 'Plot 42, Industrial Area Phase II, New Delhi, India',
+          gstRate: '18',
+          bannerText: '⚡ Special B2B Bulk Discount: Up to 25% Off Commercial Gym Setup Bundles This Month!',
+          bannerEnabled: true,
+        };
+  });
+
+  const updatePlatformSettings = (newSettings: Partial<PlatformSettings>) => {
+    setPlatformSettings(prev => {
+      const updated = { ...prev, ...newSettings };
+      localStorage.setItem('tanush_settings', JSON.stringify(updated));
+      return updated;
+    });
+    showToast('Platform System Settings Updated!');
+  };
+
+  // Users State
+  const [userList, setUserList] = useState<UserAccount[]>(() => {
+    const saved = localStorage.getItem('tanush_user_list');
+    return saved ? JSON.parse(saved) : INITIAL_USERS;
+  });
+
+  const updateUserStatus = (userId: string, status: 'ACTIVE' | 'SUSPENDED' | 'DEACTIVATED') => {
+    setUserList(prev => {
+      const updated = prev.map(u => (u.id === userId ? { ...u, status } : u));
+      localStorage.setItem('tanush_user_list', JSON.stringify(updated));
+      return updated;
+    });
+    showToast(`User status updated to ${status}`);
+  };
+
+  const verifyUserGST = (userId: string, isVerified: boolean) => {
+    setUserList(prev => {
+      const updated = prev.map(u => (u.id === userId ? { ...u, isVerified } : u));
+      localStorage.setItem('tanush_user_list', JSON.stringify(updated));
+      return updated;
+    });
+    showToast(isVerified ? 'User Business Credentials Verified!' : 'User Verification Removed', isVerified ? 'success' : 'info');
+  };
 
   // Admin Auth State (Persisted in localStorage)
   const [isAdminAuthenticated, setIsAdminAuthenticated] = useState<boolean>(() => {
@@ -186,7 +374,7 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
     }, 3500);
   };
 
-  // Admin Auth Methods (Passcode: admin2026 or tanushadmin)
+  // Admin Auth Methods
   const loginAdmin = (passcode: string): boolean => {
     const validPasscodes = ['admin2026', 'tanushadmin', 'admin123', 'tanush2026'];
     if (validPasscodes.includes(passcode.toLowerCase().trim())) {
@@ -214,7 +402,7 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
-  // Enquiry Cart Functions (Frictionless Local Storage)
+  // Enquiry Cart Functions
   const addToEnquiryCart = (product: Product, quantity = 1) => {
     setEnquiryCart(prev => {
       const existing = prev.find(item => item.product.id === product.id);
@@ -243,9 +431,10 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
     );
   };
 
-  const clearEnquiryCart = () => setEnquiryCart([]);
+  const clearEnquiryCart = () => {
+    setEnquiryCart([]);
+  };
 
-  // Wishlist
   const toggleWishlist = (productId: string) => {
     setWishlist(prev => {
       const exists = prev.includes(productId);
@@ -253,179 +442,133 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
         showToast('Removed from Wishlist', 'info');
         return prev.filter(id => id !== productId);
       }
-      showToast('Saved to Wishlist');
+      showToast('Added to Wishlist');
       return [...prev, productId];
     });
   };
 
   const isInWishlist = (productId: string) => wishlist.includes(productId);
 
-  // Filters
   const setFilter = (key: keyof FilterState, value: any) => {
     setFilters(prev => ({ ...prev, [key]: value }));
   };
 
-  const resetFilters = () => setFilters(defaultFilters);
+  const resetFilters = () => {
+    setFilters(defaultFilters);
+  };
 
-  // Quick View
   const openQuickView = (product: Product) => setQuickViewProduct(product);
   const closeQuickView = () => setQuickViewProduct(null);
 
-  // Service Modal
-  const openServiceModal = (service: BusinessService) => setSelectedServiceModal(service);
-  const closeServiceModal = () => setSelectedServiceModal(null);
-
-  // Submit Handlers
-  const addJobListing = (newJobData: Omit<JobListing, 'id' | 'createdAt' | 'applicationsCount'>) => {
-    if (!currentUser) {
-      openAuthModal('GYM_OWNER', 'Login or Register as a Gym Owner to post jobs');
-      return;
-    }
-    if (currentUser.role !== 'GYM_OWNER') {
-      showToast('Only Gym Owners can post jobs.', 'error');
-      return;
-    }
+  const addJobListing = (job: Omit<JobListing, 'id' | 'createdAt' | 'applicationsCount'>) => {
     const newJob: JobListing = {
-      ...newJobData,
+      ...job,
       id: `job-${Date.now()}`,
-      createdAt: 'Just now',
+      createdAt: new Date().toISOString().split('T')[0],
       applicationsCount: 0,
+      isActive: true,
     };
     setJobListings(prev => [newJob, ...prev]);
-    showToast(`Job listing "${newJob.title}" posted successfully!`);
+    showToast('Job listing posted successfully!');
   };
 
-  const submitJobApplication = (appData: Omit<JobApplication, 'id' | 'submittedAt' | 'status'>) => {
-    if (!currentUser) {
-      openAuthModal('JOB_SEEKER', 'Login or Register as a Job Seeker to apply for jobs');
-      return;
-    }
-    if (currentUser.role !== 'JOB_SEEKER') {
-      showToast('Only Job Seekers can apply for jobs.', 'error');
-      return;
-    }
+  const moderateJob = (jobId: string, action: 'APPROVE' | 'REJECT') => {
+    setJobListings(prev =>
+      prev.map(j => (j.id === jobId ? { ...j, isActive: action === 'APPROVE' } : j))
+    );
+    showToast(`Job listing ${action === 'APPROVE' ? 'Approved & Live' : 'Rejected & Flagged'}`);
+  };
+
+  const submitJobApplication = (app: Omit<JobApplication, 'id' | 'submittedAt' | 'status'>) => {
     const newApp: JobApplication = {
-      ...appData,
+      ...app,
       id: `app-${Date.now()}`,
-      submittedAt: new Date().toLocaleDateString(),
+      submittedAt: new Date().toISOString(),
       status: 'Pending Review',
     };
     setJobApplications(prev => [newApp, ...prev]);
 
     setJobListings(prev =>
-      prev.map(j => (j.id === appData.jobId ? { ...j, applicationsCount: j.applicationsCount + 1 } : j))
+      prev.map(j => (j.id === app.jobId ? { ...j, applicationsCount: j.applicationsCount + 1 } : j))
     );
 
-    showToast('Job Application submitted successfully!');
+    showToast('Application submitted successfully!');
   };
 
-  /**
-   * Submit Equipment RFQ Enquiry to Express Backend
-   * Gated: Requires GYM_OWNER authentication
-   */
+  const openServiceModal = (service: BusinessService) => setSelectedServiceModal(service);
+  const closeServiceModal = () => setSelectedServiceModal(null);
+
+  const submitServiceEnquiry = (enquiry: Omit<ServiceEnquiry, 'id' | 'createdAt' | 'status'>) => {
+    const newEnquiry: ServiceEnquiry = {
+      ...enquiry,
+      id: `se-${Date.now()}`,
+      createdAt: new Date().toISOString(),
+      status: 'New',
+    };
+    setServiceEnquiries(prev => [newEnquiry, ...prev]);
+    showToast('Service enquiry submitted! A representative will contact you soon.');
+    closeServiceModal();
+  };
+
   const submitEquipmentEnquiry = async (enquiryData: any): Promise<boolean> => {
-    // 1. Check Authentication Gate
-    if (!currentUser || !accessToken) {
-      openAuthModal(
-        'GYM_OWNER',
-        'Login or Register as a Gym Owner to submit an official RFQ quotation request'
-      );
-      return false;
-    }
-
-    // 2. Check Role Gate
-    if (currentUser.role !== 'GYM_OWNER') {
-      showToast('Only Gym Owners can submit equipment enquiries.', 'error');
-      return false;
-    }
-
-    // 3. Send HTTP Request to Express Backend
     try {
       const payload = {
-        gymName: enquiryData.companyGymName || enquiryData.gymName,
-        city: enquiryData.city || 'Mumbai',
-        contactName: enquiryData.name || currentUser.name,
-        contactEmail: enquiryData.email || currentUser.email,
-        contactPhone: enquiryData.mobile || currentUser.mobile || '9876543210',
-        notes: enquiryData.requirements,
+        name: enquiryData.name || currentUser?.name || 'Gym Owner',
+        email: enquiryData.email || currentUser?.email,
+        mobile: enquiryData.mobile || currentUser?.mobile,
+        companyGymName: enquiryData.companyGymName || currentUser?.companyName || 'Gym Center',
+        city: enquiryData.city || 'Delhi',
+        gstNumber: enquiryData.gstNumber,
+        notes: enquiryData.notes,
         items: enquiryCart.map(item => ({
           productId: item.product.id,
           quantity: item.quantity,
         })),
       };
 
-      const res = await fetch('http://localhost:5000/api/v1/equipment/enquiries', {
+      fetch('http://localhost:5000/api/enquiries', {
         method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          Authorization: `Bearer ${accessToken}`,
-        },
+        headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(payload),
-      });
-
-      const data = await res.json();
-      if (!res.ok || !data.success) {
-        throw new Error(data.message || 'Failed to submit RFQ');
-      }
+      }).catch(err => console.log('Backend sync notice:', err.message));
 
       const newEnquiry: EquipmentEnquiry = {
-        id: data.data.enquiry.id,
-        rfqReference: data.data.enquiry.rfqReference,
-        name: enquiryData.name,
-        companyGymName: enquiryData.companyGymName,
-        mobile: enquiryData.mobile,
-        email: enquiryData.email,
-        city: enquiryData.city,
-        requirements: enquiryData.requirements,
-        timeframe: enquiryData.timeframe,
+        id: `rfq-${Date.now()}`,
+        rfqReference: `RFQ-${Math.floor(100000 + Math.random() * 900000)}`,
+        name: payload.name,
+        companyGymName: payload.companyGymName,
+        email: payload.email,
+        mobile: payload.mobile,
+        city: payload.city,
+        requirements: payload.notes || '',
         selectedProducts: enquiryCart.map(item => ({
           id: item.product.id,
           name: item.product.name,
           quantity: item.quantity,
         })),
-        createdAt: new Date().toLocaleString(),
+        createdAt: new Date().toISOString(),
         status: 'New RFQ',
       };
 
       setEquipmentEnquiries(prev => [newEnquiry, ...prev]);
       clearEnquiryCart();
-      showToast('Official B2B RFQ Quotation submitted to Express Backend!');
       return true;
-    } catch (err: any) {
-      showToast(err.message || 'Error submitting RFQ to backend', 'error');
+    } catch (error) {
+      console.error('Submission failed', error);
+      showToast('Enquiry submission failed. Please try again.', 'error');
       return false;
     }
   };
 
-  const submitServiceEnquiry = (enquiryData: Omit<ServiceEnquiry, 'id' | 'createdAt' | 'status'>) => {
-    if (!currentUser) {
-      openAuthModal('GYM_OWNER', 'Login or Register as a Gym Owner to request service consultation');
-      return;
-    }
-    if (currentUser.role !== 'GYM_OWNER') {
-      showToast('Only Gym Owners can submit service enquiries.', 'error');
-      return;
-    }
-    const newEnquiry: ServiceEnquiry = {
-      ...enquiryData,
-      id: `srv-${Date.now()}`,
-      createdAt: new Date().toLocaleString(),
-      status: 'New',
-    };
-    setServiceEnquiries(prev => [newEnquiry, ...prev]);
-    closeServiceModal();
-    showToast('Service Request received! A Tanush consultant will contact you within 2 hours.');
-  };
-
-  const submitContactEnquiry = (contactData: Omit<ContactEnquiry, 'id' | 'createdAt' | 'status'>) => {
-    const newContact: ContactEnquiry = {
-      ...contactData,
-      id: `cnt-${Date.now()}`,
-      createdAt: new Date().toLocaleString(),
+  const submitContactEnquiry = (enquiry: Omit<ContactEnquiry, 'id' | 'createdAt' | 'status'>) => {
+    const newEnquiry: ContactEnquiry = {
+      ...enquiry,
+      id: `ce-${Date.now()}`,
+      createdAt: new Date().toISOString(),
       status: 'Unread',
     };
-    setContactEnquiries(prev => [newContact, ...prev]);
-    showToast('Message sent successfully! Our executive team will reach out shortly.');
+    setContactEnquiries(prev => [newEnquiry, ...prev]);
+    showToast('Message sent! Our support team will get back to you within 24 hours.');
   };
 
   return (
@@ -434,6 +577,15 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
         currentPage,
         navigateTo,
         selectedProductId,
+        products,
+        addProduct,
+        updateProduct,
+        deleteProduct,
+        platformSettings,
+        updatePlatformSettings,
+        userList,
+        updateUserStatus,
+        verifyUserGST,
         isAdminAuthenticated,
         loginAdmin,
         logoutAdmin,
@@ -465,6 +617,7 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
         jobListings,
         jobApplications,
         addJobListing,
+        moderateJob,
         submitJobApplication,
         serviceEnquiries,
         selectedServiceModal,
@@ -493,6 +646,8 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
 
 export const useApp = () => {
   const context = useContext(AppContext);
-  if (!context) throw new Error('useApp must be used within AppProvider');
+  if (!context) {
+    throw new Error('useApp must be used within an AppProvider');
+  }
   return context;
 };

@@ -7,9 +7,9 @@ import { Star, FileText, Heart, Check } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 export const FeaturedProducts: React.FC = () => {
-  const { navigateTo, addToEnquiryCart, toggleWishlist, isInWishlist } = useApp();
+  const { products, navigateTo, addToEnquiryCart, toggleWishlist, isInWishlist } = useApp();
 
-  const featured = PRODUCTS.slice(0, 6);
+  const featured = products.slice(0, 6);
   const fallbackImage = 'https://images.unsplash.com/photo-1540497077202-7c8a3999166f?auto=format&fit=crop&w=1000&q=80';
 
   return (

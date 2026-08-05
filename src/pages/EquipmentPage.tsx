@@ -24,6 +24,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 
 export const EquipmentPage: React.FC = () => {
   const {
+    products,
     addToEnquiryCart,
     toggleWishlist,
     isInWishlist,
@@ -51,11 +52,11 @@ export const EquipmentPage: React.FC = () => {
 
   // Extract unique brands
   const brandsList = useMemo(() => {
-    return Array.from(new Set(PRODUCTS.map(p => p.brand)));
-  }, []);
+    return Array.from(new Set(products.map(p => p.brand)));
+  }, [products]);
 
   const filteredProducts = useMemo(() => {
-    return PRODUCTS.filter(p => {
+    return products.filter(p => {
       if (activeCategory !== 'all' && p.categoryId !== activeCategory) {
         return false;
       }

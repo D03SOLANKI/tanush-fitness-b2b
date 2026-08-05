@@ -3,153 +3,152 @@ import { Settings, Save, Megaphone, PhoneCall, Mail, MapPin, Percent } from 'luc
 import { useApp } from '../../context/AppContext';
 
 export const PlatformSettingsTab: React.FC = () => {
-  const { showToast } = useApp();
+  const { platformSettings, updatePlatformSettings, accessToken } = useApp();
 
-  const [form, setForm] = useState({
-    supportPhone: '+91 98765 43210',
-    supportEmail: 'support@tanushfitness.com',
-    corporateAddress: 'Tanush Fitness Commercial Hub, Sector 44, Gurugram, HR 122003',
-    defaultGstPercent: 18,
-    announcementEnabled: true,
-    announcementText: '⚡ Exclusive B2B Sale: 15% Additional Discount on Complete Commercial Cardio Bundles!',
-  });
+  const [phone, setPhone] = useState(platformSettings.supportPhone);
+  const [email, setEmail] = useState(platformSettings.supportEmail);
+  const [address, setAddress] = useState(platformSettings.corporateAddress);
+  const [gstRate, setGstRate] = useState(platformSettings.gstRate);
+  const [bannerText, setBannerText] = useState(platformSettings.bannerText);
+  const [bannerEnabled, setBannerEnabled] = useState(platformSettings.bannerEnabled);
 
-  const handleSaveSettings = (e: React.FormEvent) => {
+  const handleSave = (e: React.FormEvent) => {
     e.preventDefault();
-    showToast('Platform System Settings updated & synced live');
+    const updated = {
+      supportPhone: phone,
+      supportEmail: email,
+      corporateAddress: address,
+      gstRate,
+      bannerText,
+      bannerEnabled,
+    };
+
+    updatePlatformSettings(updated);
+
+    fetch('http://localhost:5000/api/admin/settings', {
+      method: 'PUT',
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization: `Bearer ${accessToken}`,
+      },
+      body: JSON.stringify(updated),
+    }).catch(err => console.log('Backend sync notice:', err.message));
   };
 
   return (
-    <div className="space-y-6 font-mono text-xs max-w-4xl">
-      <div className="bg-white p-4 rounded-2xl border border-slate-200 shadow-sm flex items-center justify-between">
+    <div className="space-y-6">
+      {/* Header Banner */}
+      <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 bg-gray-900 border border-gray-800 p-6 rounded-2xl">
         <div>
-          <h3 className="text-sm font-black text-slate-900 font-heading uppercase">
-            Global Platform System Settings
-          </h3>
-          <p className="text-[10px] text-slate-500 font-normal">
-            Update site-wide support contact info, GST default taxes, & announcement bar banner text.
+          <h2 className="text-xl font-bold text-white flex items-center gap-2">
+            <Settings className="w-5 h-5 text-amber-500" /> Platform System Settings & Banner Management
+          </h2>
+          <p className="text-sm text-gray-400 mt-1">
+            Update site-wide support contact info, tax parameters, and live announcement banners displayed on the header.
           </p>
         </div>
       </div>
 
-      <form onSubmit={handleSaveSettings} className="bg-white rounded-3xl p-6 border border-slate-200 shadow-sm space-y-6">
-        {/* Support & Contact Settings */}
-        <div className="space-y-4">
-          <div className="text-xs font-black uppercase text-slate-900 font-heading border-b border-slate-100 pb-2">
-            1. Support & B2B Helpdesk Contact Info
-          </div>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-            <div>
-              <label className="text-[10px] font-bold text-slate-500 uppercase block mb-1">
-                Support WhatsApp & Phone *
-              </label>
-              <div className="relative">
-                <PhoneCall className="w-4 h-4 text-slate-400 absolute left-3 top-3" />
-                <input
-                  type="text"
-                  required
-                  value={form.supportPhone}
-                  onChange={e => setForm({ ...form, supportPhone: e.target.value })}
-                  className="w-full bg-slate-50 border border-slate-200 rounded-xl py-2.5 px-3 pl-9 text-slate-900 font-bold"
-                />
-              </div>
-            </div>
-
-            <div>
-              <label className="text-[10px] font-bold text-slate-500 uppercase block mb-1">
-                Support Email Address *
-              </label>
-              <div className="relative">
-                <Mail className="w-4 h-4 text-slate-400 absolute left-3 top-3" />
-                <input
-                  type="email"
-                  required
-                  value={form.supportEmail}
-                  onChange={e => setForm({ ...form, supportEmail: e.target.value })}
-                  className="w-full bg-slate-50 border border-slate-200 rounded-xl py-2.5 px-3 pl-9 text-slate-900 font-bold"
-                />
-              </div>
-            </div>
-          </div>
-
-          <div>
-            <label className="text-[10px] font-bold text-slate-500 uppercase block mb-1">
-              Corporate Office Address *
-            </label>
-            <div className="relative">
-              <MapPin className="w-4 h-4 text-slate-400 absolute left-3 top-3" />
-              <input
-                type="text"
-                required
-                value={form.corporateAddress}
-                onChange={e => setForm({ ...form, corporateAddress: e.target.value })}
-                className="w-full bg-slate-50 border border-slate-200 rounded-xl py-2.5 px-3 pl-9 text-slate-900 font-bold"
-              />
-            </div>
-          </div>
-        </div>
-
-        {/* GST & Tax Defaults */}
-        <div className="space-y-4 pt-4 border-t border-slate-100">
-          <div className="text-xs font-black uppercase text-slate-900 font-heading border-b border-slate-100 pb-2">
-            2. Tax & Freight Defaults
-          </div>
-
-          <div className="w-full sm:w-1/2">
-            <label className="text-[10px] font-bold text-slate-500 uppercase block mb-1">
-              Default GST Rate (%)
-            </label>
-            <div className="relative">
-              <Percent className="w-4 h-4 text-slate-400 absolute left-3 top-3" />
-              <input
-                type="number"
-                value={form.defaultGstPercent}
-                onChange={e => setForm({ ...form, defaultGstPercent: parseFloat(e.target.value) || 18 })}
-                className="w-full bg-slate-50 border border-slate-200 rounded-xl py-2.5 px-3 pl-9 text-slate-900 font-bold"
-              />
-            </div>
-          </div>
-        </div>
-
-        {/* Announcement Banner */}
-        <div className="space-y-4 pt-4 border-t border-slate-100">
-          <div className="text-xs font-black uppercase text-slate-900 font-heading border-b border-slate-100 pb-2 flex items-center justify-between">
-            <span>3. Site-Wide Announcement Bar</span>
-            <label className="flex items-center gap-2 text-xs font-bold text-blue-600 cursor-pointer">
+      <form onSubmit={handleSave} className="space-y-6">
+        {/* Banner Announcement Control */}
+        <div className="bg-gray-900/50 border border-gray-800 rounded-2xl p-6 space-y-4">
+          <h3 className="text-base font-bold text-white flex items-center gap-2">
+            <Megaphone className="w-5 h-5 text-amber-500" /> Live Top Announcement Banner Bar
+          </h3>
+          <div className="space-y-3">
+            <div className="flex items-center gap-3">
               <input
                 type="checkbox"
-                checked={form.announcementEnabled}
-                onChange={e => setForm({ ...form, announcementEnabled: e.target.checked })}
-                className="w-4 h-4 accent-blue-600 rounded"
+                id="bannerEnabled"
+                checked={bannerEnabled}
+                onChange={e => setBannerEnabled(e.target.checked)}
+                className="w-4 h-4 rounded accent-amber-500 bg-gray-800 border-gray-700"
               />
-              <span>Banner Active</span>
-            </label>
-          </div>
+              <label htmlFor="bannerEnabled" className="text-sm font-semibold text-gray-200">
+                Enable Site-Wide Top Announcement Bar
+              </label>
+            </div>
 
-          <div>
-            <label className="text-[10px] font-bold text-slate-500 uppercase block mb-1">
-              Banner Text Content
-            </label>
-            <div className="relative">
-              <Megaphone className="w-4 h-4 text-slate-400 absolute left-3 top-3" />
+            <div>
+              <label className="block text-xs font-semibold text-gray-400 mb-1">Banner Announcement Text</label>
               <input
                 type="text"
-                value={form.announcementText}
-                onChange={e => setForm({ ...form, announcementText: e.target.value })}
-                className="w-full bg-slate-50 border border-slate-200 rounded-xl py-2.5 px-3 pl-9 text-slate-900 font-bold"
+                value={bannerText}
+                onChange={e => setBannerText(e.target.value)}
+                placeholder="e.g. ⚡ Special Bulk Offer: Get 20% Off Heavy Duty Power Racks This Week!"
+                className="w-full bg-gray-800 border border-gray-700 rounded-xl px-4 py-2.5 text-white text-sm focus:outline-none focus:border-amber-500"
               />
             </div>
           </div>
         </div>
 
-        <button
-          type="submit"
-          className="w-full py-4 px-6 rounded-xl bg-blue-600 hover:bg-blue-700 text-white font-black text-xs uppercase tracking-wider flex items-center justify-center gap-2 shadow-lg transition-all"
-        >
-          <Save className="w-4 h-4" />
-          <span>Save & Apply Settings Globally</span>
-        </button>
+        {/* Global Contact Info */}
+        <div className="bg-gray-900/50 border border-gray-800 rounded-2xl p-6 space-y-4">
+          <h3 className="text-base font-bold text-white flex items-center gap-2">
+            <PhoneCall className="w-5 h-5 text-amber-500" /> Support Contact & Office Location
+          </h3>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div>
+              <label className="block text-xs font-semibold text-gray-400 mb-1 flex items-center gap-1">
+                <PhoneCall className="w-3.5 h-3.5 text-amber-500" /> Helpdesk Phone / WhatsApp Number
+              </label>
+              <input
+                type="text"
+                value={phone}
+                onChange={e => setPhone(e.target.value)}
+                className="w-full bg-gray-800 border border-gray-700 rounded-xl px-4 py-2.5 text-white text-sm focus:outline-none focus:border-amber-500"
+              />
+            </div>
+
+            <div>
+              <label className="block text-xs font-semibold text-gray-400 mb-1 flex items-center gap-1">
+                <Mail className="w-3.5 h-3.5 text-amber-500" /> Support Email Address
+              </label>
+              <input
+                type="email"
+                value={email}
+                onChange={e => setEmail(e.target.value)}
+                className="w-full bg-gray-800 border border-gray-700 rounded-xl px-4 py-2.5 text-white text-sm focus:outline-none focus:border-amber-500"
+              />
+            </div>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+            <div className="md:col-span-2">
+              <label className="block text-xs font-semibold text-gray-400 mb-1 flex items-center gap-1">
+                <MapPin className="w-3.5 h-3.5 text-amber-500" /> Corporate Office Address
+              </label>
+              <input
+                type="text"
+                value={address}
+                onChange={e => setAddress(e.target.value)}
+                className="w-full bg-gray-800 border border-gray-700 rounded-xl px-4 py-2.5 text-white text-sm focus:outline-none focus:border-amber-500"
+              />
+            </div>
+
+            <div>
+              <label className="block text-xs font-semibold text-gray-400 mb-1 flex items-center gap-1">
+                <Percent className="w-3.5 h-3.5 text-amber-500" /> Default GST Tax Rate (%)
+              </label>
+              <input
+                type="text"
+                value={gstRate}
+                onChange={e => setGstRate(e.target.value)}
+                className="w-full bg-gray-800 border border-gray-700 rounded-xl px-4 py-2.5 text-white text-sm focus:outline-none focus:border-amber-500"
+              />
+            </div>
+          </div>
+        </div>
+
+        <div className="flex items-center justify-end">
+          <button
+            type="submit"
+            className="flex items-center gap-2 bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-gray-950 px-6 py-3 rounded-xl text-sm font-bold transition shadow-lg shadow-amber-500/10"
+          >
+            <Save className="w-4 h-4" /> Save System Settings
+          </button>
+        </div>
       </form>
     </div>
   );

@@ -27,6 +27,7 @@ export const Navbar: React.FC = () => {
     currentUser,
     openAuthModal,
     logoutUser,
+    platformSettings,
   } = useApp();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [isSearchOpen, setIsSearchOpen] = useState(false);
@@ -45,6 +46,12 @@ export const Navbar: React.FC = () => {
   return (
     <>
       <header className="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-xl border-b border-slate-200/90 shadow-stripe">
+        {/* Live Admin Announcement Banner */}
+        {platformSettings?.bannerEnabled && platformSettings?.bannerText && (
+          <div className="bg-slate-900 text-amber-400 text-xs font-semibold py-1.5 px-4 text-center border-b border-slate-800 flex items-center justify-center gap-2">
+            <span>{platformSettings.bannerText}</span>
+          </div>
+        )}
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-20">
             {/* Logo */}

@@ -1,95 +1,77 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Briefcase, CheckCircle2, XCircle, ShieldAlert, Building2, MapPin } from 'lucide-react';
-import { INITIAL_JOBS } from '../../data/jobs';
-import { JobListing } from '../../types';
 import { useApp } from '../../context/AppContext';
 
 export const JobModerationTab: React.FC = () => {
-  const { showToast } = useApp();
-  const [jobs, setJobs] = useState<JobListing[]>(INITIAL_JOBS);
+  const { jobListings, moderateJob, accessToken } = useApp();
 
-  const handleModerate = (jobId: string, action: 'APPROVE' | 'REJECT') => {
-    setJobs(prev =>
-      prev.map(j => {
-        if (j.id === jobId) {
-          return { ...j, isActive: action === 'APPROVE' };
-        }
-        return j;
-      })
-    );
-
-    if (action === 'APPROVE') {
-      showToast('Job Approved & Published to Candidate Feed');
-    } else {
-      showToast('Job Rejected & Recruiter Flagged', 'error');
-    }
+  const handleAction = (jobId: string, action: 'APPROVE' | 'REJECT') => {
+    moderateJob(jobId, action);
+    fetch(`http://localhost:5000/api/admin/jobs/${jobId}/moderate`, {
+      method: 'PATCH',
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization: `Bearer ${accessToken}`,
+      },
+      body: JSON.stringify({ action }),
+    }).catch(err => console.log('Backend sync notice:', err.message));
   };
 
   return (
-    <div className="space-y-6 font-mono text-xs">
-      <div className="bg-white p-4 rounded-2xl border border-slate-200 shadow-sm flex items-center justify-between">
+    <div className="space-y-6">
+      {/* Header Banner */}
+      <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 bg-gray-900 border border-gray-800 p-6 rounded-2xl">
         <div>
-          <h3 className="text-sm font-black text-slate-900 font-heading uppercase">
-            Job Posting Moderation & Anti-Spam Queue ({jobs.length} Jobs)
-          </h3>
-          <p className="text-[10px] text-slate-500 font-normal">
-            Approve recruiter job posts before candidate publication to prevent unverified spam listings.
+          <h2 className="text-xl font-bold text-white flex items-center gap-2">
+            <Briefcase className="w-5 h-5 text-amber-500" /> Job Moderation & Spam Protection
+          </h2>
+          <p className="text-sm text-gray-400 mt-1">
+            Review and moderate job postings submitted by Gym Owners before they appear on the live Manpower Services portal.
           </p>
         </div>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-        {jobs.map(job => (
-          <div key={job.id} className="bg-white rounded-3xl p-5 border border-slate-200 shadow-sm flex flex-col justify-between space-y-4">
+      {/* Jobs Grid */}
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        {jobListings.map(job => (
+          <div key={job.id} className="bg-gray-900/50 border border-gray-800 rounded-2xl p-6 flex flex-col justify-between space-y-4">
             <div>
-              <div className="flex items-center justify-between mb-2">
-                <span className="text-[10px] font-bold text-blue-600 uppercase font-mono">{job.category}</span>
-                <span
-                  className={`px-2.5 py-0.5 rounded-full text-[9px] font-black uppercase ${
-                    job.isActive !== false ? 'bg-emerald-100 text-emerald-800' : 'bg-rose-100 text-rose-800'
-                  }`}
-                >
-                  {job.isActive !== false ? 'Published' : 'Rejected'}
+              <div className="flex items-center justify-between gap-2 mb-2">
+                <span className={`text-xs px-2.5 py-1 rounded-full font-medium ${job.isActive ? 'bg-emerald-500/10 text-emerald-400 border border-emerald-500/20' : 'bg-red-500/10 text-red-400 border border-red-500/20'}`}>
+                  {job.isActive ? 'Active & Live' : 'Moderated / Suspended'}
                 </span>
+                <span className="text-xs text-gray-400">Posted: {job.createdAt}</span>
               </div>
 
-              <h4 className="text-base font-black text-slate-900 font-heading uppercase">{job.title}</h4>
-
-              <div className="flex items-center gap-3 text-[11px] text-slate-600 font-bold mt-1">
-                <span className="flex items-center gap-1">
-                  <Building2 className="w-3.5 h-3.5 text-slate-400" /> {job.companyName || job.gymName}
-                </span>
-                <span className="flex items-center gap-1">
-                  <MapPin className="w-3.5 h-3.5 text-slate-400" /> {job.location}
-                </span>
+              <h3 className="text-lg font-bold text-white mb-1">{job.title}</h3>
+              
+              <div className="flex flex-wrap items-center gap-3 text-xs text-gray-400 mb-3">
+                <span className="flex items-center gap-1"><Building2 className="w-3.5 h-3.5 text-amber-500" /> {job.companyName || job.gymName || 'Gym Center'}</span>
+                <span className="flex items-center gap-1"><MapPin className="w-3.5 h-3.5 text-amber-500" /> {job.location}</span>
+                <span className="text-amber-400 font-semibold">{job.salaryRange}</span>
               </div>
 
-              <div className="mt-3 p-3 bg-slate-50 rounded-xl border border-slate-100 text-xs text-slate-700 leading-relaxed font-normal">
+              <p className="text-xs text-gray-300 line-clamp-3 bg-gray-800/40 p-3 rounded-xl border border-gray-800">
                 {job.description}
-              </div>
-
-              <div className="mt-3 text-[10px] text-slate-500 font-bold">
-                Salary: <span className="text-slate-900">{job.salaryRange}</span> • Type: <span className="text-slate-900">{job.type}</span>
-              </div>
+              </p>
             </div>
 
-            {/* Actions */}
-            <div className="grid grid-cols-2 gap-2 pt-3 border-t border-slate-100">
-              <button
-                onClick={() => handleModerate(job.id, 'APPROVE')}
-                className="py-2.5 px-3 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-black uppercase flex items-center justify-center gap-1.5 shadow-sm"
-              >
-                <CheckCircle2 className="w-4 h-4" />
-                <span>Approve & Publish</span>
-              </button>
-
-              <button
-                onClick={() => handleModerate(job.id, 'REJECT')}
-                className="py-2.5 px-3 rounded-xl bg-rose-600 hover:bg-rose-700 text-white font-black uppercase flex items-center justify-center gap-1.5 shadow-sm"
-              >
-                <XCircle className="w-4 h-4" />
-                <span>Reject & Flag</span>
-              </button>
+            <div className="flex items-center justify-end gap-3 pt-3 border-t border-gray-800">
+              {job.isActive ? (
+                <button
+                  onClick={() => handleAction(job.id, 'REJECT')}
+                  className="flex items-center gap-1.5 px-4 py-2 bg-red-500/10 hover:bg-red-500/20 text-red-400 border border-red-500/20 rounded-xl text-xs font-semibold transition"
+                >
+                  <XCircle className="w-4 h-4" /> Reject & Flag Spammer
+                </button>
+              ) : (
+                <button
+                  onClick={() => handleAction(job.id, 'APPROVE')}
+                  className="flex items-center gap-1.5 px-4 py-2 bg-emerald-500/10 hover:bg-emerald-500/20 text-emerald-400 border border-emerald-500/20 rounded-xl text-xs font-semibold transition"
+                >
+                  <CheckCircle2 className="w-4 h-4" /> Approve & Publish Live
+                </button>
+              )}
             </div>
           </div>
         ))}

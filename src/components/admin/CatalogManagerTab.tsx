@@ -1,13 +1,11 @@
 import React, { useState } from 'react';
-import { Plus, Edit2, Trash2, CheckCircle, X, Save } from 'lucide-react';
-import { PRODUCTS } from '../../data/products';
+import { Plus, Edit2, Trash2, CheckCircle, X, Save, Package } from 'lucide-react';
 import { EQUIPMENT_CATEGORIES } from '../../data/categories';
 import { Product } from '../../types';
 import { useApp } from '../../context/AppContext';
 
 export const CatalogManagerTab: React.FC = () => {
-  const { showToast } = useApp();
-  const [productList, setProductList] = useState<Product[]>(PRODUCTS);
+  const { products, addProduct, updateProduct, deleteProduct, showToast, accessToken } = useApp();
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [editingProduct, setEditingProduct] = useState<Product | null>(null);
 
@@ -45,161 +43,139 @@ export const CatalogManagerTab: React.FC = () => {
     setMinOrderQty(p.minOrderQty || 1);
     setLeadTime(p.leadTime || '7-14 Days');
     setBadge(p.badge || '');
-    setDescription(p.description);
+    setDescription(p.description || '');
     setImage(p.image);
     setIsModalOpen(true);
   };
 
-  const handleSaveProduct = (e: React.FormEvent) => {
+  const handleSaveProduct = async (e: React.FormEvent) => {
     e.preventDefault();
     const catObj = EQUIPMENT_CATEGORIES.find(c => c.id === categoryId);
 
+    const payload = {
+      name,
+      brand,
+      categoryId,
+      categoryName: catObj ? catObj.name : 'Commercial Equipment',
+      equipmentType,
+      minOrderQty,
+      leadTime,
+      badge,
+      description,
+      image: image || 'https://images.unsplash.com/photo-1540497077202-7c8a3999166f?auto=format&fit=crop&w=800&q=80',
+    };
+
     if (editingProduct) {
-      // Update
-      setProductList(prev =>
-        prev.map(p =>
-          p.id === editingProduct.id
-            ? {
-                ...p,
-                name,
-                brand,
-                categoryId,
-                category: catObj ? catObj.name : p.category,
-                equipmentType,
-                minOrderQty,
-                leadTime,
-                badge: badge || undefined,
-                description,
-                image,
-              }
-            : p
-        )
-      );
-      showToast(`Updated product "${name}" in catalog`);
+      updateProduct(editingProduct.id, payload);
+      // Backend API sync attempt
+      fetch(`http://localhost:5000/api/admin/catalog/${editingProduct.id}`, {
+        method: 'PUT',
+        headers: {
+          'Content-Type': 'application/json',
+          Authorization: `Bearer ${accessToken}`,
+        },
+        body: JSON.stringify(payload),
+      }).catch(err => console.log('Backend sync notice:', err.message));
     } else {
-      // Add
-      const newProd: Product = {
-        id: `p-${Date.now()}`,
-        name,
-        slug: `${name.toLowerCase().replace(/[^a-z0-9]+/g, '-')}-${Date.now()}`,
-        brand,
-        categoryId,
-        category: catObj ? catObj.name : 'Strength Training',
-        equipmentType,
-        minOrderQty,
-        leadTime,
-        badge: badge || undefined,
-        description,
-        image,
-        gallery: [image],
-        rating: 5.0,
-        reviewCount: 1,
-        inStock: true,
-        specs: { Structure: 'Commercial 3mm Gauge Steel', Warranty: '5 Years' },
-        features: ['ISO Certified', 'Heavy Duty Steel'],
-        applicationTypes: ['Commercial Gym'],
-      };
-      setProductList(prev => [newProd, ...prev]);
-      showToast(`Added new product "${name}" to catalog`);
+      addProduct(payload);
+      fetch('http://localhost:5000/api/admin/catalog', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          Authorization: `Bearer ${accessToken}`,
+        },
+        body: JSON.stringify(payload),
+      }).catch(err => console.log('Backend sync notice:', err.message));
     }
 
     setIsModalOpen(false);
   };
 
-  const handleDeleteProduct = (id: string, name: string) => {
-    if (confirm(`Are you sure you want to soft-delete product "${name}"?`)) {
-      setProductList(prev => prev.filter(p => p.id !== id));
-      showToast(`Deleted product "${name}"`, 'info');
+  const handleDelete = (id: string, prodName: string) => {
+    if (window.confirm(`Are you sure you want to remove "${prodName}" from the live catalog?`)) {
+      deleteProduct(id);
+      fetch(`http://localhost:5000/api/admin/catalog/${id}`, {
+        method: 'DELETE',
+        headers: { Authorization: `Bearer ${accessToken}` },
+      }).catch(err => console.log('Backend sync notice:', err.message));
     }
   };
 
   return (
-    <div className="space-y-6 font-mono text-xs">
-      {/* Action Header */}
-      <div className="flex items-center justify-between bg-white p-4 rounded-2xl border border-slate-200 shadow-sm">
+    <div className="space-y-6">
+      {/* Header Banner */}
+      <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 bg-gray-900 border border-gray-800 p-6 rounded-2xl">
         <div>
-          <h3 className="text-sm font-black text-slate-900 font-heading uppercase">
-            Commercial Equipment Catalog ({productList.length} Items)
-          </h3>
-          <p className="text-[10px] text-slate-500 font-normal">
-            Manage ISO-certified strength racks, treadmills, weights, lead times & MOQs.
+          <h2 className="text-xl font-bold text-white flex items-center gap-2">
+            <Package className="w-5 h-5 text-amber-500" /> Equipment & Machinery Catalog Manager
+          </h2>
+          <p className="text-sm text-gray-400 mt-1">
+            Directly add, edit, or toggle stock & MOQs for treadmills, racks, and selectorized stacks on the live website.
           </p>
         </div>
-
         <button
           onClick={openAddModal}
-          className="px-4 py-2.5 rounded-xl bg-blue-600 hover:bg-blue-700 text-white font-black uppercase flex items-center gap-2 shadow-md transition-all"
+          className="flex items-center gap-2 bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-gray-950 font-semibold px-4 py-2.5 rounded-xl transition shadow-lg shadow-amber-500/10 shrink-0"
         >
-          <Plus className="w-4 h-4" />
-          <span>Add New Product</span>
+          <Plus className="w-4 h-4" /> Add New Equipment
         </button>
       </div>
 
       {/* Catalog Table */}
-      <div className="bg-white rounded-3xl border border-slate-200 shadow-sm overflow-hidden">
+      <div className="bg-gray-900/50 border border-gray-800 rounded-2xl overflow-hidden backdrop-blur-sm">
         <div className="overflow-x-auto">
-          <table className="w-full text-left divide-y divide-slate-100">
-            <thead className="bg-slate-900 text-white font-mono text-[10px] font-bold uppercase tracking-wider">
-              <tr>
-                <th className="py-3.5 px-4">Equipment & Brand</th>
-                <th className="py-3.5 px-4">Category</th>
-                <th className="py-3.5 px-4">Lead Time & MOQ</th>
-                <th className="py-3.5 px-4">Badge</th>
-                <th className="py-3.5 px-4">Stock Status</th>
-                <th className="py-3.5 px-4 text-right">Actions</th>
+          <table className="w-full text-left border-collapse">
+            <thead>
+              <tr className="bg-gray-900/80 border-b border-gray-800 text-xs font-semibold text-gray-400 uppercase tracking-wider">
+                <th className="py-4 px-6">Equipment</th>
+                <th className="py-4 px-6">Brand & Category</th>
+                <th className="py-4 px-6">MOQ & Lead Time</th>
+                <th className="py-4 px-6">Badge / Specs</th>
+                <th className="py-4 px-6 text-right">Actions</th>
               </tr>
             </thead>
-            <tbody className="divide-y divide-slate-100 bg-white">
-              {productList.map(p => (
-                <tr key={p.id} className="hover:bg-slate-50 transition-colors">
-                  <td className="py-3 px-4 flex items-center gap-3">
-                    <img src={p.image} alt={p.name} className="w-10 h-10 object-cover rounded-xl border border-slate-200 shrink-0" />
-                    <div>
-                      <div className="font-black text-slate-900 font-heading uppercase line-clamp-1">{p.name}</div>
-                      <div className="text-[10px] text-blue-600 font-bold">{p.brand}</div>
+            <tbody className="divide-y divide-gray-800/60 text-sm">
+              {products.map(p => (
+                <tr key={p.id} className="hover:bg-gray-800/30 transition">
+                  <td className="py-4 px-6">
+                    <div className="flex items-center gap-3">
+                      <img src={p.image} alt={p.name} className="w-12 h-12 rounded-lg object-cover bg-gray-800 border border-gray-700 shrink-0" />
+                      <div>
+                        <div className="font-semibold text-white">{p.name}</div>
+                        <div className="text-xs text-gray-400">ID: {p.id}</div>
+                      </div>
                     </div>
                   </td>
-
-                  <td className="py-3 px-4 text-slate-700 font-bold">
-                    {p.category}
+                  <td className="py-4 px-6">
+                    <div className="text-gray-200 font-medium">{p.brand}</div>
+                    <div className="text-xs text-amber-500">{p.category}</div>
                   </td>
-
-                  <td className="py-3 px-4 text-[10px] text-slate-600">
-                    <div>MOQ: <span className="font-bold text-slate-900">{p.minOrderQty || 1} Unit</span></div>
-                    <div>Lead: <span className="font-bold text-slate-900">{p.leadTime || '7-14 Days'}</span></div>
+                  <td className="py-4 px-6">
+                    <div className="text-gray-300 font-medium">MOQ: {p.minOrderQty || 1} Units</div>
+                    <div className="text-xs text-gray-400">{p.leadTime || '7-14 Days'}</div>
                   </td>
-
-                  <td className="py-3 px-4">
-                    {p.badge ? (
-                      <span className="px-2 py-0.5 rounded bg-amber-50 text-amber-700 font-bold border border-amber-200 text-[9px] uppercase">
-                        {p.badge}
-                      </span>
-                    ) : (
-                      <span className="text-slate-400 text-[10px]">-</span>
-                    )}
-                  </td>
-
-                  <td className="py-3 px-4">
-                    <span className="inline-flex items-center gap-1 text-[10px] font-bold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded border border-emerald-200">
-                      <CheckCircle className="w-3 h-3 text-emerald-600" /> In Stock
+                  <td className="py-4 px-6">
+                    <span className="inline-flex items-center gap-1 bg-amber-500/10 text-amber-400 text-xs font-medium px-2.5 py-1 rounded-full border border-amber-500/20">
+                      <CheckCircle className="w-3 h-3" /> {p.badge || 'ISO-Certified'}
                     </span>
                   </td>
-
-                  <td className="py-3 px-4 text-right space-x-2">
-                    <button
-                      onClick={() => openEditModal(p)}
-                      className="p-2 rounded-lg bg-slate-100 text-slate-700 hover:bg-slate-200"
-                      title="Edit Product"
-                    >
-                      <Edit2 className="w-3.5 h-3.5" />
-                    </button>
-                    <button
-                      onClick={() => handleDeleteProduct(p.id, p.name)}
-                      className="p-2 rounded-lg bg-rose-50 text-rose-600 hover:bg-rose-100"
-                      title="Delete Product"
-                    >
-                      <Trash2 className="w-3.5 h-3.5" />
-                    </button>
+                  <td className="py-4 px-6 text-right">
+                    <div className="flex items-center justify-end gap-2">
+                      <button
+                        onClick={() => openEditModal(p)}
+                        className="p-2 bg-gray-800 hover:bg-gray-700 text-gray-300 hover:text-white rounded-lg transition"
+                        title="Edit Equipment"
+                      >
+                        <Edit2 className="w-4 h-4" />
+                      </button>
+                      <button
+                        onClick={() => handleDelete(p.id, p.name)}
+                        className="p-2 bg-red-500/10 hover:bg-red-500/20 text-red-400 rounded-lg transition"
+                        title="Delete Equipment"
+                      >
+                        <Trash2 className="w-4 h-4" />
+                      </button>
+                    </div>
                   </td>
                 </tr>
               ))}
@@ -208,123 +184,150 @@ export const CatalogManagerTab: React.FC = () => {
         </div>
       </div>
 
-      {/* Add / Edit Product Modal */}
+      {/* Add / Edit Modal */}
       {isModalOpen && (
-        <div className="fixed inset-0 z-50 bg-slate-950/60 backdrop-blur-sm flex items-center justify-center p-4 overflow-y-auto">
-          <div className="bg-white rounded-3xl max-w-xl w-full p-6 space-y-4 border border-slate-200 shadow-2xl my-8">
-            <div className="flex items-center justify-between border-b border-slate-100 pb-3">
-              <h3 className="text-base font-black text-slate-900 font-heading uppercase">
-                {editingProduct ? 'Edit Product' : 'Add New Commercial Product'}
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm p-4 overflow-y-auto">
+          <div className="bg-gray-900 border border-gray-800 rounded-2xl w-full max-w-2xl overflow-hidden shadow-2xl my-8">
+            <div className="flex items-center justify-between p-6 border-b border-gray-800 bg-gray-950">
+              <h3 className="text-lg font-bold text-white flex items-center gap-2">
+                {editingProduct ? <Edit2 className="w-5 h-5 text-amber-500" /> : <Plus className="w-5 h-5 text-amber-500" />}
+                {editingProduct ? 'Edit Catalog Equipment' : 'Add New Commercial Equipment'}
               </h3>
-              <button onClick={() => setIsModalOpen(false)} className="p-1 text-slate-400 hover:text-slate-900">
+              <button onClick={() => setIsModalOpen(false)} className="text-gray-400 hover:text-white p-1">
                 <X className="w-5 h-5" />
               </button>
             </div>
 
-            <form onSubmit={handleSaveProduct} className="space-y-3 text-xs">
-              <div>
-                <label className="text-[10px] font-bold text-slate-500 uppercase block mb-1">Product Title *</label>
-                <input
-                  type="text"
-                  required
-                  placeholder="Heavy Strength Power Rack"
-                  value={name}
-                  onChange={e => setName(e.target.value)}
-                  className="w-full bg-slate-50 border border-slate-200 rounded-xl p-2.5 text-slate-900"
-                />
-              </div>
-
-              <div className="grid grid-cols-2 gap-3">
+            <form onSubmit={handleSaveProduct} className="p-6 space-y-4 max-h-[80vh] overflow-y-auto">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div>
-                  <label className="text-[10px] font-bold text-slate-500 uppercase block mb-1">Brand Name *</label>
+                  <label className="block text-xs font-semibold text-gray-300 mb-1">Equipment Name *</label>
                   <input
                     type="text"
                     required
-                    placeholder="Tanush Elite"
-                    value={brand}
-                    onChange={e => setBrand(e.target.value)}
-                    className="w-full bg-slate-50 border border-slate-200 rounded-xl p-2.5 text-slate-900"
+                    value={name}
+                    onChange={e => setName(e.target.value)}
+                    placeholder="e.g. Commercial Pin-Loaded Leg Extension"
+                    className="w-full bg-gray-800 border border-gray-700 rounded-xl px-3.5 py-2.5 text-white text-sm focus:outline-none focus:border-amber-500"
                   />
                 </div>
 
                 <div>
-                  <label className="text-[10px] font-bold text-slate-500 uppercase block mb-1">Category *</label>
+                  <label className="block text-xs font-semibold text-gray-300 mb-1">Brand Name *</label>
+                  <input
+                    type="text"
+                    required
+                    value={brand}
+                    onChange={e => setBrand(e.target.value)}
+                    placeholder="e.g. Tanush Strength / Jerai"
+                    className="w-full bg-gray-800 border border-gray-700 rounded-xl px-3.5 py-2.5 text-white text-sm focus:outline-none focus:border-amber-500"
+                  />
+                </div>
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <div>
+                  <label className="block text-xs font-semibold text-gray-300 mb-1">Category</label>
                   <select
                     value={categoryId}
                     onChange={e => setCategoryId(e.target.value)}
-                    className="w-full bg-slate-50 border border-slate-200 rounded-xl p-2.5 text-slate-900 font-bold"
+                    className="w-full bg-gray-800 border border-gray-700 rounded-xl px-3.5 py-2.5 text-white text-sm focus:outline-none focus:border-amber-500"
                   >
                     {EQUIPMENT_CATEGORIES.map(c => (
-                      <option key={c.id} value={c.id}>{c.name}</option>
+                      <option key={c.id} value={c.id}>
+                        {c.name}
+                      </option>
                     ))}
                   </select>
                 </div>
-              </div>
 
-              <div className="grid grid-cols-3 gap-3">
                 <div>
-                  <label className="text-[10px] font-bold text-slate-500 uppercase block mb-1">MOQ Units</label>
+                  <label className="block text-xs font-semibold text-gray-300 mb-1">Equipment Type</label>
+                  <select
+                    value={equipmentType}
+                    onChange={e => setEquipmentType(e.target.value)}
+                    className="w-full bg-gray-800 border border-gray-700 rounded-xl px-3.5 py-2.5 text-white text-sm focus:outline-none focus:border-amber-500"
+                  >
+                    <option value="Strength">Strength</option>
+                    <option value="Cardio">Cardio</option>
+                    <option value="Free Weights">Free Weights</option>
+                    <option value="Functional">Functional</option>
+                  </select>
+                </div>
+
+                <div>
+                  <label className="block text-xs font-semibold text-gray-300 mb-1">Min Order Qty (MOQ)</label>
                   <input
                     type="number"
-                    min={1}
+                    min="1"
                     value={minOrderQty}
-                    onChange={e => setMinOrderQty(parseInt(e.target.value, 10))}
-                    className="w-full bg-slate-50 border border-slate-200 rounded-xl p-2.5 text-slate-900"
+                    onChange={e => setMinOrderQty(Number(e.target.value))}
+                    className="w-full bg-gray-800 border border-gray-700 rounded-xl px-3.5 py-2.5 text-white text-sm focus:outline-none focus:border-amber-500"
                   />
                 </div>
+              </div>
 
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div>
-                  <label className="text-[10px] font-bold text-slate-500 uppercase block mb-1">Lead Time</label>
+                  <label className="block text-xs font-semibold text-gray-300 mb-1">Lead Time</label>
                   <input
                     type="text"
-                    placeholder="7-14 Days"
                     value={leadTime}
                     onChange={e => setLeadTime(e.target.value)}
-                    className="w-full bg-slate-50 border border-slate-200 rounded-xl p-2.5 text-slate-900"
+                    placeholder="e.g. 7-14 Days"
+                    className="w-full bg-gray-800 border border-gray-700 rounded-xl px-3.5 py-2.5 text-white text-sm focus:outline-none focus:border-amber-500"
                   />
                 </div>
 
                 <div>
-                  <label className="text-[10px] font-bold text-slate-500 uppercase block mb-1">Badge</label>
+                  <label className="block text-xs font-semibold text-gray-300 mb-1">Quality Badge</label>
                   <input
                     type="text"
-                    placeholder="ISO-Certified"
                     value={badge}
                     onChange={e => setBadge(e.target.value)}
-                    className="w-full bg-slate-50 border border-slate-200 rounded-xl p-2.5 text-slate-900"
+                    placeholder="e.g. ISO-Certified, Heavy Duty"
+                    className="w-full bg-gray-800 border border-gray-700 rounded-xl px-3.5 py-2.5 text-white text-sm focus:outline-none focus:border-amber-500"
                   />
                 </div>
               </div>
 
               <div>
-                <label className="text-[10px] font-bold text-slate-500 uppercase block mb-1">Image URL *</label>
+                <label className="block text-xs font-semibold text-gray-300 mb-1">Image URL</label>
                 <input
                   type="text"
-                  required
                   value={image}
                   onChange={e => setImage(e.target.value)}
-                  className="w-full bg-slate-50 border border-slate-200 rounded-xl p-2.5 text-slate-900"
+                  placeholder="https://images.unsplash.com/..."
+                  className="w-full bg-gray-800 border border-gray-700 rounded-xl px-3.5 py-2.5 text-white text-sm focus:outline-none focus:border-amber-500"
                 />
               </div>
 
               <div>
-                <label className="text-[10px] font-bold text-slate-500 uppercase block mb-1">Description *</label>
+                <label className="block text-xs font-semibold text-gray-300 mb-1">Product Description</label>
                 <textarea
                   rows={3}
-                  required
                   value={description}
                   onChange={e => setDescription(e.target.value)}
-                  className="w-full bg-slate-50 border border-slate-200 rounded-xl p-2.5 text-slate-900"
+                  placeholder="Enter detailed B2B specifications, steel gauge, weight stack size..."
+                  className="w-full bg-gray-800 border border-gray-700 rounded-xl px-3.5 py-2.5 text-white text-sm focus:outline-none focus:border-amber-500 resize-none"
                 />
               </div>
 
-              <button
-                type="submit"
-                className="w-full py-3.5 px-4 rounded-xl bg-blue-600 text-white font-black uppercase flex items-center justify-center gap-2 shadow-md"
-              >
-                <Save className="w-4 h-4" />
-                <span>Save Product to Catalog</span>
-              </button>
+              <div className="flex items-center justify-end gap-3 pt-4 border-t border-gray-800">
+                <button
+                  type="button"
+                  onClick={() => setIsModalOpen(false)}
+                  className="px-4 py-2 bg-gray-800 hover:bg-gray-700 text-gray-300 rounded-xl text-sm font-semibold transition"
+                >
+                  Cancel
+                </button>
+                <button
+                  type="submit"
+                  className="flex items-center gap-2 bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-gray-950 px-5 py-2 rounded-xl text-sm font-bold transition shadow-lg shadow-amber-500/10"
+                >
+                  <Save className="w-4 h-4" /> Save Equipment
+                </button>
+              </div>
             </form>
           </div>
         </div>
