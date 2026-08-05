@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { FileText, Send, DollarSign, Download, Printer, CheckCircle2, MessageSquare, Building2, User } from 'lucide-react';
+import { Printer, MessageSquare } from 'lucide-react';
 import { useApp } from '../../context/AppContext';
 
 export const PdfQuoteDispatcherTab: React.FC = () => {
@@ -11,11 +11,9 @@ export const PdfQuoteDispatcherTab: React.FC = () => {
   const [discountPercent, setDiscountPercent] = useState<number>(5);
   const [freightCharges, setFreightCharges] = useState<number>(3500);
   const [gstPercent, setGstPercent] = useState<number>(18);
-  const [isGenerated, setIsGenerated] = useState(false);
 
   const handleOpenQuoteGenerator = (enquiry: any) => {
     setSelectedEnquiry(enquiry);
-    setIsGenerated(false);
     // Initialize unit prices
     const initial: Record<string, number> = {};
     enquiry.selectedProducts.forEach((item: any) => {

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Download, BarChart3, Dumbbell, Users, Briefcase, FileSpreadsheet } from 'lucide-react';
+import { BarChart3, Dumbbell, Users, Briefcase, FileSpreadsheet } from 'lucide-react';
 import { useApp } from '../../context/AppContext';
 
 export const AnalyticsReportsTab: React.FC = () => {

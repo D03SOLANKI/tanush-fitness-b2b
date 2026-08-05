@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { X, Lock, Mail, Phone, Building2, MapPin, User, LogIn, UserPlus, AlertCircle } from 'lucide-react';
+import { X, Lock, Mail, Building2, User, LogIn, UserPlus, AlertCircle } from 'lucide-react';
 
 interface AuthModalProps {
   isOpen: boolean;

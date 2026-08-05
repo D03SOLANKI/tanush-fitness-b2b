@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Plus, Edit2, Trash2, CheckCircle, Package, Layers, X, Save } from 'lucide-react';
+import { Plus, Edit2, Trash2, CheckCircle, X, Save } from 'lucide-react';
 import { PRODUCTS } from '../../data/products';
 import { EQUIPMENT_CATEGORIES } from '../../data/categories';
 import { Product } from '../../types';
