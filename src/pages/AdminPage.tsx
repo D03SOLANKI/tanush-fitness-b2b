@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import React, { useState } from 'react';
 import { useApp } from '../context/AppContext';
 import { SEO } from '../components/common/SEO';
 import {
@@ -22,9 +22,7 @@ import {
   Printer,
   CheckSquare,
   FileSpreadsheet,
-  Settings,
-  ChevronLeft,
-  ChevronRight
+  Settings
 } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { UserManagementTab } from '../components/admin/UserManagementTab';
@@ -64,16 +62,6 @@ export const AdminPage: React.FC = () => {
   const [passcode, setPasscode] = useState('');
   const [authError, setAuthError] = useState(false);
   const [isNotificationsOpen, setIsNotificationsOpen] = useState(false);
-
-  // Horizontal Scroll Controller Ref
-  const scrollContainerRef = useRef<HTMLDivElement>(null);
-
-  const scrollTabs = (direction: 'left' | 'right') => {
-    if (scrollContainerRef.current) {
-      const scrollAmount = direction === 'left' ? -280 : 280;
-      scrollContainerRef.current.scrollBy({ left: scrollAmount, behavior: 'smooth' });
-    }
-  };
 
   const handleLoginSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -241,103 +229,78 @@ export const AdminPage: React.FC = () => {
           </div>
         </div>
 
-        {/* Smooth Horizontal Scrolling Control Wrapper */}
-        <div className="relative mb-8 bg-white p-2 rounded-3xl border border-slate-200 shadow-sm">
-          {/* Scroll Left Button */}
+        {/* Clean Natural Horizontal Scrolling Tab Bar */}
+        <div className="flex items-center gap-3 overflow-x-auto p-2 bg-white rounded-3xl border border-slate-200 shadow-sm mb-8 scrollbar-thin">
           <button
-            onClick={() => scrollTabs('left')}
-            className="absolute left-3 top-1/2 -translate-y-1/2 z-10 p-2 rounded-xl bg-slate-900 text-white shadow-lg hover:bg-blue-600 transition-all opacity-80 hover:opacity-100 hidden sm:flex items-center justify-center"
-            title="Scroll Left"
+            onClick={() => setActiveTab('users')}
+            className={`px-5 py-3 rounded-2xl text-xs font-black uppercase whitespace-nowrap transition-all flex items-center gap-2 font-mono shrink-0 ${
+              activeTab === 'users'
+                ? 'bg-blue-600 text-white shadow-md'
+                : 'bg-slate-50 text-slate-700 border border-slate-200 hover:bg-slate-100'
+            }`}
           >
-            <ChevronLeft className="w-4 h-4" />
+            <UserCheck className="w-4 h-4" />
+            <span>1️⃣ Users & GST Verification</span>
           </button>
 
-          {/* Tab Buttons Container */}
-          <div
-            ref={scrollContainerRef}
-            className="flex items-center gap-3 overflow-x-auto px-2 py-1 scroll-smooth no-scrollbar"
-            style={{ scrollbarWidth: 'thin', scrollbarColor: '#3b82f6 #f1f5f9' }}
-          >
-            <button
-              onClick={() => setActiveTab('users')}
-              className={`px-5 py-3 rounded-2xl text-xs font-black uppercase whitespace-nowrap transition-all flex items-center gap-2 font-mono shrink-0 ${
-                activeTab === 'users'
-                  ? 'bg-blue-600 text-white shadow-md scale-102'
-                  : 'bg-slate-50 text-slate-700 border border-slate-200 hover:bg-slate-100'
-              }`}
-            >
-              <UserCheck className="w-4 h-4" />
-              <span>1️⃣ Users & GST Verification</span>
-            </button>
-
-            <button
-              onClick={() => setActiveTab('catalog')}
-              className={`px-5 py-3 rounded-2xl text-xs font-black uppercase whitespace-nowrap transition-all flex items-center gap-2 font-mono shrink-0 ${
-                activeTab === 'catalog'
-                  ? 'bg-blue-600 text-white shadow-md scale-102'
-                  : 'bg-slate-50 text-slate-700 border border-slate-200 hover:bg-slate-100'
-              }`}
-            >
-              <Package className="w-4 h-4" />
-              <span>2️⃣ Equipment Catalog Manager</span>
-            </button>
-
-            <button
-              onClick={() => setActiveTab('quotes')}
-              className={`px-5 py-3 rounded-2xl text-xs font-black uppercase whitespace-nowrap transition-all flex items-center gap-2 font-mono shrink-0 ${
-                activeTab === 'quotes'
-                  ? 'bg-blue-600 text-white shadow-md scale-102'
-                  : 'bg-slate-50 text-slate-700 border border-slate-200 hover:bg-slate-100'
-              }`}
-            >
-              <Printer className="w-4 h-4" />
-              <span>3️⃣ PDF Quotes & WhatsApp</span>
-            </button>
-
-            <button
-              onClick={() => setActiveTab('jobs-mod')}
-              className={`px-5 py-3 rounded-2xl text-xs font-black uppercase whitespace-nowrap transition-all flex items-center gap-2 font-mono shrink-0 ${
-                activeTab === 'jobs-mod'
-                  ? 'bg-blue-600 text-white shadow-md scale-102'
-                  : 'bg-slate-50 text-slate-700 border border-slate-200 hover:bg-slate-100'
-              }`}
-            >
-              <CheckSquare className="w-4 h-4" />
-              <span>4️⃣ Job Moderation Queue</span>
-            </button>
-
-            <button
-              onClick={() => setActiveTab('reports')}
-              className={`px-5 py-3 rounded-2xl text-xs font-black uppercase whitespace-nowrap transition-all flex items-center gap-2 font-mono shrink-0 ${
-                activeTab === 'reports'
-                  ? 'bg-blue-600 text-white shadow-md scale-102'
-                  : 'bg-slate-50 text-slate-700 border border-slate-200 hover:bg-slate-100'
-              }`}
-            >
-              <FileSpreadsheet className="w-4 h-4" />
-              <span>5️⃣ Analytics & CSV Export</span>
-            </button>
-
-            <button
-              onClick={() => setActiveTab('settings')}
-              className={`px-5 py-3 rounded-2xl text-xs font-black uppercase whitespace-nowrap transition-all flex items-center gap-2 font-mono shrink-0 ${
-                activeTab === 'settings'
-                  ? 'bg-blue-600 text-white shadow-md scale-102'
-                  : 'bg-slate-50 text-slate-700 border border-slate-200 hover:bg-slate-100'
-              }`}
-            >
-              <Settings className="w-4 h-4" />
-              <span>6️⃣ System Settings</span>
-            </button>
-          </div>
-
-          {/* Scroll Right Button */}
           <button
-            onClick={() => scrollTabs('right')}
-            className="absolute right-3 top-1/2 -translate-y-1/2 z-10 p-2 rounded-xl bg-slate-900 text-white shadow-lg hover:bg-blue-600 transition-all opacity-80 hover:opacity-100 hidden sm:flex items-center justify-center"
-            title="Scroll Right"
+            onClick={() => setActiveTab('catalog')}
+            className={`px-5 py-3 rounded-2xl text-xs font-black uppercase whitespace-nowrap transition-all flex items-center gap-2 font-mono shrink-0 ${
+              activeTab === 'catalog'
+                ? 'bg-blue-600 text-white shadow-md'
+                : 'bg-slate-50 text-slate-700 border border-slate-200 hover:bg-slate-100'
+            }`}
           >
-            <ChevronRight className="w-4 h-4" />
+            <Package className="w-4 h-4" />
+            <span>2️⃣ Equipment Catalog Manager</span>
+          </button>
+
+          <button
+            onClick={() => setActiveTab('quotes')}
+            className={`px-5 py-3 rounded-2xl text-xs font-black uppercase whitespace-nowrap transition-all flex items-center gap-2 font-mono shrink-0 ${
+              activeTab === 'quotes'
+                ? 'bg-blue-600 text-white shadow-md'
+                : 'bg-slate-50 text-slate-700 border border-slate-200 hover:bg-slate-100'
+            }`}
+          >
+            <Printer className="w-4 h-4" />
+            <span>3️⃣ PDF Quotes & WhatsApp</span>
+          </button>
+
+          <button
+            onClick={() => setActiveTab('jobs-mod')}
+            className={`px-5 py-3 rounded-2xl text-xs font-black uppercase whitespace-nowrap transition-all flex items-center gap-2 font-mono shrink-0 ${
+              activeTab === 'jobs-mod'
+                ? 'bg-blue-600 text-white shadow-md'
+                : 'bg-slate-50 text-slate-700 border border-slate-200 hover:bg-slate-100'
+            }`}
+          >
+            <CheckSquare className="w-4 h-4" />
+            <span>4️⃣ Job Moderation Queue</span>
+          </button>
+
+          <button
+            onClick={() => setActiveTab('reports')}
+            className={`px-5 py-3 rounded-2xl text-xs font-black uppercase whitespace-nowrap transition-all flex items-center gap-2 font-mono shrink-0 ${
+              activeTab === 'reports'
+                ? 'bg-blue-600 text-white shadow-md'
+                : 'bg-slate-50 text-slate-700 border border-slate-200 hover:bg-slate-100'
+            }`}
+          >
+            <FileSpreadsheet className="w-4 h-4" />
+            <span>5️⃣ Analytics & CSV Export</span>
+          </button>
+
+          <button
+            onClick={() => setActiveTab('settings')}
+            className={`px-5 py-3 rounded-2xl text-xs font-black uppercase whitespace-nowrap transition-all flex items-center gap-2 font-mono shrink-0 ${
+              activeTab === 'settings'
+                ? 'bg-blue-600 text-white shadow-md'
+                : 'bg-slate-50 text-slate-700 border border-slate-200 hover:bg-slate-100'
+            }`}
+          >
+            <Settings className="w-4 h-4" />
+            <span>6️⃣ System Settings</span>
           </button>
         </div>
 
