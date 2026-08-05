@@ -7,7 +7,16 @@
     "dev": "vite",
     "build": "tsc -b && vite build",
     "lint": "oxlint",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "test:frontend": "vitest run",
+    "test": "npm run test:frontend",
+    "coverage": "npm run test:frontend -- --coverage && cd backend && npm run test:coverage"
+  },
+  "devDependencies": {
+    "vitest": "^2.0.0",
+    "@vitest/ui": "^2.0.0",
+    "@testing-library/react": "^15.0.0",
+    "@testing-library/jest-dom": "^6.5.0"
   },
   "dependencies": {
     "autoprefixer": "^10.5.4",
