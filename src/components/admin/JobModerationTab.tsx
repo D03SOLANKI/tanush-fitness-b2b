@@ -56,8 +56,12 @@ export const JobModerationTab: React.FC = () => {
               <h4 className="text-base font-black text-slate-900 font-heading uppercase">{job.title}</h4>
 
               <div className="flex items-center gap-3 text-[11px] text-slate-600 font-bold mt-1">
-                <span className="flex items-center gap-1"><Building2 className="w-3.5 h-3.5 text-slate-400" /> {job.companyName}</span>
-                <span className="flex items-center gap-1"><MapPin className="w-3.5 h-3.5 text-slate-400" /> {job.location}</span>
+                <span className="flex items-center gap-1">
+                  <Building2 className="w-3.5 h-3.5 text-slate-400" /> {job.companyName || job.gymName}
+                </span>
+                <span className="flex items-center gap-1">
+                  <MapPin className="w-3.5 h-3.5 text-slate-400" /> {job.location}
+                </span>
               </div>
 
               <div className="mt-3 p-3 bg-slate-50 rounded-xl border border-slate-100 text-xs text-slate-700 leading-relaxed font-normal">

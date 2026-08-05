@@ -23,6 +23,7 @@ export interface CompatibleProduct {
 export interface Product {
   id: string;
   name: string;
+  slug?: string;
   brand: string;
   category: string;
   categoryId: string; // 'cardio' | 'strength' | 'free-weights' | 'functional' | 'flooring' | 'lockers' | 'accessories'
@@ -37,7 +38,7 @@ export interface Product {
   gallery: string[];
   description: string;
   specs: ProductSpec;
-  vendor: Vendor;
+  vendor?: Vendor;
   features: string[];
   minOrderQty?: number;
   compatibleEquipment?: CompatibleProduct[];

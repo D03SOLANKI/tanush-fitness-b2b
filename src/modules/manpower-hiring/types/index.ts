@@ -13,6 +13,7 @@ export interface JobListing {
   title: string;
   category: JobRoleCategory;
   gymName: string;
+  companyName?: string;
   location: string;
   salaryRange: string;
   type: 'Full-time' | 'Part-time' | 'Contract';
@@ -21,6 +22,7 @@ export interface JobListing {
   requirements: string[];
   createdAt: string;
   applicationsCount: number;
+  isActive?: boolean;
 }
 
 export interface JobApplication {
