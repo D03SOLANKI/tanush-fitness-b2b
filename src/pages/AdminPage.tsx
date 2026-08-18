@@ -3,19 +3,11 @@ import { useApp } from '../context/AppContext';
 import { SEO } from '../components/common/SEO';
 import {
   ShieldCheck,
-  Dumbbell,
-  Users,
-  Briefcase,
-  Mail,
-  FileText,
   Lock,
   KeyRound,
   LogOut,
   ShieldAlert,
   Bell,
-  TrendingUp,
-  BarChart3,
-  CheckCircle2,
   X,
   UserCheck,
   Package,
@@ -24,7 +16,7 @@ import {
   FileSpreadsheet,
   Settings
 } from 'lucide-react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { UserManagementTab } from '../components/admin/UserManagementTab';
 import { CatalogManagerTab } from '../components/admin/CatalogManagerTab';
 import { PdfQuoteDispatcherTab } from '../components/admin/PdfQuoteDispatcherTab';
@@ -38,10 +30,8 @@ export const AdminPage: React.FC = () => {
     loginAdmin,
     logoutAdmin,
     equipmentEnquiries,
-    jobListings,
     jobApplications,
     serviceEnquiries,
-    contactEnquiries,
     navigateTo,
   } = useApp();
 
@@ -51,12 +41,7 @@ export const AdminPage: React.FC = () => {
     | 'quotes'
     | 'jobs-mod'
     | 'reports'
-    | 'settings'
-    | 'analytics'
-    | 'equipment-enquiries'
-    | 'manpower'
-    | 'services'
-    | 'contacts';
+    | 'settings';
 
   const [activeTab, setActiveTab] = useState<AdminTab>('users');
   const [passcode, setPasscode] = useState('');
@@ -74,35 +59,35 @@ export const AdminPage: React.FC = () => {
     }
   };
 
-  // RESTRICTED ACCESS SCREEN (If not authenticated)
+  // RESTRICTED ACCESS SCREEN (If not authenticated) - Premium Light Theme
   if (!isAdminAuthenticated) {
     return (
-      <main className="pt-32 pb-24 bg-slate-950 min-h-screen text-slate-100 font-mono flex items-center justify-center p-4">
+      <main className="pt-20 pb-24 bg-slate-50 min-h-screen text-slate-900 font-mono flex items-center justify-center p-4">
         <SEO title="Admin Security Authentication Gate | Tanush B2B" />
         <motion.div
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
-          className="max-w-md w-full rounded-3xl bg-slate-900 border border-slate-800 p-8 shadow-2xl space-y-6 text-center"
+          className="max-w-md w-full rounded-3xl bg-white border border-slate-200 p-8 shadow-xl space-y-6 text-center"
         >
-          <div className="w-16 h-16 rounded-2xl bg-amber-500/10 border border-amber-500/30 text-amber-400 mx-auto flex items-center justify-center shadow-inner">
+          <div className="w-16 h-16 rounded-2xl bg-blue-50 border border-blue-200 text-blue-600 mx-auto flex items-center justify-center shadow-inner">
             <Lock className="w-8 h-8" />
           </div>
 
           <div className="space-y-1">
-            <span className="text-[10px] font-bold text-amber-400 uppercase tracking-widest block font-mono">
+            <span className="text-[10px] font-bold text-blue-600 uppercase tracking-widest block font-mono">
               RESTRICTED EXECUTIVE ACCESS
             </span>
-            <h1 className="text-2xl font-black text-white font-heading uppercase">
+            <h1 className="text-2xl font-black text-slate-900 font-heading uppercase">
               Tanush Admin Authentication
             </h1>
-            <p className="text-xs text-slate-400 leading-relaxed font-normal">
+            <p className="text-xs text-slate-500 leading-relaxed font-normal">
               This panel is restricted exclusively to authorized Tanush Fitness directors, account managers, and system administrators.
             </p>
           </div>
 
           <form onSubmit={handleLoginSubmit} className="space-y-4 text-left">
             <div>
-              <label className="text-[10px] font-bold text-slate-400 uppercase font-mono block mb-1">
+              <label className="text-[10px] font-bold text-slate-600 uppercase font-mono block mb-1">
                 Enter Admin Security Passcode *
               </label>
               <div className="relative">
@@ -115,15 +100,15 @@ export const AdminPage: React.FC = () => {
                     setPasscode(e.target.value);
                     setAuthError(false);
                   }}
-                  className={`w-full bg-slate-950 border rounded-xl py-3 px-4 pl-10 text-xs font-mono text-white placeholder-slate-500 focus:outline-none ${
-                    authError ? 'border-rose-500' : 'border-slate-800 focus:border-amber-400'
+                  className={`w-full bg-slate-50 border rounded-xl py-3 px-4 pl-10 text-xs font-mono text-slate-900 placeholder-slate-400 focus:outline-none ${
+                    authError ? 'border-rose-500' : 'border-slate-200 focus:border-blue-600'
                   }`}
                 />
-                <KeyRound className="w-4 h-4 text-slate-500 absolute left-3.5 top-3.5" />
+                <KeyRound className="w-4 h-4 text-slate-400 absolute left-3.5 top-3.5" />
               </div>
 
               {authError && (
-                <div className="text-[10px] text-rose-400 font-bold mt-1 flex items-center gap-1">
+                <div className="text-[10px] text-rose-600 font-bold mt-1 flex items-center gap-1">
                   <ShieldAlert className="w-3.5 h-3.5" />
                   <span>Invalid security passcode. Access denied.</span>
                 </div>
@@ -132,18 +117,18 @@ export const AdminPage: React.FC = () => {
 
             <button
               type="submit"
-              className="w-full py-3.5 px-4 rounded-xl bg-amber-500 hover:bg-amber-400 text-slate-950 font-black text-xs uppercase tracking-wider font-mono flex items-center justify-center gap-2 shadow-lg transition-all"
+              className="w-full py-3.5 px-4 rounded-xl bg-blue-600 hover:bg-blue-700 text-white font-bold text-xs uppercase tracking-wider font-mono flex items-center justify-center gap-2 shadow-lg shadow-blue-600/20 transition-all"
             >
               <ShieldCheck className="w-4 h-4" />
               <span>Authenticate & Access Console</span>
             </button>
           </form>
 
-          <div className="pt-4 border-t border-slate-800/80 flex items-center justify-between text-[10px] text-slate-500 font-mono">
+          <div className="pt-4 border-t border-slate-100 flex items-center justify-between text-[10px] text-slate-400 font-mono">
             <span>256-Bit SSL Encrypted Audit Log</span>
             <button
               onClick={() => navigateTo('home')}
-              className="text-slate-400 hover:text-white underline font-bold"
+              className="text-blue-600 hover:underline font-bold"
             >
               Return Home →
             </button>
@@ -156,20 +141,20 @@ export const AdminPage: React.FC = () => {
   const totalNotifications = equipmentEnquiries.length + jobApplications.length + serviceEnquiries.length;
 
   return (
-    <main className="pt-8 pb-24 bg-gradient-to-br from-[#0B0F19] via-[#0D1527] to-[#0B0F19] min-h-screen text-slate-100 font-mono">
+    <main className="pt-8 pb-24 bg-slate-50 min-h-screen text-slate-900 font-mono">
       <SEO title="Executive Enterprise Admin Suite | Tanush Fitness B2B" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Top Executive Header Bar */}
-        <div className="mb-8 flex flex-col sm:flex-row sm:items-center justify-between gap-4 border border-slate-800 pb-6 bg-[#0F172A]/90 backdrop-blur-md p-6 rounded-3xl shadow-xl shadow-black/20">
+        <div className="mb-8 flex flex-col sm:flex-row sm:items-center justify-between gap-4 border border-slate-200 pb-6 bg-white p-6 rounded-3xl shadow-sm">
           <div>
             <div className="flex items-center gap-2.5">
-              <ShieldCheck className="w-7 h-7 text-amber-400" />
-              <h1 className="text-2xl sm:text-3xl font-black text-white font-heading uppercase tracking-wide">
+              <ShieldCheck className="w-7 h-7 text-blue-600" />
+              <h1 className="text-2xl sm:text-3xl font-black text-slate-900 font-heading uppercase tracking-wide">
                 Tanush Executive Console
               </h1>
             </div>
-            <p className="text-xs text-slate-400 mt-1">
+            <p className="text-xs text-slate-500 mt-1">
               Centralized Enterprise Suite • User Verification, Equipment Catalog, PDF Quotes, Moderation & CSV Reports
             </p>
           </div>
@@ -179,11 +164,11 @@ export const AdminPage: React.FC = () => {
             <div className="relative">
               <button
                 onClick={() => setIsNotificationsOpen(!isNotificationsOpen)}
-                className="p-2.5 rounded-xl bg-slate-800/80 border border-slate-700 text-slate-300 hover:text-white relative transition shadow-sm"
+                className="p-2.5 rounded-xl bg-slate-50 border border-slate-200 text-slate-700 hover:text-slate-900 relative transition shadow-sm"
               >
-                <Bell className="w-4 h-4 text-amber-400" />
+                <Bell className="w-4 h-4 text-blue-600" />
                 {totalNotifications > 0 && (
-                  <span className="absolute -top-1 -right-1 w-4 h-4 rounded-full bg-rose-500 text-white text-[9px] font-black flex items-center justify-center animate-pulse">
+                  <span className="absolute -top-1 -right-1 w-4 h-4 rounded-full bg-rose-500 text-white text-[9px] font-black flex items-center justify-center">
                     {totalNotifications}
                   </span>
                 )}
@@ -191,21 +176,21 @@ export const AdminPage: React.FC = () => {
 
               {/* Notifications Dropdown */}
               {isNotificationsOpen && (
-                <div className="absolute right-0 mt-2 w-80 rounded-2xl bg-slate-900 border border-slate-800 shadow-2xl p-4 z-50 space-y-3 backdrop-blur-xl">
-                  <div className="flex items-center justify-between border-b border-slate-800 pb-2">
-                    <span className="text-xs font-black uppercase text-slate-200">Live Enterprise Alerts</span>
+                <div className="absolute right-0 mt-2 w-80 rounded-2xl bg-white border border-slate-200 shadow-2xl p-4 z-50 space-y-3">
+                  <div className="flex items-center justify-between border-b border-slate-100 pb-2">
+                    <span className="text-xs font-black uppercase text-slate-900">Live Enterprise Alerts</span>
                     <button onClick={() => setIsNotificationsOpen(false)}>
-                      <X className="w-4 h-4 text-slate-400 hover:text-white" />
+                      <X className="w-4 h-4 text-slate-400 hover:text-slate-600" />
                     </button>
                   </div>
                   <div className="space-y-2 text-xs">
                     {equipmentEnquiries.length > 0 && (
-                      <div className="p-2.5 rounded-xl bg-blue-500/10 border border-blue-500/20 text-blue-400 font-bold">
+                      <div className="p-2.5 rounded-xl bg-blue-50 border border-blue-200 text-blue-900 font-bold">
                         ⚡ {equipmentEnquiries.length} Equipment RFQ Quotation Requests
                       </div>
                     )}
                     {jobApplications.length > 0 && (
-                      <div className="p-2.5 rounded-xl bg-amber-500/10 border border-amber-500/20 text-amber-400 font-bold">
+                      <div className="p-2.5 rounded-xl bg-amber-50 border border-amber-200 text-amber-900 font-bold">
                         ⚡ {jobApplications.length} Candidate Resume Applications
                       </div>
                     )}
@@ -214,29 +199,29 @@ export const AdminPage: React.FC = () => {
               )}
             </div>
 
-            <div className="px-3.5 py-2 rounded-xl bg-emerald-500/10 border border-emerald-500/20 text-xs font-bold text-emerald-400 flex items-center gap-2">
-              <span className="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-ping" />
+            <div className="px-3.5 py-2 rounded-xl bg-emerald-50 border border-emerald-200 text-xs font-bold text-emerald-800 flex items-center gap-2 shadow-sm">
+              <span className="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-ping" />
               <span>Admin Session Active</span>
             </div>
 
             <button
               onClick={logoutAdmin}
-              className="px-4 py-2 rounded-xl bg-slate-800/80 hover:bg-rose-500/20 border border-slate-700 hover:border-rose-500/30 text-slate-300 hover:text-rose-400 text-xs font-bold uppercase flex items-center gap-1.5 transition-all"
+              className="px-4 py-2 rounded-xl bg-slate-100 hover:bg-rose-50 border border-slate-200 hover:border-rose-200 text-slate-700 hover:text-rose-700 text-xs font-bold uppercase flex items-center gap-1.5 transition-all shadow-sm"
             >
-              <LogOut className="w-4 h-4 text-rose-400" />
+              <LogOut className="w-4 h-4 text-rose-600" />
               <span>Logout</span>
             </button>
           </div>
         </div>
 
         {/* Clean Natural Horizontal Scrolling Tab Bar */}
-        <div className="flex items-center gap-3 overflow-x-auto p-2.5 bg-[#0F172A]/80 rounded-3xl border border-slate-800 shadow-xl mb-8 scrollbar-thin backdrop-blur-md">
+        <div className="flex items-center gap-3 overflow-x-auto p-2.5 bg-white rounded-3xl border border-slate-200 shadow-sm mb-8 scrollbar-thin">
           <button
             onClick={() => setActiveTab('users')}
             className={`px-5 py-3 rounded-2xl text-xs font-black uppercase whitespace-nowrap transition-all flex items-center gap-2 font-mono shrink-0 ${
               activeTab === 'users'
-                ? 'bg-gradient-to-r from-amber-500 to-amber-600 text-slate-950 font-black shadow-lg shadow-amber-500/20'
-                : 'bg-slate-800/70 text-slate-300 border border-slate-700/60 hover:bg-slate-800 hover:text-white'
+                ? 'bg-blue-600 text-white font-bold shadow-md shadow-blue-500/20'
+                : 'bg-slate-50 text-slate-700 border border-slate-200 hover:bg-slate-100 hover:text-slate-900'
             }`}
           >
             <UserCheck className="w-4 h-4" />
@@ -247,8 +232,8 @@ export const AdminPage: React.FC = () => {
             onClick={() => setActiveTab('catalog')}
             className={`px-5 py-3 rounded-2xl text-xs font-black uppercase whitespace-nowrap transition-all flex items-center gap-2 font-mono shrink-0 ${
               activeTab === 'catalog'
-                ? 'bg-gradient-to-r from-amber-500 to-amber-600 text-slate-950 font-black shadow-lg shadow-amber-500/20'
-                : 'bg-slate-800/70 text-slate-300 border border-slate-700/60 hover:bg-slate-800 hover:text-white'
+                ? 'bg-blue-600 text-white font-bold shadow-md shadow-blue-500/20'
+                : 'bg-slate-50 text-slate-700 border border-slate-200 hover:bg-slate-100 hover:text-slate-900'
             }`}
           >
             <Package className="w-4 h-4" />
@@ -259,8 +244,8 @@ export const AdminPage: React.FC = () => {
             onClick={() => setActiveTab('quotes')}
             className={`px-5 py-3 rounded-2xl text-xs font-black uppercase whitespace-nowrap transition-all flex items-center gap-2 font-mono shrink-0 ${
               activeTab === 'quotes'
-                ? 'bg-gradient-to-r from-amber-500 to-amber-600 text-slate-950 font-black shadow-lg shadow-amber-500/20'
-                : 'bg-slate-800/70 text-slate-300 border border-slate-700/60 hover:bg-slate-800 hover:text-white'
+                ? 'bg-blue-600 text-white font-bold shadow-md shadow-blue-500/20'
+                : 'bg-slate-50 text-slate-700 border border-slate-200 hover:bg-slate-100 hover:text-slate-900'
             }`}
           >
             <Printer className="w-4 h-4" />
@@ -271,8 +256,8 @@ export const AdminPage: React.FC = () => {
             onClick={() => setActiveTab('jobs-mod')}
             className={`px-5 py-3 rounded-2xl text-xs font-black uppercase whitespace-nowrap transition-all flex items-center gap-2 font-mono shrink-0 ${
               activeTab === 'jobs-mod'
-                ? 'bg-gradient-to-r from-amber-500 to-amber-600 text-slate-950 font-black shadow-lg shadow-amber-500/20'
-                : 'bg-slate-800/70 text-slate-300 border border-slate-700/60 hover:bg-slate-800 hover:text-white'
+                ? 'bg-blue-600 text-white font-bold shadow-md shadow-blue-500/20'
+                : 'bg-slate-50 text-slate-700 border border-slate-200 hover:bg-slate-100 hover:text-slate-900'
             }`}
           >
             <CheckSquare className="w-4 h-4" />
@@ -283,8 +268,8 @@ export const AdminPage: React.FC = () => {
             onClick={() => setActiveTab('reports')}
             className={`px-5 py-3 rounded-2xl text-xs font-black uppercase whitespace-nowrap transition-all flex items-center gap-2 font-mono shrink-0 ${
               activeTab === 'reports'
-                ? 'bg-gradient-to-r from-amber-500 to-amber-600 text-slate-950 font-black shadow-lg shadow-amber-500/20'
-                : 'bg-slate-800/70 text-slate-300 border border-slate-700/60 hover:bg-slate-800 hover:text-white'
+                ? 'bg-blue-600 text-white font-bold shadow-md shadow-blue-500/20'
+                : 'bg-slate-50 text-slate-700 border border-slate-200 hover:bg-slate-100 hover:text-slate-900'
             }`}
           >
             <FileSpreadsheet className="w-4 h-4" />
@@ -295,8 +280,8 @@ export const AdminPage: React.FC = () => {
             onClick={() => setActiveTab('settings')}
             className={`px-5 py-3 rounded-2xl text-xs font-black uppercase whitespace-nowrap transition-all flex items-center gap-2 font-mono shrink-0 ${
               activeTab === 'settings'
-                ? 'bg-gradient-to-r from-amber-500 to-amber-600 text-slate-950 font-black shadow-lg shadow-amber-500/20'
-                : 'bg-slate-800/70 text-slate-300 border border-slate-700/60 hover:bg-slate-800 hover:text-white'
+                ? 'bg-blue-600 text-white font-bold shadow-md shadow-blue-500/20'
+                : 'bg-slate-50 text-slate-700 border border-slate-200 hover:bg-slate-100 hover:text-slate-900'
             }`}
           >
             <Settings className="w-4 h-4" />

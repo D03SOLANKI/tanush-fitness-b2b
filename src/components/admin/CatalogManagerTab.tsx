@@ -67,7 +67,6 @@ export const CatalogManagerTab: React.FC = () => {
 
     if (editingProduct) {
       updateProduct(editingProduct.id, payload);
-      // Backend API sync attempt
       fetch(`http://localhost:5000/api/admin/catalog/${editingProduct.id}`, {
         method: 'PUT',
         headers: {
@@ -92,41 +91,43 @@ export const CatalogManagerTab: React.FC = () => {
   };
 
   const handleDelete = (id: string, prodName: string) => {
-    if (window.confirm(`Are you sure you want to remove "${prodName}" from the live catalog?`)) {
+    if (window.confirm(`Are you sure you want to delete "${prodName}" from the catalog?`)) {
       deleteProduct(id);
       fetch(`http://localhost:5000/api/admin/catalog/${id}`, {
         method: 'DELETE',
-        headers: { Authorization: `Bearer ${accessToken}` },
+        headers: {
+          Authorization: `Bearer ${accessToken}`,
+        },
       }).catch(err => console.log('Backend sync notice:', err.message));
     }
   };
 
   return (
     <div className="space-y-6">
-      {/* Header Banner */}
-      <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 bg-gray-900 border border-gray-800 p-6 rounded-2xl">
+      {/* Header Banner - Modern Light */}
+      <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 bg-white border border-slate-200 p-6 rounded-2xl shadow-sm">
         <div>
-          <h2 className="text-xl font-bold text-white flex items-center gap-2">
-            <Package className="w-5 h-5 text-amber-500" /> Equipment & Machinery Catalog Manager
+          <h2 className="text-xl font-bold text-slate-900 flex items-center gap-2">
+            <Package className="w-5 h-5 text-blue-600" /> Equipment & Machinery Catalog Manager
           </h2>
-          <p className="text-sm text-gray-400 mt-1">
+          <p className="text-sm text-slate-500 mt-1">
             Directly add, edit, or toggle stock & MOQs for treadmills, racks, and selectorized stacks on the live website.
           </p>
         </div>
         <button
           onClick={openAddModal}
-          className="flex items-center gap-2 bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-gray-950 font-semibold px-4 py-2.5 rounded-xl transition shadow-lg shadow-amber-500/10 shrink-0"
+          className="flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white font-bold px-4 py-2.5 rounded-xl transition shadow-md shadow-blue-600/20 shrink-0 text-sm"
         >
           <Plus className="w-4 h-4" /> Add New Equipment
         </button>
       </div>
 
-      {/* Catalog Table */}
-      <div className="bg-white border border-slate-700 rounded-2xl overflow-hidden shadow-xl">
+      {/* Catalog Table - Modern Light Cool Blue */}
+      <div className="bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-sm">
         <div className="overflow-x-auto">
           <table className="w-full text-left border-collapse">
             <thead>
-              <tr className="bg-slate-900 border-b border-slate-800 text-xs font-bold text-slate-300 uppercase tracking-wider">
+              <tr className="bg-slate-100/90 border-b border-slate-200 text-xs font-bold text-slate-700 uppercase tracking-wider">
                 <th className="py-4 px-6">Equipment</th>
                 <th className="py-4 px-6">Brand & Category</th>
                 <th className="py-4 px-6">MOQ & Lead Time</th>
@@ -134,12 +135,12 @@ export const CatalogManagerTab: React.FC = () => {
                 <th className="py-4 px-6 text-right">Actions</th>
               </tr>
             </thead>
-            <tbody className="divide-y divide-slate-200 text-sm">
+            <tbody className="divide-y divide-slate-100 text-sm">
               {products.map(p => (
                 <tr key={p.id} className="odd:bg-[#F4F9FF] even:bg-white hover:bg-[#E4F0FF] transition">
                   <td className="py-4 px-6">
                     <div className="flex items-center gap-3">
-                      <img src={p.image} alt={p.name} className="w-12 h-12 rounded-lg object-cover bg-slate-100 border border-slate-300 shrink-0" />
+                      <img src={p.image} alt={p.name} className="w-12 h-12 rounded-lg object-cover bg-slate-100 border border-slate-200 shrink-0" />
                       <div>
                         <div className="font-bold text-slate-900">{p.name}</div>
                         <div className="text-xs text-slate-500 font-medium font-mono">ID: {p.id}</div>
@@ -148,7 +149,7 @@ export const CatalogManagerTab: React.FC = () => {
                   </td>
                   <td className="py-4 px-6">
                     <div className="text-slate-900 font-bold">{p.brand}</div>
-                    <div className="text-xs text-amber-700 font-semibold">{p.category}</div>
+                    <div className="text-xs text-blue-700 font-semibold">{p.category}</div>
                   </td>
                   <td className="py-4 px-6">
                     <div className="text-slate-800 font-semibold">MOQ: {p.minOrderQty || 1} Units</div>
@@ -163,7 +164,7 @@ export const CatalogManagerTab: React.FC = () => {
                     <div className="flex items-center justify-end gap-2">
                       <button
                         onClick={() => openEditModal(p)}
-                        className="p-2 bg-slate-100 hover:bg-slate-200 text-slate-700 hover:text-slate-950 rounded-lg border border-slate-300 transition shadow-sm"
+                        className="p-2 bg-slate-100 hover:bg-slate-200 text-slate-700 hover:text-slate-950 rounded-lg border border-slate-200 transition shadow-sm"
                         title="Edit Equipment"
                       >
                         <Edit2 className="w-4 h-4" />
@@ -184,16 +185,16 @@ export const CatalogManagerTab: React.FC = () => {
         </div>
       </div>
 
-      {/* Add / Edit Modal */}
+      {/* Add / Edit Modal - Modern Light */}
       {isModalOpen && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm p-4 overflow-y-auto">
-          <div className="bg-gray-900 border border-gray-800 rounded-2xl w-full max-w-2xl overflow-hidden shadow-2xl my-8">
-            <div className="flex items-center justify-between p-6 border-b border-gray-800 bg-gray-950">
-              <h3 className="text-lg font-bold text-white flex items-center gap-2">
-                {editingProduct ? <Edit2 className="w-5 h-5 text-amber-500" /> : <Plus className="w-5 h-5 text-amber-500" />}
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-slate-950/40 backdrop-blur-sm p-4 overflow-y-auto">
+          <div className="bg-white border border-slate-200 rounded-2xl w-full max-w-2xl overflow-hidden shadow-2xl my-8">
+            <div className="flex items-center justify-between p-6 border-b border-slate-100 bg-slate-50">
+              <h3 className="text-lg font-bold text-slate-900 flex items-center gap-2">
+                {editingProduct ? <Edit2 className="w-5 h-5 text-blue-600" /> : <Plus className="w-5 h-5 text-blue-600" />}
                 {editingProduct ? 'Edit Catalog Equipment' : 'Add New Commercial Equipment'}
               </h3>
-              <button onClick={() => setIsModalOpen(false)} className="text-gray-400 hover:text-white p-1">
+              <button onClick={() => setIsModalOpen(false)} className="text-slate-400 hover:text-slate-700 p-1">
                 <X className="w-5 h-5" />
               </button>
             </div>
@@ -201,37 +202,37 @@ export const CatalogManagerTab: React.FC = () => {
             <form onSubmit={handleSaveProduct} className="p-6 space-y-4 max-h-[80vh] overflow-y-auto">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div>
-                  <label className="block text-xs font-semibold text-gray-300 mb-1">Equipment Name *</label>
+                  <label className="block text-xs font-bold text-slate-700 mb-1">Equipment Name *</label>
                   <input
                     type="text"
                     required
                     value={name}
                     onChange={e => setName(e.target.value)}
                     placeholder="e.g. Commercial Pin-Loaded Leg Extension"
-                    className="w-full bg-gray-800 border border-gray-700 rounded-xl px-3.5 py-2.5 text-white text-sm focus:outline-none focus:border-amber-500"
+                    className="w-full bg-slate-50 border border-slate-200 rounded-xl px-3.5 py-2.5 text-slate-900 text-sm focus:outline-none focus:border-blue-600 focus:bg-white transition"
                   />
                 </div>
 
                 <div>
-                  <label className="block text-xs font-semibold text-gray-300 mb-1">Brand Name *</label>
+                  <label className="block text-xs font-bold text-slate-700 mb-1">Brand Name *</label>
                   <input
                     type="text"
                     required
                     value={brand}
                     onChange={e => setBrand(e.target.value)}
                     placeholder="e.g. Tanush Strength / Jerai"
-                    className="w-full bg-gray-800 border border-gray-700 rounded-xl px-3.5 py-2.5 text-white text-sm focus:outline-none focus:border-amber-500"
+                    className="w-full bg-slate-50 border border-slate-200 rounded-xl px-3.5 py-2.5 text-slate-900 text-sm focus:outline-none focus:border-blue-600 focus:bg-white transition"
                   />
                 </div>
               </div>
 
               <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                 <div>
-                  <label className="block text-xs font-semibold text-gray-300 mb-1">Category</label>
+                  <label className="block text-xs font-bold text-slate-700 mb-1">Category</label>
                   <select
                     value={categoryId}
                     onChange={e => setCategoryId(e.target.value)}
-                    className="w-full bg-gray-800 border border-gray-700 rounded-xl px-3.5 py-2.5 text-white text-sm focus:outline-none focus:border-amber-500"
+                    className="w-full bg-slate-50 border border-slate-200 rounded-xl px-3.5 py-2.5 text-slate-900 text-sm focus:outline-none focus:border-blue-600 focus:bg-white transition"
                   >
                     {EQUIPMENT_CATEGORIES.map(c => (
                       <option key={c.id} value={c.id}>
@@ -242,11 +243,11 @@ export const CatalogManagerTab: React.FC = () => {
                 </div>
 
                 <div>
-                  <label className="block text-xs font-semibold text-gray-300 mb-1">Equipment Type</label>
+                  <label className="block text-xs font-bold text-slate-700 mb-1">Equipment Type</label>
                   <select
                     value={equipmentType}
                     onChange={e => setEquipmentType(e.target.value)}
-                    className="w-full bg-gray-800 border border-gray-700 rounded-xl px-3.5 py-2.5 text-white text-sm focus:outline-none focus:border-amber-500"
+                    className="w-full bg-slate-50 border border-slate-200 rounded-xl px-3.5 py-2.5 text-slate-900 text-sm focus:outline-none focus:border-blue-600 focus:bg-white transition"
                   >
                     <option value="Strength">Strength</option>
                     <option value="Cardio">Cardio</option>
@@ -256,74 +257,74 @@ export const CatalogManagerTab: React.FC = () => {
                 </div>
 
                 <div>
-                  <label className="block text-xs font-semibold text-gray-300 mb-1">Min Order Qty (MOQ)</label>
+                  <label className="block text-xs font-bold text-slate-700 mb-1">Min Order Qty (MOQ)</label>
                   <input
                     type="number"
                     min="1"
                     value={minOrderQty}
                     onChange={e => setMinOrderQty(Number(e.target.value))}
-                    className="w-full bg-gray-800 border border-gray-700 rounded-xl px-3.5 py-2.5 text-white text-sm focus:outline-none focus:border-amber-500"
+                    className="w-full bg-slate-50 border border-slate-200 rounded-xl px-3.5 py-2.5 text-slate-900 text-sm focus:outline-none focus:border-blue-600 focus:bg-white transition"
                   />
                 </div>
               </div>
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div>
-                  <label className="block text-xs font-semibold text-gray-300 mb-1">Lead Time</label>
+                  <label className="block text-xs font-bold text-slate-700 mb-1">Lead Time</label>
                   <input
                     type="text"
                     value={leadTime}
                     onChange={e => setLeadTime(e.target.value)}
                     placeholder="e.g. 7-14 Days"
-                    className="w-full bg-gray-800 border border-gray-700 rounded-xl px-3.5 py-2.5 text-white text-sm focus:outline-none focus:border-amber-500"
+                    className="w-full bg-slate-50 border border-slate-200 rounded-xl px-3.5 py-2.5 text-slate-900 text-sm focus:outline-none focus:border-blue-600 focus:bg-white transition"
                   />
                 </div>
 
                 <div>
-                  <label className="block text-xs font-semibold text-gray-300 mb-1">Quality Badge</label>
+                  <label className="block text-xs font-bold text-slate-700 mb-1">Quality Badge</label>
                   <input
                     type="text"
                     value={badge}
                     onChange={e => setBadge(e.target.value)}
                     placeholder="e.g. ISO-Certified, Heavy Duty"
-                    className="w-full bg-gray-800 border border-gray-700 rounded-xl px-3.5 py-2.5 text-white text-sm focus:outline-none focus:border-amber-500"
+                    className="w-full bg-slate-50 border border-slate-200 rounded-xl px-3.5 py-2.5 text-slate-900 text-sm focus:outline-none focus:border-blue-600 focus:bg-white transition"
                   />
                 </div>
               </div>
 
               <div>
-                <label className="block text-xs font-semibold text-gray-300 mb-1">Image URL</label>
+                <label className="block text-xs font-bold text-slate-700 mb-1">Image URL</label>
                 <input
                   type="text"
                   value={image}
                   onChange={e => setImage(e.target.value)}
                   placeholder="https://images.unsplash.com/..."
-                  className="w-full bg-gray-800 border border-gray-700 rounded-xl px-3.5 py-2.5 text-white text-sm focus:outline-none focus:border-amber-500"
+                  className="w-full bg-slate-50 border border-slate-200 rounded-xl px-3.5 py-2.5 text-slate-900 text-sm focus:outline-none focus:border-blue-600 focus:bg-white transition"
                 />
               </div>
 
               <div>
-                <label className="block text-xs font-semibold text-gray-300 mb-1">Product Description</label>
+                <label className="block text-xs font-bold text-slate-700 mb-1">Product Description</label>
                 <textarea
                   rows={3}
                   value={description}
                   onChange={e => setDescription(e.target.value)}
                   placeholder="Enter detailed B2B specifications, steel gauge, weight stack size..."
-                  className="w-full bg-gray-800 border border-gray-700 rounded-xl px-3.5 py-2.5 text-white text-sm focus:outline-none focus:border-amber-500 resize-none"
+                  className="w-full bg-slate-50 border border-slate-200 rounded-xl px-3.5 py-2.5 text-slate-900 text-sm focus:outline-none focus:border-blue-600 focus:bg-white transition resize-none"
                 />
               </div>
 
-              <div className="flex items-center justify-end gap-3 pt-4 border-t border-gray-800">
+              <div className="flex items-center justify-end gap-3 pt-4 border-t border-slate-100">
                 <button
                   type="button"
                   onClick={() => setIsModalOpen(false)}
-                  className="px-4 py-2 bg-gray-800 hover:bg-gray-700 text-gray-300 rounded-xl text-sm font-semibold transition"
+                  className="px-4 py-2 bg-slate-100 hover:bg-slate-200 text-slate-700 rounded-xl text-sm font-semibold transition"
                 >
                   Cancel
                 </button>
                 <button
                   type="submit"
-                  className="flex items-center gap-2 bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-gray-950 px-5 py-2 rounded-xl text-sm font-bold transition shadow-lg shadow-amber-500/10"
+                  className="flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white px-5 py-2 rounded-xl text-sm font-bold transition shadow-md shadow-blue-600/20"
                 >
                   <Save className="w-4 h-4" /> Save Equipment
                 </button>

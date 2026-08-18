@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-import { CheckCircle2, ShieldCheck, UserCheck, UserX, Search, Filter, ShieldAlert } from 'lucide-react';
+import { CheckCircle2, ShieldCheck, UserCheck, UserX, Search, Filter } from 'lucide-react';
 import { useApp } from '../../context/AppContext';
 
 export const UserManagementTab: React.FC = () => {
-  const { userList, updateUserStatus, verifyUserGST, showToast, accessToken } = useApp();
+  const { userList, updateUserStatus, verifyUserGST, accessToken } = useApp();
   const [searchQuery, setSearchQuery] = useState('');
   const [roleFilter, setRoleFilter] = useState<'ALL' | 'GYM_OWNER' | 'JOB_SEEKER'>('ALL');
   const [statusFilter, setStatusFilter] = useState<'ALL' | 'ACTIVE' | 'SUSPENDED'>('ALL');
@@ -49,37 +49,37 @@ export const UserManagementTab: React.FC = () => {
 
   return (
     <div className="space-y-6">
-      {/* Header Banner */}
-      <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 bg-gray-900 border border-gray-800 p-6 rounded-2xl">
+      {/* Header Banner - Modern Light */}
+      <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 bg-white border border-slate-200 p-6 rounded-2xl shadow-sm">
         <div>
-          <h2 className="text-xl font-bold text-white flex items-center gap-2">
-            <ShieldCheck className="w-5 h-5 text-amber-500" /> User Management & GST Verification Portal
+          <h2 className="text-xl font-bold text-slate-900 flex items-center gap-2">
+            <ShieldCheck className="w-5 h-5 text-blue-600" /> User Management & GST Verification Portal
           </h2>
-          <p className="text-sm text-gray-400 mt-1">
+          <p className="text-sm text-slate-500 mt-1">
             Verify Gym Owner GST business credentials and enforce account status controls (Activate, Suspend, Deactivate).
           </p>
         </div>
       </div>
 
-      {/* Filter & Search Toolbar */}
-      <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 bg-gray-900/40 p-4 rounded-xl border border-gray-800">
+      {/* Filter & Search Toolbar - Modern Light */}
+      <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 bg-white p-4 rounded-xl border border-slate-200 shadow-sm">
         <div className="relative">
-          <Search className="w-4 h-4 text-gray-400 absolute left-3 top-3" />
+          <Search className="w-4 h-4 text-slate-400 absolute left-3 top-3" />
           <input
             type="text"
             placeholder="Search name, email, mobile, GST..."
             value={searchQuery}
             onChange={e => setSearchQuery(e.target.value)}
-            className="w-full bg-gray-800 border border-gray-700 rounded-xl pl-9 pr-4 py-2 text-sm text-white focus:outline-none focus:border-amber-500"
+            className="w-full bg-slate-50 border border-slate-200 rounded-xl pl-9 pr-4 py-2 text-sm text-slate-900 focus:outline-none focus:border-blue-600 focus:bg-white transition"
           />
         </div>
 
         <div className="flex items-center gap-2">
-          <Filter className="w-4 h-4 text-gray-400 shrink-0" />
+          <Filter className="w-4 h-4 text-slate-400 shrink-0" />
           <select
             value={roleFilter}
             onChange={e => setRoleFilter(e.target.value as any)}
-            className="w-full bg-gray-800 border border-gray-700 rounded-xl px-3 py-2 text-sm text-white focus:outline-none focus:border-amber-500"
+            className="w-full bg-slate-50 border border-slate-200 rounded-xl px-3 py-2 text-sm text-slate-900 focus:outline-none focus:border-blue-600 focus:bg-white transition"
           >
             <option value="ALL">All Roles</option>
             <option value="GYM_OWNER">Gym Owners</option>
@@ -91,7 +91,7 @@ export const UserManagementTab: React.FC = () => {
           <select
             value={statusFilter}
             onChange={e => setStatusFilter(e.target.value as any)}
-            className="w-full bg-gray-800 border border-gray-700 rounded-xl px-3 py-2 text-sm text-white focus:outline-none focus:border-amber-500"
+            className="w-full bg-slate-50 border border-slate-200 rounded-xl px-3 py-2 text-sm text-slate-900 focus:outline-none focus:border-blue-600 focus:bg-white transition"
           >
             <option value="ALL">All Account Statuses</option>
             <option value="ACTIVE">Active Users</option>
@@ -100,19 +100,19 @@ export const UserManagementTab: React.FC = () => {
         </div>
       </div>
 
-      {/* Users Table */}
-      <div className="bg-white border border-slate-700 rounded-2xl overflow-hidden shadow-xl">
+      {/* Users Table - Crisp Light Cool Blue */}
+      <div className="bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-sm">
         <div className="overflow-x-auto">
           <table className="w-full text-left border-collapse">
             <thead>
-              <tr className="bg-slate-900 border-b border-slate-800 text-xs font-bold text-slate-300 uppercase tracking-wider">
+              <tr className="bg-slate-100/90 border-b border-slate-200 text-xs font-bold text-slate-700 uppercase tracking-wider">
                 <th className="py-4 px-6">User / Business</th>
                 <th className="py-4 px-6">Role & Status</th>
                 <th className="py-4 px-6">GST Credentials</th>
                 <th className="py-4 px-6 text-right">Verification & Actions</th>
               </tr>
             </thead>
-            <tbody className="divide-y divide-slate-200 text-sm">
+            <tbody className="divide-y divide-slate-100 text-sm">
               {filteredUsers.map(u => (
                 <tr key={u.id} className="odd:bg-[#F4F9FF] even:bg-white hover:bg-[#E4F0FF] transition">
                   <td className="py-4 px-6">

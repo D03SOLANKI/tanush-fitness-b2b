@@ -1,5 +1,5 @@
 import React from 'react';
-import { Briefcase, CheckCircle2, XCircle, ShieldAlert, Building2, MapPin } from 'lucide-react';
+import { Briefcase, CheckCircle2, XCircle, Building2, MapPin } from 'lucide-react';
 import { useApp } from '../../context/AppContext';
 
 export const JobModerationTab: React.FC = () => {
@@ -19,13 +19,13 @@ export const JobModerationTab: React.FC = () => {
 
   return (
     <div className="space-y-6">
-      {/* Header Banner */}
-      <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 bg-gray-900 border border-gray-800 p-6 rounded-2xl">
+      {/* Header Banner - Modern Light */}
+      <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 bg-white border border-slate-200 p-6 rounded-2xl shadow-sm">
         <div>
-          <h2 className="text-xl font-bold text-white flex items-center gap-2">
-            <Briefcase className="w-5 h-5 text-amber-500" /> Job Moderation & Spam Protection
+          <h2 className="text-xl font-bold text-slate-900 flex items-center gap-2">
+            <Briefcase className="w-5 h-5 text-blue-600" /> Job Moderation & Spam Protection
           </h2>
-          <p className="text-sm text-gray-400 mt-1">
+          <p className="text-sm text-slate-500 mt-1">
             Review and moderate job postings submitted by Gym Owners before they appear on the live Manpower Services portal.
           </p>
         </div>
@@ -34,7 +34,7 @@ export const JobModerationTab: React.FC = () => {
       {/* Jobs Grid */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         {jobListings.map(job => (
-          <div key={job.id} className="bg-white border border-slate-700 rounded-2xl p-6 flex flex-col justify-between space-y-4 shadow-xl">
+          <div key={job.id} className="bg-white border border-slate-200 rounded-2xl p-6 flex flex-col justify-between space-y-4 shadow-sm hover:shadow-md transition">
             <div>
               <div className="flex items-center justify-between gap-2 mb-2">
                 <span className={`text-xs px-2.5 py-1 rounded-full font-bold ${job.isActive ? 'bg-emerald-100 text-emerald-900 border border-emerald-300' : 'bg-red-100 text-red-900 border border-red-300'}`}>
