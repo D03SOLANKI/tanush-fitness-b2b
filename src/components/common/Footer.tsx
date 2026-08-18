@@ -119,17 +119,6 @@ export const Footer: React.FC = () => {
                   <span className="text-slate-200">Info@tanushfitness.com</span>
                 </a>
               </div>
-              <div>
-                <a
-                  href="https://wa.me/919067800048?text=Hello%20Tanush%20Fitness,%20I%20want%20information%20regarding%20commercial%20gym%20solutions."
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-2 hover:text-emerald-400 transition-colors group text-emerald-400/90 font-bold"
-                >
-                  <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse shrink-0" />
-                  <span>Chat on WhatsApp</span>
-                </a>
-              </div>
               <div className="flex items-start gap-2 pt-1">
                 <MapPin className="w-3.5 h-3.5 text-blue-400 shrink-0 mt-0.5" />
                 <span className="leading-relaxed text-[11px] text-slate-300">

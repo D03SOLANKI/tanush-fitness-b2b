@@ -225,7 +225,7 @@ export const ContactPage: React.FC = () => {
                   <strong className="text-slate-900 font-black block uppercase text-[11px] mb-0.5">Working Hours:</strong>
                   Monday – Saturday: 9:00 AM – 8:00 PM IST
                 </div>
-                <div className="space-y-1.5 pt-1 border-t border-slate-100">
+                <div className="space-y-2 pt-1 border-t border-slate-100">
                   <div className="flex items-center gap-2">
                     <PhoneCall className="w-3.5 h-3.5 text-blue-600 shrink-0" />
                     <a href="tel:+919067800048" className="font-bold text-slate-900 hover:text-blue-600 transition-colors">
@@ -236,17 +236,6 @@ export const ContactPage: React.FC = () => {
                     <Mail className="w-3.5 h-3.5 text-blue-600 shrink-0" />
                     <a href="mailto:Info@tanushfitness.com" className="font-semibold text-slate-900 hover:text-blue-600 transition-colors">
                       Info@tanushfitness.com
-                    </a>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <MessageSquare className="w-3.5 h-3.5 text-emerald-600 shrink-0" />
-                    <a
-                      href="https://wa.me/919067800048?text=Hello%20Tanush%20Fitness,%20I%20want%20information%20for%20my%20gym."
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="font-bold text-emerald-600 hover:text-emerald-700 transition-colors"
-                    >
-                      WhatsApp: +91 90678 00048
                     </a>
                   </div>
                 </div>
