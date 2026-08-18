@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Settings, Save, Megaphone, PhoneCall, Mail, MapPin, Percent } from 'lucide-react';
 import { useApp } from '../../context/AppContext';
+import { API_BASE_URL } from '../../config/api';
 
 export const PlatformSettingsTab: React.FC = () => {
   const { platformSettings, updatePlatformSettings, accessToken } = useApp();
@@ -25,7 +26,7 @@ export const PlatformSettingsTab: React.FC = () => {
 
     updatePlatformSettings(updated);
 
-    fetch('http://localhost:5000/api/admin/settings', {
+    fetch(`${API_BASE_URL}/api/v1/admin/settings`, {
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json',

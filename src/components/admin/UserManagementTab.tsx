@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { CheckCircle2, ShieldCheck, UserCheck, UserX, Search, Filter } from 'lucide-react';
 import { useApp } from '../../context/AppContext';
+import { API_BASE_URL } from '../../config/api';
 
 export const UserManagementTab: React.FC = () => {
   const { userList, updateUserStatus, verifyUserGST, accessToken } = useApp();
@@ -10,7 +11,7 @@ export const UserManagementTab: React.FC = () => {
 
   const handleVerify = (userId: string, isVerified: boolean) => {
     verifyUserGST(userId, !isVerified);
-    fetch(`http://localhost:5000/api/admin/users/${userId}/verify`, {
+    fetch(`${API_BASE_URL}/api/v1/admin/users/${userId}/verify`, {
       method: 'PATCH',
       headers: {
         'Content-Type': 'application/json',
@@ -22,7 +23,7 @@ export const UserManagementTab: React.FC = () => {
 
   const handleStatusChange = (userId: string, status: 'ACTIVE' | 'SUSPENDED' | 'DEACTIVATED') => {
     updateUserStatus(userId, status);
-    fetch(`http://localhost:5000/api/admin/users/${userId}/status`, {
+    fetch(`${API_BASE_URL}/api/v1/admin/users/${userId}/status`, {
       method: 'PATCH',
       headers: {
         'Content-Type': 'application/json',

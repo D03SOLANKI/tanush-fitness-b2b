@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { X, Lock, Mail, Building2, User, LogIn, UserPlus, AlertCircle } from 'lucide-react';
 
+import { API_BASE_URL } from '../../config/api';
+
 interface AuthModalProps {
   isOpen: boolean;
   onClose: () => void;
@@ -56,7 +58,7 @@ export const AuthModal: React.FC<AuthModalProps> = ({
     setErrorMessage('');
     setLoading(true);
 
-    const baseUrl = 'http://localhost:5000/api/v1/auth';
+    const baseUrl = `${API_BASE_URL}/api/v1/auth`;
 
     try {
       if (isLogin) {

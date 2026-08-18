@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Plus, Edit2, Trash2, CheckCircle, X, Save, Package } from 'lucide-react';
 import { EQUIPMENT_CATEGORIES } from '../../data/categories';
 import { Product } from '../../types';
+import { API_BASE_URL } from '../../config/api';
 import { useApp } from '../../context/AppContext';
 
 export const CatalogManagerTab: React.FC = () => {
@@ -67,7 +68,7 @@ export const CatalogManagerTab: React.FC = () => {
 
     if (editingProduct) {
       updateProduct(editingProduct.id, payload);
-      fetch(`http://localhost:5000/api/admin/catalog/${editingProduct.id}`, {
+      fetch(`${API_BASE_URL}/api/v1/admin/catalog/${editingProduct.id}`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
@@ -77,7 +78,7 @@ export const CatalogManagerTab: React.FC = () => {
       }).catch(err => console.log('Backend sync notice:', err.message));
     } else {
       addProduct(payload);
-      fetch('http://localhost:5000/api/admin/catalog', {
+      fetch(`${API_BASE_URL}/api/v1/admin/catalog`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -93,7 +94,7 @@ export const CatalogManagerTab: React.FC = () => {
   const handleDelete = (id: string, prodName: string) => {
     if (window.confirm(`Are you sure you want to delete "${prodName}" from the catalog?`)) {
       deleteProduct(id);
-      fetch(`http://localhost:5000/api/admin/catalog/${id}`, {
+      fetch(`${API_BASE_URL}/api/v1/admin/catalog/${id}`, {
         method: 'DELETE',
         headers: {
           Authorization: `Bearer ${accessToken}`,

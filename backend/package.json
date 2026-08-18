@@ -4,20 +4,14 @@
   "description": "Enterprise B2B Backend Platform for Tanush Fitness",
   "main": "dist/server.js",
   "scripts": {
-    "build": "tsc -b",
+    "build": "prisma generate --schema=src/prisma/schema.prisma && tsc -b",
     "start": "node dist/server.js",
     "dev": "ts-node-dev --respawn --transpile-only src/server.ts",
     "prisma:generate": "prisma generate --schema=src/prisma/schema.prisma",
-    "prisma:migrate": "prisma migrate dev --schema=src/prisma/schema.prisma",
+    "prisma:migrate": "prisma migrate deploy --schema=src/prisma/schema.prisma",
     "prisma:studio": "prisma studio --schema=src/prisma/schema.prisma",
     "test": "jest",
     "test:watch": "jest --watchAll"
-  },
-  "devDependencies": {
-    "jest": "^29.0.0",
-    "ts-jest": "^29.0.0",
-    "@types/jest": "^29.0.0",
-    "supertest": "^6.3.3"
   },
   "keywords": [
     "express",
@@ -51,10 +45,14 @@
     "@types/bcryptjs": "^2.4.6",
     "@types/cors": "^2.8.17",
     "@types/express": "^4.17.21",
+    "@types/jest": "^29.0.0",
     "@types/jsonwebtoken": "^9.0.5",
     "@types/multer": "^1.4.11",
     "@types/node": "^20.11.20",
+    "jest": "^29.0.0",
     "prisma": "^5.10.0",
+    "supertest": "^6.3.3",
+    "ts-jest": "^29.0.0",
     "ts-node-dev": "^2.0.0",
     "typescript": "^5.3.3"
   }

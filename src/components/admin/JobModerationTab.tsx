@@ -1,13 +1,14 @@
 import React from 'react';
 import { Briefcase, CheckCircle2, XCircle, Building2, MapPin } from 'lucide-react';
 import { useApp } from '../../context/AppContext';
+import { API_BASE_URL } from '../../config/api';
 
 export const JobModerationTab: React.FC = () => {
   const { jobListings, moderateJob, accessToken } = useApp();
 
   const handleAction = (jobId: string, action: 'APPROVE' | 'REJECT') => {
     moderateJob(jobId, action);
-    fetch(`http://localhost:5000/api/admin/jobs/${jobId}/moderate`, {
+    fetch(`${API_BASE_URL}/api/v1/admin/jobs/${jobId}/moderate`, {
       method: 'PATCH',
       headers: {
         'Content-Type': 'application/json',

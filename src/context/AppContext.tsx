@@ -15,6 +15,7 @@ import { PRODUCTS } from '../data/products';
 import { INITIAL_JOBS } from '../data/jobs';
 import { BUSINESS_SERVICES } from '../data/services';
 import { AuthModal } from '../components/auth/AuthModal';
+import { API_BASE_URL } from '../config/api';
 
 interface ToastState {
   message: string;
@@ -526,7 +527,7 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
         })),
       };
 
-      fetch('http://localhost:5000/api/enquiries', {
+      fetch(`${API_BASE_URL}/api/v1/equipment/enquiries`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(payload),
