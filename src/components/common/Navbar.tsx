@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 import { useApp } from '../../context/AppContext';
 import { PageType } from '../../types';
+import { motion, AnimatePresence } from 'framer-motion';
 import {
   Dumbbell,
   Users,
@@ -12,7 +13,11 @@ import {
   X,
   Sparkles,
   LogOut,
-  LogIn
+  LogIn,
+  Zap,
+  Truck,
+  ShieldCheck,
+  Award
 } from 'lucide-react';
 
 export const Navbar: React.FC = () => {
@@ -27,8 +32,65 @@ export const Navbar: React.FC = () => {
     platformSettings,
   } = useApp();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [announcementIndex, setAnnouncementIndex] = useState(0);
+  const [isPaused, setIsPaused] = useState(false);
 
   const enquiryCount = enquiryCart.reduce((sum, item) => sum + item.quantity, 0);
+
+  // Rotating Announcement Messages Pool
+  const announcements = useMemo(() => {
+    const defaultList = [
+      {
+        id: 'oem-pricing',
+        icon: <Zap className="w-3.5 h-3.5 text-amber-400 shrink-0" />,
+        text: 'Direct Factory Wholesale: OEM Bulk Pricing on Commercial Strength & Cardio Racks',
+        badge: 'FACTORY DIRECT',
+      },
+      {
+        id: 'pan-india',
+        icon: <Truck className="w-3.5 h-3.5 text-amber-400 shrink-0" />,
+        text: 'Pan-India Logistics: Express Freight & Turnkey Gym Installation across 150+ Cities',
+        badge: 'PAN-INDIA',
+      },
+      {
+        id: 'hiring',
+        icon: <Users className="w-3.5 h-3.5 text-amber-400 shrink-0" />,
+        text: 'Fitness Careers Portal: Hire Certified Gym Trainers & Managers with Zero Placement Delay',
+        badge: 'VERIFIED TALENT',
+      },
+      {
+        id: 'gst-itc',
+        icon: <ShieldCheck className="w-3.5 h-3.5 text-amber-400 shrink-0" />,
+        text: '100% Tax Compliant B2B Invoices with 18% Input Tax Credit (ITC) Benefits',
+        badge: 'GST COMPLIANT',
+      },
+    ];
+
+    if (platformSettings?.bannerEnabled && platformSettings?.bannerText?.trim()) {
+      return [
+        {
+          id: 'custom-admin',
+          icon: <Award className="w-3.5 h-3.5 text-amber-400 shrink-0" />,
+          text: platformSettings.bannerText,
+          badge: 'SPECIAL NOTICE',
+        },
+        ...defaultList,
+      ];
+    }
+
+    return defaultList;
+  }, [platformSettings?.bannerEnabled, platformSettings?.bannerText]);
+
+  // Auto-cycle announcements every 3.5 seconds (paused on hover)
+  useEffect(() => {
+    if (isPaused || announcements.length <= 1) return;
+
+    const timer = setInterval(() => {
+      setAnnouncementIndex(prev => (prev + 1) % announcements.length);
+    }, 3500);
+
+    return () => clearInterval(timer);
+  }, [isPaused, announcements.length]);
 
   const navItems: { label: string; page: PageType; icon: React.ReactNode }[] = [
     { label: 'Home', page: 'home', icon: <Sparkles className="w-3.5 h-3.5" /> },
@@ -41,13 +103,36 @@ export const Navbar: React.FC = () => {
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-xl border-b border-slate-200/80 shadow-sm">
-      {/* Live Admin Announcement Banner */}
-      {platformSettings?.bannerEnabled && platformSettings?.bannerText && (
-        <div className="bg-slate-900 text-amber-400 text-xs font-semibold py-1.5 px-4 text-center border-b border-slate-800 flex items-center justify-center gap-2">
-          <span className="inline-block w-1.5 h-1.5 rounded-full bg-amber-400 animate-ping" />
-          <span>{platformSettings.bannerText}</span>
+      {/* Revolving / Rotating Live B2B Announcement Bar */}
+      <div
+        onMouseEnter={() => setIsPaused(true)}
+        onMouseLeave={() => setIsPaused(false)}
+        className="bg-slate-950 text-amber-400 text-[11px] sm:text-xs font-semibold py-1.5 px-4 text-center border-b border-slate-900 overflow-hidden relative select-none"
+      >
+        <div className="max-w-7xl mx-auto flex items-center justify-center min-h-[22px] relative">
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={announcements[announcementIndex]?.id || announcementIndex}
+              initial={{ opacity: 0, y: 8 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -8 }}
+              transition={{ duration: 0.35, ease: 'easeInOut' }}
+              className="flex items-center justify-center gap-2 text-center"
+            >
+              <span className="inline-block w-1.5 h-1.5 rounded-full bg-amber-400 animate-ping shrink-0" />
+              {announcements[announcementIndex]?.icon}
+              <span className="truncate max-w-[85vw] sm:max-w-none text-slate-100 font-medium">
+                {announcements[announcementIndex]?.text}
+              </span>
+              {announcements[announcementIndex]?.badge && (
+                <span className="hidden md:inline-block px-1.5 py-0.2 rounded text-[9px] font-bold bg-amber-400/20 text-amber-300 border border-amber-400/30 uppercase tracking-widest ml-1 font-mono">
+                  {announcements[announcementIndex]?.badge}
+                </span>
+              )}
+            </motion.div>
+          </AnimatePresence>
         </div>
-      )}
+      </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20 gap-4">
