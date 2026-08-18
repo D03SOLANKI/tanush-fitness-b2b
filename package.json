@@ -13,6 +13,9 @@
     "coverage": "npm run test:frontend -- --coverage && cd backend && npm run test:coverage"
   },
   "dependencies": {
+    "@tailwindcss/postcss": "^4.3.3",
+    "@tailwindcss/vite": "^4.3.3",
+    "@vitejs/plugin-react": "^6.0.3",
     "autoprefixer": "^10.5.4",
     "clsx": "^2.1.1",
     "framer-motion": "^12.43.0",
@@ -24,14 +27,11 @@
     "tailwindcss": "^4.3.3"
   },
   "devDependencies": {
-    "@tailwindcss/postcss": "^4.3.3",
-    "@tailwindcss/vite": "^4.3.3",
     "@testing-library/jest-dom": "^6.5.0",
     "@testing-library/react": "^15.0.0",
     "@types/node": "^24.13.2",
     "@types/react": "^19.2.17",
     "@types/react-dom": "^19.2.3",
-    "@vitejs/plugin-react": "^6.0.3",
     "@vitest/ui": "^2.0.0",
     "oxlint": "^1.71.0",
     "typescript": "~6.0.2",
