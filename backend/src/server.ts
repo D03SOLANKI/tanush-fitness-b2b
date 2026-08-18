@@ -82,19 +82,21 @@ app.use(notFoundHandler);
 app.use(errorHandler);
 
 // 6. Server Initialization Lifecycle
-const startServer = async (): Promise<void> => {
-  await connectDatabase();
-
-  const server = app.listen(env.PORT, () => {
+const startServer = (): void => {
+  const host = '0.0.0.0';
+  const server = app.listen(env.PORT, host, () => {
     logger.info(
-      `🚀 Tanush Fitness B2B Backend Server running in [${env.NODE_ENV}] mode on port ${env.PORT}`
+      `🚀 Tanush Fitness B2B Backend Server running in [${env.NODE_ENV}] mode on http://${host}:${env.PORT}`
     );
-    logger.info(`🔗 Health Check Endpoint: http://localhost:${env.PORT}/api/v1/health`);
-    logger.info(`🔑 Auth API: http://localhost:${env.PORT}/api/v1/auth`);
-    logger.info(`🏋️ Equipment API: http://localhost:${env.PORT}/api/v1/equipment`);
-    logger.info(`🛠️ Business Services API: http://localhost:${env.PORT}/api/v1/services`);
-    logger.info(`💼 Fitness Careers API: http://localhost:${env.PORT}/api/v1/jobs`);
-    logger.info(`🛡️ Admin API: http://localhost:${env.PORT}/api/v1/admin`);
+    logger.info(`🔗 Health Check Endpoint: http://${host}:${env.PORT}/api/v1/health`);
+    logger.info(`🔑 Auth API: http://${host}:${env.PORT}/api/v1/auth`);
+    logger.info(`🏋️ Equipment API: http://${host}:${env.PORT}/api/v1/equipment`);
+    logger.info(`🛠️ Business Services API: http://${host}:${env.PORT}/api/v1/services`);
+    logger.info(`💼 Fitness Careers API: http://${host}:${env.PORT}/api/v1/jobs`);
+    logger.info(`🛡️ Admin API: http://${host}:${env.PORT}/api/v1/admin`);
+
+    // Connect to database in the background
+    connectDatabase();
   });
 
   const gracefulShutdown = async (signal: string) => {

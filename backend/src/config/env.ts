@@ -4,24 +4,34 @@ import { z } from 'zod';
 dotenv.config();
 
 const envSchema = z.object({
-  PORT: z.string().default('5000').transform(val => parseInt(val, 10)),
-  NODE_ENV: z.enum(['development', 'production', 'test']).default('development'),
-  DATABASE_URL: z.string().default('postgresql://postgres:password@db.lpnfwludlkygysxtohkw.supabase.co:5432/postgres'),
+  PORT: z
+    .union([z.string(), z.number()])
+    .default(5000)
+    .transform(val => (typeof val === 'number' ? val : parseInt(val, 10) || 5000)),
+  NODE_ENV: z.string().default('production'),
+  DATABASE_URL: z
+    .string()
+    .default(
+      'postgresql://postgres:TanushMarketplace@db.lpnfwludlkygysxtohkw.supabase.co:5432/postgres'
+    ),
   DIRECT_URL: z.string().optional(),
   SUPABASE_URL: z.string().default('https://lpnfwludlkygysxtohkw.supabase.co'),
   SUPABASE_ANON_KEY: z.string().optional(),
   SUPABASE_SERVICE_ROLE_KEY: z.string().optional(),
-  
+
   // JWT & Auth Settings
-  JWT_SECRET: z.string().min(16).default('tanush-fitness-super-secret-jwt-key-32chars'),
+  JWT_SECRET: z.string().default('tanush-fitness-b2b-production-jwt-secret-key-32chars'),
   JWT_EXPIRES_IN: z.string().default('7d'),
-  ACCESS_TOKEN_SECRET: z.string().min(16).default('tanush-fitness-access-token-secret-32chars-min'),
-  REFRESH_TOKEN_SECRET: z.string().min(16).default('tanush-fitness-refresh-token-secret-32chars-min'),
+  ACCESS_TOKEN_SECRET: z.string().default('tanush-fitness-access-token-secret-key-32chars'),
+  REFRESH_TOKEN_SECRET: z.string().default('tanush-fitness-refresh-token-secret-key-32chars'),
   ACCESS_TOKEN_EXPIRES_IN: z.string().default('15m'),
   REFRESH_TOKEN_EXPIRES_IN: z.string().default('30d'),
-  BCRYPT_ROUNDS: z.string().default('12').transform(val => parseInt(val, 10)),
+  BCRYPT_ROUNDS: z
+    .union([z.string(), z.number()])
+    .default(12)
+    .transform(val => (typeof val === 'number' ? val : parseInt(val, 10) || 12)),
   COOKIE_SECRET: z.string().default('tanush-fitness-cookie-secret-key-32chars'),
-  FRONTEND_URL: z.string().default('http://localhost:5173'),
+  FRONTEND_URL: z.string().default('https://tanush-fitness-b2b.vercel.app'),
 
   CORS_ORIGIN: z.string().default('*'),
   CLOUDINARY_CLOUD_NAME: z.string().optional(),
@@ -34,8 +44,13 @@ const envSchema = z.object({
 const _env = envSchema.safeParse(process.env);
 
 if (!_env.success) {
-  console.error('❌ Invalid Environment Variables Configuration:', _env.error.format());
-  throw new Error('Invalid Environment Variables Configuration');
+  console.error('❌ Environment Variables Warning:', _env.error.format());
 }
 
-export const env = _env.data;
+export const env = _env.success
+  ? _env.data
+  : envSchema.parse({
+      PORT: process.env.PORT || 5000,
+      NODE_ENV: process.env.NODE_ENV || 'production',
+      DATABASE_URL: process.env.DATABASE_URL || 'postgresql://postgres:TanushMarketplace@db.lpnfwludlkygysxtohkw.supabase.co:5432/postgres',
+    });

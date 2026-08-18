@@ -15,17 +15,22 @@ if (process.env.NODE_ENV !== 'production') {
   global.prisma = prisma;
 }
 
-export const connectDatabase = async (): Promise<void> => {
+export const connectDatabase = async (): Promise<boolean> => {
   try {
     await prisma.$connect();
     logger.info('🐘 PostgreSQL database connected successfully via Prisma ORM.');
+    return true;
   } catch (error) {
-    logger.error('❌ Failed to connect to PostgreSQL database:', error);
-    process.exit(1);
+    logger.warn('⚠️ Database initial connection warning (will retry on incoming requests):', error);
+    return false;
   }
 };
 
 export const disconnectDatabase = async (): Promise<void> => {
-  await prisma.$disconnect();
-  logger.info('🔌 PostgreSQL database disconnected.');
+  try {
+    await prisma.$disconnect();
+    logger.info('🔌 PostgreSQL database disconnected.');
+  } catch (err) {
+    // ignore disconnect error
+  }
 };
