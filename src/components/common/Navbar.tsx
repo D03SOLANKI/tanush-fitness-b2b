@@ -76,7 +76,7 @@ export const Navbar: React.FC = () => {
             </div>
 
             {/* 2. Desktop Navigation Center Menu */}
-            <nav className="hidden lg:flex items-center gap-1 xl:gap-1.5 bg-slate-50/70 p-1.5 rounded-2xl border border-slate-200/60 shadow-inner">
+            <nav className="hidden lg:flex items-center gap-1 xl:gap-2">
               {navItems.map(item => {
                 const active = currentPage === item.page;
                 return (
@@ -85,14 +85,14 @@ export const Navbar: React.FC = () => {
                     onClick={() => navigateTo(item.page)}
                     className={`relative px-3.5 py-2 rounded-xl text-[12px] font-bold transition-all duration-200 flex items-center gap-1.5 uppercase font-mono tracking-wide ${
                       active
-                        ? 'bg-white text-blue-600 shadow-sm border border-slate-200/80 font-black'
-                        : 'text-slate-600 hover:text-slate-900 hover:bg-white/60'
+                        ? 'text-blue-600 bg-blue-50/70 font-black'
+                        : 'text-slate-600 hover:text-slate-900 hover:bg-slate-50'
                     }`}
                   >
                     <span className={active ? 'text-blue-600' : 'text-slate-400'}>{item.icon}</span>
                     <span>{item.label}</span>
                     {active && (
-                      <span className="absolute bottom-0.5 left-1/2 -translate-x-1/2 w-3 h-0.5 bg-blue-600 rounded-full" />
+                      <span className="absolute bottom-0 left-3 right-3 h-0.5 bg-blue-600 rounded-full" />
                     )}
                   </button>
                 );
