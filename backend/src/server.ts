@@ -56,6 +56,25 @@ app.use(express.urlencoded({ extended: true, limit: '10mb' }));
 app.use(cookieParser(env.COOKIE_SECRET));
 app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 
+// Root Endpoint - Service Status & API Directory
+app.get('/', (_req: Request, res: Response) => {
+  return ApiResponse.success(res, '🚀 Tanush Fitness B2B Enterprise API is Live', {
+    service: 'Tanush Fitness Backend API',
+    status: 'ONLINE',
+    version: 'v1',
+    environment: env.NODE_ENV,
+    endpoints: {
+      health: '/api/v1/health',
+      auth: '/api/v1/auth',
+      equipment: '/api/v1/equipment',
+      services: '/api/v1/services',
+      jobs: '/api/v1/jobs',
+      admin: '/api/v1/admin',
+    },
+    documentation: 'https://github.com/D03SOLANKI/tanush-fitness-b2b',
+  });
+});
+
 // 4. API Versioning Router (/api/v1)
 const v1Router = Router();
 
