@@ -226,7 +226,7 @@ export const ServicesPage: React.FC = () => {
                     <input
                       type="tel"
                       required
-                      placeholder="+91 98765 43210"
+                      placeholder="+91 90678 00048"
                       value={formState.mobile}
                       onChange={e => setFormState({ ...formState, mobile: e.target.value })}
                       className="w-full bg-slate-50 border border-slate-200 rounded-xl p-2.5 text-xs text-slate-900 focus:outline-none focus:border-blue-600"

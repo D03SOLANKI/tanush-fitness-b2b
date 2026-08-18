@@ -98,20 +98,43 @@ export const Footer: React.FC = () => {
           {/* Col 4: Contact Info */}
           <div className="space-y-3 font-mono">
             <h4 className="text-xs font-black uppercase tracking-wider text-amber-400">
-              Helpline
+              Corporate Helpline
             </h4>
-            <div className="space-y-2 text-xs text-slate-400">
-              <div className="flex items-center gap-2">
-                <PhoneCall className="w-3.5 h-3.5 text-blue-400" />
-                <span>+91 98765 43210</span>
+            <div className="space-y-2.5 text-xs text-slate-400">
+              <div>
+                <a
+                  href="tel:+919067800048"
+                  className="flex items-center gap-2 hover:text-white transition-colors group"
+                >
+                  <PhoneCall className="w-3.5 h-3.5 text-blue-400 group-hover:scale-110 transition-transform shrink-0" />
+                  <span className="font-semibold text-slate-200">+91 90678 00048</span>
+                </a>
               </div>
-              <div className="flex items-center gap-2">
-                <Mail className="w-3.5 h-3.5 text-blue-400" />
-                <span>contact@tanushfitness.com</span>
+              <div>
+                <a
+                  href="mailto:Info@tanushfitness.com"
+                  className="flex items-center gap-2 hover:text-white transition-colors group"
+                >
+                  <Mail className="w-3.5 h-3.5 text-blue-400 group-hover:scale-110 transition-transform shrink-0" />
+                  <span className="text-slate-200">Info@tanushfitness.com</span>
+                </a>
               </div>
-              <div className="flex items-start gap-2">
+              <div>
+                <a
+                  href="https://wa.me/919067800048?text=Hello%20Tanush%20Fitness,%20I%20want%20information%20regarding%20commercial%20gym%20solutions."
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2 hover:text-emerald-400 transition-colors group text-emerald-400/90 font-bold"
+                >
+                  <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse shrink-0" />
+                  <span>Chat on WhatsApp</span>
+                </a>
+              </div>
+              <div className="flex items-start gap-2 pt-1">
                 <MapPin className="w-3.5 h-3.5 text-blue-400 shrink-0 mt-0.5" />
-                <span>Sector 18, Gurugram, Haryana</span>
+                <span className="leading-relaxed text-[11px] text-slate-300">
+                  The Landmark Complex, A-301-304, Near Podar International School, Urjanagar 1, Kudasan, Gandhinagar, Gujarat 382419
+                </span>
               </div>
             </div>
           </div>

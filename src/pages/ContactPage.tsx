@@ -64,7 +64,7 @@ export const ContactPage: React.FC = () => {
         {/* Quick Action Contact Strip Buttons */}
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-12">
           <a
-            href="https://wa.me/919876543210?text=Hello%20Tanush%20Fitness,%20I%20want%20a%20quotation%20for%20my%20gym."
+            href="https://wa.me/919067800048?text=Hello%20Tanush%20Fitness,%20I%20want%20a%20quotation%20for%20my%20gym."
             target="_blank"
             rel="noopener noreferrer"
             className="p-6 rounded-3xl bg-emerald-500 text-white shadow-lg hover:bg-emerald-600 transition-all flex items-center gap-4 group"
@@ -81,7 +81,7 @@ export const ContactPage: React.FC = () => {
           </a>
 
           <a
-            href="tel:+919876543210"
+            href="tel:+919067800048"
             className="p-6 rounded-3xl bg-blue-600 text-white shadow-lg hover:bg-blue-700 transition-all flex items-center gap-4 group"
           >
             <div className="w-12 h-12 rounded-2xl bg-white/20 flex items-center justify-center shrink-0">
@@ -90,13 +90,13 @@ export const ContactPage: React.FC = () => {
             <div>
               <div className="text-[10px] font-bold uppercase font-mono tracking-wider opacity-90">Direct Call</div>
               <div className="text-base font-black font-heading uppercase group-hover:translate-x-1 transition-transform">
-                Call Now (+91 98765) →
+                Call Now (+91 90678 00048) →
               </div>
             </div>
           </a>
 
           <a
-            href="mailto:contact@tanushfitness.com"
+            href="mailto:Info@tanushfitness.com"
             className="p-6 rounded-3xl bg-slate-900 text-white shadow-lg hover:bg-slate-800 transition-all flex items-center gap-4 group"
           >
             <div className="w-12 h-12 rounded-2xl bg-white/20 flex items-center justify-center shrink-0">
@@ -119,7 +119,7 @@ export const ContactPage: React.FC = () => {
               Send Direct Message
             </h2>
             <p className="text-xs text-slate-500 font-mono mb-6">
-              Fill in your gym requirement and our commercial consultant will reach out.
+              Fill in your gym requirement and our commercial consultant will reach out within 2 hours.
             </p>
 
             <form onSubmit={handleSubmit} className="space-y-4">
@@ -160,7 +160,7 @@ export const ContactPage: React.FC = () => {
                   <input
                     type="tel"
                     required
-                    placeholder="+91 98765 43210"
+                    placeholder="+91 90678 00048"
                     value={formData.mobile}
                     onChange={e => setFormData({ ...formData, mobile: e.target.value })}
                     className="w-full bg-slate-50 border border-slate-200 rounded-xl p-3 text-xs font-medium text-slate-900 focus:outline-none focus:border-blue-600"
@@ -208,24 +208,47 @@ export const ContactPage: React.FC = () => {
 
           {/* Office Address & Google Maps Embed Mockup (5 Cols) */}
           <div className="lg:col-span-5 space-y-6">
-            <div className="p-8 rounded-3xl bg-white border border-slate-200 shadow-stripe space-y-4">
+            <div className="p-8 rounded-3xl bg-white border border-slate-200 shadow-stripe space-y-5">
               <h3 className="text-lg font-black text-slate-900 font-heading uppercase flex items-center gap-2">
-                <MapPin className="w-5 h-5 text-blue-600" />
+                <MapPin className="w-5 h-5 text-blue-600 shrink-0" />
                 <span>Corporate Headquarters</span>
               </h3>
 
-              <div className="space-y-3 text-xs text-slate-600 font-mono">
+              <div className="space-y-4 text-xs text-slate-600 font-mono">
                 <div>
-                  <strong className="text-slate-900 font-black block uppercase text-[11px]">Address:</strong>
-                  Tanush Fitness B2B Towers, Commercial Hub, Sector 18, Gurugram, Haryana 122008, India.
+                  <strong className="text-slate-900 font-black block uppercase text-[11px] mb-0.5">Address:</strong>
+                  <p className="leading-relaxed text-slate-700 font-sans text-xs">
+                    The Landmark Complex, A-301-304, Near Podar International School, Urjanagar 1, Kudasan, Gandhinagar, Gujarat 382419
+                  </p>
                 </div>
                 <div>
-                  <strong className="text-slate-900 font-black block uppercase text-[11px]">Working Hours:</strong>
+                  <strong className="text-slate-900 font-black block uppercase text-[11px] mb-0.5">Working Hours:</strong>
                   Monday – Saturday: 9:00 AM – 8:00 PM IST
                 </div>
-                <div>
-                  <strong className="text-slate-900 font-black block uppercase text-[11px]">Direct Line:</strong>
-                  +91 (0124) 489-0123 / +91 98765 43210
+                <div className="space-y-1.5 pt-1 border-t border-slate-100">
+                  <div className="flex items-center gap-2">
+                    <PhoneCall className="w-3.5 h-3.5 text-blue-600 shrink-0" />
+                    <a href="tel:+919067800048" className="font-bold text-slate-900 hover:text-blue-600 transition-colors">
+                      +91 90678 00048
+                    </a>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <Mail className="w-3.5 h-3.5 text-blue-600 shrink-0" />
+                    <a href="mailto:Info@tanushfitness.com" className="font-semibold text-slate-900 hover:text-blue-600 transition-colors">
+                      Info@tanushfitness.com
+                    </a>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <MessageSquare className="w-3.5 h-3.5 text-emerald-600 shrink-0" />
+                    <a
+                      href="https://wa.me/919067800048?text=Hello%20Tanush%20Fitness,%20I%20want%20information%20for%20my%20gym."
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="font-bold text-emerald-600 hover:text-emerald-700 transition-colors"
+                    >
+                      WhatsApp: +91 90678 00048
+                    </a>
+                  </div>
                 </div>
               </div>
             </div>
@@ -239,8 +262,8 @@ export const ContactPage: React.FC = () => {
               />
               <div className="relative z-10 space-y-2">
                 <MapPin className="w-8 h-8 text-blue-500 mx-auto animate-bounce" />
-                <div className="text-sm font-black font-heading uppercase">Tanush Fitness Corporate Tower</div>
-                <div className="text-[10px] font-mono text-slate-300">Google Maps 28.4595° N, 77.0266° E</div>
+                <div className="text-sm font-black font-heading uppercase">The Landmark Complex</div>
+                <div className="text-[10px] font-mono text-slate-300">Kudasan, Gandhinagar, Gujarat 382419</div>
               </div>
             </div>
           </div>
