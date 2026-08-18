@@ -12,6 +12,8 @@ import { ServicesPage } from './pages/ServicesPage';
 import { ContactPage } from './pages/ContactPage';
 import { AdminPage } from './pages/AdminPage';
 
+import { AdminHeader } from './components/admin/AdminHeader';
+
 const MainContent: React.FC = () => {
   const { currentPage } = useApp();
 
@@ -36,11 +38,13 @@ const MainContent: React.FC = () => {
     }
   };
 
+  const isAdmin = currentPage === 'admin';
+
   return (
     <div className="min-h-screen bg-white text-slate-900 flex flex-col justify-between selection:bg-blue-500 selection:text-white font-sans antialiased">
-      <Navbar />
+      {isAdmin ? <AdminHeader /> : <Navbar />}
       <div className="flex-1">{renderPage()}</div>
-      <Footer />
+      {!isAdmin && <Footer />}
       <EnquiryCartDrawer />
       <Toast />
     </div>

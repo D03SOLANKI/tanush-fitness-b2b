@@ -101,47 +101,47 @@ export const UserManagementTab: React.FC = () => {
       </div>
 
       {/* Users Table */}
-      <div className="bg-gray-900/50 border border-gray-800 rounded-2xl overflow-hidden backdrop-blur-sm">
+      <div className="bg-white border border-slate-700 rounded-2xl overflow-hidden shadow-xl">
         <div className="overflow-x-auto">
           <table className="w-full text-left border-collapse">
             <thead>
-              <tr className="bg-gray-900/80 border-b border-gray-800 text-xs font-semibold text-gray-400 uppercase tracking-wider">
+              <tr className="bg-slate-900 border-b border-slate-800 text-xs font-bold text-slate-300 uppercase tracking-wider">
                 <th className="py-4 px-6">User / Business</th>
                 <th className="py-4 px-6">Role & Status</th>
                 <th className="py-4 px-6">GST Credentials</th>
                 <th className="py-4 px-6 text-right">Verification & Actions</th>
               </tr>
             </thead>
-            <tbody className="divide-y divide-gray-800/60 text-sm">
+            <tbody className="divide-y divide-slate-200 text-sm">
               {filteredUsers.map(u => (
-                <tr key={u.id} className="hover:bg-gray-800/30 transition">
+                <tr key={u.id} className="odd:bg-[#F4F9FF] even:bg-white hover:bg-[#E4F0FF] transition">
                   <td className="py-4 px-6">
-                    <div className="font-semibold text-white">{u.name}</div>
-                    <div className="text-xs text-gray-400">{u.email} • {u.mobile}</div>
-                    {u.companyName && <div className="text-xs text-amber-500 mt-0.5">{u.companyName}</div>}
+                    <div className="font-bold text-slate-900">{u.name}</div>
+                    <div className="text-xs text-slate-600 font-medium">{u.email} • {u.mobile}</div>
+                    {u.companyName && <div className="text-xs text-blue-700 font-bold mt-0.5">{u.companyName}</div>}
                   </td>
                   <td className="py-4 px-6">
                     <div className="flex items-center gap-2">
-                      <span className={`text-xs px-2.5 py-1 rounded-full font-medium ${u.role === 'GYM_OWNER' ? 'bg-amber-500/10 text-amber-400 border border-amber-500/20' : 'bg-blue-500/10 text-blue-400 border border-blue-500/20'}`}>
+                      <span className={`text-xs px-2.5 py-1 rounded-full font-bold ${u.role === 'GYM_OWNER' ? 'bg-amber-100 text-amber-900 border border-amber-300' : 'bg-blue-100 text-blue-900 border border-blue-300'}`}>
                         {u.role === 'GYM_OWNER' ? 'Gym Owner' : 'Job Seeker'}
                       </span>
-                      <span className={`text-xs px-2.5 py-1 rounded-full font-medium ${u.status === 'ACTIVE' ? 'bg-emerald-500/10 text-emerald-400 border border-emerald-500/20' : 'bg-red-500/10 text-red-400 border border-red-500/20'}`}>
+                      <span className={`text-xs px-2.5 py-1 rounded-full font-bold ${u.status === 'ACTIVE' ? 'bg-emerald-100 text-emerald-900 border border-emerald-300' : 'bg-red-100 text-red-900 border border-red-300'}`}>
                         {u.status}
                       </span>
                     </div>
                   </td>
                   <td className="py-4 px-6">
-                    <div className="font-mono text-xs text-gray-300">{u.gstNumber || 'No GST Registered'}</div>
+                    <div className="font-mono text-xs font-semibold text-slate-800">{u.gstNumber || 'No GST Registered'}</div>
                   </td>
                   <td className="py-4 px-6 text-right">
                     <div className="flex items-center justify-end gap-2">
                       {/* GST Verify Button */}
                       <button
                         onClick={() => handleVerify(u.id, u.isVerified)}
-                        className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold transition ${
+                        className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-bold transition shadow-sm ${
                           u.isVerified
-                            ? 'bg-emerald-500/20 text-emerald-400 border border-emerald-500/30 hover:bg-emerald-500/30'
-                            : 'bg-amber-500/20 text-amber-400 border border-amber-500/30 hover:bg-amber-500/30'
+                            ? 'bg-emerald-600 hover:bg-emerald-700 text-white'
+                            : 'bg-amber-500 hover:bg-amber-600 text-slate-950'
                         }`}
                       >
                         {u.isVerified ? (
@@ -159,7 +159,7 @@ export const UserManagementTab: React.FC = () => {
                       {u.status === 'ACTIVE' ? (
                         <button
                           onClick={() => handleStatusChange(u.id, 'SUSPENDED')}
-                          className="flex items-center gap-1 px-3 py-1.5 bg-red-500/10 hover:bg-red-500/20 text-red-400 border border-red-500/20 rounded-lg text-xs font-medium transition"
+                          className="flex items-center gap-1 px-3 py-1.5 bg-red-100 hover:bg-red-200 text-red-700 border border-red-300 rounded-lg text-xs font-semibold transition"
                           title="Suspend Account"
                         >
                           <UserX className="w-3.5 h-3.5" /> Suspend
@@ -167,7 +167,7 @@ export const UserManagementTab: React.FC = () => {
                       ) : (
                         <button
                           onClick={() => handleStatusChange(u.id, 'ACTIVE')}
-                          className="flex items-center gap-1 px-3 py-1.5 bg-emerald-500/10 hover:bg-emerald-500/20 text-emerald-400 border border-emerald-500/20 rounded-lg text-xs font-medium transition"
+                          className="flex items-center gap-1 px-3 py-1.5 bg-emerald-100 hover:bg-emerald-200 text-emerald-700 border border-emerald-300 rounded-lg text-xs font-semibold transition"
                           title="Activate Account"
                         >
                           <UserCheck className="w-3.5 h-3.5" /> Activate

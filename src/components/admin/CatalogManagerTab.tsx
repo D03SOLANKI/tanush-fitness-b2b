@@ -122,11 +122,11 @@ export const CatalogManagerTab: React.FC = () => {
       </div>
 
       {/* Catalog Table */}
-      <div className="bg-gray-900/50 border border-gray-800 rounded-2xl overflow-hidden backdrop-blur-sm">
+      <div className="bg-white border border-slate-700 rounded-2xl overflow-hidden shadow-xl">
         <div className="overflow-x-auto">
           <table className="w-full text-left border-collapse">
             <thead>
-              <tr className="bg-gray-900/80 border-b border-gray-800 text-xs font-semibold text-gray-400 uppercase tracking-wider">
+              <tr className="bg-slate-900 border-b border-slate-800 text-xs font-bold text-slate-300 uppercase tracking-wider">
                 <th className="py-4 px-6">Equipment</th>
                 <th className="py-4 px-6">Brand & Category</th>
                 <th className="py-4 px-6">MOQ & Lead Time</th>
@@ -134,43 +134,43 @@ export const CatalogManagerTab: React.FC = () => {
                 <th className="py-4 px-6 text-right">Actions</th>
               </tr>
             </thead>
-            <tbody className="divide-y divide-gray-800/60 text-sm">
+            <tbody className="divide-y divide-slate-200 text-sm">
               {products.map(p => (
-                <tr key={p.id} className="hover:bg-gray-800/30 transition">
+                <tr key={p.id} className="odd:bg-[#F4F9FF] even:bg-white hover:bg-[#E4F0FF] transition">
                   <td className="py-4 px-6">
                     <div className="flex items-center gap-3">
-                      <img src={p.image} alt={p.name} className="w-12 h-12 rounded-lg object-cover bg-gray-800 border border-gray-700 shrink-0" />
+                      <img src={p.image} alt={p.name} className="w-12 h-12 rounded-lg object-cover bg-slate-100 border border-slate-300 shrink-0" />
                       <div>
-                        <div className="font-semibold text-white">{p.name}</div>
-                        <div className="text-xs text-gray-400">ID: {p.id}</div>
+                        <div className="font-bold text-slate-900">{p.name}</div>
+                        <div className="text-xs text-slate-500 font-medium font-mono">ID: {p.id}</div>
                       </div>
                     </div>
                   </td>
                   <td className="py-4 px-6">
-                    <div className="text-gray-200 font-medium">{p.brand}</div>
-                    <div className="text-xs text-amber-500">{p.category}</div>
+                    <div className="text-slate-900 font-bold">{p.brand}</div>
+                    <div className="text-xs text-amber-700 font-semibold">{p.category}</div>
                   </td>
                   <td className="py-4 px-6">
-                    <div className="text-gray-300 font-medium">MOQ: {p.minOrderQty || 1} Units</div>
-                    <div className="text-xs text-gray-400">{p.leadTime || '7-14 Days'}</div>
+                    <div className="text-slate-800 font-semibold">MOQ: {p.minOrderQty || 1} Units</div>
+                    <div className="text-xs text-slate-500 font-medium">{p.leadTime || '7-14 Days'}</div>
                   </td>
                   <td className="py-4 px-6">
-                    <span className="inline-flex items-center gap-1 bg-amber-500/10 text-amber-400 text-xs font-medium px-2.5 py-1 rounded-full border border-amber-500/20">
-                      <CheckCircle className="w-3 h-3" /> {p.badge || 'ISO-Certified'}
+                    <span className="inline-flex items-center gap-1 bg-amber-100 text-amber-900 text-xs font-bold px-2.5 py-1 rounded-full border border-amber-300">
+                      <CheckCircle className="w-3 h-3 text-amber-700" /> {p.badge || 'ISO-Certified'}
                     </span>
                   </td>
                   <td className="py-4 px-6 text-right">
                     <div className="flex items-center justify-end gap-2">
                       <button
                         onClick={() => openEditModal(p)}
-                        className="p-2 bg-gray-800 hover:bg-gray-700 text-gray-300 hover:text-white rounded-lg transition"
+                        className="p-2 bg-slate-100 hover:bg-slate-200 text-slate-700 hover:text-slate-950 rounded-lg border border-slate-300 transition shadow-sm"
                         title="Edit Equipment"
                       >
                         <Edit2 className="w-4 h-4" />
                       </button>
                       <button
                         onClick={() => handleDelete(p.id, p.name)}
-                        className="p-2 bg-red-500/10 hover:bg-red-500/20 text-red-400 rounded-lg transition"
+                        className="p-2 bg-red-100 hover:bg-red-200 text-red-700 border border-red-300 rounded-lg transition shadow-sm"
                         title="Delete Equipment"
                       >
                         <Trash2 className="w-4 h-4" />

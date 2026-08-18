@@ -34,40 +34,40 @@ export const JobModerationTab: React.FC = () => {
       {/* Jobs Grid */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         {jobListings.map(job => (
-          <div key={job.id} className="bg-gray-900/50 border border-gray-800 rounded-2xl p-6 flex flex-col justify-between space-y-4">
+          <div key={job.id} className="bg-white border border-slate-700 rounded-2xl p-6 flex flex-col justify-between space-y-4 shadow-xl">
             <div>
               <div className="flex items-center justify-between gap-2 mb-2">
-                <span className={`text-xs px-2.5 py-1 rounded-full font-medium ${job.isActive ? 'bg-emerald-500/10 text-emerald-400 border border-emerald-500/20' : 'bg-red-500/10 text-red-400 border border-red-500/20'}`}>
+                <span className={`text-xs px-2.5 py-1 rounded-full font-bold ${job.isActive ? 'bg-emerald-100 text-emerald-900 border border-emerald-300' : 'bg-red-100 text-red-900 border border-red-300'}`}>
                   {job.isActive ? 'Active & Live' : 'Moderated / Suspended'}
                 </span>
-                <span className="text-xs text-gray-400">Posted: {job.createdAt}</span>
+                <span className="text-xs text-slate-500 font-mono">Posted: {job.createdAt}</span>
               </div>
 
-              <h3 className="text-lg font-bold text-white mb-1">{job.title}</h3>
+              <h3 className="text-lg font-bold text-slate-900 mb-1">{job.title}</h3>
               
-              <div className="flex flex-wrap items-center gap-3 text-xs text-gray-400 mb-3">
-                <span className="flex items-center gap-1"><Building2 className="w-3.5 h-3.5 text-amber-500" /> {job.companyName || job.gymName || 'Gym Center'}</span>
-                <span className="flex items-center gap-1"><MapPin className="w-3.5 h-3.5 text-amber-500" /> {job.location}</span>
-                <span className="text-amber-400 font-semibold">{job.salaryRange}</span>
+              <div className="flex flex-wrap items-center gap-3 text-xs text-slate-600 mb-3 font-semibold">
+                <span className="flex items-center gap-1"><Building2 className="w-3.5 h-3.5 text-blue-600" /> {job.companyName || job.gymName || 'Gym Center'}</span>
+                <span className="flex items-center gap-1"><MapPin className="w-3.5 h-3.5 text-blue-600" /> {job.location}</span>
+                <span className="text-blue-700 font-bold">{job.salaryRange}</span>
               </div>
 
-              <p className="text-xs text-gray-300 line-clamp-3 bg-gray-800/40 p-3 rounded-xl border border-gray-800">
+              <p className="text-xs text-slate-800 leading-relaxed line-clamp-3 bg-[#F4F9FF] p-3.5 rounded-xl border border-blue-100 font-sans">
                 {job.description}
               </p>
             </div>
 
-            <div className="flex items-center justify-end gap-3 pt-3 border-t border-gray-800">
+            <div className="flex items-center justify-end gap-3 pt-3 border-t border-slate-100">
               {job.isActive ? (
                 <button
                   onClick={() => handleAction(job.id, 'REJECT')}
-                  className="flex items-center gap-1.5 px-4 py-2 bg-red-500/10 hover:bg-red-500/20 text-red-400 border border-red-500/20 rounded-xl text-xs font-semibold transition"
+                  className="flex items-center gap-1.5 px-4 py-2 bg-red-100 hover:bg-red-200 text-red-700 border border-red-300 rounded-xl text-xs font-bold transition shadow-sm"
                 >
                   <XCircle className="w-4 h-4" /> Reject & Flag Spammer
                 </button>
               ) : (
                 <button
                   onClick={() => handleAction(job.id, 'APPROVE')}
-                  className="flex items-center gap-1.5 px-4 py-2 bg-emerald-500/10 hover:bg-emerald-500/20 text-emerald-400 border border-emerald-500/20 rounded-xl text-xs font-semibold transition"
+                  className="flex items-center gap-1.5 px-4 py-2 bg-emerald-100 hover:bg-emerald-200 text-emerald-700 border border-emerald-300 rounded-xl text-xs font-bold transition shadow-sm"
                 >
                   <CheckCircle2 className="w-4 h-4" /> Approve & Publish Live
                 </button>
