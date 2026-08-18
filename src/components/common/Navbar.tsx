@@ -1,7 +1,7 @@
-import React, { useState, useEffect, useMemo } from 'react';
+import React, { useMemo, useState } from 'react';
 import { useApp } from '../../context/AppContext';
 import { PageType } from '../../types';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion } from 'framer-motion';
 import {
   Dumbbell,
   Users,
@@ -32,12 +32,11 @@ export const Navbar: React.FC = () => {
     platformSettings,
   } = useApp();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [announcementIndex, setAnnouncementIndex] = useState(0);
-  const [isPaused, setIsPaused] = useState(false);
+  const [isHovered, setIsHovered] = useState(false);
 
   const enquiryCount = enquiryCart.reduce((sum, item) => sum + item.quantity, 0);
 
-  // Rotating Announcement Messages Pool
+  // Promotional Announcements Pool
   const announcements = useMemo(() => {
     const defaultList = [
       {
@@ -81,16 +80,8 @@ export const Navbar: React.FC = () => {
     return defaultList;
   }, [platformSettings?.bannerEnabled, platformSettings?.bannerText]);
 
-  // Auto-cycle announcements every 3.5 seconds (paused on hover)
-  useEffect(() => {
-    if (isPaused || announcements.length <= 1) return;
-
-    const timer = setInterval(() => {
-      setAnnouncementIndex(prev => (prev + 1) % announcements.length);
-    }, 3500);
-
-    return () => clearInterval(timer);
-  }, [isPaused, announcements.length]);
+  // Duplicate for seamless 100% continuous infinite loop
+  const tickerItems = useMemo(() => [...announcements, ...announcements], [announcements]);
 
   const navItems: { label: string; page: PageType; icon: React.ReactNode }[] = [
     { label: 'Home', page: 'home', icon: <Sparkles className="w-3.5 h-3.5" /> },
@@ -103,35 +94,36 @@ export const Navbar: React.FC = () => {
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-xl border-b border-slate-200/80 shadow-sm">
-      {/* Revolving / Rotating Live B2B Announcement Bar */}
+      {/* ⚡ Continuous Horizontal Scrolling Ticker Marquee */}
       <div
-        onMouseEnter={() => setIsPaused(true)}
-        onMouseLeave={() => setIsPaused(false)}
-        className="bg-slate-950 text-amber-400 text-[11px] sm:text-xs font-semibold py-1.5 px-4 text-center border-b border-slate-900 overflow-hidden relative select-none"
+        onMouseEnter={() => setIsHovered(true)}
+        onMouseLeave={() => setIsHovered(false)}
+        className="w-full bg-slate-950 text-amber-400 text-[11px] sm:text-xs font-semibold py-1.5 border-b border-slate-900 overflow-hidden relative select-none whitespace-nowrap cursor-default"
       >
-        <div className="max-w-7xl mx-auto flex items-center justify-center min-h-[22px] relative">
-          <AnimatePresence mode="wait">
-            <motion.div
-              key={announcements[announcementIndex]?.id || announcementIndex}
-              initial={{ opacity: 0, y: 8 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -8 }}
-              transition={{ duration: 0.35, ease: 'easeInOut' }}
-              className="flex items-center justify-center gap-2 text-center"
-            >
+        <motion.div
+          className="flex items-center gap-12 w-max will-change-transform"
+          animate={isHovered ? { x: undefined } : { x: ['0%', '-50%'] }}
+          transition={{
+            repeat: Infinity,
+            repeatType: 'loop',
+            duration: 32,
+            ease: 'linear',
+          }}
+        >
+          {tickerItems.map((item, idx) => (
+            <div key={`${item.id}-${idx}`} className="flex items-center gap-2.5 shrink-0">
               <span className="inline-block w-1.5 h-1.5 rounded-full bg-amber-400 animate-ping shrink-0" />
-              {announcements[announcementIndex]?.icon}
-              <span className="truncate max-w-[85vw] sm:max-w-none text-slate-100 font-medium">
-                {announcements[announcementIndex]?.text}
-              </span>
-              {announcements[announcementIndex]?.badge && (
-                <span className="hidden md:inline-block px-1.5 py-0.2 rounded text-[9px] font-bold bg-amber-400/20 text-amber-300 border border-amber-400/30 uppercase tracking-widest ml-1 font-mono">
-                  {announcements[announcementIndex]?.badge}
+              {item.icon}
+              <span className="text-slate-100 font-medium tracking-wide">{item.text}</span>
+              {item.badge && (
+                <span className="px-1.5 py-0.5 rounded text-[9px] font-bold bg-amber-400/20 text-amber-300 border border-amber-400/30 uppercase tracking-widest font-mono">
+                  {item.badge}
                 </span>
               )}
-            </motion.div>
-          </AnimatePresence>
-        </div>
+              <span className="text-slate-700 ml-4 font-bold">•</span>
+            </div>
+          ))}
+        </motion.div>
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
