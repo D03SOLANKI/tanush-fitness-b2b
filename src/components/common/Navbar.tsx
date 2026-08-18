@@ -41,25 +41,25 @@ export const Navbar: React.FC = () => {
     const defaultList = [
       {
         id: 'oem-pricing',
-        icon: <Zap className="w-3.5 h-3.5 text-amber-400 shrink-0" />,
+        icon: <Zap className="w-3.5 h-3.5 text-amber-400 shrink-0 inline-block" />,
         text: 'Direct Factory Wholesale: OEM Bulk Pricing on Commercial Strength & Cardio Racks',
         badge: 'FACTORY DIRECT',
       },
       {
         id: 'pan-india',
-        icon: <Truck className="w-3.5 h-3.5 text-amber-400 shrink-0" />,
+        icon: <Truck className="w-3.5 h-3.5 text-amber-400 shrink-0 inline-block" />,
         text: 'Pan-India Logistics: Express Freight & Turnkey Gym Installation across 150+ Cities',
         badge: 'PAN-INDIA',
       },
       {
         id: 'hiring',
-        icon: <Users className="w-3.5 h-3.5 text-amber-400 shrink-0" />,
+        icon: <Users className="w-3.5 h-3.5 text-amber-400 shrink-0 inline-block" />,
         text: 'Fitness Careers Portal: Hire Certified Gym Trainers & Managers with Zero Placement Delay',
         badge: 'VERIFIED TALENT',
       },
       {
         id: 'gst-itc',
-        icon: <ShieldCheck className="w-3.5 h-3.5 text-amber-400 shrink-0" />,
+        icon: <ShieldCheck className="w-3.5 h-3.5 text-amber-400 shrink-0 inline-block" />,
         text: '100% Tax Compliant B2B Invoices with 18% Input Tax Credit (ITC) Benefits',
         badge: 'GST COMPLIANT',
       },
@@ -69,7 +69,7 @@ export const Navbar: React.FC = () => {
       return [
         {
           id: 'custom-admin',
-          icon: <Award className="w-3.5 h-3.5 text-amber-400 shrink-0" />,
+          icon: <Award className="w-3.5 h-3.5 text-amber-400 shrink-0 inline-block" />,
           text: platformSettings.bannerText,
           badge: 'SPECIAL NOTICE',
         },
@@ -93,30 +93,32 @@ export const Navbar: React.FC = () => {
   ];
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-xl border-b border-slate-200/80 shadow-sm">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-xl border-b border-slate-200 shadow-sm">
       {/* ⚡ Continuous Horizontal Scrolling Ticker Marquee */}
       <div
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
-        className="w-full bg-slate-950 text-amber-400 text-[11px] sm:text-xs font-semibold py-1.5 border-b border-slate-900 overflow-hidden relative select-none whitespace-nowrap cursor-default"
+        className="w-full bg-slate-950 text-amber-400 text-[11px] sm:text-xs font-semibold py-1.5 border-b border-slate-900 overflow-hidden relative select-none cursor-default"
+        style={{ overflow: 'hidden', whiteSpace: 'nowrap' }}
       >
         <motion.div
-          className="flex items-center gap-12 w-max will-change-transform"
+          className="flex flex-nowrap items-center gap-10 sm:gap-14 will-change-transform shrink-0"
+          style={{ display: 'inline-flex', whiteSpace: 'nowrap', width: 'max-content' }}
           animate={isHovered ? { x: undefined } : { x: ['0%', '-50%'] }}
           transition={{
             repeat: Infinity,
             repeatType: 'loop',
-            duration: 32,
+            duration: 35,
             ease: 'linear',
           }}
         >
           {tickerItems.map((item, idx) => (
-            <div key={`${item.id}-${idx}`} className="flex items-center gap-2.5 shrink-0">
+            <div key={`${item.id}-${idx}`} className="inline-flex items-center gap-2 shrink-0">
               <span className="inline-block w-1.5 h-1.5 rounded-full bg-amber-400 animate-ping shrink-0" />
               {item.icon}
               <span className="text-slate-100 font-medium tracking-wide">{item.text}</span>
               {item.badge && (
-                <span className="px-1.5 py-0.5 rounded text-[9px] font-bold bg-amber-400/20 text-amber-300 border border-amber-400/30 uppercase tracking-widest font-mono">
+                <span className="px-1.5 py-0.5 rounded text-[9px] font-bold bg-amber-400/20 text-amber-300 border border-amber-400/30 uppercase tracking-widest font-mono ml-1">
                   {item.badge}
                 </span>
               )}
