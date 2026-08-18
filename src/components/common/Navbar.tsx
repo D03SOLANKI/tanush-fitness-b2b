@@ -13,7 +13,6 @@ import {
   X,
   Sparkles,
   Search,
-  User,
   LogOut,
   LogIn
 } from 'lucide-react';
@@ -35,119 +34,135 @@ export const Navbar: React.FC = () => {
   const enquiryCount = enquiryCart.reduce((sum, item) => sum + item.quantity, 0);
 
   const navItems: { label: string; page: PageType; icon: React.ReactNode }[] = [
-    { label: 'Home', page: 'home', icon: <Sparkles className="w-4 h-4" /> },
-    { label: 'About Us', page: 'about', icon: <Info className="w-4 h-4" /> },
-    { label: 'Commercial Gym Equipment', page: 'equipment', icon: <Dumbbell className="w-4 h-4" /> },
-    { label: 'Manpower Services', page: 'manpower', icon: <Users className="w-4 h-4" /> },
-    { label: 'Business Services', page: 'services', icon: <Briefcase className="w-4 h-4" /> },
-    { label: 'Contact Us', page: 'contact', icon: <PhoneCall className="w-4 h-4" /> },
+    { label: 'Home', page: 'home', icon: <Sparkles className="w-3.5 h-3.5" /> },
+    { label: 'About Us', page: 'about', icon: <Info className="w-3.5 h-3.5" /> },
+    { label: 'Commercial Gym Equipment', page: 'equipment', icon: <Dumbbell className="w-3.5 h-3.5" /> },
+    { label: 'Manpower Services', page: 'manpower', icon: <Users className="w-3.5 h-3.5" /> },
+    { label: 'Business Services', page: 'services', icon: <Briefcase className="w-3.5 h-3.5" /> },
+    { label: 'Contact Us', page: 'contact', icon: <PhoneCall className="w-3.5 h-3.5" /> },
   ];
 
   return (
     <>
-      <header className="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-xl border-b border-slate-200/90 shadow-stripe">
+      <header className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-xl border-b border-slate-200/80 shadow-sm">
         {/* Live Admin Announcement Banner */}
         {platformSettings?.bannerEnabled && platformSettings?.bannerText && (
           <div className="bg-slate-900 text-amber-400 text-xs font-semibold py-1.5 px-4 text-center border-b border-slate-800 flex items-center justify-center gap-2">
+            <span className="inline-block w-1.5 h-1.5 rounded-full bg-amber-400 animate-ping" />
             <span>{platformSettings.bannerText}</span>
           </div>
         )}
+
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-20">
-            {/* Logo */}
+            {/* 1. Brand Logo */}
             <div
               onClick={() => navigateTo('home')}
-              className="flex items-center gap-3 cursor-pointer group"
+              className="flex items-center gap-3 cursor-pointer group shrink-0 select-none py-1"
             >
-              <div className="w-10 h-10 rounded-2xl bg-gradient-to-tr from-slate-900 via-blue-600 to-blue-500 p-0.5 shadow-md group-hover:scale-105 transition-transform">
-                <div className="w-full h-full bg-slate-900 rounded-[14px] flex items-center justify-center">
-                  <Dumbbell className="w-5 h-5 text-blue-500 group-hover:rotate-12 transition-transform" />
+              <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-slate-900 via-blue-600 to-blue-500 p-0.5 shadow-sm group-hover:shadow-md transition-all duration-300">
+                <div className="w-full h-full bg-slate-900 rounded-[10px] flex items-center justify-center">
+                  <Dumbbell className="w-5 h-5 text-blue-400 group-hover:rotate-12 transition-transform duration-300" />
                 </div>
               </div>
-              <div>
-                <span className="text-xl font-black tracking-tight text-slate-900 font-heading uppercase flex items-center gap-1.5">
-                  TANUSH <span className="text-blue-600 font-extrabold">FITNESS</span>
-                </span>
-                <span className="text-[10px] font-bold text-slate-500 uppercase tracking-widest font-mono block -mt-1">
+              <div className="flex flex-col justify-center">
+                <div className="text-lg font-black tracking-tight text-slate-900 font-heading uppercase leading-none flex items-center gap-1">
+                  TANUSH <span className="text-blue-600 font-black">FITNESS</span>
+                </div>
+                <span className="text-[10px] font-bold text-slate-500 uppercase tracking-widest font-mono mt-1">
                   B2B Enterprise Portal
                 </span>
               </div>
             </div>
 
-            {/* Desktop Navigation Links */}
-            <nav className="hidden lg:flex items-center gap-1 xl:gap-2">
+            {/* 2. Desktop Navigation Center Menu */}
+            <nav className="hidden lg:flex items-center gap-1 xl:gap-1.5 bg-slate-50/70 p-1.5 rounded-2xl border border-slate-200/60 shadow-inner">
               {navItems.map(item => {
                 const active = currentPage === item.page;
                 return (
                   <button
                     key={item.page}
                     onClick={() => navigateTo(item.page)}
-                    className={`px-3 py-2 rounded-xl text-xs font-bold transition-all flex items-center gap-1.5 font-mono uppercase tracking-wider ${
+                    className={`relative px-3.5 py-2 rounded-xl text-[12px] font-bold transition-all duration-200 flex items-center gap-1.5 uppercase font-mono tracking-wide ${
                       active
-                        ? 'bg-blue-50 text-blue-600 border border-blue-200/80 shadow-sm font-black'
-                        : 'text-slate-600 hover:text-slate-900 hover:bg-slate-100/80'
+                        ? 'bg-white text-blue-600 shadow-sm border border-slate-200/80 font-black'
+                        : 'text-slate-600 hover:text-slate-900 hover:bg-white/60'
                     }`}
                   >
-                    {item.label}
+                    <span className={active ? 'text-blue-600' : 'text-slate-400'}>{item.icon}</span>
+                    <span>{item.label}</span>
+                    {active && (
+                      <span className="absolute bottom-0.5 left-1/2 -translate-x-1/2 w-3 h-0.5 bg-blue-600 rounded-full" />
+                    )}
                   </button>
                 );
               })}
             </nav>
 
-            {/* Right Action Controls: Global Search + User Profile + Enquiry Cart */}
-            <div className="flex items-center gap-2 sm:gap-3">
-              {/* Global Search Button Trigger */}
+            {/* 3. Right Action Controls: Search + Auth + Cart */}
+            <div className="flex items-center gap-2 sm:gap-2.5 shrink-0">
+              {/* Global Search Trigger */}
               <button
                 onClick={() => setIsSearchOpen(true)}
-                className="p-2.5 rounded-xl bg-slate-100 border border-slate-200 hover:bg-slate-200 text-slate-700 font-mono text-xs font-bold flex items-center gap-2 transition-all"
-                title="Global Search Equipment, Jobs & Services"
+                className="h-10 px-3 sm:px-3.5 rounded-xl bg-slate-50 hover:bg-slate-100 border border-slate-200/90 text-slate-700 font-mono text-xs font-semibold flex items-center gap-2 transition-all shadow-sm hover:border-slate-300"
+                title="Global Search (Equipment, Jobs & Services)"
               >
-                <Search className="w-4 h-4 text-blue-600" />
-                <span className="hidden sm:inline uppercase text-[11px]">Search</span>
+                <Search className="w-3.5 h-3.5 text-blue-600" />
+                <span className="hidden sm:inline uppercase text-[11px] font-bold">Search</span>
+                <kbd className="hidden xl:inline-block px-1.5 py-0.5 text-[9px] font-mono bg-white border border-slate-200 rounded text-slate-400">
+                  ⌘K
+                </kbd>
               </button>
 
               {/* User Account / Auth Trigger */}
               {currentUser ? (
-                <div className="flex items-center gap-1.5 bg-slate-100 p-1.5 pr-3 rounded-xl border border-slate-200 text-xs font-mono">
-                  <div className="w-7 h-7 rounded-lg bg-blue-600 text-white font-bold flex items-center justify-center text-xs uppercase">
+                <div className="h-10 flex items-center gap-2 bg-slate-50 px-2 sm:px-2.5 rounded-xl border border-slate-200 text-xs font-mono shadow-sm">
+                  <div className="w-6 h-6 rounded-lg bg-blue-600 text-white font-bold flex items-center justify-center text-[10px] uppercase shadow-sm">
                     {currentUser.role === 'GYM_OWNER' ? 'GO' : 'JS'}
                   </div>
-                  <div className="hidden md:block text-left leading-tight">
-                    <div className="font-bold text-slate-900 truncate max-w-[100px]">
+                  <div className="hidden md:block text-left leading-tight pr-1">
+                    <div className="font-bold text-slate-900 truncate max-w-[90px] text-[11px]">
                       {currentUser.name || currentUser.email.split('@')[0]}
                     </div>
-                    <div className="text-[9px] font-bold text-blue-600 uppercase">
+                    <div className="text-[8px] font-bold text-blue-600 uppercase">
                       {currentUser.role === 'GYM_OWNER' ? 'Gym Owner' : 'Job Seeker'}
                     </div>
                   </div>
                   <button
                     onClick={logoutUser}
-                    className="p-1 text-slate-400 hover:text-rose-600 transition-colors ml-1"
+                    className="p-1 text-slate-400 hover:text-rose-600 transition-colors ml-0.5"
                     title="Logout"
                   >
-                    <LogOut className="w-4 h-4" />
+                    <LogOut className="w-3.5 h-3.5" />
                   </button>
                 </div>
               ) : (
                 <button
                   onClick={() => openAuthModal('GYM_OWNER')}
-                  className="p-2.5 px-3 rounded-xl bg-slate-100 border border-slate-200 hover:bg-slate-200 text-slate-900 font-mono text-xs font-bold flex items-center gap-1.5 transition-all"
+                  className="h-10 px-3 sm:px-3.5 rounded-xl bg-slate-50 hover:bg-slate-100 border border-slate-200/90 hover:border-slate-300 text-slate-900 font-mono text-xs font-bold flex items-center gap-1.5 transition-all shadow-sm"
                 >
-                  <LogIn className="w-4 h-4 text-blue-600" />
+                  <LogIn className="w-3.5 h-3.5 text-blue-600" />
                   <span className="hidden sm:inline uppercase text-[11px]">Login</span>
                 </button>
               )}
 
+              {/* Divider for subtle separation */}
+              <div className="hidden sm:block h-6 w-[1px] bg-slate-200 mx-0.5" />
+
               {/* Enquiry Cart Trigger */}
               <button
                 onClick={() => setIsEnquiryCartOpen(true)}
-                className="relative p-2.5 px-4 rounded-xl bg-blue-600 hover:bg-blue-700 text-white font-mono text-xs font-black flex items-center gap-2 transition-all shadow-md"
+                className="h-10 relative px-3.5 sm:px-4 rounded-xl bg-blue-600 hover:bg-blue-700 text-white font-mono text-xs font-black flex items-center gap-2 transition-all shadow-sm hover:shadow-md hover:shadow-blue-500/20 active:scale-98"
               >
                 <FileText className="w-4 h-4 text-white" />
-                <span className="uppercase hidden sm:inline">Enquiry Cart</span>
-                {enquiryCount > 0 && (
-                  <span className="w-5 h-5 rounded-full bg-white text-blue-600 text-[10px] font-black flex items-center justify-center font-mono">
+                <span className="uppercase hidden sm:inline text-[11px] tracking-wide">Enquiry Cart</span>
+                {enquiryCount > 0 ? (
+                  <span className="w-5 h-5 rounded-full bg-white text-blue-600 text-[10px] font-black flex items-center justify-center font-mono shadow-sm">
                     {enquiryCount}
+                  </span>
+                ) : (
+                  <span className="hidden md:inline-block px-1.5 py-0.5 rounded bg-blue-500/50 text-[10px] text-blue-100 font-mono">
+                    0
                   </span>
                 )}
               </button>
@@ -155,9 +170,10 @@ export const Navbar: React.FC = () => {
               {/* Mobile Hamburger Toggle */}
               <button
                 onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                className="p-2.5 rounded-xl bg-slate-100 text-slate-700 lg:hidden"
+                className="h-10 w-10 flex items-center justify-center rounded-xl bg-slate-100 text-slate-700 hover:bg-slate-200 border border-slate-200/80 transition-colors lg:hidden"
+                aria-label="Toggle navigation menu"
               >
-                {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+                {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
               </button>
             </div>
           </div>
@@ -165,24 +181,27 @@ export const Navbar: React.FC = () => {
 
         {/* Mobile Drawer Menu */}
         {mobileMenuOpen && (
-          <div className="lg:hidden bg-white border-b border-slate-200 px-4 py-6 space-y-3 shadow-2xl">
-            {navItems.map(item => (
-              <button
-                key={item.page}
-                onClick={() => {
-                  navigateTo(item.page);
-                  setMobileMenuOpen(false);
-                }}
-                className={`w-full py-3 px-4 rounded-xl text-xs font-black uppercase font-mono tracking-wider text-left flex items-center gap-3 ${
-                  currentPage === item.page
-                    ? 'bg-blue-600 text-white shadow-md'
-                    : 'bg-slate-50 text-slate-700 hover:bg-slate-100'
-                }`}
-              >
-                {item.icon}
-                <span>{item.label}</span>
-              </button>
-            ))}
+          <div className="lg:hidden bg-white/98 backdrop-blur-xl border-b border-slate-200 px-4 py-5 space-y-2 shadow-2xl animate-in slide-in-from-top-2 duration-200">
+            {navItems.map(item => {
+              const active = currentPage === item.page;
+              return (
+                <button
+                  key={item.page}
+                  onClick={() => {
+                    navigateTo(item.page);
+                    setMobileMenuOpen(false);
+                  }}
+                  className={`w-full py-3 px-4 rounded-xl text-xs font-bold uppercase font-mono tracking-wider text-left flex items-center gap-3 transition-all ${
+                    active
+                      ? 'bg-blue-600 text-white shadow-md shadow-blue-600/20'
+                      : 'bg-slate-50 text-slate-700 hover:bg-slate-100'
+                  }`}
+                >
+                  <span className={active ? 'text-white' : 'text-slate-400'}>{item.icon}</span>
+                  <span>{item.label}</span>
+                </button>
+              );
+            })}
           </div>
         )}
       </header>
