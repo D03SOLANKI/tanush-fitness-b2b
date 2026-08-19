@@ -37,12 +37,12 @@ export const HomePage: React.FC = () => {
       <Hero />
 
       {/* SECTION 2: B2B COMMERCIAL CREDIBILITY METRIC STRIP */}
-      <section className="bg-slate-900 text-white border-b border-slate-800 py-8">
+      <section className="bg-slate-950 text-white border-b border-slate-800 py-8">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8 font-mono">
             
             <div className="flex items-center gap-3.5 border-r border-slate-800 pr-4 last:border-r-0">
-              <div className="w-10 h-10 rounded bg-slate-800 border border-slate-700 flex items-center justify-center shrink-0">
+              <div className="w-10 h-10 rounded-lg bg-slate-900 border border-slate-800 flex items-center justify-center shrink-0">
                 <Building2 className="w-5 h-5 text-blue-400" />
               </div>
               <div>
@@ -52,8 +52,8 @@ export const HomePage: React.FC = () => {
             </div>
 
             <div className="flex items-center gap-3.5 border-r border-slate-800 pr-4 last:border-r-0">
-              <div className="w-10 h-10 rounded bg-slate-800 border border-slate-700 flex items-center justify-center shrink-0">
-                <Layers className="w-5 h-5 text-emerald-400" />
+              <div className="w-10 h-10 rounded-lg bg-slate-900 border border-slate-800 flex items-center justify-center shrink-0">
+                <Layers className="w-5 h-5 text-blue-400" />
               </div>
               <div>
                 <div className="text-xl sm:text-2xl font-extrabold text-white font-heading tracking-tight">11-GAUGE</div>
@@ -62,7 +62,7 @@ export const HomePage: React.FC = () => {
             </div>
 
             <div className="flex items-center gap-3.5 border-r border-slate-800 pr-4 last:border-r-0">
-              <div className="w-10 h-10 rounded bg-slate-800 border border-slate-700 flex items-center justify-center shrink-0">
+              <div className="w-10 h-10 rounded-lg bg-slate-900 border border-slate-800 flex items-center justify-center shrink-0">
                 <FileCheck2 className="w-5 h-5 text-amber-400" />
               </div>
               <div>
@@ -72,7 +72,7 @@ export const HomePage: React.FC = () => {
             </div>
 
             <div className="flex items-center gap-3.5">
-              <div className="w-10 h-10 rounded bg-slate-800 border border-slate-700 flex items-center justify-center shrink-0">
+              <div className="w-10 h-10 rounded-lg bg-slate-900 border border-slate-800 flex items-center justify-center shrink-0">
                 <Truck className="w-5 h-5 text-blue-400" />
               </div>
               <div>
@@ -104,16 +104,16 @@ export const HomePage: React.FC = () => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             
             {/* Pillar 1: Equipment */}
-            <div className="bg-white rounded-xl border border-slate-200 p-6 flex flex-col justify-between hover-lift shadow-sm">
+            <div className="bg-white rounded-lg border border-slate-200 p-6 flex flex-col justify-between hover-lift shadow-sm">
               <div className="space-y-4">
-                <div className="w-12 h-12 rounded-lg bg-slate-900 text-blue-400 flex items-center justify-center border border-slate-800">
+                <div className="w-12 h-12 rounded-lg bg-slate-950 text-blue-400 flex items-center justify-center border border-slate-800">
                   <Dumbbell className="w-6 h-6" />
                 </div>
                 <div>
-                  <span className="text-[10px] font-bold text-blue-700 font-mono uppercase tracking-widest block mb-1">
+                  <span className="text-[10px] font-bold text-blue-800 font-mono uppercase tracking-widest block mb-1">
                     PILLAR 01 // HARDWARE
                   </span>
-                  <h3 className="text-lg font-bold text-slate-900 font-heading uppercase">
+                  <h3 className="text-lg font-bold text-slate-900 font-heading">
                     Commercial Gym Equipment
                   </h3>
                 </div>
@@ -122,11 +122,11 @@ export const HomePage: React.FC = () => {
                 </p>
                 <div className="pt-2 font-mono text-xs text-slate-700 space-y-1.5 border-t border-slate-100">
                   <div className="flex items-center gap-2">
-                    <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600 shrink-0" />
+                    <CheckCircle2 className="w-3.5 h-3.5 text-blue-800 shrink-0" />
                     <span>Direct Factory Wholesale Pricing</span>
                   </div>
                   <div className="flex items-center gap-2">
-                    <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600 shrink-0" />
+                    <CheckCircle2 className="w-3.5 h-3.5 text-blue-800 shrink-0" />
                     <span>Automated RFQ Quote Builder</span>
                   </div>
                 </div>
@@ -135,7 +135,7 @@ export const HomePage: React.FC = () => {
               <div className="pt-6 mt-6 border-t border-slate-100">
                 <button
                   onClick={() => navigateTo('equipment')}
-                  className="w-full py-2.5 px-4 rounded-lg bg-blue-700 hover:bg-blue-800 text-white font-semibold text-xs tracking-wide flex items-center justify-center gap-2 transition-colors"
+                  className="w-full py-2.5 px-4 rounded-lg bg-blue-800 hover:bg-blue-900 text-white font-semibold text-xs tracking-wide flex items-center justify-center gap-2 transition-colors"
                 >
                   <span>Explore Equipment Catalog</span>
                   <ArrowRight className="w-3.5 h-3.5" />
@@ -144,13 +144,13 @@ export const HomePage: React.FC = () => {
             </div>
 
             {/* Pillar 2: Manpower */}
-            <div className="bg-white rounded-xl border border-slate-200 p-6 flex flex-col justify-between hover-lift shadow-sm">
+            <div className="bg-white rounded-lg border border-slate-200 p-6 flex flex-col justify-between hover-lift shadow-sm">
               <div className="space-y-4">
-                <div className="w-12 h-12 rounded-lg bg-slate-900 text-amber-400 flex items-center justify-center border border-slate-800">
+                <div className="w-12 h-12 rounded-lg bg-slate-950 text-amber-400 flex items-center justify-center border border-slate-800">
                   <Users className="w-6 h-6" />
                 </div>
                 <div>
-                  <span className="text-[10px] font-bold text-amber-700 font-mono uppercase tracking-widest block mb-1">
+                  <span className="text-[10px] font-bold text-slate-700 font-mono uppercase tracking-widest block mb-1">
                     PILLAR 02 // RECRUITMENT
                   </span>
                   <h3 className="text-lg font-bold text-slate-900 font-heading">
@@ -162,11 +162,11 @@ export const HomePage: React.FC = () => {
                 </p>
                 <div className="pt-2 font-mono text-xs text-slate-700 space-y-1.5 border-t border-slate-100">
                   <div className="flex items-center gap-2">
-                    <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600 shrink-0" />
+                    <CheckCircle2 className="w-3.5 h-3.5 text-blue-800 shrink-0" />
                     <span>Pre-Screened & Certified Profiles</span>
                   </div>
                   <div className="flex items-center gap-2">
-                    <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600 shrink-0" />
+                    <CheckCircle2 className="w-3.5 h-3.5 text-blue-800 shrink-0" />
                     <span>Direct Job Posting & Applicant Tracker</span>
                   </div>
                 </div>
@@ -175,7 +175,7 @@ export const HomePage: React.FC = () => {
               <div className="pt-6 mt-6 border-t border-slate-100">
                 <button
                   onClick={() => navigateTo('manpower')}
-                  className="w-full py-2.5 px-4 rounded-lg bg-slate-900 hover:bg-slate-800 text-white font-semibold text-xs tracking-wide flex items-center justify-center gap-2 transition-colors"
+                  className="w-full py-2.5 px-4 rounded-lg bg-slate-950 hover:bg-slate-900 text-white font-semibold text-xs tracking-wide flex items-center justify-center gap-2 transition-colors"
                 >
                   <span>Open Recruitment Portal</span>
                   <ArrowRight className="w-3.5 h-3.5 text-amber-400" />
@@ -184,13 +184,13 @@ export const HomePage: React.FC = () => {
             </div>
 
             {/* Pillar 3: Growth Services */}
-            <div className="bg-white rounded-xl border border-slate-200 p-6 flex flex-col justify-between hover-lift shadow-sm">
+            <div className="bg-white rounded-lg border border-slate-200 p-6 flex flex-col justify-between hover-lift shadow-sm">
               <div className="space-y-4">
-                <div className="w-12 h-12 rounded-lg bg-slate-900 text-emerald-400 flex items-center justify-center border border-slate-800">
+                <div className="w-12 h-12 rounded-lg bg-slate-950 text-blue-400 flex items-center justify-center border border-slate-800">
                   <Briefcase className="w-6 h-6" />
                 </div>
                 <div>
-                  <span className="text-[10px] font-bold text-emerald-700 font-mono uppercase tracking-widest block mb-1">
+                  <span className="text-[10px] font-bold text-slate-700 font-mono uppercase tracking-widest block mb-1">
                     PILLAR 03 // OPERATIONS
                   </span>
                   <h3 className="text-lg font-bold text-slate-900 font-heading">
@@ -202,11 +202,11 @@ export const HomePage: React.FC = () => {
                 </p>
                 <div className="pt-2 font-mono text-xs text-slate-700 space-y-1.5 border-t border-slate-100">
                   <div className="flex items-center gap-2">
-                    <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600 shrink-0" />
+                    <CheckCircle2 className="w-3.5 h-3.5 text-blue-800 shrink-0" />
                     <span>3D CAD Floor Layout Schematics</span>
                   </div>
                   <div className="flex items-center gap-2">
-                    <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600 shrink-0" />
+                    <CheckCircle2 className="w-3.5 h-3.5 text-blue-800 shrink-0" />
                     <span>WhatsApp Lead Automation Integration</span>
                   </div>
                 </div>
@@ -215,10 +215,10 @@ export const HomePage: React.FC = () => {
               <div className="pt-6 mt-6 border-t border-slate-100">
                 <button
                   onClick={() => navigateTo('services')}
-                  className="w-full py-2.5 px-4 rounded-lg bg-slate-900 hover:bg-slate-800 text-white font-semibold text-xs tracking-wide flex items-center justify-center gap-2 transition-colors"
+                  className="w-full py-2.5 px-4 rounded-lg bg-slate-950 hover:bg-slate-900 text-white font-semibold text-xs tracking-wide flex items-center justify-center gap-2 transition-colors"
                 >
                   <span>Explore Growth Services</span>
-                  <ArrowRight className="w-3.5 h-3.5 text-emerald-400" />
+                  <ArrowRight className="w-3.5 h-3.5 text-blue-400" />
                 </button>
               </div>
             </div>
@@ -231,7 +231,7 @@ export const HomePage: React.FC = () => {
       <FeaturedProducts />
 
       {/* SECTION 5: FEATURED MANPOWER JOBS */}
-      <section className="py-16 bg-slate-900 text-white border-t border-slate-800">
+      <section className="py-16 bg-slate-950 text-white border-t border-slate-800">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-10">
             <div>
@@ -244,7 +244,7 @@ export const HomePage: React.FC = () => {
             </div>
             <button
               onClick={() => navigateTo('manpower')}
-              className="px-5 py-2.5 rounded-lg bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold text-xs flex items-center gap-2 transition-colors self-start sm:self-auto"
+              className="px-5 py-2.5 rounded-lg bg-blue-800 hover:bg-blue-700 text-white font-bold text-xs flex items-center gap-2 transition-colors self-start sm:self-auto shadow-sm"
             >
               <span>View All Openings</span>
               <ArrowRight className="w-3.5 h-3.5" />
@@ -253,20 +253,20 @@ export const HomePage: React.FC = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
             {jobListings.slice(0, 3).map(j => (
-              <div key={j.id} className="p-5 rounded-xl bg-slate-800 border border-slate-700 space-y-3 hover-lift">
+              <div key={j.id} className="p-5 rounded-lg bg-slate-900 border border-slate-800 space-y-3 hover-lift">
                 <div className="flex items-center justify-between font-mono">
-                  <span className="text-[10px] font-bold px-2 py-0.5 rounded bg-amber-400/10 text-amber-400 border border-amber-400/20">
+                  <span className="text-[10px] font-bold px-2 py-0.5 rounded bg-amber-400/10 text-amber-300 border border-amber-400/20">
                     {j.category}
                   </span>
-                  <span className="text-xs font-bold text-emerald-400">{j.salaryRange}</span>
+                  <span className="text-xs font-bold text-slate-200">{j.salaryRange}</span>
                 </div>
                 <h3 className="text-sm font-bold text-white font-heading">{j.title}</h3>
                 <div className="text-xs text-slate-400 font-mono">{j.gymName} · {j.location}</div>
                 <button
                   onClick={() => navigateTo('manpower')}
-                  className="w-full py-2 rounded bg-slate-700 hover:bg-slate-600 text-white font-semibold text-xs flex items-center justify-center gap-1.5 transition-colors"
+                  className="w-full py-2 rounded bg-slate-800 hover:bg-slate-700 text-white font-semibold text-xs flex items-center justify-center gap-1.5 transition-colors border border-slate-700"
                 >
-                  <UserCheck className="w-3.5 h-3.5" />
+                  <UserCheck className="w-3.5 h-3.5 text-blue-400" />
                   <span>View Details & Apply</span>
                 </button>
               </div>

@@ -10,7 +10,8 @@ import {
   Layers,
   Award,
   Zap,
-  Building2
+  Building2,
+  FileText
 } from 'lucide-react';
 
 export const Hero: React.FC = () => {
@@ -33,7 +34,7 @@ export const Hero: React.FC = () => {
             {/* Master Headline */}
             <h1 className="text-3xl sm:text-5xl xl:text-6xl font-extrabold tracking-tight text-slate-900 font-heading uppercase leading-[1.1]">
               COMMERCIAL GYM OUTFITTING.{' '}
-              <span className="text-blue-700 block mt-1">DIRECT FROM FACTORY.</span>
+              <span className="text-blue-800 block mt-1">DIRECT FROM FACTORY.</span>
             </h1>
 
             {/* Value Proposition Description */}
@@ -45,7 +46,7 @@ export const Hero: React.FC = () => {
             <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 pt-2">
               <button
                 onClick={() => navigateTo('equipment')}
-                className="px-6 py-3.5 rounded-lg bg-blue-700 hover:bg-blue-800 text-white font-bold text-sm flex items-center justify-center gap-2 transition-colors shadow-sm"
+                className="px-6 py-3.5 rounded-lg bg-blue-800 hover:bg-blue-900 text-white font-bold text-sm flex items-center justify-center gap-2 transition-colors shadow-sm"
               >
                 <span>Build Commercial RFQ Package</span>
                 <ArrowRight className="w-4 h-4 text-blue-200" />
@@ -53,9 +54,9 @@ export const Hero: React.FC = () => {
 
               <button
                 onClick={() => navigateTo('contact')}
-                className="px-6 py-3.5 rounded-lg bg-slate-900 hover:bg-slate-800 text-white font-bold text-sm flex items-center justify-center gap-2 transition-colors shadow-sm"
+                className="px-6 py-3.5 rounded-lg bg-slate-950 hover:bg-slate-900 text-white font-bold text-sm flex items-center justify-center gap-2 transition-colors shadow-sm"
               >
-                <FileDown className="w-4 h-4 text-blue-400" />
+                <FileDown className="w-4 h-4 text-amber-400" />
                 <span>Request 2026 Master Spec Sheet</span>
               </button>
             </div>
@@ -64,9 +65,9 @@ export const Hero: React.FC = () => {
             <div className="pt-2 flex flex-wrap items-center gap-4 text-xs font-mono text-slate-600">
               <a
                 href="tel:+919067800048"
-                className="inline-flex items-center gap-1.5 text-blue-700 hover:text-blue-900 font-bold"
+                className="inline-flex items-center gap-1.5 text-blue-800 hover:text-blue-950 font-bold"
               >
-                <PhoneCall className="w-3.5 h-3.5 text-blue-600" />
+                <PhoneCall className="w-3.5 h-3.5 text-blue-800" />
                 <span>Commercial Desk: +91 90678 00048</span>
               </a>
               <span className="text-slate-300 hidden sm:inline">•</span>
@@ -76,15 +77,15 @@ export const Hero: React.FC = () => {
             {/* Technical Verification Badges */}
             <div className="pt-4 border-t border-slate-200 grid grid-cols-2 sm:grid-cols-3 gap-3 font-mono text-xs text-slate-700">
               <div className="flex items-center gap-1.5">
-                <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0" />
+                <CheckCircle2 className="w-4 h-4 text-blue-800 shrink-0" />
                 <span className="font-semibold">11-Gauge Solid Steel</span>
               </div>
               <div className="flex items-center gap-1.5">
-                <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0" />
+                <CheckCircle2 className="w-4 h-4 text-blue-800 shrink-0" />
                 <span className="font-semibold">1,000kg Tested Load</span>
               </div>
               <div className="flex items-center gap-1.5 col-span-2 sm:col-span-1">
-                <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0" />
+                <CheckCircle2 className="w-4 h-4 text-blue-800 shrink-0" />
                 <span className="font-semibold">10-Year Frame Warranty</span>
               </div>
             </div>
@@ -93,17 +94,17 @@ export const Hero: React.FC = () => {
 
           {/* Right Column: Industrial Spec Rig Showcase */}
           <div className="lg:col-span-5">
-            <div className="bg-white border border-slate-300 rounded-xl overflow-hidden shadow-sm">
+            <div className="bg-white border border-slate-300 rounded-lg overflow-hidden shadow-sm">
               
               {/* Product Header Bar */}
-              <div className="bg-slate-900 text-white px-4 py-3 flex items-center justify-between border-b border-slate-800">
+              <div className="bg-slate-950 text-white px-4 py-3 flex items-center justify-between border-b border-slate-800">
                 <div className="flex items-center gap-2">
-                  <span className="w-2 h-2 rounded-full bg-emerald-400"></span>
+                  <span className="w-2 h-2 rounded-full bg-blue-400"></span>
                   <span className="font-mono text-xs font-bold uppercase tracking-wider text-slate-200">
                     FEATURED SPEC // RIG-900-X
                   </span>
                 </div>
-                <span className="px-2 py-0.5 rounded bg-slate-800 text-slate-300 font-mono text-[10px] font-bold border border-slate-700">
+                <span className="px-2 py-0.5 rounded bg-slate-800 text-amber-300 font-mono text-[10px] font-bold border border-slate-700">
                   COMMERCIAL GRADE
                 </span>
               </div>
@@ -117,12 +118,12 @@ export const Hero: React.FC = () => {
                 />
                 
                 {/* Engineering Callout Overlay Badges */}
-                <div className="absolute top-3 left-3 bg-slate-900/90 text-white text-[10px] font-mono font-bold px-2 py-1 rounded border border-slate-700 shadow-sm flex items-center gap-1">
+                <div className="absolute top-3 left-3 bg-slate-950/90 text-white text-[10px] font-mono font-bold px-2 py-1 rounded border border-slate-800 shadow-sm flex items-center gap-1">
                   <Layers className="w-3 h-3 text-blue-400" />
                   <span>3x3" 11-Gauge Structural Uprights</span>
                 </div>
 
-                <div className="absolute bottom-3 right-3 bg-slate-900/90 text-white text-[10px] font-mono font-bold px-2 py-1 rounded border border-slate-700 shadow-sm flex items-center gap-1">
+                <div className="absolute bottom-3 right-3 bg-slate-950/90 text-white text-[10px] font-mono font-bold px-2 py-1 rounded border border-slate-800 shadow-sm flex items-center gap-1">
                   <Award className="w-3 h-3 text-amber-400" />
                   <span>ISO 9001 Structural Rig</span>
                 </div>
@@ -143,12 +144,11 @@ export const Hero: React.FC = () => {
 
                 {/* Direct Action Button */}
                 <button
-                  onClick={() => navigateTo('equipment')}
-                  className="w-full py-2.5 rounded-lg bg-slate-900 hover:bg-slate-800 text-white text-xs font-bold font-mono uppercase tracking-wider flex items-center justify-center gap-2 transition-colors"
+                  onClick={() => setIsEnquiryCartOpen(true)}
+                  className="w-full py-2.5 px-4 rounded-lg bg-blue-800 hover:bg-blue-900 text-white text-xs font-bold font-mono uppercase tracking-wider flex items-center justify-center gap-2 transition-colors"
                 >
-                  <Dumbbell className="w-3.5 h-3.5 text-blue-400" />
-                  <span>Explore Full Commercial Catalog</span>
-                  <ArrowRight className="w-3.5 h-3.5 text-slate-400" />
+                  <FileText className="w-3.5 h-3.5" />
+                  <span>Add Model to RFQ Quote</span>
                 </button>
               </div>
 

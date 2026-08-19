@@ -107,18 +107,18 @@ export const Navbar: React.FC = () => {
             onClick={() => navigateTo('home')}
             className="flex items-center gap-3 cursor-pointer select-none py-1 group"
           >
-            <div className="w-10 h-10 rounded-lg bg-slate-900 flex items-center justify-center border border-slate-800 shadow-sm group-hover:border-blue-600 transition-colors">
-              <Dumbbell className="w-5 h-5 text-blue-500" />
+            <div className="w-10 h-10 rounded-lg bg-slate-950 flex items-center justify-center border border-slate-800 shadow-sm group-hover:border-blue-700 transition-colors">
+              <Dumbbell className="w-5 h-5 text-blue-400" />
             </div>
             <div className="flex flex-col justify-center">
-              <div className="text-[17px] font-extrabold tracking-tight text-slate-900 uppercase leading-tight font-heading flex items-center gap-1.5">
-                TANUSH <span className="text-blue-600">FITNESS</span>
+              <div className="text-[17px] font-black tracking-tight text-slate-900 uppercase leading-tight font-heading flex items-center gap-1.5">
+                TANUSH <span className="text-blue-800">FITNESS</span>
               </div>
               <div className="flex items-center gap-1.5 mt-0.5">
                 <span className="text-[9px] font-bold text-slate-500 uppercase tracking-widest font-mono">
                   Industrial B2B Marketplace
                 </span>
-                <span className="px-1 py-0.2 rounded bg-slate-100 text-[8px] font-bold font-mono text-slate-600 border border-slate-200 uppercase">
+                <span className="px-1 py-0.2 rounded bg-amber-50 text-[8px] font-bold font-mono text-amber-800 border border-amber-300 uppercase">
                   ISO 9001
                 </span>
               </div>
@@ -135,11 +135,11 @@ export const Navbar: React.FC = () => {
                   onClick={() => navigateTo(item.page)}
                   className={`px-3 py-2 rounded-md text-[13px] font-semibold transition-colors flex items-center gap-1.5 ${
                     active
-                      ? 'text-blue-700 bg-blue-50/80 font-bold'
-                      : 'text-slate-700 hover:text-slate-900 hover:bg-slate-100/70'
+                      ? 'text-blue-800 bg-blue-50 font-bold'
+                      : 'text-slate-700 hover:text-slate-950 hover:bg-slate-100'
                   }`}
                 >
-                  <span className={active ? 'text-blue-600' : 'text-slate-400'}>{item.icon}</span>
+                  <span className={active ? 'text-blue-800' : 'text-slate-400'}>{item.icon}</span>
                   <span>{item.label}</span>
                 </button>
               );
@@ -151,7 +151,7 @@ export const Navbar: React.FC = () => {
             {/* User Account / Auth Trigger */}
             {currentUser ? (
               <div className="h-9 flex items-center gap-2 bg-slate-50 px-2.5 rounded-lg border border-slate-200 text-xs font-mono shadow-sm">
-                <div className="w-5 h-5 rounded bg-slate-900 text-white font-bold flex items-center justify-center text-[10px] uppercase">
+                <div className="w-5 h-5 rounded bg-slate-950 text-white font-bold flex items-center justify-center text-[10px] uppercase">
                   {currentUser.role === 'GYM_OWNER' ? 'GO' : 'JS'}
                 </div>
                 <div className="hidden md:block text-left leading-tight pr-1">
@@ -183,16 +183,16 @@ export const Navbar: React.FC = () => {
             {/* Commercial RFQ Cart Trigger */}
             <button
               onClick={() => setIsEnquiryCartOpen(true)}
-              className="h-9 px-3.5 rounded-lg bg-blue-600 hover:bg-blue-700 text-white text-xs font-bold flex items-center gap-2 transition-colors shadow-sm"
+              className="h-9 px-3.5 rounded-lg bg-blue-800 hover:bg-blue-900 text-white text-xs font-bold flex items-center gap-2 transition-colors shadow-sm"
             >
-              <FileText className="w-3.5 h-3.5 text-blue-100" />
+              <FileText className="w-3.5 h-3.5 text-blue-200" />
               <span className="hidden sm:inline">RFQ Project List</span>
               {enquiryCount > 0 ? (
-                <span className="px-1.5 py-0.2 rounded-full bg-white text-blue-700 text-[10px] font-bold font-mono">
+                <span className="px-1.5 py-0.2 rounded-full bg-white text-blue-900 text-[10px] font-bold font-mono">
                   {enquiryCount}
                 </span>
               ) : (
-                <span className="hidden md:inline-block text-[10px] text-blue-200 font-mono">
+                <span className="hidden md:inline-block text-[10px] text-blue-300 font-mono">
                   (0)
                 </span>
               )}

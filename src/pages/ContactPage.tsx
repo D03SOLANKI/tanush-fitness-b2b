@@ -69,13 +69,13 @@ export const ContactPage: React.FC = () => {
             href="https://wa.me/919067800048?text=Hello%20Tanush%20Fitness,%20I%20want%20a%20quotation%20for%20my%20gym."
             target="_blank"
             rel="noopener noreferrer"
-            className="p-6 rounded-xl bg-emerald-600 text-white shadow-sm hover-lift flex items-center gap-4 group"
+            className="p-6 rounded-lg bg-blue-800 text-white shadow-sm hover-lift flex items-center gap-4 group"
           >
-            <div className="w-12 h-12 rounded-lg bg-white/20 flex items-center justify-center shrink-0">
+            <div className="w-12 h-12 rounded-md bg-blue-700/80 flex items-center justify-center shrink-0">
               <MessageSquare className="w-6 h-6 fill-white" />
             </div>
             <div>
-              <div className="text-[10px] font-bold uppercase font-mono tracking-wider opacity-90">Instant WhatsApp</div>
+              <div className="text-[10px] font-bold uppercase font-mono tracking-wider opacity-90 text-blue-200">Instant WhatsApp</div>
               <div className="text-base font-bold font-heading uppercase group-hover:translate-x-0.5 transition-transform">
                 Chat on WhatsApp →
               </div>
@@ -84,30 +84,30 @@ export const ContactPage: React.FC = () => {
 
           <a
             href="tel:+919067800048"
-            className="p-6 rounded-xl bg-blue-700 text-white shadow-sm hover-lift flex items-center gap-4 group"
+            className="p-6 rounded-lg bg-slate-950 text-white shadow-sm hover-lift flex items-center gap-4 group border border-slate-800"
           >
-            <div className="w-12 h-12 rounded-lg bg-white/20 flex items-center justify-center shrink-0">
-              <PhoneCall className="w-6 h-6" />
+            <div className="w-12 h-12 rounded-md bg-slate-800 flex items-center justify-center shrink-0">
+              <PhoneCall className="w-6 h-6 text-blue-400" />
             </div>
             <div>
-              <div className="text-[10px] font-bold uppercase font-mono tracking-wider opacity-90">Direct Call</div>
+              <div className="text-[10px] font-bold uppercase font-mono tracking-wider opacity-90 text-slate-400">Direct Hotline</div>
               <div className="text-base font-bold font-heading uppercase group-hover:translate-x-0.5 transition-transform">
-                Call Now (+91 90678 00048) →
+                Call +91 90678 00048 →
               </div>
             </div>
           </a>
 
           <a
             href="mailto:Info@tanushfitness.com"
-            className="p-6 rounded-xl bg-slate-900 text-white shadow-sm hover-lift flex items-center gap-4 group"
+            className="p-6 rounded-lg bg-slate-900 text-white shadow-sm hover-lift flex items-center gap-4 group border border-slate-800"
           >
-            <div className="w-12 h-12 rounded-lg bg-white/20 flex items-center justify-center shrink-0">
+            <div className="w-12 h-12 rounded-md bg-slate-800 flex items-center justify-center shrink-0">
               <Mail className="w-6 h-6 text-amber-400" />
             </div>
             <div>
-              <div className="text-[10px] font-bold uppercase font-mono tracking-wider opacity-90">Email Sales</div>
+              <div className="text-[10px] font-bold uppercase font-mono tracking-wider opacity-90 text-slate-400">Email Sales Desk</div>
               <div className="text-base font-bold font-heading uppercase group-hover:translate-x-0.5 transition-transform">
-                Email Us →
+                Email Quotation Req →
               </div>
             </div>
           </a>

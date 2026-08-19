@@ -293,7 +293,7 @@ export const EquipmentPage: React.FC = () => {
                 <div className="p-5 flex-1 flex flex-col justify-between space-y-3">
                   <div>
                     <div className="flex items-center justify-between text-xs font-mono mb-1">
-                      <span className="text-blue-700 font-bold uppercase tracking-wide">{product.brand}</span>
+                      <span className="text-blue-800 font-bold uppercase tracking-wide">{product.brand}</span>
                       <div className="flex items-center gap-1 text-slate-700 font-bold">
                         <Star className="w-3 h-3 text-amber-500 fill-amber-500" />
                         <span>{product.rating}</span>
@@ -302,7 +302,7 @@ export const EquipmentPage: React.FC = () => {
 
                     <h3
                       onClick={() => handleOpenDetailModal(product)}
-                      className="text-base font-bold text-slate-900 hover:text-blue-700 transition-colors leading-snug cursor-pointer line-clamp-1 font-heading"
+                      className="text-base font-bold text-slate-900 hover:text-blue-800 transition-colors leading-snug cursor-pointer line-clamp-1 font-heading"
                     >
                       {product.name}
                     </h3>
@@ -326,8 +326,8 @@ export const EquipmentPage: React.FC = () => {
                   {/* RFQ Procurement Actions */}
                   <div className="pt-3 border-t border-slate-100 space-y-2">
                     <div className="flex items-center justify-between text-[11px] font-mono">
-                      <span className="flex items-center gap-1 text-emerald-700 font-semibold">
-                        <Check className="w-3.5 h-3.5 stroke-[2.5]" /> Commercial Batch
+                      <span className="flex items-center gap-1 text-slate-700 font-semibold">
+                        <Check className="w-3.5 h-3.5 text-blue-800 stroke-[2.5]" /> Commercial Batch
                       </span>
                       <span className="text-slate-500 font-normal">MOQ: {product.minOrderQty || 1} Unit</span>
                     </div>
@@ -335,9 +335,9 @@ export const EquipmentPage: React.FC = () => {
                     <div className="grid grid-cols-2 gap-2 font-sans">
                       <button
                         onClick={() => addToEnquiryCart(product, 1)}
-                        className="w-full py-2 px-2 rounded-lg bg-blue-700 hover:bg-blue-800 text-white font-semibold text-xs flex items-center justify-center gap-1.5 transition-colors shadow-sm"
+                        className="w-full py-2 px-2 rounded-lg bg-blue-800 hover:bg-blue-900 text-white font-semibold text-xs flex items-center justify-center gap-1.5 transition-colors shadow-sm"
                       >
-                        <FileText className="w-3.5 h-3.5" />
+                        <FileText className="w-3.5 h-3.5 text-blue-200" />
                         <span>+ Add to RFQ</span>
                       </button>
 
