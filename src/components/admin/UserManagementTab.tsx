@@ -7,17 +7,17 @@ export const UserManagementTab: React.FC = () => {
   const { userList, updateUserStatus, verifyUserGST, accessToken } = useApp();
   const [searchQuery, setSearchQuery] = useState('');
   const [roleFilter, setRoleFilter] = useState<'ALL' | 'GYM_OWNER' | 'JOB_SEEKER'>('ALL');
-  const [statusFilter, setStatusFilter] = useState<'ALL' | 'ACTIVE' | 'SUSPENDED'>('ALL');
+  const [statusFilter, setStatusFilter] = useState<'ALL' | 'ACTIVE' | 'SUSPENDED' | 'DEACTIVATED'>('ALL');
 
-  const handleVerify = (userId: string, isVerified: boolean) => {
-    verifyUserGST(userId, !isVerified);
+  const handleVerify = (userId: string, currentVerification: boolean) => {
+    verifyUserGST(userId, !currentVerification);
     fetch(`${API_BASE_URL}/api/v1/admin/users/${userId}/verify`, {
       method: 'PATCH',
       headers: {
         'Content-Type': 'application/json',
         Authorization: `Bearer ${accessToken}`,
       },
-      body: JSON.stringify({ isVerified: !isVerified }),
+      body: JSON.stringify({ isVerified: !currentVerification }),
     }).catch(err => console.log('Backend sync notice:', err.message));
   };
 
@@ -42,7 +42,8 @@ export const UserManagementTab: React.FC = () => {
         u.name.toLowerCase().includes(q) ||
         u.email.toLowerCase().includes(q) ||
         u.mobile.includes(q) ||
-        (u.companyName && u.companyName.toLowerCase().includes(q))
+        (u.companyName && u.companyName.toLowerCase().includes(q)) ||
+        u.id.toLowerCase().includes(q)
       );
     }
     return true;
@@ -54,10 +55,10 @@ export const UserManagementTab: React.FC = () => {
       <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 bg-white border border-slate-200 p-6 rounded-2xl shadow-sm">
         <div>
           <h2 className="text-xl font-bold text-slate-900 flex items-center gap-2">
-            <ShieldCheck className="w-5 h-5 text-blue-600" /> User Management & GST Verification Portal
+            <ShieldCheck className="w-5 h-5 text-blue-800" /> User Management & GST Verification Portal
           </h2>
           <p className="text-sm text-slate-500 mt-1">
-            Verify Gym Owner GST business credentials and enforce account status controls (Activate, Suspend, Deactivate).
+            Enforce account security and verification status per user (Activate, Suspend, Deactivate, and Verify GST).
           </p>
         </div>
       </div>
@@ -68,10 +69,10 @@ export const UserManagementTab: React.FC = () => {
           <Search className="w-4 h-4 text-slate-400 absolute left-3 top-3" />
           <input
             type="text"
-            placeholder="Search name, email, mobile, GST..."
+            placeholder="Search name, email, mobile, GST, or ID..."
             value={searchQuery}
             onChange={e => setSearchQuery(e.target.value)}
-            className="w-full bg-slate-50 border border-slate-200 rounded-xl pl-9 pr-4 py-2 text-sm text-slate-900 focus:outline-none focus:border-blue-600 focus:bg-white transition"
+            className="w-full bg-slate-50 border border-slate-200 rounded-xl pl-9 pr-4 py-2 text-sm text-slate-900 focus:outline-none focus:border-blue-800 focus:bg-white transition"
           />
         </div>
 
@@ -80,9 +81,9 @@ export const UserManagementTab: React.FC = () => {
           <select
             value={roleFilter}
             onChange={e => setRoleFilter(e.target.value as any)}
-            className="w-full bg-slate-50 border border-slate-200 rounded-xl px-3 py-2 text-sm text-slate-900 focus:outline-none focus:border-blue-600 focus:bg-white transition"
+            className="w-full bg-slate-50 border border-slate-200 rounded-xl px-3 py-2 text-sm text-slate-900 focus:outline-none focus:border-blue-800 focus:bg-white transition"
           >
-            <option value="ALL">All Roles</option>
+            <option value="ALL">All Roles ({userList.length})</option>
             <option value="GYM_OWNER">Gym Owners</option>
             <option value="JOB_SEEKER">Job Seekers</option>
           </select>
@@ -92,11 +93,12 @@ export const UserManagementTab: React.FC = () => {
           <select
             value={statusFilter}
             onChange={e => setStatusFilter(e.target.value as any)}
-            className="w-full bg-slate-50 border border-slate-200 rounded-xl px-3 py-2 text-sm text-slate-900 focus:outline-none focus:border-blue-600 focus:bg-white transition"
+            className="w-full bg-slate-50 border border-slate-200 rounded-xl px-3 py-2 text-sm text-slate-900 focus:outline-none focus:border-blue-800 focus:bg-white transition"
           >
             <option value="ALL">All Account Statuses</option>
             <option value="ACTIVE">Active Users</option>
-            <option value="SUSPENDED">Suspended / Spam</option>
+            <option value="SUSPENDED">Suspended Users</option>
+            <option value="DEACTIVATED">Deactivated Users</option>
           </select>
         </div>
       </div>
@@ -110,7 +112,7 @@ export const UserManagementTab: React.FC = () => {
                 <th className="py-4 px-6">User / Business</th>
                 <th className="py-4 px-6">Role & Status</th>
                 <th className="py-4 px-6">GST Credentials</th>
-                <th className="py-4 px-6 text-right">Verification & Actions</th>
+                <th className="py-4 px-6 text-right">Verification & Account Controls</th>
               </tr>
             </thead>
             <tbody className="divide-y divide-slate-100 text-sm">
@@ -119,7 +121,7 @@ export const UserManagementTab: React.FC = () => {
                   <td className="py-4 px-6">
                     <div className="flex items-center gap-2">
                       <span className="font-bold text-slate-900">{u.name}</span>
-                      <span className="px-1.5 py-0.5 rounded bg-slate-100 border border-slate-200 text-[10px] font-mono font-bold text-slate-500">
+                      <span className="px-1.5 py-0.5 rounded bg-slate-100 border border-slate-200 text-[10px] font-mono font-bold text-slate-600">
                         {u.id}
                       </span>
                     </div>
@@ -131,7 +133,11 @@ export const UserManagementTab: React.FC = () => {
                       <span className={`text-xs px-2.5 py-1 rounded-full font-bold ${u.role === 'GYM_OWNER' ? 'bg-amber-100 text-amber-900 border border-amber-300' : 'bg-blue-100 text-blue-900 border border-blue-300'}`}>
                         {u.role === 'GYM_OWNER' ? 'Gym Owner' : 'Job Seeker'}
                       </span>
-                      <span className={`text-xs px-2.5 py-1 rounded-full font-bold ${u.status === 'ACTIVE' ? 'bg-emerald-100 text-emerald-900 border border-emerald-300' : 'bg-red-100 text-red-900 border border-red-300'}`}>
+                      <span className={`text-xs px-2.5 py-1 rounded-full font-bold font-mono ${
+                        u.status === 'ACTIVE' ? 'bg-emerald-100 text-emerald-900 border border-emerald-300' :
+                        u.status === 'SUSPENDED' ? 'bg-amber-100 text-amber-900 border border-amber-300' :
+                        'bg-slate-200 text-slate-800 border border-slate-300'
+                      }`}>
                         {u.status}
                       </span>
                     </div>
@@ -140,8 +146,8 @@ export const UserManagementTab: React.FC = () => {
                     <div className="font-mono text-xs font-semibold text-slate-800">{u.gstNumber || 'No GST Registered'}</div>
                   </td>
                   <td className="py-4 px-6 text-right">
-                    <div className="flex items-center justify-end gap-2">
-                      {/* GST Verify Button */}
+                    <div className="flex items-center justify-end gap-2 flex-wrap">
+                      {/* GST Verify / Unverify Button */}
                       <button
                         type="button"
                         onClick={(e) => {
@@ -153,6 +159,7 @@ export const UserManagementTab: React.FC = () => {
                             ? 'bg-emerald-600 hover:bg-emerald-700 text-white'
                             : 'bg-amber-500 hover:bg-amber-600 text-slate-950'
                         }`}
+                        title={u.isVerified ? `Click to unverify ${u.name}` : `Verify GST for ${u.name}`}
                       >
                         {u.isVerified ? (
                           <>
@@ -165,30 +172,46 @@ export const UserManagementTab: React.FC = () => {
                         )}
                       </button>
 
-                      {/* Status Toggle Buttons */}
-                      {u.status === 'ACTIVE' ? (
-                        <button
-                          type="button"
-                          onClick={(e) => {
-                            e.stopPropagation();
-                            handleStatusChange(u.id, 'SUSPENDED');
-                          }}
-                          className="flex items-center gap-1 px-3 py-1.5 bg-red-100 hover:bg-red-200 text-red-700 border border-red-300 rounded-lg text-xs font-semibold transition"
-                          title={`Suspend ${u.name} (ID: ${u.id})`}
-                        >
-                          <UserX className="w-3.5 h-3.5" /> Suspend
-                        </button>
-                      ) : (
+                      {/* Status Action Buttons */}
+                      {u.status !== 'ACTIVE' && (
                         <button
                           type="button"
                           onClick={(e) => {
                             e.stopPropagation();
                             handleStatusChange(u.id, 'ACTIVE');
                           }}
-                          className="flex items-center gap-1 px-3 py-1.5 bg-emerald-100 hover:bg-emerald-200 text-emerald-700 border border-emerald-300 rounded-lg text-xs font-semibold transition"
+                          className="flex items-center gap-1 px-2.5 py-1.5 bg-emerald-100 hover:bg-emerald-200 text-emerald-800 border border-emerald-300 rounded-lg text-xs font-semibold transition"
                           title={`Activate ${u.name} (ID: ${u.id})`}
                         >
                           <UserCheck className="w-3.5 h-3.5" /> Activate
+                        </button>
+                      )}
+
+                      {u.status !== 'SUSPENDED' && (
+                        <button
+                          type="button"
+                          onClick={(e) => {
+                            e.stopPropagation();
+                            handleStatusChange(u.id, 'SUSPENDED');
+                          }}
+                          className="flex items-center gap-1 px-2.5 py-1.5 bg-amber-100 hover:bg-amber-200 text-amber-900 border border-amber-300 rounded-lg text-xs font-semibold transition"
+                          title={`Suspend ${u.name} (ID: ${u.id})`}
+                        >
+                          <UserX className="w-3.5 h-3.5" /> Suspend
+                        </button>
+                      )}
+
+                      {u.status !== 'DEACTIVATED' && (
+                        <button
+                          type="button"
+                          onClick={(e) => {
+                            e.stopPropagation();
+                            handleStatusChange(u.id, 'DEACTIVATED');
+                          }}
+                          className="flex items-center gap-1 px-2.5 py-1.5 bg-slate-100 hover:bg-slate-200 text-slate-700 border border-slate-300 rounded-lg text-xs font-semibold transition"
+                          title={`Deactivate ${u.name} (ID: ${u.id})`}
+                        >
+                          Deactivate
                         </button>
                       )}
                     </div>

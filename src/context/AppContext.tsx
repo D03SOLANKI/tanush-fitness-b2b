@@ -178,7 +178,7 @@ const INITIAL_USERS: UserAccount[] = [
   },
   {
     id: 'usr-104',
-    name: 'Spam User Account',
+    name: 'Spam Bot Account',
     email: 'spam.bot99@tempmail.com',
     mobile: '+91 90000 00000',
     role: 'GYM_OWNER',
@@ -187,7 +187,61 @@ const INITIAL_USERS: UserAccount[] = [
     status: 'SUSPENDED',
     createdAt: '2026-03-10',
   },
+  {
+    id: 'usr-105',
+    name: 'Amitabh Sen',
+    email: 'amitabh@apexwellness.org',
+    mobile: '+91 98223 99881',
+    role: 'GYM_OWNER',
+    companyName: 'Apex Luxury Health Club',
+    gstNumber: '27AABCA1234F1Z8',
+    isVerified: true,
+    status: 'ACTIVE',
+    createdAt: '2026-03-12',
+  },
+  {
+    id: 'usr-106',
+    name: 'Karan Mehra',
+    email: 'karan.strength@outlook.com',
+    mobile: '+91 98450 11223',
+    role: 'JOB_SEEKER',
+    isVerified: false,
+    status: 'DEACTIVATED',
+    createdAt: '2026-03-14',
+  },
 ];
+
+export const normalizeUserList = (users: any[]): UserAccount[] => {
+  if (!Array.isArray(users) || users.length === 0) return INITIAL_USERS;
+  const seenIds = new Set<string>();
+  return users.map((u: any, idx: number) => {
+    let rawId = u?.id !== undefined && u?.id !== null && String(u.id).trim() !== '' ? String(u.id).trim() : `usr-${101 + idx}`;
+    let finalId = rawId;
+    let counter = 1;
+    while (seenIds.has(finalId)) {
+      finalId = `${rawId}-${counter}`;
+      counter++;
+    }
+    seenIds.add(finalId);
+
+    const validStatus: 'ACTIVE' | 'SUSPENDED' | 'DEACTIVATED' =
+      u?.status === 'SUSPENDED' ? 'SUSPENDED' :
+      u?.status === 'DEACTIVATED' ? 'DEACTIVATED' : 'ACTIVE';
+
+    return {
+      id: finalId,
+      name: String(u?.name || `User ${idx + 1}`),
+      email: String(u?.email || `user${idx + 1}@domain.com`),
+      mobile: String(u?.mobile || `+91 98000 ${String(10000 + idx).slice(1)}`),
+      role: u?.role === 'JOB_SEEKER' ? 'JOB_SEEKER' : u?.role === 'ADMIN' ? 'ADMIN' : 'GYM_OWNER',
+      companyName: u?.companyName || (u?.role === 'GYM_OWNER' ? `Club ${idx + 1}` : undefined),
+      gstNumber: u?.gstNumber,
+      isVerified: Boolean(u?.isVerified),
+      status: validStatus,
+      createdAt: u?.createdAt || '2026-02-01',
+    };
+  });
+};
 
 const AppContext = createContext<AppContextType | undefined>(undefined);
 
@@ -280,23 +334,13 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
       try {
         const parsed = JSON.parse(saved);
         if (Array.isArray(parsed) && parsed.length > 0) {
-          return parsed.map((u: any, idx: number) => ({
-            ...u,
-            id: u.id && String(u.id).trim() !== '' ? String(u.id) : `usr-legacy-${idx + 1}-${Date.now()}`,
-            name: u.name || 'Account User',
-            email: u.email || `user${idx + 1}@domain.com`,
-            mobile: u.mobile || '+91 90000 00000',
-            role: u.role || 'GYM_OWNER',
-            isVerified: Boolean(u.isVerified),
-            status: (u.status === 'SUSPENDED' || u.status === 'DEACTIVATED') ? u.status : 'ACTIVE',
-            createdAt: u.createdAt || '2026-02-01',
-          }));
+          return normalizeUserList(parsed);
         }
       } catch (err) {
         console.error('Error parsing tanush_user_list', err);
       }
     }
-    return INITIAL_USERS;
+    return normalizeUserList(INITIAL_USERS);
   });
 
   const updateUserStatus = (userId: string, status: 'ACTIVE' | 'SUSPENDED' | 'DEACTIVATED') => {
@@ -305,17 +349,20 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
       return;
     }
 
+    const cleanTargetId = userId.trim();
+
     setUserList(prev => {
-      const targetUser = prev.find(u => u.id === userId);
-      const updated = prev.map(u => {
-        if (u.id === userId) {
+      const normalized = normalizeUserList(prev);
+      const targetUser = normalized.find(u => u.id === cleanTargetId);
+      const updated = normalized.map(u => {
+        if (u.id === cleanTargetId) {
           return { ...u, status };
         }
         return u;
       });
       localStorage.setItem('tanush_user_list', JSON.stringify(updated));
       const userName = targetUser ? targetUser.name : 'Selected account';
-      showToast(`${userName} status changed to ${status}`, status === 'SUSPENDED' ? 'error' : 'success');
+      showToast(`${userName} status changed to ${status}`, status === 'ACTIVE' ? 'success' : 'info');
       return updated;
     });
   };
@@ -326,10 +373,13 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
       return;
     }
 
+    const cleanTargetId = userId.trim();
+
     setUserList(prev => {
-      const targetUser = prev.find(u => u.id === userId);
-      const updated = prev.map(u => {
-        if (u.id === userId) {
+      const normalized = normalizeUserList(prev);
+      const targetUser = normalized.find(u => u.id === cleanTargetId);
+      const updated = normalized.map(u => {
+        if (u.id === cleanTargetId) {
           return { ...u, isVerified };
         }
         return u;
