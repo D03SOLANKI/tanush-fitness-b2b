@@ -11,6 +11,7 @@ export const ContactPage: React.FC = () => {
     gymName: '',
     email: '',
     mobile: '',
+    serviceType: 'equipment',
     message: '',
   });
 
@@ -30,7 +31,7 @@ export const ContactPage: React.FC = () => {
         gymName: formData.gymName,
         email: formData.email,
         mobile: formData.mobile,
-        message: formData.message,
+        message: `[Interest: ${formData.serviceType}] ${formData.message}`,
       });
 
       setIsSubmitting(false);
@@ -39,6 +40,7 @@ export const ContactPage: React.FC = () => {
         gymName: '',
         email: '',
         mobile: '',
+        serviceType: 'equipment',
         message: '',
       });
     }, 500);
@@ -67,14 +69,14 @@ export const ContactPage: React.FC = () => {
             href="https://wa.me/919067800048?text=Hello%20Tanush%20Fitness,%20I%20want%20a%20quotation%20for%20my%20gym."
             target="_blank"
             rel="noopener noreferrer"
-            className="p-6 rounded-3xl bg-emerald-500 text-white shadow-lg hover:bg-emerald-600 transition-all flex items-center gap-4 group"
+            className="p-6 rounded-xl bg-emerald-600 text-white shadow-sm hover-lift flex items-center gap-4 group"
           >
-            <div className="w-12 h-12 rounded-2xl bg-white/20 flex items-center justify-center shrink-0">
+            <div className="w-12 h-12 rounded-lg bg-white/20 flex items-center justify-center shrink-0">
               <MessageSquare className="w-6 h-6 fill-white" />
             </div>
             <div>
               <div className="text-[10px] font-bold uppercase font-mono tracking-wider opacity-90">Instant WhatsApp</div>
-              <div className="text-base font-black font-heading uppercase group-hover:translate-x-1 transition-transform">
+              <div className="text-base font-bold font-heading uppercase group-hover:translate-x-0.5 transition-transform">
                 Chat on WhatsApp →
               </div>
             </div>
@@ -82,14 +84,14 @@ export const ContactPage: React.FC = () => {
 
           <a
             href="tel:+919067800048"
-            className="p-6 rounded-3xl bg-blue-600 text-white shadow-lg hover:bg-blue-700 transition-all flex items-center gap-4 group"
+            className="p-6 rounded-xl bg-blue-700 text-white shadow-sm hover-lift flex items-center gap-4 group"
           >
-            <div className="w-12 h-12 rounded-2xl bg-white/20 flex items-center justify-center shrink-0">
+            <div className="w-12 h-12 rounded-lg bg-white/20 flex items-center justify-center shrink-0">
               <PhoneCall className="w-6 h-6" />
             </div>
             <div>
               <div className="text-[10px] font-bold uppercase font-mono tracking-wider opacity-90">Direct Call</div>
-              <div className="text-base font-black font-heading uppercase group-hover:translate-x-1 transition-transform">
+              <div className="text-base font-bold font-heading uppercase group-hover:translate-x-0.5 transition-transform">
                 Call Now (+91 90678 00048) →
               </div>
             </div>
@@ -97,14 +99,14 @@ export const ContactPage: React.FC = () => {
 
           <a
             href="mailto:Info@tanushfitness.com"
-            className="p-6 rounded-3xl bg-slate-900 text-white shadow-lg hover:bg-slate-800 transition-all flex items-center gap-4 group"
+            className="p-6 rounded-xl bg-slate-900 text-white shadow-sm hover-lift flex items-center gap-4 group"
           >
-            <div className="w-12 h-12 rounded-2xl bg-white/20 flex items-center justify-center shrink-0">
+            <div className="w-12 h-12 rounded-lg bg-white/20 flex items-center justify-center shrink-0">
               <Mail className="w-6 h-6 text-amber-400" />
             </div>
             <div>
               <div className="text-[10px] font-bold uppercase font-mono tracking-wider opacity-90">Email Sales</div>
-              <div className="text-base font-black font-heading uppercase group-hover:translate-x-1 transition-transform">
+              <div className="text-base font-bold font-heading uppercase group-hover:translate-x-0.5 transition-transform">
                 Email Us →
               </div>
             </div>
@@ -114,7 +116,7 @@ export const ContactPage: React.FC = () => {
         {/* Main Grid: Form & Location */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start mb-16">
           {/* Contact Form (7 Cols) */}
-          <div className="lg:col-span-7 bg-white rounded-3xl p-8 border border-slate-200 shadow-stripe">
+          <div className="lg:col-span-7 bg-white rounded-xl p-8 border border-slate-200 shadow-sm hover-lift">
             <h2 className="text-2xl font-black text-slate-900 font-heading uppercase mb-2">
               Send Direct Message
             </h2>
@@ -173,7 +175,7 @@ export const ContactPage: React.FC = () => {
                   </label>
                   <input
                     type="email"
-                    placeholder="vikram@apexhealth.com"
+                    placeholder="vikram@apex.com"
                     value={formData.email}
                     onChange={e => setFormData({ ...formData, email: e.target.value })}
                     className="w-full bg-slate-50 border border-slate-200 rounded-xl p-3 text-xs font-medium text-slate-900 focus:outline-none focus:border-blue-600"
@@ -183,7 +185,23 @@ export const ContactPage: React.FC = () => {
 
               <div>
                 <label className="text-[10px] font-bold text-slate-600 uppercase font-mono block mb-1">
-                  Message / Requirements *
+                  Primary Interest
+                </label>
+                <select
+                  value={formData.serviceType}
+                  onChange={e => setFormData({ ...formData, serviceType: e.target.value })}
+                  className="w-full bg-slate-50 border border-slate-200 rounded-xl p-3 text-xs font-bold text-slate-900 focus:outline-none focus:border-blue-600 font-mono"
+                >
+                  <option value="equipment">Commercial Gym Equipment (Bulk Purchase)</option>
+                  <option value="manpower">Manpower & Trainer Hiring</option>
+                  <option value="services">Turnkey Business & Marketing Services</option>
+                  <option value="general">General Corporate Inquiry</option>
+                </select>
+              </div>
+
+              <div>
+                <label className="text-[10px] font-bold text-slate-600 uppercase font-mono block mb-1">
+                  Your Requirements Message *
                 </label>
                 <textarea
                   rows={4}
@@ -208,7 +226,7 @@ export const ContactPage: React.FC = () => {
 
           {/* Office Address & Google Maps Embed Mockup (5 Cols) */}
           <div className="lg:col-span-5 space-y-6">
-            <div className="p-8 rounded-3xl bg-white border border-slate-200 shadow-stripe space-y-5">
+            <div className="p-8 rounded-xl bg-white border border-slate-200 shadow-sm hover-lift space-y-5">
               <h3 className="text-lg font-black text-slate-900 font-heading uppercase flex items-center gap-2">
                 <MapPin className="w-5 h-5 text-blue-600 shrink-0" />
                 <span>Corporate Headquarters</span>

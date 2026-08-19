@@ -104,7 +104,7 @@ export const HomePage: React.FC = () => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             
             {/* Pillar 1: Equipment */}
-            <div className="bg-white rounded-xl border border-slate-200 p-6 flex flex-col justify-between hover:border-slate-300 transition-colors shadow-sm">
+            <div className="bg-white rounded-xl border border-slate-200 p-6 flex flex-col justify-between hover-lift shadow-sm">
               <div className="space-y-4">
                 <div className="w-12 h-12 rounded-lg bg-slate-900 text-blue-400 flex items-center justify-center border border-slate-800">
                   <Dumbbell className="w-6 h-6" />
@@ -144,7 +144,7 @@ export const HomePage: React.FC = () => {
             </div>
 
             {/* Pillar 2: Manpower */}
-            <div className="bg-white rounded-xl border border-slate-200 p-6 flex flex-col justify-between hover:border-slate-300 transition-colors shadow-sm">
+            <div className="bg-white rounded-xl border border-slate-200 p-6 flex flex-col justify-between hover-lift shadow-sm">
               <div className="space-y-4">
                 <div className="w-12 h-12 rounded-lg bg-slate-900 text-amber-400 flex items-center justify-center border border-slate-800">
                   <Users className="w-6 h-6" />
@@ -184,7 +184,7 @@ export const HomePage: React.FC = () => {
             </div>
 
             {/* Pillar 3: Growth Services */}
-            <div className="bg-white rounded-xl border border-slate-200 p-6 flex flex-col justify-between hover:border-slate-300 transition-colors shadow-sm">
+            <div className="bg-white rounded-xl border border-slate-200 p-6 flex flex-col justify-between hover-lift shadow-sm">
               <div className="space-y-4">
                 <div className="w-12 h-12 rounded-lg bg-slate-900 text-emerald-400 flex items-center justify-center border border-slate-800">
                   <Briefcase className="w-6 h-6" />
@@ -253,7 +253,7 @@ export const HomePage: React.FC = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
             {jobListings.slice(0, 3).map(j => (
-              <div key={j.id} className="p-5 rounded-xl bg-slate-800 border border-slate-700 space-y-3 font-mono">
+              <div key={j.id} className="p-5 rounded-xl bg-slate-800 border border-slate-700 space-y-3 font-mono hover-lift">
                 <div className="flex items-center justify-between">
                   <span className="text-[10px] font-bold px-2 py-0.5 rounded bg-amber-400/10 text-amber-400 border border-amber-400/20">
                     {j.category}
@@ -291,7 +291,7 @@ export const HomePage: React.FC = () => {
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
-            <div className="p-6 rounded-xl bg-slate-50 border border-slate-200 space-y-2.5">
+            <div className="p-6 rounded-xl bg-slate-50 border border-slate-200 space-y-2.5 hover-lift">
               <ShieldCheck className="w-8 h-8 text-blue-700" />
               <h3 className="text-base font-bold font-heading uppercase text-slate-900">ISO 9001 Machinery</h3>
               <p className="text-xs text-slate-600 leading-relaxed">
@@ -299,7 +299,7 @@ export const HomePage: React.FC = () => {
               </p>
             </div>
 
-            <div className="p-6 rounded-xl bg-slate-50 border border-slate-200 space-y-2.5">
+            <div className="p-6 rounded-xl bg-slate-50 border border-slate-200 space-y-2.5 hover-lift">
               <Award className="w-8 h-8 text-amber-600" />
               <h3 className="text-base font-bold font-heading uppercase text-slate-900">Vetted Manpower</h3>
               <p className="text-xs text-slate-600 leading-relaxed">
@@ -307,7 +307,7 @@ export const HomePage: React.FC = () => {
               </p>
             </div>
 
-            <div className="p-6 rounded-xl bg-slate-50 border border-slate-200 space-y-2.5">
+            <div className="p-6 rounded-xl bg-slate-50 border border-slate-200 space-y-2.5 hover-lift">
               <Clock className="w-8 h-8 text-emerald-600" />
               <h3 className="text-base font-bold font-heading uppercase text-slate-900">Rapid Formal RFQ</h3>
               <p className="text-xs text-slate-600 leading-relaxed">
@@ -331,7 +331,7 @@ export const HomePage: React.FC = () => {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div className="p-6 rounded-xl bg-white border border-slate-200 space-y-4 shadow-sm">
+            <div className="p-6 rounded-xl bg-white border border-slate-200 space-y-4 shadow-sm hover-lift">
               <div className="flex items-center justify-between">
                 <div className="flex text-amber-400 gap-0.5">
                   {[...Array(5)].map((_, i) => (
@@ -351,7 +351,7 @@ export const HomePage: React.FC = () => {
               </div>
             </div>
 
-            <div className="p-6 rounded-xl bg-white border border-slate-200 space-y-4 shadow-sm">
+            <div className="p-6 rounded-xl bg-white border border-slate-200 space-y-4 shadow-sm hover-lift">
               <div className="flex items-center justify-between">
                 <div className="flex text-amber-400 gap-0.5">
                   {[...Array(5)].map((_, i) => (

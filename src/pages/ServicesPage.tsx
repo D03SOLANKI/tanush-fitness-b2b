@@ -88,7 +88,7 @@ export const ServicesPage: React.FC = () => {
               initial={{ opacity: 0, y: 15 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.3, delay: idx * 0.05 }}
-              className="group rounded-3xl bg-white border border-slate-200/90 shadow-stripe hover:border-blue-500 transition-all flex flex-col justify-between overflow-hidden"
+              className="group rounded-xl bg-white border border-slate-200 hover:border-slate-400 hover-lift shadow-sm flex flex-col justify-between overflow-hidden"
             >
               {/* Header Image */}
               <div className="relative aspect-[16/10] bg-slate-100 overflow-hidden border-b border-slate-100">

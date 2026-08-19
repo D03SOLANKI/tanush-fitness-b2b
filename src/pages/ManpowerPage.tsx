@@ -219,7 +219,7 @@ export const ManpowerPage: React.FC = () => {
               {filteredJobs.map(job => (
                 <div
                   key={job.id}
-                  className="rounded-3xl bg-white border border-slate-200/90 hover:border-blue-500 transition-all p-6 shadow-stripe flex flex-col justify-between"
+                  className="rounded-xl bg-white border border-slate-200 hover:border-slate-400 hover-lift p-6 shadow-sm flex flex-col justify-between"
                 >
                   <div className="space-y-3">
                     <div className="flex items-center justify-between font-mono">

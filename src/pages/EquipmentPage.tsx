@@ -236,7 +236,7 @@ export const EquipmentPage: React.FC = () => {
             return (
               <div
                 key={product.id}
-                className="group rounded-xl bg-white border border-slate-200 hover:border-slate-400 transition-all duration-200 overflow-hidden flex flex-col justify-between shadow-sm"
+                className="group rounded-xl bg-white border border-slate-200 hover:border-slate-400 hover-lift overflow-hidden flex flex-col justify-between shadow-sm"
               >
                 {/* Product Image & Badges */}
                 <div className="relative aspect-[16/10] bg-slate-100 overflow-hidden border-b border-slate-200">

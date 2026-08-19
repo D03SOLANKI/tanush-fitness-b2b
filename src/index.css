@@ -42,18 +42,22 @@
   background: #94a3b8;
 }
 
-/* Industrial Utility Classes */
-.industrial-card {
-  background-color: #ffffff;
-  border: 1px solid #e2e8f0;
-  box-shadow: 0 1px 3px 0 rgba(15, 23, 42, 0.03);
-  transition: all 0.15s cubic-bezier(0.16, 1, 0.3, 1);
+/* Master Interactive Hover Lift Effect for All Cards Across Entire Platform */
+.hover-lift,
+.industrial-card,
+.card-lift,
+[data-card="true"] {
+  transition: transform 0.22s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.22s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.22s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  will-change: transform, box-shadow;
 }
 
-.industrial-card:hover {
-  border-color: #cbd5e1;
-  box-shadow: 0 10px 25px -5px rgba(15, 23, 42, 0.06);
-  transform: translateY(-2px);
+.hover-lift:hover,
+.industrial-card:hover,
+.card-lift:hover,
+[data-card="true"]:hover {
+  transform: translateY(-4px) scale(1.012) !important;
+  box-shadow: 0 16px 32px -6px rgba(15, 23, 42, 0.08), 0 4px 12px -2px rgba(15, 23, 42, 0.04) !important;
+  border-color: #94a3b8 !important;
 }
 
 .industrial-badge {

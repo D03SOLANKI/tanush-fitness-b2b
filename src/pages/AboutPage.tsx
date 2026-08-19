@@ -51,7 +51,7 @@ export const AboutPage: React.FC = () => {
 
         {/* 2. Mission & Vision */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
-          <div className="p-8 rounded-3xl bg-white border border-slate-200 shadow-stripe space-y-4">
+          <div className="p-8 rounded-3xl bg-white border border-slate-200 shadow-stripe hover-lift space-y-4">
             <div className="w-12 h-12 rounded-2xl bg-blue-50 border border-blue-200 text-blue-600 flex items-center justify-center">
               <Target className="w-6 h-6" />
             </div>
@@ -61,7 +61,7 @@ export const AboutPage: React.FC = () => {
             </p>
           </div>
 
-          <div className="p-8 rounded-3xl bg-white border border-slate-200 shadow-stripe space-y-4">
+          <div className="p-8 rounded-3xl bg-white border border-slate-200 shadow-stripe hover-lift space-y-4">
             <div className="w-12 h-12 rounded-2xl bg-slate-900 text-amber-400 flex items-center justify-center">
               <Eye className="w-6 h-6" />
             </div>
@@ -78,22 +78,22 @@ export const AboutPage: React.FC = () => {
             Our Growth Story
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-4 gap-6 font-mono text-center">
-            <div className="p-6 rounded-2xl bg-slate-50 border border-slate-200">
+            <div className="p-6 rounded-2xl bg-slate-50 border border-slate-200 hover-lift">
               <div className="text-3xl font-black text-blue-600">2018</div>
               <div className="text-xs font-bold text-slate-900 uppercase mt-2">Founded</div>
               <p className="text-[10px] text-slate-500 mt-1 font-normal">Started as an equipment technician dispatch firm.</p>
             </div>
-            <div className="p-6 rounded-2xl bg-slate-50 border border-slate-200">
+            <div className="p-6 rounded-2xl bg-slate-50 border border-slate-200 hover-lift">
               <div className="text-3xl font-black text-blue-600">2021</div>
               <div className="text-xs font-bold text-slate-900 uppercase mt-2">B2B Expansion</div>
               <p className="text-[10px] text-slate-500 mt-1 font-normal">Launched direct manufacturer wholesale distribution.</p>
             </div>
-            <div className="p-6 rounded-2xl bg-slate-50 border border-slate-200">
+            <div className="p-6 rounded-2xl bg-slate-50 border border-slate-200 hover-lift">
               <div className="text-3xl font-black text-blue-600">2023</div>
               <div className="text-xs font-bold text-slate-900 uppercase mt-2">Manpower Portal</div>
               <p className="text-[10px] text-slate-500 mt-1 font-normal">Introduced certified gym trainer & staff hiring portal.</p>
             </div>
-            <div className="p-6 rounded-2xl bg-slate-50 border border-slate-200">
+            <div className="p-6 rounded-2xl bg-slate-50 border border-slate-200 hover-lift">
               <div className="text-3xl font-black text-blue-600">2026</div>
               <div className="text-xs font-bold text-slate-900 uppercase mt-2">AI & Services</div>
               <p className="text-[10px] text-slate-500 mt-1 font-normal">Integrated AI WhatsApp bots & 3D CAD design suites.</p>
@@ -117,7 +117,7 @@ export const AboutPage: React.FC = () => {
               { title: 'Corporate Wellness Hubs', desc: 'On-site corporate employee fitness rooms with biometric access control & air purification.' },
               { title: 'Residential Luxury Hubs', desc: 'High-end condominium sports clubs requiring durable turf runs and aesthetic dumbbells.' }
             ].map((ind, i) => (
-              <div key={i} className="p-6 rounded-2xl bg-white border border-slate-200 shadow-stripe space-y-2">
+              <div key={i} className="p-6 rounded-2xl bg-white border border-slate-200 shadow-stripe hover-lift space-y-2">
                 <Building2 className="w-6 h-6 text-blue-600 mb-2" />
                 <h4 className="text-sm font-black text-slate-900 uppercase font-heading">{ind.title}</h4>
                 <p className="text-xs text-slate-600 leading-relaxed font-normal">{ind.desc}</p>

@@ -29,7 +29,7 @@ export const FeaturedServices: React.FC = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.3, delay: idx * 0.06 }}
-              className="group rounded-xl bg-white border border-slate-200 hover:border-slate-400 transition-all duration-200 overflow-hidden flex flex-col justify-between shadow-sm"
+              className="group rounded-xl bg-white border border-slate-200 hover:border-slate-400 hover-lift overflow-hidden flex flex-col justify-between shadow-sm"
             >
               {/* Image */}
               <div className="relative aspect-[16/10] bg-slate-100 overflow-hidden border-b border-slate-200">
