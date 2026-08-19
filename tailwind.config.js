@@ -32,7 +32,7 @@ export default {
       },
       fontFamily: {
         sans: ['Inter', 'sans-serif'],
-        heading: ['Outfit', 'Plus Jakarta Sans', 'sans-serif'],
+        heading: ['Archivo', 'sans-serif'],
         mono: ['JetBrains Mono', 'monospace'],
       },
       borderRadius: {
