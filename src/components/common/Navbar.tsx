@@ -1,7 +1,6 @@
-import React, { useMemo, useState } from 'react';
+import React, { useState } from 'react';
 import { useApp } from '../../context/AppContext';
 import { PageType } from '../../types';
-import { motion } from 'framer-motion';
 import {
   Dumbbell,
   Users,
@@ -14,10 +13,10 @@ import {
   Sparkles,
   LogOut,
   LogIn,
-  Zap,
-  Truck,
+  Phone,
+  Mail,
   ShieldCheck,
-  Award
+  CheckCircle2
 } from 'lucide-react';
 
 export const Navbar: React.FC = () => {
@@ -32,161 +31,134 @@ export const Navbar: React.FC = () => {
     platformSettings,
   } = useApp();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [isHovered, setIsHovered] = useState(false);
 
   const enquiryCount = enquiryCart.reduce((sum, item) => sum + item.quantity, 0);
 
-  // Promotional Announcements Pool
-  const announcements = useMemo(() => {
-    const defaultList = [
-      {
-        id: 'oem-pricing',
-        icon: <Zap className="w-3.5 h-3.5 text-amber-400 shrink-0 inline-block" />,
-        text: 'Direct Factory Wholesale: OEM Bulk Pricing on Commercial Strength & Cardio Racks',
-        badge: 'FACTORY DIRECT',
-      },
-      {
-        id: 'pan-india',
-        icon: <Truck className="w-3.5 h-3.5 text-amber-400 shrink-0 inline-block" />,
-        text: 'Pan-India Logistics: Express Freight & Turnkey Gym Installation across 150+ Cities',
-        badge: 'PAN-INDIA',
-      },
-      {
-        id: 'hiring',
-        icon: <Users className="w-3.5 h-3.5 text-amber-400 shrink-0 inline-block" />,
-        text: 'Fitness Careers Portal: Hire Certified Gym Trainers & Managers with Zero Placement Delay',
-        badge: 'VERIFIED TALENT',
-      },
-      {
-        id: 'gst-itc',
-        icon: <ShieldCheck className="w-3.5 h-3.5 text-amber-400 shrink-0 inline-block" />,
-        text: '100% Tax Compliant B2B Invoices with 18% Input Tax Credit (ITC) Benefits',
-        badge: 'GST COMPLIANT',
-      },
-    ];
-
-    if (platformSettings?.bannerEnabled && platformSettings?.bannerText?.trim()) {
-      return [
-        {
-          id: 'custom-admin',
-          icon: <Award className="w-3.5 h-3.5 text-amber-400 shrink-0 inline-block" />,
-          text: platformSettings.bannerText,
-          badge: 'SPECIAL NOTICE',
-        },
-        ...defaultList,
-      ];
-    }
-
-    return defaultList;
-  }, [platformSettings?.bannerEnabled, platformSettings?.bannerText]);
-
-  // Duplicate for seamless 100% continuous infinite loop
-  const tickerItems = useMemo(() => [...announcements, ...announcements], [announcements]);
-
   const navItems: { label: string; page: PageType; icon: React.ReactNode }[] = [
-    { label: 'Home', page: 'home', icon: <Sparkles className="w-3.5 h-3.5" /> },
-    { label: 'About Us', page: 'about', icon: <Info className="w-3.5 h-3.5" /> },
-    { label: 'Commercial Gym Equipment', page: 'equipment', icon: <Dumbbell className="w-3.5 h-3.5" /> },
-    { label: 'Manpower Services', page: 'manpower', icon: <Users className="w-3.5 h-3.5" /> },
-    { label: 'Business Services', page: 'services', icon: <Briefcase className="w-3.5 h-3.5" /> },
-    { label: 'Contact Us', page: 'contact', icon: <PhoneCall className="w-3.5 h-3.5" /> },
+    { label: 'Overview', page: 'home', icon: <Sparkles className="w-3.5 h-3.5" /> },
+    { label: 'Commercial Equipment', page: 'equipment', icon: <Dumbbell className="w-3.5 h-3.5" /> },
+    { label: 'Manpower Solutions', page: 'manpower', icon: <Users className="w-3.5 h-3.5" /> },
+    { label: 'Turnkey Services', page: 'services', icon: <Briefcase className="w-3.5 h-3.5" /> },
+    { label: 'Company', page: 'about', icon: <Info className="w-3.5 h-3.5" /> },
+    { label: 'Contact & Procurement', page: 'contact', icon: <PhoneCall className="w-3.5 h-3.5" /> },
   ];
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-xl border-b border-slate-200 shadow-sm">
-      {/* ⚡ Continuous Horizontal Scrolling Ticker Marquee */}
-      <div
-        onMouseEnter={() => setIsHovered(true)}
-        onMouseLeave={() => setIsHovered(false)}
-        className="w-full bg-slate-950 text-amber-400 text-[11px] sm:text-xs font-semibold py-1.5 border-b border-slate-900 overflow-hidden relative select-none cursor-default"
-        style={{ overflow: 'hidden', whiteSpace: 'nowrap' }}
-      >
-        <motion.div
-          className="flex flex-nowrap items-center gap-10 sm:gap-14 will-change-transform shrink-0"
-          style={{ display: 'inline-flex', whiteSpace: 'nowrap', width: 'max-content' }}
-          animate={isHovered ? { x: undefined } : { x: ['0%', '-50%'] }}
-          transition={{
-            repeat: Infinity,
-            repeatType: 'loop',
-            duration: 35,
-            ease: 'linear',
-          }}
-        >
-          {tickerItems.map((item, idx) => (
-            <div key={`${item.id}-${idx}`} className="inline-flex items-center gap-2 shrink-0">
-              <span className="inline-block w-1.5 h-1.5 rounded-full bg-amber-400 animate-ping shrink-0" />
-              {item.icon}
-              <span className="text-slate-100 font-medium tracking-wide">{item.text}</span>
-              {item.badge && (
-                <span className="px-1.5 py-0.5 rounded text-[9px] font-bold bg-amber-400/20 text-amber-300 border border-amber-400/30 uppercase tracking-widest font-mono ml-1">
-                  {item.badge}
-                </span>
-              )}
-              <span className="text-slate-700 ml-4 font-bold">•</span>
-            </div>
-          ))}
-        </motion.div>
-      </div>
-
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-20 gap-4">
-          {/* 1. Brand Logo */}
-          <div
-            onClick={() => navigateTo('home')}
-            className="flex items-center gap-3 cursor-pointer group shrink-0 select-none py-1"
-          >
-            <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-slate-900 via-blue-600 to-blue-500 p-0.5 shadow-sm group-hover:shadow-md transition-all duration-300">
-              <div className="w-full h-full bg-slate-900 rounded-[10px] flex items-center justify-center">
-                <Dumbbell className="w-5 h-5 text-blue-400 group-hover:rotate-12 transition-transform duration-300" />
-              </div>
-            </div>
-            <div className="flex flex-col justify-center">
-              <div className="text-lg font-black tracking-tight text-slate-900 font-heading uppercase leading-none flex items-center gap-1">
-                TANUSH <span className="text-blue-600 font-black">FITNESS</span>
-              </div>
-              <span className="text-[10px] font-bold text-slate-500 uppercase tracking-widest font-mono mt-1">
-                B2B Enterprise Portal
+    <header className="fixed top-0 left-0 right-0 z-50 bg-white border-b border-slate-200">
+      {/* 🏢 Industrial Enterprise Utility Top Strip (Static, High-Contrast) */}
+      <div className="w-full bg-slate-900 text-slate-300 text-[11px] font-medium border-b border-slate-800">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-8 flex items-center justify-between">
+          {/* Left: Direct Factory Helpline & Dispatch Status */}
+          <div className="flex items-center gap-4">
+            <a
+              href="tel:+919067800048"
+              className="flex items-center gap-1.5 text-slate-200 hover:text-blue-400 transition-colors font-mono font-semibold"
+            >
+              <span className="relative flex h-2 w-2">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
               </span>
+              <Phone className="w-3 h-3 text-blue-400" />
+              <span>+91 90678 00048</span>
+              <span className="text-slate-500 text-[10px] uppercase tracking-wider hidden sm:inline">(Commercial Sales)</span>
+            </a>
+
+            <span className="text-slate-700 hidden md:inline">|</span>
+
+            <div className="hidden md:flex items-center gap-1.5 text-slate-300">
+              <ShieldCheck className="w-3 h-3 text-emerald-400" />
+              <span>100% GST Compliant (18% ITC Invoicing)</span>
             </div>
           </div>
 
-          {/* 2. Desktop Navigation Center Menu */}
-          <nav className="hidden lg:flex items-center gap-1 xl:gap-2">
+          {/* Center or Custom Admin Notice */}
+          {platformSettings?.bannerEnabled && platformSettings?.bannerText?.trim() && (
+            <div className="hidden xl:flex items-center gap-1.5 text-amber-300 font-mono text-[10px] bg-amber-950/60 px-2 py-0.5 rounded border border-amber-800/60">
+              <span className="font-bold">NOTICE:</span>
+              <span>{platformSettings.bannerText}</span>
+            </div>
+          )}
+
+          {/* Right: Pan-India Logistics & Email */}
+          <div className="flex items-center gap-4">
+            <span className="hidden lg:flex items-center gap-1 text-slate-400">
+              <CheckCircle2 className="w-3 h-3 text-blue-400" />
+              <span>Pan-India Turnkey Assembly</span>
+            </span>
+
+            <span className="text-slate-700 hidden lg:inline">|</span>
+
+            <a
+              href="mailto:Info@tanushfitness.com"
+              className="flex items-center gap-1 text-slate-300 hover:text-white transition-colors font-mono"
+            >
+              <Mail className="w-3 h-3 text-slate-400" />
+              <span>Info@tanushfitness.com</span>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      {/* 🧭 Master Navigation Bar */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex items-center justify-between h-18 gap-4">
+          {/* 1. Brand Logo */}
+          <div
+            onClick={() => navigateTo('home')}
+            className="flex items-center gap-3 cursor-pointer select-none py-1 group"
+          >
+            <div className="w-10 h-10 rounded-lg bg-slate-900 flex items-center justify-center border border-slate-800 shadow-sm group-hover:border-blue-600 transition-colors">
+              <Dumbbell className="w-5 h-5 text-blue-500" />
+            </div>
+            <div className="flex flex-col justify-center">
+              <div className="text-[17px] font-extrabold tracking-tight text-slate-900 uppercase leading-tight font-heading flex items-center gap-1.5">
+                TANUSH <span className="text-blue-600">FITNESS</span>
+              </div>
+              <div className="flex items-center gap-1.5 mt-0.5">
+                <span className="text-[9px] font-bold text-slate-500 uppercase tracking-widest font-mono">
+                  Industrial B2B Marketplace
+                </span>
+                <span className="px-1 py-0.2 rounded bg-slate-100 text-[8px] font-bold font-mono text-slate-600 border border-slate-200 uppercase">
+                  ISO 9001
+                </span>
+              </div>
+            </div>
+          </div>
+
+          {/* 2. Desktop Navigation Links */}
+          <nav className="hidden lg:flex items-center gap-1">
             {navItems.map(item => {
               const active = currentPage === item.page;
               return (
                 <button
                   key={item.page}
                   onClick={() => navigateTo(item.page)}
-                  className={`relative px-3.5 py-2 rounded-xl text-[12px] font-bold transition-all duration-200 flex items-center gap-1.5 uppercase font-mono tracking-wide ${
+                  className={`px-3 py-2 rounded-md text-[13px] font-semibold transition-colors flex items-center gap-1.5 ${
                     active
-                      ? 'text-blue-600 bg-blue-50/70 font-black'
-                      : 'text-slate-600 hover:text-slate-900 hover:bg-slate-50'
+                      ? 'text-blue-700 bg-blue-50/80 font-bold'
+                      : 'text-slate-700 hover:text-slate-900 hover:bg-slate-100/70'
                   }`}
                 >
                   <span className={active ? 'text-blue-600' : 'text-slate-400'}>{item.icon}</span>
                   <span>{item.label}</span>
-                  {active && (
-                    <span className="absolute bottom-0 left-3 right-3 h-0.5 bg-blue-600 rounded-full" />
-                  )}
                 </button>
               );
             })}
           </nav>
 
-          {/* 3. Right Action Controls: Auth + Cart */}
+          {/* 3. Right Action Controls: User Auth + Commercial RFQ Cart */}
           <div className="flex items-center gap-2.5 sm:gap-3 shrink-0">
             {/* User Account / Auth Trigger */}
             {currentUser ? (
-              <div className="h-10 flex items-center gap-2 bg-slate-50 px-2 sm:px-2.5 rounded-xl border border-slate-200 text-xs font-mono shadow-sm">
-                <div className="w-6 h-6 rounded-lg bg-blue-600 text-white font-bold flex items-center justify-center text-[10px] uppercase shadow-sm">
+              <div className="h-9 flex items-center gap-2 bg-slate-50 px-2.5 rounded-lg border border-slate-200 text-xs font-mono shadow-sm">
+                <div className="w-5 h-5 rounded bg-slate-900 text-white font-bold flex items-center justify-center text-[10px] uppercase">
                   {currentUser.role === 'GYM_OWNER' ? 'GO' : 'JS'}
                 </div>
                 <div className="hidden md:block text-left leading-tight pr-1">
                   <div className="font-bold text-slate-900 truncate max-w-[90px] text-[11px]">
                     {currentUser.name || currentUser.email.split('@')[0]}
                   </div>
-                  <div className="text-[8px] font-bold text-blue-600 uppercase">
+                  <div className="text-[8px] font-bold text-slate-500 uppercase">
                     {currentUser.role === 'GYM_OWNER' ? 'Gym Owner' : 'Job Seeker'}
                   </div>
                 </div>
@@ -201,49 +173,46 @@ export const Navbar: React.FC = () => {
             ) : (
               <button
                 onClick={() => openAuthModal('GYM_OWNER')}
-                className="h-10 px-3.5 sm:px-4 rounded-xl bg-slate-50 hover:bg-slate-100 border border-slate-200/90 hover:border-slate-300 text-slate-900 font-mono text-xs font-bold flex items-center gap-1.5 transition-all shadow-sm"
+                className="h-9 px-3 rounded-lg bg-white hover:bg-slate-50 border border-slate-300 text-slate-800 text-xs font-semibold flex items-center gap-1.5 transition-colors"
               >
-                <LogIn className="w-3.5 h-3.5 text-blue-600" />
-                <span className="uppercase text-[11px]">Login</span>
+                <LogIn className="w-3.5 h-3.5 text-slate-500" />
+                <span>Portal Login</span>
               </button>
             )}
 
-            {/* Divider */}
-            <div className="hidden sm:block h-6 w-[1px] bg-slate-200" />
-
-            {/* Enquiry Cart Trigger */}
+            {/* Commercial RFQ Cart Trigger */}
             <button
               onClick={() => setIsEnquiryCartOpen(true)}
-              className="h-10 relative px-3.5 sm:px-4 rounded-xl bg-blue-600 hover:bg-blue-700 text-white font-mono text-xs font-black flex items-center gap-2 transition-all shadow-sm hover:shadow-md hover:shadow-blue-500/20 active:scale-98"
+              className="h-9 px-3.5 rounded-lg bg-blue-600 hover:bg-blue-700 text-white text-xs font-bold flex items-center gap-2 transition-colors shadow-sm"
             >
-              <FileText className="w-4 h-4 text-white" />
-              <span className="uppercase hidden sm:inline text-[11px] tracking-wide">Enquiry Cart</span>
+              <FileText className="w-3.5 h-3.5 text-blue-100" />
+              <span className="hidden sm:inline">RFQ Project List</span>
               {enquiryCount > 0 ? (
-                <span className="w-5 h-5 rounded-full bg-white text-blue-600 text-[10px] font-black flex items-center justify-center font-mono shadow-sm">
+                <span className="px-1.5 py-0.2 rounded-full bg-white text-blue-700 text-[10px] font-bold font-mono">
                   {enquiryCount}
                 </span>
               ) : (
-                <span className="hidden md:inline-block px-1.5 py-0.5 rounded bg-blue-500/50 text-[10px] text-blue-100 font-mono">
-                  0
+                <span className="hidden md:inline-block text-[10px] text-blue-200 font-mono">
+                  (0)
                 </span>
               )}
             </button>
 
-            {/* Mobile Hamburger Toggle */}
+            {/* Mobile Menu Toggle */}
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="h-10 w-10 flex items-center justify-center rounded-xl bg-slate-100 text-slate-700 hover:bg-slate-200 border border-slate-200/80 transition-colors lg:hidden"
+              className="h-9 w-9 flex items-center justify-center rounded-lg bg-slate-100 text-slate-700 hover:bg-slate-200 border border-slate-200 lg:hidden"
               aria-label="Toggle navigation menu"
             >
-              {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+              {mobileMenuOpen ? <X className="w-4 h-4" /> : <Menu className="w-4 h-4" />}
             </button>
           </div>
         </div>
       </div>
 
-      {/* Mobile Drawer Menu */}
+      {/* Mobile Navigation Drawer */}
       {mobileMenuOpen && (
-        <div className="lg:hidden bg-white/98 backdrop-blur-xl border-b border-slate-200 px-4 py-5 space-y-2 shadow-2xl animate-in slide-in-from-top-2 duration-200">
+        <div className="lg:hidden bg-white border-b border-slate-200 px-4 py-4 space-y-1.5 shadow-lg">
           {navItems.map(item => {
             const active = currentPage === item.page;
             return (
@@ -253,9 +222,9 @@ export const Navbar: React.FC = () => {
                   navigateTo(item.page);
                   setMobileMenuOpen(false);
                 }}
-                className={`w-full py-3 px-4 rounded-xl text-xs font-bold uppercase font-mono tracking-wider text-left flex items-center gap-3 transition-all ${
+                className={`w-full py-2.5 px-3 rounded-lg text-xs font-semibold text-left flex items-center gap-3 transition-colors ${
                   active
-                    ? 'bg-blue-600 text-white shadow-md shadow-blue-600/20'
+                    ? 'bg-blue-600 text-white font-bold'
                     : 'bg-slate-50 text-slate-700 hover:bg-slate-100'
                 }`}
               >
