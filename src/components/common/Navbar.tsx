@@ -46,53 +46,41 @@ export const Navbar: React.FC = () => {
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-white border-b border-slate-200">
       {/* 🏢 Industrial Enterprise Utility Top Strip (Static, High-Contrast) */}
-      <div className="w-full bg-slate-900 text-slate-300 text-[11px] font-medium border-b border-slate-800">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-8 flex items-center justify-between">
-          {/* Left: Direct Factory Helpline & Dispatch Status */}
+      <div className="w-full bg-slate-950 text-slate-400 border-b border-slate-800">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-8 flex items-center justify-between gap-4 font-mono text-[11px]">
+          {/* Left: Direct Factory Commercial Sales & GST Trust */}
           <div className="flex items-center gap-4">
             <a
               href="tel:+919067800048"
-              className="flex items-center gap-1.5 text-slate-200 hover:text-blue-400 transition-colors font-mono font-semibold"
+              className="flex items-center gap-1.5 text-slate-200 hover:text-blue-400 transition-colors font-bold whitespace-nowrap"
             >
-              <span className="relative flex h-2 w-2">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-                <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
-              </span>
               <Phone className="w-3 h-3 text-blue-400" />
               <span>+91 90678 00048</span>
-              <span className="text-slate-500 text-[10px] uppercase tracking-wider hidden sm:inline">(Commercial Sales)</span>
+              <span className="text-slate-400 font-normal hidden sm:inline">(Commercial Sales)</span>
             </a>
 
-            <span className="text-slate-700 hidden md:inline">|</span>
+            <span className="text-slate-700 hidden sm:inline">•</span>
 
-            <div className="hidden md:flex items-center gap-1.5 text-slate-300">
-              <ShieldCheck className="w-3 h-3 text-emerald-400" />
-              <span>100% GST Compliant (18% ITC Invoicing)</span>
+            <div className="hidden sm:flex items-center gap-1.5 text-slate-300 whitespace-nowrap">
+              <ShieldCheck className="w-3.5 h-3.5 text-amber-400" />
+              <span>100% GST Invoicing (18% ITC)</span>
             </div>
           </div>
 
-          {/* Center or Custom Admin Notice */}
-          {platformSettings?.bannerEnabled && platformSettings?.bannerText?.trim() && (
-            <div className="hidden xl:flex items-center gap-1.5 text-amber-300 font-mono text-[10px] bg-amber-950/60 px-2 py-0.5 rounded border border-amber-800/60">
-              <span className="font-bold">NOTICE:</span>
-              <span>{platformSettings.bannerText}</span>
-            </div>
-          )}
-
-          {/* Right: Pan-India Logistics & Email */}
-          <div className="flex items-center gap-4">
-            <span className="hidden lg:flex items-center gap-1 text-slate-400">
-              <CheckCircle2 className="w-3 h-3 text-blue-400" />
+          {/* Right: Pan-India Freight & Direct Email */}
+          <div className="flex items-center gap-4 whitespace-nowrap">
+            <div className="hidden md:flex items-center gap-1.5 text-slate-300">
+              <CheckCircle2 className="w-3.5 h-3.5 text-blue-400" />
               <span>Pan-India Turnkey Assembly</span>
-            </span>
+            </div>
 
-            <span className="text-slate-700 hidden lg:inline">|</span>
+            <span className="text-slate-700 hidden md:inline">•</span>
 
             <a
               href="mailto:Info@tanushfitness.com"
-              className="flex items-center gap-1 text-slate-300 hover:text-white transition-colors font-mono"
+              className="flex items-center gap-1.5 text-slate-300 hover:text-white transition-colors"
             >
-              <Mail className="w-3 h-3 text-slate-400" />
+              <Mail className="w-3.5 h-3.5 text-slate-400" />
               <span>Info@tanushfitness.com</span>
             </a>
           </div>
