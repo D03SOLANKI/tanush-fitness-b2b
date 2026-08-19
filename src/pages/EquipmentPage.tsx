@@ -302,7 +302,7 @@ export const EquipmentPage: React.FC = () => {
 
                     <h3
                       onClick={() => handleOpenDetailModal(product)}
-                      className="text-base font-bold text-slate-900 hover:text-blue-700 transition-colors leading-snug cursor-pointer line-clamp-1 font-heading uppercase"
+                      className="text-base font-bold text-slate-900 hover:text-blue-700 transition-colors leading-snug cursor-pointer line-clamp-1 font-heading"
                     >
                       {product.name}
                     </h3>
@@ -332,10 +332,10 @@ export const EquipmentPage: React.FC = () => {
                       <span className="text-slate-500 font-normal">MOQ: {product.minOrderQty || 1} Unit</span>
                     </div>
 
-                    <div className="grid grid-cols-2 gap-2 font-mono">
+                    <div className="grid grid-cols-2 gap-2 font-sans">
                       <button
                         onClick={() => addToEnquiryCart(product, 1)}
-                        className="w-full py-2 px-2 rounded-lg bg-blue-700 hover:bg-blue-800 text-white font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-1.5 transition-colors shadow-sm"
+                        className="w-full py-2 px-2 rounded-lg bg-blue-700 hover:bg-blue-800 text-white font-semibold text-xs flex items-center justify-center gap-1.5 transition-colors shadow-sm"
                       >
                         <FileText className="w-3.5 h-3.5" />
                         <span>+ Add to RFQ</span>
@@ -343,7 +343,7 @@ export const EquipmentPage: React.FC = () => {
 
                       <button
                         onClick={() => handleOpenDetailModal(product)}
-                        className="w-full py-2 px-2 rounded-lg bg-slate-100 hover:bg-slate-200 border border-slate-300 text-slate-900 font-bold text-xs uppercase flex items-center justify-center gap-1 transition-colors"
+                        className="w-full py-2 px-2 rounded-lg bg-slate-100 hover:bg-slate-200 border border-slate-300 text-slate-900 font-semibold text-xs flex items-center justify-center gap-1 transition-colors"
                       >
                         <Eye className="w-3.5 h-3.5 text-slate-600" />
                         <span>Spec Sheet</span>

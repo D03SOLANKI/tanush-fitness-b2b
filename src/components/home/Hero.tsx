@@ -45,7 +45,7 @@ export const Hero: React.FC = () => {
             <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 pt-2">
               <button
                 onClick={() => navigateTo('equipment')}
-                className="px-6 py-3.5 rounded-lg bg-blue-700 hover:bg-blue-800 text-white font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-2 transition-colors shadow-sm"
+                className="px-6 py-3.5 rounded-lg bg-blue-700 hover:bg-blue-800 text-white font-bold text-sm flex items-center justify-center gap-2 transition-colors shadow-sm"
               >
                 <span>Build Commercial RFQ Package</span>
                 <ArrowRight className="w-4 h-4 text-blue-200" />
@@ -53,7 +53,7 @@ export const Hero: React.FC = () => {
 
               <button
                 onClick={() => navigateTo('contact')}
-                className="px-6 py-3.5 rounded-lg bg-slate-900 hover:bg-slate-800 text-white font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-2 transition-colors shadow-sm"
+                className="px-6 py-3.5 rounded-lg bg-slate-900 hover:bg-slate-800 text-white font-bold text-sm flex items-center justify-center gap-2 transition-colors shadow-sm"
               >
                 <FileDown className="w-4 h-4 text-blue-400" />
                 <span>Request 2026 Master Spec Sheet</span>

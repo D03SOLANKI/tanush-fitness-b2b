@@ -54,7 +54,7 @@ export const FeaturedServices: React.FC = () => {
                     {service.category}
                   </div>
 
-                  <h3 className="text-sm font-bold text-slate-900 leading-snug font-heading group-hover:text-blue-700 transition-colors uppercase mt-1">
+                  <h3 className="text-sm font-bold text-slate-900 leading-snug font-heading group-hover:text-blue-700 transition-colors mt-1">
                     {service.name}
                   </h3>
 
@@ -67,7 +67,7 @@ export const FeaturedServices: React.FC = () => {
                 <div className="pt-3 border-t border-slate-100">
                   <button
                     onClick={() => openServiceModal(service)}
-                    className="w-full py-2 px-3 rounded-lg bg-slate-900 hover:bg-slate-800 text-white font-bold text-xs uppercase tracking-wider font-mono flex items-center justify-center gap-1.5 transition-colors shadow-sm"
+                    className="w-full py-2 px-3 rounded-lg bg-slate-900 hover:bg-slate-800 text-white font-semibold text-xs flex items-center justify-center gap-1.5 transition-colors shadow-sm"
                   >
                     <Send className="w-3.5 h-3.5 text-blue-400" />
                     <span>Request Proposal</span>

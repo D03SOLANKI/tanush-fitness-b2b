@@ -414,13 +414,13 @@ export const EnquiryCartDrawer: React.FC = () => {
                     </div>
 
                     <div>
-                      <label className="text-[10px] font-bold text-slate-700 uppercase font-mono block mb-1">
+                      <label className="text-xs font-semibold text-slate-700 block mb-1">
                         Installation Timeframe
                       </label>
                       <select
                         value={formState.timeframe}
                         onChange={e => setFormState({ ...formState, timeframe: e.target.value })}
-                        className="w-full bg-slate-50 border border-slate-200 rounded-lg p-2 text-xs text-slate-900 font-bold focus:outline-none focus:border-blue-600 font-mono"
+                        className="w-full bg-slate-50 border border-slate-200 rounded-lg p-2 text-xs text-slate-900 font-medium focus:outline-none focus:border-blue-600"
                       >
                         <option value="Immediate (Within 15 days)">Immediate (Within 15 days)</option>
                         <option value="1 to 2 Months">1 to 2 Months</option>
@@ -429,7 +429,7 @@ export const EnquiryCartDrawer: React.FC = () => {
                     </div>
 
                     <div>
-                      <label className="text-[10px] font-bold text-slate-700 uppercase font-mono block mb-1">
+                      <label className="text-xs font-semibold text-slate-700 block mb-1">
                         Custom Powder Coating / Layout Notes
                       </label>
                       <textarea
@@ -437,14 +437,14 @@ export const EnquiryCartDrawer: React.FC = () => {
                         placeholder="Mention color preferences (Matte Black, Gunmetal), custom laser logos, or flooring specs..."
                         value={formState.requirements}
                         onChange={e => setFormState({ ...formState, requirements: e.target.value })}
-                        className="w-full bg-slate-50 border border-slate-200 rounded-lg p-2 text-xs text-slate-900 focus:outline-none focus:border-blue-600 font-mono"
+                        className="w-full bg-slate-50 border border-slate-200 rounded-lg p-2 text-xs text-slate-900 focus:outline-none focus:border-blue-600"
                       />
                     </div>
 
                     <button
                       type="submit"
                       disabled={submitting}
-                      className="w-full py-3.5 px-5 rounded-lg bg-blue-700 hover:bg-blue-800 text-white font-bold text-xs uppercase tracking-wider font-mono flex items-center justify-center gap-2 shadow-sm transition-colors disabled:opacity-50"
+                      className="w-full py-3.5 px-5 rounded-lg bg-blue-700 hover:bg-blue-800 text-white font-bold text-sm flex items-center justify-center gap-2 shadow-sm transition-colors disabled:opacity-50"
                     >
                       <Send className="w-4 h-4 text-blue-200" />
                       <span>{submitting ? 'Generating Official RFQ...' : 'Submit Official RFQ & Dispatch Quotation'}</span>
