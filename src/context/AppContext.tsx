@@ -273,28 +273,72 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
     showToast('Platform System Settings Updated!');
   };
 
-  // Users State
+  // Users State with Unique ID Guarantee
   const [userList, setUserList] = useState<UserAccount[]>(() => {
     const saved = localStorage.getItem('tanush_user_list');
-    return saved ? JSON.parse(saved) : INITIAL_USERS;
+    if (saved) {
+      try {
+        const parsed = JSON.parse(saved);
+        if (Array.isArray(parsed) && parsed.length > 0) {
+          return parsed.map((u: any, idx: number) => ({
+            ...u,
+            id: u.id && String(u.id).trim() !== '' ? String(u.id) : `usr-legacy-${idx + 1}-${Date.now()}`,
+            name: u.name || 'Account User',
+            email: u.email || `user${idx + 1}@domain.com`,
+            mobile: u.mobile || '+91 90000 00000',
+            role: u.role || 'GYM_OWNER',
+            isVerified: Boolean(u.isVerified),
+            status: (u.status === 'SUSPENDED' || u.status === 'DEACTIVATED') ? u.status : 'ACTIVE',
+            createdAt: u.createdAt || '2026-02-01',
+          }));
+        }
+      } catch (err) {
+        console.error('Error parsing tanush_user_list', err);
+      }
+    }
+    return INITIAL_USERS;
   });
 
   const updateUserStatus = (userId: string, status: 'ACTIVE' | 'SUSPENDED' | 'DEACTIVATED') => {
+    if (!userId || typeof userId !== 'string' || userId.trim() === '') {
+      console.warn('updateUserStatus called without a valid userId');
+      return;
+    }
+
     setUserList(prev => {
-      const updated = prev.map(u => (u.id === userId ? { ...u, status } : u));
+      const targetUser = prev.find(u => u.id === userId);
+      const updated = prev.map(u => {
+        if (u.id === userId) {
+          return { ...u, status };
+        }
+        return u;
+      });
       localStorage.setItem('tanush_user_list', JSON.stringify(updated));
+      const userName = targetUser ? targetUser.name : 'Selected account';
+      showToast(`${userName} status changed to ${status}`, status === 'SUSPENDED' ? 'error' : 'success');
       return updated;
     });
-    showToast(`User status updated to ${status}`);
   };
 
   const verifyUserGST = (userId: string, isVerified: boolean) => {
+    if (!userId || typeof userId !== 'string' || userId.trim() === '') {
+      console.warn('verifyUserGST called without a valid userId');
+      return;
+    }
+
     setUserList(prev => {
-      const updated = prev.map(u => (u.id === userId ? { ...u, isVerified } : u));
+      const targetUser = prev.find(u => u.id === userId);
+      const updated = prev.map(u => {
+        if (u.id === userId) {
+          return { ...u, isVerified };
+        }
+        return u;
+      });
       localStorage.setItem('tanush_user_list', JSON.stringify(updated));
+      const userName = targetUser ? targetUser.name : 'Selected account';
+      showToast(isVerified ? `${userName} GST credentials verified!` : `${userName} verification removed`, isVerified ? 'success' : 'info');
       return updated;
     });
-    showToast(isVerified ? 'User Business Credentials Verified!' : 'User Verification Removed', isVerified ? 'success' : 'info');
   };
 
   // Admin Auth State (Persisted in localStorage)
@@ -329,6 +373,46 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
     setAccessToken(token);
     localStorage.setItem('tanush_user', JSON.stringify(user));
     if (token) localStorage.setItem('tanush_token', token);
+
+    // Ensure logged-in / registered user is present in userList with a distinct unique ID
+    if (user) {
+      const userUniqueId = user.id || user._id || `usr-reg-${Date.now()}`;
+      setUserList(prev => {
+        const existingIndex = prev.findIndex(u => u.id === userUniqueId || u.email === user.email);
+        if (existingIndex >= 0) {
+          const updated = [...prev];
+          updated[existingIndex] = {
+            ...updated[existingIndex],
+            id: userUniqueId,
+            name: user.name || updated[existingIndex].name,
+            email: user.email || updated[existingIndex].email,
+            mobile: user.mobile || updated[existingIndex].mobile,
+            role: user.role || updated[existingIndex].role,
+            companyName: user.gymOwnerProfile?.companyName || user.companyName || updated[existingIndex].companyName,
+            gstNumber: user.gymOwnerProfile?.gstNumber || user.gstNumber || updated[existingIndex].gstNumber,
+          };
+          localStorage.setItem('tanush_user_list', JSON.stringify(updated));
+          return updated;
+        } else {
+          const newUser: UserAccount = {
+            id: userUniqueId,
+            name: user.name || 'Registered User',
+            email: user.email,
+            mobile: user.mobile || '+91 90000 00000',
+            role: user.role || 'GYM_OWNER',
+            companyName: user.gymOwnerProfile?.companyName || user.companyName,
+            gstNumber: user.gymOwnerProfile?.gstNumber || user.gstNumber,
+            isVerified: Boolean(user.isVerified),
+            status: user.status || 'ACTIVE',
+            createdAt: user.createdAt || new Date().toISOString().split('T')[0],
+          };
+          const updated = [newUser, ...prev];
+          localStorage.setItem('tanush_user_list', JSON.stringify(updated));
+          return updated;
+        }
+      });
+    }
+
     showToast(`Welcome back, ${user.name || user.email}!`);
   };
 

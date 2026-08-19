@@ -117,9 +117,14 @@ export const UserManagementTab: React.FC = () => {
               {filteredUsers.map(u => (
                 <tr key={u.id} className="odd:bg-[#F4F9FF] even:bg-white hover:bg-[#E4F0FF] transition">
                   <td className="py-4 px-6">
-                    <div className="font-bold text-slate-900">{u.name}</div>
-                    <div className="text-xs text-slate-600 font-medium">{u.email} • {u.mobile}</div>
-                    {u.companyName && <div className="text-xs text-blue-700 font-bold mt-0.5">{u.companyName}</div>}
+                    <div className="flex items-center gap-2">
+                      <span className="font-bold text-slate-900">{u.name}</span>
+                      <span className="px-1.5 py-0.5 rounded bg-slate-100 border border-slate-200 text-[10px] font-mono font-bold text-slate-500">
+                        {u.id}
+                      </span>
+                    </div>
+                    <div className="text-xs text-slate-600 font-medium mt-0.5">{u.email} • {u.mobile}</div>
+                    {u.companyName && <div className="text-xs text-blue-800 font-bold mt-0.5">{u.companyName}</div>}
                   </td>
                   <td className="py-4 px-6">
                     <div className="flex items-center gap-2">
@@ -138,7 +143,11 @@ export const UserManagementTab: React.FC = () => {
                     <div className="flex items-center justify-end gap-2">
                       {/* GST Verify Button */}
                       <button
-                        onClick={() => handleVerify(u.id, u.isVerified)}
+                        type="button"
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          handleVerify(u.id, u.isVerified);
+                        }}
                         className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-bold transition shadow-sm ${
                           u.isVerified
                             ? 'bg-emerald-600 hover:bg-emerald-700 text-white'
@@ -159,17 +168,25 @@ export const UserManagementTab: React.FC = () => {
                       {/* Status Toggle Buttons */}
                       {u.status === 'ACTIVE' ? (
                         <button
-                          onClick={() => handleStatusChange(u.id, 'SUSPENDED')}
+                          type="button"
+                          onClick={(e) => {
+                            e.stopPropagation();
+                            handleStatusChange(u.id, 'SUSPENDED');
+                          }}
                           className="flex items-center gap-1 px-3 py-1.5 bg-red-100 hover:bg-red-200 text-red-700 border border-red-300 rounded-lg text-xs font-semibold transition"
-                          title="Suspend Account"
+                          title={`Suspend ${u.name} (ID: ${u.id})`}
                         >
                           <UserX className="w-3.5 h-3.5" /> Suspend
                         </button>
                       ) : (
                         <button
-                          onClick={() => handleStatusChange(u.id, 'ACTIVE')}
+                          type="button"
+                          onClick={(e) => {
+                            e.stopPropagation();
+                            handleStatusChange(u.id, 'ACTIVE');
+                          }}
                           className="flex items-center gap-1 px-3 py-1.5 bg-emerald-100 hover:bg-emerald-200 text-emerald-700 border border-emerald-300 rounded-lg text-xs font-semibold transition"
-                          title="Activate Account"
+                          title={`Activate ${u.name} (ID: ${u.id})`}
                         >
                           <UserCheck className="w-3.5 h-3.5" /> Activate
                         </button>
