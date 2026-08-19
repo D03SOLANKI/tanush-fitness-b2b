@@ -102,13 +102,8 @@ export const Navbar: React.FC = () => {
               <div className="text-[17px] font-black tracking-tight text-slate-900 uppercase leading-tight font-heading flex items-center gap-1.5">
                 TANUSH <span className="text-blue-800">FITNESS</span>
               </div>
-              <div className="flex items-center gap-1.5 mt-0.5">
-                <span className="text-[9px] font-bold text-slate-500 uppercase tracking-widest font-mono">
-                  Industrial B2B Marketplace
-                </span>
-                <span className="px-1 py-0.2 rounded bg-amber-50 text-[8px] font-bold font-mono text-amber-800 border border-amber-300 uppercase">
-                  ISO 9001
-                </span>
+              <div className="text-[9.5px] font-bold text-slate-500 uppercase tracking-wider font-mono mt-0.5">
+                Commercial Gym Outfitting
               </div>
             </div>
           </div>
