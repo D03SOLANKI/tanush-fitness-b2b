@@ -1,8 +1,6 @@
 import React, { useState, useMemo } from 'react';
 import { useApp } from '../context/AppContext';
-import { PRODUCTS } from '../data/products';
 import { EQUIPMENT_CATEGORIES } from '../data/categories';
-import { Badge } from '../components/common/Badge';
 import { Product } from '../types';
 import { EquipmentCompareModal } from '../modules/equipment-marketplace/components/EquipmentCompareModal';
 import { SEO } from '../components/common/SEO';
@@ -18,7 +16,11 @@ import {
   X,
   Layers,
   ArrowRight,
-  Filter
+  ShieldCheck,
+  Download,
+  PhoneCall,
+  SlidersHorizontal,
+  CheckCircle2
 } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
@@ -97,7 +99,7 @@ export const EquipmentPage: React.FC = () => {
         return prev.filter(p => p.id !== product.id);
       }
       if (prev.length >= 3) {
-        alert('You can compare up to 3 commercial models at a time.');
+        alert('You can compare up to 3 commercial machinery models simultaneously.');
         return prev;
       }
       return [...prev, product];
@@ -105,49 +107,71 @@ export const EquipmentPage: React.FC = () => {
   };
 
   return (
-    <main className="pt-28 pb-24 bg-slate-50 min-h-screen text-slate-900">
+    <main className="pt-28 pb-20 bg-slate-50 min-h-screen text-slate-900">
       <SEO
-        title="Commercial Gym Equipment Catalog | Tanush Fitness B2B"
-        description="Browse ISO-certified strength machinery, curved treadmills, urethane weights, and lockers. Zero online prices with direct RFQ quotation requests."
+        title="Commercial Gym Equipment & Machinery Catalog | Tanush Fitness B2B"
+        description="Factory direct 11-gauge power racks, plate-loaded selectorized machines, cardio consoles, and urethane free weights. 100% itemized RFQ quotations."
       />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Header */}
-        <div className="mb-8">
-          <div className="inline-flex items-center gap-2 mb-2">
-            <span className="w-8 h-[3px] bg-blue-600 rounded-full" />
-            <span className="text-xs font-bold tracking-widest uppercase text-blue-600 font-mono">
-              BUSINESS 1: COMMERCIAL GYM EQUIPMENT
-            </span>
+        
+        {/* Master Section Header */}
+        <div className="mb-8 border-b border-slate-200 pb-6">
+          <div className="inline-flex items-center gap-2 px-2.5 py-1 rounded bg-slate-200/80 text-slate-800 font-mono text-[11px] font-bold uppercase mb-2">
+            <span className="w-1.5 h-1.5 rounded-full bg-blue-700"></span>
+            <span>DIRECT INDUSTRIAL PROCUREMENT // ISO 9001:2015 CERTIFIED</span>
           </div>
-          <h1 className="text-3xl sm:text-5xl font-black text-slate-900 tracking-tight font-heading uppercase">
-            Commercial Equipment & Machinery Catalog
-          </h1>
-          <p className="mt-2 text-sm text-slate-600 max-w-2xl font-normal">
-            Browse ISO-certified heavy strength racks, selectorized stacks, curved treadmills, & urethane weights. Select items and click <strong>"Request Quotation"</strong> for formal wholesale pricing.
-          </p>
+
+          <div className="flex flex-col md:flex-row md:items-end justify-between gap-4">
+            <div>
+              <h1 className="text-2xl sm:text-4xl font-extrabold text-slate-900 tracking-tight font-heading uppercase">
+                Commercial Equipment & Machinery Catalog
+              </h1>
+              <p className="mt-1.5 text-xs sm:text-sm text-slate-600 max-w-2xl font-normal leading-relaxed">
+                Direct factory procurement for health clubs, CrossFit boxes, and athletic centers. Add items to your project list to receive formal itemized GST quotations within 24 hours.
+              </p>
+            </div>
+
+            <div className="flex items-center gap-3 font-mono text-xs shrink-0">
+              <a
+                href="tel:+919067800048"
+                className="px-3.5 py-2 rounded-lg bg-slate-900 hover:bg-slate-800 text-white font-bold flex items-center gap-1.5 transition-colors shadow-sm"
+              >
+                <PhoneCall className="w-3.5 h-3.5 text-blue-400" />
+                <span>+91 90678 00048</span>
+              </a>
+
+              <button
+                onClick={() => setIsEnquiryCartOpen(true)}
+                className="px-3.5 py-2 rounded-lg bg-blue-700 hover:bg-blue-800 text-white font-bold flex items-center gap-1.5 transition-colors shadow-sm"
+              >
+                <FileText className="w-3.5 h-3.5" />
+                <span>View RFQ List</span>
+              </button>
+            </div>
+          </div>
         </div>
 
-        {/* 7 Equipment Category Pills */}
-        <div className="flex items-center gap-2.5 overflow-x-auto pb-4 mb-6 scrollbar-none border-b border-slate-200">
+        {/* Category Navigation Pills */}
+        <div className="flex items-center gap-2 overflow-x-auto pb-3 mb-6 scrollbar-none">
           <button
             onClick={() => setActiveCategory('all')}
-            className={`px-4 py-2.5 rounded-xl text-xs font-bold uppercase font-mono tracking-wider whitespace-nowrap transition-all shadow-sm ${
+            className={`px-3.5 py-2 rounded-lg text-xs font-bold uppercase font-mono tracking-wider whitespace-nowrap transition-colors ${
               activeCategory === 'all'
-                ? 'bg-blue-600 text-white shadow-md'
-                : 'bg-white border border-slate-200 text-slate-600 hover:text-slate-900 hover:bg-slate-100'
+                ? 'bg-slate-900 text-white'
+                : 'bg-white border border-slate-200 text-slate-700 hover:bg-slate-100'
             }`}
           >
-            All 7 Categories
+            All Categories ({products.length})
           </button>
           {EQUIPMENT_CATEGORIES.map(cat => (
             <button
               key={cat.id}
               onClick={() => setActiveCategory(cat.id)}
-              className={`px-4 py-2.5 rounded-xl text-xs font-bold whitespace-nowrap transition-all flex items-center gap-1.5 shadow-sm ${
+              className={`px-3.5 py-2 rounded-lg text-xs font-semibold whitespace-nowrap transition-colors flex items-center gap-1.5 ${
                 activeCategory === cat.id
-                  ? 'bg-blue-600 text-white font-bold shadow-md'
-                  : 'bg-white border border-slate-200 text-slate-600 hover:text-slate-900 hover:bg-slate-100'
+                  ? 'bg-slate-900 text-white font-bold'
+                  : 'bg-white border border-slate-200 text-slate-700 hover:bg-slate-100'
               }`}
             >
               <span>{cat.name}</span>
@@ -155,44 +179,45 @@ export const EquipmentPage: React.FC = () => {
           ))}
         </div>
 
-        {/* Faceted Filter Toolbar: Search, Application Filter, Brand Filter */}
-        <div className="mb-8 grid grid-cols-1 sm:grid-cols-12 gap-4 items-center bg-white p-4 rounded-2xl border border-slate-200 shadow-sm font-mono text-xs">
-          {/* Search */}
+        {/* Faceted Filter Toolbar */}
+        <div className="mb-8 grid grid-cols-1 sm:grid-cols-12 gap-3 items-center bg-white p-3.5 rounded-xl border border-slate-200 shadow-sm font-mono text-xs">
+          
+          {/* Search Input */}
           <div className="sm:col-span-5 relative">
             <input
               type="text"
-              placeholder="Search power racks, dumbbells, treadmills..."
+              placeholder="Search power racks, plate loaded, dumbbells, consoles..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-full bg-slate-50 border border-slate-200 rounded-xl py-2.5 px-4 pl-9 text-xs text-slate-900 placeholder-slate-400 focus:outline-none focus:border-blue-600 font-mono"
+              className="w-full bg-slate-50 border border-slate-200 rounded-lg py-2 px-3 pl-8 text-xs text-slate-900 placeholder-slate-400 focus:outline-none focus:border-blue-600 font-mono"
             />
-            <Search className="w-4 h-4 text-slate-400 absolute left-3 top-3" />
+            <Search className="w-3.5 h-3.5 text-slate-400 absolute left-2.5 top-2.5" />
           </div>
 
-          {/* Application Filter */}
+          {/* Facility Application Filter */}
           <div className="sm:col-span-4 flex items-center gap-1 overflow-x-auto">
-            <span className="text-[10px] font-bold text-slate-500 uppercase shrink-0 mr-1">App:</span>
+            <span className="text-[10px] font-bold text-slate-500 uppercase shrink-0 mr-1">Facility:</span>
             {['all', 'Commercial Gym', 'Hotel & Resort Gym', 'Corporate Wellness Hub'].map(app => (
               <button
                 key={app}
                 onClick={() => setActiveApplication(app)}
-                className={`px-2.5 py-1.5 rounded-lg text-[10px] font-bold whitespace-nowrap uppercase transition-all ${
+                className={`px-2 py-1 rounded text-[10px] font-bold whitespace-nowrap uppercase transition-colors ${
                   activeApplication === app
-                    ? 'bg-slate-900 text-white font-black'
+                    ? 'bg-slate-900 text-white font-bold'
                     : 'bg-slate-100 text-slate-600 hover:bg-slate-200'
                 }`}
               >
-                {app === 'all' ? 'All Facilities' : app.replace(' Gym', '')}
+                {app === 'all' ? 'All Types' : app.replace(' Gym', '')}
               </button>
             ))}
           </div>
 
-          {/* Brand Selector */}
+          {/* Manufacturer / Brand Selector */}
           <div className="sm:col-span-3">
             <select
               value={selectedBrand}
               onChange={e => setSelectedBrand(e.target.value)}
-              className="w-full bg-slate-50 border border-slate-200 rounded-xl p-2.5 text-xs text-slate-900 font-bold focus:outline-none focus:border-blue-600 font-mono uppercase"
+              className="w-full bg-slate-50 border border-slate-200 rounded-lg p-2 text-xs text-slate-900 font-bold focus:outline-none focus:border-blue-600 font-mono uppercase"
             >
               <option value="all">All Brands ({brandsList.length})</option>
               {brandsList.map(b => (
@@ -202,44 +227,48 @@ export const EquipmentPage: React.FC = () => {
           </div>
         </div>
 
-        {/* Equipment Grid */}
+        {/* Industrial Equipment Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {filteredProducts.map((product) => {
             const isCompared = compareList.some(p => p.id === product.id);
+            const inWishlist = isInWishlist(product.id);
 
             return (
-              <motion.div
+              <div
                 key={product.id}
-                initial={{ opacity: 0, y: 15 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.3 }}
-                className="group rounded-3xl bg-white border border-slate-200/90 hover:border-blue-500 transition-all duration-300 overflow-hidden flex flex-col justify-between shadow-stripe hover:shadow-2xl hover:-translate-y-1"
+                className="group rounded-xl bg-white border border-slate-200 hover:border-slate-400 transition-all duration-200 overflow-hidden flex flex-col justify-between shadow-sm"
               >
-                {/* Image */}
-                <div className="relative aspect-video bg-slate-100 overflow-hidden border-b border-slate-100">
+                {/* Product Image & Badges */}
+                <div className="relative aspect-[16/10] bg-slate-100 overflow-hidden border-b border-slate-200">
                   <img
                     src={product.image}
                     alt={product.name}
                     onError={(e) => {
                       (e.target as HTMLImageElement).src = fallbackImage;
                     }}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    className="w-full h-full object-cover group-hover:scale-102 transition-transform duration-300"
                   />
 
-                  {product.badge && (
-                    <div className="absolute top-3 left-3">
-                      <Badge variant="gold">{product.badge}</Badge>
-                    </div>
-                  )}
+                  {/* Badges */}
+                  <div className="absolute top-2.5 left-2.5 flex flex-col gap-1">
+                    {product.badge && (
+                      <span className="px-2 py-0.5 rounded bg-slate-900/90 text-white font-mono text-[10px] font-bold uppercase tracking-wider border border-slate-700">
+                        {product.badge}
+                      </span>
+                    )}
+                    <span className="px-1.5 py-0.5 rounded bg-blue-900/90 text-blue-200 font-mono text-[9px] font-bold uppercase tracking-wider border border-blue-700">
+                      11-GAUGE STEEL
+                    </span>
+                  </div>
 
-                  <div className="absolute top-3 right-3 flex items-center gap-2">
-                    {/* Compare Button */}
+                  {/* Actions Header (Compare + Wishlist) */}
+                  <div className="absolute top-2.5 right-2.5 flex items-center gap-1.5">
                     <button
                       onClick={() => handleToggleCompare(product)}
-                      className={`p-2 rounded-full border backdrop-blur-md transition-all shadow-sm ${
+                      className={`p-1.5 rounded-lg border transition-colors ${
                         isCompared
                           ? 'bg-amber-500 text-slate-950 border-amber-500 font-bold'
-                          : 'bg-white/90 text-slate-500 border-slate-200 hover:text-slate-900'
+                          : 'bg-white/95 text-slate-500 border-slate-200 hover:text-slate-900'
                       }`}
                       title={isCompared ? 'In Compare List' : 'Add to Compare'}
                     >
@@ -248,91 +277,104 @@ export const EquipmentPage: React.FC = () => {
 
                     <button
                       onClick={() => toggleWishlist(product.id)}
-                      className={`p-2 rounded-full border backdrop-blur-md transition-all shadow-sm ${
-                        isInWishlist(product.id)
+                      className={`p-1.5 rounded-lg border transition-colors ${
+                        inWishlist
                           ? 'bg-blue-600 text-white border-blue-600'
-                          : 'bg-white/90 text-slate-400 border-slate-200 hover:text-slate-900'
+                          : 'bg-white/95 text-slate-400 border-slate-200 hover:text-slate-900'
                       }`}
+                      title="Add to Project Wishlist"
                     >
-                      <Heart className={`w-3.5 h-3.5 ${isInWishlist(product.id) ? 'fill-white' : ''}`} />
+                      <Heart className={`w-3.5 h-3.5 ${inWishlist ? 'fill-white' : ''}`} />
                     </button>
                   </div>
                 </div>
 
-                {/* Body */}
-                <div className="p-5 flex-1 flex flex-col justify-between space-y-4">
+                {/* Body Content */}
+                <div className="p-5 flex-1 flex flex-col justify-between space-y-3">
                   <div>
-                    <div className="flex items-center justify-between text-xs font-bold text-slate-500 mb-1 font-mono">
-                      <span className="text-blue-600 uppercase tracking-wider">{product.brand}</span>
-                      <div className="flex items-center gap-1 text-amber-500 font-black">
-                        <Star className="w-3.5 h-3.5 fill-amber-400" />
+                    <div className="flex items-center justify-between text-xs font-mono mb-1">
+                      <span className="text-blue-700 font-bold uppercase tracking-wide">{product.brand}</span>
+                      <div className="flex items-center gap-1 text-slate-700 font-bold">
+                        <Star className="w-3 h-3 text-amber-500 fill-amber-500" />
                         <span>{product.rating}</span>
                       </div>
                     </div>
 
                     <h3
                       onClick={() => handleOpenDetailModal(product)}
-                      className="text-sm font-black text-slate-900 hover:text-blue-600 transition-colors leading-snug cursor-pointer line-clamp-2 font-heading uppercase"
+                      className="text-base font-bold text-slate-900 hover:text-blue-700 transition-colors leading-snug cursor-pointer line-clamp-1 font-heading uppercase"
                     >
                       {product.name}
                     </h3>
-                    <p className="mt-2 text-xs text-slate-600 line-clamp-2 font-normal">
+                    <p className="mt-1.5 text-xs text-slate-600 line-clamp-2 leading-relaxed">
                       {product.description}
                     </p>
                   </div>
 
-                  {/* Actions (NO PRICING) */}
+                  {/* Technical Spec Matrix (2x2 Pillbox) */}
+                  <div className="grid grid-cols-2 gap-1.5 bg-slate-50 p-2 rounded-lg border border-slate-200 text-[10px] font-mono text-slate-700">
+                    <div>
+                      <span className="text-slate-400 block text-[9px] uppercase">Steel Frame</span>
+                      <span className="font-bold text-slate-900">11-Gauge 3x3"</span>
+                    </div>
+                    <div>
+                      <span className="text-slate-400 block text-[9px] uppercase">Max Load</span>
+                      <span className="font-bold text-slate-900">850 KG Tested</span>
+                    </div>
+                  </div>
+
+                  {/* RFQ Procurement Actions */}
                   <div className="pt-3 border-t border-slate-100 space-y-2">
-                    <div className="flex items-center justify-between text-[11px] font-mono text-emerald-600 font-bold">
-                      <span className="flex items-center gap-1">
-                        <Check className="w-3.5 h-3.5 stroke-[3]" /> Commercial Stock Ready
+                    <div className="flex items-center justify-between text-[11px] font-mono">
+                      <span className="flex items-center gap-1 text-emerald-700 font-semibold">
+                        <Check className="w-3.5 h-3.5 stroke-[2.5]" /> Commercial Batch
                       </span>
                       <span className="text-slate-500 font-normal">MOQ: {product.minOrderQty || 1} Unit</span>
                     </div>
 
-                    <div className="grid grid-cols-2 gap-2">
+                    <div className="grid grid-cols-2 gap-2 font-mono">
                       <button
                         onClick={() => addToEnquiryCart(product, 1)}
-                        className="w-full py-2.5 px-2 rounded-xl bg-blue-600 hover:bg-blue-700 text-white font-black text-xs font-mono uppercase tracking-wider flex items-center justify-center gap-1 shadow-md transition-all"
+                        className="w-full py-2 px-2 rounded-lg bg-blue-700 hover:bg-blue-800 text-white font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-1.5 transition-colors shadow-sm"
                       >
                         <FileText className="w-3.5 h-3.5" />
-                        <span>Add to Cart</span>
+                        <span>+ Add to RFQ</span>
                       </button>
 
                       <button
                         onClick={() => handleOpenDetailModal(product)}
-                        className="w-full py-2.5 px-2 rounded-xl bg-slate-100 border border-slate-200 hover:bg-slate-200 text-slate-900 font-black text-xs font-mono uppercase flex items-center justify-center gap-1 transition-all"
+                        className="w-full py-2 px-2 rounded-lg bg-slate-100 hover:bg-slate-200 border border-slate-300 text-slate-900 font-bold text-xs uppercase flex items-center justify-center gap-1 transition-colors"
                       >
-                        <Eye className="w-3.5 h-3.5" />
-                        <span>Enquire Now</span>
+                        <Eye className="w-3.5 h-3.5 text-slate-600" />
+                        <span>Spec Sheet</span>
                       </button>
                     </div>
                   </div>
                 </div>
-              </motion.div>
+              </div>
             );
           })}
         </div>
 
         {/* Recently Viewed Equipment Bar */}
         {recentlyViewed.length > 0 && (
-          <div className="mt-16 pt-8 border-t border-slate-200">
-            <h3 className="text-sm font-black text-slate-900 font-mono uppercase mb-4 flex items-center gap-2">
-              <Eye className="w-4 h-4 text-blue-600" />
+          <div className="mt-14 pt-6 border-t border-slate-200">
+            <h3 className="text-xs font-bold text-slate-800 font-mono uppercase mb-3 flex items-center gap-2">
+              <Eye className="w-3.5 h-3.5 text-blue-700" />
               <span>Recently Viewed Models ({recentlyViewed.length})</span>
             </h3>
 
-            <div className="flex items-center gap-4 overflow-x-auto pb-2 scrollbar-none">
+            <div className="flex items-center gap-3 overflow-x-auto pb-2 scrollbar-none">
               {recentlyViewed.map(rv => (
                 <div
                   key={rv.id}
                   onClick={() => handleOpenDetailModal(rv)}
-                  className="flex items-center gap-3 p-2.5 rounded-2xl bg-white border border-slate-200 shrink-0 hover:border-blue-500 cursor-pointer transition-all shadow-sm"
+                  className="flex items-center gap-2.5 p-2 rounded-lg bg-white border border-slate-200 shrink-0 hover:border-slate-400 cursor-pointer transition-colors shadow-sm"
                 >
-                  <img src={rv.image} alt={rv.name} className="w-12 h-12 object-cover rounded-xl border border-slate-100" />
+                  <img src={rv.image} alt={rv.name} className="w-10 h-10 object-cover rounded border border-slate-100" />
                   <div>
-                    <div className="text-xs font-black text-slate-900 uppercase font-heading line-clamp-1">{rv.name}</div>
-                    <div className="text-[10px] font-mono text-blue-600">{rv.brand}</div>
+                    <div className="text-xs font-bold text-slate-900 uppercase font-heading line-clamp-1">{rv.name}</div>
+                    <div className="text-[10px] font-mono text-blue-700 font-semibold">{rv.brand}</div>
                   </div>
                 </div>
               ))}
@@ -343,7 +385,7 @@ export const EquipmentPage: React.FC = () => {
 
       {/* Sticky Bottom Compare Bar */}
       {compareList.length > 0 && (
-        <div className="fixed bottom-6 left-1/2 -translate-x-1/2 z-40 bg-slate-900 text-white rounded-full px-6 py-3.5 shadow-2xl border border-slate-700 flex items-center gap-4 font-mono">
+        <div className="fixed bottom-6 left-1/2 -translate-x-1/2 z-40 bg-slate-900 text-white rounded-lg px-5 py-3 shadow-xl border border-slate-700 flex items-center gap-4 font-mono">
           <div className="flex items-center gap-2 text-xs font-bold">
             <Layers className="w-4 h-4 text-amber-400" />
             <span>Compared Models ({compareList.length}/3)</span>
@@ -351,9 +393,9 @@ export const EquipmentPage: React.FC = () => {
 
           <button
             onClick={() => setIsCompareModalOpen(true)}
-            className="px-4 py-1.5 rounded-full bg-amber-500 hover:bg-amber-400 text-slate-950 text-xs font-black uppercase flex items-center gap-1 shadow-md"
+            className="px-3.5 py-1.5 rounded bg-amber-500 hover:bg-amber-400 text-slate-950 text-xs font-bold uppercase flex items-center gap-1 shadow-sm transition-colors"
           >
-            <span>Compare Now</span>
+            <span>Compare Specs</span>
             <ArrowRight className="w-3.5 h-3.5" />
           </button>
 
@@ -378,24 +420,24 @@ export const EquipmentPage: React.FC = () => {
       {/* Equipment Detail Modal */}
       <AnimatePresence>
         {selectedProduct && (
-          <div className="fixed inset-0 z-50 overflow-y-auto bg-slate-950/60 backdrop-blur-sm flex items-center justify-center p-4">
+          <div className="fixed inset-0 z-50 overflow-y-auto bg-slate-950/70 backdrop-blur-sm flex items-center justify-center p-4">
             <motion.div
-              initial={{ scale: 0.95, opacity: 0 }}
+              initial={{ scale: 0.98, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
-              exit={{ scale: 0.95, opacity: 0 }}
-              className="bg-white rounded-3xl max-w-4xl w-full p-6 sm:p-8 overflow-hidden shadow-2xl border border-slate-200 relative my-8"
+              exit={{ scale: 0.98, opacity: 0 }}
+              className="bg-white rounded-xl max-w-4xl w-full p-6 sm:p-8 overflow-hidden shadow-2xl border border-slate-200 relative my-8"
             >
               <button
                 onClick={() => setSelectedProduct(null)}
-                className="absolute top-4 right-4 p-2 rounded-full bg-slate-100 text-slate-500 hover:text-slate-900"
+                className="absolute top-4 right-4 p-1.5 rounded-lg bg-slate-100 text-slate-500 hover:text-slate-900 transition-colors"
               >
-                <X className="w-5 h-5" />
+                <X className="w-4 h-4" />
               </button>
 
-              <div className="grid grid-cols-1 md:grid-cols-12 gap-8">
+              <div className="grid grid-cols-1 md:grid-cols-12 gap-6">
                 {/* Gallery */}
                 <div className="md:col-span-6 space-y-3">
-                  <div className="aspect-square rounded-2xl overflow-hidden border border-slate-200 bg-slate-100">
+                  <div className="aspect-[4/3] rounded-lg overflow-hidden border border-slate-200 bg-slate-100">
                     <img
                       src={selectedProduct.gallery[selectedImage] || selectedProduct.image}
                       alt={selectedProduct.name}
@@ -411,8 +453,8 @@ export const EquipmentPage: React.FC = () => {
                         <button
                           key={idx}
                           onClick={() => setSelectedImage(idx)}
-                          className={`w-16 h-16 rounded-xl overflow-hidden border-2 transition-all ${
-                            selectedImage === idx ? 'border-blue-600 scale-105' : 'border-slate-200 opacity-60'
+                          className={`w-14 h-14 rounded-lg overflow-hidden border-2 transition-all ${
+                            selectedImage === idx ? 'border-blue-600 scale-102' : 'border-slate-200 opacity-60'
                           }`}
                         >
                           <img src={img} alt="thumb" className="w-full h-full object-cover" />
@@ -422,77 +464,77 @@ export const EquipmentPage: React.FC = () => {
                   )}
                 </div>
 
-                {/* Content */}
+                {/* Content & Specs */}
                 <div className="md:col-span-6 flex flex-col justify-between space-y-4">
                   <div>
-                    <div className="text-xs font-bold uppercase text-blue-600 font-mono">
+                    <div className="text-xs font-bold uppercase text-blue-700 font-mono">
                       {selectedProduct.brand} • {selectedProduct.category}
                     </div>
-                    <h2 className="text-xl font-black text-slate-900 font-heading uppercase mt-1">
+                    <h2 className="text-xl font-extrabold text-slate-900 font-heading uppercase mt-1">
                       {selectedProduct.name}
                     </h2>
-                    <p className="text-xs text-slate-600 mt-2 leading-relaxed font-normal">
+                    <p className="text-xs text-slate-600 mt-2 leading-relaxed">
                       {selectedProduct.description}
                     </p>
 
                     {/* Applications */}
-                    <div className="mt-3 flex flex-wrap gap-1">
+                    <div className="mt-3 flex flex-wrap gap-1.5">
                       {(selectedProduct.applicationTypes || ['Commercial Gym', 'Hotel & Resort Gym']).map((app, i) => (
-                        <span key={i} className="text-[10px] font-mono px-2 py-0.5 rounded bg-blue-50 text-blue-700 font-bold border border-blue-100">
+                        <span key={i} className="text-[10px] font-mono px-2 py-0.5 rounded bg-slate-100 text-slate-700 font-bold border border-slate-200">
                           {app}
                         </span>
                       ))}
                     </div>
 
-                    {/* Specs Table */}
-                    <div className="mt-4 p-3 rounded-xl bg-slate-50 border border-slate-200 space-y-2">
+                    {/* Technical Specification Matrix */}
+                    <div className="mt-4 p-3 rounded-lg bg-slate-50 border border-slate-200 space-y-2">
                       <div className="text-[10px] font-bold uppercase text-slate-500 font-mono">
-                        Key Specifications
+                        Technical Specifications & Load Ratings
                       </div>
                       <div className="divide-y divide-slate-200 text-xs font-mono">
                         {Object.entries(selectedProduct.specs).slice(0, 5).map(([k, v]) => (
                           <div key={k} className="py-1 flex justify-between">
-                            <span className="text-slate-500 font-medium">{k}:</span>
-                            <span className="font-bold text-slate-900 font-mono">{v}</span>
+                            <span className="text-slate-500">{k}:</span>
+                            <span className="font-bold text-slate-900">{v}</span>
                           </div>
                         ))}
                       </div>
                     </div>
                   </div>
 
-                  {/* Actions */}
+                  {/* RFQ Order Block */}
                   <div className="space-y-3 pt-3 border-t border-slate-200">
-                    <div className="flex items-center gap-3">
-                      <span className="text-xs font-bold uppercase text-slate-700 font-mono">Quantity:</span>
-                      <div className="flex items-center bg-slate-100 rounded-lg p-1 border border-slate-200">
+                    <div className="flex items-center justify-between">
+                      <span className="text-xs font-bold uppercase text-slate-700 font-mono">Order Units:</span>
+                      <div className="flex items-center bg-slate-100 rounded-lg p-0.5 border border-slate-200">
                         <button
                           onClick={() => setModalQuantity(Math.max(1, modalQuantity - 1))}
-                          className="px-2 py-0.5 text-slate-600 font-bold"
+                          className="px-2.5 py-0.5 text-slate-700 font-bold hover:bg-slate-200 rounded"
                         >
                           -
                         </button>
-                        <span className="w-8 text-center text-xs font-black font-mono">
+                        <span className="w-8 text-center text-xs font-bold font-mono">
                           {modalQuantity}
                         </span>
                         <button
                           onClick={() => setModalQuantity(modalQuantity + 1)}
-                          className="px-2 py-0.5 text-slate-600 font-bold"
+                          className="px-2.5 py-0.5 text-slate-700 font-bold hover:bg-slate-200 rounded"
                         >
                           +
                         </button>
                       </div>
                     </div>
 
-                    <div className="grid grid-cols-2 gap-3 font-mono">
+                    <div className="grid grid-cols-2 gap-2 font-mono">
                       <button
                         onClick={() => {
                           addToEnquiryCart(selectedProduct, modalQuantity);
                           setSelectedProduct(null);
                         }}
-                        className="py-3 px-4 rounded-xl bg-blue-600 hover:bg-blue-700 text-white font-black text-xs uppercase tracking-wider flex items-center justify-center gap-2 shadow-md"
+                        className="py-2.5 px-3 rounded-lg bg-blue-700 hover:bg-blue-800 text-white font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-1.5 shadow-sm transition-colors"
                       >
-                        <FileText className="w-4 h-4" />
-                        <span>Add to Enquiry Cart</span>
+                        <FileText className="w-3.5 h-3.5" />
+                        <span>Add to RFQ</span>
                       </button>
 
                       <button
@@ -501,10 +543,10 @@ export const EquipmentPage: React.FC = () => {
                           setSelectedProduct(null);
                           setIsEnquiryCartOpen(true);
                         }}
-                        className="py-3 px-4 rounded-xl bg-slate-900 hover:bg-slate-800 text-white font-black text-xs uppercase tracking-wider flex items-center justify-center gap-2 shadow-md"
+                        className="py-2.5 px-3 rounded-lg bg-slate-900 hover:bg-slate-800 text-white font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-1.5 shadow-sm transition-colors"
                       >
-                        <Send className="w-4 h-4 text-blue-400" />
-                        <span>Request Quotation</span>
+                        <Send className="w-3.5 h-3.5 text-blue-400" />
+                        <span>Request Quote</span>
                       </button>
                     </div>
                   </div>
