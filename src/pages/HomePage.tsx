@@ -19,6 +19,7 @@ import {
   Users
 } from 'lucide-react';
 import { MarqueeStrip } from '../components/common/MarqueeStrip';
+import { VaultContactFormSection } from '../components/home/VaultContactFormSection';
 import { OrangeDirectorySection } from '../components/home/OrangeDirectorySection';
 import { SEO } from '../components/common/SEO';
 
@@ -108,28 +109,8 @@ const CORE_PILLARS = [
 ];
 
 export const HomePage: React.FC = () => {
-  const { navigateTo, showToast } = useApp();
-
+  const { navigateTo } = useApp();
   const [visionTab, setVisionTab] = useState<'what' | 'why'>('what');
-
-  // Inquiry Form State
-  const [selectedCity, setSelectedCity] = useState('Delhi NCR');
-  const [inquiryName, setInquiryName] = useState('');
-  const [inquiryPhone, setInquiryPhone] = useState('');
-  const [inquiryEmail, setInquiryEmail] = useState('');
-  const [inquirySqft, setInquirySqft] = useState('5,000 - 10,000 sq.ft');
-
-  const handleInquirySubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (!inquiryName || !inquiryPhone) {
-      showToast('Please provide your name and contact phone', 'error');
-      return;
-    }
-    showToast('Consultation request received! Our Commercial Outfitting Director will contact you.', 'success');
-    setInquiryName('');
-    setInquiryPhone('');
-    setInquiryEmail('');
-  };
 
   const scrollToAbout = () => {
     const el = document.getElementById('about');
@@ -548,115 +529,9 @@ export const HomePage: React.FC = () => {
       </section>
 
       {/* ========================================================================= */}
-      {/* SECTION 7: PROPOSAL & INTAKE DESK (FORM PAGE)                             */}
+      {/* SECTION 7: VAULT-STYLE SPLIT SCREEN INTAKE FORM                           */}
       {/* ========================================================================= */}
-      <section id="contact-form" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 border-b border-white/5">
-        <div className="bg-gradient-to-br from-[#0D1118] via-[#121722] to-[#090C10] border border-white/10 rounded-3xl p-8 sm:p-12 md:p-14 shadow-2xl relative overflow-hidden">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
-            <div className="lg:col-span-6 space-y-5">
-              <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-white/5 border border-[#D26539]/30 text-xs font-mono text-[#D26539] tracking-widest uppercase">
-                <Building2 className="w-3.5 h-3.5" />
-                <span>Pan-India Commercial Expansion</span>
-              </div>
-
-              <h2 className="font-satoshi text-2xl sm:text-4xl lg:text-[38px] font-extrabold uppercase text-white tracking-tight">
-                OUTFIT YOUR <span className="text-[#D26539]">SANCTUARY</span>
-              </h2>
-
-              <p className="text-xs sm:text-sm text-slate-300 font-manrope leading-relaxed">
-                Connect with our Senior Commercial Outfitting Directorate. We provide customized 3D CAD space layouts, imported equipment procurement, flooring acoustics, and complete gym commissioning.
-              </p>
-
-              <div className="space-y-2.5 font-mono text-xs text-slate-300 pt-1">
-                <div className="flex items-center gap-2">
-                  <CheckCircle2 className="w-3.5 h-3.5 text-[#D26539]" />
-                  <span>Direct Factory Procurement with 18% GST Input Tax Credit</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <CheckCircle2 className="w-3.5 h-3.5 text-[#D26539]" />
-                  <span>Turnkey Architectural CAD Layouts within 48 Hours</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <CheckCircle2 className="w-3.5 h-3.5 text-[#D26539]" />
-                  <span>Certified Trainer & Operational Leadership Recruitment</span>
-                </div>
-              </div>
-            </div>
-
-            {/* Right Consultation Form */}
-            <div className="lg:col-span-6 bg-[#090C10] border border-white/10 rounded-2xl p-7 space-y-4 shadow-xl">
-              <h3 className="font-satoshi text-lg sm:text-xl font-bold text-white uppercase">
-                Request Outfitting Proposal
-              </h3>
-
-              <form onSubmit={handleInquirySubmit} className="space-y-3.5">
-                <div>
-                  <label className="text-xs font-mono text-slate-400 block mb-1">Full Name *</label>
-                  <input
-                    type="text"
-                    required
-                    value={inquiryName}
-                    onChange={(e) => setInquiryName(e.target.value)}
-                    placeholder="Enter your name"
-                    className="w-full bg-[#0D1118] border border-white/10 rounded-xl px-4 py-2.5 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-[#D26539]"
-                  />
-                </div>
-
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
-                  <div>
-                    <label className="text-xs font-mono text-slate-400 block mb-1">Mobile Number *</label>
-                    <input
-                      type="tel"
-                      required
-                      value={inquiryPhone}
-                      onChange={(e) => setInquiryPhone(e.target.value)}
-                      placeholder="+91 98123 45678"
-                      className="w-full bg-[#0D1118] border border-white/10 rounded-xl px-4 py-2.5 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-[#D26539]"
-                    />
-                  </div>
-                  <div>
-                    <label className="text-xs font-mono text-slate-400 block mb-1">City / Region *</label>
-                    <select
-                      value={selectedCity}
-                      onChange={(e) => setSelectedCity(e.target.value)}
-                      className="w-full bg-[#0D1118] border border-white/10 rounded-xl px-4 py-2.5 text-xs text-white focus:outline-none focus:border-[#D26539]"
-                    >
-                      <option value="Delhi NCR">Delhi NCR</option>
-                      <option value="Mumbai & MMR">Mumbai & MMR</option>
-                      <option value="Bengaluru">Bengaluru</option>
-                      <option value="Hyderabad">Hyderabad</option>
-                      <option value="Punjab">Punjab</option>
-                      <option value="Gujarat">Gujarat</option>
-                      <option value="Other Pan-India">Other Pan-India</option>
-                    </select>
-                  </div>
-                </div>
-
-                <div>
-                  <label className="text-xs font-mono text-slate-400 block mb-1">Facility Square Footage</label>
-                  <select
-                    value={inquirySqft}
-                    onChange={(e) => setInquirySqft(e.target.value)}
-                    className="w-full bg-[#0D1118] border border-white/10 rounded-xl px-4 py-2.5 text-xs text-white focus:outline-none focus:border-[#D26539]"
-                  >
-                    <option value="Below 3,000 sq.ft (Boutique / Studio)">Below 3,000 sq.ft (Boutique / Studio)</option>
-                    <option value="3,000 - 6,000 sq.ft (Commercial Club)">3,000 - 6,000 sq.ft (Commercial Club)</option>
-                    <option value="6,000 - 15,000 sq.ft (Mega Health Center)">6,000 - 15,000 sq.ft (Mega Health Center)</option>
-                    <option value="15,000+ sq.ft (Athletic Sanctuary Complex)">15,000+ sq.ft (Athletic Sanctuary Complex)</option>
-                  </select>
-                </div>
-
-                <button
-                  type="submit"
-                  className="btn-vault w-full py-3 text-xs uppercase tracking-wider font-bold shadow-xl mt-1.5 cursor-pointer"
-                >
-                  Submit Outfitting Request
-                </button>
-              </form>
-            </div>
-          </div>
-        </div>
-      </section>
+      <VaultContactFormSection />
 
       {/* ========================================================================= */}
       {/* SECTION 8: FULL ORANGE NUMBERED DIRECTORY (AT LAST JUST ABOVE FOOTER)     */}
