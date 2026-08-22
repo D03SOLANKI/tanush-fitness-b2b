@@ -3,7 +3,20 @@ export * from '../modules/equipment-marketplace/types';
 export * from '../modules/manpower-hiring/types';
 export * from '../modules/business-growth-services/types';
 
-export type PageType = 'home' | 'about' | 'equipment' | 'manpower' | 'services' | 'contact' | 'admin';
+export type PageType =
+  | 'home'
+  | 'membership-benefit'
+  | 'training-facilities'
+  | 'clubs'
+  | 'franchise'
+  | 'blogs'
+  | 'contact'
+  | 'tnc'
+  | 'about'
+  | 'equipment'
+  | 'manpower'
+  | 'services'
+  | 'admin';
 
 export interface FilterState {
   category: string;

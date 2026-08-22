@@ -1,15 +1,16 @@
 import React from 'react';
 import { AppProvider, useApp } from './context/AppContext';
-import { Navbar } from './components/common/Navbar';
-import { Footer } from './components/common/Footer';
-import { EnquiryCartDrawer } from './components/cart/EnquiryCartDrawer';
+import { VaultNavbar } from './components/vault/VaultNavbar';
+import { VaultFooter } from './components/vault/VaultFooter';
 import { Toast } from './components/common/Toast';
-import { HomePage } from './pages/HomePage';
-import { AboutPage } from './pages/AboutPage';
-import { EquipmentPage } from './pages/EquipmentPage';
-import { ManpowerPage } from './pages/ManpowerPage';
-import { ServicesPage } from './pages/ServicesPage';
-import { ContactPage } from './pages/ContactPage';
+import { VaultHomePage } from './pages/VaultHomePage';
+import { VaultMembershipPage } from './pages/VaultMembershipPage';
+import { VaultTrainingPage } from './pages/VaultTrainingPage';
+import { VaultClubsPage } from './pages/VaultClubsPage';
+import { VaultFranchisePage } from './pages/VaultFranchisePage';
+import { VaultBlogsPage } from './pages/VaultBlogsPage';
+import { VaultContactPage } from './pages/VaultContactPage';
+import { VaultTncPage } from './pages/VaultTncPage';
 import { AdminPage } from './pages/AdminPage';
 import { AdminHeader } from './components/admin/AdminHeader';
 
@@ -19,32 +20,40 @@ const MainContent: React.FC = () => {
   const renderPage = () => {
     switch (currentPage) {
       case 'home':
-        return <HomePage />;
-      case 'about':
-        return <AboutPage />;
-      case 'equipment':
-        return <EquipmentPage />;
-      case 'manpower':
-        return <ManpowerPage />;
+        return <VaultHomePage />;
+      case 'membership-benefit':
       case 'services':
-        return <ServicesPage />;
+        return <VaultMembershipPage />;
+      case 'training-facilities':
+      case 'equipment':
+      case 'manpower':
+        return <VaultTrainingPage />;
+      case 'clubs':
+        return <VaultClubsPage />;
+      case 'franchise':
+        return <VaultFranchisePage />;
+      case 'blogs':
+        return <VaultBlogsPage />;
       case 'contact':
-        return <ContactPage />;
+        return <VaultContactPage />;
+      case 'tnc':
+        return <VaultTncPage />;
+      case 'about':
+        return <VaultHomePage />;
       case 'admin':
         return <AdminPage />;
       default:
-        return <HomePage />;
+        return <VaultHomePage />;
     }
   };
 
   const isAdmin = currentPage === 'admin';
 
   return (
-    <div className="min-h-screen bg-[#090C10] text-[#E2E8F0] flex flex-col justify-between selection:bg-[#C5A880] selection:text-[#090C10] font-sans antialiased luxury-noise">
-      {isAdmin ? <AdminHeader /> : <Navbar />}
+    <div className="min-h-screen bg-[#090C10] text-[#E2E8F0] flex flex-col justify-between selection:bg-[#D26539] selection:text-white font-sans antialiased luxury-noise">
+      {isAdmin ? <AdminHeader /> : <VaultNavbar />}
       <div className="flex-1">{renderPage()}</div>
-      {!isAdmin && <Footer />}
-      <EnquiryCartDrawer />
+      {!isAdmin && <VaultFooter />}
       <Toast />
     </div>
   );

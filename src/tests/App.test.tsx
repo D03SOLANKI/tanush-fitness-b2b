@@ -4,10 +4,10 @@ import { render, screen } from '@testing-library/react';
 import App from '../App';
 import { normalizeUserList } from '../context/AppContext';
 
-describe('Tanush Fitness B2B Platform Tests', () => {
-  it('renders the B2B marketplace brand heading', () => {
+describe('Vault by Virat Kohli Website Tests', () => {
+  it('renders the Vault brand heading and identity', () => {
     render(<App />);
-    const headings = screen.getAllByText(/TANUSH/i);
+    const headings = screen.getAllByText(/VAULT/i);
     expect(headings.length).toBeGreaterThan(0);
   });
 
