@@ -212,8 +212,8 @@ export const HomePage: React.FC = () => {
           </div>
         </div>
 
-        {/* 🎯 4. CTA BUTTON & 5. CIRCULAR DOWN ARROW (WITH PROPER VIEWPORT CLEARANCE & SPACING) */}
-        <div className="flex flex-col items-center justify-center gap-6 sm:gap-7 shrink-0 z-10">
+        {/* 🎯 4. CTA BUTTON (CENTERED OUTLINED VAULT STYLE) */}
+        <div className="flex flex-col items-center justify-center shrink-0 z-10">
           <button
             type="button"
             onClick={() => navigateTo('equipment')}
@@ -221,16 +221,6 @@ export const HomePage: React.FC = () => {
           >
             <span>JOIN TANUSH</span>
             <ArrowUpRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-          </button>
-
-          {/* Circular Down Arrow Button with Generous Spacing */}
-          <button
-            type="button"
-            onClick={scrollToAbout}
-            className="w-8 h-8 sm:w-9 sm:h-9 rounded-full border border-white/30 flex items-center justify-center text-white/80 hover:text-white hover:border-white transition-all duration-300 hover:scale-110 animate-bounce cursor-pointer"
-            aria-label="Scroll to Next Section"
-          >
-            <ArrowDown className="w-3.5 h-3.5" />
           </button>
         </div>
       </section>
