@@ -18,7 +18,9 @@ import {
   HeartPulse,
   Award,
   Zap,
-  Activity
+  Activity,
+  Briefcase,
+  Users
 } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { MarqueeStrip } from '../components/common/MarqueeStrip';
@@ -108,33 +110,57 @@ const FACILITY_ZONES = [
   },
 ];
 
-const SHOWROOM_CLUBS = [
+const CORE_PILLARS = [
   {
-    id: 'gk1',
-    name: 'Greater Kailash 1 Sanctuary',
-    address: 'Pacific Sports Complex, National Park, Lajpat Nagar, Delhi - 110048',
-    phone: '+91 95990 02518',
-    email: 'gk1@tanushfitness.com',
-    mapUrl: 'https://maps.google.com/?q=Pacific+Sports+Complex+Lajpat+Nagar+Delhi',
-    image: 'https://images.unsplash.com/photo-1540497077202-7c8a3999166f?auto=format&fit=crop&w=800&q=80',
-  },
-  {
-    id: 'rajouri',
-    name: 'Rajouri Garden Flagship',
-    address: 'R Cube Monad Mall, Shivaji Place, New Delhi - 110027',
-    phone: '+91 92202 71173',
-    email: 'rajourigarden@tanushfitness.com',
-    mapUrl: 'https://maps.google.com/?q=R+Cube+Monad+Mall+Rajouri+Garden+Delhi',
+    id: 'equipment',
+    number: '01',
+    category: 'HARDWARE',
+    title: 'Commercial Gym Equipment',
+    tagline: 'Complete professional gym equipment supply for commercial fitness facilities',
+    description: 'Direct-from-factory ISO 9001 certified 11-gauge laser-cut power racks, selectorized pin-stack machinery, plate-loaded strength stations, and commercial urethane free-weights.',
     image: 'https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=800&q=80',
+    icon: Dumbbell,
+    page: 'equipment' as const,
+    btnText: 'Explore Equipment Catalog',
+    points: [
+      'Direct Factory Wholesale Pricing',
+      '18% GST Input Tax Credit (ITC) Invoices',
+      '10-Year Structural Frame Guarantee'
+    ],
   },
   {
-    id: 'pitampura',
-    name: 'Pitampura Experience Hub',
-    address: 'PP City Center Mall, Pitampura, Delhi - 110034',
-    phone: '+91 70111 54062',
-    email: 'pitampura@tanushfitness.com',
-    mapUrl: 'https://maps.google.com/?q=PP+City+Center+Mall+Pitampura+Delhi',
-    image: 'https://images.unsplash.com/photo-1571902943202-507ec2618e8f?auto=format&fit=crop&w=800&q=80',
+    id: 'manpower',
+    number: '02',
+    category: 'RECRUITMENT',
+    title: 'Manpower Services',
+    tagline: 'Certified trainers, gym managers, and fitness professionals for commercial gyms',
+    description: 'Verified recruitment and placement ecosystem connecting commercial health clubs with NASM, CSCS, ACE, and K11 accredited master personal trainers and floor operations leadership.',
+    image: 'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?auto=format&fit=crop&w=800&q=80',
+    icon: Users,
+    page: 'manpower' as const,
+    btnText: 'Open Recruitment Portal',
+    points: [
+      'Pre-Screened & Certified Trainer Profiles',
+      'Operations Managers & Floor Supervisors',
+      'Direct Placement & Applicant Tracker'
+    ],
+  },
+  {
+    id: 'services',
+    number: '03',
+    category: 'OPERATIONS',
+    title: 'Turnkey Gym Setup',
+    tagline: 'End-to-end gym setup including planning, equipment, installation, and project execution',
+    description: 'Complete 360° architectural spatial floor planning, high-density acoustic rubber isolation flooring, biometric RFID access turnstiles, and pre-sales digital lead acquisition funnels.',
+    image: 'https://images.unsplash.com/photo-1540497077202-7c8a3999166f?auto=format&fit=crop&w=800&q=80',
+    icon: Briefcase,
+    page: 'services' as const,
+    btnText: 'Explore Turnkey Solutions',
+    points: [
+      '3D CAD Spatial Floor Schematics',
+      'Acoustic Flooring & Access Turnstiles',
+      'End-to-End Installation & Launch Support'
+    ],
   },
 ];
 
@@ -232,10 +258,10 @@ export const HomePage: React.FC = () => {
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
             <button
               type="button"
-              onClick={() => navigateTo('clubs')}
+              onClick={() => navigateTo('services')}
               className="btn-vault w-full sm:w-auto px-8 py-3.5 flex items-center justify-center gap-2 group"
             >
-              <span>Explore Showrooms</span>
+              <span>Explore Core Services</span>
               <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
             </button>
 
@@ -567,83 +593,112 @@ export const HomePage: React.FC = () => {
       </section>
 
       {/* ========================================================================= */}
-      {/* SECTION 6: EXPLORE OUR CLUBS & SHOWROOMS PREVIEW                         */}
+      {/* SECTION 6: THREE PILLARS OF GYM OUTFITTING (CORE SERVICES SECTION)       */}
       {/* ========================================================================= */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 border-b border-white/5">
         <div className="space-y-12">
+          {/* Section Header with exact heading from previous website */}
           <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-6">
             <div className="space-y-2">
               <div className="text-[11px] font-mono tracking-[0.3em] text-[#C5A880] uppercase">
-                SHOWROOM DIRECTORY
+                CORE PROCUREMENT VERTICALS
               </div>
               <h2 className="font-syne text-3xl sm:text-5xl font-extrabold uppercase text-white tracking-tight">
-                EXPLORE OUR SHOWROOMS
+                THREE PILLARS OF GYM OUTFITTING
               </h2>
+              <p className="text-sm sm:text-base text-slate-400 font-sans max-w-2xl mt-1 leading-relaxed">
+                Direct access to wholesale machinery catalog, verified manpower recruitment, and end-to-end turnkey facility planning.
+              </p>
             </div>
             <button
               type="button"
-              onClick={() => navigateTo('clubs')}
-              className="btn-vault flex items-center gap-2"
+              onClick={() => navigateTo('services')}
+              className="btn-vault flex items-center gap-2 shrink-0"
             >
-              <span>Show All Hubs (Pan-India)</span>
+              <span>Explore All Solutions</span>
               <ArrowRight className="w-4 h-4" />
             </button>
           </div>
 
+          {/* 3 Core Pillar Cards */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {SHOWROOM_CLUBS.map((club) => (
-              <div
-                key={club.id}
-                className="bg-[#0D1118] border border-white/10 rounded-2xl overflow-hidden luxury-card flex flex-col justify-between group"
-              >
-                <div>
-                  <div className="relative h-56 overflow-hidden">
-                    <img
-                      src={club.image}
-                      alt={club.name}
-                      className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700 opacity-85 group-hover:opacity-100"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-[#0D1118] via-transparent to-black/30" />
-                  </div>
+            {CORE_PILLARS.map((pillar) => {
+              const IconComp = pillar.icon;
+              return (
+                <div
+                  key={pillar.id}
+                  className="bg-[#0D1118] border border-white/10 rounded-2xl overflow-hidden luxury-card flex flex-col justify-between group"
+                >
+                  <div>
+                    {/* Visual Container */}
+                    <div
+                      className="relative h-60 overflow-hidden cursor-pointer"
+                      onClick={() => navigateTo(pillar.page)}
+                    >
+                      <img
+                        src={pillar.image}
+                        alt={pillar.title}
+                        className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700 opacity-85 group-hover:opacity-100"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-[#0D1118] via-transparent to-black/40" />
 
-                  <div className="p-6 space-y-4">
-                    <h3 className="font-syne text-lg font-bold text-white group-hover:text-[#C5A880] transition uppercase">
-                      {club.name}
-                    </h3>
-
-                    <div className="space-y-2 text-xs font-mono text-slate-400">
-                      <div className="flex items-start gap-2.5">
-                        <MapPin className="w-4 h-4 text-[#C5A880] shrink-0 mt-0.5" />
-                        <span className="font-sans text-slate-300">{club.address}</span>
+                      {/* Top Pillar Number Badge */}
+                      <div className="absolute top-4 left-4">
+                        <span className="px-3 py-1 rounded-full bg-[#090C10]/90 backdrop-blur-md border border-[#C5A880]/30 text-[10px] font-mono text-[#C5A880] font-bold uppercase tracking-wider">
+                          PILLAR {pillar.number} // {pillar.category}
+                        </span>
                       </div>
-                      <div className="flex items-center gap-2.5">
-                        <Phone className="w-4 h-4 text-[#C5A880] shrink-0" />
-                        <span>{club.phone}</span>
+
+                      {/* Top Right Icon */}
+                      <div className="absolute top-4 right-4 w-9 h-9 rounded-full bg-[#090C10]/80 backdrop-blur-md border border-white/10 flex items-center justify-center text-[#C5A880]">
+                        <IconComp className="w-4 h-4" />
+                      </div>
+                    </div>
+
+                    {/* Card Body */}
+                    <div className="p-6 space-y-4">
+                      <div>
+                        <h3
+                          onClick={() => navigateTo(pillar.page)}
+                          className="font-syne text-xl font-bold text-white group-hover:text-[#C5A880] transition uppercase cursor-pointer"
+                        >
+                          {pillar.title}
+                        </h3>
+                        <p className="text-xs font-mono text-[#C5A880] mt-1">
+                          {pillar.tagline}
+                        </p>
+                      </div>
+
+                      <p className="text-xs sm:text-sm text-slate-300 font-sans leading-relaxed">
+                        {pillar.description}
+                      </p>
+
+                      {/* Bullet Checkpoints */}
+                      <div className="space-y-2 pt-3 border-t border-white/5 font-mono text-xs text-slate-300">
+                        {pillar.points.map((pt, ptIdx) => (
+                          <div key={ptIdx} className="flex items-center gap-2.5">
+                            <CheckCircle2 className="w-3.5 h-3.5 text-[#C5A880] shrink-0" />
+                            <span>{pt}</span>
+                          </div>
+                        ))}
                       </div>
                     </div>
                   </div>
-                </div>
 
-                <div className="p-6 pt-0 flex items-center gap-3">
-                  <a
-                    href={club.mapUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="btn-vault flex-1 text-center py-2 text-xs flex items-center justify-center gap-1.5"
-                  >
-                    <Navigation className="w-3.5 h-3.5" />
-                    <span>Directions</span>
-                  </a>
-                  <button
-                    type="button"
-                    onClick={() => navigateTo('contact')}
-                    className="btn-vault-outline py-2 px-3 text-xs"
-                  >
-                    Book Tour
-                  </button>
+                  {/* Card CTA */}
+                  <div className="p-6 pt-0">
+                    <button
+                      type="button"
+                      onClick={() => navigateTo(pillar.page)}
+                      className="btn-vault w-full py-3 text-xs flex items-center justify-center gap-2 group/btn uppercase tracking-wider"
+                    >
+                      <span>{pillar.btnText}</span>
+                      <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover/btn:translate-x-1" />
+                    </button>
+                  </div>
                 </div>
-              </div>
-            ))}
+              );
+            })}
           </div>
         </div>
       </section>
