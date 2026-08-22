@@ -6,7 +6,7 @@ import { Phone, Mail, MessageSquare, ShieldCheck, MapPin } from 'lucide-react';
 
 export const ContactPage: React.FC = () => {
   return (
-    <main className="min-h-screen bg-[#26452D] text-[#ECE6DB] overflow-hidden pt-8 pb-0">
+    <main className="min-h-screen bg-[#090C10] text-[#ECE6DB] overflow-hidden pt-8 pb-0">
       <SEO
         title="VIP Commercial Outfitting Desk | Tanush Fitness"
         description="Direct manufacturer consultation, 3D CAD space proposals, wholesale machinery quotations, and flagship showroom visits."
@@ -52,7 +52,7 @@ export const ContactPage: React.FC = () => {
       {/* Showroom & Logistics Hubs */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 border-t border-white/5">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          <div className="bg-[#1E3823] border border-white/10 rounded-2xl p-7 space-y-3">
+          <div className="bg-[#0D1118] border border-white/10 rounded-2xl p-7 space-y-3">
             <div className="flex items-center gap-2 text-[#D26539] font-mono text-xs uppercase tracking-wider">
               <MapPin className="w-4 h-4" />
               <span>National Showroom</span>
@@ -65,7 +65,7 @@ export const ContactPage: React.FC = () => {
             </p>
           </div>
 
-          <div className="bg-[#1E3823] border border-white/10 rounded-2xl p-7 space-y-3">
+          <div className="bg-[#0D1118] border border-white/10 rounded-2xl p-7 space-y-3">
             <div className="flex items-center gap-2 text-[#D26539] font-mono text-xs uppercase tracking-wider">
               <ShieldCheck className="w-4 h-4" />
               <span>Manufacturing Works</span>
@@ -78,7 +78,7 @@ export const ContactPage: React.FC = () => {
             </p>
           </div>
 
-          <div className="bg-[#1E3823] border border-white/10 rounded-2xl p-7 space-y-3">
+          <div className="bg-[#0D1118] border border-white/10 rounded-2xl p-7 space-y-3">
             <div className="flex items-center gap-2 text-[#D26539] font-mono text-xs uppercase tracking-wider">
               <Mail className="w-4 h-4" />
               <span>Official Desk</span>

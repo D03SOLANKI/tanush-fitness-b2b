@@ -138,7 +138,7 @@ export const ManpowerPage: React.FC = () => {
   });
 
   return (
-    <main className="pt-24 pb-20 bg-[#26452D] min-h-screen text-[#E2E8F0] ">
+    <main className="pt-24 pb-20 bg-[#090C10] min-h-screen text-[#E2E8F0] ">
       <SEO
         title="Master Coaches & Staffing Sanctuary | Tanush Fitness B2B"
         description="Recruit NASM/CSCS certified personal trainers, master coaches, gym directors, and front desk executives nationwide."
@@ -163,7 +163,7 @@ export const ManpowerPage: React.FC = () => {
           </div>
 
           {/* Role Switcher Tabs */}
-          <div className="flex items-center bg-[#1E3823] p-1.5 rounded-full border border-white/10 shrink-0">
+          <div className="flex items-center bg-[#0D1118] p-1.5 rounded-full border border-white/10 shrink-0">
             <button
               type="button"
               onClick={() => setActiveUserRole('candidate')}
@@ -206,7 +206,7 @@ export const ManpowerPage: React.FC = () => {
                   placeholder="Search master trainer, club manager, Delhi, Bengaluru..."
                   value={searchQuery}
                   onChange={e => setSearchQuery(e.target.value)}
-                  className="w-full bg-[#1E3823] border border-white/10 rounded-full pl-10 pr-4 py-2.5 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-[#D26539]"
+                  className="w-full bg-[#0D1118] border border-white/10 rounded-full pl-10 pr-4 py-2.5 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-[#D26539]"
                 />
               </div>
 
@@ -219,7 +219,7 @@ export const ManpowerPage: React.FC = () => {
                     className={`px-4 py-2 rounded-full text-xs font-mono uppercase tracking-wider transition whitespace-nowrap ${
                       selectedCategory === cat
                         ? 'bg-[#D26539] text-[#090C10] font-bold'
-                        : 'bg-[#1E3823] text-slate-400 border border-white/5 hover:border-white/20'
+                        : 'bg-[#0D1118] text-slate-400 border border-white/5 hover:border-white/20'
                     }`}
                   >
                     {cat === 'all' ? 'All Roles' : cat}
@@ -233,7 +233,7 @@ export const ManpowerPage: React.FC = () => {
               {filteredJobs.map((job) => (
                 <div
                   key={job.id}
-                  className="bg-[#1E3823] border border-white/10 rounded-2xl p-6 luxury-card flex flex-col justify-between space-y-5"
+                  className="bg-[#0D1118] border border-white/10 rounded-2xl p-6 luxury-card flex flex-col justify-between space-y-5"
                 >
                   <div className="space-y-3">
                     <div className="flex items-center justify-between">
@@ -283,7 +283,7 @@ export const ManpowerPage: React.FC = () => {
         ) : (
           /* Employer View */
           <div className="space-y-8">
-            <div className="bg-[#1E3823] border border-white/10 rounded-3xl p-8 flex flex-col md:flex-row items-center justify-between gap-6 ">
+            <div className="bg-[#0D1118] border border-white/10 rounded-3xl p-8 flex flex-col md:flex-row items-center justify-between gap-6 ">
               <div className="space-y-2">
                 <span className="text-xs font-mono text-[#D26539] uppercase tracking-widest block">
                   COMMERCIAL CLUB TALENT ACQUISITION
@@ -322,7 +322,7 @@ export const ManpowerPage: React.FC = () => {
               initial={{ scale: 0.95, y: 20 }}
               animate={{ scale: 1, y: 0 }}
               exit={{ scale: 0.95, y: 20 }}
-              className="bg-[#1E3823] border border-white/10 rounded-3xl max-w-lg w-full p-6 sm:p-8 space-y-6 "
+              className="bg-[#0D1118] border border-white/10 rounded-3xl max-w-lg w-full p-6 sm:p-8 space-y-6 "
             >
               <div className="flex items-start justify-between border-b border-white/10 pb-4">
                 <div>
@@ -350,7 +350,7 @@ export const ManpowerPage: React.FC = () => {
                     required
                     value={candidateForm.fullName}
                     onChange={e => setCandidateForm({ ...candidateForm, fullName: e.target.value })}
-                    className="w-full bg-[#26452D] border border-white/10 rounded-xl px-4 py-2.5 text-sm text-white placeholder-slate-600 focus:outline-none focus:border-[#D26539]"
+                    className="w-full bg-[#090C10] border border-white/10 rounded-xl px-4 py-2.5 text-sm text-white placeholder-slate-600 focus:outline-none focus:border-[#D26539]"
                   />
                 </div>
 
@@ -362,7 +362,7 @@ export const ManpowerPage: React.FC = () => {
                       required
                       value={candidateForm.mobile}
                       onChange={e => setCandidateForm({ ...candidateForm, mobile: e.target.value })}
-                      className="w-full bg-[#26452D] border border-white/10 rounded-xl px-4 py-2.5 text-sm text-white placeholder-slate-600 focus:outline-none focus:border-[#D26539]"
+                      className="w-full bg-[#090C10] border border-white/10 rounded-xl px-4 py-2.5 text-sm text-white placeholder-slate-600 focus:outline-none focus:border-[#D26539]"
                     />
                   </div>
                   <div>
@@ -372,7 +372,7 @@ export const ManpowerPage: React.FC = () => {
                       placeholder="Delhi NCR"
                       value={candidateForm.preferredCity}
                       onChange={e => setCandidateForm({ ...candidateForm, preferredCity: e.target.value })}
-                      className="w-full bg-[#26452D] border border-white/10 rounded-xl px-4 py-2.5 text-sm text-white placeholder-slate-600 focus:outline-none focus:border-[#D26539]"
+                      className="w-full bg-[#090C10] border border-white/10 rounded-xl px-4 py-2.5 text-sm text-white placeholder-slate-600 focus:outline-none focus:border-[#D26539]"
                     />
                   </div>
                 </div>
@@ -383,7 +383,7 @@ export const ManpowerPage: React.FC = () => {
                     type="text"
                     value={candidateForm.certifications}
                     onChange={e => setCandidateForm({ ...candidateForm, certifications: e.target.value })}
-                    className="w-full bg-[#26452D] border border-white/10 rounded-xl px-4 py-2.5 text-sm text-white placeholder-slate-600 focus:outline-none focus:border-[#D26539]"
+                    className="w-full bg-[#090C10] border border-white/10 rounded-xl px-4 py-2.5 text-sm text-white placeholder-slate-600 focus:outline-none focus:border-[#D26539]"
                   />
                 </div>
 
@@ -412,7 +412,7 @@ export const ManpowerPage: React.FC = () => {
               initial={{ scale: 0.95, y: 20 }}
               animate={{ scale: 1, y: 0 }}
               exit={{ scale: 0.95, y: 20 }}
-              className="bg-[#1E3823] border border-white/10 rounded-3xl max-w-lg w-full p-6 sm:p-8 space-y-6 "
+              className="bg-[#0D1118] border border-white/10 rounded-3xl max-w-lg w-full p-6 sm:p-8 space-y-6 "
             >
               <div className="flex items-start justify-between border-b border-white/10 pb-4">
                 <div>
@@ -441,7 +441,7 @@ export const ManpowerPage: React.FC = () => {
                     placeholder="Head Biomechanics Coach"
                     value={jobForm.title}
                     onChange={e => setJobForm({ ...jobForm, title: e.target.value })}
-                    className="w-full bg-[#26452D] border border-white/10 rounded-xl px-4 py-2.5 text-sm text-white placeholder-slate-600 focus:outline-none focus:border-[#D26539]"
+                    className="w-full bg-[#090C10] border border-white/10 rounded-xl px-4 py-2.5 text-sm text-white placeholder-slate-600 focus:outline-none focus:border-[#D26539]"
                   />
                 </div>
 
@@ -454,7 +454,7 @@ export const ManpowerPage: React.FC = () => {
                       placeholder="Empire Fitness"
                       value={jobForm.gymName}
                       onChange={e => setJobForm({ ...jobForm, gymName: e.target.value })}
-                      className="w-full bg-[#26452D] border border-white/10 rounded-xl px-4 py-2.5 text-sm text-white placeholder-slate-600 focus:outline-none focus:border-[#D26539]"
+                      className="w-full bg-[#090C10] border border-white/10 rounded-xl px-4 py-2.5 text-sm text-white placeholder-slate-600 focus:outline-none focus:border-[#D26539]"
                     />
                   </div>
                   <div>
@@ -465,7 +465,7 @@ export const ManpowerPage: React.FC = () => {
                       placeholder="Indiranagar, Bengaluru"
                       value={jobForm.location}
                       onChange={e => setJobForm({ ...jobForm, location: e.target.value })}
-                      className="w-full bg-[#26452D] border border-white/10 rounded-xl px-4 py-2.5 text-sm text-white placeholder-slate-600 focus:outline-none focus:border-[#D26539]"
+                      className="w-full bg-[#090C10] border border-white/10 rounded-xl px-4 py-2.5 text-sm text-white placeholder-slate-600 focus:outline-none focus:border-[#D26539]"
                     />
                   </div>
                 </div>
@@ -476,7 +476,7 @@ export const ManpowerPage: React.FC = () => {
                     <select
                       value={jobForm.category}
                       onChange={e => setJobForm({ ...jobForm, category: e.target.value as any })}
-                      className="w-full bg-[#26452D] border border-white/10 rounded-xl px-4 py-2.5 text-sm text-white focus:outline-none focus:border-[#D26539] uppercase font-mono"
+                      className="w-full bg-[#090C10] border border-white/10 rounded-xl px-4 py-2.5 text-sm text-white focus:outline-none focus:border-[#D26539] uppercase font-mono"
                     >
                       <option value="Personal Trainer">Personal Trainer</option>
                       <option value="Gym Trainer">Gym Trainer</option>
@@ -494,7 +494,7 @@ export const ManpowerPage: React.FC = () => {
                       placeholder="₹45,000 - ₹75,000 / month"
                       value={jobForm.salaryRange}
                       onChange={e => setJobForm({ ...jobForm, salaryRange: e.target.value })}
-                      className="w-full bg-[#26452D] border border-white/10 rounded-xl px-4 py-2.5 text-sm text-white placeholder-slate-600 focus:outline-none focus:border-[#D26539]"
+                      className="w-full bg-[#090C10] border border-white/10 rounded-xl px-4 py-2.5 text-sm text-white placeholder-slate-600 focus:outline-none focus:border-[#D26539]"
                     />
                   </div>
                 </div>
@@ -506,7 +506,7 @@ export const ManpowerPage: React.FC = () => {
                     placeholder="Describe role responsibilities, required certifications..."
                     value={jobForm.description}
                     onChange={e => setJobForm({ ...jobForm, description: e.target.value })}
-                    className="w-full bg-[#26452D] border border-white/10 rounded-xl p-3 text-sm text-white placeholder-slate-600 focus:outline-none focus:border-[#D26539]"
+                    className="w-full bg-[#090C10] border border-white/10 rounded-xl p-3 text-sm text-white placeholder-slate-600 focus:outline-none focus:border-[#D26539]"
                   />
                 </div>
 

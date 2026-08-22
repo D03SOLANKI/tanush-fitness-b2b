@@ -66,7 +66,7 @@ export const ServicesPage: React.FC = () => {
   };
 
   return (
-    <main className="pt-24 pb-20 bg-[#26452D] min-h-screen text-[#E2E8F0] ">
+    <main className="pt-24 pb-20 bg-[#090C10] min-h-screen text-[#E2E8F0] ">
       <SEO
         title="Turnkey Gym Architecture & Outfitting Services | Tanush Fitness"
         description="3D CAD space modeling, acoustic rubber flooring, digital access turnstiles, marketing launch funnels, and AMC facility maintenance."
@@ -114,11 +114,11 @@ export const ServicesPage: React.FC = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.4, delay: idx * 0.05 }}
-              className="bg-[#1E3823] border border-white/10 rounded-2xl overflow-hidden luxury-card flex flex-col justify-between group"
+              className="bg-[#0D1118] border border-white/10 rounded-2xl overflow-hidden luxury-card flex flex-col justify-between group"
             >
               <div>
                 {/* Visual Image */}
-                <div className="relative h-56 overflow-hidden bg-[#192E1D]">
+                <div className="relative h-56 overflow-hidden bg-[#05070A]">
                   <img
                     src={service.image}
                     alt={service.name}
@@ -126,7 +126,7 @@ export const ServicesPage: React.FC = () => {
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-[#0D1118] via-transparent to-black/30" />
                   {service.badge && (
-                    <span className="absolute top-4 left-4 px-3 py-1 rounded-full bg-[#26452D]/80  border border-white/10 text-[10px] font-mono text-[#D26539] uppercase tracking-wider font-bold">
+                    <span className="absolute top-4 left-4 px-3 py-1 rounded-full bg-[#090C10]/80  border border-white/10 text-[10px] font-mono text-[#D26539] uppercase tracking-wider font-bold">
                       {service.badge}
                     </span>
                   )}
@@ -189,7 +189,7 @@ export const ServicesPage: React.FC = () => {
               initial={{ scale: 0.95, y: 20 }}
               animate={{ scale: 1, y: 0 }}
               exit={{ scale: 0.95, y: 20 }}
-              className="bg-[#1E3823] border border-white/10 rounded-3xl max-w-xl w-full p-6 sm:p-8 space-y-6 "
+              className="bg-[#0D1118] border border-white/10 rounded-3xl max-w-xl w-full p-6 sm:p-8 space-y-6 "
             >
               <div className="flex items-start justify-between border-b border-white/10 pb-4">
                 <div>
@@ -218,7 +218,7 @@ export const ServicesPage: React.FC = () => {
                     placeholder="Sameer Kapoor"
                     value={formState.name}
                     onChange={e => setFormState({ ...formState, name: e.target.value })}
-                    className="w-full bg-[#26452D] border border-white/10 rounded-xl px-4 py-2.5 text-sm text-white placeholder-slate-600 focus:outline-none focus:border-[#D26539]"
+                    className="w-full bg-[#090C10] border border-white/10 rounded-xl px-4 py-2.5 text-sm text-white placeholder-slate-600 focus:outline-none focus:border-[#D26539]"
                   />
                 </div>
 
@@ -230,7 +230,7 @@ export const ServicesPage: React.FC = () => {
                     placeholder="Iron Sanctuary Club"
                     value={formState.gymName}
                     onChange={e => setFormState({ ...formState, gymName: e.target.value })}
-                    className="w-full bg-[#26452D] border border-white/10 rounded-xl px-4 py-2.5 text-sm text-white placeholder-slate-600 focus:outline-none focus:border-[#D26539]"
+                    className="w-full bg-[#090C10] border border-white/10 rounded-xl px-4 py-2.5 text-sm text-white placeholder-slate-600 focus:outline-none focus:border-[#D26539]"
                   />
                 </div>
 
@@ -243,7 +243,7 @@ export const ServicesPage: React.FC = () => {
                       placeholder="+91 98765 43210"
                       value={formState.mobile}
                       onChange={e => setFormState({ ...formState, mobile: e.target.value })}
-                      className="w-full bg-[#26452D] border border-white/10 rounded-xl px-4 py-2.5 text-sm text-white placeholder-slate-600 focus:outline-none focus:border-[#D26539]"
+                      className="w-full bg-[#090C10] border border-white/10 rounded-xl px-4 py-2.5 text-sm text-white placeholder-slate-600 focus:outline-none focus:border-[#D26539]"
                     />
                   </div>
                   <div>
@@ -253,7 +253,7 @@ export const ServicesPage: React.FC = () => {
                       placeholder="sameer@ironclub.in"
                       value={formState.email}
                       onChange={e => setFormState({ ...formState, email: e.target.value })}
-                      className="w-full bg-[#26452D] border border-white/10 rounded-xl px-4 py-2.5 text-sm text-white placeholder-slate-600 focus:outline-none focus:border-[#D26539]"
+                      className="w-full bg-[#090C10] border border-white/10 rounded-xl px-4 py-2.5 text-sm text-white placeholder-slate-600 focus:outline-none focus:border-[#D26539]"
                     />
                   </div>
                 </div>
@@ -265,7 +265,7 @@ export const ServicesPage: React.FC = () => {
                     placeholder="Tell us about your square footage, location, floor acoustic needs..."
                     value={formState.additionalRequirements}
                     onChange={e => setFormState({ ...formState, additionalRequirements: e.target.value })}
-                    className="w-full bg-[#26452D] border border-white/10 rounded-xl p-3 text-sm text-white placeholder-slate-600 focus:outline-none focus:border-[#D26539]"
+                    className="w-full bg-[#090C10] border border-white/10 rounded-xl p-3 text-sm text-white placeholder-slate-600 focus:outline-none focus:border-[#D26539]"
                   />
                 </div>
 

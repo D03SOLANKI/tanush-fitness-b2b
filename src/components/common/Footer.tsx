@@ -7,7 +7,7 @@ export const Footer: React.FC = () => {
   const { navigateTo } = useApp();
 
   return (
-    <footer className="bg-[#192E1D] text-[#E2E8F0] border-t border-white/5 relative overflow-hidden">
+    <footer className="bg-[#05070A] text-[#E2E8F0] border-t border-white/5 relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
           {/* Col 1 & 2: Brand & Sanctuary Vision */}

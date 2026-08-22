@@ -27,7 +27,7 @@ export const OrangeDirectorySection: React.FC = () => {
       {/* ========================================================================= */}
       {/* TOP BLACK UTILITY HEADER STRIP (LOCKED TO TOP)                            */}
       {/* ========================================================================= */}
-      <div className="bg-[#26452D] text-white py-3 sm:py-3.5 px-6 sm:px-12 flex items-center justify-between border-b border-white/10 shrink-0 z-20">
+      <div className="bg-[#090C10] text-white py-3 sm:py-3.5 px-6 sm:px-12 flex items-center justify-between border-b border-white/10 shrink-0 z-20">
         <div>
           <a
             href="mailto:Info@tanushfitness.com"
@@ -108,7 +108,7 @@ export const OrangeDirectorySection: React.FC = () => {
                 <span className="font-satoshi text-2xl sm:text-3xl md:text-4xl lg:text-[40px] font-extrabold uppercase text-[#090C10] group-hover:text-white group-hover:translate-x-2 transition-all duration-300 block leading-tight">
                   {item.title}
                 </span>
-                <div className="h-[1.5px] sm:h-[2px] bg-[#26452D] w-full mt-1 group-hover:bg-white transition-colors duration-300" />
+                <div className="h-[1.5px] sm:h-[2px] bg-[#090C10] w-full mt-1 group-hover:bg-white transition-colors duration-300" />
               </div>
             </div>
           ))}

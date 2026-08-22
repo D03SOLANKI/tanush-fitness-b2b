@@ -57,7 +57,7 @@ export const Navbar: React.FC = () => {
   return (
     <>
       {/* Top Utility Bar - Vault Precision Tone */}
-      <div className="w-full bg-[#192E1D] text-slate-400 border-b border-white/5 font-mono text-[11px] select-none z-40 relative">
+      <div className="w-full bg-[#05070A] text-slate-400 border-b border-white/5 font-mono text-[11px] select-none z-40 relative">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-8 flex items-center justify-between gap-4">
           <div className="flex items-center gap-4">
             <a
@@ -100,8 +100,8 @@ export const Navbar: React.FC = () => {
       <header
         className={`sticky top-0 left-0 right-0 z-40 transition-all duration-300 ${
           isScrolled
-            ? 'bg-[#26452D]/95 backdrop-blur-xl border-b border-white/10 shadow-2xl py-3'
-            : 'bg-[#26452D]/70 backdrop-blur-md border-b border-white/5 py-4'
+            ? 'bg-[#090C10]/95 backdrop-blur-xl border-b border-white/10 shadow-2xl py-3'
+            : 'bg-[#090C10]/70 backdrop-blur-md border-b border-white/5 py-4'
         }`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -241,7 +241,7 @@ export const Navbar: React.FC = () => {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.25 }}
-            className="fixed inset-0 z-50 bg-[#26452D]/95 backdrop-blur-2xl flex flex-col justify-between p-6 sm:p-12 overflow-y-auto"
+            className="fixed inset-0 z-50 bg-[#090C10]/95 backdrop-blur-2xl flex flex-col justify-between p-6 sm:p-12 overflow-y-auto"
           >
             {/* Top Bar of Modal */}
             <div className="flex items-center justify-between border-b border-white/10 pb-6">
@@ -278,7 +278,7 @@ export const Navbar: React.FC = () => {
                   <div
                     key={link.label}
                     onClick={() => handleNav(link.page)}
-                    className="p-6 rounded-2xl bg-[#1E3823] border border-white/10 hover:border-[#D26539] transition-all cursor-pointer group flex items-start justify-between"
+                    className="p-6 rounded-2xl bg-[#0D1118] border border-white/10 hover:border-[#D26539] transition-all cursor-pointer group flex items-start justify-between"
                   >
                     <div className="space-y-1">
                       <div className="flex items-center gap-3">

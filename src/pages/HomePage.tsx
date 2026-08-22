@@ -120,7 +120,7 @@ export const HomePage: React.FC = () => {
   };
 
   return (
-    <main className="min-h-screen bg-[#26452D] text-[#ECE6DB] overflow-hidden pb-0">
+    <main className="min-h-screen bg-[#090C10] text-[#ECE6DB] overflow-hidden pb-0">
       <SEO
         title="Tanush Fitness | Commercial & Residential Equipment · Gym Management · Manpower Services"
         description="Experience India's premier commercial fitness sanctuary. World-class 11-gauge equipment, 3D turnkey gym management, and certified trainer staffing."
@@ -258,7 +258,7 @@ export const HomePage: React.FC = () => {
             </div>
 
             {/* Vision Tab Buttons */}
-            <div className="flex items-center gap-1.5 p-1 rounded-full bg-[#1E3823] border border-white/10 font-general text-xs uppercase tracking-wider">
+            <div className="flex items-center gap-1.5 p-1 rounded-full bg-[#0D1118] border border-white/10 font-general text-xs uppercase tracking-wider">
               <button
                 type="button"
                 onClick={() => setVisionTab('what')}
@@ -311,7 +311,7 @@ export const HomePage: React.FC = () => {
                   <p>
                     As a testament to unwavering commitment to biomechanical excellence, <span className="text-[#D26539] font-bold">Tanush Fitness</span> aims to redefine commercial fitness spaces by offering direct factory procurement, 18% GST Input Tax Credit invoicing, zero middleman trading markups, and verified trainer placement pipelines.
                   </p>
-                  <blockquote className="p-5 rounded-2xl bg-[#1E3823] border-l-4 border-[#D26539] text-slate-200 italic font-serif text-base leading-relaxed">
+                  <blockquote className="p-5 rounded-2xl bg-[#0D1118] border-l-4 border-[#D26539] text-slate-200 italic font-serif text-base leading-relaxed">
                     "Tanush Fitness is not merely an equipment vendor; it is an end-to-end commercial infrastructure partner built for gym owners who demand perfection in every square foot."
                   </blockquote>
                   <div className="pt-2">
@@ -329,14 +329,14 @@ export const HomePage: React.FC = () => {
             </div>
 
             <div className="lg:col-span-5 relative">
-              <div className="relative rounded-3xl overflow-hidden border border-white/10 shadow-2xl group bg-[#1E3823]">
+              <div className="relative rounded-3xl overflow-hidden border border-white/10 shadow-2xl group bg-[#0D1118]">
                 <img
                   src="https://images.unsplash.com/photo-1540497077202-7c8a3999166f?auto=format&fit=crop&w=1000&q=80"
                   alt="Tanush Fitness Sanctuary Vision"
                   className="w-full h-[380px] object-cover transform group-hover:scale-105 transition-transform duration-700"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#090C10] via-transparent to-transparent opacity-60" />
-                <div className="absolute bottom-5 left-5 right-5 p-3.5 rounded-xl bg-[#1E3823]/90 border border-white/10 font-mono text-[11px] text-[#D26539] flex items-center justify-between">
+                <div className="absolute bottom-5 left-5 right-5 p-3.5 rounded-xl bg-[#0D1118]/90 border border-white/10 font-mono text-[11px] text-[#D26539] flex items-center justify-between">
                   <span>ISO 9001:2015 CERTIFIED</span>
                   <span>500+ COMMERCIAL SANCTUARIES</span>
                 </div>
@@ -379,7 +379,7 @@ export const HomePage: React.FC = () => {
               return (
                 <div
                   key={pillar.id}
-                  className="bg-[#1E3823] border border-white/10 rounded-2xl overflow-hidden luxury-card flex flex-col justify-between group"
+                  className="bg-[#0D1118] border border-white/10 rounded-2xl overflow-hidden luxury-card flex flex-col justify-between group"
                 >
                   <div>
                     <div
@@ -394,12 +394,12 @@ export const HomePage: React.FC = () => {
                       <div className="absolute inset-0 bg-gradient-to-t from-[#0D1118] via-transparent to-black/40" />
 
                       <div className="absolute top-4 left-4">
-                        <span className="px-3 py-1 rounded-full bg-[#26452D] border border-[#D26539]/30 text-[10px] font-mono text-[#D26539] font-bold uppercase tracking-wider">
+                        <span className="px-3 py-1 rounded-full bg-[#090C10] border border-[#D26539]/30 text-[10px] font-mono text-[#D26539] font-bold uppercase tracking-wider">
                           PILLAR {pillar.number} // {pillar.category}
                         </span>
                       </div>
 
-                      <div className="absolute top-4 right-4 w-8 h-8 rounded-full bg-[#26452D] border border-white/10 flex items-center justify-center text-[#D26539]">
+                      <div className="absolute top-4 right-4 w-8 h-8 rounded-full bg-[#090C10] border border-white/10 flex items-center justify-center text-[#D26539]">
                         <IconComp className="w-4 h-4" />
                       </div>
                     </div>
@@ -477,7 +477,7 @@ export const HomePage: React.FC = () => {
             {USP_CARDS.map((card) => (
               <div
                 key={card.id}
-                className="bg-[#1E3823] border border-white/10 rounded-2xl p-6 space-y-4 luxury-card flex flex-col justify-between group"
+                className="bg-[#0D1118] border border-white/10 rounded-2xl p-6 space-y-4 luxury-card flex flex-col justify-between group"
               >
                 <div className="space-y-3">
                   <div className="w-12 h-12 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center group-hover:border-[#D26539] transition-colors">
