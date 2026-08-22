@@ -8,12 +8,6 @@ export const Footer: React.FC = () => {
 
   return (
     <footer className="bg-[#05070A] text-[#E2E8F0] border-t border-white/5 relative overflow-hidden">
-      {/* 🚀 Running Marquee Banner */}
-      <MarqueeStrip
-        items={['STEP INTO TANUSH', 'FITNESS SANCTUARY', 'ELEVATE PERFORMANCE', 'WORLD CLASS EQUIPMENT', 'CUSTOM ARCHITECTURE']}
-        theme="orange"
-      />
-
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
           {/* Col 1 & 2: Brand & Sanctuary Vision */}
