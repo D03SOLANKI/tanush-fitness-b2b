@@ -54,7 +54,7 @@ export const Footer: React.FC = () => {
           {/* Col 2: Navigation */}
           <div className="space-y-4 font-sans text-sm">
             <h4 className="font-syne text-xs font-bold uppercase tracking-[0.2em] text-[#C5A880]">
-              Sanctuary
+              Solutions
             </h4>
             <ul className="space-y-2.5 text-slate-400">
               <li>
@@ -63,8 +63,8 @@ export const Footer: React.FC = () => {
                 </button>
               </li>
               <li>
-                <button onClick={() => navigateTo('clubs')} className="hover:text-[#C5A880] transition-colors text-left">
-                  Showrooms & Clubs
+                <button onClick={() => navigateTo('services')} className="hover:text-[#C5A880] transition-colors text-left">
+                  Turnkey Services
                 </button>
               </li>
               <li>
@@ -73,8 +73,8 @@ export const Footer: React.FC = () => {
                 </button>
               </li>
               <li>
-                <button onClick={() => navigateTo('services')} className="hover:text-[#C5A880] transition-colors text-left">
-                  Turnkey Outfitting
+                <button onClick={() => navigateTo('manpower')} className="hover:text-[#C5A880] transition-colors text-left">
+                  Master Staffing
                 </button>
               </li>
               <li>
@@ -85,26 +85,26 @@ export const Footer: React.FC = () => {
             </ul>
           </div>
 
-          {/* Col 3: Flagship Experience Hubs */}
+          {/* Col 3: Core Procurement Pillars */}
           <div className="space-y-4 font-sans text-sm">
             <h4 className="font-syne text-xs font-bold uppercase tracking-[0.2em] text-[#C5A880]">
-              Experience Hubs
+              Core Pillars
             </h4>
             <ul className="space-y-2.5 text-slate-400">
-              <li className="flex items-center justify-between group cursor-pointer hover:text-white" onClick={() => navigateTo('clubs')}>
-                <span>Delhi NCR (GK-1)</span>
+              <li className="flex items-center justify-between group cursor-pointer hover:text-white" onClick={() => navigateTo('equipment')}>
+                <span>Commercial Machinery</span>
                 <ArrowUpRight className="w-3.5 h-3.5 text-slate-600 group-hover:text-[#C5A880] transition" />
               </li>
-              <li className="flex items-center justify-between group cursor-pointer hover:text-white" onClick={() => navigateTo('clubs')}>
-                <span>Delhi NCR (Rajouri Garden)</span>
+              <li className="flex items-center justify-between group cursor-pointer hover:text-white" onClick={() => navigateTo('manpower')}>
+                <span>Certified Trainer Staffing</span>
                 <ArrowUpRight className="w-3.5 h-3.5 text-slate-600 group-hover:text-[#C5A880] transition" />
               </li>
-              <li className="flex items-center justify-between group cursor-pointer hover:text-white" onClick={() => navigateTo('clubs')}>
-                <span>Delhi NCR (Pitampura)</span>
+              <li className="flex items-center justify-between group cursor-pointer hover:text-white" onClick={() => navigateTo('services')}>
+                <span>3D CAD Floor Layouts</span>
                 <ArrowUpRight className="w-3.5 h-3.5 text-slate-600 group-hover:text-[#C5A880] transition" />
               </li>
-              <li className="flex items-center justify-between group cursor-pointer hover:text-white" onClick={() => navigateTo('clubs')}>
-                <span>Bengaluru & Hyderabad</span>
+              <li className="flex items-center justify-between group cursor-pointer hover:text-white" onClick={() => navigateTo('contact')}>
+                <span>VIP Outfitting Desk</span>
                 <ArrowUpRight className="w-3.5 h-3.5 text-slate-600 group-hover:text-[#C5A880] transition" />
               </li>
             </ul>

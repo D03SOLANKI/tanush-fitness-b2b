@@ -1,6 +1,6 @@
 import React from 'react';
 import { useApp } from '../context/AppContext';
-import { ShieldCheck, Target, Eye, Award, Building2, Users, ArrowRight, CheckCircle2, Sparkles, Phone, Compass, Cpu, Wrench } from 'lucide-react';
+import { ShieldCheck, Target, Eye, Award, Building2, Users, ArrowRight, CheckCircle2, Sparkles, Phone, Compass, Cpu, Wrench, Briefcase } from 'lucide-react';
 import { SEO } from '../components/common/SEO';
 import { MarqueeStrip } from '../components/common/MarqueeStrip';
 
@@ -34,11 +34,11 @@ export const AboutPage: React.FC = () => {
 
           <div className="flex items-center gap-3 shrink-0">
             <button
-              onClick={() => navigateTo('clubs')}
+              onClick={() => navigateTo('services')}
               className="btn-vault flex items-center gap-2 text-xs py-2.5 px-5"
             >
-              <Compass className="w-3.5 h-3.5" />
-              <span>Visit Flagship Showrooms</span>
+              <Briefcase className="w-3.5 h-3.5" />
+              <span>Explore Turnkey Services</span>
             </button>
           </div>
         </div>

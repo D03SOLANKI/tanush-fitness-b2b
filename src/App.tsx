@@ -6,7 +6,6 @@ import { EnquiryCartDrawer } from './components/cart/EnquiryCartDrawer';
 import { Toast } from './components/common/Toast';
 import { SlotIntro } from './components/common/SlotIntro';
 import { HomePage } from './pages/HomePage';
-import { ClubsPage } from './pages/ClubsPage';
 import { AboutPage } from './pages/AboutPage';
 import { EquipmentPage } from './pages/EquipmentPage';
 import { ManpowerPage } from './pages/ManpowerPage';
@@ -32,8 +31,6 @@ const MainContent: React.FC = () => {
     switch (currentPage) {
       case 'home':
         return <HomePage />;
-      case 'clubs':
-        return <ClubsPage />;
       case 'about':
         return <AboutPage />;
       case 'equipment':

@@ -3,7 +3,7 @@ export * from '../modules/equipment-marketplace/types';
 export * from '../modules/manpower-hiring/types';
 export * from '../modules/business-growth-services/types';
 
-export type PageType = 'home' | 'about' | 'equipment' | 'manpower' | 'services' | 'contact' | 'admin' | 'clubs';
+export type PageType = 'home' | 'about' | 'equipment' | 'manpower' | 'services' | 'contact' | 'admin';
 
 export interface FilterState {
   category: string;

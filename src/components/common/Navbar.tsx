@@ -45,9 +45,8 @@ export const Navbar: React.FC = () => {
 
   const navLinks: { label: string; page: PageType; subtitle: string; icon: React.ReactNode }[] = [
     { label: 'Overview', page: 'home', subtitle: 'Sanctuary & Flagship Hub', icon: <Sparkles className="w-4 h-4" /> },
-    { label: 'Showrooms & Clubs', page: 'clubs', subtitle: 'Explore Pan-India Centers', icon: <Building2 className="w-4 h-4" /> },
+    { label: 'Services', page: 'services', subtitle: '360° Turnkey Architecture & Setup', icon: <Briefcase className="w-4 h-4" /> },
     { label: 'Equipment Sanctuary', page: 'equipment', subtitle: 'Biomechanical Machines & Rigs', icon: <Dumbbell className="w-4 h-4" /> },
-    { label: 'Turnkey Outfitting', page: 'services', subtitle: '360° Gym Architecture & Setup', icon: <Briefcase className="w-4 h-4" /> },
     { label: 'Master Staffing', page: 'manpower', subtitle: 'Certified Trainers & Operation Leads', icon: <Users className="w-4 h-4" /> },
     { label: 'Vision & Legacy', page: 'about', subtitle: 'Manufacturing Philosophy', icon: <Compass className="w-4 h-4" /> },
     { label: 'VIP Consultation', page: 'contact', subtitle: 'Direct Outfitting Procurement', icon: <Phone className="w-4 h-4" /> },
@@ -146,13 +145,13 @@ export const Navbar: React.FC = () => {
 
               <button
                 type="button"
-                onClick={() => handleNav('clubs')}
+                onClick={() => handleNav('services')}
                 className={`transition-colors py-1 relative ${
-                  currentPage === 'clubs' ? 'text-[#C5A880]' : 'text-slate-300 hover:text-white'
+                  currentPage === 'services' ? 'text-[#C5A880]' : 'text-slate-300 hover:text-white'
                 }`}
               >
-                Showrooms & Clubs
-                {currentPage === 'clubs' && (
+                Services
+                {currentPage === 'services' && (
                   <span className="absolute bottom-0 left-0 right-0 h-[2px] bg-[#C5A880] rounded-full" />
                 )}
               </button>
@@ -172,13 +171,13 @@ export const Navbar: React.FC = () => {
 
               <button
                 type="button"
-                onClick={() => handleNav('services')}
+                onClick={() => handleNav('manpower')}
                 className={`transition-colors py-1 relative ${
-                  currentPage === 'services' ? 'text-[#C5A880]' : 'text-slate-300 hover:text-white'
+                  currentPage === 'manpower' ? 'text-[#C5A880]' : 'text-slate-300 hover:text-white'
                 }`}
               >
-                Turnkey Setup
-                {currentPage === 'services' && (
+                Manpower
+                {currentPage === 'manpower' && (
                   <span className="absolute bottom-0 left-0 right-0 h-[2px] bg-[#C5A880] rounded-full" />
                 )}
               </button>
