@@ -205,32 +205,32 @@ export const HomePage: React.FC = () => {
         </div>
 
         {/* 🌊 3. HORIZONTAL BEYOND FITNESS MARQUEE (SUBTLE MIDWAY ROW) */}
-        <div className="w-full overflow-hidden py-3 sm:py-5 z-10 select-none pointer-events-none">
+        <div className="w-full overflow-hidden py-4 sm:py-6 z-10 select-none pointer-events-none">
           <div className="flex items-center gap-14 sm:gap-18 animate-marquee-slow whitespace-nowrap font-satoshi font-bold text-xl sm:text-2xl md:text-3xl lg:text-[34px] tracking-[0.25em] text-[#3A563F] opacity-30 uppercase">
             <span>✦ BEYOND FITNESS ✦ BEYOND FITNESS ✦ BEYOND FITNESS ✦ BEYOND FITNESS ✦</span>
             <span>✦ BEYOND FITNESS ✦ BEYOND FITNESS ✦ BEYOND FITNESS ✦ BEYOND FITNESS ✦</span>
           </div>
         </div>
 
-        {/* 🎯 4. CTA BUTTON & 5. CIRCULAR DOWN ARROW (WITH PROPER VIEWPORT CLEARANCE) */}
-        <div className="flex flex-col items-center justify-center gap-3 sm:gap-4 shrink-0 z-10">
+        {/* 🎯 4. CTA BUTTON & 5. CIRCULAR DOWN ARROW (WITH PROPER VIEWPORT CLEARANCE & SPACING) */}
+        <div className="flex flex-col items-center justify-center gap-6 sm:gap-7 shrink-0 z-10">
           <button
             type="button"
             onClick={() => navigateTo('equipment')}
-            className="border border-white/40 hover:border-white text-white font-general text-[11px] sm:text-xs uppercase tracking-[0.25em] font-semibold px-7 py-2.5 sm:px-8 sm:py-3 rounded-none transition-all duration-300 hover:bg-white hover:text-[#26452D] flex items-center gap-2 group shadow-lg cursor-pointer"
+            className="border border-white/40 hover:border-white text-white font-general text-[11px] sm:text-xs uppercase tracking-[0.25em] font-semibold px-8 py-3 rounded-none transition-all duration-300 hover:bg-white hover:text-[#26452D] flex items-center gap-2.5 group shadow-lg cursor-pointer"
           >
             <span>JOIN TANUSH</span>
             <ArrowUpRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
           </button>
 
-          {/* Circular Down Arrow Button */}
+          {/* Circular Down Arrow Button with Generous Spacing */}
           <button
             type="button"
             onClick={scrollToAbout}
-            className="w-7 h-7 sm:w-8 sm:h-8 rounded-full border border-white/30 flex items-center justify-center text-white/80 hover:text-white hover:border-white transition animate-bounce cursor-pointer"
+            className="w-8 h-8 sm:w-9 sm:h-9 rounded-full border border-white/30 flex items-center justify-center text-white/80 hover:text-white hover:border-white transition-all duration-300 hover:scale-110 animate-bounce cursor-pointer"
             aria-label="Scroll to Next Section"
           >
-            <ArrowDown className="w-3 h-3 sm:w-3.5 sm:h-3.5" />
+            <ArrowDown className="w-3.5 h-3.5" />
           </button>
         </div>
       </section>
