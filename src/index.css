@@ -146,7 +146,7 @@
   transform: translateY(-2px) translateZ(0);
 }
 
-/* GPU-Composited Ultra-Smooth Marquee Keyframes (Calm 30% Speed) */
+/* GPU-Composited Ultra-Smooth Marquee Keyframes (Dynamic & Fast) */
 @keyframes marquee-scroll {
   0% { transform: translate3d(0%, 0, 0); }
   100% { transform: translate3d(-50%, 0, 0); }
@@ -163,7 +163,7 @@
   will-change: transform;
   transform: translateZ(0);
   backface-visibility: hidden;
-  animation: marquee-scroll 24s linear infinite;
+  animation: marquee-scroll 12s linear infinite;
 }
 
 .animate-marquee {
@@ -172,7 +172,7 @@
   will-change: transform;
   transform: translateZ(0);
   backface-visibility: hidden;
-  animation: marquee-scroll 36s linear infinite;
+  animation: marquee-scroll 18s linear infinite;
 }
 
 .animate-marquee-slow {
@@ -181,7 +181,7 @@
   will-change: transform;
   transform: translateZ(0);
   backface-visibility: hidden;
-  animation: marquee-scroll 48s linear infinite;
+  animation: marquee-scroll 26s linear infinite;
 }
 
 .animate-marquee-reverse {
@@ -190,7 +190,7 @@
   will-change: transform;
   transform: translateZ(0);
   backface-visibility: hidden;
-  animation: marquee-scroll-reverse 40s linear infinite;
+  animation: marquee-scroll-reverse 20s linear infinite;
 }
 
 .animate-marquee:hover,
