@@ -193,11 +193,12 @@
   animation: marquee-scroll-reverse 20s linear infinite;
 }
 
-.animate-marquee:hover,
-.animate-marquee-fast:hover,
-.animate-marquee-slow:hover,
-.animate-marquee-reverse:hover {
-  animation-play-state: paused;
+.animate-marquee,
+.animate-marquee-fast,
+.animate-marquee-slow,
+.animate-marquee-reverse {
+  animation-play-state: running !important;
+  pointer-events: none;
 }
 
 /* Lenis Momentum & Smooth Inertia Scroll */
