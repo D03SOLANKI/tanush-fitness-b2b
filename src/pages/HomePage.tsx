@@ -127,36 +127,46 @@ export const HomePage: React.FC = () => {
       />
 
       {/* ========================================================================= */}
-      {/* SECTION 1: PERFECT 2-LINE HEADLINE WITH BALANCED SPACIOUS VERTICAL GAPS   */}
+      {/* SECTION 1: EXACT VAULT HOMEPAGE PROPORTIONS & SPACING                     */}
       {/* ========================================================================= */}
-      <section className="relative h-[100dvh] min-h-[100dvh] max-h-[100dvh] w-full bg-[#26452D] text-[#ECE6DB] flex flex-col justify-between items-center px-4 sm:px-8 pt-8 sm:pt-12 pb-28 sm:pb-32 overflow-hidden select-none">
-        {/* 1. TOP LOGO EMBLEM (CENTERED & PROPORTIONATE) */}
-        <div className="z-10 shrink-0">
+      <section className="relative h-[100dvh] min-h-[100dvh] max-h-[100dvh] w-full bg-[#26452D] text-[#ECE6DB] flex flex-col justify-between items-center px-4 sm:px-8 pt-8 sm:pt-12 pb-28 sm:pb-36 overflow-hidden select-none">
+        {/* 🌟 1. TOP LOGO EMBLEM (EXACT VAULT STAR WITH INNER DIAMOND) */}
+        <div className="pt-2 sm:pt-4 shrink-0">
           <svg
-            className="w-10 h-10 sm:w-14 sm:h-14 md:w-16 md:h-16 text-white fill-none stroke-current"
+            className="w-14 h-14 sm:w-18 sm:h-18 md:w-22 md:h-22 text-white fill-none stroke-current"
             viewBox="0 0 100 100"
-            strokeWidth="3.2"
+            strokeWidth="2.5"
             strokeLinecap="round"
             strokeLinejoin="round"
           >
-            <path d="M 50 4 L 56 38 L 88 18 L 65 46 L 96 50 L 65 54 L 88 82 L 56 62 L 50 96 L 44 62 L 12 82 L 35 54 L 4 50 L 35 46 L 12 18 L 44 38 Z" fill="none" stroke="white" strokeWidth="2.8" />
-            <circle cx="50" cy="50" r="5.5" stroke="white" strokeWidth="2.4" fill="none" />
+            <path
+              d="M 50 4 L 56 36 L 88 16 L 65 46 L 96 50 L 65 54 L 88 84 L 56 64 L 50 96 L 44 64 L 12 84 L 35 54 L 4 50 L 35 46 L 12 16 L 44 36 Z"
+              stroke="white"
+              strokeWidth="2.6"
+              fill="none"
+            />
+            <path
+              d="M 50 32 L 60 50 L 50 68 L 40 50 Z"
+              stroke="white"
+              strokeWidth="2.2"
+              fill="none"
+            />
           </svg>
         </div>
 
-        {/* 2. MAIN HEADLINE (EXACT 2 LINES - NO BREAKING OR WRAPPING) */}
-        <div className="max-w-5xl mx-auto w-full text-center my-auto py-2 z-10">
-          <div className="space-y-2.5 sm:space-y-3.5 md:space-y-4 select-none">
-            {/* Row 1 */}
-            <div className="flex items-center justify-center gap-2 sm:gap-3 md:gap-4 flex-nowrap whitespace-nowrap font-satoshi text-xl sm:text-3xl md:text-4xl lg:text-[42px] xl:text-[48px] font-black uppercase tracking-tight text-white leading-none">
+        {/* 💎 2. MAIN 2-LINE HEADLINE (EXACT VAULT TYPOGRAPHY & PILL RATIO) */}
+        <div className="max-w-5xl mx-auto w-full text-center py-2 sm:py-4 z-10">
+          <div className="space-y-3 sm:space-y-4 select-none">
+            {/* Row 1: GET READY [PILL 1] TO UNLEASH */}
+            <div className="flex items-center justify-center gap-2.5 sm:gap-4 md:gap-5 flex-nowrap whitespace-nowrap font-satoshi text-xl sm:text-3xl md:text-4xl lg:text-[44px] xl:text-[50px] font-black uppercase tracking-tight text-white leading-none">
               <span className="relative inline-block whitespace-nowrap">
                 GET READY
-                {/* Terracotta Orange Hand-Drawn Brush Stroke Accent */}
-                <span className="absolute -bottom-1 sm:-bottom-2 left-0 right-0 h-1 sm:h-2 bg-[#D26539] rounded-full -rotate-1 opacity-90" />
+                {/* Terracotta Orange Hand-Drawn Brush Accent */}
+                <span className="absolute -bottom-1.5 sm:-bottom-2.5 left-0 right-0 h-1.5 sm:h-2.5 bg-[#D26539] rounded-full -rotate-1 opacity-90" />
               </span>
 
-              {/* Capsule Image Pill 1 */}
-              <div className="inline-block h-6 sm:h-8 md:h-10 lg:h-12 w-16 sm:w-24 md:w-32 lg:w-40 rounded-full overflow-hidden border border-white/40 shadow-xl shrink-0 align-middle transform hover:scale-105 transition-transform duration-300">
+              {/* Pill 1 */}
+              <div className="inline-block h-7 sm:h-9 md:h-11 lg:h-13 w-20 sm:w-28 md:w-36 lg:w-44 rounded-full overflow-hidden border border-white/40 shadow-xl shrink-0 align-middle transform hover:scale-105 transition-transform duration-300">
                 <img
                   src="https://images.unsplash.com/photo-1517838277536-f5f99be501cd?auto=format&fit=crop&w=600&q=80"
                   alt="Tanush Commercial Strength Equipment"
@@ -167,12 +177,12 @@ export const HomePage: React.FC = () => {
               <span className="whitespace-nowrap">TO UNLEASH</span>
             </div>
 
-            {/* Row 2 */}
-            <div className="flex items-center justify-center gap-2 sm:gap-3 md:gap-4 flex-nowrap whitespace-nowrap font-satoshi text-xl sm:text-3xl md:text-4xl lg:text-[42px] xl:text-[48px] font-black uppercase tracking-tight text-white leading-none">
+            {/* Row 2: YOUR [PILL 2] INNER POTENTIAL [PILL 3] */}
+            <div className="flex items-center justify-center gap-2.5 sm:gap-4 md:gap-5 flex-nowrap whitespace-nowrap font-satoshi text-xl sm:text-3xl md:text-4xl lg:text-[44px] xl:text-[50px] font-black uppercase tracking-tight text-white leading-none">
               <span className="whitespace-nowrap">YOUR</span>
 
-              {/* Capsule Image Pill 2 */}
-              <div className="inline-block h-6 sm:h-8 md:h-10 lg:h-12 w-20 sm:w-28 md:w-36 lg:w-44 rounded-full overflow-hidden border border-white/40 shadow-xl shrink-0 align-middle transform hover:scale-105 transition-transform duration-300">
+              {/* Pill 2 */}
+              <div className="inline-block h-7 sm:h-9 md:h-11 lg:h-13 w-24 sm:w-32 md:w-40 lg:w-48 rounded-full overflow-hidden border border-white/40 shadow-xl shrink-0 align-middle transform hover:scale-105 transition-transform duration-300">
                 <img
                   src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=600&q=80"
                   alt="Tanush Fitness Sanctuary"
@@ -182,8 +192,8 @@ export const HomePage: React.FC = () => {
 
               <span className="whitespace-nowrap">INNER POTENTIAL</span>
 
-              {/* Capsule Image Pill 3 */}
-              <div className="inline-block h-6 sm:h-8 md:h-10 lg:h-12 w-16 sm:w-24 md:w-32 lg:w-40 rounded-full overflow-hidden border border-white/40 shadow-xl shrink-0 align-middle transform hover:scale-105 transition-transform duration-300">
+              {/* Pill 3 */}
+              <div className="inline-block h-7 sm:h-9 md:h-11 lg:h-13 w-20 sm:w-28 md:w-36 lg:w-44 rounded-full overflow-hidden border border-white/40 shadow-xl shrink-0 align-middle transform hover:scale-105 transition-transform duration-300">
                 <img
                   src="https://images.unsplash.com/photo-1540497077202-7c8a3999166f?auto=format&fit=crop&w=600&q=80"
                   alt="Tanush Athletic Training"
@@ -194,33 +204,33 @@ export const HomePage: React.FC = () => {
           </div>
         </div>
 
-        {/* 3. MARQUEE ROW (SEPARATE HORIZONTAL ROW WITH BALANCED SPACING) */}
-        <div className="w-full overflow-hidden my-auto py-2 sm:py-4 z-10 select-none pointer-events-none">
-          <div className="flex items-center gap-12 sm:gap-16 animate-marquee-slow whitespace-nowrap font-satoshi font-black text-xl sm:text-2xl md:text-3xl lg:text-4xl tracking-[0.25em] text-[#3A563F] opacity-35 uppercase">
+        {/* 🌊 3. HORIZONTAL BEYOND FITNESS MARQUEE (SUBTLE MIDWAY ROW) */}
+        <div className="w-full overflow-hidden py-3 sm:py-5 z-10 select-none pointer-events-none">
+          <div className="flex items-center gap-14 sm:gap-18 animate-marquee-slow whitespace-nowrap font-satoshi font-bold text-xl sm:text-2xl md:text-3xl lg:text-[34px] tracking-[0.25em] text-[#3A563F] opacity-30 uppercase">
             <span>✦ BEYOND FITNESS ✦ BEYOND FITNESS ✦ BEYOND FITNESS ✦ BEYOND FITNESS ✦</span>
             <span>✦ BEYOND FITNESS ✦ BEYOND FITNESS ✦ BEYOND FITNESS ✦ BEYOND FITNESS ✦</span>
           </div>
         </div>
 
-        {/* 4. CLEAR SPACING GAP & 5. CTA BUTTON & 6. CIRCULAR DOWN ARROW */}
-        <div className="mt-auto flex flex-col items-center justify-center gap-3 sm:gap-3.5 z-10">
+        {/* 🎯 4. CTA BUTTON & 5. CIRCULAR DOWN ARROW (WITH PROPER VIEWPORT CLEARANCE) */}
+        <div className="flex flex-col items-center justify-center gap-3 sm:gap-4 shrink-0 z-10">
           <button
             type="button"
             onClick={() => navigateTo('equipment')}
-            className="border border-white/40 hover:border-white text-white font-general text-[11px] sm:text-xs uppercase tracking-[0.25em] font-semibold px-8 py-3 rounded-none transition-all duration-300 hover:bg-white hover:text-[#26452D] flex items-center gap-2 group shadow-lg cursor-pointer"
+            className="border border-white/40 hover:border-white text-white font-general text-[11px] sm:text-xs uppercase tracking-[0.25em] font-semibold px-7 py-2.5 sm:px-8 sm:py-3 rounded-none transition-all duration-300 hover:bg-white hover:text-[#26452D] flex items-center gap-2 group shadow-lg cursor-pointer"
           >
             <span>JOIN TANUSH</span>
             <ArrowUpRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
           </button>
 
-          {/* 6. Circular Down Arrow */}
+          {/* Circular Down Arrow Button */}
           <button
             type="button"
             onClick={scrollToAbout}
-            className="w-8 h-8 rounded-full border border-white/30 flex items-center justify-center text-white/80 hover:text-white hover:border-white transition animate-bounce cursor-pointer"
+            className="w-7 h-7 sm:w-8 sm:h-8 rounded-full border border-white/30 flex items-center justify-center text-white/80 hover:text-white hover:border-white transition animate-bounce cursor-pointer"
             aria-label="Scroll to Next Section"
           >
-            <ArrowDown className="w-3.5 h-3.5" />
+            <ArrowDown className="w-3 h-3 sm:w-3.5 sm:h-3.5" />
           </button>
         </div>
       </section>
