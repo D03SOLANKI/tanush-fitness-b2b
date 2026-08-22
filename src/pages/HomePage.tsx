@@ -373,7 +373,7 @@ export const HomePage: React.FC = () => {
                     : 'text-slate-400 hover:text-white'
                 }`}
               >
-                The Philosophy
+                Why Tanush?
               </button>
             </div>
           </div>
@@ -452,18 +452,19 @@ export const HomePage: React.FC = () => {
           <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-6">
             <div className="space-y-2">
               <div className="text-[11px] font-mono tracking-[0.3em] text-[#C5A880] uppercase">
-                WHY CHOOSE TANUSH
+                EXCLUSIVE ADVANTAGES
               </div>
               <h2 className="font-syne text-3xl sm:text-5xl font-extrabold uppercase text-white tracking-tight">
-                OUR DISTINCT VALUE
+                OUR USP
               </h2>
             </div>
             <button
               type="button"
               onClick={() => navigateTo('equipment')}
-              className="btn-vault-outline text-xs"
+              className="btn-vault-outline text-xs flex items-center gap-2"
             >
-              Explore Equipment Specs
+              <span>Know More</span>
+              <ArrowRight className="w-3.5 h-3.5 text-[#C5A880]" />
             </button>
           </div>
 
@@ -709,11 +710,14 @@ export const HomePage: React.FC = () => {
       <section className="py-16 border-b border-white/5 bg-[#05070A]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center mb-8">
           <div className="text-[11px] font-mono tracking-[0.3em] text-[#C5A880] uppercase">
-            GLOBAL AFFILIATES & EQUIPMENT PARTNERS
+            CORPORATE PARTNERSHIPS & CERTIFICATIONS
           </div>
+          <h2 className="font-syne text-2xl sm:text-4xl font-extrabold uppercase text-white tracking-tight mt-2">
+            GLOBAL MACHINERY & TECHNICAL AFFILIATES
+          </h2>
         </div>
         <MarqueeStrip
-          items={['MATRIX FITNESS', 'PRECOR USA', 'TORQUE FITNESS', 'CONCEPT 2', 'ELEIKO OLYMPIC', 'HYPERICE RECOVERY', 'THOR GYM TECH']}
+          items={['MATRIX FITNESS', 'PRECOR USA', 'TORQUE FITNESS', 'CONCEPT 2', 'ELEIKO OLYMPIC', 'HYPERICE RECOVERY', 'THOR GYM TECH', 'TRAINING WALL']}
           speed="normal"
           theme="minimal"
         />
@@ -733,7 +737,7 @@ export const HomePage: React.FC = () => {
               </div>
 
               <h2 className="font-syne text-3xl sm:text-5xl font-extrabold uppercase text-white tracking-tight">
-                LAUNCH YOUR OWN <span className="text-[#C5A880]">FITNESS SANCTUARY</span>
+                OPEN YOUR OWN <span className="text-[#C5A880]">TANUSH SANCTUARY</span>
               </h2>
 
               <p className="text-sm sm:text-base text-slate-300 font-sans leading-relaxed">
