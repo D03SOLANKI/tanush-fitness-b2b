@@ -311,7 +311,7 @@ export const HomePage: React.FC = () => {
                   <p>
                     As a testament to unwavering commitment to biomechanical excellence, <span className="text-[#D26539] font-bold">Tanush Fitness</span> aims to redefine commercial fitness spaces by offering direct factory procurement, 18% GST Input Tax Credit invoicing, zero middleman trading markups, and verified trainer placement pipelines.
                   </p>
-                  <blockquote className="p-5 rounded-none bg-[#0D1118] border-l-4 border-[#D26539] text-[#D8CDC0] italic font-satoshi text-base leading-relaxed">
+                  <blockquote className="p-6 rounded-none bg-[#0D1118] border-l-2 border-[#D26539] text-[#F0EBE3] italic font-satoshi text-base sm:text-lg leading-relaxed">
                     "Tanush Fitness is not merely an equipment vendor; it is an end-to-end commercial infrastructure partner built for gym owners who demand perfection in every square foot."
                   </blockquote>
                   <div className="pt-2">

@@ -231,7 +231,7 @@ export const EquipmentPage: React.FC = () => {
                 <div>
                   <div
                     onClick={() => handleOpenDetailModal(product)}
-                    className="relative h-60 overflow-hidden cursor-pointer bg-[#05070A]"
+                    className="relative h-60 overflow-hidden cursor-pointer bg-[#090C10]"
                   >
                     <img
                       src={product.image || fallbackImage}
@@ -368,7 +368,7 @@ export const EquipmentPage: React.FC = () => {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
                 {/* Images */}
                 <div className="space-y-4">
-                  <div className="h-72 rounded-none overflow-hidden bg-[#05070A] border border-white/10">
+                  <div className="h-72 rounded-none overflow-hidden bg-[#090C10] border border-white/10">
                     <img
                       src={selectedProduct.gallery?.[selectedImage] || selectedProduct.image || fallbackImage}
                       alt={selectedProduct.name}

@@ -118,7 +118,7 @@ export const ServicesPage: React.FC = () => {
             >
               <div>
                 {/* Visual Image */}
-                <div className="relative h-56 overflow-hidden bg-[#05070A]">
+                <div className="relative h-56 overflow-hidden bg-[#090C10]">
                   <img
                     src={service.image}
                     alt={service.name}

@@ -133,33 +133,39 @@ export const VaultContactFormSection: React.FC = () => {
                 </div>
 
                 {/* 2. SUBJECT / REQUIREMENT SELECT DROPDOWN */}
-                <div className="space-y-1.5">
+                <div className="space-y-1.5 pt-1">
+                  <label className="block font-mono text-[10px] sm:text-[11px] font-bold text-[#090C10]/80 tracking-widest uppercase">
+                    SUBJECT / REQUIREMENT
+                  </label>
                   <div className="relative">
                     <select
                       value={subject}
                       onChange={(e) => setSubject(e.target.value)}
-                      className="w-full appearance-none bg-[#D8CDC0] border border-[#090C10]/30 px-4 py-3.5 text-xs font-mono text-[#090C10] focus:border-[#D26539] focus:outline-none transition-colors cursor-pointer"
+                      className="w-full appearance-none bg-transparent border-b border-[#090C10] pb-2.5 pt-1 text-xs font-mono text-[#090C10] focus:border-[#D26539] focus:outline-none transition-colors cursor-pointer pr-8 font-semibold"
                     >
                       <option value="Commercial & Residential Equipment Procurement">Commercial & Residential Equipment Procurement</option>
                       <option value="Residential Fitness Suite Outfitting">Residential Fitness Suite Outfitting</option>
-                      <option value="GYM MANAGEMENT Gym Management & 3D CAD">GYM MANAGEMENT Gym Management & 3D CAD</option>
-                      <option value="Manpower & Trainer Staffing">Manpower & Trainer Staffing</option>
-                      <option value="Recovery Room — Hyperice Biohacking">Recovery Room — Hyperice Biohacking</option>
-                      <option value="Franchise & Institutional Partnership">Franchise & Institutional Partnership</option>
+                      <option value="Gym Management & 3D CAD Blueprinting">Gym Management & 3D CAD Blueprinting</option>
+                      <option value="Master Trainer Staffing & Recruitment">Master Trainer Staffing & Recruitment</option>
+                      <option value="Hyperice Biohacking & Recovery Suite">Hyperice Biohacking & Recovery Suite</option>
+                      <option value="Franchise & Institutional Outfitting">Franchise & Institutional Outfitting</option>
                     </select>
-                    <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-4 text-[#090C10]">
+                    <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-1 text-[#090C10]">
                       <svg className="w-3.5 h-3.5 fill-current" viewBox="0 0 20 20"><path d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"/></svg>
                     </div>
                   </div>
                 </div>
 
                 {/* 3. CITY / REGION SELECT DROPDOWN */}
-                <div className="space-y-1.5">
+                <div className="space-y-1.5 pt-1">
+                  <label className="block font-mono text-[10px] sm:text-[11px] font-bold text-[#090C10]/80 tracking-widest uppercase">
+                    DESTINATION CITY
+                  </label>
                   <div className="relative">
                     <select
                       value={city}
                       onChange={(e) => setCity(e.target.value)}
-                      className="w-full appearance-none bg-[#D8CDC0] border border-[#090C10]/30 px-4 py-3.5 text-xs font-mono text-[#090C10] focus:border-[#D26539] focus:outline-none transition-colors cursor-pointer"
+                      className="w-full appearance-none bg-transparent border-b border-[#090C10] pb-2.5 pt-1 text-xs font-mono text-[#090C10] focus:border-[#D26539] focus:outline-none transition-colors cursor-pointer pr-8 font-semibold"
                     >
                       <option value="Delhi NCR">Delhi NCR</option>
                       <option value="Mumbai & MMR">Mumbai & MMR</option>
@@ -171,7 +177,7 @@ export const VaultContactFormSection: React.FC = () => {
                       <option value="Chennai & South">Chennai & South</option>
                       <option value="Other Pan-India Location">Other Pan-India Location</option>
                     </select>
-                    <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-4 text-[#090C10]">
+                    <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-1 text-[#090C10]">
                       <svg className="w-3.5 h-3.5 fill-current" viewBox="0 0 20 20"><path d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"/></svg>
                     </div>
                   </div>

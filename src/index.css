@@ -24,6 +24,11 @@
     scroll-behavior: smooth;
   }
 
+  ::selection {
+    background-color: #D26539;
+    color: #FFFFFF;
+  }
+
   body {
     background-color: var(--black);
     color: var(--light);

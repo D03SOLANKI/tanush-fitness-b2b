@@ -107,8 +107,8 @@ export const BottomNavDock: React.FC = () => {
             aria-label="Scroll to Directory Section"
             title="Navigate to Directory"
           >
-            <span className="w-5 sm:w-6 h-[2px] bg-[#1A2018] rounded-full transition-transform group-hover:scale-x-110" />
-            <span className="w-5 sm:w-6 h-[2px] bg-[#1A2018] rounded-full transition-transform group-hover:scale-x-110" />
+            <span className="w-5 sm:w-6 h-[2px] bg-white group-hover:bg-[#D26539] rounded-full transition-all group-hover:scale-x-110" />
+            <span className="w-5 sm:w-6 h-[2px] bg-white group-hover:bg-[#D26539] rounded-full transition-all group-hover:scale-x-110" />
           </button>
         </div>
       </div>

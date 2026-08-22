@@ -56,8 +56,8 @@ export const Navbar: React.FC = () => {
 
   return (
     <>
-      {/* Top Utility Bar - Vault Precision Tone */}
-      <div className="w-full bg-[#05070A] text-[#A8A090] border-b border-white/5 font-mono text-[11px] select-none z-40 relative">
+      {/* Top Urgent Announcement / Direct Hotline Bar */}
+      <div className="w-full bg-[#090C10] text-[#A8A090] border-b border-white/5 font-mono text-[11px] select-none z-40 relative">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-8 flex items-center justify-between gap-4">
           <div className="flex items-center gap-4">
             <a
