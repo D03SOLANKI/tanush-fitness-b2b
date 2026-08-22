@@ -1,6 +1,6 @@
 import React from 'react';
 import { AppProvider, useApp } from './context/AppContext';
-import { Navbar } from './components/common/Navbar';
+import { BottomNavDock } from './components/common/BottomNavDock';
 import { Footer } from './components/common/Footer';
 import { EnquiryCartDrawer } from './components/cart/EnquiryCartDrawer';
 import { Toast } from './components/common/Toast';
@@ -41,9 +41,10 @@ const MainContent: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-[#090C10] text-[#E2E8F0] flex flex-col justify-between selection:bg-[#D26539] selection:text-white font-sans antialiased luxury-noise">
-      {isAdmin ? <AdminHeader /> : <Navbar />}
+      {isAdmin && <AdminHeader />}
       <div className="flex-1">{renderPage()}</div>
       {!isAdmin && <Footer />}
+      {!isAdmin && <BottomNavDock />}
       <EnquiryCartDrawer />
       <Toast />
     </div>

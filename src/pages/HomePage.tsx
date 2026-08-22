@@ -16,11 +16,8 @@ import {
   Award,
   Zap,
   Briefcase,
-  Users,
-  Menu,
-  X
+  Users
 } from 'lucide-react';
-import { motion, AnimatePresence } from 'framer-motion';
 import { MarqueeStrip } from '../components/common/MarqueeStrip';
 import { SEO } from '../components/common/SEO';
 
@@ -113,7 +110,6 @@ export const HomePage: React.FC = () => {
   const { navigateTo, showToast } = useApp();
 
   const [visionTab, setVisionTab] = useState<'what' | 'why'>('what');
-  const [isNavDrawerOpen, setIsNavDrawerOpen] = useState(false);
 
   // Inquiry Form State
   const [selectedCity, setSelectedCity] = useState('Delhi NCR');
@@ -142,7 +138,7 @@ export const HomePage: React.FC = () => {
   };
 
   return (
-    <main className="min-h-screen bg-[#090C10] text-[#ECE6DB] luxury-noise overflow-hidden">
+    <main className="min-h-screen bg-[#090C10] text-[#ECE6DB] luxury-noise overflow-hidden pb-24">
       <SEO
         title="Tanush Fitness | Commercial & Residential Equipment · Gym Management · Manpower Services"
         description="Experience India's premier commercial fitness sanctuary. World-class 11-gauge equipment, 3D turnkey gym management, and certified trainer staffing."
@@ -151,7 +147,7 @@ export const HomePage: React.FC = () => {
       {/* ========================================================================= */}
       {/* SECTION 1: EXACT HERO COMPOSITION & MATCHED FONT SIZE (AS VAULT)          */}
       {/* ========================================================================= */}
-      <section className="relative min-h-screen bg-[#26452D] text-[#ECE6DB] flex flex-col justify-between items-center px-4 sm:px-6 lg:px-8 pt-10 pb-28 overflow-hidden">
+      <section className="relative min-h-[96vh] sm:min-h-screen bg-[#26452D] text-[#ECE6DB] flex flex-col justify-between items-center px-4 sm:px-6 lg:px-8 pt-8 sm:pt-12 pb-36 sm:pb-44 overflow-hidden">
         {/* Background Film Grain Overlay */}
         <div className="absolute inset-0 bg-[#26452D] luxury-noise pointer-events-none" />
 
@@ -226,12 +222,12 @@ export const HomePage: React.FC = () => {
             </div>
           </div>
 
-          {/* 🎯 4. Center Outlined CTA Button */}
-          <div className="pt-4 flex flex-col items-center justify-center gap-4">
+          {/* 🎯 4. Center Outlined CTA Button & Down Arrow (Generously Spaced) */}
+          <div className="pt-6 flex flex-col items-center justify-center gap-4">
             <button
               type="button"
               onClick={() => navigateTo('equipment')}
-              className="border border-white/35 hover:border-white text-white font-mono text-[11px] sm:text-xs uppercase tracking-[0.25em] font-semibold px-7 py-3 rounded-md transition-all duration-300 hover:bg-white hover:text-[#26452D] flex items-center gap-2 group shadow-xl"
+              className="border border-white/35 hover:border-white text-white font-mono text-[11px] sm:text-xs uppercase tracking-[0.25em] font-semibold px-7 py-3 rounded-md transition-all duration-300 hover:bg-white hover:text-[#26452D] flex items-center gap-2 group shadow-xl cursor-pointer"
             >
               <span>JOIN TANUSH</span>
               <ArrowUpRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
@@ -241,164 +237,14 @@ export const HomePage: React.FC = () => {
             <button
               type="button"
               onClick={scrollToAbout}
-              className="w-9 h-9 rounded-full border border-white/25 flex items-center justify-center text-white/80 hover:text-white hover:border-white transition animate-bounce mt-1"
+              className="w-9 h-9 rounded-full border border-white/25 flex items-center justify-center text-white/80 hover:text-white hover:border-white transition animate-bounce mt-1 cursor-pointer"
               aria-label="Scroll to Next Section"
             >
               <ArrowDown className="w-3.5 h-3.5" />
             </button>
           </div>
         </div>
-
-        {/* 🧭 6. Bottom Floating Navigation Structure (Matching Exact Layout) */}
-        <div className="fixed bottom-6 left-0 right-0 z-40 px-4 sm:px-8 pointer-events-none">
-          <div className="max-w-7xl mx-auto flex items-center justify-between gap-4">
-            {/* Left Floating Pill Badge: TANUSH */}
-            <div className="pointer-events-auto">
-              <button
-                type="button"
-                onClick={() => {
-                  navigateTo('home');
-                  window.scrollTo({ top: 0, behavior: 'smooth' });
-                }}
-                className="bg-[#0D1811]/95 backdrop-blur-xl border border-white/15 px-6 sm:px-7 py-2.5 sm:py-3 rounded-full font-syne font-black text-xs sm:text-sm tracking-[0.2em] text-white hover:text-[#D26539] transition-colors shadow-2xl uppercase"
-              >
-                TANUSH
-              </button>
-            </div>
-
-            {/* Center Floating Navigation Dock */}
-            <div className="pointer-events-auto hidden md:flex items-center gap-1.5 bg-[#0D1811]/95 backdrop-blur-xl border border-white/15 p-1.5 rounded-full shadow-2xl font-mono text-[11px] uppercase tracking-wider">
-              <button
-                type="button"
-                onClick={scrollToAbout}
-                className="bg-[#D26539] text-white font-bold px-4 py-1.5 rounded-full transition shadow-md"
-              >
-                About
-              </button>
-              <button
-                type="button"
-                onClick={() => navigateTo('equipment')}
-                className="text-slate-300 hover:text-white px-3.5 py-1.5 rounded-full transition"
-              >
-                Equipment
-              </button>
-              <button
-                type="button"
-                onClick={() => navigateTo('services')}
-                className="text-slate-300 hover:text-white px-3.5 py-1.5 rounded-full transition"
-              >
-                Gym Management
-              </button>
-              <button
-                type="button"
-                onClick={() => navigateTo('manpower')}
-                className="text-slate-300 hover:text-white px-3.5 py-1.5 rounded-full transition"
-              >
-                Manpower
-              </button>
-              <button
-                type="button"
-                onClick={() => navigateTo('contact')}
-                className="text-slate-300 hover:text-white px-3.5 py-1.5 rounded-full transition"
-              >
-                Consultation
-              </button>
-            </div>
-
-            {/* Right Floating Circular Hamburger Button */}
-            <div className="pointer-events-auto">
-              <button
-                type="button"
-                onClick={() => setIsNavDrawerOpen(!isNavDrawerOpen)}
-                className="w-11 h-11 rounded-full bg-[#0D1811]/95 backdrop-blur-xl border border-white/15 flex flex-col items-center justify-center gap-1 text-white hover:border-[#D26539] transition shadow-2xl"
-                aria-label="Toggle Navigation Menu"
-              >
-                {isNavDrawerOpen ? (
-                  <X className="w-4 h-4 text-[#D26539]" />
-                ) : (
-                  <>
-                    <span className="w-4 h-[2px] bg-white rounded-full" />
-                    <span className="w-4 h-[2px] bg-white rounded-full" />
-                  </>
-                )}
-              </button>
-            </div>
-          </div>
-        </div>
       </section>
-
-      {/* Full-Screen Drawer Menu Modal */}
-      <AnimatePresence>
-        {isNavDrawerOpen && (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.3 }}
-            className="fixed inset-0 z-50 bg-[#090C10] flex flex-col justify-between p-6 sm:p-12 overflow-y-auto"
-          >
-            <div className="flex items-center justify-between border-b border-white/10 pb-6">
-              <div className="cursor-pointer" onClick={() => { navigateTo('home'); setIsNavDrawerOpen(false); }}>
-                <span className="font-syne font-black text-2xl tracking-[0.2em] text-white uppercase block">
-                  TANUSH
-                </span>
-                <span className="text-[9px] font-mono tracking-[0.3em] text-[#D26539] uppercase">
-                  FITNESS SANCTUARY
-                </span>
-              </div>
-
-              <button
-                type="button"
-                onClick={() => setIsNavDrawerOpen(false)}
-                className="w-11 h-11 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-white hover:text-[#D26539] hover:border-[#D26539] transition"
-              >
-                <X className="w-5 h-5" />
-              </button>
-            </div>
-
-            <div className="my-auto py-12 max-w-4xl mx-auto w-full">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                {[
-                  { num: '01', title: 'Overview', page: 'home' as const, desc: 'Flagship Sanctuary & Kinetic Hub' },
-                  { num: '02', title: 'Commercial & Residential Equipment', page: 'equipment' as const, desc: '11-Gauge Precision Laser Machines & Rigs' },
-                  { num: '03', title: 'Gym Management & Turnkey', page: 'services' as const, desc: '3D CAD Architecture & Turnkey Setup' },
-                  { num: '04', title: 'Manpower Services', page: 'manpower' as const, desc: 'Certified Trainers & Management Staffing' },
-                  { num: '05', title: 'Vision & Philosophy', page: 'about' as const, desc: 'Biomechanical Engineering Standard' },
-                  { num: '06', title: 'VIP Consultation', page: 'contact' as const, desc: 'Direct Factory Outfitting Desk' },
-                ].map((item) => (
-                  <div
-                    key={item.num}
-                    onClick={() => {
-                      navigateTo(item.page);
-                      setIsNavDrawerOpen(false);
-                      window.scrollTo({ top: 0, behavior: 'smooth' });
-                    }}
-                    className="p-6 rounded-2xl bg-[#0D1118] border border-white/10 hover:border-[#D26539] transition-all cursor-pointer group flex items-start justify-between"
-                  >
-                    <div className="space-y-1">
-                      <div className="flex items-center gap-3">
-                        <span className="text-xs font-mono text-[#D26539]">{item.num}</span>
-                        <h3 className="font-syne text-xl font-bold uppercase text-slate-200 group-hover:text-white transition">
-                          {item.title}
-                        </h3>
-                      </div>
-                      <p className="text-xs text-slate-400 font-sans pl-7">{item.desc}</p>
-                    </div>
-                    <ArrowRight className="w-4 h-4 text-slate-500 group-hover:text-[#D26539] transition mt-1" />
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            <div className="border-t border-white/10 pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-mono text-slate-400">
-              <div>GST: 07AAACT1234F1Z5 • ISO 9001:2015 CERTIFIED</div>
-              <a href="tel:+919067800048" className="text-[#D26539] hover:underline">
-                Direct Desk: +91 90678 00048
-              </a>
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
 
       {/* ========================================================================= */}
       {/* SECTION 2: FULL-WIDTH MARQUEE STRIP (CORE OFFERINGS)                      */}
@@ -599,7 +445,7 @@ export const HomePage: React.FC = () => {
                       <div className="space-y-2 pt-3 border-t border-white/5 font-mono text-xs text-slate-300">
                         {pillar.points.map((pt, ptIdx) => (
                           <div key={ptIdx} className="flex items-center gap-2">
-                            <CheckCircle2 className="w-3.5 h-3.5 text-[#D26539] shrink-0" />
+                            <CheckCircle2 className="w-3.5 h-3.5 text-[#D26539]" />
                             <span>{pt}</span>
                           </div>
                         ))}
