@@ -7,6 +7,39 @@ export default {
   theme: {
     extend: {
       colors: {
+        obsidian: {
+          DEFAULT: '#090C10',
+          950: '#05070A',
+          900: '#090C10',
+          850: '#0D1117',
+          800: '#121722',
+          700: '#1B2232',
+          600: '#263045',
+        },
+        gold: {
+          DEFAULT: '#C5A880',
+          50: '#FBF9F5',
+          100: '#F4EFE6',
+          200: '#E8DCCB',
+          300: '#DBC7AC',
+          400: '#CFA88D',
+          500: '#C5A880',
+          600: '#B08F63',
+          700: '#947348',
+          800: '#755833',
+        },
+        terracotta: {
+          DEFAULT: '#C2552F',
+          400: '#D26539',
+          500: '#C2552F',
+          600: '#A8411D',
+        },
+        forest: {
+          DEFAULT: '#3A563F',
+          800: '#283B2C',
+          700: '#3A563F',
+          600: '#4D7254',
+        },
         cobalt: {
           50: '#EFF6FF',
           100: '#DBEAFE',
@@ -17,39 +50,12 @@ export default {
           800: '#1E3A8A',
           900: '#172554',
         },
-        obsidian: {
-          DEFAULT: '#0B0F19',
-          950: '#06080D',
-          900: '#0B0F19',
-          800: '#131927',
-          700: '#1E293B',
-        },
-        brass: {
-          50: '#FEFCE8',
-          100: '#FEF9C3',
-          400: '#FACC15',
-          500: '#EAB308',
-          600: '#CA8A04',
-          700: '#A16207',
-          800: '#854D0E',
-        },
-        slate: {
-          25: '#FCFCFD',
-          50: '#F8FAFC',
-          100: '#F1F5F9',
-          200: '#E2E8F0',
-          300: '#CBD5E1',
-          400: '#94A3B8',
-          500: '#64748B',
-          700: '#334155',
-          800: '#1E293B',
-          900: '#0F172A',
-          950: '#020817',
-        }
       },
       fontFamily: {
-        sans: ['Inter', 'sans-serif'],
-        heading: ['Archivo', 'sans-serif'],
+        sans: ['Montserrat', 'Inter', 'sans-serif'],
+        syne: ['Syne', 'sans-serif'],
+        cinzel: ['Cinzel', 'serif'],
+        heading: ['Montserrat', 'Syne', 'sans-serif'],
         mono: ['JetBrains Mono', 'monospace'],
       },
       borderRadius: {
