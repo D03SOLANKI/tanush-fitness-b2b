@@ -50,28 +50,28 @@ const USP_CARDS = [
     title: 'World Class Equipment',
     description: 'Experience biomechanical perfection in every workout with Tanush meticulously curated commercial lines.',
     brands: ['Matrix', 'Torque USA', 'Concept 2', 'Precor'],
-    icon: <Dumbbell className="w-8 h-8 text-[#C5A880]" />,
+    icon: <Dumbbell className="w-8 h-8 text-[#D26539]" />,
   },
   {
     id: 2,
     title: 'For All Age Groups',
     description: 'Tailored functional training architectures and supportive environments designed for multi-generational vitality.',
     brands: ['Youth Athletic', 'Senior Mobility', 'Pro Strength'],
-    icon: <HeartPulse className="w-8 h-8 text-[#C5A880]" />,
+    icon: <HeartPulse className="w-8 h-8 text-[#D26539]" />,
   },
   {
     id: 3,
     title: 'Recovery Room - Hyperice',
     description: 'Revitalize in exclusive biohacking recovery suites offering pneumatic compression, percussion, and thermal therapies.',
     brands: ['Hyperice Partner', 'Cryo Chamber', 'Percussion Bar'],
-    icon: <Zap className="w-8 h-8 text-[#C5A880]" />,
+    icon: <Zap className="w-8 h-8 text-[#D26539]" />,
   },
   {
     id: 4,
     title: 'Certified Master Coaches',
     description: 'Unlock human potential with certified coaches, accredited trainers, and automated facility operational workflows.',
     brands: ['ACSM Certified', 'Strength Directors', 'AMC Support'],
-    icon: <Award className="w-8 h-8 text-[#C5A880]" />,
+    icon: <Award className="w-8 h-8 text-[#D26539]" />,
   },
 ];
 
@@ -211,11 +211,11 @@ export const HomePage: React.FC = () => {
       {/* ========================================================================= */}
       <section className="relative min-h-[92vh] flex flex-col justify-between pt-12 pb-8 px-4 sm:px-6 lg:px-8 border-b border-white/5">
         {/* Ambient Glows */}
-        <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[350px] bg-[#C5A880]/10 blur-[140px] pointer-events-none rounded-full" />
+        <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[350px] bg-[#D26539]/10 blur-[140px] pointer-events-none rounded-full" />
 
         <div className="max-w-7xl mx-auto w-full my-auto text-center space-y-8 z-10 pt-8">
           {/* Top Brand Micro Badge */}
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/5 border border-[#C5A880]/30 text-xs font-mono text-[#C5A880] tracking-widest uppercase">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/5 border border-[#D26539]/30 text-xs font-mono text-[#D26539] tracking-widest uppercase">
             <Sparkles className="w-3.5 h-3.5" />
             <span>India's Premier Fitness Outfitting Brand</span>
           </div>
@@ -225,14 +225,14 @@ export const HomePage: React.FC = () => {
             {/* Headline Row 1 */}
             <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-4 md:gap-6 font-syne text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-black uppercase tracking-tight text-white leading-none">
               <span>GET READY</span>
-              <div className="inline-block h-10 sm:h-14 md:h-18 w-16 sm:w-24 md:w-32 rounded-full overflow-hidden border border-[#C5A880]/40 shadow-xl shrink-0 align-middle">
+              <div className="inline-block h-10 sm:h-14 md:h-18 w-16 sm:w-24 md:w-32 rounded-full overflow-hidden border border-[#D26539]/40 shadow-xl shrink-0 align-middle">
                 <img
                   src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=400&q=80"
                   alt="Tanush Fitness Rigs"
                   className="w-full h-full object-cover"
                 />
               </div>
-              <span className="text-[#C5A880]">TO UNLEASH</span>
+              <span className="text-[#D26539]">TO UNLEASH</span>
             </div>
 
             {/* Headline Row 2 */}
@@ -271,7 +271,7 @@ export const HomePage: React.FC = () => {
               className="btn-vault-outline w-full sm:w-auto px-8 py-3.5 flex items-center justify-center gap-2"
             >
               <span>Equipment Catalog</span>
-              <ArrowUpRight className="w-4 h-4 text-[#C5A880]" />
+              <ArrowUpRight className="w-4 h-4 text-[#D26539]" />
             </button>
           </div>
         </div>
@@ -296,7 +296,7 @@ export const HomePage: React.FC = () => {
                 <div className="absolute inset-0 bg-gradient-to-t from-[#090C10] via-black/40 to-transparent" />
 
                 <div className="absolute bottom-6 left-6 sm:bottom-10 sm:left-10 text-left max-w-xl space-y-2">
-                  <span className="text-[10px] font-mono text-[#C5A880] uppercase tracking-[0.25em]">
+                  <span className="text-[10px] font-mono text-[#D26539] uppercase tracking-[0.25em]">
                     FLAGSHIP COMMERCIAL ARCHITECTURE
                   </span>
                   <h3 className="font-syne text-xl sm:text-3xl font-extrabold text-white uppercase tracking-tight">
@@ -314,14 +314,14 @@ export const HomePage: React.FC = () => {
               <button
                 type="button"
                 onClick={() => setCurrentSlide(prev => (prev === 0 ? HERO_SLIDES.length - 1 : prev - 1))}
-                className="p-2 rounded-full bg-black/60 hover:bg-[#C5A880] text-white hover:text-[#090C10] transition border border-white/10"
+                className="p-2 rounded-full bg-black/60 hover:bg-[#D26539] text-white hover:text-[#090C10] transition border border-white/10"
               >
                 <ChevronLeft className="w-4 h-4" />
               </button>
               <button
                 type="button"
                 onClick={() => setCurrentSlide(prev => (prev + 1) % HERO_SLIDES.length)}
-                className="p-2 rounded-full bg-black/60 hover:bg-[#C5A880] text-white hover:text-[#090C10] transition border border-white/10"
+                className="p-2 rounded-full bg-black/60 hover:bg-[#D26539] text-white hover:text-[#090C10] transition border border-white/10"
               >
                 <ChevronRight className="w-4 h-4" />
               </button>
@@ -343,7 +343,7 @@ export const HomePage: React.FC = () => {
           {/* Section Header & Tab Controls */}
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-6">
             <div className="space-y-3">
-              <div className="text-[11px] font-mono tracking-[0.3em] text-[#C5A880] uppercase">
+              <div className="text-[11px] font-mono tracking-[0.3em] text-[#D26539] uppercase">
                 THE TANUSH PHILOSOPHY
               </div>
               <h2 className="font-syne text-3xl sm:text-5xl font-extrabold uppercase text-white tracking-tight">
@@ -358,7 +358,7 @@ export const HomePage: React.FC = () => {
                 onClick={() => setVisionTab('what')}
                 className={`px-6 py-2.5 rounded-full text-xs font-mono uppercase tracking-wider transition ${
                   visionTab === 'what'
-                    ? 'bg-[#C5A880] text-[#090C10] font-bold shadow-md'
+                    ? 'bg-[#D26539] text-[#090C10] font-bold shadow-md'
                     : 'text-slate-400 hover:text-white'
                 }`}
               >
@@ -369,7 +369,7 @@ export const HomePage: React.FC = () => {
                 onClick={() => setVisionTab('why')}
                 className={`px-6 py-2.5 rounded-full text-xs font-mono uppercase tracking-wider transition ${
                   visionTab === 'why'
-                    ? 'bg-[#C5A880] text-[#090C10] font-bold shadow-md'
+                    ? 'bg-[#D26539] text-[#090C10] font-bold shadow-md'
                     : 'text-slate-400 hover:text-white'
                 }`}
               >
@@ -385,10 +385,10 @@ export const HomePage: React.FC = () => {
               {visionTab === 'what' ? (
                 <div className="space-y-6 text-slate-300 font-sans text-base sm:text-lg leading-relaxed">
                   <p>
-                    Introducing India's premier fitness destination & commercial outfitting brand: <span className="text-[#C5A880] font-bold">Tanush Fitness</span>, where physical engineering reaches new heights and wellness takes center stage. Step into a realm where every aspect of your fitness journey is meticulously crafted to elevate your <span className="text-white font-semibold">physical and mental well-being</span>.
+                    Introducing India's premier fitness destination & commercial outfitting brand: <span className="text-[#D26539] font-bold">Tanush Fitness</span>, where physical engineering reaches new heights and wellness takes center stage. Step into a realm where every aspect of your fitness journey is meticulously crafted to elevate your <span className="text-white font-semibold">physical and mental well-being</span>.
                   </p>
                   <p>
-                    At Tanush, we redefine the fitness experience with <span className="text-[#C5A880] font-semibold">state-of-the-art biomechanical machinery</span>, curated to empower you to unleash your true potential. Our commitment goes beyond mere equipment delivery; we provide a holistic <span className="text-white font-semibold">360-degree turnkey solution</span> to transform spaces, bodies, and minds.
+                    At Tanush, we redefine the fitness experience with <span className="text-[#D26539] font-semibold">state-of-the-art biomechanical machinery</span>, curated to empower you to unleash your true potential. Our commitment goes beyond mere equipment delivery; we provide a holistic <span className="text-white font-semibold">360-degree turnkey solution</span> to transform spaces, bodies, and minds.
                   </p>
                   <div className="pt-2">
                     <button
@@ -397,16 +397,16 @@ export const HomePage: React.FC = () => {
                       className="btn-vault-outline flex items-center gap-2"
                     >
                       <span>Read Our Full Story</span>
-                      <ArrowRight className="w-4 h-4 text-[#C5A880]" />
+                      <ArrowRight className="w-4 h-4 text-[#D26539]" />
                     </button>
                   </div>
                 </div>
               ) : (
                 <div className="space-y-6 text-slate-300 font-sans text-base sm:text-lg leading-relaxed">
                   <p>
-                    As a testament to unwavering commitment to human health, athletic longevity, and industrial craftsmanship, <span className="text-[#C5A880] font-bold">Tanush Fitness</span> aims to redefine the Indian fitness landscape by offering far more than just a gym equipment catalog.
+                    As a testament to unwavering commitment to human health, athletic longevity, and industrial craftsmanship, <span className="text-[#D26539] font-bold">Tanush Fitness</span> aims to redefine the Indian fitness landscape by offering far more than just a gym equipment catalog.
                   </p>
-                  <blockquote className="p-6 rounded-2xl bg-[#0D1118] border-l-4 border-[#C5A880] text-slate-200 italic font-serif text-lg leading-relaxed">
+                  <blockquote className="p-6 rounded-2xl bg-[#0D1118] border-l-4 border-[#D26539] text-slate-200 italic font-serif text-lg leading-relaxed">
                     "Tanush Fitness is not merely a gym supplier; it is a lifestyle and architectural movement. We believe in the transformative power of fitness, designing sanctuaries where individuals and communities achieve athletic excellence and cultivate balanced, fulfilling lives."
                   </blockquote>
                   <div className="pt-2">
@@ -433,7 +433,7 @@ export const HomePage: React.FC = () => {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#090C10] via-transparent to-transparent opacity-60" />
                 <div className="absolute bottom-6 left-6 right-6 p-4 rounded-xl bg-[#0D1118]/80 backdrop-blur-md border border-white/10">
-                  <div className="flex items-center justify-between font-mono text-xs text-[#C5A880]">
+                  <div className="flex items-center justify-between font-mono text-xs text-[#D26539]">
                     <span>ISO 9001:2015 CERTIFIED</span>
                     <span>350+ OUTLETS</span>
                   </div>
@@ -451,7 +451,7 @@ export const HomePage: React.FC = () => {
         <div className="space-y-12">
           <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-6">
             <div className="space-y-2">
-              <div className="text-[11px] font-mono tracking-[0.3em] text-[#C5A880] uppercase">
+              <div className="text-[11px] font-mono tracking-[0.3em] text-[#D26539] uppercase">
                 EXCLUSIVE ADVANTAGES
               </div>
               <h2 className="font-syne text-3xl sm:text-5xl font-extrabold uppercase text-white tracking-tight">
@@ -464,7 +464,7 @@ export const HomePage: React.FC = () => {
               className="btn-vault-outline text-xs flex items-center gap-2"
             >
               <span>Know More</span>
-              <ArrowRight className="w-3.5 h-3.5 text-[#C5A880]" />
+              <ArrowRight className="w-3.5 h-3.5 text-[#D26539]" />
             </button>
           </div>
 
@@ -475,11 +475,11 @@ export const HomePage: React.FC = () => {
                 className="bg-[#0D1118] border border-white/10 rounded-2xl p-8 space-y-6 luxury-card flex flex-col justify-between group"
               >
                 <div className="space-y-4">
-                  <div className="w-14 h-14 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center group-hover:border-[#C5A880] transition-colors">
+                  <div className="w-14 h-14 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center group-hover:border-[#D26539] transition-colors">
                     {card.icon}
                   </div>
 
-                  <h3 className="font-syne text-xl font-bold text-white group-hover:text-[#C5A880] transition uppercase">
+                  <h3 className="font-syne text-xl font-bold text-white group-hover:text-[#D26539] transition uppercase">
                     {card.title}
                   </h3>
 
@@ -511,7 +511,7 @@ export const HomePage: React.FC = () => {
         <div className="space-y-12">
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-6">
             <div className="space-y-2">
-              <div className="text-[11px] font-mono tracking-[0.3em] text-[#C5A880] uppercase">
+              <div className="text-[11px] font-mono tracking-[0.3em] text-[#D26539] uppercase">
                 SPATIAL ARCHITECTURE
               </div>
               <h2 className="font-syne text-3xl sm:text-5xl font-extrabold uppercase text-white tracking-tight">
@@ -539,7 +539,7 @@ export const HomePage: React.FC = () => {
                     onClick={() => setActiveZone(idx)}
                     className={`px-4 py-2 rounded-full text-xs font-mono uppercase tracking-wider transition ${
                       activeZone === idx
-                        ? 'bg-[#C5A880] text-[#090C10] font-bold shadow-md'
+                        ? 'bg-[#D26539] text-[#090C10] font-bold shadow-md'
                         : 'bg-[#0D1118] text-slate-400 border border-white/5 hover:border-white/20'
                     }`}
                   >
@@ -561,9 +561,9 @@ export const HomePage: React.FC = () => {
                   {FACILITY_ZONES[activeZone].tags.map((t, tIdx) => (
                     <span
                       key={tIdx}
-                      className="px-3 py-1.5 rounded-lg bg-white/5 text-xs font-mono text-[#C5A880] flex items-center gap-1.5"
+                      className="px-3 py-1.5 rounded-lg bg-white/5 text-xs font-mono text-[#D26539] flex items-center gap-1.5"
                     >
-                      <CheckCircle2 className="w-3.5 h-3.5 text-[#C5A880]" />
+                      <CheckCircle2 className="w-3.5 h-3.5 text-[#D26539]" />
                       {t}
                     </span>
                   ))}
@@ -601,7 +601,7 @@ export const HomePage: React.FC = () => {
           {/* Section Header with exact heading from previous website */}
           <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-6">
             <div className="space-y-2">
-              <div className="text-[11px] font-mono tracking-[0.3em] text-[#C5A880] uppercase">
+              <div className="text-[11px] font-mono tracking-[0.3em] text-[#D26539] uppercase">
                 CORE PROCUREMENT VERTICALS
               </div>
               <h2 className="font-syne text-3xl sm:text-5xl font-extrabold uppercase text-white tracking-tight">
@@ -645,13 +645,13 @@ export const HomePage: React.FC = () => {
 
                       {/* Top Pillar Number Badge */}
                       <div className="absolute top-4 left-4">
-                        <span className="px-3 py-1 rounded-full bg-[#090C10]/90 backdrop-blur-md border border-[#C5A880]/30 text-[10px] font-mono text-[#C5A880] font-bold uppercase tracking-wider">
+                        <span className="px-3 py-1 rounded-full bg-[#090C10]/90 backdrop-blur-md border border-[#D26539]/30 text-[10px] font-mono text-[#D26539] font-bold uppercase tracking-wider">
                           PILLAR {pillar.number} // {pillar.category}
                         </span>
                       </div>
 
                       {/* Top Right Icon */}
-                      <div className="absolute top-4 right-4 w-9 h-9 rounded-full bg-[#090C10]/80 backdrop-blur-md border border-white/10 flex items-center justify-center text-[#C5A880]">
+                      <div className="absolute top-4 right-4 w-9 h-9 rounded-full bg-[#090C10]/80 backdrop-blur-md border border-white/10 flex items-center justify-center text-[#D26539]">
                         <IconComp className="w-4 h-4" />
                       </div>
                     </div>
@@ -661,11 +661,11 @@ export const HomePage: React.FC = () => {
                       <div>
                         <h3
                           onClick={() => navigateTo(pillar.page)}
-                          className="font-syne text-xl font-bold text-white group-hover:text-[#C5A880] transition uppercase cursor-pointer"
+                          className="font-syne text-xl font-bold text-white group-hover:text-[#D26539] transition uppercase cursor-pointer"
                         >
                           {pillar.title}
                         </h3>
-                        <p className="text-xs font-mono text-[#C5A880] mt-1">
+                        <p className="text-xs font-mono text-[#D26539] mt-1">
                           {pillar.tagline}
                         </p>
                       </div>
@@ -678,7 +678,7 @@ export const HomePage: React.FC = () => {
                       <div className="space-y-2 pt-3 border-t border-white/5 font-mono text-xs text-slate-300">
                         {pillar.points.map((pt, ptIdx) => (
                           <div key={ptIdx} className="flex items-center gap-2.5">
-                            <CheckCircle2 className="w-3.5 h-3.5 text-[#C5A880] shrink-0" />
+                            <CheckCircle2 className="w-3.5 h-3.5 text-[#D26539] shrink-0" />
                             <span>{pt}</span>
                           </div>
                         ))}
@@ -709,7 +709,7 @@ export const HomePage: React.FC = () => {
       {/* ========================================================================= */}
       <section className="py-16 border-b border-white/5 bg-[#05070A]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center mb-8">
-          <div className="text-[11px] font-mono tracking-[0.3em] text-[#C5A880] uppercase">
+          <div className="text-[11px] font-mono tracking-[0.3em] text-[#D26539] uppercase">
             CORPORATE PARTNERSHIPS & CERTIFICATIONS
           </div>
           <h2 className="font-syne text-2xl sm:text-4xl font-extrabold uppercase text-white tracking-tight mt-2">
@@ -731,13 +731,13 @@ export const HomePage: React.FC = () => {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             {/* Left Copy */}
             <div className="lg:col-span-6 space-y-6">
-              <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/5 border border-[#C5A880]/30 text-xs font-mono text-[#C5A880] tracking-widest uppercase">
+              <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/5 border border-[#D26539]/30 text-xs font-mono text-[#D26539] tracking-widest uppercase">
                 <Building2 className="w-3.5 h-3.5" />
                 <span>Pan-India Commercial Expansion</span>
               </div>
 
               <h2 className="font-syne text-3xl sm:text-5xl font-extrabold uppercase text-white tracking-tight">
-                OPEN YOUR OWN <span className="text-[#C5A880]">TANUSH SANCTUARY</span>
+                OPEN YOUR OWN <span className="text-[#D26539]">TANUSH SANCTUARY</span>
               </h2>
 
               <p className="text-sm sm:text-base text-slate-300 font-sans leading-relaxed">
@@ -746,15 +746,15 @@ export const HomePage: React.FC = () => {
 
               <div className="space-y-3 font-mono text-xs text-slate-300 pt-2">
                 <div className="flex items-center gap-2">
-                  <CheckCircle2 className="w-4 h-4 text-[#C5A880]" />
+                  <CheckCircle2 className="w-4 h-4 text-[#D26539]" />
                   <span>Direct Factory Procurement with 18% GST Input Tax Credit</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <CheckCircle2 className="w-4 h-4 text-[#C5A880]" />
+                  <CheckCircle2 className="w-4 h-4 text-[#D26539]" />
                   <span>Turnkey Architectural CAD Layouts within 48 Hours</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <CheckCircle2 className="w-4 h-4 text-[#C5A880]" />
+                  <CheckCircle2 className="w-4 h-4 text-[#D26539]" />
                   <span>Certified Trainer & Operational Leadership Recruitment</span>
                 </div>
               </div>
@@ -777,7 +777,7 @@ export const HomePage: React.FC = () => {
                     placeholder="Vikram Malhotra"
                     value={inquiryName}
                     onChange={e => setInquiryName(e.target.value)}
-                    className="w-full bg-[#0D1118] border border-white/10 rounded-xl px-4 py-2.5 text-sm text-white placeholder-slate-600 focus:outline-none focus:border-[#C5A880]"
+                    className="w-full bg-[#0D1118] border border-white/10 rounded-xl px-4 py-2.5 text-sm text-white placeholder-slate-600 focus:outline-none focus:border-[#D26539]"
                   />
                 </div>
 
@@ -792,7 +792,7 @@ export const HomePage: React.FC = () => {
                       placeholder="+91 98112 34567"
                       value={inquiryPhone}
                       onChange={e => setInquiryPhone(e.target.value)}
-                      className="w-full bg-[#0D1118] border border-white/10 rounded-xl px-4 py-2.5 text-sm text-white placeholder-slate-600 focus:outline-none focus:border-[#C5A880]"
+                      className="w-full bg-[#0D1118] border border-white/10 rounded-xl px-4 py-2.5 text-sm text-white placeholder-slate-600 focus:outline-none focus:border-[#D26539]"
                     />
                   </div>
 
@@ -805,7 +805,7 @@ export const HomePage: React.FC = () => {
                       placeholder="vikram@fitplus.in"
                       value={inquiryEmail}
                       onChange={e => setInquiryEmail(e.target.value)}
-                      className="w-full bg-[#0D1118] border border-white/10 rounded-xl px-4 py-2.5 text-sm text-white placeholder-slate-600 focus:outline-none focus:border-[#C5A880]"
+                      className="w-full bg-[#0D1118] border border-white/10 rounded-xl px-4 py-2.5 text-sm text-white placeholder-slate-600 focus:outline-none focus:border-[#D26539]"
                     />
                   </div>
                 </div>
@@ -818,7 +818,7 @@ export const HomePage: React.FC = () => {
                     <select
                       value={selectedCity}
                       onChange={e => setSelectedCity(e.target.value)}
-                      className="w-full bg-[#0D1118] border border-white/10 rounded-xl px-3 py-2.5 text-sm text-white focus:outline-none focus:border-[#C5A880]"
+                      className="w-full bg-[#0D1118] border border-white/10 rounded-xl px-3 py-2.5 text-sm text-white focus:outline-none focus:border-[#D26539]"
                     >
                       <option value="Delhi NCR">Delhi NCR</option>
                       <option value="Mumbai / MMR">Mumbai / MMR</option>
@@ -837,7 +837,7 @@ export const HomePage: React.FC = () => {
                     <select
                       value={inquirySqft}
                       onChange={e => setInquirySqft(e.target.value)}
-                      className="w-full bg-[#0D1118] border border-white/10 rounded-xl px-3 py-2.5 text-sm text-white focus:outline-none focus:border-[#C5A880]"
+                      className="w-full bg-[#0D1118] border border-white/10 rounded-xl px-3 py-2.5 text-sm text-white focus:outline-none focus:border-[#D26539]"
                     >
                       <option value="2,500 - 5,000 sq.ft">2,500 - 5,000 sq.ft</option>
                       <option value="5,000 - 10,000 sq.ft">5,000 - 10,000 sq.ft</option>

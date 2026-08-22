@@ -1,11 +1,11 @@
 import React from 'react';
-import { Sparkles, Shield, Compass, Award } from 'lucide-react';
+import { Sparkles } from 'lucide-react';
 
 interface MarqueeStripProps {
   items?: string[];
   reverse?: boolean;
   speed?: 'normal' | 'slow';
-  theme?: 'dark' | 'gold' | 'minimal';
+  theme?: 'dark' | 'orange' | 'gold' | 'minimal' | 'green';
 }
 
 const DEFAULT_ITEMS = [
@@ -23,18 +23,22 @@ export const MarqueeStrip: React.FC<MarqueeStripProps> = ({
   items = DEFAULT_ITEMS,
   reverse = false,
   speed = 'normal',
-  theme = 'gold',
+  theme = 'orange',
 }) => {
   const repeated = [...items, ...items, ...items, ...items];
 
   const getThemeClass = () => {
     switch (theme) {
+      case 'orange':
+        return 'bg-[#D26539] text-[#090C10] py-3 sm:py-3.5 shadow-lg border-y border-[#C2552F]';
       case 'gold':
-        return 'bg-[#C5A880] text-[#090C10] py-3 sm:py-3.5 shadow-lg border-y border-[#B3936A]';
+        return 'bg-[#D8CDC0] text-[#090C10] py-3 sm:py-3.5 shadow-lg border-y border-[#D26539]';
+      case 'green':
+        return 'bg-[#26452D] text-[#ECE6DB] py-3 sm:py-3.5 border-y border-[#3A563F]';
       case 'minimal':
         return 'bg-transparent text-slate-400 border-y border-white/5 py-3';
       default:
-        return 'bg-[#0D1118] text-[#C5A880] border-y border-white/5 py-3';
+        return 'bg-[#0D1118] text-[#D26539] border-y border-white/5 py-3';
     }
   };
 
@@ -50,21 +54,15 @@ export const MarqueeStrip: React.FC<MarqueeStripProps> = ({
         {repeated.map((text, idx) => (
           <div
             key={idx}
-            className={`flex items-center gap-6 mx-6 font-syne text-xs sm:text-sm font-extrabold tracking-[0.2em] sm:tracking-[0.25em] uppercase whitespace-nowrap ${
-              theme === 'gold' ? 'text-[#090C10]' : ''
+            className={`flex items-center gap-6 mx-6 font-syne text-xs sm:text-sm font-black tracking-[0.2em] sm:tracking-[0.25em] uppercase whitespace-nowrap ${
+              theme === 'orange' || theme === 'gold' ? 'text-[#090C10]' : ''
             }`}
           >
             <span>{text}</span>
-            <Sparkles
-              className={`w-3.5 h-3.5 shrink-0 ${
-                theme === 'gold'
-                  ? 'fill-[#090C10] text-[#090C10]'
-                  : 'text-[#C5A880] opacity-80'
-              }`}
-            />
+            <span className="text-xs shrink-0">✦</span>
           </div>
         ))}
       </div>
     </div>
   );
-}; 
+};

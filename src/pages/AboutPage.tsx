@@ -19,13 +19,13 @@ export const AboutPage: React.FC = () => {
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 pb-12">
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 border-b border-white/10 pb-8">
           <div className="space-y-3">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-[#C5A880]/30 text-xs font-mono text-[#C5A880] tracking-widest uppercase">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-[#D26539]/30 text-xs font-mono text-[#D26539] tracking-widest uppercase">
               <Sparkles className="w-3.5 h-3.5" />
               <span>THE ARCHITECTURAL DISCIPLINE // EST. 2018</span>
             </div>
 
             <h1 className="font-syne text-3xl sm:text-5xl md:text-6xl font-extrabold uppercase text-white tracking-tight">
-              THE TANUSH <span className="text-[#C5A880]">LEGACY</span>
+              THE TANUSH <span className="text-[#D26539]">LEGACY</span>
             </h1>
 
             <p className="text-sm sm:text-base text-slate-400 max-w-2xl font-sans leading-relaxed">
@@ -54,7 +54,7 @@ export const AboutPage: React.FC = () => {
         <div className="bg-[#0D1118] border border-white/10 rounded-3xl p-8 sm:p-12 space-y-8">
           <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6 border-b border-white/10 pb-6">
             <div className="space-y-1">
-              <span className="text-[11px] font-mono tracking-[0.25em] text-[#C5A880] uppercase">
+              <span className="text-[11px] font-mono tracking-[0.25em] text-[#D26539] uppercase">
                 THE TANUSH PHILOSOPHY
               </span>
               <h2 className="font-syne text-2xl sm:text-3xl font-extrabold text-white uppercase">
@@ -68,7 +68,7 @@ export const AboutPage: React.FC = () => {
                 onClick={() => setActiveTab('what')}
                 className={`px-6 py-2 rounded-full text-xs font-mono uppercase tracking-wider transition ${
                   activeTab === 'what'
-                    ? 'bg-[#C5A880] text-[#090C10] font-bold shadow-md'
+                    ? 'bg-[#D26539] text-[#090C10] font-bold shadow-md'
                     : 'text-slate-400 hover:text-white'
                 }`}
               >
@@ -79,7 +79,7 @@ export const AboutPage: React.FC = () => {
                 onClick={() => setActiveTab('why')}
                 className={`px-6 py-2 rounded-full text-xs font-mono uppercase tracking-wider transition ${
                   activeTab === 'why'
-                    ? 'bg-[#C5A880] text-[#090C10] font-bold shadow-md'
+                    ? 'bg-[#D26539] text-[#090C10] font-bold shadow-md'
                     : 'text-slate-400 hover:text-white'
                 }`}
               >
@@ -99,7 +99,7 @@ export const AboutPage: React.FC = () => {
                     At Tanush, we redefine the fitness outfitting landscape with state-of-the-art 11-gauge laser-cut equipment, certified trainer placements, and bespoke 3D CAD facility design.
                   </p>
                   <p>
-                    Our commitment goes beyond machinery; we offer a holistic <span className="text-[#C5A880] font-bold">360-degree turnkey solution</span> to transform empty commercial square footage into world-class athletic destinations.
+                    Our commitment goes beyond machinery; we offer a holistic <span className="text-[#D26539] font-bold">360-degree turnkey solution</span> to transform empty commercial square footage into world-class athletic destinations.
                   </p>
                 </div>
               ) : (
@@ -110,7 +110,7 @@ export const AboutPage: React.FC = () => {
                   <p>
                     With direct-from-factory pricing, 100% GST 18% Input Tax Credit invoicing, zero middleman markups, and dedicated master coach recruitment, Tanush is the trusted infrastructure partner for over 500+ commercial clubs nationwide.
                   </p>
-                  <div className="p-4 rounded-xl bg-white/5 border border-white/10 font-mono text-xs text-[#C5A880] italic">
+                  <div className="p-4 rounded-xl bg-white/5 border border-white/10 font-mono text-xs text-[#D26539] italic">
                     "Tanush Fitness is not merely an equipment vendor; it is an end-to-end commercial infrastructure partner built for gym owners who demand perfection."
                   </div>
                 </div>
@@ -118,15 +118,15 @@ export const AboutPage: React.FC = () => {
 
               <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 pt-4 font-mono text-xs text-slate-300 border-t border-white/5">
                 <div>
-                  <span className="text-[#C5A880] font-bold block text-xl font-syne">500+</span>
+                  <span className="text-[#D26539] font-bold block text-xl font-syne">500+</span>
                   <span className="text-slate-400 text-[10px] uppercase">CLUBS OUTFITTED</span>
                 </div>
                 <div>
-                  <span className="text-[#C5A880] font-bold block text-xl font-syne">11-GAUGE</span>
+                  <span className="text-[#D26539] font-bold block text-xl font-syne">11-GAUGE</span>
                   <span className="text-slate-400 text-[10px] uppercase">PRECISION STEEL</span>
                 </div>
                 <div>
-                  <span className="text-[#C5A880] font-bold block text-xl font-syne">ISO 9001</span>
+                  <span className="text-[#D26539] font-bold block text-xl font-syne">ISO 9001</span>
                   <span className="text-slate-400 text-[10px] uppercase">CERTIFIED PLANT</span>
                 </div>
               </div>
@@ -152,7 +152,7 @@ export const AboutPage: React.FC = () => {
         {/* Pillars / USPs */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div className="bg-[#0D1118] border border-white/10 rounded-2xl p-8 space-y-4 luxury-card">
-            <div className="w-12 h-12 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-[#C5A880]">
+            <div className="w-12 h-12 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-[#D26539]">
               <Wrench className="w-6 h-6" />
             </div>
             <h3 className="font-syne text-xl font-bold text-white uppercase">Direct Factory Direct</h3>
@@ -162,7 +162,7 @@ export const AboutPage: React.FC = () => {
           </div>
 
           <div className="bg-[#0D1118] border border-white/10 rounded-2xl p-8 space-y-4 luxury-card">
-            <div className="w-12 h-12 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-[#C5A880]">
+            <div className="w-12 h-12 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-[#D26539]">
               <Cpu className="w-6 h-6" />
             </div>
             <h3 className="font-syne text-xl font-bold text-white uppercase">3D CAD Turnkey Suites</h3>
@@ -172,7 +172,7 @@ export const AboutPage: React.FC = () => {
           </div>
 
           <div className="bg-[#0D1118] border border-white/10 rounded-2xl p-8 space-y-4 luxury-card">
-            <div className="w-12 h-12 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-[#C5A880]">
+            <div className="w-12 h-12 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-[#D26539]">
               <Users className="w-6 h-6" />
             </div>
             <h3 className="font-syne text-xl font-bold text-white uppercase">Master Coach Placement</h3>
@@ -185,7 +185,7 @@ export const AboutPage: React.FC = () => {
         {/* Executive Engineering Leadership */}
         <div className="space-y-8">
           <div className="text-center max-w-2xl mx-auto space-y-2">
-            <span className="text-xs font-mono text-[#C5A880] uppercase tracking-widest block">
+            <span className="text-xs font-mono text-[#D26539] uppercase tracking-widest block">
               EXECUTIVE LEADERSHIP & ENGINEERING
             </span>
             <h2 className="font-syne text-2xl sm:text-3xl font-extrabold text-white uppercase">
@@ -203,7 +203,7 @@ export const AboutPage: React.FC = () => {
                 <img src={team.image} alt={team.name} className="w-20 h-20 rounded-2xl object-cover border border-white/10" />
                 <div className="space-y-1">
                   <h3 className="font-syne text-lg font-bold text-white uppercase">{team.name}</h3>
-                  <div className="text-xs font-mono text-[#C5A880] uppercase">{team.title}</div>
+                  <div className="text-xs font-mono text-[#D26539] uppercase">{team.title}</div>
                   <p className="text-xs text-slate-400 font-sans leading-relaxed pt-2">{team.bio}</p>
                 </div>
               </div>
@@ -214,7 +214,7 @@ export const AboutPage: React.FC = () => {
         {/* CTA Bar */}
         <div className="bg-gradient-to-r from-[#0D1118] via-[#111622] to-[#0D1118] border border-white/10 rounded-3xl p-8 sm:p-12 flex flex-col md:flex-row items-center justify-between gap-6 luxury-noise">
           <div className="space-y-2">
-            <span className="text-xs font-mono text-[#C5A880] uppercase tracking-widest block">COMMERCIAL INQUIRIES</span>
+            <span className="text-xs font-mono text-[#D26539] uppercase tracking-widest block">COMMERCIAL INQUIRIES</span>
             <h3 className="font-syne text-2xl sm:text-3xl font-extrabold text-white uppercase">
               Ready to Outfit Your Commercial Sanctuary?
             </h3>

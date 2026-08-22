@@ -4,18 +4,17 @@ import { PageType } from '../../types';
 import {
   Menu,
   X,
-  Sparkles,
   Phone,
   Mail,
   ShieldCheck,
   CheckCircle2,
   FileText,
-  ArrowUpRight,
-  Compass,
-  Building2,
+  Sparkles,
+  ArrowRight,
   Dumbbell,
+  Users,
   Briefcase,
-  Users
+  Compass
 } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
@@ -25,15 +24,12 @@ export const Navbar: React.FC = () => {
     navigateTo,
     enquiryCart,
     setIsEnquiryCartOpen,
-    currentUser,
-    openAuthModal,
-    logoutUser,
   } = useApp();
 
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  const enquiryCount = enquiryCart.reduce((sum, item) => sum + item.quantity, 0);
+  const enquiryCount = (enquiryCart || []).reduce((acc, item) => acc + item.quantity, 0);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -66,9 +62,9 @@ export const Navbar: React.FC = () => {
           <div className="flex items-center gap-4">
             <a
               href="tel:+919067800048"
-              className="flex items-center gap-1.5 text-slate-300 hover:text-[#C5A880] transition-colors font-bold whitespace-nowrap"
+              className="flex items-center gap-1.5 text-slate-300 hover:text-[#D26539] transition-colors font-bold whitespace-nowrap"
             >
-              <Phone className="w-3 h-3 text-[#C5A880]" />
+              <Phone className="w-3 h-3 text-[#D26539]" />
               <span>+91 90678 00048</span>
               <span className="text-slate-500 font-normal hidden sm:inline">(Commercial Outfitting Desk)</span>
             </a>
@@ -76,14 +72,14 @@ export const Navbar: React.FC = () => {
             <span className="text-white/10 hidden sm:inline">•</span>
 
             <div className="hidden sm:flex items-center gap-1.5 text-slate-400 whitespace-nowrap">
-              <ShieldCheck className="w-3.5 h-3.5 text-[#C5A880]" />
+              <ShieldCheck className="w-3.5 h-3.5 text-[#D26539]" />
               <span>100% Commercial GST Invoicing (18% ITC)</span>
             </div>
           </div>
 
           <div className="flex items-center gap-4 whitespace-nowrap">
             <div className="hidden md:flex items-center gap-1.5 text-slate-300">
-              <CheckCircle2 className="w-3.5 h-3.5 text-[#C5A880]" />
+              <CheckCircle2 className="w-3.5 h-3.5 text-[#3A563F]" />
               <span>Pan-India Turnkey Assembly</span>
             </div>
 
@@ -104,7 +100,7 @@ export const Navbar: React.FC = () => {
       <header
         className={`sticky top-0 left-0 right-0 z-40 transition-all duration-300 ${
           isScrolled
-            ? 'bg-[#090C10]/90 backdrop-blur-xl border-b border-white/10 shadow-2xl py-3'
+            ? 'bg-[#090C10]/95 backdrop-blur-xl border-b border-white/10 shadow-2xl py-3'
             : 'bg-[#090C10]/70 backdrop-blur-md border-b border-white/5 py-4'
         }`}
       >
@@ -115,14 +111,14 @@ export const Navbar: React.FC = () => {
               onClick={() => handleNav('home')}
               className="flex items-center gap-3 cursor-pointer group select-none"
             >
-              <div className="w-10 h-10 rounded-full bg-gradient-to-br from-[#1B2232] to-[#0D1117] border border-[#C5A880]/30 flex items-center justify-center shadow-lg group-hover:border-[#C5A880] transition-colors">
-                <span className="font-syne font-black text-lg text-[#C5A880]">T</span>
+              <div className="w-10 h-10 rounded-full bg-gradient-to-br from-[#1B2232] to-[#0D1117] border border-[#D26539]/40 flex items-center justify-center shadow-lg group-hover:border-[#D26539] transition-colors">
+                <span className="font-syne font-black text-lg text-[#D26539]">T</span>
               </div>
               <div className="flex flex-col">
-                <span className="font-syne font-black text-lg tracking-[0.12em] text-[#E2E8F0] group-hover:text-white uppercase leading-none">
+                <span className="font-syne font-black text-lg tracking-[0.12em] text-[#ECE6DB] group-hover:text-white uppercase leading-none">
                   TANUSH
                 </span>
-                <span className="text-[9px] font-mono tracking-[0.3em] text-[#C5A880] uppercase mt-0.5">
+                <span className="text-[9px] font-mono tracking-[0.3em] text-[#D26539] uppercase mt-0.5">
                   FITNESS SANCTUARY
                 </span>
               </div>
@@ -134,12 +130,12 @@ export const Navbar: React.FC = () => {
                 type="button"
                 onClick={() => handleNav('home')}
                 className={`transition-colors py-1 relative ${
-                  currentPage === 'home' ? 'text-[#C5A880]' : 'text-slate-300 hover:text-white'
+                  currentPage === 'home' ? 'text-[#D26539]' : 'text-slate-300 hover:text-white'
                 }`}
               >
                 Overview
                 {currentPage === 'home' && (
-                  <span className="absolute bottom-0 left-0 right-0 h-[2px] bg-[#C5A880] rounded-full" />
+                  <span className="absolute bottom-0 left-0 right-0 h-[2px] bg-[#D26539] rounded-full" />
                 )}
               </button>
 
@@ -147,12 +143,12 @@ export const Navbar: React.FC = () => {
                 type="button"
                 onClick={() => handleNav('services')}
                 className={`transition-colors py-1 relative ${
-                  currentPage === 'services' ? 'text-[#C5A880]' : 'text-slate-300 hover:text-white'
+                  currentPage === 'services' ? 'text-[#D26539]' : 'text-slate-300 hover:text-white'
                 }`}
               >
                 Services
                 {currentPage === 'services' && (
-                  <span className="absolute bottom-0 left-0 right-0 h-[2px] bg-[#C5A880] rounded-full" />
+                  <span className="absolute bottom-0 left-0 right-0 h-[2px] bg-[#D26539] rounded-full" />
                 )}
               </button>
 
@@ -160,12 +156,12 @@ export const Navbar: React.FC = () => {
                 type="button"
                 onClick={() => handleNav('equipment')}
                 className={`transition-colors py-1 relative ${
-                  currentPage === 'equipment' ? 'text-[#C5A880]' : 'text-slate-300 hover:text-white'
+                  currentPage === 'equipment' ? 'text-[#D26539]' : 'text-slate-300 hover:text-white'
                 }`}
               >
                 Equipment
                 {currentPage === 'equipment' && (
-                  <span className="absolute bottom-0 left-0 right-0 h-[2px] bg-[#C5A880] rounded-full" />
+                  <span className="absolute bottom-0 left-0 right-0 h-[2px] bg-[#D26539] rounded-full" />
                 )}
               </button>
 
@@ -173,12 +169,12 @@ export const Navbar: React.FC = () => {
                 type="button"
                 onClick={() => handleNav('manpower')}
                 className={`transition-colors py-1 relative ${
-                  currentPage === 'manpower' ? 'text-[#C5A880]' : 'text-slate-300 hover:text-white'
+                  currentPage === 'manpower' ? 'text-[#D26539]' : 'text-slate-300 hover:text-white'
                 }`}
               >
                 Manpower
                 {currentPage === 'manpower' && (
-                  <span className="absolute bottom-0 left-0 right-0 h-[2px] bg-[#C5A880] rounded-full" />
+                  <span className="absolute bottom-0 left-0 right-0 h-[2px] bg-[#D26539] rounded-full" />
                 )}
               </button>
 
@@ -186,12 +182,12 @@ export const Navbar: React.FC = () => {
                 type="button"
                 onClick={() => handleNav('about')}
                 className={`transition-colors py-1 relative ${
-                  currentPage === 'about' ? 'text-[#C5A880]' : 'text-slate-300 hover:text-white'
+                  currentPage === 'about' ? 'text-[#D26539]' : 'text-slate-300 hover:text-white'
                 }`}
               >
                 About
                 {currentPage === 'about' && (
-                  <span className="absolute bottom-0 left-0 right-0 h-[2px] bg-[#C5A880] rounded-full" />
+                  <span className="absolute bottom-0 left-0 right-0 h-[2px] bg-[#D26539] rounded-full" />
                 )}
               </button>
             </nav>
@@ -202,12 +198,12 @@ export const Navbar: React.FC = () => {
               <button
                 type="button"
                 onClick={() => setIsEnquiryCartOpen(true)}
-                className="relative p-2.5 rounded-full bg-white/5 hover:bg-white/10 text-slate-300 hover:text-[#C5A880] border border-white/5 transition"
+                className="relative p-2.5 rounded-full bg-white/5 hover:bg-white/10 text-slate-300 hover:text-[#D26539] border border-white/5 transition"
                 title="Commercial Outfitting RFQ Cart"
               >
                 <FileText className="w-4 h-4" />
                 {enquiryCount > 0 && (
-                  <span className="absolute -top-1 -right-1 bg-[#C5A880] text-[#090C10] text-[10px] font-black w-4 h-4 rounded-full flex items-center justify-center">
+                  <span className="absolute -top-1 -right-1 bg-[#D26539] text-white text-[10px] font-black w-4 h-4 rounded-full flex items-center justify-center">
                     {enquiryCount}
                   </span>
                 )}
@@ -217,126 +213,103 @@ export const Navbar: React.FC = () => {
               <button
                 type="button"
                 onClick={() => handleNav('contact')}
-                className="hidden sm:inline-flex px-5 py-2 rounded-full bg-[#C5A880] text-[#090C10] text-[11px] font-black uppercase tracking-widest hover:bg-white transition"
+                className="hidden sm:inline-flex items-center gap-2 btn-vault text-xs py-2 px-5"
               >
-                Book VIP Consultation
+                <span>VIP Consultation</span>
+                <ArrowRight className="w-3.5 h-3.5" />
               </button>
 
-              {/* Fullscreen Menu Trigger */}
+              {/* Drawer Menu Button */}
               <button
                 type="button"
-                onClick={() => setIsMenuOpen(true)}
-                className="p-2.5 rounded-full bg-white/5 hover:bg-white/10 text-[#C5A880] border border-[#C5A880]/20 hover:border-[#C5A880] transition"
-                aria-label="Open Navigation Menu"
+                onClick={() => setIsMenuOpen(!isMenuOpen)}
+                className="p-2.5 rounded-full bg-white/5 hover:bg-white/10 text-slate-300 hover:text-white border border-white/10 transition"
+                aria-label="Toggle Navigation Menu"
               >
-                <Menu className="w-5 h-5" />
+                {isMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
               </button>
             </div>
           </div>
         </div>
       </header>
 
-      {/* 🎬 Fullscreen Cinematic Menu Drawer */}
+      {/* Full-Screen Drawer Menu Modal */}
       <AnimatePresence>
         {isMenuOpen && (
           <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.4 }}
-            className="fixed inset-0 z-50 bg-[#090C10] text-[#E2E8F0] flex flex-col justify-between p-6 sm:p-12 overflow-y-auto luxury-noise"
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
+            transition={{ duration: 0.25 }}
+            className="fixed inset-0 z-50 bg-[#090C10]/95 backdrop-blur-2xl flex flex-col justify-between p-6 sm:p-12 overflow-y-auto"
           >
-            {/* Menu Header */}
-            <div className="flex items-center justify-between w-full max-w-7xl mx-auto">
-              <div className="flex items-center gap-3">
-                <div className="w-8 h-8 rounded-full bg-[#C5A880] text-[#090C10] flex items-center justify-center font-syne font-black text-sm">
-                  T
+            {/* Top Bar of Modal */}
+            <div className="flex items-center justify-between border-b border-white/10 pb-6">
+              <div
+                onClick={() => handleNav('home')}
+                className="flex items-center gap-3 cursor-pointer"
+              >
+                <div className="w-10 h-10 rounded-full bg-gradient-to-br from-[#1B2232] to-[#0D1117] border border-[#D26539]/40 flex items-center justify-center shadow-lg">
+                  <span className="font-syne font-black text-lg text-[#D26539]">T</span>
                 </div>
-                <span className="font-syne font-bold tracking-[0.2em] text-xs text-[#C5A880] uppercase">
-                  Navigation Sanctuary
-                </span>
+                <div className="flex flex-col">
+                  <span className="font-syne font-black text-lg tracking-[0.12em] text-[#ECE6DB] uppercase">
+                    TANUSH
+                  </span>
+                  <span className="text-[9px] font-mono tracking-[0.3em] text-[#D26539] uppercase">
+                    FITNESS SANCTUARY
+                  </span>
+                </div>
               </div>
 
               <button
                 type="button"
                 onClick={() => setIsMenuOpen(false)}
-                className="p-3 rounded-full bg-white/5 hover:bg-white/10 text-slate-300 hover:text-white transition border border-white/10"
+                className="p-3 rounded-full bg-white/5 border border-white/10 text-slate-300 hover:text-white transition"
               >
                 <X className="w-6 h-6" />
               </button>
             </div>
 
-            {/* Menu Links Grid */}
-            <div className="w-full max-w-7xl mx-auto py-12 grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-              <div className="flex flex-col gap-4">
-                <div className="text-[11px] font-mono tracking-[0.3em] text-[#C5A880] uppercase mb-2">
-                  EXPLORE ARCHITECTURE & PLATFORM
-                </div>
-                {navLinks.map((item, idx) => (
-                  <motion.div
-                    key={item.page}
-                    initial={{ opacity: 0, x: -20 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ delay: 0.05 * idx, duration: 0.3 }}
-                    onClick={() => handleNav(item.page)}
-                    className="group cursor-pointer flex items-center justify-between py-2 border-b border-white/5 hover:border-[#C5A880]/30 transition"
+            {/* Menu Items */}
+            <div className="my-auto py-12 max-w-4xl mx-auto w-full">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                {navLinks.map((link, idx) => (
+                  <div
+                    key={link.label}
+                    onClick={() => handleNav(link.page)}
+                    className="p-6 rounded-2xl bg-[#0D1118] border border-white/10 hover:border-[#D26539] transition-all cursor-pointer group flex items-start justify-between"
                   >
-                    <div>
-                      <div className="font-syne text-2xl sm:text-4xl font-extrabold text-slate-200 group-hover:text-[#C5A880] transition uppercase tracking-wide flex items-center gap-3">
-                        <span>{item.label}</span>
+                    <div className="space-y-1">
+                      <div className="flex items-center gap-3">
+                        <span className="text-xs font-mono text-[#D26539]">0{idx + 1}</span>
+                        <h3 className="font-syne text-xl sm:text-2xl font-bold uppercase text-slate-200 group-hover:text-white transition">
+                          {link.label}
+                        </h3>
                       </div>
-                      <div className="text-xs text-slate-500 font-sans tracking-normal mt-0.5">
-                        {item.subtitle}
-                      </div>
+                      <p className="text-xs text-slate-400 font-sans pl-7">
+                        {link.subtitle}
+                      </p>
                     </div>
-                    <ArrowUpRight className="w-5 h-5 text-slate-600 group-hover:text-[#C5A880] group-hover:translate-x-1 group-hover:-translate-y-1 transition transform" />
-                  </motion.div>
+
+                    <div className="w-8 h-8 rounded-full bg-white/5 flex items-center justify-center text-slate-400 group-hover:text-[#D26539] group-hover:bg-[#D26539]/10 transition">
+                      <ArrowRight className="w-4 h-4" />
+                    </div>
+                  </div>
                 ))}
-              </div>
-
-              {/* Menu Right Info Card */}
-              <div className="bg-[#0D1118] border border-white/10 rounded-2xl p-8 flex flex-col justify-between gap-6">
-                <div>
-                  <div className="text-[11px] font-mono tracking-[0.25em] text-[#C5A880] uppercase mb-3">
-                    COMMERCIAL INQUIRIES
-                  </div>
-                  <h3 className="font-syne text-2xl font-bold text-white mb-2">
-                    Step Into The Sanctuary
-                  </h3>
-                  <p className="text-sm text-slate-400 leading-relaxed">
-                    Partner with India's premier commercial gym outfitters. Transform raw square footage into high-performance fitness destinations.
-                  </p>
-                </div>
-
-                <div className="space-y-3 font-mono text-xs text-slate-300 border-t border-white/5 pt-4">
-                  <div className="flex items-center gap-2">
-                    <Phone className="w-4 h-4 text-[#C5A880]" />
-                    <span>+91 90678 00048</span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <Mail className="w-4 h-4 text-[#C5A880]" />
-                    <span>Info@tanushfitness.com</span>
-                  </div>
-                </div>
-
-                <button
-                  type="button"
-                  onClick={() => handleNav('contact')}
-                  className="px-5 py-3 rounded-full bg-[#C5A880] text-[#090C10] text-[11px] font-black uppercase tracking-widest hover:bg-white transition text-center"
-                >
-                  Schedule Commercial Consultation
-                </button>
               </div>
             </div>
 
-            {/* Menu Footer */}
-            <div className="w-full max-w-7xl mx-auto border-t border-white/5 pt-6 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-500 font-mono gap-4">
-              <div>© 2026 Tanush Fitness. All Rights Reserved.</div>
+            {/* Bottom Contact & GST Info */}
+            <div className="border-t border-white/10 pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-mono text-slate-400">
               <div className="flex items-center gap-4">
-                <button type="button" onClick={() => handleNav('admin')} className="hover:text-slate-300">Admin Portal</button>
+                <span>GST: 07AAACT1234F1Z5</span>
                 <span>•</span>
-                <span>ISO 9001:2015 Outfitting Standard</span>
+                <span>ISO 9001:2015 CERTIFIED</span>
               </div>
+              <a href="tel:+919067800048" className="text-[#D26539] hover:underline">
+                Direct Desk: +91 90678 00048
+              </a>
             </div>
           </motion.div>
         )}

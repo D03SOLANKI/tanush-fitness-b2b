@@ -109,13 +109,13 @@ export const EquipmentPage: React.FC = () => {
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 pb-12">
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 border-b border-white/10 pb-8">
           <div className="space-y-3">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-[#C5A880]/30 text-xs font-mono text-[#C5A880] tracking-widest uppercase">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-[#D26539]/30 text-xs font-mono text-[#D26539] tracking-widest uppercase">
               <Sparkles className="w-3.5 h-3.5" />
               <span>PRECISION BIOMECHANICS // ISO 9001:2015 CERTIFIED</span>
             </div>
 
             <h1 className="font-syne text-3xl sm:text-5xl md:text-6xl font-extrabold uppercase text-white tracking-tight">
-              EQUIPMENT <span className="text-[#C5A880]">SANCTUARY</span>
+              EQUIPMENT <span className="text-[#D26539]">SANCTUARY</span>
             </h1>
 
             <p className="text-sm sm:text-base text-slate-400 max-w-2xl font-sans leading-relaxed">
@@ -150,7 +150,7 @@ export const EquipmentPage: React.FC = () => {
                 placeholder="Search power racks, cable crossover, dumbbells..."
                 value={searchQuery}
                 onChange={e => setSearchQuery(e.target.value)}
-                className="w-full bg-[#0D1118] border border-white/10 rounded-full pl-10 pr-4 py-2.5 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-[#C5A880]"
+                className="w-full bg-[#0D1118] border border-white/10 rounded-full pl-10 pr-4 py-2.5 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-[#D26539]"
               />
               {searchQuery && (
                 <button
@@ -173,7 +173,7 @@ export const EquipmentPage: React.FC = () => {
                   onClick={() => setActiveApplication(app)}
                   className={`px-3 py-1.5 rounded-full text-xs font-mono uppercase tracking-wider transition ${
                     activeApplication === app
-                      ? 'bg-[#C5A880] text-[#090C10] font-bold shadow-md'
+                      ? 'bg-[#D26539] text-[#090C10] font-bold shadow-md'
                       : 'bg-[#0D1118] text-slate-400 border border-white/5 hover:border-white/20'
                   }`}
                 >
@@ -205,7 +205,7 @@ export const EquipmentPage: React.FC = () => {
                   onClick={() => setActiveCategory(cat.id)}
                   className={`px-5 py-2.5 rounded-full text-xs font-mono uppercase tracking-wider whitespace-nowrap transition flex items-center gap-2 ${
                     activeCategory === cat.id
-                      ? 'bg-[#C5A880] text-[#090C10] font-bold shadow-lg shadow-[#C5A880]/20'
+                      ? 'bg-[#D26539] text-[#090C10] font-bold shadow-lg shadow-[#D26539]/20'
                       : 'bg-[#0D1118] text-slate-300 border border-white/5 hover:border-white/20'
                   }`}
                 >
@@ -241,7 +241,7 @@ export const EquipmentPage: React.FC = () => {
                     <div className="absolute inset-0 bg-gradient-to-t from-[#0D1118] via-transparent to-transparent opacity-60" />
 
                     <div className="absolute top-3 left-3 flex flex-col gap-1.5">
-                      <span className="px-2.5 py-0.5 rounded-full bg-[#090C10]/80 backdrop-blur-md border border-white/10 text-[9px] font-mono text-[#C5A880] uppercase tracking-wider font-bold">
+                      <span className="px-2.5 py-0.5 rounded-full bg-[#090C10]/80 backdrop-blur-md border border-white/10 text-[9px] font-mono text-[#D26539] uppercase tracking-wider font-bold">
                         {product.specs?.['Steel Frame'] || '11-GAUGE STEEL'}
                       </span>
                     </div>
@@ -254,7 +254,7 @@ export const EquipmentPage: React.FC = () => {
                       }}
                       className={`absolute top-3 right-3 p-2 rounded-full backdrop-blur-md border transition ${
                         isWish
-                          ? 'bg-[#C5A880] text-[#090C10] border-[#C5A880]'
+                          ? 'bg-[#D26539] text-[#090C10] border-[#D26539]'
                           : 'bg-[#090C10]/60 text-slate-400 border-white/10 hover:text-white'
                       }`}
                     >
@@ -270,7 +270,7 @@ export const EquipmentPage: React.FC = () => {
 
                     <h3
                       onClick={() => handleOpenDetailModal(product)}
-                      className="font-syne text-base font-bold text-white group-hover:text-[#C5A880] transition uppercase cursor-pointer line-clamp-1"
+                      className="font-syne text-base font-bold text-white group-hover:text-[#D26539] transition uppercase cursor-pointer line-clamp-1"
                     >
                       {product.name}
                     </h3>
@@ -286,7 +286,7 @@ export const EquipmentPage: React.FC = () => {
                       </div>
                       <div className="bg-white/5 p-2 rounded-lg">
                         <span className="text-slate-500 block">WARRANTY:</span>
-                        <span className="text-[#C5A880] font-bold">{product.specs?.['Warranty'] || '10 Yrs Frame'}</span>
+                        <span className="text-[#D26539] font-bold">{product.specs?.['Warranty'] || '10 Yrs Frame'}</span>
                       </div>
                     </div>
                   </div>
@@ -319,7 +319,7 @@ export const EquipmentPage: React.FC = () => {
                       onClick={() => handleToggleCompare(product)}
                       className={`px-3 py-1.5 rounded-full text-[11px] font-mono border transition ${
                         isCompared
-                          ? 'bg-[#C5A880]/20 text-[#C5A880] border-[#C5A880]'
+                          ? 'bg-[#D26539]/20 text-[#D26539] border-[#D26539]'
                           : 'bg-[#0D1118] text-slate-400 border-white/10 hover:text-white'
                       }`}
                     >
@@ -349,7 +349,7 @@ export const EquipmentPage: React.FC = () => {
             >
               <div className="flex items-start justify-between border-b border-white/10 pb-4">
                 <div>
-                  <span className="text-[10px] font-mono text-[#C5A880] uppercase tracking-widest block mb-1">
+                  <span className="text-[10px] font-mono text-[#D26539] uppercase tracking-widest block mb-1">
                     COMMERCIAL MACHINERY SCHEMATICS // {selectedProduct.brand}
                   </span>
                   <h2 className="font-syne text-2xl sm:text-3xl font-extrabold text-white uppercase">
@@ -382,7 +382,7 @@ export const EquipmentPage: React.FC = () => {
                           key={idx}
                           onClick={() => setSelectedImage(idx)}
                           className={`w-16 h-16 rounded-xl overflow-hidden cursor-pointer border ${
-                            selectedImage === idx ? 'border-[#C5A880]' : 'border-white/10 opacity-60'
+                            selectedImage === idx ? 'border-[#D26539]' : 'border-white/10 opacity-60'
                           }`}
                         >
                           <img src={img} alt="thumbnail" className="w-full h-full object-cover" />
@@ -402,7 +402,7 @@ export const EquipmentPage: React.FC = () => {
                   <div className="space-y-2.5 font-mono text-xs text-slate-300 bg-[#090C10] p-4 rounded-xl border border-white/5">
                     <div className="flex justify-between py-1 border-b border-white/5">
                       <span className="text-slate-500">FRAME STEEL:</span>
-                      <span className="text-[#C5A880] font-bold">{selectedProduct.specs?.['Steel Frame'] || '11-Gauge (3.0mm) Laser Cut'}</span>
+                      <span className="text-[#D26539] font-bold">{selectedProduct.specs?.['Steel Frame'] || '11-Gauge (3.0mm) Laser Cut'}</span>
                     </div>
                     <div className="flex justify-between py-1 border-b border-white/5">
                       <span className="text-slate-500">WEIGHT CAPACITY:</span>

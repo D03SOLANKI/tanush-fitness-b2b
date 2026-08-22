@@ -64,13 +64,13 @@ export const ContactPage: React.FC = () => {
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 pb-12">
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 border-b border-white/10 pb-8">
           <div className="space-y-3">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-[#C5A880]/30 text-xs font-mono text-[#C5A880] tracking-widest uppercase">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-[#D26539]/30 text-xs font-mono text-[#D26539] tracking-widest uppercase">
               <Sparkles className="w-3.5 h-3.5" />
               <span>DIRECT EXECUTIVE HELPLINE // 24/7 B2B PROCUREMENT</span>
             </div>
 
             <h1 className="font-syne text-3xl sm:text-5xl md:text-6xl font-extrabold uppercase text-white tracking-tight">
-              OUTFITTING <span className="text-[#C5A880]">DESK</span>
+              OUTFITTING <span className="text-[#D26539]">DESK</span>
             </h1>
 
             <p className="text-sm sm:text-base text-slate-400 max-w-2xl font-sans leading-relaxed">
@@ -107,7 +107,7 @@ export const ContactPage: React.FC = () => {
             </div>
             <div>
               <span className="text-[10px] font-mono text-emerald-400 uppercase tracking-wider block">INSTANT WHATSAPP</span>
-              <span className="font-syne text-base font-bold text-white uppercase group-hover:text-[#C5A880] transition">
+              <span className="font-syne text-base font-bold text-white uppercase group-hover:text-[#D26539] transition">
                 Chat With Factory Desk →
               </span>
             </div>
@@ -117,12 +117,12 @@ export const ContactPage: React.FC = () => {
             href="tel:+919067800048"
             className="bg-[#0D1118] border border-white/10 p-6 rounded-2xl luxury-card flex items-center gap-4 group"
           >
-            <div className="w-12 h-12 rounded-xl bg-[#C5A880]/10 border border-[#C5A880]/20 text-[#C5A880] flex items-center justify-center shrink-0">
+            <div className="w-12 h-12 rounded-xl bg-[#D26539]/10 border border-[#D26539]/20 text-[#D26539] flex items-center justify-center shrink-0">
               <Phone className="w-6 h-6" />
             </div>
             <div>
-              <span className="text-[10px] font-mono text-[#C5A880] uppercase tracking-widest block">DIRECT HOTLINE</span>
-              <span className="font-syne text-base font-bold text-white uppercase group-hover:text-[#C5A880] transition">
+              <span className="text-[10px] font-mono text-[#D26539] uppercase tracking-widest block">DIRECT HOTLINE</span>
+              <span className="font-syne text-base font-bold text-white uppercase group-hover:text-[#D26539] transition">
                 +91 90678 00048 →
               </span>
             </div>
@@ -137,7 +137,7 @@ export const ContactPage: React.FC = () => {
             </div>
             <div>
               <span className="text-[10px] font-mono text-slate-400 uppercase tracking-widest block">OFFICIAL INVOICING</span>
-              <span className="font-syne text-base font-bold text-white uppercase group-hover:text-[#C5A880] transition">
+              <span className="font-syne text-base font-bold text-white uppercase group-hover:text-[#D26539] transition">
                 procurement@tanushfitness.com →
               </span>
             </div>
@@ -149,7 +149,7 @@ export const ContactPage: React.FC = () => {
           {/* Main RFQ Form */}
           <div className="lg:col-span-7 bg-[#0D1118] border border-white/10 rounded-3xl p-8 sm:p-10 luxury-noise space-y-6">
             <div className="border-b border-white/10 pb-4">
-              <span className="text-xs font-mono text-[#C5A880] uppercase tracking-widest block mb-1">
+              <span className="text-xs font-mono text-[#D26539] uppercase tracking-widest block mb-1">
                 256-BIT ENCRYPTED PROCUREMENT PORTAL
               </span>
               <h2 className="font-syne text-2xl font-bold text-white uppercase">
@@ -167,7 +167,7 @@ export const ContactPage: React.FC = () => {
                     placeholder="Sameer Kapoor"
                     value={formData.name}
                     onChange={e => setFormData({ ...formData, name: e.target.value })}
-                    className="w-full bg-[#090C10] border border-white/10 rounded-xl px-4 py-2.5 text-sm text-white placeholder-slate-600 focus:outline-none focus:border-[#C5A880]"
+                    className="w-full bg-[#090C10] border border-white/10 rounded-xl px-4 py-2.5 text-sm text-white placeholder-slate-600 focus:outline-none focus:border-[#D26539]"
                   />
                 </div>
 
@@ -179,7 +179,7 @@ export const ContactPage: React.FC = () => {
                     placeholder="+91 98765 43210"
                     value={formData.mobile}
                     onChange={e => setFormData({ ...formData, mobile: e.target.value })}
-                    className="w-full bg-[#090C10] border border-white/10 rounded-xl px-4 py-2.5 text-sm text-white placeholder-slate-600 focus:outline-none focus:border-[#C5A880]"
+                    className="w-full bg-[#090C10] border border-white/10 rounded-xl px-4 py-2.5 text-sm text-white placeholder-slate-600 focus:outline-none focus:border-[#D26539]"
                   />
                 </div>
               </div>
@@ -192,7 +192,7 @@ export const ContactPage: React.FC = () => {
                     placeholder="Vault Club & Spa"
                     value={formData.gymName}
                     onChange={e => setFormData({ ...formData, gymName: e.target.value })}
-                    className="w-full bg-[#090C10] border border-white/10 rounded-xl px-4 py-2.5 text-sm text-white placeholder-slate-600 focus:outline-none focus:border-[#C5A880]"
+                    className="w-full bg-[#090C10] border border-white/10 rounded-xl px-4 py-2.5 text-sm text-white placeholder-slate-600 focus:outline-none focus:border-[#D26539]"
                   />
                 </div>
 
@@ -203,7 +203,7 @@ export const ContactPage: React.FC = () => {
                     placeholder="Delhi / Bengaluru / Hyderabad"
                     value={formData.city}
                     onChange={e => setFormData({ ...formData, city: e.target.value })}
-                    className="w-full bg-[#090C10] border border-white/10 rounded-xl px-4 py-2.5 text-sm text-white placeholder-slate-600 focus:outline-none focus:border-[#C5A880]"
+                    className="w-full bg-[#090C10] border border-white/10 rounded-xl px-4 py-2.5 text-sm text-white placeholder-slate-600 focus:outline-none focus:border-[#D26539]"
                   />
                 </div>
               </div>
@@ -214,7 +214,7 @@ export const ContactPage: React.FC = () => {
                   <select
                     value={formData.serviceType}
                     onChange={e => setFormData({ ...formData, serviceType: e.target.value })}
-                    className="w-full bg-[#090C10] border border-white/10 rounded-xl px-4 py-2.5 text-sm text-white focus:outline-none focus:border-[#C5A880] uppercase font-mono"
+                    className="w-full bg-[#090C10] border border-white/10 rounded-xl px-4 py-2.5 text-sm text-white focus:outline-none focus:border-[#D26539] uppercase font-mono"
                   >
                     <option value="equipment">Commercial Machinery Package</option>
                     <option value="turnkey">Full 360° Turnkey Outfitting</option>
@@ -228,7 +228,7 @@ export const ContactPage: React.FC = () => {
                   <select
                     value={formData.squareFootage}
                     onChange={e => setFormData({ ...formData, squareFootage: e.target.value })}
-                    className="w-full bg-[#090C10] border border-white/10 rounded-xl px-4 py-2.5 text-sm text-white focus:outline-none focus:border-[#C5A880] uppercase font-mono"
+                    className="w-full bg-[#090C10] border border-white/10 rounded-xl px-4 py-2.5 text-sm text-white focus:outline-none focus:border-[#D26539] uppercase font-mono"
                   >
                     <option value="2,500 - 5,000 sq.ft">2,500 - 5,000 sq.ft</option>
                     <option value="5,000 - 10,000 sq.ft">5,000 - 10,000 sq.ft</option>
@@ -245,7 +245,7 @@ export const ContactPage: React.FC = () => {
                   placeholder="Detail your equipment requirements, target launch date, structural specs..."
                   value={formData.message}
                   onChange={e => setFormData({ ...formData, message: e.target.value })}
-                  className="w-full bg-[#090C10] border border-white/10 rounded-xl p-3 text-sm text-white placeholder-slate-600 focus:outline-none focus:border-[#C5A880]"
+                  className="w-full bg-[#090C10] border border-white/10 rounded-xl p-3 text-sm text-white placeholder-slate-600 focus:outline-none focus:border-[#D26539]"
                 />
               </div>
 
@@ -263,7 +263,7 @@ export const ContactPage: React.FC = () => {
           {/* Right: National Headquarters & Flagship Showrooms */}
           <div className="lg:col-span-5 space-y-6">
             <div className="bg-[#0D1118] border border-white/10 rounded-3xl p-8 space-y-6 luxury-card">
-              <span className="text-xs font-mono text-[#C5A880] uppercase tracking-widest block">
+              <span className="text-xs font-mono text-[#D26539] uppercase tracking-widest block">
                 FLAGSHIP COMMERCIAL SHOWROOMS
               </span>
 
@@ -271,25 +271,25 @@ export const ContactPage: React.FC = () => {
                 <div className="pt-3 first:pt-0 space-y-1">
                   <div className="font-bold text-white font-syne text-sm uppercase">Greater Kailash 1, New Delhi</div>
                   <p className="text-slate-400 text-xs font-sans">M-Block Commercial Hub, New Delhi, Delhi 110048</p>
-                  <p className="text-[#C5A880] text-[11px]">+91 90678 00048 • Open 10 AM - 8 PM</p>
+                  <p className="text-[#D26539] text-[11px]">+91 90678 00048 • Open 10 AM - 8 PM</p>
                 </div>
 
                 <div className="pt-3 space-y-1">
                   <div className="font-bold text-white font-syne text-sm uppercase">Indiranagar, Bengaluru</div>
                   <p className="text-slate-400 text-xs font-sans">100 Feet Road, HAL 2nd Stage, Bengaluru, Karnataka 560038</p>
-                  <p className="text-[#C5A880] text-[11px]">+91 90678 00048 • Open 10 AM - 8 PM</p>
+                  <p className="text-[#D26539] text-[11px]">+91 90678 00048 • Open 10 AM - 8 PM</p>
                 </div>
 
                 <div className="pt-3 space-y-1">
                   <div className="font-bold text-white font-syne text-sm uppercase">Jubilee Hills, Hyderabad</div>
                   <p className="text-slate-400 text-xs font-sans">Road No. 36, Jubilee Hills, Hyderabad, Telangana 500033</p>
-                  <p className="text-[#C5A880] text-[11px]">+91 90678 00048 • Open 10 AM - 8 PM</p>
+                  <p className="text-[#D26539] text-[11px]">+91 90678 00048 • Open 10 AM - 8 PM</p>
                 </div>
               </div>
             </div>
 
             <div className="bg-[#0D1118] border border-white/10 rounded-3xl p-6 space-y-3 font-mono text-xs text-slate-300">
-              <div className="flex items-center gap-2 text-[#C5A880] font-bold uppercase">
+              <div className="flex items-center gap-2 text-[#D26539] font-bold uppercase">
                 <ShieldCheck className="w-4 h-4" />
                 <span>Direct Manufacturer Guarantee</span>
               </div>

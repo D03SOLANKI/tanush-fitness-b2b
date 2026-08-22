@@ -76,13 +76,13 @@ export const ServicesPage: React.FC = () => {
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 pb-12">
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 border-b border-white/10 pb-8">
           <div className="space-y-3">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-[#C5A880]/30 text-xs font-mono text-[#C5A880] tracking-widest uppercase">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-[#D26539]/30 text-xs font-mono text-[#D26539] tracking-widest uppercase">
               <Sparkles className="w-3.5 h-3.5" />
               <span>360° COMMERCIAL GYM ARCHITECTURE</span>
             </div>
 
             <h1 className="font-syne text-3xl sm:text-5xl md:text-6xl font-extrabold uppercase text-white tracking-tight">
-              TURNKEY <span className="text-[#C5A880]">OUTFITTING</span>
+              TURNKEY <span className="text-[#D26539]">OUTFITTING</span>
             </h1>
 
             <p className="text-sm sm:text-base text-slate-400 max-w-2xl font-sans leading-relaxed">
@@ -126,7 +126,7 @@ export const ServicesPage: React.FC = () => {
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-[#0D1118] via-transparent to-black/30" />
                   {service.badge && (
-                    <span className="absolute top-4 left-4 px-3 py-1 rounded-full bg-[#090C10]/80 backdrop-blur-md border border-white/10 text-[10px] font-mono text-[#C5A880] uppercase tracking-wider font-bold">
+                    <span className="absolute top-4 left-4 px-3 py-1 rounded-full bg-[#090C10]/80 backdrop-blur-md border border-white/10 text-[10px] font-mono text-[#D26539] uppercase tracking-wider font-bold">
                       {service.badge}
                     </span>
                   )}
@@ -138,7 +138,7 @@ export const ServicesPage: React.FC = () => {
                     {service.category || 'COMMERCIAL SETUP'}
                   </span>
 
-                  <h3 className="font-syne text-xl font-bold text-white group-hover:text-[#C5A880] transition uppercase">
+                  <h3 className="font-syne text-xl font-bold text-white group-hover:text-[#D26539] transition uppercase">
                     {service.name}
                   </h3>
 
@@ -151,7 +151,7 @@ export const ServicesPage: React.FC = () => {
                     <div className="pt-3 border-t border-white/5 space-y-2 font-mono text-xs text-slate-300">
                       {service.benefits.slice(0, 3).map((f, fIdx) => (
                         <div key={fIdx} className="flex items-center gap-2">
-                          <CheckCircle2 className="w-3.5 h-3.5 text-[#C5A880] shrink-0" />
+                          <CheckCircle2 className="w-3.5 h-3.5 text-[#D26539] shrink-0" />
                           <span className="font-sans text-xs">{f}</span>
                         </div>
                       ))}
@@ -193,7 +193,7 @@ export const ServicesPage: React.FC = () => {
             >
               <div className="flex items-start justify-between border-b border-white/10 pb-4">
                 <div>
-                  <span className="text-[10px] font-mono text-[#C5A880] uppercase tracking-widest block mb-1">
+                  <span className="text-[10px] font-mono text-[#D26539] uppercase tracking-widest block mb-1">
                     TURNKEY SERVICE PROPOSAL
                   </span>
                   <h3 className="font-syne text-2xl font-bold text-white uppercase">
@@ -218,7 +218,7 @@ export const ServicesPage: React.FC = () => {
                     placeholder="Sameer Kapoor"
                     value={formState.name}
                     onChange={e => setFormState({ ...formState, name: e.target.value })}
-                    className="w-full bg-[#090C10] border border-white/10 rounded-xl px-4 py-2.5 text-sm text-white placeholder-slate-600 focus:outline-none focus:border-[#C5A880]"
+                    className="w-full bg-[#090C10] border border-white/10 rounded-xl px-4 py-2.5 text-sm text-white placeholder-slate-600 focus:outline-none focus:border-[#D26539]"
                   />
                 </div>
 
@@ -230,7 +230,7 @@ export const ServicesPage: React.FC = () => {
                     placeholder="Iron Sanctuary Club"
                     value={formState.gymName}
                     onChange={e => setFormState({ ...formState, gymName: e.target.value })}
-                    className="w-full bg-[#090C10] border border-white/10 rounded-xl px-4 py-2.5 text-sm text-white placeholder-slate-600 focus:outline-none focus:border-[#C5A880]"
+                    className="w-full bg-[#090C10] border border-white/10 rounded-xl px-4 py-2.5 text-sm text-white placeholder-slate-600 focus:outline-none focus:border-[#D26539]"
                   />
                 </div>
 
@@ -243,7 +243,7 @@ export const ServicesPage: React.FC = () => {
                       placeholder="+91 98765 43210"
                       value={formState.mobile}
                       onChange={e => setFormState({ ...formState, mobile: e.target.value })}
-                      className="w-full bg-[#090C10] border border-white/10 rounded-xl px-4 py-2.5 text-sm text-white placeholder-slate-600 focus:outline-none focus:border-[#C5A880]"
+                      className="w-full bg-[#090C10] border border-white/10 rounded-xl px-4 py-2.5 text-sm text-white placeholder-slate-600 focus:outline-none focus:border-[#D26539]"
                     />
                   </div>
                   <div>
@@ -253,7 +253,7 @@ export const ServicesPage: React.FC = () => {
                       placeholder="sameer@ironclub.in"
                       value={formState.email}
                       onChange={e => setFormState({ ...formState, email: e.target.value })}
-                      className="w-full bg-[#090C10] border border-white/10 rounded-xl px-4 py-2.5 text-sm text-white placeholder-slate-600 focus:outline-none focus:border-[#C5A880]"
+                      className="w-full bg-[#090C10] border border-white/10 rounded-xl px-4 py-2.5 text-sm text-white placeholder-slate-600 focus:outline-none focus:border-[#D26539]"
                     />
                   </div>
                 </div>
@@ -265,7 +265,7 @@ export const ServicesPage: React.FC = () => {
                     placeholder="Tell us about your square footage, location, floor acoustic needs..."
                     value={formState.additionalRequirements}
                     onChange={e => setFormState({ ...formState, additionalRequirements: e.target.value })}
-                    className="w-full bg-[#090C10] border border-white/10 rounded-xl p-3 text-sm text-white placeholder-slate-600 focus:outline-none focus:border-[#C5A880]"
+                    className="w-full bg-[#090C10] border border-white/10 rounded-xl p-3 text-sm text-white placeholder-slate-600 focus:outline-none focus:border-[#D26539]"
                   />
                 </div>
 
