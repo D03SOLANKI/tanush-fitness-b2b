@@ -7,8 +7,8 @@
   --lighter_green: #3A563F;
   --light: #ECE6DB;
   --darker_creme: #D8CDC0;
-  --black: #090C10;
-  --surface: #0D1118;
+  --black: #26452D;
+  --surface: #1E3823;
   --white: #FFFFFF;
 }
 
@@ -25,7 +25,7 @@
   }
 
   body {
-    background-color: var(--black);
+    background-color: var(--brand_green);
     color: var(--light);
     font-family: 'Manrope', 'Plus Jakarta Sans', 'General Sans', sans-serif;
     overflow-x: hidden;

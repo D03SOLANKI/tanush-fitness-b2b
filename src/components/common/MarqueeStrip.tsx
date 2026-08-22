@@ -38,7 +38,7 @@ export const MarqueeStrip: React.FC<MarqueeStripProps> = ({
       case 'minimal':
         return 'bg-transparent text-slate-400 border-y border-white/5 py-3';
       default:
-        return 'bg-[#0D1118] text-[#D26539] border-y border-white/5 py-3';
+        return 'bg-[#1E3823] text-[#D26539] border-y border-white/5 py-3';
     }
   };
 

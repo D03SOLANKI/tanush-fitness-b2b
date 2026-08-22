@@ -128,10 +128,10 @@ export const EnquiryCartDrawer: React.FC = () => {
           animate={{ x: 0 }}
           exit={{ x: '100%' }}
           transition={{ type: 'spring', damping: 30, stiffness: 280 }}
-          className="w-full max-w-lg bg-[#0D1118] h-full shadow-2xl flex flex-col justify-between overflow-hidden border-l border-white/10 "
+          className="w-full max-w-lg bg-[#1E3823] h-full shadow-2xl flex flex-col justify-between overflow-hidden border-l border-white/10 "
         >
           {/* Header */}
-          <div className="p-6 border-b border-white/10 bg-[#090C10] text-white flex items-center justify-between">
+          <div className="p-6 border-b border-white/10 bg-[#26452D] text-white flex items-center justify-between">
             <div className="flex items-center gap-3">
               <div className="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-[#D26539]">
                 <FileText className="w-5 h-5" />
@@ -167,7 +167,7 @@ export const EnquiryCartDrawer: React.FC = () => {
           <div className="flex-1 overflow-y-auto p-6 space-y-6">
             {isSubmitted ? (
               /* RFQ Summary Confirmation */
-              <div className="p-6 rounded-2xl bg-[#090C10] border border-white/10 text-white space-y-5 text-center">
+              <div className="p-6 rounded-2xl bg-[#26452D] border border-white/10 text-white space-y-5 text-center">
                 <div className="w-14 h-14 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 mx-auto flex items-center justify-center">
                   <CheckCircle2 className="w-7 h-7" />
                 </div>
@@ -184,7 +184,7 @@ export const EnquiryCartDrawer: React.FC = () => {
                   </div>
                 </div>
 
-                <div className="p-4 bg-[#0D1118] rounded-xl border border-white/5 text-left space-y-2 text-xs font-mono text-slate-300">
+                <div className="p-4 bg-[#1E3823] rounded-xl border border-white/5 text-left space-y-2 text-xs font-mono text-slate-300">
                   <div><strong>Facility:</strong> {formState.companyGymName}</div>
                   <div><strong>Contact Phone:</strong> {formState.mobile}</div>
                   <div><strong>Dispatch City:</strong> {formState.city || 'Pan-India'}</div>
@@ -219,11 +219,11 @@ export const EnquiryCartDrawer: React.FC = () => {
                   </div>
 
                   {enquiryCart.length === 0 ? (
-                    <div className="py-12 text-center text-xs text-slate-500 border border-dashed border-white/10 rounded-2xl bg-[#090C10] font-mono">
+                    <div className="py-12 text-center text-xs text-slate-500 border border-dashed border-white/10 rounded-2xl bg-[#26452D] font-mono">
                       Your RFQ Project basket is empty. Browse the sanctuary catalog to add equipment.
                     </div>
                   ) : (
-                    <div className="divide-y divide-white/5 border border-white/10 rounded-2xl overflow-hidden bg-[#090C10]">
+                    <div className="divide-y divide-white/5 border border-white/10 rounded-2xl overflow-hidden bg-[#26452D]">
                       {enquiryCart.map(item => (
                         <div key={item.product.id} className="p-4 flex items-center justify-between gap-3">
                           <div className="flex items-center gap-3">
@@ -243,7 +243,7 @@ export const EnquiryCartDrawer: React.FC = () => {
                           </div>
 
                           <div className="flex items-center gap-3 font-mono">
-                            <div className="flex items-center bg-[#0D1118] rounded-lg border border-white/10 p-0.5">
+                            <div className="flex items-center bg-[#1E3823] rounded-lg border border-white/10 p-0.5">
                               <button
                                 type="button"
                                 onClick={() => updateEnquiryCartQuantity(item.product.id, item.quantity - 1)}
@@ -290,7 +290,7 @@ export const EnquiryCartDrawer: React.FC = () => {
                         placeholder="Sameer Kapoor"
                         value={formState.name}
                         onChange={e => setFormState({ ...formState, name: e.target.value })}
-                        className="w-full bg-[#090C10] border border-white/10 rounded-xl px-4 py-2.5 text-xs text-white placeholder-slate-600 focus:outline-none focus:border-[#D26539]"
+                        className="w-full bg-[#26452D] border border-white/10 rounded-xl px-4 py-2.5 text-xs text-white placeholder-slate-600 focus:outline-none focus:border-[#D26539]"
                       />
                     </div>
 
@@ -303,7 +303,7 @@ export const EnquiryCartDrawer: React.FC = () => {
                           placeholder="Iron Sanctuary Club"
                           value={formState.companyGymName}
                           onChange={e => setFormState({ ...formState, companyGymName: e.target.value })}
-                          className="w-full bg-[#090C10] border border-white/10 rounded-xl px-4 py-2.5 text-xs text-white placeholder-slate-600 focus:outline-none focus:border-[#D26539]"
+                          className="w-full bg-[#26452D] border border-white/10 rounded-xl px-4 py-2.5 text-xs text-white placeholder-slate-600 focus:outline-none focus:border-[#D26539]"
                         />
                       </div>
 
@@ -315,7 +315,7 @@ export const EnquiryCartDrawer: React.FC = () => {
                           placeholder="+91 98765 43210"
                           value={formState.mobile}
                           onChange={e => setFormState({ ...formState, mobile: e.target.value })}
-                          className="w-full bg-[#090C10] border border-white/10 rounded-xl px-4 py-2.5 text-xs text-white placeholder-slate-600 focus:outline-none focus:border-[#D26539]"
+                          className="w-full bg-[#26452D] border border-white/10 rounded-xl px-4 py-2.5 text-xs text-white placeholder-slate-600 focus:outline-none focus:border-[#D26539]"
                         />
                       </div>
                     </div>
@@ -328,7 +328,7 @@ export const EnquiryCartDrawer: React.FC = () => {
                           placeholder="Delhi / Bengaluru"
                           value={formState.city}
                           onChange={e => setFormState({ ...formState, city: e.target.value })}
-                          className="w-full bg-[#090C10] border border-white/10 rounded-xl px-4 py-2.5 text-xs text-white placeholder-slate-600 focus:outline-none focus:border-[#D26539]"
+                          className="w-full bg-[#26452D] border border-white/10 rounded-xl px-4 py-2.5 text-xs text-white placeholder-slate-600 focus:outline-none focus:border-[#D26539]"
                         />
                       </div>
 
@@ -339,7 +339,7 @@ export const EnquiryCartDrawer: React.FC = () => {
                           placeholder="24ABCDE1234F1Z5"
                           value={formState.gstin}
                           onChange={e => setFormState({ ...formState, gstin: e.target.value })}
-                          className="w-full bg-[#090C10] border border-white/10 rounded-xl px-4 py-2.5 text-xs text-white placeholder-slate-600 focus:outline-none focus:border-[#D26539] uppercase"
+                          className="w-full bg-[#26452D] border border-white/10 rounded-xl px-4 py-2.5 text-xs text-white placeholder-slate-600 focus:outline-none focus:border-[#D26539] uppercase"
                         />
                       </div>
                     </div>

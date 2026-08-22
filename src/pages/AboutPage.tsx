@@ -9,7 +9,7 @@ export const AboutPage: React.FC = () => {
   const [activeTab, setActiveTab] = useState<'what' | 'why'>('what');
 
   return (
-    <main className="pt-24 pb-20 bg-[#090C10] min-h-screen text-[#E2E8F0] ">
+    <main className="pt-24 pb-20 bg-[#26452D] min-h-screen text-[#E2E8F0] ">
       <SEO
         title="The Tanush Legacy & Precision Biomechanics | Tanush Fitness"
         description="Engineering high-performance athletic sanctuaries. 11-gauge laser cut steel, ISO 9001:2015 precision manufacturing, and nationwide commercial outfitting."
@@ -51,7 +51,7 @@ export const AboutPage: React.FC = () => {
       {/* Editorial Story & Vault-Style Vision Tabs */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 space-y-16">
         {/* Interactive What is Tanush vs Why Tanush Section */}
-        <div className="bg-[#0D1118] border border-white/10 rounded-3xl p-8 sm:p-12 space-y-8">
+        <div className="bg-[#1E3823] border border-white/10 rounded-3xl p-8 sm:p-12 space-y-8">
           <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6 border-b border-white/10 pb-6">
             <div className="space-y-1">
               <span className="text-[11px] font-mono tracking-[0.25em] text-[#D26539] uppercase">
@@ -62,7 +62,7 @@ export const AboutPage: React.FC = () => {
               </h2>
             </div>
 
-            <div className="flex items-center gap-2 p-1.5 rounded-full bg-[#090C10] border border-white/10">
+            <div className="flex items-center gap-2 p-1.5 rounded-full bg-[#26452D] border border-white/10">
               <button
                 type="button"
                 onClick={() => setActiveTab('what')}
@@ -151,7 +151,7 @@ export const AboutPage: React.FC = () => {
 
         {/* Pillars / USPs */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          <div className="bg-[#0D1118] border border-white/10 rounded-2xl p-8 space-y-4 luxury-card">
+          <div className="bg-[#1E3823] border border-white/10 rounded-2xl p-8 space-y-4 luxury-card">
             <div className="w-12 h-12 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-[#D26539]">
               <Wrench className="w-6 h-6" />
             </div>
@@ -161,7 +161,7 @@ export const AboutPage: React.FC = () => {
             </p>
           </div>
 
-          <div className="bg-[#0D1118] border border-white/10 rounded-2xl p-8 space-y-4 luxury-card">
+          <div className="bg-[#1E3823] border border-white/10 rounded-2xl p-8 space-y-4 luxury-card">
             <div className="w-12 h-12 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-[#D26539]">
               <Cpu className="w-6 h-6" />
             </div>
@@ -171,7 +171,7 @@ export const AboutPage: React.FC = () => {
             </p>
           </div>
 
-          <div className="bg-[#0D1118] border border-white/10 rounded-2xl p-8 space-y-4 luxury-card">
+          <div className="bg-[#1E3823] border border-white/10 rounded-2xl p-8 space-y-4 luxury-card">
             <div className="w-12 h-12 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-[#D26539]">
               <Users className="w-6 h-6" />
             </div>
@@ -199,7 +199,7 @@ export const AboutPage: React.FC = () => {
               { name: 'Rohan Mehta', title: 'Director of Laser Manufacturing', image: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=400&q=80', bio: 'Directs ISO 9001:2015 robotic welding calibration and heavy tensile stress tests for selectorized machines.' },
               { name: 'Priya Sharma', title: 'VP of Master Staffing & Academy', image: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=400&q=80', bio: 'Head of credential vetting for NASM, CSCS, and ACE certified master personal trainer placements.' }
             ].map((team, i) => (
-              <div key={i} className="bg-[#0D1118] border border-white/10 rounded-2xl p-6 luxury-card space-y-4">
+              <div key={i} className="bg-[#1E3823] border border-white/10 rounded-2xl p-6 luxury-card space-y-4">
                 <img src={team.image} alt={team.name} className="w-20 h-20 rounded-2xl object-cover border border-white/10" />
                 <div className="space-y-1">
                   <h3 className="font-syne text-lg font-bold text-white uppercase">{team.name}</h3>
