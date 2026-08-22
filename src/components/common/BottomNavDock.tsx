@@ -1,11 +1,9 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { useApp } from '../../context/AppContext';
 import { PageType } from '../../types';
-import { VaultMenuDrawer } from './VaultMenuDrawer';
 
 export const BottomNavDock: React.FC = () => {
   const { currentPage, navigateTo } = useApp();
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const handleNav = (page: PageType, sectionId?: string) => {
     navigateTo(page);
@@ -13,7 +11,7 @@ export const BottomNavDock: React.FC = () => {
       setTimeout(() => {
         const el = document.getElementById(sectionId);
         if (el) {
-          el.scrollIntoView({ behavior: 'smooth' });
+          el.scrollIntoView({ behavior: 'smooth', block: 'start' });
         } else {
           window.scrollTo({ top: 0, behavior: 'smooth' });
         }
@@ -33,18 +31,18 @@ export const BottomNavDock: React.FC = () => {
             <button
               type="button"
               onClick={() => handleNav('home')}
-              className="bg-[#0D1811]/95 backdrop-blur-xl border border-white/15 px-6 sm:px-8 py-3 rounded-full font-syne font-black text-xs sm:text-sm tracking-[0.2em] text-white hover:text-[#D26539] hover:border-[#D26539]/50 transition-all shadow-2xl uppercase"
+              className="bg-[#0D1811]/95 backdrop-blur-xl border border-white/15 px-6 sm:px-8 py-3 rounded-full font-satoshi font-black text-xs sm:text-sm tracking-[0.2em] text-white hover:text-[#D26539] hover:border-[#D26539]/50 transition-all shadow-2xl uppercase cursor-pointer"
             >
               TANUSH
             </button>
           </div>
 
           {/* Center Floating Dock (Slightly Increased Size, Roomy & Fixed) */}
-          <div className="pointer-events-auto hidden md:flex items-center gap-2 bg-[#0D1811]/95 backdrop-blur-xl border border-white/15 p-2 rounded-full shadow-2xl font-mono text-xs sm:text-[13px] uppercase tracking-wider">
+          <div className="pointer-events-auto hidden md:flex items-center gap-2 bg-[#0D1811]/95 backdrop-blur-xl border border-white/15 p-2 rounded-full shadow-2xl font-general text-xs sm:text-[13px] uppercase tracking-wider">
             <button
               type="button"
               onClick={() => handleNav('home', 'about')}
-              className={`px-5 py-2.5 rounded-full font-bold transition-all shadow-md ${
+              className={`px-5 py-2.5 rounded-full font-bold transition-all shadow-md cursor-pointer ${
                 currentPage === 'home'
                   ? 'bg-[#D26539] text-white'
                   : 'text-slate-300 hover:text-white hover:bg-white/5'
@@ -56,7 +54,7 @@ export const BottomNavDock: React.FC = () => {
             <button
               type="button"
               onClick={() => handleNav('equipment')}
-              className={`px-5 py-2.5 rounded-full font-semibold transition-all ${
+              className={`px-5 py-2.5 rounded-full font-semibold transition-all cursor-pointer ${
                 currentPage === 'equipment'
                   ? 'bg-[#D26539] text-white font-bold'
                   : 'text-slate-300 hover:text-white hover:bg-white/5'
@@ -68,7 +66,7 @@ export const BottomNavDock: React.FC = () => {
             <button
               type="button"
               onClick={() => handleNav('services')}
-              className={`px-5 py-2.5 rounded-full font-semibold transition-all ${
+              className={`px-5 py-2.5 rounded-full font-semibold transition-all cursor-pointer ${
                 currentPage === 'services'
                   ? 'bg-[#D26539] text-white font-bold'
                   : 'text-slate-300 hover:text-white hover:bg-white/5'
@@ -80,7 +78,7 @@ export const BottomNavDock: React.FC = () => {
             <button
               type="button"
               onClick={() => handleNav('manpower')}
-              className={`px-5 py-2.5 rounded-full font-semibold transition-all ${
+              className={`px-5 py-2.5 rounded-full font-semibold transition-all cursor-pointer ${
                 currentPage === 'manpower'
                   ? 'bg-[#D26539] text-white font-bold'
                   : 'text-slate-300 hover:text-white hover:bg-white/5'
@@ -92,7 +90,7 @@ export const BottomNavDock: React.FC = () => {
             <button
               type="button"
               onClick={() => handleNav('contact')}
-              className={`px-5 py-2.5 rounded-full font-semibold transition-all ${
+              className={`px-5 py-2.5 rounded-full font-semibold transition-all cursor-pointer ${
                 currentPage === 'contact'
                   ? 'bg-[#D26539] text-white font-bold'
                   : 'text-slate-300 hover:text-white hover:bg-white/5'
@@ -102,13 +100,14 @@ export const BottomNavDock: React.FC = () => {
             </button>
           </div>
 
-          {/* Right Floating Circular Hamburger Button (Two Lines Trigger) */}
+          {/* Right Floating Circular Hamburger Button (Two Lines Redirect Trigger) */}
           <div className="pointer-events-auto">
             <button
               type="button"
-              onClick={() => setIsMenuOpen(true)}
+              onClick={() => handleNav('home', 'directory')}
               className="w-13 h-13 sm:w-14 sm:h-14 rounded-full bg-[#0D1811]/95 backdrop-blur-xl border border-white/15 flex flex-col items-center justify-center gap-1.5 text-white hover:border-[#D26539] hover:bg-[#142319] transition-all shadow-2xl group cursor-pointer"
-              aria-label="Open Navigation Menu"
+              aria-label="Scroll to Directory Section"
+              title="Navigate to Directory"
             >
               <span className="w-5 sm:w-6 h-[2px] bg-white rounded-full transition-transform group-hover:scale-x-110" />
               <span className="w-5 sm:w-6 h-[2px] bg-white rounded-full transition-transform group-hover:scale-x-110" />
@@ -116,12 +115,6 @@ export const BottomNavDock: React.FC = () => {
           </div>
         </div>
       </div>
-
-      {/* Exact Full-Screen Vault Orange Menu Drawer */}
-      <VaultMenuDrawer
-        isOpen={isMenuOpen}
-        onClose={() => setIsMenuOpen(false)}
-      />
     </>
   );
 };

@@ -12,7 +12,7 @@ const DIRECTORY_ITEMS: { num: string; title: string; page: PageType }[] = [
 ];
 
 export const OrangeDirectorySection: React.FC = () => {
-  const { currentPage, navigateTo } = useApp();
+  const { navigateTo } = useApp();
 
   const handleNav = (page: PageType) => {
     navigateTo(page);
@@ -20,7 +20,10 @@ export const OrangeDirectorySection: React.FC = () => {
   };
 
   return (
-    <section className="relative bg-[#D26539] text-[#090C10] overflow-hidden select-none border-t border-white/10">
+    <section
+      id="directory"
+      className="relative bg-[#D26539] text-[#090C10] overflow-hidden select-none border-t border-white/10 scroll-mt-6"
+    >
       {/* ========================================================================= */}
       {/* TOP BLACK UTILITY HEADER STRIP                                            */}
       {/* ========================================================================= */}
@@ -77,7 +80,7 @@ export const OrangeDirectorySection: React.FC = () => {
       {/* ========================================================================= */}
       {/* MAIN ORANGE BODY (ALL 6 ITEMS VISIBLE & ACCESSIBLE)                       */}
       {/* ========================================================================= */}
-      <div className="relative max-w-7xl mx-auto w-full px-6 sm:px-12 py-12 sm:py-16 flex items-center overflow-hidden">
+      <div className="relative max-w-7xl mx-auto w-full px-6 sm:px-12 py-14 sm:py-20 flex items-center overflow-hidden">
         {/* Giant Faint Star Watermark on Right */}
         <div className="absolute -right-20 top-1/2 -translate-y-1/2 pointer-events-none select-none opacity-20 hidden md:block">
           <svg
@@ -109,35 +112,6 @@ export const OrangeDirectorySection: React.FC = () => {
               </div>
             </div>
           ))}
-        </div>
-      </div>
-
-      {/* ========================================================================= */}
-      {/* BOTTOM LEGAL & BRAND BAR                                                  */}
-      {/* ========================================================================= */}
-      <div className="py-6 px-6 sm:px-12 border-t border-black/10">
-        <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
-          <div className="flex items-center gap-6">
-            <button
-              type="button"
-              onClick={() => handleNav('home')}
-              className="bg-[#0D1811] text-white px-7 py-3 rounded-full font-satoshi font-black text-xs sm:text-sm uppercase tracking-[0.2em] shadow-xl hover:text-[#D26539] transition cursor-pointer"
-            >
-              TANUSH
-            </button>
-
-            <button
-              type="button"
-              onClick={() => handleNav('about')}
-              className="text-white/90 hover:text-white font-mono text-xs tracking-wider underline cursor-pointer"
-            >
-              Terms & Conditions
-            </button>
-          </div>
-
-          <div className="text-xs font-mono text-[#090C10]/80">
-            Made for <span className="font-bold text-[#090C10]">Tanush Fitness Sanctuary</span>
-          </div>
         </div>
       </div>
     </section>
