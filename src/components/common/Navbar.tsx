@@ -61,11 +61,11 @@ export const Navbar: React.FC = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-8 flex items-center justify-between gap-4">
           <div className="flex items-center gap-4">
             <a
-              href="tel:+919067800048"
+              href="tel:+918160918894"
               className="flex items-center gap-1.5 text-[#A8A090] hover:text-[#D26539] transition-colors font-bold whitespace-nowrap"
             >
               <Phone className="w-3 h-3 text-[#D26539]" />
-              <span>+91 90678 00048</span>
+              <span>+91 81609 18894</span>
               <span className="text-[#6B6358] font-normal hidden sm:inline">(commercial & residential outfitting Desk)</span>
             </a>
 
@@ -307,8 +307,8 @@ export const Navbar: React.FC = () => {
                 <span>•</span>
                 <span>ISO 9001:2015 CERTIFIED</span>
               </div>
-              <a href="tel:+919067800048" className="text-[#D26539] hover:underline">
-                Direct Desk: +91 90678 00048
+              <a href="tel:+918160918894" className="text-[#D26539] hover:underline">
+                Direct Desk: +91 81609 18894
               </a>
             </div>
           </motion.div>

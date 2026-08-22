@@ -309,9 +309,9 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
     return saved
       ? JSON.parse(saved)
       : {
-          supportPhone: '+91 90678 00048',
+          supportPhone: '+91 81609 18894',
           supportEmail: 'Info@tanushfitness.com',
-          corporateAddress: 'The Landmark Complex, A-301-304, Near Podar International School, Urjanagar 1, Kudasan, Gandhinagar, Gujarat 382419',
+          corporateAddress: 'The landmark Complex, A - 301 - 304, near Podar International School, Urjanagar 1, Kudasan, Gandhinagar, Gujarat 382419',
           gstRate: '18',
           bannerText: '⚡ Special B2B Bulk Discount: Up to 25% Off Commercial & Residential Gym Setup Bundles This Month!',
           bannerEnabled: true,

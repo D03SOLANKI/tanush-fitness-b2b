@@ -92,7 +92,7 @@ export const ServicesPage: React.FC = () => {
 
           <div className="flex items-center gap-3 shrink-0">
             <a
-              href="tel:+919067800048"
+              href="tel:+918160918894"
               className="btn-vault flex items-center gap-2 text-xs py-2.5 px-5"
             >
               <Phone className="w-3.5 h-3.5" />

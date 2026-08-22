@@ -26,7 +26,7 @@ export const ContactPage: React.FC = () => {
 
           <div className="flex flex-wrap items-center gap-4">
             <a
-              href="https://wa.me/919067800048?text=Hello%20Tanush%20Fitness,%20I%20want%20a%20commercial%20outfitting%20quotation."
+              href="https://wa.me/918160918894?text=Hello%20Tanush%20Fitness,%20I%20want%20a%20commercial%20outfitting%20quotation."
               target="_blank"
               rel="noopener noreferrer"
               className="bg-[#0D1811] border border-white/15 hover:border-[#D26539] text-white px-5 py-2.5 rounded-full font-satoshi text-xs uppercase tracking-wider flex items-center gap-2 transition"
@@ -36,11 +36,11 @@ export const ContactPage: React.FC = () => {
             </a>
 
             <a
-              href="tel:+919067800048"
+              href="tel:+918160918894"
               className="btn-vault text-xs flex items-center gap-2 py-2.5 px-6"
             >
               <Phone className="w-3.5 h-3.5" />
-              <span>+91 90678 00048</span>
+              <span>+91 81609 18894</span>
             </a>
           </div>
         </div>
