@@ -54,7 +54,7 @@ export const ContactPage: React.FC = () => {
   };
 
   return (
-    <main className="pt-24 pb-20 bg-[#090C10] min-h-screen text-[#E2E8F0] luxury-noise">
+    <main className="pt-24 pb-20 bg-[#090C10] min-h-screen text-[#E2E8F0] ">
       <SEO
         title="VIP Commercial Outfitting Desk | Tanush Fitness"
         description="Direct manufacturer consultation, 3D CAD space proposals, wholesale machinery quotations, and flagship showroom visits."
@@ -147,7 +147,7 @@ export const ContactPage: React.FC = () => {
         {/* Form and Showrooms Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
           {/* Main RFQ Form */}
-          <div className="lg:col-span-7 bg-[#0D1118] border border-white/10 rounded-3xl p-8 sm:p-10 luxury-noise space-y-6">
+          <div className="lg:col-span-7 bg-[#0D1118] border border-white/10 rounded-3xl p-8 sm:p-10  space-y-6">
             <div className="border-b border-white/10 pb-4">
               <span className="text-xs font-mono text-[#D26539] uppercase tracking-widest block mb-1">
                 256-BIT ENCRYPTED PROCUREMENT PORTAL

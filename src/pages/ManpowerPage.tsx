@@ -138,7 +138,7 @@ export const ManpowerPage: React.FC = () => {
   });
 
   return (
-    <main className="pt-24 pb-20 bg-[#090C10] min-h-screen text-[#E2E8F0] luxury-noise">
+    <main className="pt-24 pb-20 bg-[#090C10] min-h-screen text-[#E2E8F0] ">
       <SEO
         title="Master Coaches & Staffing Sanctuary | Tanush Fitness B2B"
         description="Recruit NASM/CSCS certified personal trainers, master coaches, gym directors, and front desk executives nationwide."
@@ -283,7 +283,7 @@ export const ManpowerPage: React.FC = () => {
         ) : (
           /* Employer View */
           <div className="space-y-8">
-            <div className="bg-[#0D1118] border border-white/10 rounded-3xl p-8 flex flex-col md:flex-row items-center justify-between gap-6 luxury-noise">
+            <div className="bg-[#0D1118] border border-white/10 rounded-3xl p-8 flex flex-col md:flex-row items-center justify-between gap-6 ">
               <div className="space-y-2">
                 <span className="text-xs font-mono text-[#D26539] uppercase tracking-widest block">
                   COMMERCIAL CLUB TALENT ACQUISITION
@@ -316,13 +316,13 @@ export const ManpowerPage: React.FC = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-50 bg-black/80 backdrop-blur-md flex items-center justify-center p-4 sm:p-6 overflow-y-auto"
+            className="fixed inset-0 z-50 bg-black/80  flex items-center justify-center p-4 sm:p-6 overflow-y-auto"
           >
             <motion.div
               initial={{ scale: 0.95, y: 20 }}
               animate={{ scale: 1, y: 0 }}
               exit={{ scale: 0.95, y: 20 }}
-              className="bg-[#0D1118] border border-white/10 rounded-3xl max-w-lg w-full p-6 sm:p-8 space-y-6 luxury-noise"
+              className="bg-[#0D1118] border border-white/10 rounded-3xl max-w-lg w-full p-6 sm:p-8 space-y-6 "
             >
               <div className="flex items-start justify-between border-b border-white/10 pb-4">
                 <div>
@@ -406,13 +406,13 @@ export const ManpowerPage: React.FC = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-50 bg-black/80 backdrop-blur-md flex items-center justify-center p-4 sm:p-6 overflow-y-auto"
+            className="fixed inset-0 z-50 bg-black/80  flex items-center justify-center p-4 sm:p-6 overflow-y-auto"
           >
             <motion.div
               initial={{ scale: 0.95, y: 20 }}
               animate={{ scale: 1, y: 0 }}
               exit={{ scale: 0.95, y: 20 }}
-              className="bg-[#0D1118] border border-white/10 rounded-3xl max-w-lg w-full p-6 sm:p-8 space-y-6 luxury-noise"
+              className="bg-[#0D1118] border border-white/10 rounded-3xl max-w-lg w-full p-6 sm:p-8 space-y-6 "
             >
               <div className="flex items-start justify-between border-b border-white/10 pb-4">
                 <div>

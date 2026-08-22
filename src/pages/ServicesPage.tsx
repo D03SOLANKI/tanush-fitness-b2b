@@ -66,7 +66,7 @@ export const ServicesPage: React.FC = () => {
   };
 
   return (
-    <main className="pt-24 pb-20 bg-[#090C10] min-h-screen text-[#E2E8F0] luxury-noise">
+    <main className="pt-24 pb-20 bg-[#090C10] min-h-screen text-[#E2E8F0] ">
       <SEO
         title="Turnkey Gym Architecture & Outfitting Services | Tanush Fitness"
         description="3D CAD space modeling, acoustic rubber flooring, digital access turnstiles, marketing launch funnels, and AMC facility maintenance."
@@ -126,7 +126,7 @@ export const ServicesPage: React.FC = () => {
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-[#0D1118] via-transparent to-black/30" />
                   {service.badge && (
-                    <span className="absolute top-4 left-4 px-3 py-1 rounded-full bg-[#090C10]/80 backdrop-blur-md border border-white/10 text-[10px] font-mono text-[#D26539] uppercase tracking-wider font-bold">
+                    <span className="absolute top-4 left-4 px-3 py-1 rounded-full bg-[#090C10]/80  border border-white/10 text-[10px] font-mono text-[#D26539] uppercase tracking-wider font-bold">
                       {service.badge}
                     </span>
                   )}
@@ -183,13 +183,13 @@ export const ServicesPage: React.FC = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-50 bg-black/80 backdrop-blur-md flex items-center justify-center p-4 sm:p-6 overflow-y-auto"
+            className="fixed inset-0 z-50 bg-black/80  flex items-center justify-center p-4 sm:p-6 overflow-y-auto"
           >
             <motion.div
               initial={{ scale: 0.95, y: 20 }}
               animate={{ scale: 1, y: 0 }}
               exit={{ scale: 0.95, y: 20 }}
-              className="bg-[#0D1118] border border-white/10 rounded-3xl max-w-xl w-full p-6 sm:p-8 space-y-6 luxury-noise"
+              className="bg-[#0D1118] border border-white/10 rounded-3xl max-w-xl w-full p-6 sm:p-8 space-y-6 "
             >
               <div className="flex items-start justify-between border-b border-white/10 pb-4">
                 <div>

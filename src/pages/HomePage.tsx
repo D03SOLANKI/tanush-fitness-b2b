@@ -139,7 +139,7 @@ export const HomePage: React.FC = () => {
   };
 
   return (
-    <main className="min-h-screen bg-[#090C10] text-[#ECE6DB] luxury-noise overflow-hidden pb-24">
+    <main className="min-h-screen bg-[#090C10] text-[#ECE6DB]  overflow-hidden pb-24">
       <SEO
         title="Tanush Fitness | Commercial & Residential Equipment · Gym Management · Manpower Services"
         description="Experience India's premier commercial fitness sanctuary. World-class 11-gauge equipment, 3D turnkey gym management, and certified trainer staffing."
@@ -150,7 +150,7 @@ export const HomePage: React.FC = () => {
       {/* ========================================================================= */}
       <section className="relative min-h-[96vh] sm:min-h-screen bg-[#26452D] text-[#ECE6DB] flex flex-col justify-between items-center px-4 sm:px-6 lg:px-8 pt-8 sm:pt-12 pb-36 sm:pb-44 overflow-hidden">
         {/* Background Film Grain Overlay */}
-        <div className="absolute inset-0 bg-[#26452D] luxury-noise pointer-events-none" />
+        <div className="absolute inset-0 bg-[#26452D]  pointer-events-none" />
 
         {/* 🌟 1. Top Centered Geometric Star Emblem */}
         <div className="z-10 pt-2 sm:pt-4">
@@ -358,7 +358,7 @@ export const HomePage: React.FC = () => {
                   className="w-full h-[380px] object-cover transform group-hover:scale-105 transition-transform duration-700"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#090C10] via-transparent to-transparent opacity-60" />
-                <div className="absolute bottom-5 left-5 right-5 p-3.5 rounded-xl bg-[#0D1118]/90 backdrop-blur-md border border-white/10 font-mono text-[11px] text-[#D26539] flex items-center justify-between">
+                <div className="absolute bottom-5 left-5 right-5 p-3.5 rounded-xl bg-[#0D1118]/90  border border-white/10 font-mono text-[11px] text-[#D26539] flex items-center justify-between">
                   <span>ISO 9001:2015 CERTIFIED</span>
                   <span>500+ COMMERCIAL SANCTUARIES</span>
                 </div>
@@ -416,12 +416,12 @@ export const HomePage: React.FC = () => {
                       <div className="absolute inset-0 bg-gradient-to-t from-[#0D1118] via-transparent to-black/40" />
 
                       <div className="absolute top-4 left-4">
-                        <span className="px-3 py-1 rounded-full bg-[#090C10]/90 backdrop-blur-md border border-[#D26539]/30 text-[10px] font-mono text-[#D26539] font-bold uppercase tracking-wider">
+                        <span className="px-3 py-1 rounded-full bg-[#090C10]/90  border border-[#D26539]/30 text-[10px] font-mono text-[#D26539] font-bold uppercase tracking-wider">
                           PILLAR {pillar.number} // {pillar.category}
                         </span>
                       </div>
 
-                      <div className="absolute top-4 right-4 w-8 h-8 rounded-full bg-[#090C10]/80 backdrop-blur-md border border-white/10 flex items-center justify-center text-[#D26539]">
+                      <div className="absolute top-4 right-4 w-8 h-8 rounded-full bg-[#090C10]/80  border border-white/10 flex items-center justify-center text-[#D26539]">
                         <IconComp className="w-4 h-4" />
                       </div>
                     </div>

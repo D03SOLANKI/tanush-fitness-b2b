@@ -128,7 +128,7 @@ export const EnquiryCartDrawer: React.FC = () => {
           animate={{ x: 0 }}
           exit={{ x: '100%' }}
           transition={{ type: 'spring', damping: 30, stiffness: 280 }}
-          className="w-full max-w-lg bg-[#0D1118] h-full shadow-2xl flex flex-col justify-between overflow-hidden border-l border-white/10 luxury-noise"
+          className="w-full max-w-lg bg-[#0D1118] h-full shadow-2xl flex flex-col justify-between overflow-hidden border-l border-white/10 "
         >
           {/* Header */}
           <div className="p-6 border-b border-white/10 bg-[#090C10] text-white flex items-center justify-between">

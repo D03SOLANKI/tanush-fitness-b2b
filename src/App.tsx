@@ -40,7 +40,7 @@ const MainContent: React.FC = () => {
   const isAdmin = currentPage === 'admin';
 
   return (
-    <div className="min-h-screen bg-[#090C10] text-[#E2E8F0] flex flex-col justify-between selection:bg-[#D26539] selection:text-white font-sans antialiased luxury-noise">
+    <div className="min-h-screen bg-[#090C10] text-[#ECE6DB] flex flex-col justify-between selection:bg-[#D26539] selection:text-white font-sans antialiased">
       {isAdmin && <AdminHeader />}
       <div className="flex-1">{renderPage()}</div>
       {!isAdmin && <Footer />}

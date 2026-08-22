@@ -9,7 +9,7 @@ export const AboutPage: React.FC = () => {
   const [activeTab, setActiveTab] = useState<'what' | 'why'>('what');
 
   return (
-    <main className="pt-24 pb-20 bg-[#090C10] min-h-screen text-[#E2E8F0] luxury-noise">
+    <main className="pt-24 pb-20 bg-[#090C10] min-h-screen text-[#E2E8F0] ">
       <SEO
         title="The Tanush Legacy & Precision Biomechanics | Tanush Fitness"
         description="Engineering high-performance athletic sanctuaries. 11-gauge laser cut steel, ISO 9001:2015 precision manufacturing, and nationwide commercial outfitting."
@@ -212,7 +212,7 @@ export const AboutPage: React.FC = () => {
         </div>
 
         {/* CTA Bar */}
-        <div className="bg-gradient-to-r from-[#0D1118] via-[#111622] to-[#0D1118] border border-white/10 rounded-3xl p-8 sm:p-12 flex flex-col md:flex-row items-center justify-between gap-6 luxury-noise">
+        <div className="bg-gradient-to-r from-[#0D1118] via-[#111622] to-[#0D1118] border border-white/10 rounded-3xl p-8 sm:p-12 flex flex-col md:flex-row items-center justify-between gap-6 ">
           <div className="space-y-2">
             <span className="text-xs font-mono text-[#D26539] uppercase tracking-widest block">COMMERCIAL INQUIRIES</span>
             <h3 className="font-syne text-2xl sm:text-3xl font-extrabold text-white uppercase">
