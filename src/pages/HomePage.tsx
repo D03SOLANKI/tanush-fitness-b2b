@@ -127,11 +127,11 @@ export const HomePage: React.FC = () => {
       />
 
       {/* ========================================================================= */}
-      {/* SECTION 1: STRICT 100DVH HERO MATCHING VAULT PROPORTIONS & TYPOGRAPHY     */}
+      {/* SECTION 1: EXACT VERTICAL STRUCTURE (LOGO -> HEADLINE -> MARQUEE -> CTA)  */}
       {/* ========================================================================= */}
-      <section className="relative h-[100dvh] min-h-[100dvh] max-h-[100dvh] w-full bg-[#26452D] text-[#ECE6DB] flex flex-col justify-between items-center px-4 sm:px-6 pt-6 sm:pt-10 pb-24 sm:pb-28 overflow-hidden select-none">
-        {/* 🌟 1. Top Centered Geometric Star Emblem (Matching Vault Mark) */}
-        <div className="z-10 shrink-0">
+      <section className="relative h-[100dvh] min-h-[100dvh] max-h-[100dvh] w-full bg-[#26452D] text-[#ECE6DB] flex flex-col justify-between items-center px-4 sm:px-6 pt-6 sm:pt-8 pb-20 sm:pb-24 overflow-hidden select-none">
+        {/* 1. TOP LOGO EMBLEM (CENTERED WITH GENEROUS SPACE) */}
+        <div className="z-10 pt-2 sm:pt-4 shrink-0">
           <svg
             className="w-12 h-12 sm:w-16 sm:h-16 md:w-20 md:h-20 text-white fill-none stroke-current"
             viewBox="0 0 100 100"
@@ -144,20 +144,12 @@ export const HomePage: React.FC = () => {
           </svg>
         </div>
 
-        {/* 🌊 2. Faint Ghost Watermark Marquee Background Layer */}
-        <div className="absolute top-[52%] -translate-y-1/2 left-0 right-0 z-0 pointer-events-none select-none overflow-hidden opacity-20">
-          <div className="flex items-center gap-14 animate-marquee-slow whitespace-nowrap font-satoshi font-black text-3xl sm:text-5xl md:text-6xl lg:text-7xl tracking-[0.25em] text-[#3A563F] uppercase">
-            <span>✦ BEYOND FITNESS ✦ BEYOND FITNESS ✦ BEYOND FITNESS ✦ BEYOND FITNESS ✦</span>
-            <span>✦ BEYOND FITNESS ✦ BEYOND FITNESS ✦ BEYOND FITNESS ✦ BEYOND FITNESS ✦</span>
-          </div>
-        </div>
-
-        {/* 💎 3. Master Kinetic Typography (Exact Vault Row Composition & Spacing) */}
-        <div className="max-w-6xl mx-auto w-full my-auto text-center space-y-6 z-10 py-2">
+        {/* 2. MAIN HEADLINE (DIRECTLY BELOW LOGO) */}
+        <div className="max-w-6xl mx-auto w-full text-center my-auto py-1 z-10">
           <div className="space-y-3 sm:space-y-4 md:space-y-5 select-none">
             {/* Row 1 */}
             <div className="flex flex-wrap items-center justify-center gap-2.5 sm:gap-4 md:gap-5 font-satoshi text-2xl sm:text-4xl md:text-5xl lg:text-[54px] xl:text-[62px] font-black uppercase tracking-tight text-white leading-none">
-              <span className="relative inline-block">
+              <span className="relative inline-block whitespace-nowrap">
                 GET READY
                 {/* Terracotta Orange Hand-Drawn Brush Stroke Accent */}
                 <span className="absolute -bottom-1.5 sm:-bottom-2.5 left-0 right-0 h-1.5 sm:h-2.5 bg-[#D26539] rounded-full -rotate-1 opacity-90" />
@@ -172,12 +164,12 @@ export const HomePage: React.FC = () => {
                 />
               </div>
 
-              <span>TO UNLEASH</span>
+              <span className="whitespace-nowrap">TO UNLEASH</span>
             </div>
 
             {/* Row 2 */}
             <div className="flex flex-wrap items-center justify-center gap-2.5 sm:gap-4 md:gap-5 font-satoshi text-2xl sm:text-4xl md:text-5xl lg:text-[54px] xl:text-[62px] font-black uppercase tracking-tight text-white leading-none">
-              <span>YOUR</span>
+              <span className="whitespace-nowrap">YOUR</span>
 
               {/* Capsule Image Pill 2 */}
               <div className="inline-block h-8 sm:h-11 md:h-13 lg:h-15 w-28 sm:w-40 md:w-48 lg:w-56 rounded-full overflow-hidden border border-white/40 shadow-2xl shrink-0 align-middle transform hover:scale-105 transition-transform duration-300">
@@ -188,7 +180,7 @@ export const HomePage: React.FC = () => {
                 />
               </div>
 
-              <span>INNER POTENTIAL</span>
+              <span className="whitespace-nowrap">INNER POTENTIAL</span>
 
               {/* Capsule Image Pill 3 */}
               <div className="inline-block h-8 sm:h-11 md:h-13 lg:h-15 w-24 sm:w-36 md:w-44 lg:w-52 rounded-full overflow-hidden border border-white/40 shadow-2xl shrink-0 align-middle transform hover:scale-105 transition-transform duration-300">
@@ -200,28 +192,36 @@ export const HomePage: React.FC = () => {
               </div>
             </div>
           </div>
+        </div>
 
-          {/* 🎯 4. Center Outlined CTA Button & Down Arrow */}
-          <div className="pt-4 sm:pt-6 flex flex-col items-center justify-center gap-3">
-            <button
-              type="button"
-              onClick={() => navigateTo('equipment')}
-              className="border border-white/40 hover:border-white text-white font-general text-[11px] sm:text-xs uppercase tracking-[0.25em] font-semibold px-8 py-3 rounded-none transition-all duration-300 hover:bg-white hover:text-[#26452D] flex items-center gap-2 group shadow-lg cursor-pointer"
-            >
-              <span>JOIN TANUSH</span>
-              <ArrowUpRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-            </button>
-
-            {/* ⬇️ 5. Scroll Down Indicator */}
-            <button
-              type="button"
-              onClick={scrollToAbout}
-              className="w-8 h-8 rounded-full border border-white/30 flex items-center justify-center text-white/80 hover:text-white hover:border-white transition animate-bounce cursor-pointer"
-              aria-label="Scroll to Next Section"
-            >
-              <ArrowDown className="w-3.5 h-3.5" />
-            </button>
+        {/* 3. MARQUEE ROW (SEPARATE HORIZONTAL ROW BELOW HEADLINE — NOT BACKGROUND) */}
+        <div className="w-full overflow-hidden py-2 sm:py-3 z-10 select-none pointer-events-none">
+          <div className="flex items-center gap-12 sm:gap-16 animate-marquee-slow whitespace-nowrap font-satoshi font-black text-2xl sm:text-4xl md:text-5xl tracking-[0.25em] text-[#3A563F] opacity-40 uppercase">
+            <span>✦ BEYOND FITNESS ✦ BEYOND FITNESS ✦ BEYOND FITNESS ✦ BEYOND FITNESS ✦</span>
+            <span>✦ BEYOND FITNESS ✦ BEYOND FITNESS ✦ BEYOND FITNESS ✦ BEYOND FITNESS ✦</span>
           </div>
+        </div>
+
+        {/* 4. CLEAR SPACING GAP & 5. CTA BUTTON & 6. CIRCULAR DOWN ARROW */}
+        <div className="pt-2 sm:pt-3 flex flex-col items-center justify-center gap-3 z-10">
+          <button
+            type="button"
+            onClick={() => navigateTo('equipment')}
+            className="border border-white/40 hover:border-white text-white font-general text-[11px] sm:text-xs uppercase tracking-[0.25em] font-semibold px-8 py-3 rounded-none transition-all duration-300 hover:bg-white hover:text-[#26452D] flex items-center gap-2 group shadow-lg cursor-pointer"
+          >
+            <span>JOIN TANUSH</span>
+            <ArrowUpRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+          </button>
+
+          {/* 6. Circular Down Arrow */}
+          <button
+            type="button"
+            onClick={scrollToAbout}
+            className="w-8 h-8 rounded-full border border-white/30 flex items-center justify-center text-white/80 hover:text-white hover:border-white transition animate-bounce cursor-pointer"
+            aria-label="Scroll to Next Section"
+          >
+            <ArrowDown className="w-3.5 h-3.5" />
+          </button>
         </div>
       </section>
 
