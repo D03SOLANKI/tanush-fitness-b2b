@@ -2,15 +2,30 @@ import React, { useState } from 'react';
 import { useApp } from '../context/AppContext';
 import { JobListing, JobRoleCategory } from '../types';
 import { SEO } from '../components/common/SEO';
-import { Users, Briefcase, Plus, Search, MapPin, CheckCircle2, UserCheck, X, Upload, PhoneCall, Send, ShieldAlert, Award } from 'lucide-react';
+import {
+  Users,
+  Briefcase,
+  Plus,
+  Search,
+  MapPin,
+  CheckCircle2,
+  UserCheck,
+  X,
+  Phone,
+  Send,
+  Sparkles,
+  Award,
+  ShieldCheck
+} from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { MarqueeStrip } from '../components/common/MarqueeStrip';
 
 export const ManpowerPage: React.FC = () => {
   const {
     jobListings,
-    jobApplications,
     addJobListing,
     submitJobApplication,
+    showToast
   } = useApp();
 
   const [activeUserRole, setActiveUserRole] = useState<'candidate' | 'employer'>('candidate');
@@ -22,43 +37,36 @@ export const ManpowerPage: React.FC = () => {
   const [isPostJobModalOpen, setIsPostJobModalOpen] = useState(false);
   const [selectedJob, setSelectedJob] = useState<JobListing | null>(null);
 
-  // Candidate Application Form State
+  // Candidate Form
   const [candidateForm, setCandidateForm] = useState({
     fullName: '',
     mobile: '',
     email: '',
-    experience: '2-3 Years',
+    experience: '3-5 Years',
     preferredCity: '',
-    preferredSalary: '₹25,000 - ₹35,000 / month',
-    skills: 'Personal Training, Weight Loss, Strength Conditioning',
-    certifications: 'NASM-CPT / CSCS / K11 Certified',
-    resumeFileName: 'Resume_2026.pdf',
+    preferredSalary: '₹40,000 - ₹60,000 / month',
+    skills: 'Personal Training, Biomechanics, Hypertrophy, Rehab',
+    certifications: 'NASM-CPT / CSCS / ACE / K11 Certified',
+    resumeFileName: 'Resume_Executive.pdf',
   });
 
-  // Employer Post Job Form State
+  // Employer Post Job Form
   const [jobForm, setJobForm] = useState({
     title: '',
     category: 'Personal Trainer' as JobRoleCategory,
     gymName: '',
     location: '',
-    salaryRange: '₹30,000 - ₹50,000 / month',
+    salaryRange: '₹45,000 - ₹75,000 / month',
     type: 'Full-time' as 'Full-time' | 'Part-time' | 'Contract',
-    experience: '1-3 Years',
+    experience: '2-4 Years',
     description: '',
-    requirements: 'Certified trainer, strong communication skills',
+    requirements: 'NASM/CSCS Certified, 2+ Years Commercial Experience',
   });
-
-  // Local application status override for demo
-  const [applicationStatuses, setApplicationStatuses] = useState<Record<string, string>>({});
-
-  const handleStatusChange = (appId: string, newStatus: string) => {
-    setApplicationStatuses(prev => ({ ...prev, [appId]: newStatus }));
-  };
 
   const handleApplySubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (!selectedJob || !candidateForm.fullName || !candidateForm.mobile) {
-      alert('Please fill in your Full Name and Mobile Number.');
+      showToast('Please provide your Full Name and Mobile Number.', 'error');
       return;
     }
 
@@ -78,6 +86,7 @@ export const ManpowerPage: React.FC = () => {
       certifications: candidateForm.certifications,
     });
 
+    showToast('Application sent directly to Gym Director!', 'success');
     setIsApplyModalOpen(false);
     setSelectedJob(null);
   };
@@ -85,7 +94,7 @@ export const ManpowerPage: React.FC = () => {
   const handlePostJobSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (!jobForm.title || !jobForm.gymName || !jobForm.location) {
-      alert('Please provide Job Title, Gym Name, and Location.');
+      showToast('Please provide Job Title, Gym/Club Name, and Location.', 'error');
       return;
     }
 
@@ -101,15 +110,16 @@ export const ManpowerPage: React.FC = () => {
       requirements: jobForm.requirements.split(',').map(r => r.trim()),
     });
 
+    showToast('Role published to Master Coaches board!', 'success');
     setIsPostJobModalOpen(false);
     setJobForm({
       title: '',
       category: 'Personal Trainer',
       gymName: '',
       location: '',
-      salaryRange: '₹30,000 - ₹50,000 / month',
+      salaryRange: '₹45,000 - ₹75,000 / month',
       type: 'Full-time',
-      experience: '1-3 Years',
+      experience: '2-4 Years',
       description: '',
       requirements: '',
     });
@@ -128,259 +138,172 @@ export const ManpowerPage: React.FC = () => {
   });
 
   return (
-    <main className="pt-28 pb-24 bg-slate-50 min-h-screen text-slate-900">
+    <main className="pt-24 pb-20 bg-[#090C10] min-h-screen text-[#E2E8F0] luxury-noise">
       <SEO
-        title="Gym Manpower Hiring Portal | Tanush Fitness B2B"
-        description="Recruit NASM/CSCS certified personal trainers, gym managers, nutritionists, & sales executives across India."
+        title="Master Coaches & Staffing Sanctuary | Tanush Fitness B2B"
+        description="Recruit NASM/CSCS certified personal trainers, master coaches, gym directors, and front desk executives nationwide."
       />
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Header */}
-        <div className="mb-8 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
-          <div>
-            <div className="inline-flex items-center gap-2 mb-2">
-              <span className="w-8 h-[3px] bg-amber-500 rounded-full" />
-              <span className="text-xs font-bold tracking-widest uppercase text-amber-600 font-mono">
-                BUSINESS 2: MANPOWER SERVICES
-              </span>
+      {/* Hero Header */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 pb-12">
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 border-b border-white/10 pb-8">
+          <div className="space-y-3">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-[#C5A880]/30 text-xs font-mono text-[#C5A880] tracking-widest uppercase">
+              <Sparkles className="w-3.5 h-3.5" />
+              <span>ELITE COMMERCIAL TALENT SANCTUARY</span>
             </div>
-            <h1 className="text-3xl sm:text-5xl font-black text-slate-900 tracking-tight font-heading uppercase">
-              Gym Staffing & Recruitment Portal
+
+            <h1 className="font-syne text-3xl sm:text-5xl md:text-6xl font-extrabold uppercase text-white tracking-tight">
+              MASTER <span className="text-[#C5A880]">STAFFING</span>
             </h1>
-            <p className="mt-2 text-sm text-slate-600 max-w-2xl font-normal">
-              Direct recruitment portal for health club owners and certified fitness professionals.
+
+            <p className="text-sm sm:text-base text-slate-400 max-w-2xl font-sans leading-relaxed">
+              Recruit certified master coaches (NASM, CSCS, ACE, K11) and commercial health club directors. Fast-track talent placement for newly launched fitness destinations.
             </p>
           </div>
 
-          {/* User Mode Switcher Tabs */}
-          <div className="bg-slate-200 p-1 rounded-2xl flex items-center font-mono text-xs font-bold shrink-0">
+          {/* Role Switcher Tabs */}
+          <div className="flex items-center bg-[#0D1118] p-1.5 rounded-full border border-white/10 shrink-0">
             <button
+              type="button"
               onClick={() => setActiveUserRole('candidate')}
-              className={`px-5 py-2.5 rounded-xl transition-all uppercase flex items-center gap-2 ${
+              className={`px-5 py-2 rounded-full text-xs font-mono uppercase tracking-wider transition ${
                 activeUserRole === 'candidate'
-                  ? 'bg-blue-600 text-white shadow-md'
-                  : 'text-slate-700 hover:text-slate-900'
+                  ? 'bg-[#C5A880] text-[#090C10] font-bold shadow-md'
+                  : 'text-slate-400 hover:text-white'
               }`}
             >
-              <UserCheck className="w-4 h-4" />
-              <span>Candidate Seekers</span>
+              Certified Talent
             </button>
-
             <button
+              type="button"
               onClick={() => setActiveUserRole('employer')}
-              className={`px-5 py-2.5 rounded-xl transition-all uppercase flex items-center gap-2 ${
+              className={`px-5 py-2 rounded-full text-xs font-mono uppercase tracking-wider transition ${
                 activeUserRole === 'employer'
-                  ? 'bg-slate-900 text-white shadow-md'
-                  : 'text-slate-700 hover:text-slate-900'
+                  ? 'bg-white text-[#090C10] font-bold shadow-md'
+                  : 'text-slate-400 hover:text-white'
               }`}
             >
-              <Briefcase className="w-4 h-4 text-amber-400" />
-              <span>Gym Employers</span>
+              Club Employers
             </button>
           </div>
         </div>
+      </section>
 
-        {/* CANDIDATE VIEW */}
-        {activeUserRole === 'candidate' && (
-          <div className="space-y-8">
-            {/* Filter Bar */}
-            <div className="bg-white p-4 rounded-2xl border border-slate-200 shadow-sm flex flex-col sm:flex-row items-center justify-between gap-4 font-mono text-xs">
-              <div className="relative w-full sm:w-80">
+      {/* Marquee Banner */}
+      <MarqueeStrip theme="minimal" speed="slow" />
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 space-y-8">
+        {/* Candidate Portal View */}
+        {activeUserRole === 'candidate' ? (
+          <div className="space-y-6">
+            {/* Search & Categories */}
+            <div className="flex flex-col md:flex-row items-stretch md:items-center justify-between gap-4">
+              <div className="relative flex-1 max-w-md">
+                <Search className="w-4 h-4 absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-500" />
                 <input
                   type="text"
-                  placeholder="Search job title, gym name, or city..."
+                  placeholder="Search master trainer, club manager, Delhi, Bengaluru..."
                   value={searchQuery}
                   onChange={e => setSearchQuery(e.target.value)}
-                  className="w-full bg-slate-50 border border-slate-200 rounded-xl py-2.5 px-4 pl-9 text-xs text-slate-900 font-mono focus:outline-none focus:border-blue-600"
+                  className="w-full bg-[#0D1118] border border-white/10 rounded-full pl-10 pr-4 py-2.5 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-[#C5A880]"
                 />
-                <Search className="w-4 h-4 text-slate-400 absolute left-3 top-3" />
               </div>
 
-              <div className="flex items-center gap-2 overflow-x-auto w-full sm:w-auto">
-                <select
-                  value={selectedCategory}
-                  onChange={e => setSelectedCategory(e.target.value)}
-                  className="bg-slate-50 border border-slate-200 rounded-xl p-2.5 text-xs text-slate-900 font-bold font-mono uppercase focus:outline-none"
-                >
-                  <option value="all">All 8 Role Categories</option>
-                  <option value="Personal Trainer">Personal Trainer</option>
-                  <option value="Gym Trainer">Gym Trainer</option>
-                  <option value="Receptionist">Receptionist</option>
-                  <option value="Sales Executive">Sales Executive</option>
-                  <option value="Housekeeping">Housekeeping</option>
-                  <option value="Nutritionist">Nutritionist</option>
-                  <option value="Gym Manager">Gym Manager</option>
-                </select>
+              <div className="flex items-center gap-2 overflow-x-auto pb-2 scrollbar-none">
+                {['all', 'Personal Trainer', 'Gym Manager', 'Floor Trainer', 'Front Desk', 'Nutritionist'].map((cat) => (
+                  <button
+                    key={cat}
+                    type="button"
+                    onClick={() => setSelectedCategory(cat)}
+                    className={`px-4 py-2 rounded-full text-xs font-mono uppercase tracking-wider transition whitespace-nowrap ${
+                      selectedCategory === cat
+                        ? 'bg-[#C5A880] text-[#090C10] font-bold'
+                        : 'bg-[#0D1118] text-slate-400 border border-white/5 hover:border-white/20'
+                    }`}
+                  >
+                    {cat === 'all' ? 'All Roles' : cat}
+                  </button>
+                ))}
               </div>
             </div>
 
-            {/* Jobs List */}
+            {/* Jobs Roster */}
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {filteredJobs.map(job => (
+              {filteredJobs.map((job) => (
                 <div
                   key={job.id}
-                  className="rounded-xl bg-white border border-slate-200 hover:border-slate-400 hover-lift p-6 shadow-sm flex flex-col justify-between"
+                  className="bg-[#0D1118] border border-white/10 rounded-2xl p-6 luxury-card flex flex-col justify-between space-y-5"
                 >
                   <div className="space-y-3">
-                    <div className="flex items-center justify-between font-mono">
-                      <span className="px-2.5 py-1 rounded bg-amber-100 text-amber-800 text-[10px] font-bold">
+                    <div className="flex items-center justify-between">
+                      <span className="px-3 py-0.5 rounded-full bg-white/5 border border-[#C5A880]/30 text-[9px] font-mono text-[#C5A880] uppercase tracking-wider font-bold">
                         {job.category}
                       </span>
-                      <span className="text-[10px] text-slate-400 font-medium">{job.type}</span>
+                      <span className="text-xs font-mono text-emerald-400 font-bold">
+                        {job.salaryRange}
+                      </span>
                     </div>
 
-                    <div>
-                      <h3 className="text-base font-black text-slate-900 font-heading uppercase">
-                        {job.title}
-                      </h3>
-                      <div className="text-xs font-bold text-blue-600 font-mono mt-0.5">{job.gymName}</div>
+                    <h3 className="font-syne text-lg font-bold text-white uppercase">
+                      {job.title}
+                    </h3>
+
+                    <div className="flex items-center gap-4 text-xs font-mono text-slate-400">
+                      <span className="flex items-center gap-1">
+                        <Briefcase className="w-3.5 h-3.5 text-[#C5A880]" />
+                        {job.gymName}
+                      </span>
+                      <span className="flex items-center gap-1">
+                        <MapPin className="w-3.5 h-3.5 text-slate-500" />
+                        {job.location}
+                      </span>
                     </div>
 
-                    <div className="space-y-1 text-xs text-slate-600 font-mono">
-                      <div className="flex items-center gap-1">
-                        <MapPin className="w-3.5 h-3.5 text-slate-400" />
-                        <span>{job.location}</span>
-                      </div>
-                      <div className="text-emerald-600 font-black">{job.salaryRange}</div>
-                    </div>
-
-                    <p className="text-xs text-slate-600 leading-relaxed font-normal line-clamp-2">
+                    <p className="text-xs text-slate-400 font-sans line-clamp-2 leading-relaxed">
                       {job.description}
                     </p>
                   </div>
 
-                  <div className="pt-4 border-t border-slate-100 mt-4 font-mono">
-                    <button
-                      onClick={() => {
-                        setSelectedJob(job);
-                        setIsApplyModalOpen(true);
-                      }}
-                      className="w-full py-3 px-4 rounded-xl bg-blue-600 hover:bg-blue-700 text-white font-black text-xs uppercase tracking-wider flex items-center justify-center gap-2 shadow-md transition-all"
-                    >
-                      <UserCheck className="w-4 h-4" />
-                      <span>Apply For This Position</span>
-                    </button>
-                  </div>
+                  <button
+                    type="button"
+                    onClick={() => {
+                      setSelectedJob(job);
+                      setIsApplyModalOpen(true);
+                    }}
+                    className="btn-vault w-full py-2.5 text-xs flex items-center justify-center gap-2"
+                  >
+                    <UserCheck className="w-3.5 h-3.5" />
+                    <span>Apply with 1-Click</span>
+                  </button>
                 </div>
               ))}
             </div>
           </div>
-        )}
-
-        {/* EMPLOYER VIEW */}
-        {activeUserRole === 'employer' && (
-          <div className="space-y-8 font-mono">
-            {/* Top Post Job Banner */}
-            <div className="p-8 rounded-3xl bg-slate-900 text-white border border-slate-800 flex flex-col sm:flex-row items-center justify-between gap-6">
+        ) : (
+          /* Employer View */
+          <div className="space-y-8">
+            <div className="bg-[#0D1118] border border-white/10 rounded-3xl p-8 flex flex-col md:flex-row items-center justify-between gap-6 luxury-noise">
               <div className="space-y-2">
-                <span className="text-[10px] font-bold text-amber-400 uppercase tracking-widest">
-                  FOR HEALTH CLUB OWNERS & DIRECTORS
+                <span className="text-xs font-mono text-[#C5A880] uppercase tracking-widest block">
+                  COMMERCIAL CLUB TALENT ACQUISITION
                 </span>
-                <h2 className="text-2xl font-black font-heading uppercase">
-                  Post New Gym Opening & Source Trainers
+                <h2 className="font-syne text-2xl sm:text-3xl font-extrabold text-white uppercase">
+                  Recruit Master Certified Staff for Your Facility
                 </h2>
-                <p className="text-xs text-slate-300">
-                  Broadcast job openings across India to thousands of NASM/CSCS accredited personal trainers and certified facility managers.
+                <p className="text-sm text-slate-400 font-sans max-w-2xl">
+                  Post open head trainer, general manager, and sales coordinator positions. Receive verified candidates screened for NASM/CSCS credentials.
                 </p>
               </div>
 
               <button
+                type="button"
                 onClick={() => setIsPostJobModalOpen(true)}
-                className="px-6 py-4 rounded-2xl bg-amber-500 hover:bg-amber-400 text-slate-950 font-black text-xs uppercase tracking-wider flex items-center gap-2 shrink-0 shadow-lg"
+                className="btn-vault shrink-0 px-6 py-3.5 text-xs flex items-center gap-2"
               >
-                <Plus className="w-5 h-5" />
-                <span>Post A New Job Opening</span>
+                <Plus className="w-4 h-4" />
+                <span>Post Staff Opening</span>
               </button>
-            </div>
-
-            {/* Received Candidate Applications List */}
-            <div className="bg-white rounded-3xl border border-slate-200 p-6 sm:p-8 space-y-6">
-              <div className="flex items-center justify-between">
-                <h3 className="text-lg font-black text-slate-900 uppercase font-heading flex items-center gap-2">
-                  <Users className="w-5 h-5 text-amber-500" />
-                  <span>Submitted Candidate Profiles ({jobApplications.length})</span>
-                </h3>
-              </div>
-
-              {jobApplications.length === 0 ? (
-                <div className="py-12 text-center text-xs text-slate-400">
-                  No candidate applications received yet. Applied candidates will appear here with contact numbers and attached resumes.
-                </div>
-              ) : (
-                <div className="space-y-4">
-                  {jobApplications.map(app => {
-                    const currentStatus = applicationStatuses[app.id] || app.status;
-
-                    return (
-                      <div key={app.id} className="p-5 rounded-2xl bg-slate-50 border border-slate-200 space-y-3">
-                        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-slate-200 pb-3">
-                          <div>
-                            <span className="text-sm font-black text-slate-900 uppercase">{app.fullName}</span>
-                            <span className="text-xs text-blue-600 block font-bold">Role: {app.jobTitle} ({app.gymName})</span>
-                          </div>
-
-                          <div className="flex items-center gap-2">
-                            <span className={`px-3 py-1 rounded-full text-[10px] font-bold ${
-                              currentStatus === 'Shortlisted'
-                                ? 'bg-emerald-100 text-emerald-800'
-                                : currentStatus === 'Rejected'
-                                ? 'bg-rose-100 text-rose-800'
-                                : 'bg-amber-100 text-amber-800'
-                            }`}>
-                              {currentStatus}
-                            </span>
-                          </div>
-                        </div>
-
-                        <div className="grid grid-cols-1 sm:grid-cols-3 gap-2 text-xs text-slate-700">
-                          <div>Mobile: <strong>{app.mobile}</strong></div>
-                          <div>Email: {app.email}</div>
-                          <div>Experience: {app.experience}</div>
-                        </div>
-
-                        {app.skills && app.skills.length > 0 && (
-                          <div className="flex flex-wrap gap-1">
-                            {app.skills.map((sk, i) => (
-                              <span key={i} className="text-[10px] px-2 py-0.5 rounded bg-slate-200 text-slate-800 font-bold">
-                                {sk}
-                              </span>
-                            ))}
-                          </div>
-                        )}
-
-                        <div className="pt-2 flex items-center justify-between border-t border-slate-200 text-xs">
-                          <div className="text-slate-500">
-                            Resume: <span className="text-blue-600 underline font-bold">{app.resumeFileName}</span>
-                          </div>
-
-                          {/* Candidate Status Action Buttons */}
-                          <div className="flex items-center gap-2">
-                            <button
-                              onClick={() => handleStatusChange(app.id, 'Shortlisted')}
-                              className="px-3 py-1.5 rounded-lg bg-emerald-600 text-white font-bold text-[10px] uppercase"
-                            >
-                              Shortlist
-                            </button>
-                            <button
-                              onClick={() => handleStatusChange(app.id, 'Rejected')}
-                              className="px-3 py-1.5 rounded-lg bg-slate-200 hover:bg-rose-100 text-slate-700 hover:text-rose-700 font-bold text-[10px] uppercase"
-                            >
-                              Reject
-                            </button>
-                            <a
-                              href={`tel:${app.mobile}`}
-                              className="px-3 py-1.5 rounded-lg bg-slate-900 text-white font-bold text-[10px] uppercase flex items-center gap-1"
-                            >
-                              <PhoneCall className="w-3 h-3 text-amber-400" />
-                              <span>Call Candidate</span>
-                            </a>
-                          </div>
-                        </div>
-                      </div>
-                    );
-                  })}
-                </div>
-              )}
             </div>
           </div>
         )}
@@ -389,181 +312,171 @@ export const ManpowerPage: React.FC = () => {
       {/* Candidate Apply Modal */}
       <AnimatePresence>
         {isApplyModalOpen && selectedJob && (
-          <div className="fixed inset-0 z-50 overflow-y-auto bg-slate-950/60 backdrop-blur-sm flex items-center justify-center p-4">
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-50 bg-black/80 backdrop-blur-md flex items-center justify-center p-4 sm:p-6 overflow-y-auto"
+          >
             <motion.div
-              initial={{ scale: 0.95, opacity: 0 }}
-              animate={{ scale: 1, opacity: 1 }}
-              exit={{ scale: 0.95, opacity: 0 }}
-              className="bg-white rounded-3xl max-w-lg w-full p-6 sm:p-8 overflow-hidden shadow-2xl border border-slate-200 relative my-8 font-mono"
+              initial={{ scale: 0.95, y: 20 }}
+              animate={{ scale: 1, y: 0 }}
+              exit={{ scale: 0.95, y: 20 }}
+              className="bg-[#0D1118] border border-white/10 rounded-3xl max-w-lg w-full p-6 sm:p-8 space-y-6 luxury-noise"
             >
-              <button
-                onClick={() => setIsApplyModalOpen(false)}
-                className="absolute top-4 right-4 p-2 rounded-full bg-slate-100 text-slate-500 hover:text-slate-900"
-              >
-                <X className="w-5 h-5" />
-              </button>
-
-              <div className="mb-6">
-                <span className="text-[10px] font-bold uppercase text-blue-600">Candidate Job Application</span>
-                <h3 className="text-xl font-black text-slate-900 font-heading uppercase mt-0.5">
-                  Apply for {selectedJob.title}
-                </h3>
-                <div className="text-xs text-slate-500">{selectedJob.gymName} • {selectedJob.location}</div>
+              <div className="flex items-start justify-between border-b border-white/10 pb-4">
+                <div>
+                  <span className="text-[10px] font-mono text-[#C5A880] uppercase tracking-widest block mb-1">
+                    EXECUTIVE CANDIDATE APPLICATION
+                  </span>
+                  <h3 className="font-syne text-xl font-bold text-white uppercase">
+                    {selectedJob.title} // {selectedJob.gymName}
+                  </h3>
+                </div>
+                <button
+                  type="button"
+                  onClick={() => setIsApplyModalOpen(false)}
+                  className="p-2 rounded-full bg-white/5 hover:bg-white/10 text-slate-400 hover:text-white"
+                >
+                  <X className="w-5 h-5" />
+                </button>
               </div>
 
               <form onSubmit={handleApplySubmit} className="space-y-4">
                 <div>
-                  <label className="text-[10px] font-bold text-slate-600 uppercase block mb-1">Your Full Name *</label>
+                  <label className="block text-xs font-mono text-slate-400 uppercase mb-1">Your Full Name</label>
                   <input
                     type="text"
                     required
-                    placeholder="e.g. Rahul Verma"
                     value={candidateForm.fullName}
                     onChange={e => setCandidateForm({ ...candidateForm, fullName: e.target.value })}
-                    className="w-full bg-slate-50 border border-slate-200 rounded-xl p-2.5 text-xs text-slate-900 focus:outline-none focus:border-blue-600"
+                    className="w-full bg-[#090C10] border border-white/10 rounded-xl px-4 py-2.5 text-sm text-white placeholder-slate-600 focus:outline-none focus:border-[#C5A880]"
                   />
                 </div>
 
-                <div className="grid grid-cols-2 gap-3">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
-                    <label className="text-[10px] font-bold text-slate-600 uppercase block mb-1">Mobile Number *</label>
+                    <label className="block text-xs font-mono text-slate-400 uppercase mb-1">Mobile Hotline</label>
                     <input
                       type="tel"
                       required
-                      placeholder="+91 90678 00048"
                       value={candidateForm.mobile}
                       onChange={e => setCandidateForm({ ...candidateForm, mobile: e.target.value })}
-                      className="w-full bg-slate-50 border border-slate-200 rounded-xl p-2.5 text-xs text-slate-900 focus:outline-none focus:border-blue-600"
+                      className="w-full bg-[#090C10] border border-white/10 rounded-xl px-4 py-2.5 text-sm text-white placeholder-slate-600 focus:outline-none focus:border-[#C5A880]"
                     />
                   </div>
                   <div>
-                    <label className="text-[10px] font-bold text-slate-600 uppercase block mb-1">Email Address</label>
-                    <input
-                      type="email"
-                      placeholder="rahul@gmail.com"
-                      value={candidateForm.email}
-                      onChange={e => setCandidateForm({ ...candidateForm, email: e.target.value })}
-                      className="w-full bg-slate-50 border border-slate-200 rounded-xl p-2.5 text-xs text-slate-900 focus:outline-none focus:border-blue-600"
-                    />
-                  </div>
-                </div>
-
-                <div className="grid grid-cols-2 gap-3">
-                  <div>
-                    <label className="text-[10px] font-bold text-slate-600 uppercase block mb-1">Preferred City</label>
+                    <label className="block text-xs font-mono text-slate-400 uppercase mb-1">Current City</label>
                     <input
                       type="text"
-                      placeholder="Delhi / Mumbai"
+                      placeholder="Delhi NCR"
                       value={candidateForm.preferredCity}
                       onChange={e => setCandidateForm({ ...candidateForm, preferredCity: e.target.value })}
-                      className="w-full bg-slate-50 border border-slate-200 rounded-xl p-2.5 text-xs text-slate-900 focus:outline-none focus:border-blue-600"
-                    />
-                  </div>
-                  <div>
-                    <label className="text-[10px] font-bold text-slate-600 uppercase block mb-1">Experience</label>
-                    <input
-                      type="text"
-                      placeholder="3 Years"
-                      value={candidateForm.experience}
-                      onChange={e => setCandidateForm({ ...candidateForm, experience: e.target.value })}
-                      className="w-full bg-slate-50 border border-slate-200 rounded-xl p-2.5 text-xs text-slate-900 focus:outline-none focus:border-blue-600"
+                      className="w-full bg-[#090C10] border border-white/10 rounded-xl px-4 py-2.5 text-sm text-white placeholder-slate-600 focus:outline-none focus:border-[#C5A880]"
                     />
                   </div>
                 </div>
 
                 <div>
-                  <label className="text-[10px] font-bold text-slate-600 uppercase block mb-1">Certifications</label>
+                  <label className="block text-xs font-mono text-slate-400 uppercase mb-1">Certifications & Accreditations</label>
                   <input
                     type="text"
-                    placeholder="NASM-CPT / CSCS / ACE / K11"
                     value={candidateForm.certifications}
                     onChange={e => setCandidateForm({ ...candidateForm, certifications: e.target.value })}
-                    className="w-full bg-slate-50 border border-slate-200 rounded-xl p-2.5 text-xs text-slate-900 focus:outline-none focus:border-blue-600"
+                    className="w-full bg-[#090C10] border border-white/10 rounded-xl px-4 py-2.5 text-sm text-white placeholder-slate-600 focus:outline-none focus:border-[#C5A880]"
                   />
                 </div>
 
                 <button
                   type="submit"
-                  className="w-full py-3.5 px-4 rounded-xl bg-blue-600 hover:bg-blue-700 text-white font-black text-xs uppercase tracking-wider flex items-center justify-center gap-2 shadow-md transition-all mt-4"
+                  className="btn-vault w-full py-3 text-xs uppercase tracking-wider mt-2"
                 >
-                  <Send className="w-4 h-4" />
-                  <span>Submit Application</span>
+                  Submit Application to Gym Director
                 </button>
               </form>
             </motion.div>
-          </div>
+          </motion.div>
         )}
       </AnimatePresence>
 
       {/* Employer Post Job Modal */}
       <AnimatePresence>
         {isPostJobModalOpen && (
-          <div className="fixed inset-0 z-50 overflow-y-auto bg-slate-950/60 backdrop-blur-sm flex items-center justify-center p-4">
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-50 bg-black/80 backdrop-blur-md flex items-center justify-center p-4 sm:p-6 overflow-y-auto"
+          >
             <motion.div
-              initial={{ scale: 0.95, opacity: 0 }}
-              animate={{ scale: 1, opacity: 1 }}
-              exit={{ scale: 0.95, opacity: 0 }}
-              className="bg-white rounded-3xl max-w-lg w-full p-6 sm:p-8 overflow-hidden shadow-2xl border border-slate-200 relative my-8 font-mono"
+              initial={{ scale: 0.95, y: 20 }}
+              animate={{ scale: 1, y: 0 }}
+              exit={{ scale: 0.95, y: 20 }}
+              className="bg-[#0D1118] border border-white/10 rounded-3xl max-w-lg w-full p-6 sm:p-8 space-y-6 luxury-noise"
             >
-              <button
-                onClick={() => setIsPostJobModalOpen(false)}
-                className="absolute top-4 right-4 p-2 rounded-full bg-slate-100 text-slate-500 hover:text-slate-900"
-              >
-                <X className="w-5 h-5" />
-              </button>
-
-              <div className="mb-6">
-                <span className="text-[10px] font-bold uppercase text-amber-600">Employer Job Creation</span>
-                <h3 className="text-xl font-black text-slate-900 font-heading uppercase mt-0.5">
-                  Post New Gym Opening
-                </h3>
+              <div className="flex items-start justify-between border-b border-white/10 pb-4">
+                <div>
+                  <span className="text-[10px] font-mono text-[#C5A880] uppercase tracking-widest block mb-1">
+                    PUBLISH CLUB VACANCY
+                  </span>
+                  <h3 className="font-syne text-xl font-bold text-white uppercase">
+                    New Staffing Requirement
+                  </h3>
+                </div>
+                <button
+                  type="button"
+                  onClick={() => setIsPostJobModalOpen(false)}
+                  className="p-2 rounded-full bg-white/5 hover:bg-white/10 text-slate-400 hover:text-white"
+                >
+                  <X className="w-5 h-5" />
+                </button>
               </div>
 
               <form onSubmit={handlePostJobSubmit} className="space-y-4">
                 <div>
-                  <label className="text-[10px] font-bold text-slate-600 uppercase block mb-1">Job Title *</label>
+                  <label className="block text-xs font-mono text-slate-400 uppercase mb-1">Role Title</label>
                   <input
                     type="text"
                     required
-                    placeholder="e.g. Senior Personal Trainer"
+                    placeholder="Head Biomechanics Coach"
                     value={jobForm.title}
                     onChange={e => setJobForm({ ...jobForm, title: e.target.value })}
-                    className="w-full bg-slate-50 border border-slate-200 rounded-xl p-2.5 text-xs text-slate-900 focus:outline-none focus:border-blue-600"
+                    className="w-full bg-[#090C10] border border-white/10 rounded-xl px-4 py-2.5 text-sm text-white placeholder-slate-600 focus:outline-none focus:border-[#C5A880]"
                   />
                 </div>
 
-                <div className="grid grid-cols-2 gap-3">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
-                    <label className="text-[10px] font-bold text-slate-600 uppercase block mb-1">Gym Name *</label>
+                    <label className="block text-xs font-mono text-slate-400 uppercase mb-1">Gym / Club Name</label>
                     <input
                       type="text"
                       required
-                      placeholder="e.g. Iron Vault Gym"
+                      placeholder="Empire Fitness"
                       value={jobForm.gymName}
                       onChange={e => setJobForm({ ...jobForm, gymName: e.target.value })}
-                      className="w-full bg-slate-50 border border-slate-200 rounded-xl p-2.5 text-xs text-slate-900 focus:outline-none focus:border-blue-600"
+                      className="w-full bg-[#090C10] border border-white/10 rounded-xl px-4 py-2.5 text-sm text-white placeholder-slate-600 focus:outline-none focus:border-[#C5A880]"
                     />
                   </div>
                   <div>
-                    <label className="text-[10px] font-bold text-slate-600 uppercase block mb-1">Location *</label>
+                    <label className="block text-xs font-mono text-slate-400 uppercase mb-1">Location</label>
                     <input
                       type="text"
                       required
-                      placeholder="e.g. Connaught Place, Delhi"
+                      placeholder="Indiranagar, Bengaluru"
                       value={jobForm.location}
                       onChange={e => setJobForm({ ...jobForm, location: e.target.value })}
-                      className="w-full bg-slate-50 border border-slate-200 rounded-xl p-2.5 text-xs text-slate-900 focus:outline-none focus:border-blue-600"
+                      className="w-full bg-[#090C10] border border-white/10 rounded-xl px-4 py-2.5 text-sm text-white placeholder-slate-600 focus:outline-none focus:border-[#C5A880]"
                     />
                   </div>
                 </div>
 
-                <div className="grid grid-cols-2 gap-3">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
-                    <label className="text-[10px] font-bold text-slate-600 uppercase block mb-1">Category</label>
+                    <label className="block text-xs font-mono text-slate-400 uppercase mb-1">Category</label>
                     <select
                       value={jobForm.category}
                       onChange={e => setJobForm({ ...jobForm, category: e.target.value as any })}
-                      className="w-full bg-slate-50 border border-slate-200 rounded-xl p-2.5 text-xs text-slate-900 font-bold focus:outline-none focus:border-blue-600 uppercase"
+                      className="w-full bg-[#090C10] border border-white/10 rounded-xl px-4 py-2.5 text-sm text-white focus:outline-none focus:border-[#C5A880] uppercase font-mono"
                     >
                       <option value="Personal Trainer">Personal Trainer</option>
                       <option value="Gym Trainer">Gym Trainer</option>
@@ -575,38 +488,37 @@ export const ManpowerPage: React.FC = () => {
                     </select>
                   </div>
                   <div>
-                    <label className="text-[10px] font-bold text-slate-600 uppercase block mb-1">Salary Range</label>
+                    <label className="block text-xs font-mono text-slate-400 uppercase mb-1">Salary Range</label>
                     <input
                       type="text"
-                      placeholder="₹30,000 - ₹50,000 / month"
+                      placeholder="₹45,000 - ₹75,000 / month"
                       value={jobForm.salaryRange}
                       onChange={e => setJobForm({ ...jobForm, salaryRange: e.target.value })}
-                      className="w-full bg-slate-50 border border-slate-200 rounded-xl p-2.5 text-xs text-slate-900 focus:outline-none focus:border-blue-600"
+                      className="w-full bg-[#090C10] border border-white/10 rounded-xl px-4 py-2.5 text-sm text-white placeholder-slate-600 focus:outline-none focus:border-[#C5A880]"
                     />
                   </div>
                 </div>
 
                 <div>
-                  <label className="text-[10px] font-bold text-slate-600 uppercase block mb-1">Job Description</label>
+                  <label className="block text-xs font-mono text-slate-400 uppercase mb-1">Job Description</label>
                   <textarea
                     rows={3}
-                    placeholder="Describe role responsibilities..."
+                    placeholder="Describe role responsibilities, required certifications..."
                     value={jobForm.description}
                     onChange={e => setJobForm({ ...jobForm, description: e.target.value })}
-                    className="w-full bg-slate-50 border border-slate-200 rounded-xl p-2.5 text-xs text-slate-900 focus:outline-none focus:border-blue-600"
+                    className="w-full bg-[#090C10] border border-white/10 rounded-xl p-3 text-sm text-white placeholder-slate-600 focus:outline-none focus:border-[#C5A880]"
                   />
                 </div>
 
                 <button
                   type="submit"
-                  className="w-full py-3.5 px-4 rounded-xl bg-amber-500 hover:bg-amber-400 text-slate-950 font-black text-xs uppercase tracking-wider flex items-center justify-center gap-2 shadow-md transition-all mt-4"
+                  className="btn-vault w-full py-3 text-xs uppercase tracking-wider mt-2"
                 >
-                  <Plus className="w-4 h-4" />
-                  <span>Broadcast Job Opening</span>
+                  Publish Opening to Roster
                 </button>
               </form>
             </motion.div>
-          </div>
+          </motion.div>
         )}
       </AnimatePresence>
     </main>

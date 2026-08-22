@@ -2,13 +2,20 @@ import React, { useState } from 'react';
 import { useApp } from '../context/AppContext';
 import { BUSINESS_SERVICES } from '../data/services';
 import { BusinessService } from '../types';
-import { Badge } from '../components/common/Badge';
 import { SEO } from '../components/common/SEO';
-import { Briefcase, ArrowRight, CheckCircle2, Star, Send, X, Building2, Sparkles, Layers, FileCheck } from 'lucide-react';
+import {
+  Briefcase,
+  CheckCircle2,
+  Send,
+  X,
+  Sparkles,
+  Phone
+} from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { MarqueeStrip } from '../components/common/MarqueeStrip';
 
 export const ServicesPage: React.FC = () => {
-  const { submitServiceEnquiry } = useApp();
+  const { submitServiceEnquiry, showToast } = useApp();
 
   const [selectedService, setSelectedService] = useState<BusinessService | null>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -31,18 +38,20 @@ export const ServicesPage: React.FC = () => {
   const handleEnquirySubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (!formState.name || !formState.mobile || !formState.gymName) {
-      alert('Please provide Name, Gym Name, and Mobile Number.');
+      showToast('Please provide Name, Gym/Facility Name, and Mobile Number.', 'error');
       return;
     }
 
     submitServiceEnquiry({
       name: formState.name,
       gymName: formState.gymName,
-      serviceRequired: formState.serviceRequired || selectedService?.name || 'General Business Service',
+      serviceRequired: formState.serviceRequired || selectedService?.name || 'Turnkey Outfitting Service',
       mobile: formState.mobile,
       email: formState.email,
       additionalRequirements: formState.additionalRequirements,
     });
+
+    showToast('Turnkey consultation request received! Our Outfitting Director will connect with you.', 'success');
 
     setIsModalOpen(false);
     setSelectedService(null);
@@ -57,219 +66,218 @@ export const ServicesPage: React.FC = () => {
   };
 
   return (
-    <main className="pt-28 pb-24 bg-slate-50 min-h-screen text-slate-900">
+    <main className="pt-24 pb-20 bg-[#090C10] min-h-screen text-[#E2E8F0] luxury-noise">
       <SEO
-        title="18 Commercial Gym Business Services | Tanush Fitness B2B"
-        description="Meta/Google ad campaigns, Instagram management, 3D interior floor plans, website/app dev, & AI WhatsApp lead generation funnels for health clubs."
+        title="Turnkey Gym Architecture & Outfitting Services | Tanush Fitness"
+        description="3D CAD space modeling, acoustic rubber flooring, digital access turnstiles, marketing launch funnels, and AMC facility maintenance."
       />
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Header */}
-        <div className="mb-12">
-          <div className="inline-flex items-center gap-2 mb-2">
-            <span className="w-8 h-[3px] bg-blue-600 rounded-full" />
-            <span className="text-xs font-bold tracking-widest uppercase text-blue-600 font-mono">
-              BUSINESS 3: GYM BUSINESS SERVICES
-            </span>
-          </div>
-          <h1 className="text-3xl sm:text-5xl font-black text-slate-900 tracking-tight font-heading uppercase">
-            Gym Growth, 3D Design & Tech Automation
-          </h1>
-          <p className="mt-2 text-sm text-slate-600 max-w-2xl font-normal">
-            18 premium business services engineered exclusively for commercial health clubs: Meta/Google Ads, Instagram Content, 3D CAD Floor Plans, Mobile Apps, & AI WhatsApp CRM.
-          </p>
-        </div>
+      {/* Hero Header */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 pb-12">
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 border-b border-white/10 pb-8">
+          <div className="space-y-3">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-[#C5A880]/30 text-xs font-mono text-[#C5A880] tracking-widest uppercase">
+              <Sparkles className="w-3.5 h-3.5" />
+              <span>360° COMMERCIAL GYM ARCHITECTURE</span>
+            </div>
 
-        {/* 18 Premium Services Grid */}
+            <h1 className="font-syne text-3xl sm:text-5xl md:text-6xl font-extrabold uppercase text-white tracking-tight">
+              TURNKEY <span className="text-[#C5A880]">OUTFITTING</span>
+            </h1>
+
+            <p className="text-sm sm:text-base text-slate-400 max-w-2xl font-sans leading-relaxed">
+              From raw commercial square footage to fully commissioned athletic destinations. 3D CAD blueprints, high-density acoustic flooring, turnstiles, and automated operational management.
+            </p>
+          </div>
+
+          <div className="flex items-center gap-3 shrink-0">
+            <a
+              href="tel:+919067800048"
+              className="btn-vault flex items-center gap-2 text-xs py-2.5 px-5"
+            >
+              <Phone className="w-3.5 h-3.5" />
+              <span>Book Turnkey Consultation</span>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      {/* Marquee Banner */}
+      <MarqueeStrip theme="minimal" speed="slow" />
+
+      {/* Services Grid */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {BUSINESS_SERVICES.map((service, idx) => (
             <motion.div
               key={service.id}
-              initial={{ opacity: 0, y: 15 }}
+              initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.3, delay: idx * 0.05 }}
-              className="group rounded-xl bg-white border border-slate-200 hover:border-slate-400 hover-lift shadow-sm flex flex-col justify-between overflow-hidden"
+              transition={{ duration: 0.4, delay: idx * 0.05 }}
+              className="bg-[#0D1118] border border-white/10 rounded-2xl overflow-hidden luxury-card flex flex-col justify-between group"
             >
-              {/* Header Image */}
-              <div className="relative aspect-[16/10] bg-slate-100 overflow-hidden border-b border-slate-100">
-                <img
-                  src={service.image}
-                  alt={service.name}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                />
-                {service.badge && (
-                  <div className="absolute top-3 left-3">
-                    <Badge variant="gold">{service.badge}</Badge>
-                  </div>
-                )}
-              </div>
-
-              {/* Body */}
-              <div className="p-6 flex-1 flex flex-col justify-between space-y-4 font-mono">
-                <div>
-                  <div className="text-[10px] font-bold uppercase text-blue-600">
-                    {service.category}
-                  </div>
-                  <h3 className="text-lg font-black text-slate-900 font-heading uppercase mt-0.5 group-hover:text-blue-600 transition-colors">
-                    {service.name}
-                  </h3>
-                  <p className="mt-2 text-xs text-slate-600 leading-relaxed font-normal">
-                    {service.shortDesc}
-                  </p>
-
-                  {/* 1. Overview */}
-                  <div className="mt-4 p-3 rounded-2xl bg-slate-50 border border-slate-100 space-y-1">
-                    <div className="text-[10px] font-bold text-slate-500 uppercase">1. Overview</div>
-                    <p className="text-[11px] text-slate-700 leading-tight font-normal line-clamp-2">
-                      {service.overview}
-                    </p>
-                  </div>
-
-                  {/* 2. What's Included */}
-                  <div className="mt-3 space-y-1 text-[11px] text-slate-700">
-                    <div className="text-[10px] font-bold text-slate-500 uppercase mb-1">2. What's Included:</div>
-                    {service.benefits.slice(0, 3).map((b, i) => (
-                      <div key={i} className="flex items-start gap-1.5">
-                        <CheckCircle2 className="w-3.5 h-3.5 text-blue-600 mt-0.5 shrink-0" />
-                        <span className="line-clamp-1">{b}</span>
-                      </div>
-                    ))}
-                  </div>
-
-                  {/* 3. Case Study Results */}
-                  {service.caseStudies.length > 0 && (
-                    <div className="mt-4 p-3 rounded-2xl bg-blue-50/60 border border-blue-200/80">
-                      <div className="text-[10px] font-bold text-blue-700 uppercase">3. Proven Case Study</div>
-                      <div className="text-xs font-black text-slate-900">{service.caseStudies[0].result}</div>
-                      <div className="text-[10px] text-slate-600 italic">"{service.caseStudies[0].quote}"</div>
-                    </div>
+              <div>
+                {/* Visual Image */}
+                <div className="relative h-56 overflow-hidden bg-[#05070A]">
+                  <img
+                    src={service.image}
+                    alt={service.name}
+                    className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700 opacity-85 group-hover:opacity-100"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#0D1118] via-transparent to-black/30" />
+                  {service.badge && (
+                    <span className="absolute top-4 left-4 px-3 py-1 rounded-full bg-[#090C10]/80 backdrop-blur-md border border-white/10 text-[10px] font-mono text-[#C5A880] uppercase tracking-wider font-bold">
+                      {service.badge}
+                    </span>
                   )}
                 </div>
 
-                {/* Enquire Now Button (NO PRICING) */}
-                <div className="pt-4 border-t border-slate-100">
-                  <button
-                    onClick={() => handleOpenEnquiryModal(service)}
-                    className="w-full py-3 px-4 rounded-xl bg-blue-600 hover:bg-blue-700 text-white font-black text-xs uppercase tracking-wider flex items-center justify-center gap-2 shadow-md transition-all"
-                  >
-                    <Send className="w-3.5 h-3.5" />
-                    <span>Enquire Now</span>
-                  </button>
+                {/* Content */}
+                <div className="p-6 space-y-4">
+                  <span className="text-[10px] font-mono text-slate-500 uppercase tracking-wider block">
+                    {service.category || 'COMMERCIAL SETUP'}
+                  </span>
+
+                  <h3 className="font-syne text-xl font-bold text-white group-hover:text-[#C5A880] transition uppercase">
+                    {service.name}
+                  </h3>
+
+                  <p className="text-xs sm:text-sm text-slate-400 font-sans leading-relaxed">
+                    {service.shortDesc}
+                  </p>
+
+                  {/* Highlights */}
+                  {service.benefits && service.benefits.length > 0 && (
+                    <div className="pt-3 border-t border-white/5 space-y-2 font-mono text-xs text-slate-300">
+                      {service.benefits.slice(0, 3).map((f, fIdx) => (
+                        <div key={fIdx} className="flex items-center gap-2">
+                          <CheckCircle2 className="w-3.5 h-3.5 text-[#C5A880] shrink-0" />
+                          <span className="font-sans text-xs">{f}</span>
+                        </div>
+                      ))}
+                    </div>
+                  )}
                 </div>
+              </div>
+
+              {/* Action */}
+              <div className="p-6 pt-0">
+                <button
+                  type="button"
+                  onClick={() => handleOpenEnquiryModal(service)}
+                  className="btn-vault w-full py-2.5 text-xs flex items-center justify-center gap-2"
+                >
+                  <Briefcase className="w-3.5 h-3.5" />
+                  <span>Request Service Proposal</span>
+                </button>
               </div>
             </motion.div>
           ))}
         </div>
       </div>
 
-      {/* Service Detail & Enquiry Modal */}
+      {/* Service Enquiry Modal */}
       <AnimatePresence>
-        {isModalOpen && selectedService && (
-          <div className="fixed inset-0 z-50 overflow-y-auto bg-slate-950/60 backdrop-blur-sm flex items-center justify-center p-4">
+        {isModalOpen && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-50 bg-black/80 backdrop-blur-md flex items-center justify-center p-4 sm:p-6 overflow-y-auto"
+          >
             <motion.div
-              initial={{ scale: 0.95, opacity: 0 }}
-              animate={{ scale: 1, opacity: 1 }}
-              exit={{ scale: 0.95, opacity: 0 }}
-              className="bg-white rounded-3xl max-w-xl w-full p-6 sm:p-8 overflow-hidden shadow-2xl border border-slate-200 relative my-8 font-mono"
+              initial={{ scale: 0.95, y: 20 }}
+              animate={{ scale: 1, y: 0 }}
+              exit={{ scale: 0.95, y: 20 }}
+              className="bg-[#0D1118] border border-white/10 rounded-3xl max-w-xl w-full p-6 sm:p-8 space-y-6 luxury-noise"
             >
-              <button
-                onClick={() => setIsModalOpen(false)}
-                className="absolute top-4 right-4 p-2 rounded-full bg-slate-100 text-slate-500 hover:text-slate-900"
-              >
-                <X className="w-5 h-5" />
-              </button>
-
-              <div className="mb-6">
-                <span className="text-[10px] font-bold uppercase text-blue-600">
-                  {selectedService.category}
-                </span>
-                <h3 className="text-xl font-black text-slate-900 font-heading uppercase mt-0.5">
-                  Request Quotation for {selectedService.name}
-                </h3>
-                <p className="text-xs text-slate-500">No online payment. A Tanush growth consultant will contact you.</p>
+              <div className="flex items-start justify-between border-b border-white/10 pb-4">
+                <div>
+                  <span className="text-[10px] font-mono text-[#C5A880] uppercase tracking-widest block mb-1">
+                    TURNKEY SERVICE PROPOSAL
+                  </span>
+                  <h3 className="font-syne text-2xl font-bold text-white uppercase">
+                    {selectedService?.name || 'Turnkey Commercial Consultation'}
+                  </h3>
+                </div>
+                <button
+                  type="button"
+                  onClick={() => setIsModalOpen(false)}
+                  className="p-2 rounded-full bg-white/5 hover:bg-white/10 text-slate-400 hover:text-white"
+                >
+                  <X className="w-5 h-5" />
+                </button>
               </div>
 
               <form onSubmit={handleEnquirySubmit} className="space-y-4">
                 <div>
-                  <label className="text-[10px] font-bold text-slate-600 uppercase block mb-1">
-                    Your Full Name *
-                  </label>
+                  <label className="block text-xs font-mono text-slate-400 uppercase mb-1">Your Full Name</label>
                   <input
                     type="text"
                     required
-                    placeholder="e.g. Vikram Singhania"
+                    placeholder="Sameer Kapoor"
                     value={formState.name}
                     onChange={e => setFormState({ ...formState, name: e.target.value })}
-                    className="w-full bg-slate-50 border border-slate-200 rounded-xl p-2.5 text-xs text-slate-900 focus:outline-none focus:border-blue-600"
+                    className="w-full bg-[#090C10] border border-white/10 rounded-xl px-4 py-2.5 text-sm text-white placeholder-slate-600 focus:outline-none focus:border-[#C5A880]"
                   />
                 </div>
 
-                <div className="grid grid-cols-2 gap-3">
-                  <div>
-                    <label className="text-[10px] font-bold text-slate-600 uppercase block mb-1">
-                      Gym / Club Name *
-                    </label>
-                    <input
-                      type="text"
-                      required
-                      placeholder="Apex Health Club"
-                      value={formState.gymName}
-                      onChange={e => setFormState({ ...formState, gymName: e.target.value })}
-                      className="w-full bg-slate-50 border border-slate-200 rounded-xl p-2.5 text-xs text-slate-900 focus:outline-none focus:border-blue-600"
-                    />
-                  </div>
+                <div>
+                  <label className="block text-xs font-mono text-slate-400 uppercase mb-1">Gym / Project Name</label>
+                  <input
+                    type="text"
+                    required
+                    placeholder="Iron Sanctuary Club"
+                    value={formState.gymName}
+                    onChange={e => setFormState({ ...formState, gymName: e.target.value })}
+                    className="w-full bg-[#090C10] border border-white/10 rounded-xl px-4 py-2.5 text-sm text-white placeholder-slate-600 focus:outline-none focus:border-[#C5A880]"
+                  />
+                </div>
 
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
-                    <label className="text-[10px] font-bold text-slate-600 uppercase block mb-1">
-                      Mobile (WhatsApp) *
-                    </label>
+                    <label className="block text-xs font-mono text-slate-400 uppercase mb-1">Mobile Hotline</label>
                     <input
                       type="tel"
                       required
-                      placeholder="+91 90678 00048"
+                      placeholder="+91 98765 43210"
                       value={formState.mobile}
                       onChange={e => setFormState({ ...formState, mobile: e.target.value })}
-                      className="w-full bg-slate-50 border border-slate-200 rounded-xl p-2.5 text-xs text-slate-900 focus:outline-none focus:border-blue-600"
+                      className="w-full bg-[#090C10] border border-white/10 rounded-xl px-4 py-2.5 text-sm text-white placeholder-slate-600 focus:outline-none focus:border-[#C5A880]"
+                    />
+                  </div>
+                  <div>
+                    <label className="block text-xs font-mono text-slate-400 uppercase mb-1">Work Email</label>
+                    <input
+                      type="email"
+                      placeholder="sameer@ironclub.in"
+                      value={formState.email}
+                      onChange={e => setFormState({ ...formState, email: e.target.value })}
+                      className="w-full bg-[#090C10] border border-white/10 rounded-xl px-4 py-2.5 text-sm text-white placeholder-slate-600 focus:outline-none focus:border-[#C5A880]"
                     />
                   </div>
                 </div>
 
                 <div>
-                  <label className="text-[10px] font-bold text-slate-600 uppercase block mb-1">
-                    Business Email
-                  </label>
-                  <input
-                    type="email"
-                    placeholder="vikram@apexhealth.com"
-                    value={formState.email}
-                    onChange={e => setFormState({ ...formState, email: e.target.value })}
-                    className="w-full bg-slate-50 border border-slate-200 rounded-xl p-2.5 text-xs text-slate-900 focus:outline-none focus:border-blue-600"
-                  />
-                </div>
-
-                <div>
-                  <label className="text-[10px] font-bold text-slate-600 uppercase block mb-1">
-                    Additional Deliverable Notes
-                  </label>
+                  <label className="block text-xs font-mono text-slate-400 uppercase mb-1">Specific Requirements</label>
                   <textarea
                     rows={3}
-                    placeholder="Mention targeted membership goal, timeframe, or specific deliverables..."
+                    placeholder="Tell us about your square footage, location, floor acoustic needs..."
                     value={formState.additionalRequirements}
                     onChange={e => setFormState({ ...formState, additionalRequirements: e.target.value })}
-                    className="w-full bg-slate-50 border border-slate-200 rounded-xl p-2.5 text-xs text-slate-900 focus:outline-none focus:border-blue-600"
+                    className="w-full bg-[#090C10] border border-white/10 rounded-xl p-3 text-sm text-white placeholder-slate-600 focus:outline-none focus:border-[#C5A880]"
                   />
                 </div>
 
                 <button
                   type="submit"
-                  className="w-full py-3.5 px-6 rounded-xl bg-blue-600 hover:bg-blue-700 text-white font-black text-xs uppercase tracking-wider flex items-center justify-center gap-2 shadow-md transition-all mt-4"
+                  className="btn-vault w-full py-3 text-xs uppercase tracking-wider mt-2"
                 >
-                  <Send className="w-4 h-4" />
-                  <span>Submit Service RFQ</span>
+                  Submit Proposal Request
                 </button>
               </form>
             </motion.div>
-          </div>
+          </motion.div>
         )}
       </AnimatePresence>
     </main>

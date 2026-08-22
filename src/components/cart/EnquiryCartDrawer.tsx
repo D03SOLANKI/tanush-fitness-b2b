@@ -122,147 +122,149 @@ export const EnquiryCartDrawer: React.FC = () => {
 
   return (
     <AnimatePresence>
-      <div className="fixed inset-0 z-50 overflow-hidden bg-slate-950/70 backdrop-blur-sm flex justify-end">
+      <div className="fixed inset-0 z-50 overflow-hidden bg-black/80 backdrop-blur-md flex justify-end">
         <motion.div
           initial={{ x: '100%' }}
           animate={{ x: 0 }}
           exit={{ x: '100%' }}
-          transition={{ type: 'spring', damping: 28, stiffness: 260 }}
-          className="w-full max-w-lg bg-white h-full shadow-2xl flex flex-col justify-between overflow-hidden border-l border-slate-200"
+          transition={{ type: 'spring', damping: 30, stiffness: 280 }}
+          className="w-full max-w-lg bg-[#0D1118] h-full shadow-2xl flex flex-col justify-between overflow-hidden border-l border-white/10 luxury-noise"
         >
           {/* Header */}
-          <div className="p-5 border-b border-slate-800 bg-slate-900 text-white flex items-center justify-between">
+          <div className="p-6 border-b border-white/10 bg-[#090C10] text-white flex items-center justify-between">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-lg bg-slate-800 border border-slate-700 flex items-center justify-center text-blue-400">
+              <div className="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-[#C5A880]">
                 <FileText className="w-5 h-5" />
               </div>
               <div>
                 <div className="flex items-center gap-2">
-                  <h2 className="text-base font-extrabold font-heading uppercase text-white leading-tight">
+                  <h2 className="font-syne text-lg font-bold uppercase text-white leading-tight">
                     Project RFQ Basket
                   </h2>
-                  <span className="px-1.5 py-0.2 rounded bg-blue-900/80 text-blue-300 font-mono text-[9px] font-bold uppercase border border-blue-700">
+                  <span className="px-2 py-0.5 rounded-full bg-[#C5A880]/10 text-[#C5A880] font-mono text-[9px] font-bold uppercase border border-[#C5A880]/30">
                     B2B DIRECT
                   </span>
                 </div>
                 <span className="text-[11px] text-slate-400 font-mono block mt-0.5">
-                  Itemized GST Quotation & Logistics Calculator
+                  Itemized 18% GST Quotation & Specification Desk
                 </span>
               </div>
             </div>
 
             <button
+              type="button"
               onClick={() => {
                 setIsEnquiryCartOpen(false);
                 setIsSubmitted(false);
               }}
-              className="p-1.5 rounded-lg bg-slate-800 text-slate-400 hover:text-white transition-colors"
+              className="p-2 rounded-full bg-white/5 hover:bg-white/10 text-slate-400 hover:text-white transition"
             >
               <X className="w-5 h-5" />
             </button>
           </div>
 
           {/* Body Content */}
-          <div className="flex-1 overflow-y-auto p-5 space-y-5">
+          <div className="flex-1 overflow-y-auto p-6 space-y-6">
             {isSubmitted ? (
               /* RFQ Summary Confirmation */
-              <div className="p-6 rounded-xl bg-slate-50 border border-slate-200 text-slate-900 space-y-4 text-center">
-                <div className="w-12 h-12 rounded-full bg-emerald-600 text-white mx-auto flex items-center justify-center shadow-sm">
-                  <CheckCircle2 className="w-6 h-6" />
+              <div className="p-6 rounded-2xl bg-[#090C10] border border-white/10 text-white space-y-5 text-center">
+                <div className="w-14 h-14 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 mx-auto flex items-center justify-center">
+                  <CheckCircle2 className="w-7 h-7" />
                 </div>
-                
+
                 <div>
-                  <span className="text-[10px] font-bold text-blue-700 uppercase font-mono tracking-wider">
+                  <span className="text-[10px] font-mono text-[#C5A880] uppercase tracking-widest block mb-1">
                     OFFICIAL RFQ SPECIFICATION DISPATCHED
                   </span>
-                  <h3 className="text-xl font-extrabold font-heading uppercase mt-1">
-                    Quotation Request Logged!
+                  <h3 className="font-syne text-2xl font-bold uppercase">
+                    Quotation Logged
                   </h3>
-                  <div className="text-xs font-mono font-bold text-slate-600 mt-1">
-                    Reference ID: <span className="text-slate-900 font-extrabold">{rfqRef}</span>
+                  <div className="text-xs font-mono text-slate-400 mt-1">
+                    Reference Code: <span className="text-[#C5A880] font-bold">{rfqRef}</span>
                   </div>
                 </div>
 
-                <div className="p-4 bg-white rounded-lg border border-slate-200 text-left space-y-2 text-xs font-mono">
+                <div className="p-4 bg-[#0D1118] rounded-xl border border-white/5 text-left space-y-2 text-xs font-mono text-slate-300">
                   <div><strong>Facility:</strong> {formState.companyGymName}</div>
                   <div><strong>Contact Phone:</strong> {formState.mobile}</div>
                   <div><strong>Dispatch City:</strong> {formState.city || 'Pan-India'}</div>
-                  <div><strong>Timeframe:</strong> {formState.timeframe}</div>
-                  <div><strong>Total Equipment Units:</strong> {totalQuantity} Units</div>
+                  <div><strong>Total Machinery Units:</strong> {totalQuantity} Units</div>
                 </div>
 
-                <div className="p-3 bg-blue-50 rounded-lg border border-blue-100 text-left text-xs text-blue-900 leading-relaxed flex items-start gap-2">
-                  <Clock className="w-4 h-4 text-blue-700 shrink-0 mt-0.5" />
+                <div className="p-3 bg-white/5 rounded-xl border border-white/5 text-left text-xs text-slate-400 leading-relaxed flex items-start gap-2">
+                  <Clock className="w-4 h-4 text-[#C5A880] shrink-0 mt-0.5" />
                   <span>
-                    Our commercial engineering team is reviewing your selected load capacities and will dispatch an official PDF quotation via WhatsApp & Email within 2 hours.
+                    Our engineering desk is preparing your itemized PDF quote with structural frame certifications. You will receive it via WhatsApp and Email within 2 hours.
                   </span>
                 </div>
 
                 <button
+                  type="button"
                   onClick={() => {
                     setIsEnquiryCartOpen(false);
                     setIsSubmitted(false);
                   }}
-                  className="w-full py-3 rounded-lg bg-slate-900 hover:bg-slate-800 text-white font-bold text-xs uppercase font-mono transition-colors shadow-sm"
+                  className="btn-vault w-full py-3 text-xs uppercase"
                 >
-                  Return to Catalog
+                  Return to Equipment Sanctuary
                 </button>
               </div>
             ) : (
               <>
                 {/* Selected Cart Items */}
-                <div>
-                  <div className="flex items-center justify-between text-xs font-bold uppercase text-slate-700 mb-2 font-mono">
-                    <span>Selected Equipment ({enquiryCart.length})</span>
-                    <span className="text-blue-700">Total Units: {totalQuantity}</span>
+                <div className="space-y-3">
+                  <div className="flex items-center justify-between text-xs font-mono text-slate-400 uppercase">
+                    <span>Selected Machinery ({enquiryCart.length})</span>
+                    <span className="text-[#C5A880] font-bold">Total: {totalQuantity} Units</span>
                   </div>
 
                   {enquiryCart.length === 0 ? (
-                    <div className="py-12 text-center text-xs text-slate-500 border border-dashed border-slate-300 rounded-xl bg-slate-50 font-mono">
-                      Your RFQ Project basket is empty. Browse the catalog to add commercial machinery.
+                    <div className="py-12 text-center text-xs text-slate-500 border border-dashed border-white/10 rounded-2xl bg-[#090C10] font-mono">
+                      Your RFQ Project basket is empty. Browse the sanctuary catalog to add equipment.
                     </div>
                   ) : (
-                    <div className="divide-y divide-slate-100 border border-slate-200 rounded-xl overflow-hidden bg-white shadow-sm">
+                    <div className="divide-y divide-white/5 border border-white/10 rounded-2xl overflow-hidden bg-[#090C10]">
                       {enquiryCart.map(item => (
-                        <div key={item.product.id} className="p-3 bg-white flex items-center justify-between gap-3">
+                        <div key={item.product.id} className="p-4 flex items-center justify-between gap-3">
                           <div className="flex items-center gap-3">
                             <img
-                              src={item.product.image}
+                              src={item.product.image || 'https://images.unsplash.com/photo-1540497077202-7c8a3999166f?auto=format&fit=crop&w=300&q=80'}
                               alt={item.product.name}
-                              className="w-12 h-12 object-cover rounded-lg border border-slate-200"
+                              className="w-12 h-12 object-cover rounded-xl border border-white/10"
                             />
                             <div>
-                              <div className="text-xs font-bold text-slate-900 font-heading uppercase line-clamp-1">
+                              <div className="text-xs font-bold text-white font-syne uppercase line-clamp-1">
                                 {item.product.name}
                               </div>
-                              <div className="text-[10px] text-blue-700 font-mono font-semibold">
+                              <div className="text-[10px] text-[#C5A880] font-mono">
                                 {item.product.brand} · 11-Gauge
                               </div>
                             </div>
                           </div>
 
-                          <div className="flex items-center gap-2.5 font-mono">
-                            {/* Quantity Controls */}
-                            <div className="flex items-center bg-slate-100 rounded-lg border border-slate-200 p-0.5">
+                          <div className="flex items-center gap-3 font-mono">
+                            <div className="flex items-center bg-[#0D1118] rounded-lg border border-white/10 p-0.5">
                               <button
+                                type="button"
                                 onClick={() => updateEnquiryCartQuantity(item.product.id, item.quantity - 1)}
-                                className="px-2 text-xs font-bold text-slate-700 hover:bg-slate-200 rounded"
+                                className="px-2 text-xs font-bold text-slate-400 hover:text-white"
                               >
                                 -
                               </button>
-                              <span className="w-6 text-center text-xs font-bold">{item.quantity}</span>
+                              <span className="w-6 text-center text-xs font-bold text-white">{item.quantity}</span>
                               <button
+                                type="button"
                                 onClick={() => updateEnquiryCartQuantity(item.product.id, item.quantity + 1)}
-                                className="px-2 text-xs font-bold text-slate-700 hover:bg-slate-200 rounded"
+                                className="px-2 text-xs font-bold text-slate-400 hover:text-white"
                               >
                                 +
                               </button>
                             </div>
 
                             <button
+                              type="button"
                               onClick={() => removeFromEnquiryCart(item.product.id)}
-                              className="text-slate-400 hover:text-rose-600 p-1"
-                              title="Remove item"
+                              className="text-slate-500 hover:text-rose-400 p-1"
                             >
                               <Trash2 className="w-4 h-4" />
                             </button>
@@ -273,181 +275,82 @@ export const EnquiryCartDrawer: React.FC = () => {
                   )}
                 </div>
 
-                {/* Authentication Banner if Guest */}
-                {!currentUser && enquiryCart.length > 0 && (
-                  <div className="p-3.5 rounded-lg bg-amber-50 border border-amber-200 text-amber-900 text-xs flex items-start gap-2.5">
-                    <Lock className="w-4 h-4 text-amber-700 shrink-0 mt-0.5" />
-                    <div>
-                      <div className="font-bold uppercase text-[11px] font-mono">Commercial Registration Required</div>
-                      <div className="text-[11px] text-amber-800 mt-0.5 leading-snug">
-                        You can build your RFQ package freely. Clicking "Request Official Quotation" below will authenticate your Gym Owner credentials.
-                      </div>
-                    </div>
-                  </div>
-                )}
-
-                {/* Role Warning if Logged in as Job Seeker */}
-                {currentUser && currentUser.role !== 'GYM_OWNER' && enquiryCart.length > 0 && (
-                  <div className="p-3.5 rounded-lg bg-rose-50 border border-rose-200 text-rose-900 text-xs flex items-start gap-2.5">
-                    <AlertCircle className="w-4 h-4 text-rose-600 shrink-0 mt-0.5" />
-                    <div>
-                      <div className="font-bold uppercase text-[11px] font-mono">Gym Owner Account Required</div>
-                      <div className="text-[11px] text-rose-800 mt-0.5 leading-snug">
-                        Only registered commercial gym owners can request machinery quotations. Please switch to a Gym Owner profile.
-                      </div>
-                    </div>
-                  </div>
-                )}
-
-                {/* Structured Business Procurement Form */}
+                {/* Structured Form */}
                 {enquiryCart.length > 0 && (
-                  <form onSubmit={handleSubmit} className="space-y-3.5 pt-4 border-t border-slate-200">
-                    <div className="text-xs font-bold text-slate-900 font-heading uppercase flex items-center justify-between">
-                      <span>Procurement & Facility Details</span>
-                      {currentUser && (
-                        <span className="text-[10px] text-blue-700 font-mono">
-                          Verified: {currentUser.name || currentUser.email}
-                        </span>
-                      )}
+                  <form onSubmit={handleSubmit} className="space-y-4 pt-4 border-t border-white/10">
+                    <div className="text-xs font-mono text-[#C5A880] uppercase tracking-widest">
+                      Procurement Officer & Delivery Information
                     </div>
 
                     <div>
-                      <label className="text-[10px] font-bold text-slate-700 uppercase font-mono block mb-1">
-                        Procurement Officer / Contact Name *
-                      </label>
+                      <label className="block text-xs font-mono text-slate-400 uppercase mb-1">Your Full Name</label>
                       <input
                         type="text"
                         required
-                        placeholder="e.g. Vikram Singhania"
+                        placeholder="Sameer Kapoor"
                         value={formState.name}
                         onChange={e => setFormState({ ...formState, name: e.target.value })}
-                        className="w-full bg-slate-50 border border-slate-200 rounded-lg p-2 text-xs text-slate-900 focus:outline-none focus:border-blue-600 font-mono"
+                        className="w-full bg-[#090C10] border border-white/10 rounded-xl px-4 py-2.5 text-xs text-white placeholder-slate-600 focus:outline-none focus:border-[#C5A880]"
                       />
                     </div>
 
                     <div className="grid grid-cols-2 gap-3">
                       <div>
-                        <label className="text-[10px] font-bold text-slate-700 uppercase font-mono block mb-1">
-                          Gym / Facility Name *
-                        </label>
+                        <label className="block text-xs font-mono text-slate-400 uppercase mb-1">Facility Name</label>
                         <input
                           type="text"
                           required
-                          placeholder="e.g. Apex Health Club"
+                          placeholder="Iron Sanctuary Club"
                           value={formState.companyGymName}
                           onChange={e => setFormState({ ...formState, companyGymName: e.target.value })}
-                          className="w-full bg-slate-50 border border-slate-200 rounded-lg p-2 text-xs text-slate-900 focus:outline-none focus:border-blue-600 font-mono"
+                          className="w-full bg-[#090C10] border border-white/10 rounded-xl px-4 py-2.5 text-xs text-white placeholder-slate-600 focus:outline-none focus:border-[#C5A880]"
                         />
                       </div>
 
                       <div>
-                        <label className="text-[10px] font-bold text-slate-700 uppercase font-mono block mb-1">
-                          WhatsApp Mobile *
-                        </label>
+                        <label className="block text-xs font-mono text-slate-400 uppercase mb-1">WhatsApp Mobile</label>
                         <input
                           type="tel"
                           required
-                          placeholder="+91 90678 00048"
+                          placeholder="+91 98765 43210"
                           value={formState.mobile}
                           onChange={e => setFormState({ ...formState, mobile: e.target.value })}
-                          className="w-full bg-slate-50 border border-slate-200 rounded-lg p-2 text-xs text-slate-900 focus:outline-none focus:border-blue-600 font-mono"
+                          className="w-full bg-[#090C10] border border-white/10 rounded-xl px-4 py-2.5 text-xs text-white placeholder-slate-600 focus:outline-none focus:border-[#C5A880]"
                         />
                       </div>
                     </div>
 
                     <div className="grid grid-cols-2 gap-3">
                       <div>
-                        <label className="text-[10px] font-bold text-slate-700 uppercase font-mono block mb-1">
-                          Official Email
-                        </label>
-                        <input
-                          type="email"
-                          placeholder="procurement@apex.com"
-                          value={formState.email}
-                          onChange={e => setFormState({ ...formState, email: e.target.value })}
-                          className="w-full bg-slate-50 border border-slate-200 rounded-lg p-2 text-xs text-slate-900 focus:outline-none focus:border-blue-600 font-mono"
-                        />
-                      </div>
-
-                      <div>
-                        <label className="text-[10px] font-bold text-slate-700 uppercase font-mono block mb-1">
-                          Delivery City / Pincode
-                        </label>
+                        <label className="block text-xs font-mono text-slate-400 uppercase mb-1">Delivery City</label>
                         <input
                           type="text"
-                          placeholder="Gurugram / 122001"
+                          placeholder="Delhi / Bengaluru"
                           value={formState.city}
                           onChange={e => setFormState({ ...formState, city: e.target.value })}
-                          className="w-full bg-slate-50 border border-slate-200 rounded-lg p-2 text-xs text-slate-900 focus:outline-none focus:border-blue-600 font-mono"
+                          className="w-full bg-[#090C10] border border-white/10 rounded-xl px-4 py-2.5 text-xs text-white placeholder-slate-600 focus:outline-none focus:border-[#C5A880]"
                         />
                       </div>
-                    </div>
 
-                    <div className="grid grid-cols-2 gap-3">
                       <div>
-                        <label className="text-[10px] font-bold text-slate-700 uppercase font-mono block mb-1">
-                          GSTIN (For 18% ITC)
-                        </label>
+                        <label className="block text-xs font-mono text-slate-400 uppercase mb-1">GSTIN (18% ITC)</label>
                         <input
                           type="text"
                           placeholder="24ABCDE1234F1Z5"
                           value={formState.gstin}
                           onChange={e => setFormState({ ...formState, gstin: e.target.value })}
-                          className="w-full bg-slate-50 border border-slate-200 rounded-lg p-2 text-xs text-slate-900 focus:outline-none focus:border-blue-600 font-mono uppercase"
+                          className="w-full bg-[#090C10] border border-white/10 rounded-xl px-4 py-2.5 text-xs text-white placeholder-slate-600 focus:outline-none focus:border-[#C5A880] uppercase"
                         />
                       </div>
-
-                      <div>
-                        <label className="text-[10px] font-bold text-slate-700 uppercase font-mono block mb-1">
-                          Facility Area (Sq.Ft)
-                        </label>
-                        <select
-                          value={formState.facilitySize}
-                          onChange={e => setFormState({ ...formState, facilitySize: e.target.value })}
-                          className="w-full bg-slate-50 border border-slate-200 rounded-lg p-2 text-xs text-slate-900 font-bold focus:outline-none focus:border-blue-600 font-mono"
-                        >
-                          <option value="Under 2,000 sq.ft">Under 2,000 sq.ft</option>
-                          <option value="2,000 - 5,000 sq.ft">2,000 - 5,000 sq.ft</option>
-                          <option value="5,000 - 10,000+ sq.ft">5,000 - 10,000+ sq.ft</option>
-                        </select>
-                      </div>
-                    </div>
-
-                    <div>
-                      <label className="text-xs font-semibold text-slate-700 block mb-1">
-                        Installation Timeframe
-                      </label>
-                      <select
-                        value={formState.timeframe}
-                        onChange={e => setFormState({ ...formState, timeframe: e.target.value })}
-                        className="w-full bg-slate-50 border border-slate-200 rounded-lg p-2 text-xs text-slate-900 font-medium focus:outline-none focus:border-blue-600"
-                      >
-                        <option value="Immediate (Within 15 days)">Immediate (Within 15 days)</option>
-                        <option value="1 to 2 Months">1 to 2 Months</option>
-                        <option value="3+ Months (Planning Stage)">3+ Months (Planning Stage)</option>
-                      </select>
-                    </div>
-
-                    <div>
-                      <label className="text-xs font-semibold text-slate-700 block mb-1">
-                        Custom Powder Coating / Layout Notes
-                      </label>
-                      <textarea
-                        rows={2}
-                        placeholder="Mention color preferences (Matte Black, Gunmetal), custom laser logos, or flooring specs..."
-                        value={formState.requirements}
-                        onChange={e => setFormState({ ...formState, requirements: e.target.value })}
-                        className="w-full bg-slate-50 border border-slate-200 rounded-lg p-2 text-xs text-slate-900 focus:outline-none focus:border-blue-600"
-                      />
                     </div>
 
                     <button
                       type="submit"
                       disabled={submitting}
-                      className="w-full py-3.5 px-5 rounded-lg bg-blue-700 hover:bg-blue-800 text-white font-bold text-sm flex items-center justify-center gap-2 shadow-sm transition-colors disabled:opacity-50"
+                      className="btn-vault w-full py-3.5 text-xs uppercase tracking-wider mt-2 flex items-center justify-center gap-2"
                     >
-                      <Send className="w-4 h-4 text-blue-200" />
-                      <span>{submitting ? 'Generating Official RFQ...' : 'Submit Official RFQ & Dispatch Quotation'}</span>
+                      <Send className="w-4 h-4" />
+                      <span>{submitting ? 'Generating Official RFQ...' : 'Dispatch Official RFQ Quotation'}</span>
                     </button>
                   </form>
                 )}

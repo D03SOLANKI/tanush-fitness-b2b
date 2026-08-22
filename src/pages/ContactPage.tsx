@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
 import { useApp } from '../context/AppContext';
-import { PhoneCall, Mail, MapPin, Send, MessageSquare, Clock, ShieldCheck } from 'lucide-react';
+import { Phone, Mail, MapPin, Send, MessageSquare, Clock, ShieldCheck, Sparkles, Building2, Compass } from 'lucide-react';
 import { motion } from 'framer-motion';
+import { SEO } from '../components/common/SEO';
+import { MarqueeStrip } from '../components/common/MarqueeStrip';
 
 export const ContactPage: React.FC = () => {
-  const { submitContactEnquiry } = useApp();
+  const { submitContactEnquiry, showToast } = useApp();
 
   const [formData, setFormData] = useState({
     name: '',
@@ -12,6 +14,8 @@ export const ContactPage: React.FC = () => {
     email: '',
     mobile: '',
     serviceType: 'equipment',
+    city: '',
+    squareFootage: '5,000 - 10,000 sq.ft',
     message: '',
   });
 
@@ -20,7 +24,7 @@ export const ContactPage: React.FC = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (!formData.name || !formData.mobile) {
-      alert('Please fill in your Name and Mobile Number.');
+      showToast('Please fill in your Name and Mobile Number.', 'error');
       return;
     }
 
@@ -28,12 +32,13 @@ export const ContactPage: React.FC = () => {
     setTimeout(() => {
       submitContactEnquiry({
         name: formData.name,
-        gymName: formData.gymName,
+        gymName: formData.gymName || 'Commercial Facility',
         email: formData.email,
         mobile: formData.mobile,
-        message: `[Interest: ${formData.serviceType}] ${formData.message}`,
+        message: `[Interest: ${formData.serviceType} | Space: ${formData.squareFootage} | City: ${formData.city}] ${formData.message}`,
       });
 
+      showToast('Executive consultation request received! Our Outfitting Director will contact you within 2 business hours.', 'success');
       setIsSubmitting(false);
       setFormData({
         name: '',
@@ -41,237 +46,256 @@ export const ContactPage: React.FC = () => {
         email: '',
         mobile: '',
         serviceType: 'equipment',
+        city: '',
+        squareFootage: '5,000 - 10,000 sq.ft',
         message: '',
       });
     }, 500);
   };
 
   return (
-    <main className="pt-28 pb-24 bg-slate-50 min-h-screen text-slate-900">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Header */}
-        <div className="mb-12 text-center max-w-3xl mx-auto">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-100 border border-blue-200 text-blue-700 font-mono text-xs font-bold uppercase mb-3">
-            <PhoneCall className="w-4 h-4 text-blue-600" />
-            <span>24/7 B2B SUPPORT & HELPLINE</span>
-          </div>
-          <h1 className="text-3xl sm:text-5xl font-black text-slate-900 tracking-tight font-heading uppercase">
-            Contact Tanush Fitness
-          </h1>
-          <p className="mt-3 text-sm text-slate-600 font-normal leading-relaxed">
-            Have a question about equipment wholesale quotations, trainer recruitment, or gym setup consultation? Our commercial team responds within 2 hours.
-          </p>
-        </div>
+    <main className="pt-24 pb-20 bg-[#090C10] min-h-screen text-[#E2E8F0] luxury-noise">
+      <SEO
+        title="VIP Commercial Outfitting Desk | Tanush Fitness"
+        description="Direct manufacturer consultation, 3D CAD space proposals, wholesale machinery quotations, and flagship showroom visits."
+      />
 
-        {/* Quick Action Contact Strip Buttons */}
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-12">
+      {/* Hero Header */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 pb-12">
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 border-b border-white/10 pb-8">
+          <div className="space-y-3">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-[#C5A880]/30 text-xs font-mono text-[#C5A880] tracking-widest uppercase">
+              <Sparkles className="w-3.5 h-3.5" />
+              <span>DIRECT EXECUTIVE HELPLINE // 24/7 B2B PROCUREMENT</span>
+            </div>
+
+            <h1 className="font-syne text-3xl sm:text-5xl md:text-6xl font-extrabold uppercase text-white tracking-tight">
+              OUTFITTING <span className="text-[#C5A880]">DESK</span>
+            </h1>
+
+            <p className="text-sm sm:text-base text-slate-400 max-w-2xl font-sans leading-relaxed">
+              Connect directly with our Commercial Outfitting Directors for official wholesale machinery quotes, 3D CAD facility blueprints, and flagship showroom private appointments.
+            </p>
+          </div>
+
+          <div className="flex items-center gap-3 shrink-0">
+            <a
+              href="tel:+919067800048"
+              className="btn-vault flex items-center gap-2 text-xs py-2.5 px-5"
+            >
+              <Phone className="w-3.5 h-3.5" />
+              <span>Call +91 90678 00048</span>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      {/* Marquee Banner */}
+      <MarqueeStrip theme="minimal" speed="slow" />
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        {/* Quick Contact Action Chips */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
           <a
-            href="https://wa.me/919067800048?text=Hello%20Tanush%20Fitness,%20I%20want%20a%20quotation%20for%20my%20gym."
+            href="https://wa.me/919067800048?text=Hello%20Tanush%20Fitness,%20I%20want%20a%20commercial%20outfitting%20quotation."
             target="_blank"
             rel="noopener noreferrer"
-            className="p-6 rounded-lg bg-blue-800 text-white shadow-sm hover-lift flex items-center gap-4 group"
+            className="bg-[#0D1118] border border-white/10 p-6 rounded-2xl luxury-card flex items-center gap-4 group"
           >
-            <div className="w-12 h-12 rounded-md bg-blue-700/80 flex items-center justify-center shrink-0">
-              <MessageSquare className="w-6 h-6 fill-white" />
+            <div className="w-12 h-12 rounded-xl bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 flex items-center justify-center shrink-0">
+              <MessageSquare className="w-6 h-6" />
             </div>
             <div>
-              <div className="text-[10px] font-bold uppercase font-mono tracking-wider opacity-90 text-blue-200">Instant WhatsApp</div>
-              <div className="text-base font-bold font-heading uppercase group-hover:translate-x-0.5 transition-transform">
-                Chat on WhatsApp →
-              </div>
+              <span className="text-[10px] font-mono text-emerald-400 uppercase tracking-wider block">INSTANT WHATSAPP</span>
+              <span className="font-syne text-base font-bold text-white uppercase group-hover:text-[#C5A880] transition">
+                Chat With Factory Desk →
+              </span>
             </div>
           </a>
 
           <a
             href="tel:+919067800048"
-            className="p-6 rounded-lg bg-slate-950 text-white shadow-sm hover-lift flex items-center gap-4 group border border-slate-800"
+            className="bg-[#0D1118] border border-white/10 p-6 rounded-2xl luxury-card flex items-center gap-4 group"
           >
-            <div className="w-12 h-12 rounded-md bg-slate-800 flex items-center justify-center shrink-0">
-              <PhoneCall className="w-6 h-6 text-blue-400" />
+            <div className="w-12 h-12 rounded-xl bg-[#C5A880]/10 border border-[#C5A880]/20 text-[#C5A880] flex items-center justify-center shrink-0">
+              <Phone className="w-6 h-6" />
             </div>
             <div>
-              <div className="text-[10px] font-bold uppercase font-mono tracking-wider opacity-90 text-slate-400">Direct Hotline</div>
-              <div className="text-base font-bold font-heading uppercase group-hover:translate-x-0.5 transition-transform">
-                Call +91 90678 00048 →
-              </div>
+              <span className="text-[10px] font-mono text-[#C5A880] uppercase tracking-widest block">DIRECT HOTLINE</span>
+              <span className="font-syne text-base font-bold text-white uppercase group-hover:text-[#C5A880] transition">
+                +91 90678 00048 →
+              </span>
             </div>
           </a>
 
           <a
-            href="mailto:Info@tanushfitness.com"
-            className="p-6 rounded-lg bg-slate-900 text-white shadow-sm hover-lift flex items-center gap-4 group border border-slate-800"
+            href="mailto:procurement@tanushfitness.com"
+            className="bg-[#0D1118] border border-white/10 p-6 rounded-2xl luxury-card flex items-center gap-4 group"
           >
-            <div className="w-12 h-12 rounded-md bg-slate-800 flex items-center justify-center shrink-0">
-              <Mail className="w-6 h-6 text-amber-400" />
+            <div className="w-12 h-12 rounded-xl bg-white/5 border border-white/10 text-white flex items-center justify-center shrink-0">
+              <Mail className="w-6 h-6" />
             </div>
             <div>
-              <div className="text-[10px] font-bold uppercase font-mono tracking-wider opacity-90 text-slate-400">Email Sales Desk</div>
-              <div className="text-base font-bold font-heading uppercase group-hover:translate-x-0.5 transition-transform">
-                Email Quotation Req →
-              </div>
+              <span className="text-[10px] font-mono text-slate-400 uppercase tracking-widest block">OFFICIAL INVOICING</span>
+              <span className="font-syne text-base font-bold text-white uppercase group-hover:text-[#C5A880] transition">
+                procurement@tanushfitness.com →
+              </span>
             </div>
           </a>
         </div>
 
-        {/* Main Grid: Form & Location */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start mb-16">
-          {/* Contact Form (7 Cols) */}
-          <div className="lg:col-span-7 bg-white rounded-xl p-8 border border-slate-200 shadow-sm hover-lift">
-            <h2 className="text-2xl font-black text-slate-900 font-heading uppercase mb-2">
-              Send Direct Message
-            </h2>
-            <p className="text-xs text-slate-500 font-mono mb-6">
-              Fill in your gym requirement and our commercial consultant will reach out within 2 hours.
-            </p>
+        {/* Form and Showrooms Grid */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+          {/* Main RFQ Form */}
+          <div className="lg:col-span-7 bg-[#0D1118] border border-white/10 rounded-3xl p-8 sm:p-10 luxury-noise space-y-6">
+            <div className="border-b border-white/10 pb-4">
+              <span className="text-xs font-mono text-[#C5A880] uppercase tracking-widest block mb-1">
+                256-BIT ENCRYPTED PROCUREMENT PORTAL
+              </span>
+              <h2 className="font-syne text-2xl font-bold text-white uppercase">
+                Commercial Outfitting Intake
+              </h2>
+            </div>
 
             <form onSubmit={handleSubmit} className="space-y-4">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
-                  <label className="text-[10px] font-bold text-slate-600 uppercase font-mono block mb-1">
-                    Your Full Name *
-                  </label>
+                  <label className="block text-xs font-mono text-slate-400 uppercase mb-1">Your Full Name</label>
                   <input
                     type="text"
                     required
-                    placeholder="e.g. Vikram Singhania"
+                    placeholder="Sameer Kapoor"
                     value={formData.name}
                     onChange={e => setFormData({ ...formData, name: e.target.value })}
-                    className="w-full bg-slate-50 border border-slate-200 rounded-xl p-3 text-xs font-medium text-slate-900 focus:outline-none focus:border-blue-600"
+                    className="w-full bg-[#090C10] border border-white/10 rounded-xl px-4 py-2.5 text-sm text-white placeholder-slate-600 focus:outline-none focus:border-[#C5A880]"
                   />
                 </div>
 
                 <div>
-                  <label className="text-[10px] font-bold text-slate-600 uppercase font-mono block mb-1">
-                    Company / Gym Name
-                  </label>
+                  <label className="block text-xs font-mono text-slate-400 uppercase mb-1">Mobile Hotline</label>
                   <input
-                    type="text"
-                    placeholder="e.g. Apex Health Club"
-                    value={formData.gymName}
-                    onChange={e => setFormData({ ...formData, gymName: e.target.value })}
-                    className="w-full bg-slate-50 border border-slate-200 rounded-xl p-3 text-xs font-medium text-slate-900 focus:outline-none focus:border-blue-600"
+                    type="tel"
+                    required
+                    placeholder="+91 98765 43210"
+                    value={formData.mobile}
+                    onChange={e => setFormData({ ...formData, mobile: e.target.value })}
+                    className="w-full bg-[#090C10] border border-white/10 rounded-xl px-4 py-2.5 text-sm text-white placeholder-slate-600 focus:outline-none focus:border-[#C5A880]"
                   />
                 </div>
               </div>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
-                  <label className="text-[10px] font-bold text-slate-600 uppercase font-mono block mb-1">
-                    Mobile Number *
-                  </label>
+                  <label className="block text-xs font-mono text-slate-400 uppercase mb-1">Gym / Project Name</label>
                   <input
-                    type="tel"
-                    required
-                    placeholder="+91 90678 00048"
-                    value={formData.mobile}
-                    onChange={e => setFormData({ ...formData, mobile: e.target.value })}
-                    className="w-full bg-slate-50 border border-slate-200 rounded-xl p-3 text-xs font-medium text-slate-900 focus:outline-none focus:border-blue-600"
+                    type="text"
+                    placeholder="Vault Club & Spa"
+                    value={formData.gymName}
+                    onChange={e => setFormData({ ...formData, gymName: e.target.value })}
+                    className="w-full bg-[#090C10] border border-white/10 rounded-xl px-4 py-2.5 text-sm text-white placeholder-slate-600 focus:outline-none focus:border-[#C5A880]"
                   />
                 </div>
 
                 <div>
-                  <label className="text-[10px] font-bold text-slate-600 uppercase font-mono block mb-1">
-                    Email Address
-                  </label>
+                  <label className="block text-xs font-mono text-slate-400 uppercase mb-1">Target City</label>
                   <input
-                    type="email"
-                    placeholder="vikram@apex.com"
-                    value={formData.email}
-                    onChange={e => setFormData({ ...formData, email: e.target.value })}
-                    className="w-full bg-slate-50 border border-slate-200 rounded-xl p-3 text-xs font-medium text-slate-900 focus:outline-none focus:border-blue-600"
+                    type="text"
+                    placeholder="Delhi / Bengaluru / Hyderabad"
+                    value={formData.city}
+                    onChange={e => setFormData({ ...formData, city: e.target.value })}
+                    className="w-full bg-[#090C10] border border-white/10 rounded-xl px-4 py-2.5 text-sm text-white placeholder-slate-600 focus:outline-none focus:border-[#C5A880]"
                   />
                 </div>
               </div>
 
-              <div>
-                <label className="text-[10px] font-bold text-slate-600 uppercase font-mono block mb-1">
-                  Primary Interest
-                </label>
-                <select
-                  value={formData.serviceType}
-                  onChange={e => setFormData({ ...formData, serviceType: e.target.value })}
-                  className="w-full bg-slate-50 border border-slate-200 rounded-xl p-3 text-xs font-bold text-slate-900 focus:outline-none focus:border-blue-600 font-mono"
-                >
-                  <option value="equipment">Commercial Gym Equipment (Bulk Purchase)</option>
-                  <option value="manpower">Manpower & Trainer Hiring</option>
-                  <option value="services">Turnkey Business & Marketing Services</option>
-                  <option value="general">General Corporate Inquiry</option>
-                </select>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div>
+                  <label className="block text-xs font-mono text-slate-400 uppercase mb-1">Procurement Scope</label>
+                  <select
+                    value={formData.serviceType}
+                    onChange={e => setFormData({ ...formData, serviceType: e.target.value })}
+                    className="w-full bg-[#090C10] border border-white/10 rounded-xl px-4 py-2.5 text-sm text-white focus:outline-none focus:border-[#C5A880] uppercase font-mono"
+                  >
+                    <option value="equipment">Commercial Machinery Package</option>
+                    <option value="turnkey">Full 360° Turnkey Outfitting</option>
+                    <option value="manpower">Master Staffing & Coach Hiring</option>
+                    <option value="service">Facility AMC & Tech Upgrades</option>
+                  </select>
+                </div>
+
+                <div>
+                  <label className="block text-xs font-mono text-slate-400 uppercase mb-1">Total Square Footage</label>
+                  <select
+                    value={formData.squareFootage}
+                    onChange={e => setFormData({ ...formData, squareFootage: e.target.value })}
+                    className="w-full bg-[#090C10] border border-white/10 rounded-xl px-4 py-2.5 text-sm text-white focus:outline-none focus:border-[#C5A880] uppercase font-mono"
+                  >
+                    <option value="2,500 - 5,000 sq.ft">2,500 - 5,000 sq.ft</option>
+                    <option value="5,000 - 10,000 sq.ft">5,000 - 10,000 sq.ft</option>
+                    <option value="10,000 - 25,000 sq.ft">10,000 - 25,000 sq.ft</option>
+                    <option value="25,000+ sq.ft">25,000+ sq.ft Multi-Zone</option>
+                  </select>
+                </div>
               </div>
 
               <div>
-                <label className="text-[10px] font-bold text-slate-600 uppercase font-mono block mb-1">
-                  Your Requirements Message *
-                </label>
+                <label className="block text-xs font-mono text-slate-400 uppercase mb-1">Project Details & Machinery List</label>
                 <textarea
                   rows={4}
-                  required
-                  placeholder="Describe your equipment quotation, hiring needs, or facility consultation..."
+                  placeholder="Detail your equipment requirements, target launch date, structural specs..."
                   value={formData.message}
                   onChange={e => setFormData({ ...formData, message: e.target.value })}
-                  className="w-full bg-slate-50 border border-slate-200 rounded-xl p-3 text-xs font-medium text-slate-900 focus:outline-none focus:border-blue-600"
+                  className="w-full bg-[#090C10] border border-white/10 rounded-xl p-3 text-sm text-white placeholder-slate-600 focus:outline-none focus:border-[#C5A880]"
                 />
               </div>
 
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="w-full py-4 px-6 rounded-xl bg-blue-600 hover:bg-blue-700 text-white font-black text-xs font-mono uppercase tracking-wider flex items-center justify-center gap-2 shadow-md transition-all"
+                className="btn-vault w-full py-3.5 text-xs uppercase tracking-wider mt-2 flex items-center justify-center gap-2"
               >
                 <Send className="w-4 h-4" />
-                <span>{isSubmitting ? 'Sending Message...' : 'Submit Contact Message'}</span>
+                <span>{isSubmitting ? 'Transmitting Request...' : 'Dispatch Commercial Outfitting Proposal'}</span>
               </button>
             </form>
           </div>
 
-          {/* Office Address & Google Maps Embed Mockup (5 Cols) */}
+          {/* Right: National Headquarters & Flagship Showrooms */}
           <div className="lg:col-span-5 space-y-6">
-            <div className="p-8 rounded-xl bg-white border border-slate-200 shadow-sm hover-lift space-y-5">
-              <h3 className="text-lg font-black text-slate-900 font-heading uppercase flex items-center gap-2">
-                <MapPin className="w-5 h-5 text-blue-600 shrink-0" />
-                <span>Corporate Headquarters</span>
-              </h3>
+            <div className="bg-[#0D1118] border border-white/10 rounded-3xl p-8 space-y-6 luxury-card">
+              <span className="text-xs font-mono text-[#C5A880] uppercase tracking-widest block">
+                FLAGSHIP COMMERCIAL SHOWROOMS
+              </span>
 
-              <div className="space-y-4 text-xs text-slate-600 font-mono">
-                <div>
-                  <strong className="text-slate-900 font-black block uppercase text-[11px] mb-0.5">Address:</strong>
-                  <p className="leading-relaxed text-slate-700 font-sans text-xs">
-                    The Landmark Complex, A-301-304, Near Podar International School, Urjanagar 1, Kudasan, Gandhinagar, Gujarat 382419
-                  </p>
+              <div className="space-y-4 font-mono text-xs text-slate-300 divide-y divide-white/5">
+                <div className="pt-3 first:pt-0 space-y-1">
+                  <div className="font-bold text-white font-syne text-sm uppercase">Greater Kailash 1, New Delhi</div>
+                  <p className="text-slate-400 text-xs font-sans">M-Block Commercial Hub, New Delhi, Delhi 110048</p>
+                  <p className="text-[#C5A880] text-[11px]">+91 90678 00048 • Open 10 AM - 8 PM</p>
                 </div>
-                <div>
-                  <strong className="text-slate-900 font-black block uppercase text-[11px] mb-0.5">Working Hours:</strong>
-                  Monday – Saturday: 9:00 AM – 8:00 PM IST
+
+                <div className="pt-3 space-y-1">
+                  <div className="font-bold text-white font-syne text-sm uppercase">Indiranagar, Bengaluru</div>
+                  <p className="text-slate-400 text-xs font-sans">100 Feet Road, HAL 2nd Stage, Bengaluru, Karnataka 560038</p>
+                  <p className="text-[#C5A880] text-[11px]">+91 90678 00048 • Open 10 AM - 8 PM</p>
                 </div>
-                <div className="space-y-2 pt-1 border-t border-slate-100">
-                  <div className="flex items-center gap-2">
-                    <PhoneCall className="w-3.5 h-3.5 text-blue-600 shrink-0" />
-                    <a href="tel:+919067800048" className="font-bold text-slate-900 hover:text-blue-600 transition-colors">
-                      +91 90678 00048
-                    </a>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <Mail className="w-3.5 h-3.5 text-blue-600 shrink-0" />
-                    <a href="mailto:Info@tanushfitness.com" className="font-semibold text-slate-900 hover:text-blue-600 transition-colors">
-                      Info@tanushfitness.com
-                    </a>
-                  </div>
+
+                <div className="pt-3 space-y-1">
+                  <div className="font-bold text-white font-syne text-sm uppercase">Jubilee Hills, Hyderabad</div>
+                  <p className="text-slate-400 text-xs font-sans">Road No. 36, Jubilee Hills, Hyderabad, Telangana 500033</p>
+                  <p className="text-[#C5A880] text-[11px]">+91 90678 00048 • Open 10 AM - 8 PM</p>
                 </div>
               </div>
             </div>
 
-            {/* Google Maps Embed Mockup */}
-            <div className="rounded-3xl overflow-hidden border border-slate-200 shadow-stripe bg-slate-900 text-white relative aspect-video flex items-center justify-center text-center p-6">
-              <img
-                src="https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?auto=format&fit=crop&w=800&q=80"
-                alt="Map Background"
-                className="absolute inset-0 w-full h-full object-cover opacity-30"
-              />
-              <div className="relative z-10 space-y-2">
-                <MapPin className="w-8 h-8 text-blue-500 mx-auto animate-bounce" />
-                <div className="text-sm font-black font-heading uppercase">The Landmark Complex</div>
-                <div className="text-[10px] font-mono text-slate-300">Kudasan, Gandhinagar, Gujarat 382419</div>
+            <div className="bg-[#0D1118] border border-white/10 rounded-3xl p-6 space-y-3 font-mono text-xs text-slate-300">
+              <div className="flex items-center gap-2 text-[#C5A880] font-bold uppercase">
+                <ShieldCheck className="w-4 h-4" />
+                <span>Direct Manufacturer Guarantee</span>
               </div>
+              <p className="text-slate-400 text-xs font-sans leading-relaxed">
+                All outfitting projects include official GST Input Tax Credit (ITC) invoicing, structural frame test certificates, and on-site engineering installation.
+              </p>
             </div>
           </div>
         </div>
