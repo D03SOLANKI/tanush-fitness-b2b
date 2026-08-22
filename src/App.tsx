@@ -1,10 +1,9 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { AppProvider, useApp } from './context/AppContext';
 import { Navbar } from './components/common/Navbar';
 import { Footer } from './components/common/Footer';
 import { EnquiryCartDrawer } from './components/cart/EnquiryCartDrawer';
 import { Toast } from './components/common/Toast';
-import { SlotIntro } from './components/common/SlotIntro';
 import { HomePage } from './pages/HomePage';
 import { AboutPage } from './pages/AboutPage';
 import { EquipmentPage } from './pages/EquipmentPage';
@@ -13,19 +12,9 @@ import { ServicesPage } from './pages/ServicesPage';
 import { ContactPage } from './pages/ContactPage';
 import { AdminPage } from './pages/AdminPage';
 import { AdminHeader } from './components/admin/AdminHeader';
-import { AnimatePresence } from 'framer-motion';
 
 const MainContent: React.FC = () => {
   const { currentPage } = useApp();
-  const [showIntro, setShowIntro] = useState(() => {
-    // Only show slot machine intro on initial homepage load
-    return !sessionStorage.getItem('tanush_intro_seen');
-  });
-
-  const handleEnterSanctuary = () => {
-    sessionStorage.setItem('tanush_intro_seen', 'true');
-    setShowIntro(false);
-  };
 
   const renderPage = () => {
     switch (currentPage) {
@@ -52,10 +41,6 @@ const MainContent: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-[#090C10] text-[#E2E8F0] flex flex-col justify-between selection:bg-[#C5A880] selection:text-[#090C10] font-sans antialiased luxury-noise">
-      <AnimatePresence>
-        {showIntro && <SlotIntro onEnter={handleEnterSanctuary} />}
-      </AnimatePresence>
-
       {isAdmin ? <AdminHeader /> : <Navbar />}
       <div className="flex-1">{renderPage()}</div>
       {!isAdmin && <Footer />}
