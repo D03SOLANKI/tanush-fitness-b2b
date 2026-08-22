@@ -22,12 +22,12 @@ export const OrangeDirectorySection: React.FC = () => {
   return (
     <section
       id="directory"
-      className="relative bg-[#D26539] text-[#090C10] overflow-hidden select-none border-t border-white/10 scroll-mt-6"
+      className="relative min-h-screen h-screen bg-[#D26539] text-[#090C10] flex flex-col justify-between overflow-hidden select-none scroll-mt-0 pb-28 sm:pb-32"
     >
       {/* ========================================================================= */}
-      {/* TOP BLACK UTILITY HEADER STRIP                                            */}
+      {/* TOP BLACK UTILITY HEADER STRIP (LOCKED TO TOP)                            */}
       {/* ========================================================================= */}
-      <div className="bg-[#090C10] text-white py-3 sm:py-4 px-6 sm:px-12 flex items-center justify-between border-b border-white/10">
+      <div className="bg-[#090C10] text-white py-3 sm:py-3.5 px-6 sm:px-12 flex items-center justify-between border-b border-white/10 shrink-0 z-20">
         <div>
           <a
             href="mailto:Info@tanushfitness.com"
@@ -78,13 +78,13 @@ export const OrangeDirectorySection: React.FC = () => {
       </div>
 
       {/* ========================================================================= */}
-      {/* MAIN ORANGE BODY (ALL 6 ITEMS VISIBLE & ACCESSIBLE)                       */}
+      {/* MAIN ORANGE BODY (VERTICALLY CENTERED & LOCKED TO 100VH)                  */}
       {/* ========================================================================= */}
-      <div className="relative max-w-7xl mx-auto w-full px-6 sm:px-12 py-14 sm:py-20 flex items-center overflow-hidden">
+      <div className="relative flex-1 max-w-7xl mx-auto w-full px-6 sm:px-12 my-auto flex items-center overflow-hidden">
         {/* Giant Faint Star Watermark on Right */}
         <div className="absolute -right-20 top-1/2 -translate-y-1/2 pointer-events-none select-none opacity-20 hidden md:block">
           <svg
-            className="w-[600px] h-[600px] text-white/30 fill-none stroke-current"
+            className="w-[580px] h-[580px] text-white/30 fill-none stroke-current"
             viewBox="0 0 100 100"
             strokeWidth="2"
           >
@@ -92,23 +92,23 @@ export const OrangeDirectorySection: React.FC = () => {
           </svg>
         </div>
 
-        {/* Left Numbered Large Underlined Links (All 6 Items) */}
-        <div className="space-y-4 sm:space-y-5 z-10 w-full max-w-3xl">
+        {/* Left Numbered Large Underlined Links (All 6 Items Perfectly Scaled) */}
+        <div className="space-y-3 sm:space-y-3.5 md:space-y-4 z-10 w-full max-w-3xl">
           {DIRECTORY_ITEMS.map((item) => (
             <div
               key={item.num}
               onClick={() => handleNav(item.page)}
-              className="group flex items-baseline gap-3 sm:gap-6 cursor-pointer select-none"
+              className="group flex items-baseline gap-3 sm:gap-5 cursor-pointer select-none"
             >
               <span className="font-mono text-xs sm:text-sm md:text-base text-[#090C10]/80 font-bold tracking-widest shrink-0">
                 {item.num}
               </span>
 
               <div className="relative flex-1">
-                <span className="font-satoshi text-2xl sm:text-4xl md:text-5xl font-extrabold uppercase text-[#090C10] group-hover:text-white group-hover:translate-x-2 transition-all duration-300 block leading-tight">
+                <span className="font-satoshi text-2xl sm:text-3xl md:text-4xl lg:text-[40px] font-extrabold uppercase text-[#090C10] group-hover:text-white group-hover:translate-x-2 transition-all duration-300 block leading-tight">
                   {item.title}
                 </span>
-                <div className="h-[1.5px] sm:h-[2px] bg-[#090C10] w-full mt-1.5 group-hover:bg-white transition-colors duration-300" />
+                <div className="h-[1.5px] sm:h-[2px] bg-[#090C10] w-full mt-1 group-hover:bg-white transition-colors duration-300" />
               </div>
             </div>
           ))}
