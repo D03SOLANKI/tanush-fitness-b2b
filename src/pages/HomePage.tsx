@@ -30,63 +30,28 @@ const USP_CARDS = [
     title: 'Commercial & Residential Equipment',
     description: 'Experience biomechanical perfection with Tanush meticulously curated 11-gauge laser-cut strength lines, modular rigs, and cardio suites.',
     brands: ['Matrix', 'Torque USA', 'Concept 2', 'Precor'],
-    icon: <Dumbbell className="w-8 h-8 text-[#D26539]" />,
+    icon: <Dumbbell className="w-7 h-7 text-[#D26539]" />,
   },
   {
     id: 2,
     title: 'Turnkey Gym Management',
     description: '360° architectural 3D CAD space modeling, acoustic rubber isolation, digital RFID access turnstiles, and launch funnels.',
     brands: ['3D CAD Layouts', 'Acoustics', 'RFID Access', 'AMC Care'],
-    icon: <Briefcase className="w-8 h-8 text-[#D26539]" />,
+    icon: <Briefcase className="w-7 h-7 text-[#D26539]" />,
   },
   {
     id: 3,
     title: 'Manpower Services & Staffing',
     description: 'Pre-screened ecosystem connecting commercial facilities with NASM, CSCS, ACE, and K11 accredited trainers and gym operations leads.',
     brands: ['Certified Trainers', 'Gym Managers', 'Floor Supervisors'],
-    icon: <Users className="w-8 h-8 text-[#D26539]" />,
+    icon: <Users className="w-7 h-7 text-[#D26539]" />,
   },
   {
     id: 4,
     title: 'Recovery Room — Hyperice',
     description: 'Revitalize in exclusive biohacking recovery suites offering pneumatic compression boots, percussion therapy, and contrast plunge baths.',
     brands: ['Hyperice Partner', 'Normatec 3', 'Hydrotherapy'],
-    icon: <Zap className="w-8 h-8 text-[#D26539]" />,
-  },
-];
-
-const FACILITY_ZONES = [
-  {
-    id: 'group-sessions',
-    label: 'Group Sessions',
-    title: 'Dynamic Functional & Combat Arena',
-    description: 'Experience the kinetic energy of unity in our group sessions at Tanush — where individual goals converge into a shared pursuit of peak conditioning. Led by master instructors in high-energy acoustic soundscapes.',
-    image: 'https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&fit=crop&w=1200&q=80',
-    tags: ['HIIT Stations', 'Turf Sprint Tracks', 'Acoustic Soundscape'],
-  },
-  {
-    id: 'strength-deck',
-    label: 'Strength Deck',
-    title: 'Biomechanical Heavy-Duty Strength Zone',
-    description: 'Precision-engineered 11-gauge structural steel rigs, selectorized stacks with optimal resistance curves, and Olympic competition platforms tailored for maximum hypertrophy and functional strength development.',
-    image: 'https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=1200&q=80',
-    tags: ['11-Gauge Racks', 'Calibrated Steel', 'Cable Motion Suites'],
-  },
-  {
-    id: 'cardio-deck',
-    label: 'Cardio Bio-Deck',
-    title: 'Smart Interactive Cardio Suite',
-    description: 'Connected commercial treadmills, curved self-powered runners, and ergometers with real-time biometric telemetry and VO2 max training protocols.',
-    image: 'https://images.unsplash.com/photo-1571902943202-507ec2618e8f?auto=format&fit=crop&w=1200&q=80',
-    tags: ['Curved Runners', 'Matrix Ascent Trainers', 'Concept 2 Rowers'],
-  },
-  {
-    id: 'recovery-spa',
-    label: 'Recovery Suite',
-    title: 'Hyperice Biohacking & Hydrotherapy',
-    description: 'Pneumatic compression boots, infrared therapy cabins, cold immersion pools, and percussion stations to accelerate muscular repair and mental equilibrium.',
-    image: 'https://images.unsplash.com/photo-1540497077202-7c8a3999166f?auto=format&fit=crop&w=1200&q=80',
-    tags: ['Hyperice Normatec', 'Infrared Sauna', 'Contrast Baths'],
+    icon: <Zap className="w-7 h-7 text-[#D26539]" />,
   },
 ];
 
@@ -148,7 +113,6 @@ export const HomePage: React.FC = () => {
   const { navigateTo, showToast } = useApp();
 
   const [visionTab, setVisionTab] = useState<'what' | 'why'>('what');
-  const [activeZone, setActiveZone] = useState(0);
   const [isNavDrawerOpen, setIsNavDrawerOpen] = useState(false);
 
   // Inquiry Form State
@@ -185,48 +149,47 @@ export const HomePage: React.FC = () => {
       />
 
       {/* ========================================================================= */}
-      {/* SECTION 1: EXACT HERO COMPOSITION & LAYOUT FROM REFERENCE IMAGE           */}
+      {/* SECTION 1: EXACT HERO COMPOSITION & MATCHED FONT SIZE (AS VAULT)          */}
       {/* ========================================================================= */}
-      <section className="relative min-h-screen bg-[#26452D] text-[#ECE6DB] flex flex-col justify-between items-center px-4 sm:px-6 lg:px-8 pt-12 pb-28 overflow-hidden">
+      <section className="relative min-h-screen bg-[#26452D] text-[#ECE6DB] flex flex-col justify-between items-center px-4 sm:px-6 lg:px-8 pt-10 pb-28 overflow-hidden">
         {/* Background Film Grain Overlay */}
         <div className="absolute inset-0 bg-[#26452D] luxury-noise pointer-events-none" />
 
         {/* 🌟 1. Top Centered Geometric Star Emblem */}
         <div className="z-10 pt-2 sm:pt-4">
           <svg
-            className="w-16 h-16 sm:w-20 sm:h-20 text-white fill-none stroke-current"
+            className="w-14 h-14 sm:w-16 sm:h-16 md:w-20 md:h-20 text-white fill-none stroke-current"
             viewBox="0 0 100 100"
-            strokeWidth="3.5"
+            strokeWidth="3"
             strokeLinecap="round"
             strokeLinejoin="round"
           >
-            {/* Multi-Point Geometric Star / Compass Emblem */}
-            <path d="M 50 5 L 56 38 L 88 20 L 64 46 L 95 50 L 64 54 L 88 80 L 56 62 L 50 95 L 44 62 L 12 80 L 36 54 L 5 50 L 36 46 L 12 20 L 44 38 Z" fill="none" stroke="white" strokeWidth="3" />
-            <circle cx="50" cy="50" r="6" stroke="white" strokeWidth="2.5" fill="none" />
+            <path d="M 50 5 L 56 38 L 88 20 L 64 46 L 95 50 L 64 54 L 88 80 L 56 62 L 50 95 L 44 62 L 12 80 L 36 54 L 5 50 L 36 46 L 12 20 L 44 38 Z" fill="none" stroke="white" strokeWidth="2.8" />
+            <circle cx="50" cy="50" r="6" stroke="white" strokeWidth="2.2" fill="none" />
           </svg>
         </div>
 
         {/* 🌊 2. Faint Ghost Watermark Marquee Background Layer */}
-        <div className="absolute top-[52%] -translate-y-1/2 left-0 right-0 z-0 pointer-events-none select-none overflow-hidden opacity-15">
-          <div className="flex items-center gap-12 animate-marquee-slow whitespace-nowrap font-syne font-black text-4xl sm:text-6xl md:text-7xl lg:text-8xl tracking-[0.25em] text-[#3A563F] uppercase">
+        <div className="absolute top-[52%] -translate-y-1/2 left-0 right-0 z-0 pointer-events-none select-none overflow-hidden opacity-10">
+          <div className="flex items-center gap-12 animate-marquee-slow whitespace-nowrap font-syne font-black text-3xl sm:text-5xl md:text-6xl lg:text-7xl tracking-[0.2em] text-[#3A563F] uppercase">
             <span>✦ BEYOND FITNESS ✦ TANUSH SANCTUARY ✦ BEYOND FITNESS ✦ COMMERCIAL OUTFITTING ✦</span>
             <span>✦ BEYOND FITNESS ✦ TANUSH SANCTUARY ✦ BEYOND FITNESS ✦ COMMERCIAL OUTFITTING ✦</span>
           </div>
         </div>
 
-        {/* 💎 3. Master Kinetic Typography with Image Capsules */}
-        <div className="max-w-7xl mx-auto w-full my-auto text-center space-y-6 sm:space-y-8 z-10 py-6">
-          <div className="space-y-4 sm:space-y-6 select-none">
+        {/* 💎 3. Master Kinetic Typography (Exact Matched Proportions as Vault) */}
+        <div className="max-w-6xl mx-auto w-full my-auto text-center space-y-6 z-10 py-6">
+          <div className="space-y-3 sm:space-y-4 md:space-y-5 select-none">
             {/* Row 1 */}
-            <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-6 font-syne text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-black uppercase tracking-tight text-white leading-none">
+            <div className="flex flex-wrap items-center justify-center gap-2.5 sm:gap-4 md:gap-5 font-syne text-2xl sm:text-4xl md:text-5xl lg:text-[54px] xl:text-[60px] font-extrabold uppercase tracking-tight text-white leading-none">
               <span className="relative inline-block">
                 GET READY
                 {/* Terracotta Orange Brush Stroke Accent */}
-                <span className="absolute -bottom-2 sm:-bottom-3 left-0 right-0 h-2 sm:h-3 bg-[#D26539] rounded-full -rotate-1 opacity-90 shadow-md" />
+                <span className="absolute -bottom-1.5 sm:-bottom-2 left-0 right-0 h-1.5 sm:h-2.5 bg-[#D26539] rounded-full -rotate-1 opacity-90" />
               </span>
 
               {/* Capsule Image Pill 1 */}
-              <div className="inline-block h-10 sm:h-16 md:h-20 w-18 sm:w-32 md:w-44 rounded-full overflow-hidden border-2 border-white/20 shadow-2xl shrink-0 align-middle transform hover:scale-105 transition-transform duration-300">
+              <div className="inline-block h-8 sm:h-11 md:h-13 lg:h-14 w-20 sm:w-28 md:w-36 lg:w-42 rounded-full overflow-hidden border border-white/30 shadow-2xl shrink-0 align-middle transform hover:scale-105 transition-transform duration-300">
                 <img
                   src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=600&q=80"
                   alt="Tanush Commercial Strength Equipment"
@@ -238,11 +201,11 @@ export const HomePage: React.FC = () => {
             </div>
 
             {/* Row 2 */}
-            <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-6 font-syne text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-black uppercase tracking-tight text-white leading-none">
+            <div className="flex flex-wrap items-center justify-center gap-2.5 sm:gap-4 md:gap-5 font-syne text-2xl sm:text-4xl md:text-5xl lg:text-[54px] xl:text-[60px] font-extrabold uppercase tracking-tight text-white leading-none">
               <span>YOUR</span>
 
               {/* Capsule Image Pill 2 */}
-              <div className="inline-block h-10 sm:h-16 md:h-20 w-22 sm:w-36 md:w-48 rounded-full overflow-hidden border-2 border-white/20 shadow-2xl shrink-0 align-middle transform hover:scale-105 transition-transform duration-300">
+              <div className="inline-block h-8 sm:h-11 md:h-13 lg:h-14 w-24 sm:w-32 md:w-40 lg:w-48 rounded-full overflow-hidden border border-white/30 shadow-2xl shrink-0 align-middle transform hover:scale-105 transition-transform duration-300">
                 <img
                   src="https://images.unsplash.com/photo-1540497077202-7c8a3999166f?auto=format&fit=crop&w=600&q=80"
                   alt="Tanush Fitness Sanctuary"
@@ -253,7 +216,7 @@ export const HomePage: React.FC = () => {
               <span>INNER POTENTIAL</span>
 
               {/* Capsule Image Pill 3 */}
-              <div className="inline-block h-10 sm:h-16 md:h-20 w-18 sm:w-32 md:w-44 rounded-full overflow-hidden border-2 border-white/20 shadow-2xl shrink-0 align-middle transform hover:scale-105 transition-transform duration-300">
+              <div className="inline-block h-8 sm:h-11 md:h-13 lg:h-14 w-20 sm:w-28 md:w-36 lg:w-42 rounded-full overflow-hidden border border-white/30 shadow-2xl shrink-0 align-middle transform hover:scale-105 transition-transform duration-300">
                 <img
                   src="https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&fit=crop&w=600&q=80"
                   alt="Tanush Athletic Training"
@@ -268,20 +231,20 @@ export const HomePage: React.FC = () => {
             <button
               type="button"
               onClick={() => navigateTo('equipment')}
-              className="border border-white/40 hover:border-white text-white font-mono text-xs uppercase tracking-[0.2em] font-semibold px-8 py-3.5 rounded-md transition-all duration-300 hover:bg-white hover:text-[#26452D] flex items-center gap-2 group shadow-xl"
+              className="border border-white/35 hover:border-white text-white font-mono text-[11px] sm:text-xs uppercase tracking-[0.25em] font-semibold px-7 py-3 rounded-md transition-all duration-300 hover:bg-white hover:text-[#26452D] flex items-center gap-2 group shadow-xl"
             >
               <span>JOIN TANUSH</span>
-              <ArrowUpRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+              <ArrowUpRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
             </button>
 
             {/* ⬇️ 5. Scroll Down Indicator */}
             <button
               type="button"
               onClick={scrollToAbout}
-              className="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center text-white/80 hover:text-white hover:border-white transition animate-bounce mt-2"
+              className="w-9 h-9 rounded-full border border-white/25 flex items-center justify-center text-white/80 hover:text-white hover:border-white transition animate-bounce mt-1"
               aria-label="Scroll to Next Section"
             >
-              <ArrowDown className="w-4 h-4" />
+              <ArrowDown className="w-3.5 h-3.5" />
             </button>
           </div>
         </div>
@@ -297,46 +260,46 @@ export const HomePage: React.FC = () => {
                   navigateTo('home');
                   window.scrollTo({ top: 0, behavior: 'smooth' });
                 }}
-                className="bg-[#0D1811]/95 backdrop-blur-xl border border-white/15 px-6 sm:px-8 py-3 sm:py-3.5 rounded-full font-syne font-black text-xs sm:text-sm tracking-[0.2em] text-white hover:text-[#D26539] transition-colors shadow-2xl uppercase"
+                className="bg-[#0D1811]/95 backdrop-blur-xl border border-white/15 px-6 sm:px-7 py-2.5 sm:py-3 rounded-full font-syne font-black text-xs sm:text-sm tracking-[0.2em] text-white hover:text-[#D26539] transition-colors shadow-2xl uppercase"
               >
                 TANUSH
               </button>
             </div>
 
             {/* Center Floating Navigation Dock */}
-            <div className="pointer-events-auto hidden md:flex items-center gap-1.5 bg-[#0D1811]/95 backdrop-blur-xl border border-white/15 p-1.5 rounded-full shadow-2xl font-mono text-xs uppercase tracking-wider">
+            <div className="pointer-events-auto hidden md:flex items-center gap-1.5 bg-[#0D1811]/95 backdrop-blur-xl border border-white/15 p-1.5 rounded-full shadow-2xl font-mono text-[11px] uppercase tracking-wider">
               <button
                 type="button"
                 onClick={scrollToAbout}
-                className="bg-[#D26539] text-white font-bold px-5 py-2 rounded-full transition shadow-md"
+                className="bg-[#D26539] text-white font-bold px-4 py-1.5 rounded-full transition shadow-md"
               >
                 About
               </button>
               <button
                 type="button"
                 onClick={() => navigateTo('equipment')}
-                className="text-slate-300 hover:text-white px-4 py-2 rounded-full transition"
+                className="text-slate-300 hover:text-white px-3.5 py-1.5 rounded-full transition"
               >
                 Equipment
               </button>
               <button
                 type="button"
                 onClick={() => navigateTo('services')}
-                className="text-slate-300 hover:text-white px-4 py-2 rounded-full transition"
+                className="text-slate-300 hover:text-white px-3.5 py-1.5 rounded-full transition"
               >
                 Gym Management
               </button>
               <button
                 type="button"
                 onClick={() => navigateTo('manpower')}
-                className="text-slate-300 hover:text-white px-4 py-2 rounded-full transition"
+                className="text-slate-300 hover:text-white px-3.5 py-1.5 rounded-full transition"
               >
                 Manpower
               </button>
               <button
                 type="button"
                 onClick={() => navigateTo('contact')}
-                className="text-slate-300 hover:text-white px-4 py-2 rounded-full transition"
+                className="text-slate-300 hover:text-white px-3.5 py-1.5 rounded-full transition"
               >
                 Consultation
               </button>
@@ -347,15 +310,15 @@ export const HomePage: React.FC = () => {
               <button
                 type="button"
                 onClick={() => setIsNavDrawerOpen(!isNavDrawerOpen)}
-                className="w-12 h-12 rounded-full bg-[#0D1811]/95 backdrop-blur-xl border border-white/15 flex flex-col items-center justify-center gap-1 text-white hover:border-[#D26539] transition shadow-2xl"
+                className="w-11 h-11 rounded-full bg-[#0D1811]/95 backdrop-blur-xl border border-white/15 flex flex-col items-center justify-center gap-1 text-white hover:border-[#D26539] transition shadow-2xl"
                 aria-label="Toggle Navigation Menu"
               >
                 {isNavDrawerOpen ? (
-                  <X className="w-5 h-5 text-[#D26539]" />
+                  <X className="w-4 h-4 text-[#D26539]" />
                 ) : (
                   <>
-                    <span className="w-5 h-[2px] bg-white rounded-full" />
-                    <span className="w-5 h-[2px] bg-white rounded-full" />
+                    <span className="w-4 h-[2px] bg-white rounded-full" />
+                    <span className="w-4 h-[2px] bg-white rounded-full" />
                   </>
                 )}
               </button>
@@ -387,9 +350,9 @@ export const HomePage: React.FC = () => {
               <button
                 type="button"
                 onClick={() => setIsNavDrawerOpen(false)}
-                className="w-12 h-12 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-white hover:text-[#D26539] hover:border-[#D26539] transition"
+                className="w-11 h-11 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-white hover:text-[#D26539] hover:border-[#D26539] transition"
               >
-                <X className="w-6 h-6" />
+                <X className="w-5 h-5" />
               </button>
             </div>
 
@@ -456,25 +419,25 @@ export const HomePage: React.FC = () => {
       {/* ========================================================================= */}
       {/* SECTION 3: TABBED VISION & PHILOSOPHY (#about)                            */}
       {/* ========================================================================= */}
-      <section id="about" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 border-b border-white/5">
-        <div className="space-y-12">
+      <section id="about" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 border-b border-white/5">
+        <div className="space-y-10">
           {/* Header & Tab Switcher */}
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-6">
-            <div className="space-y-3">
-              <div className="text-[11px] font-mono tracking-[0.3em] text-[#D26539] uppercase">
+            <div className="space-y-2">
+              <div className="text-[10px] sm:text-[11px] font-mono tracking-[0.3em] text-[#D26539] uppercase">
                 THE TANUSH PHILOSOPHY
               </div>
-              <h2 className="font-syne text-3xl sm:text-5xl font-extrabold uppercase text-white tracking-tight">
+              <h2 className="font-syne text-2xl sm:text-4xl lg:text-[38px] font-extrabold uppercase text-white tracking-tight">
                 {visionTab === 'what' ? 'What is Tanush?' : 'Why Tanush?'}
               </h2>
             </div>
 
             {/* Vision Tab Buttons */}
-            <div className="flex items-center gap-2 p-1.5 rounded-full bg-[#0D1118] border border-white/10">
+            <div className="flex items-center gap-1.5 p-1 rounded-full bg-[#0D1118] border border-white/10 font-mono text-xs uppercase tracking-wider">
               <button
                 type="button"
                 onClick={() => setVisionTab('what')}
-                className={`px-6 py-2.5 rounded-full text-xs font-mono uppercase tracking-wider transition ${
+                className={`px-5 py-2 rounded-full transition ${
                   visionTab === 'what'
                     ? 'bg-[#D26539] text-white font-bold shadow-md'
                     : 'text-slate-400 hover:text-white'
@@ -485,7 +448,7 @@ export const HomePage: React.FC = () => {
               <button
                 type="button"
                 onClick={() => setVisionTab('why')}
-                className={`px-6 py-2.5 rounded-full text-xs font-mono uppercase tracking-wider transition ${
+                className={`px-5 py-2 rounded-full transition ${
                   visionTab === 'why'
                     ? 'bg-[#D26539] text-white font-bold shadow-md'
                     : 'text-slate-400 hover:text-white'
@@ -497,10 +460,10 @@ export const HomePage: React.FC = () => {
           </div>
 
           {/* Vision Content */}
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-            <div className="lg:col-span-7 space-y-6">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+            <div className="lg:col-span-7 space-y-5">
               {visionTab === 'what' ? (
-                <div className="space-y-6 text-slate-300 font-sans text-base sm:text-lg leading-relaxed">
+                <div className="space-y-4 text-slate-300 font-sans text-sm sm:text-base leading-relaxed">
                   <p>
                     Introducing India's premier commercial fitness sanctuary & outfitting brand: <span className="text-[#D26539] font-bold">Tanush Fitness</span>, where precision engineering reaches new heights and commercial strength takes center stage.
                   </p>
@@ -511,29 +474,29 @@ export const HomePage: React.FC = () => {
                     <button
                       type="button"
                       onClick={() => navigateTo('about')}
-                      className="btn-vault-outline flex items-center gap-2"
+                      className="btn-vault-outline text-xs flex items-center gap-2"
                     >
                       <span>Read Our Full Story</span>
-                      <ArrowRight className="w-4 h-4 text-[#D26539]" />
+                      <ArrowRight className="w-3.5 h-3.5 text-[#D26539]" />
                     </button>
                   </div>
                 </div>
               ) : (
-                <div className="space-y-6 text-slate-300 font-sans text-base sm:text-lg leading-relaxed">
+                <div className="space-y-4 text-slate-300 font-sans text-sm sm:text-base leading-relaxed">
                   <p>
                     As a testament to unwavering commitment to biomechanical excellence, <span className="text-[#D26539] font-bold">Tanush Fitness</span> aims to redefine commercial fitness spaces by offering direct factory procurement, 18% GST Input Tax Credit invoicing, zero middleman trading markups, and verified trainer placement pipelines.
                   </p>
-                  <blockquote className="p-6 rounded-2xl bg-[#0D1118] border-l-4 border-[#D26539] text-slate-200 italic font-serif text-lg leading-relaxed">
+                  <blockquote className="p-5 rounded-2xl bg-[#0D1118] border-l-4 border-[#D26539] text-slate-200 italic font-serif text-base leading-relaxed">
                     "Tanush Fitness is not merely an equipment vendor; it is an end-to-end commercial infrastructure partner built for gym owners who demand perfection in every square foot."
                   </blockquote>
                   <div className="pt-2">
                     <button
                       type="button"
                       onClick={() => navigateTo('contact')}
-                      className="btn-vault flex items-center gap-2"
+                      className="btn-vault text-xs flex items-center gap-2"
                     >
                       <span>Connect With Factory Desk</span>
-                      <ArrowRight className="w-4 h-4" />
+                      <ArrowRight className="w-3.5 h-3.5" />
                     </button>
                   </div>
                 </div>
@@ -545,10 +508,10 @@ export const HomePage: React.FC = () => {
                 <img
                   src="https://images.unsplash.com/photo-1540497077202-7c8a3999166f?auto=format&fit=crop&w=1000&q=80"
                   alt="Tanush Fitness Sanctuary Vision"
-                  className="w-full h-[420px] object-cover transform group-hover:scale-105 transition-transform duration-700"
+                  className="w-full h-[380px] object-cover transform group-hover:scale-105 transition-transform duration-700"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#090C10] via-transparent to-transparent opacity-60" />
-                <div className="absolute bottom-6 left-6 right-6 p-4 rounded-xl bg-[#0D1118]/90 backdrop-blur-md border border-white/10 font-mono text-xs text-[#D26539] flex items-center justify-between">
+                <div className="absolute bottom-5 left-5 right-5 p-3.5 rounded-xl bg-[#0D1118]/90 backdrop-blur-md border border-white/10 font-mono text-[11px] text-[#D26539] flex items-center justify-between">
                   <span>ISO 9001:2015 CERTIFIED</span>
                   <span>500+ COMMERCIAL SANCTUARIES</span>
                 </div>
@@ -561,31 +524,31 @@ export const HomePage: React.FC = () => {
       {/* ========================================================================= */}
       {/* SECTION 4: CORE THREE PILLARS (SERVICES & OFFERINGS)                      */}
       {/* ========================================================================= */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 border-b border-white/5">
-        <div className="space-y-12">
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 border-b border-white/5">
+        <div className="space-y-10">
           <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-6">
             <div className="space-y-2">
-              <div className="text-[11px] font-mono tracking-[0.3em] text-[#D26539] uppercase">
+              <div className="text-[10px] sm:text-[11px] font-mono tracking-[0.3em] text-[#D26539] uppercase">
                 CORE PROCUREMENT VERTICALS
               </div>
-              <h2 className="font-syne text-3xl sm:text-5xl font-extrabold uppercase text-white tracking-tight">
+              <h2 className="font-syne text-2xl sm:text-4xl lg:text-[38px] font-extrabold uppercase text-white tracking-tight">
                 THREE PILLARS OF GYM OUTFITTING
               </h2>
-              <p className="text-sm sm:text-base text-slate-400 font-sans max-w-2xl mt-1 leading-relaxed">
+              <p className="text-xs sm:text-sm text-slate-400 font-sans max-w-2xl mt-1 leading-relaxed">
                 Complete commercial & residential equipment supply, 3D turnkey gym management, and verified manpower recruitment.
               </p>
             </div>
             <button
               type="button"
               onClick={() => navigateTo('services')}
-              className="btn-vault flex items-center gap-2 shrink-0"
+              className="btn-vault text-xs flex items-center gap-2 shrink-0"
             >
               <span>Explore All Solutions</span>
-              <ArrowRight className="w-4 h-4" />
+              <ArrowRight className="w-3.5 h-3.5" />
             </button>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {CORE_PILLARS.map((pillar) => {
               const IconComp = pillar.icon;
               return (
@@ -595,7 +558,7 @@ export const HomePage: React.FC = () => {
                 >
                   <div>
                     <div
-                      className="relative h-60 overflow-hidden cursor-pointer"
+                      className="relative h-56 overflow-hidden cursor-pointer"
                       onClick={() => navigateTo(pillar.page)}
                     >
                       <img
@@ -611,16 +574,16 @@ export const HomePage: React.FC = () => {
                         </span>
                       </div>
 
-                      <div className="absolute top-4 right-4 w-9 h-9 rounded-full bg-[#090C10]/80 backdrop-blur-md border border-white/10 flex items-center justify-center text-[#D26539]">
+                      <div className="absolute top-4 right-4 w-8 h-8 rounded-full bg-[#090C10]/80 backdrop-blur-md border border-white/10 flex items-center justify-center text-[#D26539]">
                         <IconComp className="w-4 h-4" />
                       </div>
                     </div>
 
-                    <div className="p-6 space-y-4">
+                    <div className="p-6 space-y-3.5">
                       <div>
                         <h3
                           onClick={() => navigateTo(pillar.page)}
-                          className="font-syne text-xl font-bold text-white group-hover:text-[#D26539] transition uppercase cursor-pointer"
+                          className="font-syne text-lg sm:text-xl font-bold text-white group-hover:text-[#D26539] transition uppercase cursor-pointer"
                         >
                           {pillar.title}
                         </h3>
@@ -635,7 +598,7 @@ export const HomePage: React.FC = () => {
 
                       <div className="space-y-2 pt-3 border-t border-white/5 font-mono text-xs text-slate-300">
                         {pillar.points.map((pt, ptIdx) => (
-                          <div key={ptIdx} className="flex items-center gap-2.5">
+                          <div key={ptIdx} className="flex items-center gap-2">
                             <CheckCircle2 className="w-3.5 h-3.5 text-[#D26539] shrink-0" />
                             <span>{pt}</span>
                           </div>
@@ -648,7 +611,7 @@ export const HomePage: React.FC = () => {
                     <button
                       type="button"
                       onClick={() => navigateTo(pillar.page)}
-                      className="btn-vault w-full py-3 text-xs flex items-center justify-center gap-2 uppercase tracking-wider"
+                      className="btn-vault w-full py-2.5 text-xs flex items-center justify-center gap-2 uppercase tracking-wider"
                     >
                       <span>{pillar.btnText}</span>
                       <ArrowRight className="w-3.5 h-3.5" />
@@ -664,14 +627,14 @@ export const HomePage: React.FC = () => {
       {/* ========================================================================= */}
       {/* SECTION 5: OUR USPs & VALUE PROPOSITIONS                                  */}
       {/* ========================================================================= */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 border-b border-white/5">
-        <div className="space-y-12">
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 border-b border-white/5">
+        <div className="space-y-10">
           <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-6">
             <div className="space-y-2">
-              <div className="text-[11px] font-mono tracking-[0.3em] text-[#D26539] uppercase">
+              <div className="text-[10px] sm:text-[11px] font-mono tracking-[0.3em] text-[#D26539] uppercase">
                 EXCLUSIVE ADVANTAGES
               </div>
-              <h2 className="font-syne text-3xl sm:text-5xl font-extrabold uppercase text-white tracking-tight">
+              <h2 className="font-syne text-2xl sm:text-4xl lg:text-[38px] font-extrabold uppercase text-white tracking-tight">
                 OUR USP
               </h2>
             </div>
@@ -689,27 +652,27 @@ export const HomePage: React.FC = () => {
             {USP_CARDS.map((card) => (
               <div
                 key={card.id}
-                className="bg-[#0D1118] border border-white/10 rounded-2xl p-8 space-y-6 luxury-card flex flex-col justify-between group"
+                className="bg-[#0D1118] border border-white/10 rounded-2xl p-6 space-y-4 luxury-card flex flex-col justify-between group"
               >
-                <div className="space-y-4">
-                  <div className="w-14 h-14 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center group-hover:border-[#D26539] transition-colors">
+                <div className="space-y-3">
+                  <div className="w-12 h-12 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center group-hover:border-[#D26539] transition-colors">
                     {card.icon}
                   </div>
 
-                  <h3 className="font-syne text-xl font-bold text-white group-hover:text-[#D26539] transition uppercase">
+                  <h3 className="font-syne text-base sm:text-lg font-bold text-white group-hover:text-[#D26539] transition uppercase">
                     {card.title}
                   </h3>
 
-                  <p className="text-xs sm:text-sm text-slate-400 font-sans leading-relaxed">
+                  <p className="text-xs text-slate-400 font-sans leading-relaxed">
                     {card.description}
                   </p>
                 </div>
 
-                <div className="pt-4 border-t border-white/5 flex flex-wrap gap-2">
+                <div className="pt-3 border-t border-white/5 flex flex-wrap gap-1.5">
                   {card.brands.map((b, bIdx) => (
                     <span
                       key={bIdx}
-                      className="px-2.5 py-1 rounded-md bg-white/5 text-[10px] font-mono text-slate-300"
+                      className="px-2 py-0.5 rounded bg-white/5 text-[10px] font-mono text-slate-300"
                     >
                       {b}
                     </span>
@@ -724,12 +687,12 @@ export const HomePage: React.FC = () => {
       {/* ========================================================================= */}
       {/* SECTION 6: CORPORATE PARTNERSHIPS & CERTIFICATIONS                        */}
       {/* ========================================================================= */}
-      <section className="py-16 border-b border-white/5 bg-[#05070A]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center mb-8">
-          <div className="text-[11px] font-mono tracking-[0.3em] text-[#D26539] uppercase">
+      <section className="py-14 border-b border-white/5 bg-[#05070A]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center mb-6">
+          <div className="text-[10px] sm:text-[11px] font-mono tracking-[0.3em] text-[#D26539] uppercase">
             CORPORATE PARTNERSHIPS & CERTIFICATIONS
           </div>
-          <h2 className="font-syne text-2xl sm:text-4xl font-extrabold uppercase text-white tracking-tight mt-2">
+          <h2 className="font-syne text-xl sm:text-3xl font-extrabold uppercase text-white tracking-tight mt-1.5">
             GLOBAL MACHINERY & TECHNICAL AFFILIATES
           </h2>
         </div>
@@ -743,46 +706,46 @@ export const HomePage: React.FC = () => {
       {/* ========================================================================= */}
       {/* SECTION 7: PROPOSAL & INTAKE DESK                                         */}
       {/* ========================================================================= */}
-      <section id="contact-form" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
-        <div className="bg-gradient-to-br from-[#0D1118] via-[#121722] to-[#090C10] border border-white/10 rounded-3xl p-8 sm:p-12 md:p-16 shadow-2xl relative overflow-hidden">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-            <div className="lg:col-span-6 space-y-6">
-              <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/5 border border-[#D26539]/30 text-xs font-mono text-[#D26539] tracking-widest uppercase">
+      <section id="contact-form" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+        <div className="bg-gradient-to-br from-[#0D1118] via-[#121722] to-[#090C10] border border-white/10 rounded-3xl p-8 sm:p-12 md:p-14 shadow-2xl relative overflow-hidden">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+            <div className="lg:col-span-6 space-y-5">
+              <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-white/5 border border-[#D26539]/30 text-xs font-mono text-[#D26539] tracking-widest uppercase">
                 <Building2 className="w-3.5 h-3.5" />
                 <span>Pan-India Commercial Expansion</span>
               </div>
 
-              <h2 className="font-syne text-3xl sm:text-5xl font-extrabold uppercase text-white tracking-tight">
+              <h2 className="font-syne text-2xl sm:text-4xl lg:text-[38px] font-extrabold uppercase text-white tracking-tight">
                 OUTFIT YOUR <span className="text-[#D26539]">SANCTUARY</span>
               </h2>
 
-              <p className="text-sm sm:text-base text-slate-300 font-sans leading-relaxed">
+              <p className="text-xs sm:text-sm text-slate-300 font-sans leading-relaxed">
                 Connect with our Senior Commercial Outfitting Directorate. We provide customized 3D CAD space layouts, imported equipment procurement, flooring acoustics, and complete gym commissioning.
               </p>
 
-              <div className="space-y-3 font-mono text-xs text-slate-300 pt-2">
+              <div className="space-y-2.5 font-mono text-xs text-slate-300 pt-1">
                 <div className="flex items-center gap-2">
-                  <CheckCircle2 className="w-4 h-4 text-[#D26539]" />
+                  <CheckCircle2 className="w-3.5 h-3.5 text-[#D26539]" />
                   <span>Direct Factory Procurement with 18% GST Input Tax Credit</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <CheckCircle2 className="w-4 h-4 text-[#D26539]" />
+                  <CheckCircle2 className="w-3.5 h-3.5 text-[#D26539]" />
                   <span>Turnkey Architectural CAD Layouts within 48 Hours</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <CheckCircle2 className="w-4 h-4 text-[#D26539]" />
+                  <CheckCircle2 className="w-3.5 h-3.5 text-[#D26539]" />
                   <span>Certified Trainer & Operational Leadership Recruitment</span>
                 </div>
               </div>
             </div>
 
             {/* Right Consultation Form */}
-            <div className="lg:col-span-6 bg-[#090C10] border border-white/10 rounded-2xl p-8 space-y-4 shadow-xl">
-              <h3 className="font-syne text-xl font-bold text-white uppercase">
+            <div className="lg:col-span-6 bg-[#090C10] border border-white/10 rounded-2xl p-7 space-y-4 shadow-xl">
+              <h3 className="font-syne text-lg sm:text-xl font-bold text-white uppercase">
                 Request Outfitting Proposal
               </h3>
 
-              <form onSubmit={handleInquirySubmit} className="space-y-4">
+              <form onSubmit={handleInquirySubmit} className="space-y-3.5">
                 <div>
                   <label className="text-xs font-mono text-slate-400 block mb-1">Full Name *</label>
                   <input
@@ -795,7 +758,7 @@ export const HomePage: React.FC = () => {
                   />
                 </div>
 
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
                   <div>
                     <label className="text-xs font-mono text-slate-400 block mb-1">Mobile Number *</label>
                     <input
@@ -841,7 +804,7 @@ export const HomePage: React.FC = () => {
 
                 <button
                   type="submit"
-                  className="btn-vault w-full py-3.5 text-xs uppercase tracking-wider font-bold shadow-xl mt-2"
+                  className="btn-vault w-full py-3 text-xs uppercase tracking-wider font-bold shadow-xl mt-1.5"
                 >
                   Submit Outfitting Request
                 </button>
