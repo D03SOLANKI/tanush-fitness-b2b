@@ -64,7 +64,7 @@ export const EquipmentPage: React.FC = () => {
         return false;
       }
       if (activeApplication !== 'all') {
-        const apps = p.applicationTypes || ['Commercial Gym'];
+        const apps = p.applicationTypes || ['Commercial & Residential Gym'];
         if (!apps.includes(activeApplication as any)) return false;
       }
       if (searchQuery) {
@@ -101,7 +101,7 @@ export const EquipmentPage: React.FC = () => {
   return (
     <main className="pt-24 pb-20 bg-[#090C10] min-h-screen text-[#E2E8F0] ">
       <SEO
-        title="Commercial Equipment Sanctuary | Tanush Fitness B2B"
+        title="Commercial & Residential Equipment Sanctuary | Tanush Fitness B2B"
         description="Factory direct 11-gauge power racks, plate-loaded selectorized machines, cardio consoles, and urethane free weights. 100% itemized RFQ quotations."
       />
 
@@ -119,7 +119,7 @@ export const EquipmentPage: React.FC = () => {
             </h1>
 
             <p className="text-sm sm:text-base text-[#A8A090] max-w-2xl font-sans leading-relaxed">
-              Precision-engineered commercial strength lines, selectorized pin-loaded stacks, and Olympic competition platforms. Add items to your project list for official 18% GST ITC procurement quotes.
+              Precision-engineered commercial & residential strength lines, selectorized pin-loaded stacks, and Olympic competition platforms. Add items to your project list for official 18% GST ITC procurement quotes.
             </p>
           </div>
 
@@ -166,7 +166,7 @@ export const EquipmentPage: React.FC = () => {
             {/* Application Filters */}
             <div className="flex flex-wrap items-center gap-2">
               <span className="text-xs font-mono text-[#6B6358] uppercase mr-1 hidden sm:inline">Facility:</span>
-              {['all', 'Commercial Gym', 'CrossFit Box', 'Hotel & Resort', 'Corporate Campus'].map((app) => (
+              {['all', 'Commercial & Residential Gym', 'CrossFit Box', 'Hotel & Resort', 'Corporate Campus'].map((app) => (
                 <button
                   key={app}
                   type="button"
@@ -350,7 +350,7 @@ export const EquipmentPage: React.FC = () => {
               <div className="flex items-start justify-between border-b border-white/10 pb-4">
                 <div>
                   <span className="text-[10px] font-mono text-[#D26539] uppercase tracking-widest block mb-1">
-                    COMMERCIAL MACHINERY SCHEMATICS // {selectedProduct.brand}
+                    COMMERCIAL & RESIDENTIAL MACHINERY SCHEMATICS // {selectedProduct.brand}
                   </span>
                   <h2 className="font-satoshi text-2xl sm:text-3xl font-extrabold text-white uppercase">
                     {selectedProduct.name}

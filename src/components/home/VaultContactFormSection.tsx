@@ -8,7 +8,7 @@ export const VaultContactFormSection: React.FC = () => {
   const [name, setName] = useState('');
   const [contact, setContact] = useState('');
   const [email, setEmail] = useState('');
-  const [subject, setSubject] = useState('Commercial Equipment Procurement');
+  const [subject, setSubject] = useState('Commercial & Residential Equipment Procurement');
   const [city, setCity] = useState('Delhi NCR');
   const [message, setMessage] = useState('');
   const [isSubmitted, setIsSubmitted] = useState(false);
@@ -140,9 +140,9 @@ export const VaultContactFormSection: React.FC = () => {
                       onChange={(e) => setSubject(e.target.value)}
                       className="w-full appearance-none bg-[#D8CDC0] border border-[#090C10]/30 px-4 py-3.5 text-xs font-mono text-[#090C10] focus:border-[#D26539] focus:outline-none transition-colors cursor-pointer"
                     >
-                      <option value="Commercial Equipment Procurement">Commercial Equipment Procurement</option>
+                      <option value="Commercial & Residential Equipment Procurement">Commercial & Residential Equipment Procurement</option>
                       <option value="Residential Fitness Suite Outfitting">Residential Fitness Suite Outfitting</option>
-                      <option value="Turnkey Gym Management & 3D CAD">Turnkey Gym Management & 3D CAD</option>
+                      <option value="GYM MANAGEMENT Gym Management & 3D CAD">GYM MANAGEMENT Gym Management & 3D CAD</option>
                       <option value="Manpower & Trainer Staffing">Manpower & Trainer Staffing</option>
                       <option value="Recovery Room — Hyperice Biohacking">Recovery Room — Hyperice Biohacking</option>
                       <option value="Franchise & Institutional Partnership">Franchise & Institutional Partnership</option>

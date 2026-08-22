@@ -16,8 +16,8 @@ export const FeaturedProducts: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeader
           subtitle="FACTORY DIRECT INDUSTRIAL MACHINERY"
-          title="Featured Commercial Equipment"
-          description="Source 11-gauge power rigs, pin-selected stacks, commercial cardio, and urethane free weights directly from verified manufacturers."
+          title="Featured Commercial & Residential Equipment"
+          description="Source 11-gauge power rigs, pin-selected stacks, commercial & residential cardio, and urethane free weights directly from verified manufacturers."
           actionText="View Full Equipment Catalog"
           onActionClick={() => navigateTo('equipment')}
         />
@@ -93,7 +93,7 @@ export const FeaturedProducts: React.FC = () => {
                   <div className="pt-3 border-t border-white/8 space-y-2.5">
                     <div className="flex items-center justify-between text-[11px] font-mono">
                       <span className="flex items-center gap-1 text-[#7A7268] font-semibold">
-                        <Check className="w-3.5 h-3.5 text-[#C2552F] stroke-[2.5]" /> Commercial Batch Ready
+                        <Check className="w-3.5 h-3.5 text-[#C2552F] stroke-[2.5]" /> Commercial & Residential Batch Ready
                       </span>
                       <span className="text-[#6B6358]">MOQ: {product.minOrderQty || 1} Unit</span>
                     </div>

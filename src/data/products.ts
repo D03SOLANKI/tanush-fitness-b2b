@@ -27,7 +27,7 @@ export const PRODUCTS: Product[] = [
       'Weight Capacity': '2,500 lbs Static Load',
       'Upright Pattern': '2" Hole Center Spacing with Laser Engraved Numbers',
       'Warranty': 'Lifetime Structural Frame',
-      'Certification': 'ISO 9001 / EN 957 Commercial Grade'
+      'Certification': 'ISO 9001 / EN 957 COMMERCIAL & RESIDENTIAL GRADE'
     },
     vendor: {
       id: 'v-titanforge',
@@ -237,7 +237,7 @@ export const PRODUCTS: Product[] = [
     },
     vendor: {
       id: 'v-primefit',
-      name: 'PrimeFit Commercial Gear',
+      name: 'PrimeFit Commercial & Residential Gear',
       logo: 'https://images.unsplash.com/photo-1560179707-f14e90ef3623?auto=format&fit=crop&w=200&q=80',
       verified: true,
       rating: 4.92,
@@ -354,7 +354,7 @@ export const PRODUCTS: Product[] = [
     },
     vendor: {
       id: 'v-primefit',
-      name: 'PrimeFit Commercial Gear',
+      name: 'PrimeFit Commercial & Residential Gear',
       logo: 'https://images.unsplash.com/photo-1560179707-f14e90ef3623?auto=format&fit=crop&w=200&q=80',
       verified: true,
       rating: 4.92,
@@ -427,12 +427,12 @@ export const PRODUCTS: Product[] = [
     description: 'Stainless steel cable attachments with knurled ergonomic rubber grips and revolving swivels. Includes lat bar, row handle, tricep rope, D-handles, and ankle straps.',
     specs: {
       'Finish': 'Hard Chrome Plated High Carbon Steel',
-      'Included Accessories': '10 Commercial Handles + Wall Storage Rack',
+      'Included Accessories': '10 Commercial & Residential Handles + Wall Storage Rack',
       'Warranty': '2-Year Full Replacement Guarantee'
     },
     vendor: {
       id: 'v-primefit',
-      name: 'PrimeFit Commercial Gear',
+      name: 'PrimeFit Commercial & Residential Gear',
       logo: 'https://images.unsplash.com/photo-1560179707-f14e90ef3623?auto=format&fit=crop&w=200&q=80',
       verified: true,
       rating: 4.92,

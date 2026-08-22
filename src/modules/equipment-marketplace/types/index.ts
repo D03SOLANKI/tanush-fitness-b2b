@@ -28,7 +28,7 @@ export interface Product {
   category: string;
   categoryId: string; // 'cardio' | 'strength' | 'free-weights' | 'functional' | 'flooring' | 'lockers' | 'accessories'
   equipmentType?: string;
-  applicationTypes?: ('Commercial Gym' | 'Hotel & Resort Gym' | 'Corporate Wellness Hub')[];
+  applicationTypes?: ('Commercial & Residential Gym' | 'Hotel & Resort Gym' | 'Corporate Wellness Hub')[];
   rating: number;
   reviewCount: number;
   inStock: boolean;

@@ -15,9 +15,9 @@ export const FeaturedServices: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeader
           subtitle="FACILITY CONTRACTING & TECH AUTOMATION"
-          title="Turnkey Commercial Gym Services"
+          title="GYM MANAGEMENT Commercial & Residential Gym Services"
           description="Contract on-demand equipment technicians, 3D interior floor layout planners, WhatsApp CRM specialists, and performance marketing directors."
-          actionText="View All 18 Turnkey Services"
+          actionText="View All 18 GYM MANAGEMENT Services"
           onActionClick={() => navigateTo('services')}
         />
 

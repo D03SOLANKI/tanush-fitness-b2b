@@ -148,7 +148,7 @@ const INITIAL_USERS: UserAccount[] = [
     email: 'vikram@fitplusgym.com',
     mobile: '+91 98112 34567',
     role: 'GYM_OWNER',
-    companyName: 'FitPlus Commercial Gym',
+    companyName: 'FitPlus Commercial & Residential Gym',
     gstNumber: '07AAAAA0000A1Z5',
     isVerified: true,
     status: 'ACTIVE',
@@ -262,7 +262,7 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
       name: productData.name,
       brand: productData.brand,
       categoryId: productData.categoryId,
-      category: productData.categoryName || 'Commercial Strength',
+      category: productData.categoryName || 'Commercial & Residential Strength',
       minOrderQty: productData.minOrderQty || 1,
       leadTime: productData.leadTime || '7-14 Days',
       badge: productData.badge || 'ISO-Certified',
@@ -313,7 +313,7 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
           supportEmail: 'Info@tanushfitness.com',
           corporateAddress: 'The Landmark Complex, A-301-304, Near Podar International School, Urjanagar 1, Kudasan, Gandhinagar, Gujarat 382419',
           gstRate: '18',
-          bannerText: '⚡ Special B2B Bulk Discount: Up to 25% Off Commercial Gym Setup Bundles This Month!',
+          bannerText: '⚡ Special B2B Bulk Discount: Up to 25% Off Commercial & Residential Gym Setup Bundles This Month!',
           bannerEnabled: true,
         };
   });

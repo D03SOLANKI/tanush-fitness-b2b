@@ -9,7 +9,7 @@ export const HowItWorks: React.FC = () => {
       num: '01',
       icon: <Search className="w-6 h-6 text-[#D26539]" />,
       title: 'Source & Compare Products',
-      description: 'Filter across 12 commercial categories. Compare heavy-gauge steel specs, warranty terms, and manufacturer lead times side-by-side.'
+      description: 'Filter across 12 commercial & residential categories. Compare heavy-gauge steel specs, warranty terms, and manufacturer lead times side-by-side.'
     },
     {
       num: '02',
@@ -31,7 +31,7 @@ export const HowItWorks: React.FC = () => {
         <SectionHeader
           subtitle="STREAMLINED PROCUREMENT"
           title="How Tanush Fitness Works"
-          description="Three simple steps to outfit your gym facility with commercial strength rigs, cardio, and certified staff."
+          description="Three simple steps to outfit your gym facility with commercial & residential strength rigs, cardio, and certified staff."
           align="center"
         />
 

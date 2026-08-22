@@ -14,7 +14,7 @@ export const CallToAction: React.FC = () => {
             <div className="lg:col-span-8 space-y-4">
               <div className="inline-flex items-center gap-2 px-2.5 py-1 rounded bg-[#1A2018] border border-white/10 text-[#D26539] font-mono text-[11px] font-bold uppercase tracking-wider">
                 <ShieldCheck className="w-3.5 h-3.5 text-[#D26539]" />
-                <span>FACTORY DIRECT COMMERCIAL PROCUREMENT</span>
+                <span>FACTORY DIRECT COMMERCIAL & RESIDENTIAL PROCUREMENT</span>
               </div>
 
               <h2 className="text-2xl sm:text-4xl font-extrabold font-satoshi uppercase tracking-tight leading-tight">

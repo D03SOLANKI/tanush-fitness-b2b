@@ -7,11 +7,11 @@ export const AnalyticsReportsTab: React.FC = () => {
 
   // Top Equipment Demand Chart Data
   const demandTrends = [
-    { name: 'Commercial Power Rack Heavy Duty', brand: 'Tanush Strength', count: 48, percentage: 85 },
-    { name: 'Curved Commercial Treadmill', brand: 'Tanush Cardio', count: 36, percentage: 65 },
+    { name: 'Commercial & Residential Power Rack Heavy Duty', brand: 'Tanush Strength', count: 48, percentage: 85 },
+    { name: 'Curved Commercial & Residential Treadmill', brand: 'Tanush Cardio', count: 36, percentage: 65 },
     { name: 'Selectorized Lat Pulldown Machine', brand: 'Tanush Select', count: 29, percentage: 50 },
     { name: 'Urethane Dumbbell Set 2.5kg-50kg', brand: 'Tanush Free Weights', count: 24, percentage: 40 },
-    { name: 'Adjustable Commercial Bench', brand: 'Tanush Accessories', count: 18, percentage: 30 },
+    { name: 'Adjustable Commercial & Residential Bench', brand: 'Tanush Accessories', count: 18, percentage: 30 },
   ];
 
   // Helper to convert array of objects to CSV download

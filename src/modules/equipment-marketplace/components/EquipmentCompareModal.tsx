@@ -50,7 +50,7 @@ export const EquipmentCompareModal: React.FC<EquipmentCompareModalProps> = ({
             <h2 className="text-2xl font-black text-[#090C10] font-satoshi uppercase mt-0.5">
               Side-by-Side Equipment Analysis
             </h2>
-            <p className="text-xs text-[#6B6358] font-mono">Comparing {products.length} Commercial Models</p>
+            <p className="text-xs text-[#6B6358] font-mono">Comparing {products.length} Commercial & Residential Models</p>
           </div>
 
           {/* Comparison Matrix Table */}
@@ -100,7 +100,7 @@ export const EquipmentCompareModal: React.FC<EquipmentCompareModalProps> = ({
                   {products.map(p => (
                     <td key={p.id} className="p-4 text-center">
                       <div className="flex flex-wrap justify-center gap-1">
-                        {(p.applicationTypes || ['Commercial Gym']).map((app, i) => (
+                        {(p.applicationTypes || ['Commercial & Residential Gym']).map((app, i) => (
                           <span key={i} className="text-[10px] px-2 py-0.5 rounded bg-[#D26539]/10 text-[#D26539] font-bold border border-[#D26539]/10">
                             {app}
                           </span>

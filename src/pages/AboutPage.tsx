@@ -12,7 +12,7 @@ export const AboutPage: React.FC = () => {
     <main className="pt-24 pb-20 bg-[#090C10] min-h-screen text-[#E2E8F0] ">
       <SEO
         title="The Tanush Legacy & Precision Biomechanics | Tanush Fitness"
-        description="Engineering high-performance athletic sanctuaries. 11-gauge laser cut steel, ISO 9001:2015 precision manufacturing, and nationwide commercial outfitting."
+        description="Engineering high-performance athletic sanctuaries. 11-gauge laser cut steel, ISO 9001:2015 precision manufacturing, and nationwide commercial & residential outfitting."
       />
 
       {/* Hero Header */}
@@ -29,7 +29,7 @@ export const AboutPage: React.FC = () => {
             </h1>
 
             <p className="text-sm sm:text-base text-[#A8A090] max-w-2xl font-sans leading-relaxed">
-              We design and manufacture commercial fitness environments where precision biomechanics, structural 11-gauge steel, and architectural luxury converge.
+              We design and manufacture commercial & residential fitness environments where precision biomechanics, structural 11-gauge steel, and architectural luxury converge.
             </p>
           </div>
 
@@ -39,7 +39,7 @@ export const AboutPage: React.FC = () => {
               className="btn-vault flex items-center gap-2 text-xs py-2.5 px-5"
             >
               <Briefcase className="w-3.5 h-3.5" />
-              <span>Explore Turnkey Services</span>
+              <span>Explore GYM MANAGEMENT Services</span>
             </button>
           </div>
         </div>
@@ -93,13 +93,13 @@ export const AboutPage: React.FC = () => {
               {activeTab === 'what' ? (
                 <div className="space-y-4 text-[#A8A090] font-sans leading-relaxed text-sm sm:text-base">
                   <p>
-                    Introducing India's premier commercial fitness sanctuary & outfitting brand: <span className="text-white font-bold">Tanush Fitness</span>, where precision biomechanical engineering and commercial strength take center stage.
+                    Introducing India's premier commercial & residential fitness sanctuary & outfitting brand: <span className="text-white font-bold">Tanush Fitness</span>, where precision biomechanical engineering and commercial strength take center stage.
                   </p>
                   <p>
                     At Tanush, we redefine the fitness outfitting landscape with state-of-the-art 11-gauge laser-cut equipment, certified trainer placements, and bespoke 3D CAD facility design.
                   </p>
                   <p>
-                    Our commitment goes beyond machinery; we offer a holistic <span className="text-[#D26539] font-bold">360-degree turnkey solution</span> to transform empty commercial square footage into world-class athletic destinations.
+                    Our commitment goes beyond machinery; we offer a holistic <span className="text-[#D26539] font-bold">360-degree GYM MANAGEMENT solution</span> to transform empty commercial square footage into world-class athletic destinations.
                   </p>
                 </div>
               ) : (
@@ -165,7 +165,7 @@ export const AboutPage: React.FC = () => {
             <div className="w-12 h-12 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-[#D26539]">
               <Cpu className="w-6 h-6" />
             </div>
-            <h3 className="font-satoshi text-xl font-bold text-white uppercase">3D CAD Turnkey Suites</h3>
+            <h3 className="font-satoshi text-xl font-bold text-white uppercase">3D CAD GYM MANAGEMENT Suites</h3>
             <p className="text-[#A8A090] text-xs sm:text-sm leading-relaxed font-sans">
               Full architectural spatial planning, acoustic rubber isolation, and RFID turnstile integration customized to your commercial floor plan.
             </p>
@@ -214,7 +214,7 @@ export const AboutPage: React.FC = () => {
         {/* CTA Bar */}
         <div className="bg-gradient-to-r from-[#0D1118] via-[#111622] to-[#0D1118] border border-white/10 rounded-none p-8 sm:p-12 flex flex-col md:flex-row items-center justify-between gap-6 ">
           <div className="space-y-2">
-            <span className="text-xs font-mono text-[#D26539] uppercase tracking-widest block">COMMERCIAL INQUIRIES</span>
+            <span className="text-xs font-mono text-[#D26539] uppercase tracking-widest block">COMMERCIAL & RESIDENTIAL INQUIRIES</span>
             <h3 className="font-satoshi text-2xl sm:text-3xl font-extrabold text-white uppercase">
               Ready to Outfit Your Commercial Sanctuary?
             </h3>

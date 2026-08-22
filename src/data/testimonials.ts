@@ -24,7 +24,7 @@ export const TESTIMONIALS: Testimonial[] = [
   },
   {
     id: 't-2',
-    quote: 'Finding certified commercial equipment technicians used to take days of phone calls. Through Tanush Fitness Services, we booked an emergency cable repair on a Sunday afternoon and the technician arrived within 2 hours. Absolutely game changing for member retention.',
+    quote: 'Finding certified commercial & residential equipment technicians used to take days of phone calls. Through Tanush Fitness Services, we booked an emergency cable repair on a Sunday afternoon and the technician arrived within 2 hours. Absolutely game changing for member retention.',
     author: 'Samantha Brooks',
     title: 'General Manager',
     gymName: 'Vanguard Athletic Club (45,000 sq ft)',

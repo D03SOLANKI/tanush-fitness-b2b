@@ -57,7 +57,7 @@ export const CatalogManagerTab: React.FC = () => {
       name,
       brand,
       categoryId,
-      categoryName: catObj ? catObj.name : 'Commercial Equipment',
+      categoryName: catObj ? catObj.name : 'Commercial & Residential Equipment',
       equipmentType,
       minOrderQty,
       leadTime,
@@ -193,7 +193,7 @@ export const CatalogManagerTab: React.FC = () => {
             <div className="flex items-center justify-between p-6 border-b border-white/8 bg-[#F0EBE3]/10">
               <h3 className="text-lg font-bold text-[#090C10] flex items-center gap-2">
                 {editingProduct ? <Edit2 className="w-5 h-5 text-[#D26539]" /> : <Plus className="w-5 h-5 text-[#D26539]" />}
-                {editingProduct ? 'Edit Catalog Equipment' : 'Add New Commercial Equipment'}
+                {editingProduct ? 'Edit Catalog Equipment' : 'Add New Commercial & Residential Equipment'}
               </h3>
               <button onClick={() => setIsModalOpen(false)} className="text-[#A8A090] hover:text-[#7A7268] p-1">
                 <X className="w-5 h-5" />
@@ -209,7 +209,7 @@ export const CatalogManagerTab: React.FC = () => {
                     required
                     value={name}
                     onChange={e => setName(e.target.value)}
-                    placeholder="e.g. Commercial Pin-Loaded Leg Extension"
+                    placeholder="e.g. Commercial & Residential Pin-Loaded Leg Extension"
                     className="w-full bg-[#F0EBE3]/10 border border-white/10 rounded-xl px-3.5 py-2.5 text-[#090C10] text-sm focus:outline-none focus:border-[#D26539] focus:bg-[#1A2018] transition"
                   />
                 </div>

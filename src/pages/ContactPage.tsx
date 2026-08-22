@@ -8,7 +8,7 @@ export const ContactPage: React.FC = () => {
   return (
     <main className="min-h-screen bg-[#090C10] text-[#ECE6DB] overflow-hidden pt-8 pb-0">
       <SEO
-        title="VIP Commercial Outfitting Desk | Tanush Fitness"
+        title="VIP commercial & residential outfitting Desk | Tanush Fitness"
         description="Direct manufacturer consultation, 3D CAD space proposals, wholesale machinery quotations, and flagship showroom visits."
       />
 

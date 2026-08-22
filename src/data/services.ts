@@ -124,11 +124,11 @@ export const BUSINESS_SERVICES: BusinessService[] = [
   },
   {
     id: 'photography-videography-production',
-    name: 'Commercial Gym Photography & Shoot Production',
+    name: 'Commercial & Residential Gym Photography & Shoot Production',
     category: 'Media Production',
     badge: 'Cinematic HD',
     shortDesc: 'Professional 4K video promos, drone aerial facility tours, and athlete photography.',
-    overview: 'Showcase your commercial equipment and energy with cinema-grade photography and 4K video reels. Includes lighting crew, model sourcing, and professional color grading.',
+    overview: 'Showcase your commercial & residential equipment and energy with cinema-grade photography and 4K video reels. Includes lighting crew, model sourcing, and professional color grading.',
     benefits: [
       'Ultra high-resolution photo library for website, ads, and brochures',
       '4K cinematic promo video with custom licensed music track',

@@ -97,12 +97,12 @@ export const GlobalSearchModal: React.FC<GlobalSearchModalProps> = ({ isOpen, on
               </div>
             ) : (
               <>
-                {/* 1. Commercial Equipment */}
+                {/* 1. Commercial & Residential Equipment */}
                 {searchResults.products.length > 0 && (
                   <div className="space-y-3">
                     <div className="text-[10px] font-bold uppercase text-[#D26539] font-mono tracking-wider flex items-center gap-1.5">
                       <Dumbbell className="w-3.5 h-3.5" />
-                      <span>Commercial Equipment ({searchResults.products.length})</span>
+                      <span>Commercial & Residential Equipment ({searchResults.products.length})</span>
                     </div>
                     <div className="divide-y divide-white/8 bg-[#1A2018] rounded-none border border-white/8 overflow-hidden">
                       {searchResults.products.map(p => (

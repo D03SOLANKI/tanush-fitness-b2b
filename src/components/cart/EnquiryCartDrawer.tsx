@@ -77,7 +77,7 @@ export const EnquiryCartDrawer: React.FC = () => {
 
     // 2. Role Gate Check
     if (currentUser.role !== 'GYM_OWNER') {
-      showToast('Only Gym Owners can submit commercial equipment RFQs.', 'error');
+      showToast('Only Gym Owners can submit commercial & residential equipment RFQs.', 'error');
       return;
     }
 

@@ -7,7 +7,7 @@ export const BrandStrip: React.FC = () => {
     <section className="py-14 bg-[#F0EBE3]/10 border-y border-white/10/80 overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <p className="text-center text-xs font-black uppercase tracking-widest text-[#6B6358] mb-8 font-mono">
-          Trusted By Premier Commercial Gym Chains & Athletic Clubs Worldwide
+          Trusted By Premier Commercial & Residential Gym Chains & Athletic Clubs Worldwide
         </p>
 
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 items-center">

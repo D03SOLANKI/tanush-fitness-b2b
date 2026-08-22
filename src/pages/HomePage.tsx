@@ -33,7 +33,7 @@ const USP_CARDS = [
   },
   {
     id: 2,
-    title: 'Turnkey Gym Management',
+    title: 'GYM MANAGEMENT Gym Management',
     description: '360° architectural 3D CAD space modeling, acoustic rubber isolation, digital RFID access turnstiles, and launch funnels.',
     brands: ['3D CAD Layouts', 'Acoustics', 'RFID Access', 'AMC Care'],
     icon: <Briefcase className="w-7 h-7 text-[#D26539]" />,
@@ -61,7 +61,7 @@ const CORE_PILLARS = [
     category: 'CORE VERTICAL',
     title: 'Commercial & Residential Equipment',
     tagline: 'Complete professional gym equipment supply for commercial fitness facilities & residential luxury suites',
-    description: 'Direct-from-factory ISO 9001 certified 11-gauge laser-cut power racks, selectorized pin-stack machinery, plate-loaded strength stations, and commercial urethane free-weights.',
+    description: 'Direct-from-factory ISO 9001 certified 11-gauge laser-cut power racks, selectorized pin-stack machinery, plate-loaded strength stations, and commercial & residential urethane free-weights.',
     image: 'https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=800&q=80',
     icon: Dumbbell,
     page: 'equipment' as const,
@@ -76,13 +76,13 @@ const CORE_PILLARS = [
     id: 'services',
     number: '02',
     category: 'CORE VERTICAL',
-    title: 'Gym Management & Turnkey Setup',
+    title: 'Gym Management & GYM MANAGEMENT SETUP',
     tagline: 'End-to-end gym setup including planning, architectural acoustics, equipment, and automated operations',
     description: 'Complete 360° architectural spatial floor planning, high-density acoustic rubber isolation flooring, biometric RFID access turnstiles, and pre-sales digital lead acquisition funnels.',
     image: 'https://images.unsplash.com/photo-1540497077202-7c8a3999166f?auto=format&fit=crop&w=800&q=80',
     icon: Briefcase,
     page: 'services' as const,
-    btnText: 'Explore Turnkey Management',
+    btnText: 'Explore GYM MANAGEMENT Management',
     points: [
       '3D CAD Spatial Floor Schematics',
       'Acoustic Flooring & Access Turnstiles',
@@ -94,7 +94,7 @@ const CORE_PILLARS = [
     number: '03',
     category: 'CORE VERTICAL',
     title: 'Manpower Services',
-    tagline: 'Certified trainers, gym managers, and fitness professionals for commercial gyms',
+    tagline: 'Certified trainers, gym managers, and fitness professionals for Commercial & Residential Gyms',
     description: 'Verified recruitment and placement ecosystem connecting commercial health clubs with NASM, CSCS, ACE, and K11 accredited master personal trainers and floor operations leadership.',
     image: 'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?auto=format&fit=crop&w=800&q=80',
     icon: Users,
@@ -123,7 +123,7 @@ export const HomePage: React.FC = () => {
     <main className="min-h-screen bg-[#090C10] text-[#ECE6DB] overflow-hidden pb-0">
       <SEO
         title="Tanush Fitness | Commercial & Residential Equipment · Gym Management · Manpower Services"
-        description="Experience India's premier commercial fitness sanctuary. World-class 11-gauge equipment, 3D turnkey gym management, and certified trainer staffing."
+        description="Experience India's premier commercial & residential fitness sanctuary. World-class 11-gauge equipment, 3D GYM MANAGEMENT gym management, and certified trainer staffing."
       />
 
       {/* ========================================================================= */}
@@ -234,7 +234,7 @@ export const HomePage: React.FC = () => {
           'GYM MANAGEMENT',
           'MANPOWER SERVICES',
           '11-GAUGE PRECISION STEEL',
-          'PAN-INDIA TURNKEY ASSEMBLY',
+          'PAN-INDIA GYM MANAGEMENT ASSEMBLY',
           'ISO 9001:2015 CERTIFIED',
         ]}
         theme="orange"
@@ -290,10 +290,10 @@ export const HomePage: React.FC = () => {
               {visionTab === 'what' ? (
                 <div className="space-y-4 text-[#A8A090] font-satoshi text-sm sm:text-base leading-relaxed">
                   <p>
-                    Introducing India's premier commercial fitness sanctuary & outfitting brand: <span className="text-[#D26539] font-bold">Tanush Fitness</span>, where precision engineering reaches new heights and commercial strength takes center stage.
+                    Introducing India's premier commercial & residential fitness sanctuary & outfitting brand: <span className="text-[#D26539] font-bold">Tanush Fitness</span>, where precision engineering reaches new heights and commercial strength takes center stage.
                   </p>
                   <p>
-                    At Tanush, we redefine the fitness outfitting landscape with <span className="text-white font-semibold">state-of-the-art 11-gauge laser-cut equipment</span>, curated to empower facility owners to launch world-class destinations. Our commitment goes beyond machinery; we deliver a holistic <span className="text-white font-semibold">360-degree turnkey solution</span> encompassing Commercial & Residential Equipment, Gym Management, and Manpower Services.
+                    At Tanush, we redefine the fitness outfitting landscape with <span className="text-white font-semibold">state-of-the-art 11-gauge laser-cut equipment</span>, curated to empower facility owners to launch world-class destinations. Our commitment goes beyond machinery; we deliver a holistic <span className="text-white font-semibold">360-degree GYM MANAGEMENT solution</span> encompassing Commercial & Residential Equipment, Gym Management, and Manpower Services.
                   </p>
                   <div className="pt-2">
                     <button
@@ -338,7 +338,7 @@ export const HomePage: React.FC = () => {
                 <div className="absolute inset-0 bg-gradient-to-t from-[#090C10] via-transparent to-transparent opacity-60" />
                 <div className="absolute bottom-5 left-5 right-5 p-3.5 rounded-xl bg-[#0D1118]/90 border border-white/10 font-mono text-[11px] text-[#D26539] flex items-center justify-between">
                   <span>ISO 9001:2015 CERTIFIED</span>
-                  <span>500+ COMMERCIAL SANCTUARIES</span>
+                  <span>500+ COMMERCIAL & RESIDENTIAL SANCTUARIES</span>
                 </div>
               </div>
             </div>
@@ -360,7 +360,7 @@ export const HomePage: React.FC = () => {
                 THREE PILLARS OF GYM OUTFITTING
               </h2>
               <p className="text-xs sm:text-sm text-[#A8A090] font-satoshi max-w-2xl mt-1 leading-relaxed">
-                Complete commercial & residential equipment supply, 3D turnkey gym management, and verified manpower recruitment.
+                Complete commercial & residential equipment supply, 3D GYM MANAGEMENT gym management, and verified manpower recruitment.
               </p>
             </div>
             <button

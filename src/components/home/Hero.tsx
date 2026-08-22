@@ -28,18 +28,18 @@ export const Hero: React.FC = () => {
             {/* Enterprise Eyebrow Badge */}
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded bg-[#ECE6DB] border border-white/15 text-[#3A3028] font-mono text-[11px] font-bold uppercase tracking-wider">
               <span className="w-2 h-2 rounded-full bg-[#D26539]"></span>
-              <span>DIRECT FACTORY COMMERCIAL OUTFITTING · ISO 9001:2015</span>
+              <span>DIRECT FACTORY commercial & residential outfitting · ISO 9001:2015</span>
             </div>
 
             {/* Master Headline */}
             <h1 className="text-3xl sm:text-5xl xl:text-6xl font-extrabold tracking-tight text-[#090C10] font-satoshi uppercase leading-[1.1]">
-              COMMERCIAL GYM OUTFITTING.{' '}
+              Commercial & Residential Gym OUTFITTING.{' '}
               <span className="text-[#C2552F] block mt-1">DIRECT FROM FACTORY.</span>
             </h1>
 
             {/* Value Proposition Description */}
             <p className="text-sm sm:text-base text-[#7A7268] max-w-2xl font-normal leading-relaxed">
-              Engineered with 11-gauge precision laser-cut structural steel. We outfit health clubs, CrossFit boxes, university athletic centers, and luxury residential gyms across India with certified machinery and turnkey assembly.
+              Engineered with 11-gauge precision laser-cut structural steel. We outfit health clubs, CrossFit boxes, university athletic centers, and luxury residential gyms across India with certified machinery and GYM MANAGEMENT ASSEMBLY.
             </p>
 
             {/* Industrial B2B Action Buttons */}
@@ -48,7 +48,7 @@ export const Hero: React.FC = () => {
                 onClick={() => navigateTo('equipment')}
                 className="px-6 py-3.5 rounded-lg bg-[#C2552F] hover:bg-[#090C10] text-white font-bold text-sm flex items-center justify-center gap-2 transition-colors shadow-sm"
               >
-                <span>Build Commercial RFQ Package</span>
+                <span>Build Commercial & Residential RFQ Package</span>
                 <ArrowRight className="w-4 h-4 text-[#D26539]/20" />
               </button>
 
@@ -68,7 +68,7 @@ export const Hero: React.FC = () => {
                 className="inline-flex items-center gap-1.5 text-[#C2552F] hover:text-[#1A2018] font-bold"
               >
                 <PhoneCall className="w-3.5 h-3.5 text-[#C2552F]" />
-                <span>Commercial Desk: +91 90678 00048</span>
+                <span>Commercial & Residential Desk: +91 90678 00048</span>
               </a>
               <span className="text-[#A8A090] hidden sm:inline">•</span>
               <span className="text-[#6B6358]">GST Invoice Ready (18% ITC)</span>
@@ -105,7 +105,7 @@ export const Hero: React.FC = () => {
                   </span>
                 </div>
                 <span className="px-2 py-0.5 rounded bg-[#1A2018] text-amber-300 font-mono text-[10px] font-bold border border-white/10">
-                  COMMERCIAL GRADE
+                  COMMERCIAL & RESIDENTIAL GRADE
                 </span>
               </div>
 
@@ -113,7 +113,7 @@ export const Hero: React.FC = () => {
               <div className="relative aspect-[4/3] bg-[#ECE6DB] overflow-hidden border-b border-white/10">
                 <img
                   src="https://images.unsplash.com/photo-1540497077202-7c8a3999166f?auto=format&fit=crop&w=1000&q=80"
-                  alt="Industrial Commercial Gym Power Rack"
+                  alt="Industrial Commercial & Residential Gym Power Rack"
                   className="w-full h-full object-cover"
                 />
                 

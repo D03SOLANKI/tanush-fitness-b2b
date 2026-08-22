@@ -45,13 +45,13 @@ export const ServicesPage: React.FC = () => {
     submitServiceEnquiry({
       name: formState.name,
       gymName: formState.gymName,
-      serviceRequired: formState.serviceRequired || selectedService?.name || 'Turnkey Outfitting Service',
+      serviceRequired: formState.serviceRequired || selectedService?.name || 'GYM MANAGEMENT SERVICE',
       mobile: formState.mobile,
       email: formState.email,
       additionalRequirements: formState.additionalRequirements,
     });
 
-    showToast('Turnkey consultation request received! Our Outfitting Director will connect with you.', 'success');
+    showToast('GYM MANAGEMENT consultation request received! Our Outfitting Director will connect with you.', 'success');
 
     setIsModalOpen(false);
     setSelectedService(null);
@@ -68,7 +68,7 @@ export const ServicesPage: React.FC = () => {
   return (
     <main className="pt-24 pb-20 bg-[#090C10] min-h-screen text-[#E2E8F0] ">
       <SEO
-        title="Turnkey Gym Architecture & Outfitting Services | Tanush Fitness"
+        title="GYM MANAGEMENT Gym Architecture & Outfitting Services | Tanush Fitness"
         description="3D CAD space modeling, acoustic rubber flooring, digital access turnstiles, marketing launch funnels, and AMC facility maintenance."
       />
 
@@ -78,11 +78,11 @@ export const ServicesPage: React.FC = () => {
           <div className="space-y-3">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-[#D26539]/30 text-xs font-mono text-[#D26539] tracking-widest uppercase">
               <Sparkles className="w-3.5 h-3.5" />
-              <span>360° COMMERCIAL GYM ARCHITECTURE</span>
+              <span>360° COMMERCIAL & RESIDENTIAL GYM MANAGEMENT</span>
             </div>
 
             <h1 className="font-satoshi text-3xl sm:text-5xl md:text-6xl font-extrabold uppercase text-white tracking-tight">
-              TURNKEY <span className="text-[#D26539]">OUTFITTING</span>
+              GYM MANAGEMENT <span className="text-[#D26539]">OUTFITTING</span>
             </h1>
 
             <p className="text-sm sm:text-base text-[#A8A090] max-w-2xl font-sans leading-relaxed">
@@ -96,7 +96,7 @@ export const ServicesPage: React.FC = () => {
               className="btn-vault flex items-center gap-2 text-xs py-2.5 px-5"
             >
               <Phone className="w-3.5 h-3.5" />
-              <span>Book Turnkey Consultation</span>
+              <span>Book GYM MANAGEMENT Consultation</span>
             </a>
           </div>
         </div>
@@ -135,7 +135,7 @@ export const ServicesPage: React.FC = () => {
                 {/* Content */}
                 <div className="p-6 space-y-4">
                   <span className="text-[10px] font-mono text-[#6B6358] uppercase tracking-wider block">
-                    {service.category || 'COMMERCIAL SETUP'}
+                    {service.category || 'COMMERCIAL & RESIDENTIAL SETUP'}
                   </span>
 
                   <h3 className="font-satoshi text-xl font-bold text-white group-hover:text-[#D26539] transition uppercase">
@@ -194,10 +194,10 @@ export const ServicesPage: React.FC = () => {
               <div className="flex items-start justify-between border-b border-white/10 pb-4">
                 <div>
                   <span className="text-[10px] font-mono text-[#D26539] uppercase tracking-widest block mb-1">
-                    TURNKEY SERVICE PROPOSAL
+                    GYM MANAGEMENT PROPOSAL
                   </span>
                   <h3 className="font-satoshi text-2xl font-bold text-white uppercase">
-                    {selectedService?.name || 'Turnkey Commercial Consultation'}
+                    {selectedService?.name || 'GYM MANAGEMENT Commercial Consultation'}
                   </h3>
                 </div>
                 <button

@@ -41,7 +41,7 @@ export const Navbar: React.FC = () => {
 
   const navLinks: { label: string; page: PageType; subtitle: string; icon: React.ReactNode }[] = [
     { label: 'Overview', page: 'home', subtitle: 'Sanctuary & Flagship Hub', icon: <Sparkles className="w-4 h-4" /> },
-    { label: 'Services', page: 'services', subtitle: '360° Turnkey Architecture & Setup', icon: <Briefcase className="w-4 h-4" /> },
+    { label: 'Services', page: 'services', subtitle: '360° GYM MANAGEMENT Architecture & Setup', icon: <Briefcase className="w-4 h-4" /> },
     { label: 'Equipment', page: 'equipment', subtitle: 'Biomechanical Machines & Rigs', icon: <Dumbbell className="w-4 h-4" /> },
     { label: 'Manpower', page: 'manpower', subtitle: 'Certified Trainers & Operation Leads', icon: <Users className="w-4 h-4" /> },
     { label: 'About', page: 'about', subtitle: 'Vision, Legacy & What/Why Tanush', icon: <Compass className="w-4 h-4" /> },
@@ -66,7 +66,7 @@ export const Navbar: React.FC = () => {
             >
               <Phone className="w-3 h-3 text-[#D26539]" />
               <span>+91 90678 00048</span>
-              <span className="text-[#6B6358] font-normal hidden sm:inline">(Commercial Outfitting Desk)</span>
+              <span className="text-[#6B6358] font-normal hidden sm:inline">(commercial & residential outfitting Desk)</span>
             </a>
 
             <span className="text-white/10 hidden sm:inline">•</span>
@@ -80,7 +80,7 @@ export const Navbar: React.FC = () => {
           <div className="flex items-center gap-4 whitespace-nowrap">
             <div className="hidden md:flex items-center gap-1.5 text-[#A8A090]">
               <CheckCircle2 className="w-3.5 h-3.5 text-[#3A563F]" />
-              <span>Pan-India Turnkey Assembly</span>
+              <span>Pan-India GYM MANAGEMENT ASSEMBLY</span>
             </div>
 
             <span className="text-white/10 hidden md:inline">•</span>
@@ -199,7 +199,7 @@ export const Navbar: React.FC = () => {
                 type="button"
                 onClick={() => setIsEnquiryCartOpen(true)}
                 className="relative p-2.5 rounded-full bg-white/5 hover:bg-white/10 text-[#A8A090] hover:text-[#D26539] border border-white/5 transition"
-                title="Commercial Outfitting RFQ Cart"
+                title="commercial & residential outfitting RFQ Cart"
               >
                 <FileText className="w-4 h-4" />
                 {enquiryCount > 0 && (

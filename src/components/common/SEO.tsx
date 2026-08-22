@@ -8,9 +8,9 @@ interface SEOProps {
 }
 
 export const SEO: React.FC<SEOProps> = ({
-  title = 'Tanush Fitness | Commercial Gym Equipment & B2B Services',
-  description = "India's premier commercial gym marketplace. Source ISO-certified equipment, recruit certified trainers, and launch AI WhatsApp lead generation funnels.",
-  keywords = 'commercial gym equipment, gym manpower hiring, fitness B2B, gym design, tanush fitness',
+  title = 'Tanush Fitness | Commercial & Residential Gym Equipment & B2B Services',
+  description = "India's premier Commercial & Residential Gym marketplace. Source ISO-certified equipment, recruit certified trainers, and launch AI WhatsApp lead generation funnels.",
+  keywords = 'Commercial & Residential Gym equipment, gym manpower hiring, fitness B2B, gym design, tanush fitness',
   ogImage = 'https://images.unsplash.com/photo-1540497077202-7c8a3999166f?auto=format&fit=crop&w=1200&q=80',
 }) => {
   useEffect(() => {

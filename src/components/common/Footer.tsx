@@ -58,7 +58,7 @@ export const Footer: React.FC = () => {
               </li>
               <li>
                 <button onClick={() => navigateTo('services')} className="hover:text-[#D26539] transition-colors text-left">
-                  Turnkey Services
+                  GYM MANAGEMENT Services
                 </button>
               </li>
               <li>
@@ -86,7 +86,7 @@ export const Footer: React.FC = () => {
             </h4>
             <ul className="space-y-2.5 text-[#A8A090]">
               <li className="flex items-center justify-between group cursor-pointer hover:text-white" onClick={() => navigateTo('equipment')}>
-                <span>Commercial Machinery</span>
+                <span>Commercial & Residential Machinery</span>
                 <ArrowUpRight className="w-3.5 h-3.5 text-[#7A7268] group-hover:text-[#D26539] transition" />
               </li>
               <li className="flex items-center justify-between group cursor-pointer hover:text-white" onClick={() => navigateTo('manpower')}>
@@ -94,7 +94,7 @@ export const Footer: React.FC = () => {
                 <ArrowUpRight className="w-3.5 h-3.5 text-[#7A7268] group-hover:text-[#D26539] transition" />
               </li>
               <li className="flex items-center justify-between group cursor-pointer hover:text-white" onClick={() => navigateTo('services')}>
-                <span>3D Architectural Turnkey</span>
+                <span>3D Architectural GYM MANAGEMENT</span>
                 <ArrowUpRight className="w-3.5 h-3.5 text-[#7A7268] group-hover:text-[#D26539] transition" />
               </li>
               <li className="flex items-center justify-between group cursor-pointer hover:text-white" onClick={() => navigateTo('contact')}>
