@@ -127,46 +127,46 @@ export const HomePage: React.FC = () => {
       />
 
       {/* ========================================================================= */}
-      {/* SECTION 1: EXACT HERO COMPOSITION & MATCHED FONT SIZE (AS VAULT)          */}
+      {/* SECTION 1: STRICT 100DVH HERO MATCHING VAULT PROPORTIONS & TYPOGRAPHY     */}
       {/* ========================================================================= */}
-      <section className="relative min-h-[96vh] sm:min-h-screen bg-[#26452D] text-[#ECE6DB] flex flex-col justify-between items-center px-4 sm:px-6 lg:px-8 pt-8 sm:pt-12 pb-36 sm:pb-44 overflow-hidden">
-        {/* 🌟 1. Top Centered Geometric Star Emblem */}
-        <div className="z-10 pt-2 sm:pt-4">
+      <section className="relative h-[100dvh] min-h-[100dvh] max-h-[100dvh] w-full bg-[#26452D] text-[#ECE6DB] flex flex-col justify-between items-center px-4 sm:px-6 pt-6 sm:pt-10 pb-24 sm:pb-28 overflow-hidden select-none">
+        {/* 🌟 1. Top Centered Geometric Star Emblem (Matching Vault Mark) */}
+        <div className="z-10 shrink-0">
           <svg
-            className="w-14 h-14 sm:w-16 sm:h-16 md:w-20 md:h-20 text-white fill-none stroke-current"
+            className="w-12 h-12 sm:w-16 sm:h-16 md:w-20 md:h-20 text-white fill-none stroke-current"
             viewBox="0 0 100 100"
-            strokeWidth="3"
+            strokeWidth="3.2"
             strokeLinecap="round"
             strokeLinejoin="round"
           >
-            <path d="M 50 5 L 56 38 L 88 20 L 64 46 L 95 50 L 64 54 L 88 80 L 56 62 L 50 95 L 44 62 L 12 80 L 36 54 L 5 50 L 36 46 L 12 20 L 44 38 Z" fill="none" stroke="white" strokeWidth="2.8" />
-            <circle cx="50" cy="50" r="6" stroke="white" strokeWidth="2.2" fill="none" />
+            <path d="M 50 4 L 56 38 L 88 18 L 65 46 L 96 50 L 65 54 L 88 82 L 56 62 L 50 96 L 44 62 L 12 82 L 35 54 L 4 50 L 35 46 L 12 18 L 44 38 Z" fill="none" stroke="white" strokeWidth="2.8" />
+            <circle cx="50" cy="50" r="5.5" stroke="white" strokeWidth="2.4" fill="none" />
           </svg>
         </div>
 
         {/* 🌊 2. Faint Ghost Watermark Marquee Background Layer */}
-        <div className="absolute top-[52%] -translate-y-1/2 left-0 right-0 z-0 pointer-events-none select-none overflow-hidden opacity-10">
-          <div className="flex items-center gap-12 animate-marquee-slow whitespace-nowrap font-satoshi font-black text-3xl sm:text-5xl md:text-6xl lg:text-7xl tracking-[0.2em] text-[#3A563F] uppercase">
-            <span>✦ BEYOND FITNESS ✦ TANUSH SANCTUARY ✦ BEYOND FITNESS ✦ COMMERCIAL OUTFITTING ✦</span>
-            <span>✦ BEYOND FITNESS ✦ TANUSH SANCTUARY ✦ BEYOND FITNESS ✦ COMMERCIAL OUTFITTING ✦</span>
+        <div className="absolute top-[52%] -translate-y-1/2 left-0 right-0 z-0 pointer-events-none select-none overflow-hidden opacity-20">
+          <div className="flex items-center gap-14 animate-marquee-slow whitespace-nowrap font-satoshi font-black text-3xl sm:text-5xl md:text-6xl lg:text-7xl tracking-[0.25em] text-[#3A563F] uppercase">
+            <span>✦ BEYOND FITNESS ✦ BEYOND FITNESS ✦ BEYOND FITNESS ✦ BEYOND FITNESS ✦</span>
+            <span>✦ BEYOND FITNESS ✦ BEYOND FITNESS ✦ BEYOND FITNESS ✦ BEYOND FITNESS ✦</span>
           </div>
         </div>
 
-        {/* 💎 3. Master Kinetic Typography (Satoshi & General Sans) */}
-        <div className="max-w-6xl mx-auto w-full my-auto text-center space-y-6 z-10 py-6">
+        {/* 💎 3. Master Kinetic Typography (Exact Vault Row Composition & Spacing) */}
+        <div className="max-w-6xl mx-auto w-full my-auto text-center space-y-6 z-10 py-2">
           <div className="space-y-3 sm:space-y-4 md:space-y-5 select-none">
             {/* Row 1 */}
-            <div className="flex flex-wrap items-center justify-center gap-2.5 sm:gap-4 md:gap-5 font-satoshi text-2xl sm:text-4xl md:text-5xl lg:text-[54px] xl:text-[60px] font-extrabold uppercase tracking-tight text-white leading-none">
+            <div className="flex flex-wrap items-center justify-center gap-2.5 sm:gap-4 md:gap-5 font-satoshi text-2xl sm:text-4xl md:text-5xl lg:text-[54px] xl:text-[62px] font-black uppercase tracking-tight text-white leading-none">
               <span className="relative inline-block">
                 GET READY
-                {/* Terracotta Orange Brush Stroke Accent */}
-                <span className="absolute -bottom-1.5 sm:-bottom-2 left-0 right-0 h-1.5 sm:h-2.5 bg-[#D26539] rounded-full -rotate-1 opacity-90" />
+                {/* Terracotta Orange Hand-Drawn Brush Stroke Accent */}
+                <span className="absolute -bottom-1.5 sm:-bottom-2.5 left-0 right-0 h-1.5 sm:h-2.5 bg-[#D26539] rounded-full -rotate-1 opacity-90" />
               </span>
 
               {/* Capsule Image Pill 1 */}
-              <div className="inline-block h-8 sm:h-11 md:h-13 lg:h-14 w-20 sm:w-28 md:w-36 lg:w-42 rounded-full overflow-hidden border border-white/30 shadow-2xl shrink-0 align-middle transform hover:scale-105 transition-transform duration-300">
+              <div className="inline-block h-8 sm:h-11 md:h-13 lg:h-15 w-24 sm:w-36 md:w-44 lg:w-52 rounded-full overflow-hidden border border-white/40 shadow-2xl shrink-0 align-middle transform hover:scale-105 transition-transform duration-300">
                 <img
-                  src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=600&q=80"
+                  src="https://images.unsplash.com/photo-1517838277536-f5f99be501cd?auto=format&fit=crop&w=600&q=80"
                   alt="Tanush Commercial Strength Equipment"
                   className="w-full h-full object-cover"
                 />
@@ -176,13 +176,13 @@ export const HomePage: React.FC = () => {
             </div>
 
             {/* Row 2 */}
-            <div className="flex flex-wrap items-center justify-center gap-2.5 sm:gap-4 md:gap-5 font-satoshi text-2xl sm:text-4xl md:text-5xl lg:text-[54px] xl:text-[60px] font-extrabold uppercase tracking-tight text-white leading-none">
+            <div className="flex flex-wrap items-center justify-center gap-2.5 sm:gap-4 md:gap-5 font-satoshi text-2xl sm:text-4xl md:text-5xl lg:text-[54px] xl:text-[62px] font-black uppercase tracking-tight text-white leading-none">
               <span>YOUR</span>
 
               {/* Capsule Image Pill 2 */}
-              <div className="inline-block h-8 sm:h-11 md:h-13 lg:h-14 w-24 sm:w-32 md:w-40 lg:w-48 rounded-full overflow-hidden border border-white/30 shadow-2xl shrink-0 align-middle transform hover:scale-105 transition-transform duration-300">
+              <div className="inline-block h-8 sm:h-11 md:h-13 lg:h-15 w-28 sm:w-40 md:w-48 lg:w-56 rounded-full overflow-hidden border border-white/40 shadow-2xl shrink-0 align-middle transform hover:scale-105 transition-transform duration-300">
                 <img
-                  src="https://images.unsplash.com/photo-1540497077202-7c8a3999166f?auto=format&fit=crop&w=600&q=80"
+                  src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=600&q=80"
                   alt="Tanush Fitness Sanctuary"
                   className="w-full h-full object-cover"
                 />
@@ -191,9 +191,9 @@ export const HomePage: React.FC = () => {
               <span>INNER POTENTIAL</span>
 
               {/* Capsule Image Pill 3 */}
-              <div className="inline-block h-8 sm:h-11 md:h-13 lg:h-14 w-20 sm:w-28 md:w-36 lg:w-42 rounded-full overflow-hidden border border-white/30 shadow-2xl shrink-0 align-middle transform hover:scale-105 transition-transform duration-300">
+              <div className="inline-block h-8 sm:h-11 md:h-13 lg:h-15 w-24 sm:w-36 md:w-44 lg:w-52 rounded-full overflow-hidden border border-white/40 shadow-2xl shrink-0 align-middle transform hover:scale-105 transition-transform duration-300">
                 <img
-                  src="https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&fit=crop&w=600&q=80"
+                  src="https://images.unsplash.com/photo-1540497077202-7c8a3999166f?auto=format&fit=crop&w=600&q=80"
                   alt="Tanush Athletic Training"
                   className="w-full h-full object-cover"
                 />
@@ -202,11 +202,11 @@ export const HomePage: React.FC = () => {
           </div>
 
           {/* 🎯 4. Center Outlined CTA Button & Down Arrow */}
-          <div className="pt-6 flex flex-col items-center justify-center gap-4">
+          <div className="pt-4 sm:pt-6 flex flex-col items-center justify-center gap-3">
             <button
               type="button"
               onClick={() => navigateTo('equipment')}
-              className="border border-white/35 hover:border-white text-white font-general text-[11px] sm:text-xs uppercase tracking-[0.25em] font-semibold px-7 py-3 rounded-md transition-all duration-300 hover:bg-white hover:text-[#26452D] flex items-center gap-2 group shadow-xl cursor-pointer"
+              className="border border-white/40 hover:border-white text-white font-general text-[11px] sm:text-xs uppercase tracking-[0.25em] font-semibold px-8 py-3 rounded-none transition-all duration-300 hover:bg-white hover:text-[#26452D] flex items-center gap-2 group shadow-lg cursor-pointer"
             >
               <span>JOIN TANUSH</span>
               <ArrowUpRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
@@ -216,7 +216,7 @@ export const HomePage: React.FC = () => {
             <button
               type="button"
               onClick={scrollToAbout}
-              className="w-9 h-9 rounded-full border border-white/25 flex items-center justify-center text-white/80 hover:text-white hover:border-white transition animate-bounce mt-1 cursor-pointer"
+              className="w-8 h-8 rounded-full border border-white/30 flex items-center justify-center text-white/80 hover:text-white hover:border-white transition animate-bounce cursor-pointer"
               aria-label="Scroll to Next Section"
             >
               <ArrowDown className="w-3.5 h-3.5" />
@@ -515,7 +515,7 @@ export const HomePage: React.FC = () => {
       <VaultContactFormSection />
 
       {/* ========================================================================= */}
-      {/* SECTION 8: FULL ORANGE NUMBERED DIRECTORY (AT LAST JUST ABOVE FOOTER)     */}
+      {/* SECTION 7: FULL ORANGE NUMBERED DIRECTORY (AT LAST JUST ABOVE FOOTER)     */}
       {/* ========================================================================= */}
       <OrangeDirectorySection />
     </main>
