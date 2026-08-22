@@ -135,8 +135,8 @@ export const EquipmentPage: React.FC = () => {
         </div>
       </section>
 
-      {/* Ticker Banner */}
-      <MarqueeStrip theme="minimal" speed="slow" />
+      {/* Marquee Banner */}
+      <MarqueeStrip theme="gold" speed="slow" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 space-y-8">
         {/* Controls Bar: Search & Category Pills */}

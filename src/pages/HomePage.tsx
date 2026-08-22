@@ -331,9 +331,9 @@ export const HomePage: React.FC = () => {
       </section>
 
       {/* ========================================================================= */}
-      {/* SECTION 2: INFINITE RUNNING MARQUEE TICKER                               */}
+      {/* SECTION 2: INFINITE RUNNING GOLDEN MARQUEE RIBBON                         */}
       {/* ========================================================================= */}
-      <MarqueeStrip theme="dark" />
+      <MarqueeStrip theme="gold" speed="slow" />
 
       {/* ========================================================================= */}
       {/* SECTION 3: INTERACTIVE VISION SECTION (WHAT IS TANUSH VS WHY TANUSH)     */}

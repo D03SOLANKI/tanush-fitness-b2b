@@ -91,7 +91,7 @@ export const ContactPage: React.FC = () => {
       </section>
 
       {/* Marquee Banner */}
-      <MarqueeStrip theme="minimal" speed="slow" />
+      <MarqueeStrip theme="gold" speed="slow" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         {/* Quick Contact Action Chips */}
