@@ -19,6 +19,7 @@ import {
   Users
 } from 'lucide-react';
 import { MarqueeStrip } from '../components/common/MarqueeStrip';
+import { OrangeDirectorySection } from '../components/home/OrangeDirectorySection';
 import { SEO } from '../components/common/SEO';
 
 const USP_CARDS = [
@@ -167,17 +168,17 @@ export const HomePage: React.FC = () => {
 
         {/* 🌊 2. Faint Ghost Watermark Marquee Background Layer */}
         <div className="absolute top-[52%] -translate-y-1/2 left-0 right-0 z-0 pointer-events-none select-none overflow-hidden opacity-10">
-          <div className="flex items-center gap-12 animate-marquee-slow whitespace-nowrap font-syne font-black text-3xl sm:text-5xl md:text-6xl lg:text-7xl tracking-[0.2em] text-[#3A563F] uppercase">
+          <div className="flex items-center gap-12 animate-marquee-slow whitespace-nowrap font-satoshi font-black text-3xl sm:text-5xl md:text-6xl lg:text-7xl tracking-[0.2em] text-[#3A563F] uppercase">
             <span>✦ BEYOND FITNESS ✦ TANUSH SANCTUARY ✦ BEYOND FITNESS ✦ COMMERCIAL OUTFITTING ✦</span>
             <span>✦ BEYOND FITNESS ✦ TANUSH SANCTUARY ✦ BEYOND FITNESS ✦ COMMERCIAL OUTFITTING ✦</span>
           </div>
         </div>
 
-        {/* 💎 3. Master Kinetic Typography (Exact Matched Proportions as Vault) */}
+        {/* 💎 3. Master Kinetic Typography (Satoshi & General Sans) */}
         <div className="max-w-6xl mx-auto w-full my-auto text-center space-y-6 z-10 py-6">
           <div className="space-y-3 sm:space-y-4 md:space-y-5 select-none">
             {/* Row 1 */}
-            <div className="flex flex-wrap items-center justify-center gap-2.5 sm:gap-4 md:gap-5 font-syne text-2xl sm:text-4xl md:text-5xl lg:text-[54px] xl:text-[60px] font-extrabold uppercase tracking-tight text-white leading-none">
+            <div className="flex flex-wrap items-center justify-center gap-2.5 sm:gap-4 md:gap-5 font-satoshi text-2xl sm:text-4xl md:text-5xl lg:text-[54px] xl:text-[60px] font-extrabold uppercase tracking-tight text-white leading-none">
               <span className="relative inline-block">
                 GET READY
                 {/* Terracotta Orange Brush Stroke Accent */}
@@ -197,7 +198,7 @@ export const HomePage: React.FC = () => {
             </div>
 
             {/* Row 2 */}
-            <div className="flex flex-wrap items-center justify-center gap-2.5 sm:gap-4 md:gap-5 font-syne text-2xl sm:text-4xl md:text-5xl lg:text-[54px] xl:text-[60px] font-extrabold uppercase tracking-tight text-white leading-none">
+            <div className="flex flex-wrap items-center justify-center gap-2.5 sm:gap-4 md:gap-5 font-satoshi text-2xl sm:text-4xl md:text-5xl lg:text-[54px] xl:text-[60px] font-extrabold uppercase tracking-tight text-white leading-none">
               <span>YOUR</span>
 
               {/* Capsule Image Pill 2 */}
@@ -222,12 +223,12 @@ export const HomePage: React.FC = () => {
             </div>
           </div>
 
-          {/* 🎯 4. Center Outlined CTA Button & Down Arrow (Generously Spaced) */}
+          {/* 🎯 4. Center Outlined CTA Button & Down Arrow */}
           <div className="pt-6 flex flex-col items-center justify-center gap-4">
             <button
               type="button"
               onClick={() => navigateTo('equipment')}
-              className="border border-white/35 hover:border-white text-white font-mono text-[11px] sm:text-xs uppercase tracking-[0.25em] font-semibold px-7 py-3 rounded-md transition-all duration-300 hover:bg-white hover:text-[#26452D] flex items-center gap-2 group shadow-xl cursor-pointer"
+              className="border border-white/35 hover:border-white text-white font-general text-[11px] sm:text-xs uppercase tracking-[0.25em] font-semibold px-7 py-3 rounded-md transition-all duration-300 hover:bg-white hover:text-[#26452D] flex items-center gap-2 group shadow-xl cursor-pointer"
             >
               <span>JOIN TANUSH</span>
               <ArrowUpRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
@@ -273,13 +274,13 @@ export const HomePage: React.FC = () => {
               <div className="text-[10px] sm:text-[11px] font-mono tracking-[0.3em] text-[#D26539] uppercase">
                 THE TANUSH PHILOSOPHY
               </div>
-              <h2 className="font-syne text-2xl sm:text-4xl lg:text-[38px] font-extrabold uppercase text-white tracking-tight">
+              <h2 className="font-satoshi text-2xl sm:text-4xl lg:text-[38px] font-extrabold uppercase text-white tracking-tight">
                 {visionTab === 'what' ? 'What is Tanush?' : 'Why Tanush?'}
               </h2>
             </div>
 
             {/* Vision Tab Buttons */}
-            <div className="flex items-center gap-1.5 p-1 rounded-full bg-[#0D1118] border border-white/10 font-mono text-xs uppercase tracking-wider">
+            <div className="flex items-center gap-1.5 p-1 rounded-full bg-[#0D1118] border border-white/10 font-general text-xs uppercase tracking-wider">
               <button
                 type="button"
                 onClick={() => setVisionTab('what')}
@@ -309,7 +310,7 @@ export const HomePage: React.FC = () => {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
             <div className="lg:col-span-7 space-y-5">
               {visionTab === 'what' ? (
-                <div className="space-y-4 text-slate-300 font-sans text-sm sm:text-base leading-relaxed">
+                <div className="space-y-4 text-slate-300 font-manrope text-sm sm:text-base leading-relaxed">
                   <p>
                     Introducing India's premier commercial fitness sanctuary & outfitting brand: <span className="text-[#D26539] font-bold">Tanush Fitness</span>, where precision engineering reaches new heights and commercial strength takes center stage.
                   </p>
@@ -328,7 +329,7 @@ export const HomePage: React.FC = () => {
                   </div>
                 </div>
               ) : (
-                <div className="space-y-4 text-slate-300 font-sans text-sm sm:text-base leading-relaxed">
+                <div className="space-y-4 text-slate-300 font-manrope text-sm sm:text-base leading-relaxed">
                   <p>
                     As a testament to unwavering commitment to biomechanical excellence, <span className="text-[#D26539] font-bold">Tanush Fitness</span> aims to redefine commercial fitness spaces by offering direct factory procurement, 18% GST Input Tax Credit invoicing, zero middleman trading markups, and verified trainer placement pipelines.
                   </p>
@@ -377,10 +378,10 @@ export const HomePage: React.FC = () => {
               <div className="text-[10px] sm:text-[11px] font-mono tracking-[0.3em] text-[#D26539] uppercase">
                 CORE PROCUREMENT VERTICALS
               </div>
-              <h2 className="font-syne text-2xl sm:text-4xl lg:text-[38px] font-extrabold uppercase text-white tracking-tight">
+              <h2 className="font-satoshi text-2xl sm:text-4xl lg:text-[38px] font-extrabold uppercase text-white tracking-tight">
                 THREE PILLARS OF GYM OUTFITTING
               </h2>
-              <p className="text-xs sm:text-sm text-slate-400 font-sans max-w-2xl mt-1 leading-relaxed">
+              <p className="text-xs sm:text-sm text-slate-400 font-manrope max-w-2xl mt-1 leading-relaxed">
                 Complete commercial & residential equipment supply, 3D turnkey gym management, and verified manpower recruitment.
               </p>
             </div>
@@ -429,7 +430,7 @@ export const HomePage: React.FC = () => {
                       <div>
                         <h3
                           onClick={() => navigateTo(pillar.page)}
-                          className="font-syne text-lg sm:text-xl font-bold text-white group-hover:text-[#D26539] transition uppercase cursor-pointer"
+                          className="font-satoshi text-lg sm:text-xl font-bold text-white group-hover:text-[#D26539] transition uppercase cursor-pointer"
                         >
                           {pillar.title}
                         </h3>
@@ -438,7 +439,7 @@ export const HomePage: React.FC = () => {
                         </p>
                       </div>
 
-                      <p className="text-xs sm:text-sm text-slate-300 font-sans leading-relaxed">
+                      <p className="text-xs sm:text-sm text-slate-300 font-manrope leading-relaxed">
                         {pillar.description}
                       </p>
 
@@ -480,7 +481,7 @@ export const HomePage: React.FC = () => {
               <div className="text-[10px] sm:text-[11px] font-mono tracking-[0.3em] text-[#D26539] uppercase">
                 EXCLUSIVE ADVANTAGES
               </div>
-              <h2 className="font-syne text-2xl sm:text-4xl lg:text-[38px] font-extrabold uppercase text-white tracking-tight">
+              <h2 className="font-satoshi text-2xl sm:text-4xl lg:text-[38px] font-extrabold uppercase text-white tracking-tight">
                 OUR USP
               </h2>
             </div>
@@ -505,11 +506,11 @@ export const HomePage: React.FC = () => {
                     {card.icon}
                   </div>
 
-                  <h3 className="font-syne text-base sm:text-lg font-bold text-white group-hover:text-[#D26539] transition uppercase">
+                  <h3 className="font-satoshi text-base sm:text-lg font-bold text-white group-hover:text-[#D26539] transition uppercase">
                     {card.title}
                   </h3>
 
-                  <p className="text-xs text-slate-400 font-sans leading-relaxed">
+                  <p className="text-xs text-slate-400 font-manrope leading-relaxed">
                     {card.description}
                   </p>
                 </div>
@@ -538,7 +539,7 @@ export const HomePage: React.FC = () => {
           <div className="text-[10px] sm:text-[11px] font-mono tracking-[0.3em] text-[#D26539] uppercase">
             CORPORATE PARTNERSHIPS & CERTIFICATIONS
           </div>
-          <h2 className="font-syne text-xl sm:text-3xl font-extrabold uppercase text-white tracking-tight mt-1.5">
+          <h2 className="font-satoshi text-xl sm:text-3xl font-extrabold uppercase text-white tracking-tight mt-1.5">
             GLOBAL MACHINERY & TECHNICAL AFFILIATES
           </h2>
         </div>
@@ -550,7 +551,12 @@ export const HomePage: React.FC = () => {
       </section>
 
       {/* ========================================================================= */}
-      {/* SECTION 7: PROPOSAL & INTAKE DESK                                         */}
+      {/* SECTION 7: FULL ORANGE NUMBERED DIRECTORY (DIRECTLY AFTER PARTNERSHIPS)   */}
+      {/* ========================================================================= */}
+      <OrangeDirectorySection />
+
+      {/* ========================================================================= */}
+      {/* SECTION 8: PROPOSAL & INTAKE DESK                                         */}
       {/* ========================================================================= */}
       <section id="contact-form" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
         <div className="bg-gradient-to-br from-[#0D1118] via-[#121722] to-[#090C10] border border-white/10 rounded-3xl p-8 sm:p-12 md:p-14 shadow-2xl relative overflow-hidden">
@@ -561,11 +567,11 @@ export const HomePage: React.FC = () => {
                 <span>Pan-India Commercial Expansion</span>
               </div>
 
-              <h2 className="font-syne text-2xl sm:text-4xl lg:text-[38px] font-extrabold uppercase text-white tracking-tight">
+              <h2 className="font-satoshi text-2xl sm:text-4xl lg:text-[38px] font-extrabold uppercase text-white tracking-tight">
                 OUTFIT YOUR <span className="text-[#D26539]">SANCTUARY</span>
               </h2>
 
-              <p className="text-xs sm:text-sm text-slate-300 font-sans leading-relaxed">
+              <p className="text-xs sm:text-sm text-slate-300 font-manrope leading-relaxed">
                 Connect with our Senior Commercial Outfitting Directorate. We provide customized 3D CAD space layouts, imported equipment procurement, flooring acoustics, and complete gym commissioning.
               </p>
 
@@ -587,7 +593,7 @@ export const HomePage: React.FC = () => {
 
             {/* Right Consultation Form */}
             <div className="lg:col-span-6 bg-[#090C10] border border-white/10 rounded-2xl p-7 space-y-4 shadow-xl">
-              <h3 className="font-syne text-lg sm:text-xl font-bold text-white uppercase">
+              <h3 className="font-satoshi text-lg sm:text-xl font-bold text-white uppercase">
                 Request Outfitting Proposal
               </h3>
 
@@ -650,7 +656,7 @@ export const HomePage: React.FC = () => {
 
                 <button
                   type="submit"
-                  className="btn-vault w-full py-3 text-xs uppercase tracking-wider font-bold shadow-xl mt-1.5"
+                  className="btn-vault w-full py-3 text-xs uppercase tracking-wider font-bold shadow-xl mt-1.5 cursor-pointer"
                 >
                   Submit Outfitting Request
                 </button>

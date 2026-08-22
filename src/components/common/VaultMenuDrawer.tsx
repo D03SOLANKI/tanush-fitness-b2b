@@ -9,14 +9,13 @@ interface VaultMenuDrawerProps {
   onClose: () => void;
 }
 
-const MENU_ITEMS: { num: string; title: string; page: PageType; linkText: string }[] = [
-  { num: '01', title: 'Home', page: 'home', linkText: 'Overview' },
-  { num: '02', title: 'Equipment Sanctuary', page: 'equipment', linkText: 'Equipment' },
-  { num: '03', title: 'Gym Management', page: 'services', linkText: 'Management' },
-  { num: '04', title: 'Manpower Services', page: 'manpower', linkText: 'Manpower' },
-  { num: '05', title: 'Vision & Legacy', page: 'about', linkText: 'About' },
-  { num: '06', title: 'VIP Consultation', page: 'contact', linkText: 'Consultation' },
-  { num: '07', title: 'Contact Us', page: 'contact', linkText: 'Contact' },
+const MENU_ITEMS: { num: string; title: string; page: PageType }[] = [
+  { num: '01', title: 'Home', page: 'home' },
+  { num: '02', title: 'Equipment Sanctuary', page: 'equipment' },
+  { num: '03', title: 'Gym Management', page: 'services' },
+  { num: '04', title: 'Manpower Services', page: 'manpower' },
+  { num: '05', title: 'Vision & Legacy', page: 'about' },
+  { num: '06', title: 'VIP Consultation', page: 'contact' },
 ];
 
 export const VaultMenuDrawer: React.FC<VaultMenuDrawerProps> = ({ isOpen, onClose }) => {
@@ -41,7 +40,7 @@ export const VaultMenuDrawer: React.FC<VaultMenuDrawerProps> = ({ isOpen, onClos
           {/* ========================================================================= */}
           {/* TOP BLACK UTILITY HEADER                                                  */}
           {/* ========================================================================= */}
-          <div className="bg-[#090C10] text-white py-4 px-6 sm:px-12 flex items-center justify-between border-b border-white/10 z-20">
+          <div className="bg-[#090C10] text-white py-3 sm:py-4 px-6 sm:px-12 flex items-center justify-between border-b border-white/10 z-20 shrink-0">
             <div>
               <a
                 href="mailto:Info@tanushfitness.com"
@@ -92,22 +91,22 @@ export const VaultMenuDrawer: React.FC<VaultMenuDrawerProps> = ({ isOpen, onClos
               <button
                 type="button"
                 onClick={onClose}
-                className="ml-4 w-9 h-9 rounded-full bg-white/10 hover:bg-white/20 text-white flex items-center justify-center transition"
+                className="ml-3 w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-white/10 hover:bg-white/20 text-white flex items-center justify-center transition cursor-pointer"
                 aria-label="Close Menu"
               >
-                <X className="w-5 h-5" />
+                <X className="w-4 h-4 sm:w-5 sm:h-5" />
               </button>
             </div>
           </div>
 
           {/* ========================================================================= */}
-          {/* MAIN ORANGE MENU BODY WITH WATERMARK                                      */}
+          {/* MAIN ORANGE MENU BODY (ALL 6 ITEMS VISIBLE WITHOUT CUTOFF)                */}
           {/* ========================================================================= */}
-          <div className="relative flex-1 max-w-7xl mx-auto w-full px-6 sm:px-12 py-10 sm:py-16 flex items-center overflow-hidden">
+          <div className="relative flex-1 max-w-7xl mx-auto w-full px-6 sm:px-12 py-6 sm:py-8 my-auto flex items-center overflow-hidden">
             {/* Giant Faint Star Watermark on Right */}
-            <div className="absolute -right-20 top-1/2 -translate-y-1/2 pointer-events-none select-none opacity-20 hidden md:block">
+            <div className="absolute -right-16 top-1/2 -translate-y-1/2 pointer-events-none select-none opacity-20 hidden md:block">
               <svg
-                className="w-[650px] h-[650px] text-white/30 fill-none stroke-current"
+                className="w-[580px] h-[580px] text-white/30 fill-none stroke-current"
                 viewBox="0 0 100 100"
                 strokeWidth="2"
               >
@@ -115,23 +114,23 @@ export const VaultMenuDrawer: React.FC<VaultMenuDrawerProps> = ({ isOpen, onClos
               </svg>
             </div>
 
-            {/* Left Numbered Large Underlined Links */}
-            <div className="space-y-4 sm:space-y-6 z-10 w-full max-w-3xl">
+            {/* Left Numbered Large Underlined Links (All 6 Items Perfectly Scaled) */}
+            <div className="space-y-3 sm:space-y-4 md:space-y-4.5 z-10 w-full max-w-3xl">
               {MENU_ITEMS.map((item) => (
                 <div
                   key={item.num}
                   onClick={() => handleNav(item.page)}
-                  className="group flex items-baseline gap-4 sm:gap-6 cursor-pointer select-none"
+                  className="group flex items-baseline gap-3 sm:gap-5 cursor-pointer select-none"
                 >
-                  <span className="font-mono text-sm sm:text-base md:text-lg text-[#090C10]/80 font-bold tracking-widest shrink-0">
+                  <span className="font-mono text-xs sm:text-sm md:text-base text-[#090C10]/80 font-bold tracking-widest shrink-0">
                     {item.num}
                   </span>
 
                   <div className="relative flex-1">
-                    <span className="font-syne text-3xl sm:text-5xl md:text-6xl font-bold uppercase text-[#090C10] group-hover:text-white group-hover:translate-x-2 transition-all duration-300 block">
+                    <span className="font-satoshi text-2xl sm:text-3xl md:text-4xl lg:text-[42px] font-extrabold uppercase text-[#090C10] group-hover:text-white group-hover:translate-x-2 transition-all duration-300 block leading-tight">
                       {item.title}
                     </span>
-                    <div className="h-[2px] bg-[#090C10] w-full mt-1.5 group-hover:bg-white transition-colors duration-300" />
+                    <div className="h-[1.5px] sm:h-[2px] bg-[#090C10] w-full mt-1 group-hover:bg-white transition-colors duration-300" />
                   </div>
                 </div>
               ))}
@@ -139,16 +138,16 @@ export const VaultMenuDrawer: React.FC<VaultMenuDrawerProps> = ({ isOpen, onClos
           </div>
 
           {/* ========================================================================= */}
-          {/* BOTTOM BAR (EXACT AS IMAGE 3)                                             */}
+          {/* BOTTOM BAR                                                                */}
           {/* ========================================================================= */}
-          <div className="py-6 px-6 sm:px-12 z-20">
-            <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
+          <div className="py-4 sm:py-5 px-6 sm:px-12 z-20 shrink-0">
+            <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
               {/* Left Pill + Terms */}
-              <div className="flex items-center gap-6">
+              <div className="flex items-center gap-5 sm:gap-6">
                 <button
                   type="button"
                   onClick={() => handleNav('home')}
-                  className="bg-[#0D1811] text-white px-7 py-3 rounded-full font-syne font-black text-sm uppercase tracking-[0.2em] shadow-xl hover:text-[#D26539] transition"
+                  className="bg-[#0D1811] text-white px-6 sm:px-7 py-2.5 sm:py-3 rounded-full font-satoshi font-black text-xs sm:text-sm uppercase tracking-[0.2em] shadow-xl hover:text-[#D26539] transition"
                 >
                   TANUSH
                 </button>
@@ -156,7 +155,7 @@ export const VaultMenuDrawer: React.FC<VaultMenuDrawerProps> = ({ isOpen, onClos
                 <button
                   type="button"
                   onClick={() => handleNav('about')}
-                  className="text-white/90 hover:text-white font-mono text-xs tracking-wider underline sm:no-underline hover:underline"
+                  className="text-white/90 hover:text-white font-mono text-xs tracking-wider underline sm:no-underline hover:underline cursor-pointer"
                 >
                   Terms & Conditions
                 </button>
@@ -167,8 +166,8 @@ export const VaultMenuDrawer: React.FC<VaultMenuDrawerProps> = ({ isOpen, onClos
                 <button
                   type="button"
                   onClick={() => handleNav('home')}
-                  className={`px-5 py-2 rounded-full font-semibold transition ${
-                    currentPage === 'home' ? 'bg-[#D26539] text-white' : 'hover:text-white'
+                  className={`px-4 py-1.5 rounded-full font-semibold transition ${
+                    currentPage === 'home' ? 'bg-[#D26539] text-white font-bold' : 'hover:text-white'
                   }`}
                 >
                   About
@@ -176,8 +175,8 @@ export const VaultMenuDrawer: React.FC<VaultMenuDrawerProps> = ({ isOpen, onClos
                 <button
                   type="button"
                   onClick={() => handleNav('equipment')}
-                  className={`px-4 py-2 rounded-full transition ${
-                    currentPage === 'equipment' ? 'bg-[#D26539] text-white' : 'hover:text-white'
+                  className={`px-4 py-1.5 rounded-full transition ${
+                    currentPage === 'equipment' ? 'bg-[#D26539] text-white font-bold' : 'hover:text-white'
                   }`}
                 >
                   Equipment
@@ -185,8 +184,8 @@ export const VaultMenuDrawer: React.FC<VaultMenuDrawerProps> = ({ isOpen, onClos
                 <button
                   type="button"
                   onClick={() => handleNav('services')}
-                  className={`px-4 py-2 rounded-full transition ${
-                    currentPage === 'services' ? 'bg-[#D26539] text-white' : 'hover:text-white'
+                  className={`px-4 py-1.5 rounded-full transition ${
+                    currentPage === 'services' ? 'bg-[#D26539] text-white font-bold' : 'hover:text-white'
                   }`}
                 >
                   Gym Management
@@ -194,8 +193,8 @@ export const VaultMenuDrawer: React.FC<VaultMenuDrawerProps> = ({ isOpen, onClos
                 <button
                   type="button"
                   onClick={() => handleNav('manpower')}
-                  className={`px-4 py-2 rounded-full transition ${
-                    currentPage === 'manpower' ? 'bg-[#D26539] text-white' : 'hover:text-white'
+                  className={`px-4 py-1.5 rounded-full transition ${
+                    currentPage === 'manpower' ? 'bg-[#D26539] text-white font-bold' : 'hover:text-white'
                   }`}
                 >
                   Manpower
@@ -203,8 +202,8 @@ export const VaultMenuDrawer: React.FC<VaultMenuDrawerProps> = ({ isOpen, onClos
                 <button
                   type="button"
                   onClick={() => handleNav('contact')}
-                  className={`px-4 py-2 rounded-full transition ${
-                    currentPage === 'contact' ? 'bg-[#D26539] text-white' : 'hover:text-white'
+                  className={`px-4 py-1.5 rounded-full transition ${
+                    currentPage === 'contact' ? 'bg-[#D26539] text-white font-bold' : 'hover:text-white'
                   }`}
                 >
                   Consultation
