@@ -83,7 +83,7 @@ export const EquipmentCompareModal: React.FC<EquipmentCompareModalProps> = ({
                   ))}
                 </tr>
               </thead>
-              <tbody className="divide-y divide-white/8 text-xs font-mono">
+              <tbody className="divide-y divide-white/10 text-xs font-mono">
                 {/* Category */}
                 <tr>
                   <td className="p-4 font-bold text-[#7A7268] bg-[#F0EBE3]/10">Category</td>

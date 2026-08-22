@@ -61,7 +61,7 @@ export const GlobalSearchModal: React.FC<GlobalSearchModalProps> = ({ isOpen, on
           className="bg-[#1A2018] rounded-none max-w-2xl w-full shadow-2xl border border-white/10 overflow-hidden relative"
         >
           {/* Header Search Input */}
-          <div className="p-4 sm:p-6 border-b border-white/8 flex items-center gap-3">
+          <div className="p-4 sm:p-6 border-b border-white/10 flex items-center gap-3">
             <Search className="w-5 h-5 text-[#D26539] shrink-0" />
             <input
               type="text"
@@ -104,7 +104,7 @@ export const GlobalSearchModal: React.FC<GlobalSearchModalProps> = ({ isOpen, on
                       <Dumbbell className="w-3.5 h-3.5" />
                       <span>Commercial & Residential Equipment ({searchResults.products.length})</span>
                     </div>
-                    <div className="divide-y divide-white/8 bg-[#1A2018] rounded-none border border-white/8 overflow-hidden">
+                    <div className="divide-y divide-white/10 bg-[#1A2018] rounded-none border border-white/10 overflow-hidden">
                       {searchResults.products.map(p => (
                         <div
                           key={p.id}
@@ -135,7 +135,7 @@ export const GlobalSearchModal: React.FC<GlobalSearchModalProps> = ({ isOpen, on
                       <Users className="w-3.5 h-3.5" />
                       <span>Gym Openings ({searchResults.jobs.length})</span>
                     </div>
-                    <div className="divide-y divide-white/8 bg-[#1A2018] rounded-none border border-white/8 overflow-hidden">
+                    <div className="divide-y divide-white/10 bg-[#1A2018] rounded-none border border-white/10 overflow-hidden">
                       {searchResults.jobs.map(j => (
                         <div
                           key={j.id}
@@ -163,7 +163,7 @@ export const GlobalSearchModal: React.FC<GlobalSearchModalProps> = ({ isOpen, on
                       <Briefcase className="w-3.5 h-3.5" />
                       <span>Business Growth Services ({searchResults.services.length})</span>
                     </div>
-                    <div className="divide-y divide-white/8 bg-[#1A2018] rounded-none border border-white/8 overflow-hidden">
+                    <div className="divide-y divide-white/10 bg-[#1A2018] rounded-none border border-white/10 overflow-hidden">
                       {searchResults.services.map(s => (
                         <div
                           key={s.id}

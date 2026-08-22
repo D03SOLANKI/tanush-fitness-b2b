@@ -66,7 +66,7 @@ export const ServicesPage: React.FC = () => {
   };
 
   return (
-    <main className="pt-24 pb-20 bg-[#090C10] min-h-screen text-[#E2E8F0] ">
+    <main className="pt-24 pb-20 bg-[#090C10] min-h-screen text-[#F0EBE3] ">
       <SEO
         title="GYM MANAGEMENT Gym Architecture & Outfitting Services | Tanush Fitness"
         description="3D CAD space modeling, acoustic rubber flooring, digital access turnstiles, marketing launch funnels, and AMC facility maintenance."

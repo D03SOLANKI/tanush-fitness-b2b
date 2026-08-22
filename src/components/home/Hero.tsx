@@ -56,7 +56,7 @@ export const Hero: React.FC = () => {
                 onClick={() => navigateTo('contact')}
                 className="px-6 py-3.5 rounded-lg bg-[#090C10] hover:bg-[#090C10] text-white font-bold text-sm flex items-center justify-center gap-2 transition-colors shadow-sm"
               >
-                <FileDown className="w-4 h-4 text-amber-400" />
+                <FileDown className="w-4 h-4 text-[#D26539]" />
                 <span>Request 2026 Master Spec Sheet</span>
               </button>
             </div>
@@ -124,7 +124,7 @@ export const Hero: React.FC = () => {
                 </div>
 
                 <div className="absolute bottom-3 right-3 bg-[#090C10]/90 text-white text-[10px] font-mono font-bold px-2 py-1 rounded border border-white/10 shadow-sm flex items-center gap-1">
-                  <Award className="w-3 h-3 text-amber-400" />
+                  <Award className="w-3 h-3 text-[#D26539]" />
                   <span>ISO 9001 Structural Rig</span>
                 </div>
               </div>

@@ -64,7 +64,7 @@ export const FeaturedServices: React.FC = () => {
                 </div>
 
                 {/* Booking Action */}
-                <div className="pt-3 border-t border-white/8">
+                <div className="pt-3 border-t border-white/10">
                   <button
                     onClick={() => openServiceModal(service)}
                     className="w-full py-2 px-3 rounded-lg bg-[#090C10] hover:bg-[#1A2018] text-white font-semibold text-xs flex items-center justify-center gap-1.5 transition-colors shadow-sm"

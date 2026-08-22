@@ -7,7 +7,7 @@ export const Footer: React.FC = () => {
   const { navigateTo } = useApp();
 
   return (
-    <footer className="bg-[#05070A] text-[#E2E8F0] border-t border-white/5 relative overflow-hidden">
+    <footer className="bg-[#05070A] text-[#F0EBE3] border-t border-white/5 relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
           {/* Col 1 & 2: Brand & Sanctuary Vision */}
@@ -19,7 +19,7 @@ export const Footer: React.FC = () => {
               }}
               className="flex items-center gap-3 cursor-pointer group select-none"
             >
-              <div className="w-10 h-10 rounded-full bg-gradient-to-br from-[#1B2232] to-[#0D1117] border border-[#D26539]/40 flex items-center justify-center shadow-lg group-hover:border-[#D26539] transition-colors">
+              <div className="w-10 h-10 rounded-full bg-gradient-to-br from-[#26452D] to-[#1A2018] border border-[#D26539]/40 flex items-center justify-center shadow-lg group-hover:border-[#D26539] transition-colors">
                 <span className="font-satoshi font-black text-lg text-[#D26539]">T</span>
               </div>
               <div className="flex flex-col">

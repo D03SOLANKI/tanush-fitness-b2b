@@ -93,7 +93,7 @@ export const PdfQuoteDispatcherTab: React.FC = () => {
                 onClick={() => handleOpenQuoteGenerator(rfq)}
                 className={`p-4 rounded-none border cursor-pointer transition-all ${
                   selectedEnquiry?.id === rfq.id
-                    ? 'bg-[#D26539]/10/70 border-[#D26539] shadow-md'
+                    ? 'bg-[#D26539]/10 border-[#D26539] shadow-md'
                     : 'bg-[#1A2018] border-white/10 hover:border-white/15'
                 }`}
               >
@@ -117,7 +117,7 @@ export const PdfQuoteDispatcherTab: React.FC = () => {
         <div className="lg:col-span-7">
           {selectedEnquiry ? (
             <div className="bg-[#1A2018] rounded-none border border-white/10 p-6 space-y-6 shadow-sm">
-              <div className="flex items-center justify-between border-b border-white/8 pb-3">
+              <div className="flex items-center justify-between border-b border-white/10 pb-3">
                 <div>
                   <span className="text-[10px] font-bold text-[#D26539] uppercase font-mono">
                     RFQ: {selectedEnquiry.rfqReference}
@@ -138,7 +138,7 @@ export const PdfQuoteDispatcherTab: React.FC = () => {
                   Itemized Wholesale Unit Pricing
                 </div>
 
-                <div className="space-y-2 divide-y divide-white/8">
+                <div className="space-y-2 divide-y divide-white/10">
                   {selectedEnquiry.selectedProducts.map((item: any) => (
                     <div key={item.id} className="pt-2 flex items-center justify-between gap-3">
                       <div>
@@ -161,7 +161,7 @@ export const PdfQuoteDispatcherTab: React.FC = () => {
               </div>
 
               {/* Adjustments (Discount, Freight, GST) */}
-              <div className="grid grid-cols-3 gap-3 pt-3 border-t border-white/8">
+              <div className="grid grid-cols-3 gap-3 pt-3 border-t border-white/10">
                 <div>
                   <label className="text-[10px] font-bold text-[#6B6358] uppercase block mb-1">Discount %</label>
                   <input
@@ -213,7 +213,7 @@ export const PdfQuoteDispatcherTab: React.FC = () => {
                 </div>
                 <div className="flex justify-between text-base font-black text-white pt-2 border-t border-white/10">
                   <span>Grand Total:</span>
-                  <span className="text-amber-400">₹{totals.grandTotal.toLocaleString('en-IN')}</span>
+                  <span className="text-[#D26539]">₹{totals.grandTotal.toLocaleString('en-IN')}</span>
                 </div>
               </div>
 

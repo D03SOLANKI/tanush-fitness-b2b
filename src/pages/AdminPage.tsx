@@ -124,7 +124,7 @@ export const AdminPage: React.FC = () => {
             </button>
           </form>
 
-          <div className="pt-4 border-t border-white/8 flex items-center justify-between text-[10px] text-[#A8A090] font-mono">
+          <div className="pt-4 border-t border-white/10 flex items-center justify-between text-[10px] text-[#A8A090] font-mono">
             <span>256-Bit SSL Encrypted Audit Log</span>
             <button
               onClick={() => navigateTo('home')}
@@ -177,7 +177,7 @@ export const AdminPage: React.FC = () => {
               {/* Notifications Dropdown */}
               {isNotificationsOpen && (
                 <div className="absolute right-0 mt-2 w-80 rounded-none bg-[#1A2018] border border-white/10 shadow-2xl p-4 z-50 space-y-3">
-                  <div className="flex items-center justify-between border-b border-white/8 pb-2">
+                  <div className="flex items-center justify-between border-b border-white/10 pb-2">
                     <span className="text-xs font-black uppercase text-[#090C10]">Live Enterprise Alerts</span>
                     <button onClick={() => setIsNotificationsOpen(false)}>
                       <X className="w-4 h-4 text-[#A8A090] hover:text-[#7A7268]" />

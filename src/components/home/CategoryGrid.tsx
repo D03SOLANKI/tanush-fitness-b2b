@@ -33,10 +33,10 @@ export const CategoryGrid: React.FC = () => {
                 setFilter('category', cat.id);
                 navigateTo('equipment');
               }}
-              className="group relative rounded-none overflow-hidden bg-[#1A2018] border border-white/10/90 hover:border-[#D26539] transition-all duration-300 cursor-pointer flex flex-col justify-between hover:shadow-2xl hover:-translate-y-1 text-[#F0EBE3]"
+              className="group relative rounded-none overflow-hidden bg-[#1A2018] border border-white/10 hover:border-[#D26539] transition-all duration-300 cursor-pointer flex flex-col justify-between hover:shadow-2xl hover:-translate-y-1 text-[#F0EBE3]"
             >
               {/* Top Bright Photo */}
-              <div className="relative aspect-[16/10] bg-[#ECE6DB] overflow-hidden border-b border-white/8">
+              <div className="relative aspect-[16/10] bg-[#ECE6DB] overflow-hidden border-b border-white/10">
                 <img
                   src={cat.image}
                   alt={cat.name}
@@ -65,7 +65,7 @@ export const CategoryGrid: React.FC = () => {
                   </p>
                 </div>
 
-                <div className="pt-3 border-t border-white/8 flex items-center justify-between text-xs font-black text-[#D26539] uppercase tracking-wider font-mono group-hover:translate-x-1 transition-all">
+                <div className="pt-3 border-t border-white/10 flex items-center justify-between text-xs font-black text-[#D26539] uppercase tracking-wider font-mono group-hover:translate-x-1 transition-all">
                   <span>Explore Category</span>
                   <ArrowRight className="w-4 h-4 stroke-[3]" />
                 </div>

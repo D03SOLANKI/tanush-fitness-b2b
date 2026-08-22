@@ -9,7 +9,7 @@ export const AboutPage: React.FC = () => {
   const [activeTab, setActiveTab] = useState<'what' | 'why'>('what');
 
   return (
-    <main className="pt-24 pb-20 bg-[#090C10] min-h-screen text-[#E2E8F0] ">
+    <main className="pt-24 pb-20 bg-[#090C10] min-h-screen text-[#F0EBE3] ">
       <SEO
         title="The Tanush Legacy & Precision Biomechanics | Tanush Fitness"
         description="Engineering high-performance athletic sanctuaries. 11-gauge laser cut steel, ISO 9001:2015 precision manufacturing, and nationwide commercial & residential outfitting."

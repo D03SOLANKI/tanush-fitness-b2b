@@ -26,7 +26,7 @@ export const HowItWorks: React.FC = () => {
   ];
 
   return (
-    <section className="py-20 sm:py-28 bg-[#1A2018] relative border-t border-white/10/80">
+    <section className="py-20 sm:py-28 bg-[#1A2018] relative border-t border-white/10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeader
           subtitle="STREAMLINED PROCUREMENT"
@@ -43,10 +43,10 @@ export const HowItWorks: React.FC = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.4, delay: idx * 0.1 }}
-              className="relative p-8 rounded-none bg-[#F0EBE3]/10 border border-white/10/90 hover:border-[#D26539]/50 transition-all group shadow-sm hover:"
+              className="relative p-8 rounded-none bg-[#F0EBE3]/10 border border-white/10 hover:border-[#D26539]/50 transition-all group shadow-sm hover:"
             >
               <div className="flex items-center justify-between mb-6">
-                <div className="w-12 h-12 rounded-none bg-[#1A2018] border border-white/10/80 flex items-center justify-center shadow-sm">
+                <div className="w-12 h-12 rounded-none bg-[#1A2018] border border-white/10 flex items-center justify-center shadow-sm">
                   {step.icon}
                 </div>
                 <span className="text-3xl font-black text-[#A8A090] group-hover:text-[#D26539] transition-colors font-mono">

@@ -218,7 +218,7 @@ export const AuthModal: React.FC<AuthModalProps> = ({
                       onClick={() => setRole('GYM_OWNER')}
                       className={`p-3 rounded-none border text-center transition-all ${
                         role === 'GYM_OWNER'
-                          ? 'border-[#D26539] bg-[#D26539]/10/50 text-[#090C10] font-bold'
+                          ? 'border-[#D26539] bg-[#D26539]/10 text-[#090C10] font-bold'
                           : 'border-white/10 text-[#7A7268] hover:bg-[#F0EBE3]/10'
                       }`}
                     >
@@ -232,7 +232,7 @@ export const AuthModal: React.FC<AuthModalProps> = ({
                       onClick={() => setRole('JOB_SEEKER')}
                       className={`p-3 rounded-none border text-center transition-all ${
                         role === 'JOB_SEEKER'
-                          ? 'border-[#D26539] bg-[#D26539]/10/50 text-[#090C10] font-bold'
+                          ? 'border-[#D26539] bg-[#D26539]/10 text-[#090C10] font-bold'
                           : 'border-white/10 text-[#7A7268] hover:bg-[#F0EBE3]/10'
                       }`}
                     >

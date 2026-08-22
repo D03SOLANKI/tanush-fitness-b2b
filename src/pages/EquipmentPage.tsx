@@ -99,7 +99,7 @@ export const EquipmentPage: React.FC = () => {
   };
 
   return (
-    <main className="pt-24 pb-20 bg-[#090C10] min-h-screen text-[#E2E8F0] ">
+    <main className="pt-24 pb-20 bg-[#090C10] min-h-screen text-[#F0EBE3] ">
       <SEO
         title="Commercial & Residential Equipment Sanctuary | Tanush Fitness B2B"
         description="Factory direct 11-gauge power racks, plate-loaded selectorized machines, cardio consoles, and urethane free weights. 100% itemized RFQ quotations."

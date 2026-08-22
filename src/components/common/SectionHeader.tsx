@@ -42,7 +42,7 @@ export const SectionHeader: React.FC<SectionHeaderProps> = ({
           className="inline-flex items-center gap-2.5 text-xs font-black text-[#D26539] hover:text-[#090C10] transition-colors group shrink-0 uppercase tracking-widest font-mono"
         >
           <span>{actionText}</span>
-          <span className="w-9 h-9 rounded-xl bg-[#D26539]/10 group-hover:bg-[#090C10] group-hover:text-white flex items-center justify-center transition-all duration-300 border border-[#D26539]/20/80 shadow-sm">
+          <span className="w-9 h-9 rounded-xl bg-[#D26539]/10 group-hover:bg-[#090C10] group-hover:text-white flex items-center justify-center transition-all duration-300 border border-[#D26539]/20 shadow-sm">
             →
           </span>
         </button>

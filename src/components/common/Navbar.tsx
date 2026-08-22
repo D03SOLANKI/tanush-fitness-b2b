@@ -111,7 +111,7 @@ export const Navbar: React.FC = () => {
               onClick={() => handleNav('home')}
               className="flex items-center gap-3 cursor-pointer group select-none"
             >
-              <div className="w-10 h-10 rounded-full bg-gradient-to-br from-[#1B2232] to-[#0D1117] border border-[#D26539]/40 flex items-center justify-center shadow-lg group-hover:border-[#D26539] transition-colors">
+              <div className="w-10 h-10 rounded-full bg-gradient-to-br from-[#26452D] to-[#1A2018] border border-[#D26539]/40 flex items-center justify-center shadow-lg group-hover:border-[#D26539] transition-colors">
                 <span className="font-satoshi font-black text-lg text-[#D26539]">T</span>
               </div>
               <div className="flex flex-col">
@@ -249,7 +249,7 @@ export const Navbar: React.FC = () => {
                 onClick={() => handleNav('home')}
                 className="flex items-center gap-3 cursor-pointer"
               >
-                <div className="w-10 h-10 rounded-full bg-gradient-to-br from-[#1B2232] to-[#0D1117] border border-[#D26539]/40 flex items-center justify-center shadow-lg">
+                <div className="w-10 h-10 rounded-full bg-gradient-to-br from-[#26452D] to-[#1A2018] border border-[#D26539]/40 flex items-center justify-center shadow-lg">
                   <span className="font-satoshi font-black text-lg text-[#D26539]">T</span>
                 </div>
                 <div className="flex flex-col">

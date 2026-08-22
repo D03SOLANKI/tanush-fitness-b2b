@@ -115,9 +115,9 @@ export const UserManagementTab: React.FC = () => {
                 <th className="py-4 px-6 text-right">Verification & Account Controls</th>
               </tr>
             </thead>
-            <tbody className="divide-y divide-white/8 text-sm">
+            <tbody className="divide-y divide-white/10 text-sm">
               {filteredUsers.map(u => (
-                <tr key={u.id} className="odd:bg-[#F4F9FF] even:bg-[#1A2018] hover:bg-[#E4F0FF] transition">
+                <tr key={u.id} className="odd:bg-[#1A2018] even:bg-[#1A2018] hover:bg-[#ECE6DB] transition">
                   <td className="py-4 px-6">
                     <div className="flex items-center gap-2">
                       <span className="font-bold text-[#090C10]">{u.name}</span>

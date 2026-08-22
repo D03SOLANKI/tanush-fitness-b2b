@@ -73,7 +73,7 @@ export const FeaturedProducts: React.FC = () => {
                     <div className="flex items-center justify-between text-xs font-mono mb-1">
                       <span className="text-[#C2552F] font-bold uppercase tracking-wide">{product.brand}</span>
                       <div className="flex items-center gap-1 text-[#7A7268] font-bold">
-                        <Star className="w-3 h-3 text-amber-500 fill-amber-500" />
+                        <Star className="w-3 h-3 text-[#D26539] fill-amber-500" />
                         <span>{product.rating}</span>
                       </div>
                     </div>
@@ -90,7 +90,7 @@ export const FeaturedProducts: React.FC = () => {
                   </div>
 
                   {/* B2B Logistics & RFQ Actions */}
-                  <div className="pt-3 border-t border-white/8 space-y-2.5">
+                  <div className="pt-3 border-t border-white/10 space-y-2.5">
                     <div className="flex items-center justify-between text-[11px] font-mono">
                       <span className="flex items-center gap-1 text-[#7A7268] font-semibold">
                         <Check className="w-3.5 h-3.5 text-[#C2552F] stroke-[2.5]" /> Commercial & Residential Batch Ready

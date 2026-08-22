@@ -52,12 +52,12 @@ export const JobModerationTab: React.FC = () => {
                 <span className="text-[#D26539] font-bold">{job.salaryRange}</span>
               </div>
 
-              <p className="text-xs text-[#3A3028] leading-relaxed line-clamp-3 bg-[#F4F9FF] p-3.5 rounded-xl border border-[#D26539]/10 font-sans">
+              <p className="text-xs text-[#3A3028] leading-relaxed line-clamp-3 bg-[#1A2018] p-3.5 rounded-xl border border-[#D26539]/10 font-sans">
                 {job.description}
               </p>
             </div>
 
-            <div className="flex items-center justify-end gap-3 pt-3 border-t border-white/8">
+            <div className="flex items-center justify-end gap-3 pt-3 border-t border-white/10">
               {job.isActive ? (
                 <button
                   onClick={() => handleAction(job.id, 'REJECT')}

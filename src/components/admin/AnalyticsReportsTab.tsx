@@ -135,7 +135,7 @@ export const AnalyticsReportsTab: React.FC = () => {
 
       {/* Equipment Demand Chart */}
       <div className="bg-[#1A2018] rounded-none p-6 border border-white/10 shadow-sm space-y-4">
-        <div className="flex items-center justify-between border-b border-white/8 pb-3">
+        <div className="flex items-center justify-between border-b border-white/10 pb-3">
           <div className="flex items-center gap-2">
             <Dumbbell className="w-5 h-5 text-[#D26539]" />
             <h4 className="text-sm font-black text-[#090C10] font-satoshi uppercase">

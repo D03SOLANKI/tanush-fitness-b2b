@@ -46,7 +46,7 @@ export const CallToAction: React.FC = () => {
                 onClick={() => navigateTo('contact')}
                 className="w-full py-3 px-5 rounded-lg bg-[#1A2018] hover:bg-[#1A2018] text-[#D8CDC0] border border-white/10 font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-2 transition-colors"
               >
-                <PhoneCall className="w-3.5 h-3.5 text-amber-400" />
+                <PhoneCall className="w-3.5 h-3.5 text-[#D26539]" />
                 <span>Schedule Consultation</span>
               </button>
             </div>

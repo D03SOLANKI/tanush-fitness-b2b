@@ -217,7 +217,7 @@ export const HomePage: React.FC = () => {
           <button
             type="button"
             onClick={() => navigateTo('equipment')}
-            className="border border-white/40 hover:border-white text-white font-satoshi text-[11px] sm:text-xs uppercase tracking-[0.25em] font-semibold px-8 py-3 rounded-none transition-all duration-300 hover:bg-[#1A2018] hover:text-[#26452D] flex items-center gap-2.5 group shadow-lg cursor-pointer"
+            className="border border-white/40 hover:border-white text-white font-satoshi text-[11px] sm:text-xs uppercase tracking-[0.25em] font-semibold px-8 py-3 rounded-none transition-all duration-300 hover:bg-white hover:text-[#26452D] flex items-center gap-2.5 group shadow-lg cursor-pointer"
           >
             <span>JOIN TANUSH</span>
             <ArrowUpRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />

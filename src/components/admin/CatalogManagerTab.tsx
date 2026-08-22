@@ -136,9 +136,9 @@ export const CatalogManagerTab: React.FC = () => {
                 <th className="py-4 px-6 text-right">Actions</th>
               </tr>
             </thead>
-            <tbody className="divide-y divide-white/8 text-sm">
+            <tbody className="divide-y divide-white/10 text-sm">
               {products.map(p => (
-                <tr key={p.id} className="odd:bg-[#F4F9FF] even:bg-[#1A2018] hover:bg-[#E4F0FF] transition">
+                <tr key={p.id} className="odd:bg-[#1A2018] even:bg-[#1A2018] hover:bg-[#ECE6DB] transition">
                   <td className="py-4 px-6">
                     <div className="flex items-center gap-3">
                       <img src={p.image} alt={p.name} className="w-12 h-12 rounded-lg object-cover bg-[#ECE6DB] border border-white/10 shrink-0" />
@@ -190,7 +190,7 @@ export const CatalogManagerTab: React.FC = () => {
       {isModalOpen && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-[#090C10]/40 backdrop-blur-sm p-4 overflow-y-auto">
           <div className="bg-[#1A2018] border border-white/10 rounded-none w-full max-w-2xl overflow-hidden shadow-2xl my-8">
-            <div className="flex items-center justify-between p-6 border-b border-white/8 bg-[#F0EBE3]/10">
+            <div className="flex items-center justify-between p-6 border-b border-white/10 bg-[#F0EBE3]/10">
               <h3 className="text-lg font-bold text-[#090C10] flex items-center gap-2">
                 {editingProduct ? <Edit2 className="w-5 h-5 text-[#D26539]" /> : <Plus className="w-5 h-5 text-[#D26539]" />}
                 {editingProduct ? 'Edit Catalog Equipment' : 'Add New Commercial & Residential Equipment'}
@@ -315,7 +315,7 @@ export const CatalogManagerTab: React.FC = () => {
                 />
               </div>
 
-              <div className="flex items-center justify-end gap-3 pt-4 border-t border-white/8">
+              <div className="flex items-center justify-end gap-3 pt-4 border-t border-white/10">
                 <button
                   type="button"
                   onClick={() => setIsModalOpen(false)}
