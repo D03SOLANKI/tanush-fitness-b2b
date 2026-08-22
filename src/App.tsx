@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import Lenis from 'lenis';
 import { AppProvider, useApp } from './context/AppContext';
 import { BottomNavDock } from './components/common/BottomNavDock';
 import { Footer } from './components/common/Footer';
@@ -15,6 +16,41 @@ import { AdminHeader } from './components/admin/AdminHeader';
 
 const MainContent: React.FC = () => {
   const { currentPage } = useApp();
+
+  useEffect(() => {
+    if (typeof window === 'undefined' || typeof window.matchMedia !== 'function') {
+      return;
+    }
+
+    try {
+      // Initialize buttery-smooth momentum / inertia scrolling (Vault experience)
+      const lenis = new Lenis({
+        duration: 1.1,
+        easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+        orientation: 'vertical',
+        gestureOrientation: 'vertical',
+        smoothWheel: true,
+        wheelMultiplier: 1,
+        touchMultiplier: 1.5,
+        infinite: false,
+      });
+
+      let rafId: number;
+      function raf(time: number) {
+        lenis.raf(time);
+        rafId = requestAnimationFrame(raf);
+      }
+
+      rafId = requestAnimationFrame(raf);
+
+      return () => {
+        cancelAnimationFrame(rafId);
+        lenis.destroy();
+      };
+    } catch {
+      // Fallback gracefully
+    }
+  }, []);
 
   const renderPage = () => {
     switch (currentPage) {

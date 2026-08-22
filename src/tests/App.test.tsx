@@ -1,8 +1,23 @@
 import React from 'react';
-import { describe, it, expect } from 'vitest';
+import { describe, it, expect, beforeAll } from 'vitest';
 import { render, screen } from '@testing-library/react';
 import App from '../App';
 import { normalizeUserList } from '../context/AppContext';
+
+beforeAll(() => {
+  if (typeof window !== 'undefined' && !window.matchMedia) {
+    window.matchMedia = (query: string) => ({
+      matches: false,
+      media: query,
+      onchange: null,
+      addListener: () => {},
+      removeListener: () => {},
+      addEventListener: () => {},
+      removeEventListener: () => {},
+      dispatchEvent: () => false,
+    }) as any;
+  }
+});
 
 describe('Tanush Fitness B2B Platform Tests', () => {
   it('renders the B2B marketplace brand heading', () => {
