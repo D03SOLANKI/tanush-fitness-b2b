@@ -204,9 +204,9 @@ export const HomePage: React.FC = () => {
           </div>
         </div>
 
-        {/* 🌊 3. HORIZONTAL BEYOND FITNESS MARQUEE (SHARP, CRISP & FAST) */}
+        {/* 🌊 3. HORIZONTAL BEYOND FITNESS MARQUEE (REFINED TEXT SIZE & CALM SPEED) */}
         <div className="w-full overflow-hidden py-3 sm:py-5 z-10 select-none pointer-events-none">
-          <div className="flex items-center gap-12 sm:gap-16 animate-marquee whitespace-nowrap font-satoshi font-black text-2xl sm:text-3xl md:text-4xl lg:text-[40px] tracking-[0.25em] text-white/50 uppercase">
+          <div className="flex items-center gap-10 sm:gap-14 animate-marquee whitespace-nowrap font-satoshi font-extrabold text-base sm:text-lg md:text-xl lg:text-[22px] tracking-[0.24em] text-white/55 uppercase">
             <span>✦ BEYOND FITNESS ✦ BEYOND FITNESS ✦ BEYOND FITNESS ✦ BEYOND FITNESS ✦</span>
             <span>✦ BEYOND FITNESS ✦ BEYOND FITNESS ✦ BEYOND FITNESS ✦ BEYOND FITNESS ✦</span>
           </div>
