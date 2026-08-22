@@ -510,26 +510,7 @@ export const HomePage: React.FC = () => {
       </section>
 
       {/* ========================================================================= */}
-      {/* SECTION 6: CORPORATE PARTNERSHIPS & CERTIFICATIONS                        */}
-      {/* ========================================================================= */}
-      <section className="py-14 border-b border-white/5 bg-[#05070A]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center mb-6">
-          <div className="text-[10px] sm:text-[11px] font-mono tracking-[0.3em] text-[#D26539] uppercase">
-            CORPORATE PARTNERSHIPS & CERTIFICATIONS
-          </div>
-          <h2 className="font-satoshi text-xl sm:text-3xl font-extrabold uppercase text-white tracking-tight mt-1.5">
-            GLOBAL MACHINERY & TECHNICAL AFFILIATES
-          </h2>
-        </div>
-        <MarqueeStrip
-          items={['MATRIX FITNESS', 'PRECOR USA', 'TORQUE FITNESS', 'CONCEPT 2', 'ELEIKO OLYMPIC', 'HYPERICE RECOVERY', 'THOR GYM TECH', 'TRAINING WALL']}
-          speed="normal"
-          theme="minimal"
-        />
-      </section>
-
-      {/* ========================================================================= */}
-      {/* SECTION 7: VAULT-STYLE SPLIT SCREEN INTAKE FORM                           */}
+      {/* SECTION 6: VAULT-STYLE SPLIT SCREEN INTAKE FORM                           */}
       {/* ========================================================================= */}
       <VaultContactFormSection />
 

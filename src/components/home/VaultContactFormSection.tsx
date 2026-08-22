@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { useApp } from '../../context/AppContext';
-import { MarqueeStrip } from '../common/MarqueeStrip';
-import { CheckCircle2, ArrowRight } from 'lucide-react';
+import { CheckCircle2 } from 'lucide-react';
 
 export const VaultContactFormSection: React.FC = () => {
   const { showToast } = useApp();
@@ -25,23 +24,13 @@ export const VaultContactFormSection: React.FC = () => {
   };
 
   return (
-    <section id="contact-form" className="relative bg-[#26452D] overflow-hidden">
+    <section id="contact-form" className="relative bg-[#26452D] overflow-hidden border-t border-white/10">
       {/* ========================================================================= */}
-      {/* TOP SLANTED / DIAGONAL RUNNING MARQUEE BANNER                             */}
+      {/* 50/50 SPLIT SCREEN LAYOUT (EXPANDED TO FULL AVAILABLE SPACE)              */}
       {/* ========================================================================= */}
-      <div className="relative z-20 overflow-hidden py-2 bg-[#D26539] -rotate-1 scale-105 border-y border-white/20 shadow-xl">
-        <div className="flex items-center gap-8 animate-marquee whitespace-nowrap font-satoshi font-extrabold text-xs sm:text-sm uppercase tracking-[0.25em] text-white">
-          <span>✦ CONTACT US ✦ REQUEST PROPOSAL ✦ TANUSH SANCTUARY ✦ COMMERCIAL OUTFITTING ✦ CONTACT US ✦ REQUEST PROPOSAL ✦</span>
-          <span>✦ CONTACT US ✦ REQUEST PROPOSAL ✦ TANUSH SANCTUARY ✦ COMMERCIAL OUTFITTING ✦ CONTACT US ✦ REQUEST PROPOSAL ✦</span>
-        </div>
-      </div>
-
-      {/* ========================================================================= */}
-      {/* 50/50 SPLIT SCREEN LAYOUT (EXACT VAULT INSPIRATION)                       */}
-      {/* ========================================================================= */}
-      <div className="grid grid-cols-1 lg:grid-cols-12 min-h-[90vh]">
+      <div className="grid grid-cols-1 lg:grid-cols-12 min-h-screen">
         {/* LEFT COLUMN: FULL-BLEED ATHLETIC & SANCTUARY IMAGERY */}
-        <div className="lg:col-span-6 relative min-h-[420px] lg:min-h-full overflow-hidden">
+        <div className="lg:col-span-6 relative min-h-[440px] lg:min-h-full overflow-hidden">
           <img
             src="https://images.unsplash.com/photo-1517838277536-f5f99be501cd?auto=format&fit=crop&w=1200&q=80"
             alt="Tanush Fitness Sanctuary Strength Athlete"
