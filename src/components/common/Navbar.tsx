@@ -46,9 +46,9 @@ export const Navbar: React.FC = () => {
   const navLinks: { label: string; page: PageType; subtitle: string; icon: React.ReactNode }[] = [
     { label: 'Overview', page: 'home', subtitle: 'Sanctuary & Flagship Hub', icon: <Sparkles className="w-4 h-4" /> },
     { label: 'Services', page: 'services', subtitle: '360° Turnkey Architecture & Setup', icon: <Briefcase className="w-4 h-4" /> },
-    { label: 'Equipment Sanctuary', page: 'equipment', subtitle: 'Biomechanical Machines & Rigs', icon: <Dumbbell className="w-4 h-4" /> },
-    { label: 'Master Staffing', page: 'manpower', subtitle: 'Certified Trainers & Operation Leads', icon: <Users className="w-4 h-4" /> },
-    { label: 'Vision & Legacy', page: 'about', subtitle: 'Manufacturing Philosophy', icon: <Compass className="w-4 h-4" /> },
+    { label: 'Equipment', page: 'equipment', subtitle: 'Biomechanical Machines & Rigs', icon: <Dumbbell className="w-4 h-4" /> },
+    { label: 'Manpower', page: 'manpower', subtitle: 'Certified Trainers & Operation Leads', icon: <Users className="w-4 h-4" /> },
+    { label: 'About', page: 'about', subtitle: 'Vision, Legacy & What/Why Tanush', icon: <Compass className="w-4 h-4" /> },
     { label: 'VIP Consultation', page: 'contact', subtitle: 'Direct Outfitting Procurement', icon: <Phone className="w-4 h-4" /> },
   ];
 
@@ -189,7 +189,7 @@ export const Navbar: React.FC = () => {
                   currentPage === 'about' ? 'text-[#C5A880]' : 'text-slate-300 hover:text-white'
                 }`}
               >
-                Story
+                About
                 {currentPage === 'about' && (
                   <span className="absolute bottom-0 left-0 right-0 h-[2px] bg-[#C5A880] rounded-full" />
                 )}

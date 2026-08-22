@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useApp } from '../context/AppContext';
 import { ShieldCheck, Target, Eye, Award, Building2, Users, ArrowRight, CheckCircle2, Sparkles, Phone, Compass, Cpu, Wrench, Briefcase } from 'lucide-react';
 import { SEO } from '../components/common/SEO';
@@ -6,6 +6,7 @@ import { MarqueeStrip } from '../components/common/MarqueeStrip';
 
 export const AboutPage: React.FC = () => {
   const { navigateTo } = useApp();
+  const [activeTab, setActiveTab] = useState<'what' | 'why'>('what');
 
   return (
     <main className="pt-24 pb-20 bg-[#090C10] min-h-screen text-[#E2E8F0] luxury-noise">
@@ -47,46 +48,102 @@ export const AboutPage: React.FC = () => {
       {/* Marquee Banner */}
       <MarqueeStrip theme="gold" speed="slow" />
 
-      {/* Editorial Story Section */}
+      {/* Editorial Story & Vault-Style Vision Tabs */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 space-y-16">
-        {/* Story Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-          <div className="lg:col-span-6 space-y-6">
-            <span className="text-xs font-mono text-[#C5A880] uppercase tracking-widest block">
-              PRECISION BIOMECHANICS & HEAVY STEEL
-            </span>
-            <h2 className="font-syne text-2xl sm:text-4xl font-extrabold text-white uppercase leading-tight">
-              Engineering Sanctuaries for Human Potential
-            </h2>
-            <p className="text-slate-400 text-sm sm:text-base font-sans leading-relaxed">
-              Tanush Fitness was founded on a singular standard: commercial fitness machinery must endure relentless industrial load while executing biomechanically flawless converging movement arcs.
-            </p>
-            <p className="text-slate-400 text-sm sm:text-base font-sans leading-relaxed">
-              From our robotic laser-welding plants to our turnkey 3D architectural acoustic studios, we deliver end-to-end infrastructure for India’s most distinguished health clubs, luxury resorts, and high-performance training centers.
-            </p>
+        {/* Interactive What is Tanush vs Why Tanush Section */}
+        <div className="bg-[#0D1118] border border-white/10 rounded-3xl p-8 sm:p-12 space-y-8">
+          <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6 border-b border-white/10 pb-6">
+            <div className="space-y-1">
+              <span className="text-[11px] font-mono tracking-[0.25em] text-[#C5A880] uppercase">
+                THE TANUSH PHILOSOPHY
+              </span>
+              <h2 className="font-syne text-2xl sm:text-3xl font-extrabold text-white uppercase">
+                {activeTab === 'what' ? 'What is Tanush Fitness?' : 'Why Choose Tanush Fitness?'}
+              </h2>
+            </div>
 
-            <div className="grid grid-cols-2 gap-4 pt-4 font-mono text-xs text-slate-300">
-              <div className="bg-[#0D1118] border border-white/10 p-4 rounded-xl">
-                <span className="text-[#C5A880] font-bold block text-2xl font-syne mb-1">500+</span>
-                <span className="text-slate-400 text-[10px] uppercase">COMMERCIAL FACILITIES OUTFITTED</span>
-              </div>
-              <div className="bg-[#0D1118] border border-white/10 p-4 rounded-xl">
-                <span className="text-[#C5A880] font-bold block text-2xl font-syne mb-1">11-GAUGE</span>
-                <span className="text-slate-400 text-[10px] uppercase">STRUCTURAL LASER CUT STEEL</span>
-              </div>
+            <div className="flex items-center gap-2 p-1.5 rounded-full bg-[#090C10] border border-white/10">
+              <button
+                type="button"
+                onClick={() => setActiveTab('what')}
+                className={`px-6 py-2 rounded-full text-xs font-mono uppercase tracking-wider transition ${
+                  activeTab === 'what'
+                    ? 'bg-[#C5A880] text-[#090C10] font-bold shadow-md'
+                    : 'text-slate-400 hover:text-white'
+                }`}
+              >
+                What is Tanush?
+              </button>
+              <button
+                type="button"
+                onClick={() => setActiveTab('why')}
+                className={`px-6 py-2 rounded-full text-xs font-mono uppercase tracking-wider transition ${
+                  activeTab === 'why'
+                    ? 'bg-[#C5A880] text-[#090C10] font-bold shadow-md'
+                    : 'text-slate-400 hover:text-white'
+                }`}
+              >
+                Why Tanush?
+              </button>
             </div>
           </div>
 
-          <div className="lg:col-span-6">
-            <div className="relative rounded-3xl overflow-hidden border border-white/10 bg-[#0D1118]">
-              <img
-                src="https://images.unsplash.com/photo-1540497077202-7c8a3999166f?auto=format&fit=crop&w=1200&q=80"
-                alt="Tanush Manufacturing & Sanctuary"
-                className="w-full h-[450px] object-cover opacity-90 hover:scale-105 transition-transform duration-700"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#090C10] via-transparent to-transparent opacity-80" />
-              <div className="absolute bottom-6 left-6 right-6 p-4 rounded-2xl bg-[#090C10]/80 backdrop-blur-md border border-white/10 text-xs font-mono text-[#C5A880]">
-                ISO 9001:2015 CERTIFIED PRECISION LASER MANUFACTURING FACILITY
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+            <div className="lg:col-span-7 space-y-6">
+              {activeTab === 'what' ? (
+                <div className="space-y-4 text-slate-300 font-sans leading-relaxed text-sm sm:text-base">
+                  <p>
+                    Introducing India's premier commercial fitness sanctuary & outfitting brand: <span className="text-white font-bold">Tanush Fitness</span>, where precision biomechanical engineering and commercial strength take center stage.
+                  </p>
+                  <p>
+                    At Tanush, we redefine the fitness outfitting landscape with state-of-the-art 11-gauge laser-cut equipment, certified trainer placements, and bespoke 3D CAD facility design.
+                  </p>
+                  <p>
+                    Our commitment goes beyond machinery; we offer a holistic <span className="text-[#C5A880] font-bold">360-degree turnkey solution</span> to transform empty commercial square footage into world-class athletic destinations.
+                  </p>
+                </div>
+              ) : (
+                <div className="space-y-4 text-slate-300 font-sans leading-relaxed text-sm sm:text-base">
+                  <p>
+                    As a testament to unwavering commitment to quality and athletic excellence, <span className="text-white font-bold">Tanush Fitness</span> redefines the B2B procurement experience.
+                  </p>
+                  <p>
+                    With direct-from-factory pricing, 100% GST 18% Input Tax Credit invoicing, zero middleman markups, and dedicated master coach recruitment, Tanush is the trusted infrastructure partner for over 500+ commercial clubs nationwide.
+                  </p>
+                  <div className="p-4 rounded-xl bg-white/5 border border-white/10 font-mono text-xs text-[#C5A880] italic">
+                    "Tanush Fitness is not merely an equipment vendor; it is an end-to-end commercial infrastructure partner built for gym owners who demand perfection."
+                  </div>
+                </div>
+              )}
+
+              <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 pt-4 font-mono text-xs text-slate-300 border-t border-white/5">
+                <div>
+                  <span className="text-[#C5A880] font-bold block text-xl font-syne">500+</span>
+                  <span className="text-slate-400 text-[10px] uppercase">CLUBS OUTFITTED</span>
+                </div>
+                <div>
+                  <span className="text-[#C5A880] font-bold block text-xl font-syne">11-GAUGE</span>
+                  <span className="text-slate-400 text-[10px] uppercase">PRECISION STEEL</span>
+                </div>
+                <div>
+                  <span className="text-[#C5A880] font-bold block text-xl font-syne">ISO 9001</span>
+                  <span className="text-slate-400 text-[10px] uppercase">CERTIFIED PLANT</span>
+                </div>
+              </div>
+            </div>
+
+            <div className="lg:col-span-5">
+              <div className="relative rounded-2xl overflow-hidden border border-white/10 h-72 sm:h-96">
+                <img
+                  src={
+                    activeTab === 'what'
+                      ? 'https://images.unsplash.com/photo-1540497077202-7c8a3999166f?auto=format&fit=crop&w=800&q=80'
+                      : 'https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=800&q=80'
+                  }
+                  alt="Tanush Fitness Architecture"
+                  className="w-full h-full object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#090C10] via-transparent to-transparent opacity-60" />
               </div>
             </div>
           </div>
