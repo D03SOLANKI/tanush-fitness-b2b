@@ -20,9 +20,9 @@ export const Badge: React.FC<BadgeProps> = ({
     : "px-3.5 py-1 text-xs sm:text-sm";
 
   const variantStyles = {
-    gold: "bg-blue-50 text-blue-600 border border-blue-200/80 shadow-[0_2px_10px_rgba(59,130,246,0.15)]",
-    dark: "bg-slate-900 text-white border border-slate-800",
-    outline: "bg-white text-slate-600 border border-slate-200",
+    gold: "bg-[#D26539]/10 text-[#D26539] border border-[#D26539]/20/80 shadow-[0_2px_10px_rgba(59,130,246,0.15)]",
+    dark: "bg-[#090C10] text-white border border-white/10",
+    outline: "bg-[#1A2018] text-[#7A7268] border border-white/10",
     green: "bg-emerald-50 text-emerald-700 border border-emerald-200",
   };
 

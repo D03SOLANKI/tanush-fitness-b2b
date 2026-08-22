@@ -36,7 +36,7 @@ export const MarqueeStrip: React.FC<MarqueeStripProps> = ({
       case 'green':
         return 'bg-[#26452D] text-[#ECE6DB] py-3 sm:py-3.5 border-y border-[#3A563F]';
       case 'minimal':
-        return 'bg-transparent text-slate-400 border-y border-white/5 py-3';
+        return 'bg-transparent text-[#A8A090] border-y border-white/5 py-3';
       default:
         return 'bg-[#0D1118] text-[#D26539] border-y border-white/5 py-3';
     }
@@ -54,7 +54,7 @@ export const MarqueeStrip: React.FC<MarqueeStripProps> = ({
         {repeated.map((text, idx) => (
           <div
             key={idx}
-            className={`flex items-center gap-6 mx-6 font-syne text-xs sm:text-sm font-black tracking-[0.2em] sm:tracking-[0.25em] uppercase whitespace-nowrap ${
+            className={`flex items-center gap-6 mx-6 font-satoshi text-xs sm:text-sm font-black tracking-[0.2em] sm:tracking-[0.25em] uppercase whitespace-nowrap ${
               theme === 'orange' || theme === 'gold' ? 'text-[#090C10]' : ''
             }`}
           >

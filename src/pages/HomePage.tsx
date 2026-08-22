@@ -217,7 +217,7 @@ export const HomePage: React.FC = () => {
           <button
             type="button"
             onClick={() => navigateTo('equipment')}
-            className="border border-white/40 hover:border-white text-white font-general text-[11px] sm:text-xs uppercase tracking-[0.25em] font-semibold px-8 py-3 rounded-none transition-all duration-300 hover:bg-white hover:text-[#26452D] flex items-center gap-2.5 group shadow-lg cursor-pointer"
+            className="border border-white/40 hover:border-white text-white font-satoshi text-[11px] sm:text-xs uppercase tracking-[0.25em] font-semibold px-8 py-3 rounded-none transition-all duration-300 hover:bg-[#1A2018] hover:text-[#26452D] flex items-center gap-2.5 group shadow-lg cursor-pointer"
           >
             <span>JOIN TANUSH</span>
             <ArrowUpRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
@@ -258,14 +258,14 @@ export const HomePage: React.FC = () => {
             </div>
 
             {/* Vision Tab Buttons */}
-            <div className="flex items-center gap-1.5 p-1 rounded-full bg-[#0D1118] border border-white/10 font-general text-xs uppercase tracking-wider">
+            <div className="flex items-center gap-1.5 p-1 rounded-full bg-[#0D1118] border border-white/10 font-satoshi text-xs uppercase tracking-wider">
               <button
                 type="button"
                 onClick={() => setVisionTab('what')}
                 className={`px-5 py-2 rounded-full transition ${
                   visionTab === 'what'
                     ? 'bg-[#D26539] text-white font-bold shadow-md'
-                    : 'text-slate-400 hover:text-white'
+                    : 'text-[#A8A090] hover:text-white'
                 }`}
               >
                 What is Tanush?
@@ -276,7 +276,7 @@ export const HomePage: React.FC = () => {
                 className={`px-5 py-2 rounded-full transition ${
                   visionTab === 'why'
                     ? 'bg-[#D26539] text-white font-bold shadow-md'
-                    : 'text-slate-400 hover:text-white'
+                    : 'text-[#A8A090] hover:text-white'
                 }`}
               >
                 Why Tanush?
@@ -288,7 +288,7 @@ export const HomePage: React.FC = () => {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
             <div className="lg:col-span-7 space-y-5">
               {visionTab === 'what' ? (
-                <div className="space-y-4 text-slate-300 font-manrope text-sm sm:text-base leading-relaxed">
+                <div className="space-y-4 text-[#A8A090] font-satoshi text-sm sm:text-base leading-relaxed">
                   <p>
                     Introducing India's premier commercial fitness sanctuary & outfitting brand: <span className="text-[#D26539] font-bold">Tanush Fitness</span>, where precision engineering reaches new heights and commercial strength takes center stage.
                   </p>
@@ -307,11 +307,11 @@ export const HomePage: React.FC = () => {
                   </div>
                 </div>
               ) : (
-                <div className="space-y-4 text-slate-300 font-manrope text-sm sm:text-base leading-relaxed">
+                <div className="space-y-4 text-[#A8A090] font-satoshi text-sm sm:text-base leading-relaxed">
                   <p>
                     As a testament to unwavering commitment to biomechanical excellence, <span className="text-[#D26539] font-bold">Tanush Fitness</span> aims to redefine commercial fitness spaces by offering direct factory procurement, 18% GST Input Tax Credit invoicing, zero middleman trading markups, and verified trainer placement pipelines.
                   </p>
-                  <blockquote className="p-5 rounded-2xl bg-[#0D1118] border-l-4 border-[#D26539] text-slate-200 italic font-serif text-base leading-relaxed">
+                  <blockquote className="p-5 rounded-none bg-[#0D1118] border-l-4 border-[#D26539] text-[#D8CDC0] italic font-satoshi text-base leading-relaxed">
                     "Tanush Fitness is not merely an equipment vendor; it is an end-to-end commercial infrastructure partner built for gym owners who demand perfection in every square foot."
                   </blockquote>
                   <div className="pt-2">
@@ -329,7 +329,7 @@ export const HomePage: React.FC = () => {
             </div>
 
             <div className="lg:col-span-5 relative">
-              <div className="relative rounded-3xl overflow-hidden border border-white/10 shadow-2xl group bg-[#0D1118]">
+              <div className="relative rounded-none overflow-hidden border border-white/10 shadow-2xl group bg-[#0D1118]">
                 <img
                   src="https://images.unsplash.com/photo-1540497077202-7c8a3999166f?auto=format&fit=crop&w=1000&q=80"
                   alt="Tanush Fitness Sanctuary Vision"
@@ -359,7 +359,7 @@ export const HomePage: React.FC = () => {
               <h2 className="font-satoshi text-2xl sm:text-4xl lg:text-[38px] font-extrabold uppercase text-white tracking-tight">
                 THREE PILLARS OF GYM OUTFITTING
               </h2>
-              <p className="text-xs sm:text-sm text-slate-400 font-manrope max-w-2xl mt-1 leading-relaxed">
+              <p className="text-xs sm:text-sm text-[#A8A090] font-satoshi max-w-2xl mt-1 leading-relaxed">
                 Complete commercial & residential equipment supply, 3D turnkey gym management, and verified manpower recruitment.
               </p>
             </div>
@@ -379,7 +379,7 @@ export const HomePage: React.FC = () => {
               return (
                 <div
                   key={pillar.id}
-                  className="bg-[#0D1118] border border-white/10 rounded-2xl overflow-hidden luxury-card flex flex-col justify-between group"
+                  className="bg-[#0D1118] border border-white/10 rounded-none overflow-hidden luxury-card flex flex-col justify-between group"
                 >
                   <div>
                     <div
@@ -417,11 +417,11 @@ export const HomePage: React.FC = () => {
                         </p>
                       </div>
 
-                      <p className="text-xs sm:text-sm text-slate-300 font-manrope leading-relaxed">
+                      <p className="text-xs sm:text-sm text-[#A8A090] font-satoshi leading-relaxed">
                         {pillar.description}
                       </p>
 
-                      <div className="space-y-2 pt-3 border-t border-white/5 font-mono text-xs text-slate-300">
+                      <div className="space-y-2 pt-3 border-t border-white/5 font-mono text-xs text-[#A8A090]">
                         {pillar.points.map((pt, ptIdx) => (
                           <div key={ptIdx} className="flex items-center gap-2">
                             <CheckCircle2 className="w-3.5 h-3.5 text-[#D26539]" />
@@ -477,7 +477,7 @@ export const HomePage: React.FC = () => {
             {USP_CARDS.map((card) => (
               <div
                 key={card.id}
-                className="bg-[#0D1118] border border-white/10 rounded-2xl p-6 space-y-4 luxury-card flex flex-col justify-between group"
+                className="bg-[#0D1118] border border-white/10 rounded-none p-6 space-y-4 luxury-card flex flex-col justify-between group"
               >
                 <div className="space-y-3">
                   <div className="w-12 h-12 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center group-hover:border-[#D26539] transition-colors">
@@ -488,7 +488,7 @@ export const HomePage: React.FC = () => {
                     {card.title}
                   </h3>
 
-                  <p className="text-xs text-slate-400 font-manrope leading-relaxed">
+                  <p className="text-xs text-[#A8A090] font-satoshi leading-relaxed">
                     {card.description}
                   </p>
                 </div>
@@ -497,7 +497,7 @@ export const HomePage: React.FC = () => {
                   {card.brands.map((b, bIdx) => (
                     <span
                       key={bIdx}
-                      className="px-2 py-0.5 rounded bg-white/5 text-[10px] font-mono text-slate-300"
+                      className="px-2 py-0.5 rounded bg-white/5 text-[10px] font-mono text-[#A8A090]"
                     >
                       {b}
                     </span>

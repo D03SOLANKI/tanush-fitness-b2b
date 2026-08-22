@@ -57,28 +57,28 @@ export const Navbar: React.FC = () => {
   return (
     <>
       {/* Top Utility Bar - Vault Precision Tone */}
-      <div className="w-full bg-[#05070A] text-slate-400 border-b border-white/5 font-mono text-[11px] select-none z-40 relative">
+      <div className="w-full bg-[#05070A] text-[#A8A090] border-b border-white/5 font-mono text-[11px] select-none z-40 relative">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-8 flex items-center justify-between gap-4">
           <div className="flex items-center gap-4">
             <a
               href="tel:+919067800048"
-              className="flex items-center gap-1.5 text-slate-300 hover:text-[#D26539] transition-colors font-bold whitespace-nowrap"
+              className="flex items-center gap-1.5 text-[#A8A090] hover:text-[#D26539] transition-colors font-bold whitespace-nowrap"
             >
               <Phone className="w-3 h-3 text-[#D26539]" />
               <span>+91 90678 00048</span>
-              <span className="text-slate-500 font-normal hidden sm:inline">(Commercial Outfitting Desk)</span>
+              <span className="text-[#6B6358] font-normal hidden sm:inline">(Commercial Outfitting Desk)</span>
             </a>
 
             <span className="text-white/10 hidden sm:inline">•</span>
 
-            <div className="hidden sm:flex items-center gap-1.5 text-slate-400 whitespace-nowrap">
+            <div className="hidden sm:flex items-center gap-1.5 text-[#A8A090] whitespace-nowrap">
               <ShieldCheck className="w-3.5 h-3.5 text-[#D26539]" />
               <span>100% Commercial GST Invoicing (18% ITC)</span>
             </div>
           </div>
 
           <div className="flex items-center gap-4 whitespace-nowrap">
-            <div className="hidden md:flex items-center gap-1.5 text-slate-300">
+            <div className="hidden md:flex items-center gap-1.5 text-[#A8A090]">
               <CheckCircle2 className="w-3.5 h-3.5 text-[#3A563F]" />
               <span>Pan-India Turnkey Assembly</span>
             </div>
@@ -87,9 +87,9 @@ export const Navbar: React.FC = () => {
 
             <a
               href="mailto:Info@tanushfitness.com"
-              className="flex items-center gap-1.5 text-slate-400 hover:text-white transition-colors"
+              className="flex items-center gap-1.5 text-[#A8A090] hover:text-white transition-colors"
             >
-              <Mail className="w-3.5 h-3.5 text-slate-500" />
+              <Mail className="w-3.5 h-3.5 text-[#6B6358]" />
               <span>Info@tanushfitness.com</span>
             </a>
           </div>
@@ -112,10 +112,10 @@ export const Navbar: React.FC = () => {
               className="flex items-center gap-3 cursor-pointer group select-none"
             >
               <div className="w-10 h-10 rounded-full bg-gradient-to-br from-[#1B2232] to-[#0D1117] border border-[#D26539]/40 flex items-center justify-center shadow-lg group-hover:border-[#D26539] transition-colors">
-                <span className="font-syne font-black text-lg text-[#D26539]">T</span>
+                <span className="font-satoshi font-black text-lg text-[#D26539]">T</span>
               </div>
               <div className="flex flex-col">
-                <span className="font-syne font-black text-lg tracking-[0.12em] text-[#ECE6DB] group-hover:text-white uppercase leading-none">
+                <span className="font-satoshi font-black text-lg tracking-[0.12em] text-[#ECE6DB] group-hover:text-white uppercase leading-none">
                   TANUSH
                 </span>
                 <span className="text-[9px] font-mono tracking-[0.3em] text-[#D26539] uppercase mt-0.5">
@@ -130,7 +130,7 @@ export const Navbar: React.FC = () => {
                 type="button"
                 onClick={() => handleNav('home')}
                 className={`transition-colors py-1 relative ${
-                  currentPage === 'home' ? 'text-[#D26539]' : 'text-slate-300 hover:text-white'
+                  currentPage === 'home' ? 'text-[#D26539]' : 'text-[#A8A090] hover:text-white'
                 }`}
               >
                 Overview
@@ -143,7 +143,7 @@ export const Navbar: React.FC = () => {
                 type="button"
                 onClick={() => handleNav('services')}
                 className={`transition-colors py-1 relative ${
-                  currentPage === 'services' ? 'text-[#D26539]' : 'text-slate-300 hover:text-white'
+                  currentPage === 'services' ? 'text-[#D26539]' : 'text-[#A8A090] hover:text-white'
                 }`}
               >
                 Services
@@ -156,7 +156,7 @@ export const Navbar: React.FC = () => {
                 type="button"
                 onClick={() => handleNav('equipment')}
                 className={`transition-colors py-1 relative ${
-                  currentPage === 'equipment' ? 'text-[#D26539]' : 'text-slate-300 hover:text-white'
+                  currentPage === 'equipment' ? 'text-[#D26539]' : 'text-[#A8A090] hover:text-white'
                 }`}
               >
                 Equipment
@@ -169,7 +169,7 @@ export const Navbar: React.FC = () => {
                 type="button"
                 onClick={() => handleNav('manpower')}
                 className={`transition-colors py-1 relative ${
-                  currentPage === 'manpower' ? 'text-[#D26539]' : 'text-slate-300 hover:text-white'
+                  currentPage === 'manpower' ? 'text-[#D26539]' : 'text-[#A8A090] hover:text-white'
                 }`}
               >
                 Manpower
@@ -182,7 +182,7 @@ export const Navbar: React.FC = () => {
                 type="button"
                 onClick={() => handleNav('about')}
                 className={`transition-colors py-1 relative ${
-                  currentPage === 'about' ? 'text-[#D26539]' : 'text-slate-300 hover:text-white'
+                  currentPage === 'about' ? 'text-[#D26539]' : 'text-[#A8A090] hover:text-white'
                 }`}
               >
                 About
@@ -198,7 +198,7 @@ export const Navbar: React.FC = () => {
               <button
                 type="button"
                 onClick={() => setIsEnquiryCartOpen(true)}
-                className="relative p-2.5 rounded-full bg-white/5 hover:bg-white/10 text-slate-300 hover:text-[#D26539] border border-white/5 transition"
+                className="relative p-2.5 rounded-full bg-white/5 hover:bg-white/10 text-[#A8A090] hover:text-[#D26539] border border-white/5 transition"
                 title="Commercial Outfitting RFQ Cart"
               >
                 <FileText className="w-4 h-4" />
@@ -223,7 +223,7 @@ export const Navbar: React.FC = () => {
               <button
                 type="button"
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
-                className="p-2.5 rounded-full bg-white/5 hover:bg-white/10 text-slate-300 hover:text-white border border-white/10 transition"
+                className="p-2.5 rounded-full bg-white/5 hover:bg-white/10 text-[#A8A090] hover:text-white border border-white/10 transition"
                 aria-label="Toggle Navigation Menu"
               >
                 {isMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
@@ -250,10 +250,10 @@ export const Navbar: React.FC = () => {
                 className="flex items-center gap-3 cursor-pointer"
               >
                 <div className="w-10 h-10 rounded-full bg-gradient-to-br from-[#1B2232] to-[#0D1117] border border-[#D26539]/40 flex items-center justify-center shadow-lg">
-                  <span className="font-syne font-black text-lg text-[#D26539]">T</span>
+                  <span className="font-satoshi font-black text-lg text-[#D26539]">T</span>
                 </div>
                 <div className="flex flex-col">
-                  <span className="font-syne font-black text-lg tracking-[0.12em] text-[#ECE6DB] uppercase">
+                  <span className="font-satoshi font-black text-lg tracking-[0.12em] text-[#ECE6DB] uppercase">
                     TANUSH
                   </span>
                   <span className="text-[9px] font-mono tracking-[0.3em] text-[#D26539] uppercase">
@@ -265,7 +265,7 @@ export const Navbar: React.FC = () => {
               <button
                 type="button"
                 onClick={() => setIsMenuOpen(false)}
-                className="p-3 rounded-full bg-white/5 border border-white/10 text-slate-300 hover:text-white transition"
+                className="p-3 rounded-full bg-white/5 border border-white/10 text-[#A8A090] hover:text-white transition"
               >
                 <X className="w-6 h-6" />
               </button>
@@ -278,21 +278,21 @@ export const Navbar: React.FC = () => {
                   <div
                     key={link.label}
                     onClick={() => handleNav(link.page)}
-                    className="p-6 rounded-2xl bg-[#0D1118] border border-white/10 hover:border-[#D26539] transition-all cursor-pointer group flex items-start justify-between"
+                    className="p-6 rounded-none bg-[#0D1118] border border-white/10 hover:border-[#D26539] transition-all cursor-pointer group flex items-start justify-between"
                   >
                     <div className="space-y-1">
                       <div className="flex items-center gap-3">
                         <span className="text-xs font-mono text-[#D26539]">0{idx + 1}</span>
-                        <h3 className="font-syne text-xl sm:text-2xl font-bold uppercase text-slate-200 group-hover:text-white transition">
+                        <h3 className="font-satoshi text-xl sm:text-2xl font-bold uppercase text-[#D8CDC0] group-hover:text-white transition">
                           {link.label}
                         </h3>
                       </div>
-                      <p className="text-xs text-slate-400 font-sans pl-7">
+                      <p className="text-xs text-[#A8A090] font-sans pl-7">
                         {link.subtitle}
                       </p>
                     </div>
 
-                    <div className="w-8 h-8 rounded-full bg-white/5 flex items-center justify-center text-slate-400 group-hover:text-[#D26539] group-hover:bg-[#D26539]/10 transition">
+                    <div className="w-8 h-8 rounded-full bg-white/5 flex items-center justify-center text-[#A8A090] group-hover:text-[#D26539] group-hover:bg-[#D26539]/10 transition">
                       <ArrowRight className="w-4 h-4" />
                     </div>
                   </div>
@@ -301,7 +301,7 @@ export const Navbar: React.FC = () => {
             </div>
 
             {/* Bottom Contact & GST Info */}
-            <div className="border-t border-white/10 pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-mono text-slate-400">
+            <div className="border-t border-white/10 pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-mono text-[#A8A090]">
               <div className="flex items-center gap-4">
                 <span>GST: 07AAACT1234F1Z5</span>
                 <span>•</span>

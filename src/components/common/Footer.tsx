@@ -20,10 +20,10 @@ export const Footer: React.FC = () => {
               className="flex items-center gap-3 cursor-pointer group select-none"
             >
               <div className="w-10 h-10 rounded-full bg-gradient-to-br from-[#1B2232] to-[#0D1117] border border-[#D26539]/40 flex items-center justify-center shadow-lg group-hover:border-[#D26539] transition-colors">
-                <span className="font-syne font-black text-lg text-[#D26539]">T</span>
+                <span className="font-satoshi font-black text-lg text-[#D26539]">T</span>
               </div>
               <div className="flex flex-col">
-                <span className="font-syne font-black text-xl tracking-[0.12em] text-[#ECE6DB] group-hover:text-white uppercase leading-none">
+                <span className="font-satoshi font-black text-xl tracking-[0.12em] text-[#ECE6DB] group-hover:text-white uppercase leading-none">
                   TANUSH
                 </span>
                 <span className="text-[10px] font-mono tracking-[0.3em] text-[#D26539] uppercase mt-0.5">
@@ -32,11 +32,11 @@ export const Footer: React.FC = () => {
               </div>
             </div>
 
-            <p className="text-sm text-slate-400 leading-relaxed font-sans">
+            <p className="text-sm text-[#A8A090] leading-relaxed font-sans">
               India's premier commercial fitness destination & outfitting brand. Elevating physical and mental performance through world-class biomechanical engineering and custom sanctuary architecture.
             </p>
 
-            <div className="flex flex-wrap items-center gap-3 text-xs font-mono text-slate-400 pt-2">
+            <div className="flex flex-wrap items-center gap-3 text-xs font-mono text-[#A8A090] pt-2">
               <span className="flex items-center gap-1.5 text-[#D26539]">
                 <ShieldCheck className="w-4 h-4" /> ISO 9001:2015
               </span>
@@ -47,10 +47,10 @@ export const Footer: React.FC = () => {
 
           {/* Col 2: Navigation */}
           <div className="space-y-4 font-sans text-sm">
-            <h4 className="font-syne text-xs font-bold uppercase tracking-[0.2em] text-[#D26539]">
+            <h4 className="font-satoshi text-xs font-bold uppercase tracking-[0.2em] text-[#D26539]">
               Solutions
             </h4>
-            <ul className="space-y-2.5 text-slate-400">
+            <ul className="space-y-2.5 text-[#A8A090]">
               <li>
                 <button onClick={() => navigateTo('home')} className="hover:text-[#D26539] transition-colors text-left">
                   Overview
@@ -81,35 +81,35 @@ export const Footer: React.FC = () => {
 
           {/* Col 3: Core Procurement Pillars */}
           <div className="space-y-4 font-sans text-sm">
-            <h4 className="font-syne text-xs font-bold uppercase tracking-[0.2em] text-[#D26539]">
+            <h4 className="font-satoshi text-xs font-bold uppercase tracking-[0.2em] text-[#D26539]">
               Core Pillars
             </h4>
-            <ul className="space-y-2.5 text-slate-400">
+            <ul className="space-y-2.5 text-[#A8A090]">
               <li className="flex items-center justify-between group cursor-pointer hover:text-white" onClick={() => navigateTo('equipment')}>
                 <span>Commercial Machinery</span>
-                <ArrowUpRight className="w-3.5 h-3.5 text-slate-600 group-hover:text-[#D26539] transition" />
+                <ArrowUpRight className="w-3.5 h-3.5 text-[#7A7268] group-hover:text-[#D26539] transition" />
               </li>
               <li className="flex items-center justify-between group cursor-pointer hover:text-white" onClick={() => navigateTo('manpower')}>
                 <span>Certified Trainer Staffing</span>
-                <ArrowUpRight className="w-3.5 h-3.5 text-slate-600 group-hover:text-[#D26539] transition" />
+                <ArrowUpRight className="w-3.5 h-3.5 text-[#7A7268] group-hover:text-[#D26539] transition" />
               </li>
               <li className="flex items-center justify-between group cursor-pointer hover:text-white" onClick={() => navigateTo('services')}>
                 <span>3D Architectural Turnkey</span>
-                <ArrowUpRight className="w-3.5 h-3.5 text-slate-600 group-hover:text-[#D26539] transition" />
+                <ArrowUpRight className="w-3.5 h-3.5 text-[#7A7268] group-hover:text-[#D26539] transition" />
               </li>
               <li className="flex items-center justify-between group cursor-pointer hover:text-white" onClick={() => navigateTo('contact')}>
                 <span>Wholesale Project RFQs</span>
-                <ArrowUpRight className="w-3.5 h-3.5 text-slate-600 group-hover:text-[#D26539] transition" />
+                <ArrowUpRight className="w-3.5 h-3.5 text-[#7A7268] group-hover:text-[#D26539] transition" />
               </li>
             </ul>
           </div>
 
           {/* Col 4: Executive Contacts */}
           <div className="space-y-4 font-sans text-sm">
-            <h4 className="font-syne text-xs font-bold uppercase tracking-[0.2em] text-[#D26539]">
+            <h4 className="font-satoshi text-xs font-bold uppercase tracking-[0.2em] text-[#D26539]">
               Direct Contact
             </h4>
-            <div className="space-y-3 text-slate-400 text-xs">
+            <div className="space-y-3 text-[#A8A090] text-xs">
               <div className="flex items-start gap-3">
                 <MapPin className="w-4 h-4 text-[#D26539] shrink-0 mt-0.5" />
                 <span>Sector 62, Noida, Uttar Pradesh, 201309 (Flagship Experience Center)</span>
@@ -131,7 +131,7 @@ export const Footer: React.FC = () => {
         </div>
 
         {/* Bottom Utility Bar */}
-        <div className="pt-8 border-t border-white/5 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-mono text-slate-500">
+        <div className="pt-8 border-t border-white/5 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-mono text-[#6B6358]">
           <div className="flex items-center gap-6">
             <span>© 2026 Tanush Fitness Commercial Infrastructure. All rights reserved.</span>
           </div>

@@ -29,7 +29,7 @@ export const ContactPage: React.FC = () => {
               href="https://wa.me/919067800048?text=Hello%20Tanush%20Fitness,%20I%20want%20a%20commercial%20outfitting%20quotation."
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-[#0D1811] border border-white/15 hover:border-[#D26539] text-white px-5 py-2.5 rounded-full font-general text-xs uppercase tracking-wider flex items-center gap-2 transition"
+              className="bg-[#0D1811] border border-white/15 hover:border-[#D26539] text-white px-5 py-2.5 rounded-full font-satoshi text-xs uppercase tracking-wider flex items-center gap-2 transition"
             >
               <MessageSquare className="w-3.5 h-3.5 text-emerald-400" />
               <span>WhatsApp Factory Desk</span>
@@ -52,7 +52,7 @@ export const ContactPage: React.FC = () => {
       {/* Showroom & Logistics Hubs */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 border-t border-white/5">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          <div className="bg-[#0D1118] border border-white/10 rounded-2xl p-7 space-y-3">
+          <div className="bg-[#0D1118] border border-white/10 rounded-none p-7 space-y-3">
             <div className="flex items-center gap-2 text-[#D26539] font-mono text-xs uppercase tracking-wider">
               <MapPin className="w-4 h-4" />
               <span>National Showroom</span>
@@ -60,12 +60,12 @@ export const ContactPage: React.FC = () => {
             <h3 className="font-satoshi text-lg font-bold text-white uppercase">
               Tanush Experience Center
             </h3>
-            <p className="font-manrope text-xs text-slate-400 leading-relaxed">
+            <p className="font-satoshi text-xs text-[#A8A090] leading-relaxed">
               Industrial Area Phase 2, Okhla, New Delhi, Delhi 110020
             </p>
           </div>
 
-          <div className="bg-[#0D1118] border border-white/10 rounded-2xl p-7 space-y-3">
+          <div className="bg-[#0D1118] border border-white/10 rounded-none p-7 space-y-3">
             <div className="flex items-center gap-2 text-[#D26539] font-mono text-xs uppercase tracking-wider">
               <ShieldCheck className="w-4 h-4" />
               <span>Manufacturing Works</span>
@@ -73,12 +73,12 @@ export const ContactPage: React.FC = () => {
             <h3 className="font-satoshi text-lg font-bold text-white uppercase">
               Laser Steel Heavy Fabrication
             </h3>
-            <p className="font-manrope text-xs text-slate-400 leading-relaxed">
+            <p className="font-satoshi text-xs text-[#A8A090] leading-relaxed">
               Plot 42-45, Precision Engineering Zone, Meerut Industrial Corridor, UP
             </p>
           </div>
 
-          <div className="bg-[#0D1118] border border-white/10 rounded-2xl p-7 space-y-3">
+          <div className="bg-[#0D1118] border border-white/10 rounded-none p-7 space-y-3">
             <div className="flex items-center gap-2 text-[#D26539] font-mono text-xs uppercase tracking-wider">
               <Mail className="w-4 h-4" />
               <span>Official Desk</span>
@@ -86,7 +86,7 @@ export const ContactPage: React.FC = () => {
             <h3 className="font-satoshi text-lg font-bold text-white uppercase">
               Invoicing & GST Directorate
             </h3>
-            <p className="font-manrope text-xs text-slate-400 leading-relaxed">
+            <p className="font-satoshi text-xs text-[#A8A090] leading-relaxed">
               Info@tanushfitness.com • 18% GST ITC Compliant Invoices
             </p>
           </div>

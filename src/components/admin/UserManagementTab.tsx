@@ -52,36 +52,36 @@ export const UserManagementTab: React.FC = () => {
   return (
     <div className="space-y-6">
       {/* Header Banner - Modern Light */}
-      <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 bg-white border border-slate-200 p-6 rounded-2xl shadow-sm">
+      <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 bg-[#1A2018] border border-white/10 p-6 rounded-none shadow-sm">
         <div>
-          <h2 className="text-xl font-bold text-slate-900 flex items-center gap-2">
-            <ShieldCheck className="w-5 h-5 text-blue-800" /> User Management & GST Verification Portal
+          <h2 className="text-xl font-bold text-[#090C10] flex items-center gap-2">
+            <ShieldCheck className="w-5 h-5 text-[#C2552F]" /> User Management & GST Verification Portal
           </h2>
-          <p className="text-sm text-slate-500 mt-1">
+          <p className="text-sm text-[#6B6358] mt-1">
             Enforce account security and verification status per user (Activate, Suspend, Deactivate, and Verify GST).
           </p>
         </div>
       </div>
 
       {/* Filter & Search Toolbar - Modern Light */}
-      <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 bg-white p-4 rounded-xl border border-slate-200 shadow-sm">
+      <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 bg-[#1A2018] p-4 rounded-xl border border-white/10 shadow-sm">
         <div className="relative">
-          <Search className="w-4 h-4 text-slate-400 absolute left-3 top-3" />
+          <Search className="w-4 h-4 text-[#A8A090] absolute left-3 top-3" />
           <input
             type="text"
             placeholder="Search name, email, mobile, GST, or ID..."
             value={searchQuery}
             onChange={e => setSearchQuery(e.target.value)}
-            className="w-full bg-slate-50 border border-slate-200 rounded-xl pl-9 pr-4 py-2 text-sm text-slate-900 focus:outline-none focus:border-blue-800 focus:bg-white transition"
+            className="w-full bg-[#F0EBE3]/10 border border-white/10 rounded-xl pl-9 pr-4 py-2 text-sm text-[#090C10] focus:outline-none focus:border-[#C2552F] focus:bg-[#1A2018] transition"
           />
         </div>
 
         <div className="flex items-center gap-2">
-          <Filter className="w-4 h-4 text-slate-400 shrink-0" />
+          <Filter className="w-4 h-4 text-[#A8A090] shrink-0" />
           <select
             value={roleFilter}
             onChange={e => setRoleFilter(e.target.value as any)}
-            className="w-full bg-slate-50 border border-slate-200 rounded-xl px-3 py-2 text-sm text-slate-900 focus:outline-none focus:border-blue-800 focus:bg-white transition"
+            className="w-full bg-[#F0EBE3]/10 border border-white/10 rounded-xl px-3 py-2 text-sm text-[#090C10] focus:outline-none focus:border-[#C2552F] focus:bg-[#1A2018] transition"
           >
             <option value="ALL">All Roles ({userList.length})</option>
             <option value="GYM_OWNER">Gym Owners</option>
@@ -93,7 +93,7 @@ export const UserManagementTab: React.FC = () => {
           <select
             value={statusFilter}
             onChange={e => setStatusFilter(e.target.value as any)}
-            className="w-full bg-slate-50 border border-slate-200 rounded-xl px-3 py-2 text-sm text-slate-900 focus:outline-none focus:border-blue-800 focus:bg-white transition"
+            className="w-full bg-[#F0EBE3]/10 border border-white/10 rounded-xl px-3 py-2 text-sm text-[#090C10] focus:outline-none focus:border-[#C2552F] focus:bg-[#1A2018] transition"
           >
             <option value="ALL">All Account Statuses</option>
             <option value="ACTIVE">Active Users</option>
@@ -104,46 +104,46 @@ export const UserManagementTab: React.FC = () => {
       </div>
 
       {/* Users Table - Crisp Light Cool Blue */}
-      <div className="bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-sm">
+      <div className="bg-[#1A2018] border border-white/10 rounded-none overflow-hidden shadow-sm">
         <div className="overflow-x-auto">
           <table className="w-full text-left border-collapse">
             <thead>
-              <tr className="bg-slate-100/90 border-b border-slate-200 text-xs font-bold text-slate-700 uppercase tracking-wider">
+              <tr className="bg-[#ECE6DB]/90 border-b border-white/10 text-xs font-bold text-[#7A7268] uppercase tracking-wider">
                 <th className="py-4 px-6">User / Business</th>
                 <th className="py-4 px-6">Role & Status</th>
                 <th className="py-4 px-6">GST Credentials</th>
                 <th className="py-4 px-6 text-right">Verification & Account Controls</th>
               </tr>
             </thead>
-            <tbody className="divide-y divide-slate-100 text-sm">
+            <tbody className="divide-y divide-white/8 text-sm">
               {filteredUsers.map(u => (
-                <tr key={u.id} className="odd:bg-[#F4F9FF] even:bg-white hover:bg-[#E4F0FF] transition">
+                <tr key={u.id} className="odd:bg-[#F4F9FF] even:bg-[#1A2018] hover:bg-[#E4F0FF] transition">
                   <td className="py-4 px-6">
                     <div className="flex items-center gap-2">
-                      <span className="font-bold text-slate-900">{u.name}</span>
-                      <span className="px-1.5 py-0.5 rounded bg-slate-100 border border-slate-200 text-[10px] font-mono font-bold text-slate-600">
+                      <span className="font-bold text-[#090C10]">{u.name}</span>
+                      <span className="px-1.5 py-0.5 rounded bg-[#ECE6DB] border border-white/10 text-[10px] font-mono font-bold text-[#7A7268]">
                         {u.id}
                       </span>
                     </div>
-                    <div className="text-xs text-slate-600 font-medium mt-0.5">{u.email} • {u.mobile}</div>
-                    {u.companyName && <div className="text-xs text-blue-800 font-bold mt-0.5">{u.companyName}</div>}
+                    <div className="text-xs text-[#7A7268] font-medium mt-0.5">{u.email} • {u.mobile}</div>
+                    {u.companyName && <div className="text-xs text-[#C2552F] font-bold mt-0.5">{u.companyName}</div>}
                   </td>
                   <td className="py-4 px-6">
                     <div className="flex items-center gap-2">
-                      <span className={`text-xs px-2.5 py-1 rounded-full font-bold ${u.role === 'GYM_OWNER' ? 'bg-amber-100 text-amber-900 border border-amber-300' : 'bg-blue-100 text-blue-900 border border-blue-300'}`}>
+                      <span className={`text-xs px-2.5 py-1 rounded-full font-bold ${u.role === 'GYM_OWNER' ? 'bg-[#D26539]/20 text-[#D26539] border border-[#D26539]/40' : 'bg-[#D26539]/10 text-[#090C10] border border-[#D26539]/30'}`}>
                         {u.role === 'GYM_OWNER' ? 'Gym Owner' : 'Job Seeker'}
                       </span>
                       <span className={`text-xs px-2.5 py-1 rounded-full font-bold font-mono ${
                         u.status === 'ACTIVE' ? 'bg-emerald-100 text-emerald-900 border border-emerald-300' :
-                        u.status === 'SUSPENDED' ? 'bg-amber-100 text-amber-900 border border-amber-300' :
-                        'bg-slate-200 text-slate-800 border border-slate-300'
+                        u.status === 'SUSPENDED' ? 'bg-[#D26539]/20 text-[#D26539] border border-[#D26539]/40' :
+                        'bg-slate-200 text-[#3A3028] border border-white/15'
                       }`}>
                         {u.status}
                       </span>
                     </div>
                   </td>
                   <td className="py-4 px-6">
-                    <div className="font-mono text-xs font-semibold text-slate-800">{u.gstNumber || 'No GST Registered'}</div>
+                    <div className="font-mono text-xs font-semibold text-[#3A3028]">{u.gstNumber || 'No GST Registered'}</div>
                   </td>
                   <td className="py-4 px-6 text-right">
                     <div className="flex items-center justify-end gap-2 flex-wrap">
@@ -208,7 +208,7 @@ export const UserManagementTab: React.FC = () => {
                             e.stopPropagation();
                             handleStatusChange(u.id, 'DEACTIVATED');
                           }}
-                          className="flex items-center gap-1 px-2.5 py-1.5 bg-slate-100 hover:bg-slate-200 text-slate-700 border border-slate-300 rounded-lg text-xs font-semibold transition"
+                          className="flex items-center gap-1 px-2.5 py-1.5 bg-[#ECE6DB] hover:bg-[#D8CDC0] text-[#7A7268] border border-white/15 rounded-lg text-xs font-semibold transition"
                           title={`Deactivate ${u.name} (ID: ${u.id})`}
                         >
                           Deactivate

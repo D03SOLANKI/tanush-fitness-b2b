@@ -6,7 +6,7 @@ import { motion } from 'framer-motion';
 
 export const Testimonials: React.FC = () => {
   return (
-    <section className="py-20 sm:py-28 bg-slate-50 relative border-t border-slate-200/80">
+    <section className="py-20 sm:py-28 bg-[#F0EBE3]/10 relative border-t border-white/10/80">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeader
           subtitle="CLIENT SUCCESS STORIES"
@@ -23,7 +23,7 @@ export const Testimonials: React.FC = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.4, delay: idx * 0.1 }}
-              className="p-8 rounded-3xl bg-white border border-slate-200/90 shadow-stripe hover:border-blue-500/50 transition-all flex flex-col justify-between space-y-6 group hover:-translate-y-1"
+              className="p-8 rounded-none bg-[#1A2018] border border-white/10/90 hover:border-[#D26539]/50 transition-all flex flex-col justify-between space-y-6 group hover:-translate-y-1"
             >
               <div className="space-y-4">
                 <div className="flex items-center justify-between">
@@ -32,31 +32,31 @@ export const Testimonials: React.FC = () => {
                       <Star key={i} className="w-4 h-4 fill-amber-400" />
                     ))}
                   </div>
-                  <span className="text-xs font-bold px-3 py-1 rounded-full bg-blue-50 text-blue-600 border border-blue-200/80 uppercase font-mono">
+                  <span className="text-xs font-bold px-3 py-1 rounded-full bg-[#D26539]/10 text-[#D26539] border border-[#D26539]/20/80 uppercase font-mono">
                     {item.stats}
                   </span>
                 </div>
 
-                <Quote className="w-8 h-8 text-blue-200" />
+                <Quote className="w-8 h-8 text-[#D26539]/20" />
 
-                <p className="text-xs sm:text-sm text-slate-700 leading-relaxed italic font-normal">
+                <p className="text-xs sm:text-sm text-[#7A7268] leading-relaxed italic font-normal">
                   "{item.quote}"
                 </p>
               </div>
 
-              <div className="pt-4 border-t border-slate-100 flex items-center gap-3.5">
+              <div className="pt-4 border-t border-white/8 flex items-center gap-3.5">
                 <img
                   src={item.image}
                   alt={item.author}
-                  className="w-12 h-12 rounded-full object-cover border border-blue-200 shrink-0 shadow-sm"
+                  className="w-12 h-12 rounded-full object-cover border border-[#D26539]/20 shrink-0 shadow-sm"
                 />
                 <div>
                   <div className="flex items-center gap-1.5">
-                    <span className="text-sm font-black text-slate-900 font-heading">{item.author}</span>
-                    <CheckCircle2 className="w-3.5 h-3.5 text-blue-600" />
+                    <span className="text-sm font-black text-[#090C10] font-satoshi">{item.author}</span>
+                    <CheckCircle2 className="w-3.5 h-3.5 text-[#D26539]" />
                   </div>
-                  <div className="text-xs text-slate-500 font-semibold">{item.title}</div>
-                  <div className="text-[11px] text-blue-600 font-bold font-mono uppercase">{item.gymName} · {item.location}</div>
+                  <div className="text-xs text-[#6B6358] font-semibold">{item.title}</div>
+                  <div className="text-[11px] text-[#D26539] font-bold font-mono uppercase">{item.gymName} · {item.location}</div>
                 </div>
               </div>
             </motion.div>

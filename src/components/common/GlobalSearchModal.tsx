@@ -53,27 +53,27 @@ export const GlobalSearchModal: React.FC<GlobalSearchModalProps> = ({ isOpen, on
 
   return (
     <AnimatePresence>
-      <div className="fixed inset-0 z-50 overflow-y-auto bg-slate-950/70 backdrop-blur-md flex items-start justify-center p-4 pt-20">
+      <div className="fixed inset-0 z-50 overflow-y-auto bg-[#090C10]/70 backdrop-blur-md flex items-start justify-center p-4 pt-20">
         <motion.div
           initial={{ opacity: 0, y: -20, scale: 0.98 }}
           animate={{ opacity: 1, y: 0, scale: 1 }}
           exit={{ opacity: 0, y: -20, scale: 0.98 }}
-          className="bg-white rounded-3xl max-w-2xl w-full shadow-2xl border border-slate-200 overflow-hidden relative"
+          className="bg-[#1A2018] rounded-none max-w-2xl w-full shadow-2xl border border-white/10 overflow-hidden relative"
         >
           {/* Header Search Input */}
-          <div className="p-4 sm:p-6 border-b border-slate-100 flex items-center gap-3">
-            <Search className="w-5 h-5 text-blue-600 shrink-0" />
+          <div className="p-4 sm:p-6 border-b border-white/8 flex items-center gap-3">
+            <Search className="w-5 h-5 text-[#D26539] shrink-0" />
             <input
               type="text"
               autoFocus
               placeholder="Global search equipment, hiring openings, or business services..."
               value={query}
               onChange={e => setQuery(e.target.value)}
-              className="w-full text-sm font-mono text-slate-900 placeholder-slate-400 focus:outline-none bg-transparent"
+              className="w-full text-sm font-mono text-[#090C10] placeholder-[#7A7268] focus:outline-none bg-transparent"
             />
             <button
               onClick={onClose}
-              className="p-2 rounded-full bg-slate-100 text-slate-500 hover:text-slate-900 shrink-0"
+              className="p-2 rounded-full bg-[#ECE6DB] text-[#6B6358] hover:text-[#090C10] shrink-0"
             >
               <X className="w-4 h-4" />
             </button>
@@ -82,17 +82,17 @@ export const GlobalSearchModal: React.FC<GlobalSearchModalProps> = ({ isOpen, on
           {/* Results Area */}
           <div className="max-h-[60vh] overflow-y-auto p-6 space-y-6">
             {!query.trim() ? (
-              <div className="py-8 text-center text-xs font-mono text-slate-400 space-y-2">
+              <div className="py-8 text-center text-xs font-mono text-[#A8A090] space-y-2">
                 <p>Type to search across Tanush Fitness B2B ecosystem.</p>
                 <div className="flex flex-wrap justify-center gap-2 pt-2">
-                  <span className="px-2.5 py-1 rounded-lg bg-slate-100 text-slate-600 text-[10px]">Power Rack</span>
-                  <span className="px-2.5 py-1 rounded-lg bg-slate-100 text-slate-600 text-[10px]">Personal Trainer</span>
-                  <span className="px-2.5 py-1 rounded-lg bg-slate-100 text-slate-600 text-[10px]">Meta Ads</span>
-                  <span className="px-2.5 py-1 rounded-lg bg-slate-100 text-slate-600 text-[10px]">3D Interior</span>
+                  <span className="px-2.5 py-1 rounded-lg bg-[#ECE6DB] text-[#7A7268] text-[10px]">Power Rack</span>
+                  <span className="px-2.5 py-1 rounded-lg bg-[#ECE6DB] text-[#7A7268] text-[10px]">Personal Trainer</span>
+                  <span className="px-2.5 py-1 rounded-lg bg-[#ECE6DB] text-[#7A7268] text-[10px]">Meta Ads</span>
+                  <span className="px-2.5 py-1 rounded-lg bg-[#ECE6DB] text-[#7A7268] text-[10px]">3D Interior</span>
                 </div>
               </div>
             ) : totalResults === 0 ? (
-              <div className="py-12 text-center text-xs font-mono text-slate-400">
+              <div className="py-12 text-center text-xs font-mono text-[#A8A090]">
                 No matching results found for "{query}".
               </div>
             ) : (
@@ -100,11 +100,11 @@ export const GlobalSearchModal: React.FC<GlobalSearchModalProps> = ({ isOpen, on
                 {/* 1. Commercial Equipment */}
                 {searchResults.products.length > 0 && (
                   <div className="space-y-3">
-                    <div className="text-[10px] font-bold uppercase text-blue-600 font-mono tracking-wider flex items-center gap-1.5">
+                    <div className="text-[10px] font-bold uppercase text-[#D26539] font-mono tracking-wider flex items-center gap-1.5">
                       <Dumbbell className="w-3.5 h-3.5" />
                       <span>Commercial Equipment ({searchResults.products.length})</span>
                     </div>
-                    <div className="divide-y divide-slate-100 bg-slate-50/80 rounded-2xl border border-slate-100 overflow-hidden">
+                    <div className="divide-y divide-white/8 bg-[#1A2018] rounded-none border border-white/8 overflow-hidden">
                       {searchResults.products.map(p => (
                         <div
                           key={p.id}
@@ -112,16 +112,16 @@ export const GlobalSearchModal: React.FC<GlobalSearchModalProps> = ({ isOpen, on
                             navigateTo('equipment');
                             onClose();
                           }}
-                          className="p-3 hover:bg-white flex items-center justify-between cursor-pointer transition-colors"
+                          className="p-3 hover:bg-[#1A2018] flex items-center justify-between cursor-pointer transition-colors"
                         >
                           <div className="flex items-center gap-3">
                             <img src={p.image} alt={p.name} className="w-10 h-10 object-cover rounded-lg border" />
                             <div>
-                              <div className="text-xs font-black text-slate-900 font-heading uppercase">{p.name}</div>
-                              <div className="text-[10px] font-mono text-slate-500">{p.brand} • {p.category}</div>
+                              <div className="text-xs font-black text-[#090C10] font-satoshi uppercase">{p.name}</div>
+                              <div className="text-[10px] font-mono text-[#6B6358]">{p.brand} • {p.category}</div>
                             </div>
                           </div>
-                          <ArrowRight className="w-4 h-4 text-slate-400" />
+                          <ArrowRight className="w-4 h-4 text-[#A8A090]" />
                         </div>
                       ))}
                     </div>
@@ -135,7 +135,7 @@ export const GlobalSearchModal: React.FC<GlobalSearchModalProps> = ({ isOpen, on
                       <Users className="w-3.5 h-3.5" />
                       <span>Gym Openings ({searchResults.jobs.length})</span>
                     </div>
-                    <div className="divide-y divide-slate-100 bg-slate-50/80 rounded-2xl border border-slate-100 overflow-hidden">
+                    <div className="divide-y divide-white/8 bg-[#1A2018] rounded-none border border-white/8 overflow-hidden">
                       {searchResults.jobs.map(j => (
                         <div
                           key={j.id}
@@ -143,13 +143,13 @@ export const GlobalSearchModal: React.FC<GlobalSearchModalProps> = ({ isOpen, on
                             navigateTo('manpower');
                             onClose();
                           }}
-                          className="p-3 hover:bg-white flex items-center justify-between cursor-pointer transition-colors"
+                          className="p-3 hover:bg-[#1A2018] flex items-center justify-between cursor-pointer transition-colors"
                         >
                           <div>
-                            <div className="text-xs font-black text-slate-900 font-heading uppercase">{j.title}</div>
-                            <div className="text-[10px] font-mono text-slate-500">{j.gymName} • {j.location}</div>
+                            <div className="text-xs font-black text-[#090C10] font-satoshi uppercase">{j.title}</div>
+                            <div className="text-[10px] font-mono text-[#6B6358]">{j.gymName} • {j.location}</div>
                           </div>
-                          <ArrowRight className="w-4 h-4 text-slate-400" />
+                          <ArrowRight className="w-4 h-4 text-[#A8A090]" />
                         </div>
                       ))}
                     </div>
@@ -163,7 +163,7 @@ export const GlobalSearchModal: React.FC<GlobalSearchModalProps> = ({ isOpen, on
                       <Briefcase className="w-3.5 h-3.5" />
                       <span>Business Growth Services ({searchResults.services.length})</span>
                     </div>
-                    <div className="divide-y divide-slate-100 bg-slate-50/80 rounded-2xl border border-slate-100 overflow-hidden">
+                    <div className="divide-y divide-white/8 bg-[#1A2018] rounded-none border border-white/8 overflow-hidden">
                       {searchResults.services.map(s => (
                         <div
                           key={s.id}
@@ -171,16 +171,16 @@ export const GlobalSearchModal: React.FC<GlobalSearchModalProps> = ({ isOpen, on
                             navigateTo('services');
                             onClose();
                           }}
-                          className="p-3 hover:bg-white flex items-center justify-between cursor-pointer transition-colors"
+                          className="p-3 hover:bg-[#1A2018] flex items-center justify-between cursor-pointer transition-colors"
                         >
                           <div className="flex items-center gap-3">
                             <img src={s.image} alt={s.name} className="w-10 h-10 object-cover rounded-lg border" />
                             <div>
-                              <div className="text-xs font-black text-slate-900 font-heading uppercase">{s.name}</div>
-                              <div className="text-[10px] font-mono text-slate-500">{s.category}</div>
+                              <div className="text-xs font-black text-[#090C10] font-satoshi uppercase">{s.name}</div>
+                              <div className="text-[10px] font-mono text-[#6B6358]">{s.category}</div>
                             </div>
                           </div>
-                          <ArrowRight className="w-4 h-4 text-slate-400" />
+                          <ArrowRight className="w-4 h-4 text-[#A8A090]" />
                         </div>
                       ))}
                     </div>

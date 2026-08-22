@@ -11,7 +11,7 @@ export const CategoryGrid: React.FC = () => {
   const fallbackImage = 'https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=1000&q=80';
 
   return (
-    <section className="py-20 sm:py-28 bg-white relative">
+    <section className="py-20 sm:py-28 bg-[#1A2018] relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeader
           subtitle="COMMERCIAL EQUIPMENT CATEGORIES"
@@ -33,10 +33,10 @@ export const CategoryGrid: React.FC = () => {
                 setFilter('category', cat.id);
                 navigateTo('equipment');
               }}
-              className="group relative rounded-3xl overflow-hidden bg-white border border-slate-200/90 hover:border-blue-500 transition-all duration-300 cursor-pointer flex flex-col justify-between shadow-stripe hover:shadow-2xl hover:-translate-y-1 text-slate-900"
+              className="group relative rounded-none overflow-hidden bg-[#1A2018] border border-white/10/90 hover:border-[#D26539] transition-all duration-300 cursor-pointer flex flex-col justify-between hover:shadow-2xl hover:-translate-y-1 text-[#F0EBE3]"
             >
               {/* Top Bright Photo */}
-              <div className="relative aspect-[16/10] bg-slate-100 overflow-hidden border-b border-slate-100">
+              <div className="relative aspect-[16/10] bg-[#ECE6DB] overflow-hidden border-b border-white/8">
                 <img
                   src={cat.image}
                   alt={cat.name}
@@ -48,24 +48,24 @@ export const CategoryGrid: React.FC = () => {
 
                 {/* Top Badge */}
                 <div className="absolute top-3 left-3">
-                  <span className="text-[10px] font-black uppercase tracking-wider px-2.5 py-1 rounded-full bg-slate-900/90 text-white font-mono shadow-sm">
+                  <span className="text-[10px] font-black uppercase tracking-wider px-2.5 py-1 rounded-full bg-[#090C10]/90 text-white font-mono shadow-sm">
                     {cat.itemCount} Items
                   </span>
                 </div>
               </div>
 
               {/* Bottom Card Content */}
-              <div className="p-5 flex-1 flex flex-col justify-between space-y-3 bg-white">
+              <div className="p-5 flex-1 flex flex-col justify-between space-y-3 bg-[#1A2018]">
                 <div>
-                  <h3 className="text-base font-black text-slate-900 group-hover:text-blue-600 transition-colors leading-snug font-heading uppercase">
+                  <h3 className="text-base font-black text-[#090C10] group-hover:text-[#D26539] transition-colors leading-snug font-satoshi uppercase">
                     {cat.name}
                   </h3>
-                  <p className="mt-1.5 text-xs text-slate-600 line-clamp-2 leading-relaxed font-normal">
+                  <p className="mt-1.5 text-xs text-[#7A7268] line-clamp-2 leading-relaxed font-normal">
                     {cat.description}
                   </p>
                 </div>
 
-                <div className="pt-3 border-t border-slate-100 flex items-center justify-between text-xs font-black text-blue-600 uppercase tracking-wider font-mono group-hover:translate-x-1 transition-all">
+                <div className="pt-3 border-t border-white/8 flex items-center justify-between text-xs font-black text-[#D26539] uppercase tracking-wider font-mono group-hover:translate-x-1 transition-all">
                   <span>Explore Category</span>
                   <ArrowRight className="w-4 h-4 stroke-[3]" />
                 </div>

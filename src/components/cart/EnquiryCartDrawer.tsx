@@ -138,14 +138,14 @@ export const EnquiryCartDrawer: React.FC = () => {
               </div>
               <div>
                 <div className="flex items-center gap-2">
-                  <h2 className="font-syne text-lg font-bold uppercase text-white leading-tight">
+                  <h2 className="font-satoshi text-lg font-bold uppercase text-white leading-tight">
                     Project RFQ Basket
                   </h2>
                   <span className="px-2 py-0.5 rounded-full bg-[#D26539]/10 text-[#D26539] font-mono text-[9px] font-bold uppercase border border-[#D26539]/30">
                     B2B DIRECT
                   </span>
                 </div>
-                <span className="text-[11px] text-slate-400 font-mono block mt-0.5">
+                <span className="text-[11px] text-[#A8A090] font-mono block mt-0.5">
                   Itemized 18% GST Quotation & Specification Desk
                 </span>
               </div>
@@ -157,7 +157,7 @@ export const EnquiryCartDrawer: React.FC = () => {
                 setIsEnquiryCartOpen(false);
                 setIsSubmitted(false);
               }}
-              className="p-2 rounded-full bg-white/5 hover:bg-white/10 text-slate-400 hover:text-white transition"
+              className="p-2 rounded-full bg-white/5 hover:bg-white/10 text-[#A8A090] hover:text-white transition"
             >
               <X className="w-5 h-5" />
             </button>
@@ -167,7 +167,7 @@ export const EnquiryCartDrawer: React.FC = () => {
           <div className="flex-1 overflow-y-auto p-6 space-y-6">
             {isSubmitted ? (
               /* RFQ Summary Confirmation */
-              <div className="p-6 rounded-2xl bg-[#090C10] border border-white/10 text-white space-y-5 text-center">
+              <div className="p-6 rounded-none bg-[#090C10] border border-white/10 text-white space-y-5 text-center">
                 <div className="w-14 h-14 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 mx-auto flex items-center justify-center">
                   <CheckCircle2 className="w-7 h-7" />
                 </div>
@@ -176,22 +176,22 @@ export const EnquiryCartDrawer: React.FC = () => {
                   <span className="text-[10px] font-mono text-[#D26539] uppercase tracking-widest block mb-1">
                     OFFICIAL RFQ SPECIFICATION DISPATCHED
                   </span>
-                  <h3 className="font-syne text-2xl font-bold uppercase">
+                  <h3 className="font-satoshi text-2xl font-bold uppercase">
                     Quotation Logged
                   </h3>
-                  <div className="text-xs font-mono text-slate-400 mt-1">
+                  <div className="text-xs font-mono text-[#A8A090] mt-1">
                     Reference Code: <span className="text-[#D26539] font-bold">{rfqRef}</span>
                   </div>
                 </div>
 
-                <div className="p-4 bg-[#0D1118] rounded-xl border border-white/5 text-left space-y-2 text-xs font-mono text-slate-300">
+                <div className="p-4 bg-[#0D1118] rounded-xl border border-white/5 text-left space-y-2 text-xs font-mono text-[#A8A090]">
                   <div><strong>Facility:</strong> {formState.companyGymName}</div>
                   <div><strong>Contact Phone:</strong> {formState.mobile}</div>
                   <div><strong>Dispatch City:</strong> {formState.city || 'Pan-India'}</div>
                   <div><strong>Total Machinery Units:</strong> {totalQuantity} Units</div>
                 </div>
 
-                <div className="p-3 bg-white/5 rounded-xl border border-white/5 text-left text-xs text-slate-400 leading-relaxed flex items-start gap-2">
+                <div className="p-3 bg-white/5 rounded-xl border border-white/5 text-left text-xs text-[#A8A090] leading-relaxed flex items-start gap-2">
                   <Clock className="w-4 h-4 text-[#D26539] shrink-0 mt-0.5" />
                   <span>
                     Our engineering desk is preparing your itemized PDF quote with structural frame certifications. You will receive it via WhatsApp and Email within 2 hours.
@@ -213,17 +213,17 @@ export const EnquiryCartDrawer: React.FC = () => {
               <>
                 {/* Selected Cart Items */}
                 <div className="space-y-3">
-                  <div className="flex items-center justify-between text-xs font-mono text-slate-400 uppercase">
+                  <div className="flex items-center justify-between text-xs font-mono text-[#A8A090] uppercase">
                     <span>Selected Machinery ({enquiryCart.length})</span>
                     <span className="text-[#D26539] font-bold">Total: {totalQuantity} Units</span>
                   </div>
 
                   {enquiryCart.length === 0 ? (
-                    <div className="py-12 text-center text-xs text-slate-500 border border-dashed border-white/10 rounded-2xl bg-[#090C10] font-mono">
+                    <div className="py-12 text-center text-xs text-[#6B6358] border border-dashed border-white/10 rounded-none bg-[#090C10] font-mono">
                       Your RFQ Project basket is empty. Browse the sanctuary catalog to add equipment.
                     </div>
                   ) : (
-                    <div className="divide-y divide-white/5 border border-white/10 rounded-2xl overflow-hidden bg-[#090C10]">
+                    <div className="divide-y divide-white/5 border border-white/10 rounded-none overflow-hidden bg-[#090C10]">
                       {enquiryCart.map(item => (
                         <div key={item.product.id} className="p-4 flex items-center justify-between gap-3">
                           <div className="flex items-center gap-3">
@@ -233,7 +233,7 @@ export const EnquiryCartDrawer: React.FC = () => {
                               className="w-12 h-12 object-cover rounded-xl border border-white/10"
                             />
                             <div>
-                              <div className="text-xs font-bold text-white font-syne uppercase line-clamp-1">
+                              <div className="text-xs font-bold text-white font-satoshi uppercase line-clamp-1">
                                 {item.product.name}
                               </div>
                               <div className="text-[10px] text-[#D26539] font-mono">
@@ -247,7 +247,7 @@ export const EnquiryCartDrawer: React.FC = () => {
                               <button
                                 type="button"
                                 onClick={() => updateEnquiryCartQuantity(item.product.id, item.quantity - 1)}
-                                className="px-2 text-xs font-bold text-slate-400 hover:text-white"
+                                className="px-2 text-xs font-bold text-[#A8A090] hover:text-white"
                               >
                                 -
                               </button>
@@ -255,7 +255,7 @@ export const EnquiryCartDrawer: React.FC = () => {
                               <button
                                 type="button"
                                 onClick={() => updateEnquiryCartQuantity(item.product.id, item.quantity + 1)}
-                                className="px-2 text-xs font-bold text-slate-400 hover:text-white"
+                                className="px-2 text-xs font-bold text-[#A8A090] hover:text-white"
                               >
                                 +
                               </button>
@@ -264,7 +264,7 @@ export const EnquiryCartDrawer: React.FC = () => {
                             <button
                               type="button"
                               onClick={() => removeFromEnquiryCart(item.product.id)}
-                              className="text-slate-500 hover:text-rose-400 p-1"
+                              className="text-[#6B6358] hover:text-rose-400 p-1"
                             >
                               <Trash2 className="w-4 h-4" />
                             </button>
@@ -283,63 +283,63 @@ export const EnquiryCartDrawer: React.FC = () => {
                     </div>
 
                     <div>
-                      <label className="block text-xs font-mono text-slate-400 uppercase mb-1">Your Full Name</label>
+                      <label className="block text-xs font-mono text-[#A8A090] uppercase mb-1">Your Full Name</label>
                       <input
                         type="text"
                         required
                         placeholder="Sameer Kapoor"
                         value={formState.name}
                         onChange={e => setFormState({ ...formState, name: e.target.value })}
-                        className="w-full bg-[#090C10] border border-white/10 rounded-xl px-4 py-2.5 text-xs text-white placeholder-slate-600 focus:outline-none focus:border-[#D26539]"
+                        className="w-full bg-[#090C10] border border-white/10 rounded-xl px-4 py-2.5 text-xs text-white placeholder-[#6B6358] focus:outline-none focus:border-[#D26539]"
                       />
                     </div>
 
                     <div className="grid grid-cols-2 gap-3">
                       <div>
-                        <label className="block text-xs font-mono text-slate-400 uppercase mb-1">Facility Name</label>
+                        <label className="block text-xs font-mono text-[#A8A090] uppercase mb-1">Facility Name</label>
                         <input
                           type="text"
                           required
                           placeholder="Iron Sanctuary Club"
                           value={formState.companyGymName}
                           onChange={e => setFormState({ ...formState, companyGymName: e.target.value })}
-                          className="w-full bg-[#090C10] border border-white/10 rounded-xl px-4 py-2.5 text-xs text-white placeholder-slate-600 focus:outline-none focus:border-[#D26539]"
+                          className="w-full bg-[#090C10] border border-white/10 rounded-xl px-4 py-2.5 text-xs text-white placeholder-[#6B6358] focus:outline-none focus:border-[#D26539]"
                         />
                       </div>
 
                       <div>
-                        <label className="block text-xs font-mono text-slate-400 uppercase mb-1">WhatsApp Mobile</label>
+                        <label className="block text-xs font-mono text-[#A8A090] uppercase mb-1">WhatsApp Mobile</label>
                         <input
                           type="tel"
                           required
                           placeholder="+91 98765 43210"
                           value={formState.mobile}
                           onChange={e => setFormState({ ...formState, mobile: e.target.value })}
-                          className="w-full bg-[#090C10] border border-white/10 rounded-xl px-4 py-2.5 text-xs text-white placeholder-slate-600 focus:outline-none focus:border-[#D26539]"
+                          className="w-full bg-[#090C10] border border-white/10 rounded-xl px-4 py-2.5 text-xs text-white placeholder-[#6B6358] focus:outline-none focus:border-[#D26539]"
                         />
                       </div>
                     </div>
 
                     <div className="grid grid-cols-2 gap-3">
                       <div>
-                        <label className="block text-xs font-mono text-slate-400 uppercase mb-1">Delivery City</label>
+                        <label className="block text-xs font-mono text-[#A8A090] uppercase mb-1">Delivery City</label>
                         <input
                           type="text"
                           placeholder="Delhi / Bengaluru"
                           value={formState.city}
                           onChange={e => setFormState({ ...formState, city: e.target.value })}
-                          className="w-full bg-[#090C10] border border-white/10 rounded-xl px-4 py-2.5 text-xs text-white placeholder-slate-600 focus:outline-none focus:border-[#D26539]"
+                          className="w-full bg-[#090C10] border border-white/10 rounded-xl px-4 py-2.5 text-xs text-white placeholder-[#6B6358] focus:outline-none focus:border-[#D26539]"
                         />
                       </div>
 
                       <div>
-                        <label className="block text-xs font-mono text-slate-400 uppercase mb-1">GSTIN (18% ITC)</label>
+                        <label className="block text-xs font-mono text-[#A8A090] uppercase mb-1">GSTIN (18% ITC)</label>
                         <input
                           type="text"
                           placeholder="24ABCDE1234F1Z5"
                           value={formState.gstin}
                           onChange={e => setFormState({ ...formState, gstin: e.target.value })}
-                          className="w-full bg-[#090C10] border border-white/10 rounded-xl px-4 py-2.5 text-xs text-white placeholder-slate-600 focus:outline-none focus:border-[#D26539] uppercase"
+                          className="w-full bg-[#090C10] border border-white/10 rounded-xl px-4 py-2.5 text-xs text-white placeholder-[#6B6358] focus:outline-none focus:border-[#D26539] uppercase"
                         />
                       </div>
                     </div>

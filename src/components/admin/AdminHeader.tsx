@@ -6,35 +6,35 @@ export const AdminHeader: React.FC = () => {
   const { navigateTo, isAdminAuthenticated, logoutAdmin } = useApp();
 
   return (
-    <header className="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-slate-200 text-slate-900 shadow-sm font-mono">
+    <header className="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-white/10 text-[#090C10] shadow-sm font-mono">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 sm:h-18">
           {/* Brand & Title */}
           <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-xl bg-blue-600 text-white flex items-center justify-center font-black shadow-md shadow-blue-500/20">
+            <div className="w-10 h-10 rounded-xl bg-[#D26539] text-white flex items-center justify-center font-black shadow-md shadow-[#D26539]/20">
               <ShieldCheck className="w-6 h-6" />
             </div>
             <div>
               <div className="flex items-center gap-2">
-                <span className="text-base sm:text-lg font-black tracking-wider text-slate-900 uppercase font-heading">
+                <span className="text-base sm:text-lg font-black tracking-wider text-[#090C10] uppercase font-satoshi">
                   ADMIN PANEL
                 </span>
-                <span className="hidden sm:inline-block px-2 py-0.5 rounded text-[10px] font-bold bg-blue-50 text-blue-700 border border-blue-200 uppercase tracking-widest">
+                <span className="hidden sm:inline-block px-2 py-0.5 rounded text-[10px] font-bold bg-[#D26539]/10 text-[#D26539] border border-[#D26539]/20 uppercase tracking-widest">
                   Secure Console
                 </span>
               </div>
-              <p className="text-[11px] text-slate-500 font-normal hidden sm:block">
+              <p className="text-[11px] text-[#6B6358] font-normal hidden sm:block">
                 Tanush Fitness B2B • Central Operations & Database Portal
               </p>
             </div>
           </div>
 
           {/* Center Info Badge */}
-          <div className="hidden md:flex items-center gap-2 px-3 py-1.5 rounded-full bg-slate-50 border border-slate-200 text-[11px] text-slate-700 shadow-sm">
+          <div className="hidden md:flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#F0EBE3]/10 border border-white/10 text-[11px] text-[#7A7268] shadow-sm">
             <Activity className="w-3.5 h-3.5 text-emerald-600 animate-pulse" />
-            <span className="font-semibold text-slate-800">Live Sync Active</span>
-            <span className="text-slate-300">•</span>
-            <span className="text-slate-500 font-sans">PostgreSQL / Supabase</span>
+            <span className="font-semibold text-[#3A3028]">Live Sync Active</span>
+            <span className="text-[#A8A090]">•</span>
+            <span className="text-[#6B6358] font-sans">PostgreSQL / Supabase</span>
           </div>
 
           {/* Right Action Controls */}
@@ -51,10 +51,10 @@ export const AdminHeader: React.FC = () => {
             {/* Return to Public Website */}
             <button
               onClick={() => navigateTo('home')}
-              className="flex items-center gap-1.5 px-3 py-2 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 hover:text-slate-900 border border-slate-200 text-xs font-bold transition shadow-sm"
+              className="flex items-center gap-1.5 px-3 py-2 rounded-xl bg-[#ECE6DB] hover:bg-[#D8CDC0] text-[#7A7268] hover:text-[#090C10] border border-white/10 text-xs font-bold transition shadow-sm"
               title="Return to Main Website"
             >
-              <ArrowLeft className="w-3.5 h-3.5 text-blue-600" />
+              <ArrowLeft className="w-3.5 h-3.5 text-[#D26539]" />
               <span className="hidden sm:inline">Exit to Main Site</span>
               <span className="sm:hidden">Exit</span>
             </button>

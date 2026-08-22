@@ -27,30 +27,18 @@
   body {
     background-color: var(--black);
     color: var(--light);
-    font-family: 'Manrope', 'Plus Jakarta Sans', 'General Sans', sans-serif;
+    font-family: 'Satoshi', sans-serif;
     overflow-x: hidden;
   }
 
   h1, h2, h3, h4, h5, h6 {
-    font-family: 'Satoshi', 'General Sans', 'Plus Jakarta Sans', sans-serif;
+    font-family: 'Satoshi', sans-serif;
     letter-spacing: -0.02em;
     font-weight: 700;
   }
 
   .font-satoshi {
-    font-family: 'Satoshi', 'General Sans', 'Plus Jakarta Sans', sans-serif;
-  }
-
-  .font-general {
-    font-family: 'General Sans', 'Plus Jakarta Sans', sans-serif;
-  }
-
-  .font-syne {
-    font-family: 'Satoshi', 'General Sans', 'Syne', sans-serif;
-  }
-
-  .font-manrope {
-    font-family: 'Manrope', 'Plus Jakarta Sans', sans-serif;
+    font-family: 'Satoshi', sans-serif;
   }
 
   .font-mono, code, pre {
@@ -77,8 +65,7 @@
   background: #D26539;
 }
 
-/* Hardware-Accelerated Smooth Hover Transitions */
-.hover-lift,
+/* Hardware-Accelerated Card Hover Transitions */
 .luxury-card,
 .card-lift {
   transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.25s ease;
@@ -86,7 +73,6 @@
   backface-visibility: hidden;
 }
 
-.hover-lift:hover,
 .luxury-card:hover,
 .card-lift:hover {
   transform: translateY(-4px) translateZ(0);
@@ -102,7 +88,7 @@
   justify-content: center;
   padding: 0.75rem 1.75rem;
   border-radius: 9999px;
-  font-family: 'General Sans', 'Plus Jakarta Sans', sans-serif;
+  font-family: 'Satoshi', sans-serif;
   font-size: 0.75rem;
   font-weight: 800;
   text-transform: uppercase;
@@ -128,7 +114,7 @@
   padding: 0.75rem 1.75rem;
   border-radius: 9999px;
   border: 1px solid rgba(210, 101, 57, 0.4);
-  font-family: 'General Sans', 'Plus Jakarta Sans', sans-serif;
+  font-family: 'Satoshi', sans-serif;
   font-size: 0.75rem;
   font-weight: 800;
   text-transform: uppercase;
@@ -145,6 +131,7 @@
   color: #FFFFFF;
   transform: translateY(-2px) translateZ(0);
 }
+
 
 /* GPU-Composited Ultra-Smooth Marquee Keyframes (Dynamic & Fast) */
 @keyframes marquee-scroll {

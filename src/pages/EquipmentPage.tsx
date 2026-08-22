@@ -114,11 +114,11 @@ export const EquipmentPage: React.FC = () => {
               <span>PRECISION BIOMECHANICS // ISO 9001:2015 CERTIFIED</span>
             </div>
 
-            <h1 className="font-syne text-3xl sm:text-5xl md:text-6xl font-extrabold uppercase text-white tracking-tight">
+            <h1 className="font-satoshi text-3xl sm:text-5xl md:text-6xl font-extrabold uppercase text-white tracking-tight">
               EQUIPMENT <span className="text-[#D26539]">SANCTUARY</span>
             </h1>
 
-            <p className="text-sm sm:text-base text-slate-400 max-w-2xl font-sans leading-relaxed">
+            <p className="text-sm sm:text-base text-[#A8A090] max-w-2xl font-sans leading-relaxed">
               Precision-engineered commercial strength lines, selectorized pin-loaded stacks, and Olympic competition platforms. Add items to your project list for official 18% GST ITC procurement quotes.
             </p>
           </div>
@@ -144,19 +144,19 @@ export const EquipmentPage: React.FC = () => {
           {/* Search & Brands Strip */}
           <div className="flex flex-col md:flex-row items-stretch md:items-center justify-between gap-4">
             <div className="relative flex-1 max-w-md">
-              <Search className="w-4 h-4 absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-500" />
+              <Search className="w-4 h-4 absolute left-3.5 top-1/2 -translate-y-1/2 text-[#6B6358]" />
               <input
                 type="text"
                 placeholder="Search power racks, cable crossover, dumbbells..."
                 value={searchQuery}
                 onChange={e => setSearchQuery(e.target.value)}
-                className="w-full bg-[#0D1118] border border-white/10 rounded-full pl-10 pr-4 py-2.5 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-[#D26539]"
+                className="w-full bg-[#0D1118] border border-white/10 rounded-full pl-10 pr-4 py-2.5 text-xs text-white placeholder-[#6B6358] focus:outline-none focus:border-[#D26539]"
               />
               {searchQuery && (
                 <button
                   type="button"
                   onClick={() => setSearchQuery('')}
-                  className="absolute right-3.5 top-1/2 -translate-y-1/2 text-slate-500 hover:text-white"
+                  className="absolute right-3.5 top-1/2 -translate-y-1/2 text-[#6B6358] hover:text-white"
                 >
                   <X className="w-3.5 h-3.5" />
                 </button>
@@ -165,7 +165,7 @@ export const EquipmentPage: React.FC = () => {
 
             {/* Application Filters */}
             <div className="flex flex-wrap items-center gap-2">
-              <span className="text-xs font-mono text-slate-500 uppercase mr-1 hidden sm:inline">Facility:</span>
+              <span className="text-xs font-mono text-[#6B6358] uppercase mr-1 hidden sm:inline">Facility:</span>
               {['all', 'Commercial Gym', 'CrossFit Box', 'Hotel & Resort', 'Corporate Campus'].map((app) => (
                 <button
                   key={app}
@@ -174,7 +174,7 @@ export const EquipmentPage: React.FC = () => {
                   className={`px-3 py-1.5 rounded-full text-xs font-mono uppercase tracking-wider transition ${
                     activeApplication === app
                       ? 'bg-[#D26539] text-[#090C10] font-bold shadow-md'
-                      : 'bg-[#0D1118] text-slate-400 border border-white/5 hover:border-white/20'
+                      : 'bg-[#0D1118] text-[#A8A090] border border-white/5 hover:border-white/20'
                   }`}
                 >
                   {app === 'all' ? 'All Spaces' : app}
@@ -190,8 +190,8 @@ export const EquipmentPage: React.FC = () => {
               onClick={() => setActiveCategory('all')}
               className={`px-5 py-2.5 rounded-full text-xs font-mono uppercase tracking-wider whitespace-nowrap transition ${
                 activeCategory === 'all'
-                  ? 'bg-white text-[#090C10] font-bold shadow-lg'
-                  : 'bg-[#0D1118] text-slate-300 border border-white/5 hover:border-white/20'
+                  ? 'bg-[#1A2018] text-[#F0EBE3] font-bold shadow-lg'
+                  : 'bg-[#0D1118] text-[#A8A090] border border-white/5 hover:border-white/20'
               }`}
             >
               All Machinery ({products.length})
@@ -206,7 +206,7 @@ export const EquipmentPage: React.FC = () => {
                   className={`px-5 py-2.5 rounded-full text-xs font-mono uppercase tracking-wider whitespace-nowrap transition flex items-center gap-2 ${
                     activeCategory === cat.id
                       ? 'bg-[#D26539] text-[#090C10] font-bold shadow-lg shadow-[#D26539]/20'
-                      : 'bg-[#0D1118] text-slate-300 border border-white/5 hover:border-white/20'
+                      : 'bg-[#0D1118] text-[#A8A090] border border-white/5 hover:border-white/20'
                   }`}
                 >
                   <span>{cat.name}</span>
@@ -226,7 +226,7 @@ export const EquipmentPage: React.FC = () => {
             return (
               <div
                 key={product.id}
-                className="bg-[#0D1118] border border-white/10 rounded-2xl overflow-hidden luxury-card flex flex-col justify-between group"
+                className="bg-[#0D1118] border border-white/10 rounded-none overflow-hidden luxury-card flex flex-col justify-between group"
               >
                 <div>
                   <div
@@ -255,7 +255,7 @@ export const EquipmentPage: React.FC = () => {
                       className={`absolute top-3 right-3 p-2 rounded-full  border transition ${
                         isWish
                           ? 'bg-[#D26539] text-[#090C10] border-[#D26539]'
-                          : 'bg-[#090C10]/60 text-slate-400 border-white/10 hover:text-white'
+                          : 'bg-[#090C10]/60 text-[#A8A090] border-white/10 hover:text-white'
                       }`}
                     >
                       <Heart className="w-3.5 h-3.5 fill-current" />
@@ -263,29 +263,29 @@ export const EquipmentPage: React.FC = () => {
                   </div>
 
                   <div className="p-5 space-y-3">
-                    <div className="flex items-center justify-between text-[10px] font-mono text-slate-500 uppercase">
+                    <div className="flex items-center justify-between text-[10px] font-mono text-[#6B6358] uppercase">
                       <span>{product.brand}</span>
                       <span>{product.category}</span>
                     </div>
 
                     <h3
                       onClick={() => handleOpenDetailModal(product)}
-                      className="font-syne text-base font-bold text-white group-hover:text-[#D26539] transition uppercase cursor-pointer line-clamp-1"
+                      className="font-satoshi text-base font-bold text-white group-hover:text-[#D26539] transition uppercase cursor-pointer line-clamp-1"
                     >
                       {product.name}
                     </h3>
 
-                    <p className="text-xs text-slate-400 font-sans line-clamp-2 leading-relaxed">
+                    <p className="text-xs text-[#A8A090] font-sans line-clamp-2 leading-relaxed">
                       {product.description}
                     </p>
 
-                    <div className="grid grid-cols-2 gap-2 pt-3 border-t border-white/5 font-mono text-[10px] text-slate-400">
+                    <div className="grid grid-cols-2 gap-2 pt-3 border-t border-white/5 font-mono text-[10px] text-[#A8A090]">
                       <div className="bg-white/5 p-2 rounded-lg">
-                        <span className="text-slate-500 block">CAPACITY:</span>
+                        <span className="text-[#6B6358] block">CAPACITY:</span>
                         <span className="text-white font-bold">{product.specs?.['Max Load'] || product.specs?.['Weight Capacity'] || '600 KG'}</span>
                       </div>
                       <div className="bg-white/5 p-2 rounded-lg">
-                        <span className="text-slate-500 block">WARRANTY:</span>
+                        <span className="text-[#6B6358] block">WARRANTY:</span>
                         <span className="text-[#D26539] font-bold">{product.specs?.['Warranty'] || '10 Yrs Frame'}</span>
                       </div>
                     </div>
@@ -320,7 +320,7 @@ export const EquipmentPage: React.FC = () => {
                       className={`px-3 py-1.5 rounded-full text-[11px] font-mono border transition ${
                         isCompared
                           ? 'bg-[#D26539]/20 text-[#D26539] border-[#D26539]'
-                          : 'bg-[#0D1118] text-slate-400 border-white/10 hover:text-white'
+                          : 'bg-[#0D1118] text-[#A8A090] border-white/10 hover:text-white'
                       }`}
                     >
                       {isCompared ? 'Compared' : 'Compare'}
@@ -345,21 +345,21 @@ export const EquipmentPage: React.FC = () => {
               initial={{ scale: 0.95, y: 20 }}
               animate={{ scale: 1, y: 0 }}
               exit={{ scale: 0.95, y: 20 }}
-              className="bg-[#0D1118] border border-white/10 rounded-3xl max-w-4xl w-full max-h-[90vh] overflow-y-auto p-6 sm:p-8 space-y-8 "
+              className="bg-[#0D1118] border border-white/10 rounded-none max-w-4xl w-full max-h-[90vh] overflow-y-auto p-6 sm:p-8 space-y-8 "
             >
               <div className="flex items-start justify-between border-b border-white/10 pb-4">
                 <div>
                   <span className="text-[10px] font-mono text-[#D26539] uppercase tracking-widest block mb-1">
                     COMMERCIAL MACHINERY SCHEMATICS // {selectedProduct.brand}
                   </span>
-                  <h2 className="font-syne text-2xl sm:text-3xl font-extrabold text-white uppercase">
+                  <h2 className="font-satoshi text-2xl sm:text-3xl font-extrabold text-white uppercase">
                     {selectedProduct.name}
                   </h2>
                 </div>
                 <button
                   type="button"
                   onClick={() => setSelectedProduct(null)}
-                  className="p-2 rounded-full bg-white/5 hover:bg-white/10 text-slate-400 hover:text-white transition"
+                  className="p-2 rounded-full bg-white/5 hover:bg-white/10 text-[#A8A090] hover:text-white transition"
                 >
                   <X className="w-5 h-5" />
                 </button>
@@ -368,7 +368,7 @@ export const EquipmentPage: React.FC = () => {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
                 {/* Images */}
                 <div className="space-y-4">
-                  <div className="h-72 rounded-2xl overflow-hidden bg-[#05070A] border border-white/10">
+                  <div className="h-72 rounded-none overflow-hidden bg-[#05070A] border border-white/10">
                     <img
                       src={selectedProduct.gallery?.[selectedImage] || selectedProduct.image || fallbackImage}
                       alt={selectedProduct.name}
@@ -394,26 +394,26 @@ export const EquipmentPage: React.FC = () => {
 
                 {/* Specifications & Actions */}
                 <div className="space-y-6">
-                  <p className="text-sm text-slate-300 font-sans leading-relaxed">
+                  <p className="text-sm text-[#A8A090] font-sans leading-relaxed">
                     {selectedProduct.description}
                   </p>
 
                   {/* Spec List */}
-                  <div className="space-y-2.5 font-mono text-xs text-slate-300 bg-[#090C10] p-4 rounded-xl border border-white/5">
+                  <div className="space-y-2.5 font-mono text-xs text-[#A8A090] bg-[#090C10] p-4 rounded-xl border border-white/5">
                     <div className="flex justify-between py-1 border-b border-white/5">
-                      <span className="text-slate-500">FRAME STEEL:</span>
+                      <span className="text-[#6B6358]">FRAME STEEL:</span>
                       <span className="text-[#D26539] font-bold">{selectedProduct.specs?.['Steel Frame'] || '11-Gauge (3.0mm) Laser Cut'}</span>
                     </div>
                     <div className="flex justify-between py-1 border-b border-white/5">
-                      <span className="text-slate-500">WEIGHT CAPACITY:</span>
+                      <span className="text-[#6B6358]">WEIGHT CAPACITY:</span>
                       <span className="text-white font-bold">{selectedProduct.specs?.['Max Load'] || selectedProduct.specs?.['Weight Capacity'] || '650 KG Tested Load'}</span>
                     </div>
                     <div className="flex justify-between py-1 border-b border-white/5">
-                      <span className="text-slate-500">FINISH:</span>
+                      <span className="text-[#6B6358]">FINISH:</span>
                       <span className="text-white font-bold">{selectedProduct.specs?.['Coating'] || 'Dual Electrostatic Powder Coat'}</span>
                     </div>
                     <div className="flex justify-between py-1">
-                      <span className="text-slate-500">WARRANTY:</span>
+                      <span className="text-[#6B6358]">WARRANTY:</span>
                       <span className="text-emerald-400 font-bold">{selectedProduct.specs?.['Warranty'] || '10 Years Structural Frame'}</span>
                     </div>
                   </div>
@@ -424,7 +424,7 @@ export const EquipmentPage: React.FC = () => {
                       <button
                         type="button"
                         onClick={() => setModalQuantity(Math.max(1, modalQuantity - 1))}
-                        className="text-slate-400 hover:text-white"
+                        className="text-[#A8A090] hover:text-white"
                       >
                         -
                       </button>
@@ -432,7 +432,7 @@ export const EquipmentPage: React.FC = () => {
                       <button
                         type="button"
                         onClick={() => setModalQuantity(modalQuantity + 1)}
-                        className="text-slate-400 hover:text-white"
+                        className="text-[#A8A090] hover:text-white"
                       >
                         +
                       </button>

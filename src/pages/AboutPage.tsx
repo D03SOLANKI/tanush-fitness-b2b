@@ -24,11 +24,11 @@ export const AboutPage: React.FC = () => {
               <span>THE ARCHITECTURAL DISCIPLINE // EST. 2018</span>
             </div>
 
-            <h1 className="font-syne text-3xl sm:text-5xl md:text-6xl font-extrabold uppercase text-white tracking-tight">
+            <h1 className="font-satoshi text-3xl sm:text-5xl md:text-6xl font-extrabold uppercase text-white tracking-tight">
               THE TANUSH <span className="text-[#D26539]">LEGACY</span>
             </h1>
 
-            <p className="text-sm sm:text-base text-slate-400 max-w-2xl font-sans leading-relaxed">
+            <p className="text-sm sm:text-base text-[#A8A090] max-w-2xl font-sans leading-relaxed">
               We design and manufacture commercial fitness environments where precision biomechanics, structural 11-gauge steel, and architectural luxury converge.
             </p>
           </div>
@@ -51,13 +51,13 @@ export const AboutPage: React.FC = () => {
       {/* Editorial Story & Vault-Style Vision Tabs */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 space-y-16">
         {/* Interactive What is Tanush vs Why Tanush Section */}
-        <div className="bg-[#0D1118] border border-white/10 rounded-3xl p-8 sm:p-12 space-y-8">
+        <div className="bg-[#0D1118] border border-white/10 rounded-none p-8 sm:p-12 space-y-8">
           <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6 border-b border-white/10 pb-6">
             <div className="space-y-1">
               <span className="text-[11px] font-mono tracking-[0.25em] text-[#D26539] uppercase">
                 THE TANUSH PHILOSOPHY
               </span>
-              <h2 className="font-syne text-2xl sm:text-3xl font-extrabold text-white uppercase">
+              <h2 className="font-satoshi text-2xl sm:text-3xl font-extrabold text-white uppercase">
                 {activeTab === 'what' ? 'What is Tanush Fitness?' : 'Why Choose Tanush Fitness?'}
               </h2>
             </div>
@@ -69,7 +69,7 @@ export const AboutPage: React.FC = () => {
                 className={`px-6 py-2 rounded-full text-xs font-mono uppercase tracking-wider transition ${
                   activeTab === 'what'
                     ? 'bg-[#D26539] text-[#090C10] font-bold shadow-md'
-                    : 'text-slate-400 hover:text-white'
+                    : 'text-[#A8A090] hover:text-white'
                 }`}
               >
                 What is Tanush?
@@ -80,7 +80,7 @@ export const AboutPage: React.FC = () => {
                 className={`px-6 py-2 rounded-full text-xs font-mono uppercase tracking-wider transition ${
                   activeTab === 'why'
                     ? 'bg-[#D26539] text-[#090C10] font-bold shadow-md'
-                    : 'text-slate-400 hover:text-white'
+                    : 'text-[#A8A090] hover:text-white'
                 }`}
               >
                 Why Tanush?
@@ -91,7 +91,7 @@ export const AboutPage: React.FC = () => {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
             <div className="lg:col-span-7 space-y-6">
               {activeTab === 'what' ? (
-                <div className="space-y-4 text-slate-300 font-sans leading-relaxed text-sm sm:text-base">
+                <div className="space-y-4 text-[#A8A090] font-sans leading-relaxed text-sm sm:text-base">
                   <p>
                     Introducing India's premier commercial fitness sanctuary & outfitting brand: <span className="text-white font-bold">Tanush Fitness</span>, where precision biomechanical engineering and commercial strength take center stage.
                   </p>
@@ -103,7 +103,7 @@ export const AboutPage: React.FC = () => {
                   </p>
                 </div>
               ) : (
-                <div className="space-y-4 text-slate-300 font-sans leading-relaxed text-sm sm:text-base">
+                <div className="space-y-4 text-[#A8A090] font-sans leading-relaxed text-sm sm:text-base">
                   <p>
                     As a testament to unwavering commitment to quality and athletic excellence, <span className="text-white font-bold">Tanush Fitness</span> redefines the B2B procurement experience.
                   </p>
@@ -116,24 +116,24 @@ export const AboutPage: React.FC = () => {
                 </div>
               )}
 
-              <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 pt-4 font-mono text-xs text-slate-300 border-t border-white/5">
+              <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 pt-4 font-mono text-xs text-[#A8A090] border-t border-white/5">
                 <div>
-                  <span className="text-[#D26539] font-bold block text-xl font-syne">500+</span>
-                  <span className="text-slate-400 text-[10px] uppercase">CLUBS OUTFITTED</span>
+                  <span className="text-[#D26539] font-bold block text-xl font-satoshi">500+</span>
+                  <span className="text-[#A8A090] text-[10px] uppercase">CLUBS OUTFITTED</span>
                 </div>
                 <div>
-                  <span className="text-[#D26539] font-bold block text-xl font-syne">11-GAUGE</span>
-                  <span className="text-slate-400 text-[10px] uppercase">PRECISION STEEL</span>
+                  <span className="text-[#D26539] font-bold block text-xl font-satoshi">11-GAUGE</span>
+                  <span className="text-[#A8A090] text-[10px] uppercase">PRECISION STEEL</span>
                 </div>
                 <div>
-                  <span className="text-[#D26539] font-bold block text-xl font-syne">ISO 9001</span>
-                  <span className="text-slate-400 text-[10px] uppercase">CERTIFIED PLANT</span>
+                  <span className="text-[#D26539] font-bold block text-xl font-satoshi">ISO 9001</span>
+                  <span className="text-[#A8A090] text-[10px] uppercase">CERTIFIED PLANT</span>
                 </div>
               </div>
             </div>
 
             <div className="lg:col-span-5">
-              <div className="relative rounded-2xl overflow-hidden border border-white/10 h-72 sm:h-96">
+              <div className="relative rounded-none overflow-hidden border border-white/10 h-72 sm:h-96">
                 <img
                   src={
                     activeTab === 'what'
@@ -151,32 +151,32 @@ export const AboutPage: React.FC = () => {
 
         {/* Pillars / USPs */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          <div className="bg-[#0D1118] border border-white/10 rounded-2xl p-8 space-y-4 luxury-card">
+          <div className="bg-[#0D1118] border border-white/10 rounded-none p-8 space-y-4 luxury-card">
             <div className="w-12 h-12 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-[#D26539]">
               <Wrench className="w-6 h-6" />
             </div>
-            <h3 className="font-syne text-xl font-bold text-white uppercase">Direct Factory Direct</h3>
-            <p className="text-slate-400 text-xs sm:text-sm leading-relaxed font-sans">
+            <h3 className="font-satoshi text-xl font-bold text-white uppercase">Direct Factory Direct</h3>
+            <p className="text-[#A8A090] text-xs sm:text-sm leading-relaxed font-sans">
               Eliminate third-party trading markups. Receive 18% GST Input Tax Credit compliant direct manufacturer invoicing with 10-year structural frame guarantees.
             </p>
           </div>
 
-          <div className="bg-[#0D1118] border border-white/10 rounded-2xl p-8 space-y-4 luxury-card">
+          <div className="bg-[#0D1118] border border-white/10 rounded-none p-8 space-y-4 luxury-card">
             <div className="w-12 h-12 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-[#D26539]">
               <Cpu className="w-6 h-6" />
             </div>
-            <h3 className="font-syne text-xl font-bold text-white uppercase">3D CAD Turnkey Suites</h3>
-            <p className="text-slate-400 text-xs sm:text-sm leading-relaxed font-sans">
+            <h3 className="font-satoshi text-xl font-bold text-white uppercase">3D CAD Turnkey Suites</h3>
+            <p className="text-[#A8A090] text-xs sm:text-sm leading-relaxed font-sans">
               Full architectural spatial planning, acoustic rubber isolation, and RFID turnstile integration customized to your commercial floor plan.
             </p>
           </div>
 
-          <div className="bg-[#0D1118] border border-white/10 rounded-2xl p-8 space-y-4 luxury-card">
+          <div className="bg-[#0D1118] border border-white/10 rounded-none p-8 space-y-4 luxury-card">
             <div className="w-12 h-12 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-[#D26539]">
               <Users className="w-6 h-6" />
             </div>
-            <h3 className="font-syne text-xl font-bold text-white uppercase">Master Coach Placement</h3>
-            <p className="text-slate-400 text-xs sm:text-sm leading-relaxed font-sans">
+            <h3 className="font-satoshi text-xl font-bold text-white uppercase">Master Coach Placement</h3>
+            <p className="text-[#A8A090] text-xs sm:text-sm leading-relaxed font-sans">
               Access India’s certified roster of NASM, CSCS, and K11 personal trainers and general managers for rapid club launch readiness.
             </p>
           </div>
@@ -188,7 +188,7 @@ export const AboutPage: React.FC = () => {
             <span className="text-xs font-mono text-[#D26539] uppercase tracking-widest block">
               EXECUTIVE LEADERSHIP & ENGINEERING
             </span>
-            <h2 className="font-syne text-2xl sm:text-3xl font-extrabold text-white uppercase">
+            <h2 className="font-satoshi text-2xl sm:text-3xl font-extrabold text-white uppercase">
               The Minds Behind Tanush Precision
             </h2>
           </div>
@@ -199,12 +199,12 @@ export const AboutPage: React.FC = () => {
               { name: 'Rohan Mehta', title: 'Director of Laser Manufacturing', image: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=400&q=80', bio: 'Directs ISO 9001:2015 robotic welding calibration and heavy tensile stress tests for selectorized machines.' },
               { name: 'Priya Sharma', title: 'VP of Master Staffing & Academy', image: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=400&q=80', bio: 'Head of credential vetting for NASM, CSCS, and ACE certified master personal trainer placements.' }
             ].map((team, i) => (
-              <div key={i} className="bg-[#0D1118] border border-white/10 rounded-2xl p-6 luxury-card space-y-4">
-                <img src={team.image} alt={team.name} className="w-20 h-20 rounded-2xl object-cover border border-white/10" />
+              <div key={i} className="bg-[#0D1118] border border-white/10 rounded-none p-6 luxury-card space-y-4">
+                <img src={team.image} alt={team.name} className="w-20 h-20 rounded-none object-cover border border-white/10" />
                 <div className="space-y-1">
-                  <h3 className="font-syne text-lg font-bold text-white uppercase">{team.name}</h3>
+                  <h3 className="font-satoshi text-lg font-bold text-white uppercase">{team.name}</h3>
                   <div className="text-xs font-mono text-[#D26539] uppercase">{team.title}</div>
-                  <p className="text-xs text-slate-400 font-sans leading-relaxed pt-2">{team.bio}</p>
+                  <p className="text-xs text-[#A8A090] font-sans leading-relaxed pt-2">{team.bio}</p>
                 </div>
               </div>
             ))}
@@ -212,13 +212,13 @@ export const AboutPage: React.FC = () => {
         </div>
 
         {/* CTA Bar */}
-        <div className="bg-gradient-to-r from-[#0D1118] via-[#111622] to-[#0D1118] border border-white/10 rounded-3xl p-8 sm:p-12 flex flex-col md:flex-row items-center justify-between gap-6 ">
+        <div className="bg-gradient-to-r from-[#0D1118] via-[#111622] to-[#0D1118] border border-white/10 rounded-none p-8 sm:p-12 flex flex-col md:flex-row items-center justify-between gap-6 ">
           <div className="space-y-2">
             <span className="text-xs font-mono text-[#D26539] uppercase tracking-widest block">COMMERCIAL INQUIRIES</span>
-            <h3 className="font-syne text-2xl sm:text-3xl font-extrabold text-white uppercase">
+            <h3 className="font-satoshi text-2xl sm:text-3xl font-extrabold text-white uppercase">
               Ready to Outfit Your Commercial Sanctuary?
             </h3>
-            <p className="text-slate-400 text-sm font-sans max-w-xl">
+            <p className="text-[#A8A090] text-sm font-sans max-w-xl">
               Connect with our Executive Engineering Team for official project RFQ quotes and spatial CAD modeling.
             </p>
           </div>

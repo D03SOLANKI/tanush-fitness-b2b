@@ -81,11 +81,11 @@ export const ServicesPage: React.FC = () => {
               <span>360° COMMERCIAL GYM ARCHITECTURE</span>
             </div>
 
-            <h1 className="font-syne text-3xl sm:text-5xl md:text-6xl font-extrabold uppercase text-white tracking-tight">
+            <h1 className="font-satoshi text-3xl sm:text-5xl md:text-6xl font-extrabold uppercase text-white tracking-tight">
               TURNKEY <span className="text-[#D26539]">OUTFITTING</span>
             </h1>
 
-            <p className="text-sm sm:text-base text-slate-400 max-w-2xl font-sans leading-relaxed">
+            <p className="text-sm sm:text-base text-[#A8A090] max-w-2xl font-sans leading-relaxed">
               From raw commercial square footage to fully commissioned athletic destinations. 3D CAD blueprints, high-density acoustic flooring, turnstiles, and automated operational management.
             </p>
           </div>
@@ -114,7 +114,7 @@ export const ServicesPage: React.FC = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.4, delay: idx * 0.05 }}
-              className="bg-[#0D1118] border border-white/10 rounded-2xl overflow-hidden luxury-card flex flex-col justify-between group"
+              className="bg-[#0D1118] border border-white/10 rounded-none overflow-hidden luxury-card flex flex-col justify-between group"
             >
               <div>
                 {/* Visual Image */}
@@ -134,21 +134,21 @@ export const ServicesPage: React.FC = () => {
 
                 {/* Content */}
                 <div className="p-6 space-y-4">
-                  <span className="text-[10px] font-mono text-slate-500 uppercase tracking-wider block">
+                  <span className="text-[10px] font-mono text-[#6B6358] uppercase tracking-wider block">
                     {service.category || 'COMMERCIAL SETUP'}
                   </span>
 
-                  <h3 className="font-syne text-xl font-bold text-white group-hover:text-[#D26539] transition uppercase">
+                  <h3 className="font-satoshi text-xl font-bold text-white group-hover:text-[#D26539] transition uppercase">
                     {service.name}
                   </h3>
 
-                  <p className="text-xs sm:text-sm text-slate-400 font-sans leading-relaxed">
+                  <p className="text-xs sm:text-sm text-[#A8A090] font-sans leading-relaxed">
                     {service.shortDesc}
                   </p>
 
                   {/* Highlights */}
                   {service.benefits && service.benefits.length > 0 && (
-                    <div className="pt-3 border-t border-white/5 space-y-2 font-mono text-xs text-slate-300">
+                    <div className="pt-3 border-t border-white/5 space-y-2 font-mono text-xs text-[#A8A090]">
                       {service.benefits.slice(0, 3).map((f, fIdx) => (
                         <div key={fIdx} className="flex items-center gap-2">
                           <CheckCircle2 className="w-3.5 h-3.5 text-[#D26539] shrink-0" />
@@ -189,21 +189,21 @@ export const ServicesPage: React.FC = () => {
               initial={{ scale: 0.95, y: 20 }}
               animate={{ scale: 1, y: 0 }}
               exit={{ scale: 0.95, y: 20 }}
-              className="bg-[#0D1118] border border-white/10 rounded-3xl max-w-xl w-full p-6 sm:p-8 space-y-6 "
+              className="bg-[#0D1118] border border-white/10 rounded-none max-w-xl w-full p-6 sm:p-8 space-y-6 "
             >
               <div className="flex items-start justify-between border-b border-white/10 pb-4">
                 <div>
                   <span className="text-[10px] font-mono text-[#D26539] uppercase tracking-widest block mb-1">
                     TURNKEY SERVICE PROPOSAL
                   </span>
-                  <h3 className="font-syne text-2xl font-bold text-white uppercase">
+                  <h3 className="font-satoshi text-2xl font-bold text-white uppercase">
                     {selectedService?.name || 'Turnkey Commercial Consultation'}
                   </h3>
                 </div>
                 <button
                   type="button"
                   onClick={() => setIsModalOpen(false)}
-                  className="p-2 rounded-full bg-white/5 hover:bg-white/10 text-slate-400 hover:text-white"
+                  className="p-2 rounded-full bg-white/5 hover:bg-white/10 text-[#A8A090] hover:text-white"
                 >
                   <X className="w-5 h-5" />
                 </button>
@@ -211,61 +211,61 @@ export const ServicesPage: React.FC = () => {
 
               <form onSubmit={handleEnquirySubmit} className="space-y-4">
                 <div>
-                  <label className="block text-xs font-mono text-slate-400 uppercase mb-1">Your Full Name</label>
+                  <label className="block text-xs font-mono text-[#A8A090] uppercase mb-1">Your Full Name</label>
                   <input
                     type="text"
                     required
                     placeholder="Sameer Kapoor"
                     value={formState.name}
                     onChange={e => setFormState({ ...formState, name: e.target.value })}
-                    className="w-full bg-[#090C10] border border-white/10 rounded-xl px-4 py-2.5 text-sm text-white placeholder-slate-600 focus:outline-none focus:border-[#D26539]"
+                    className="w-full bg-[#090C10] border border-white/10 rounded-xl px-4 py-2.5 text-sm text-white placeholder-[#6B6358] focus:outline-none focus:border-[#D26539]"
                   />
                 </div>
 
                 <div>
-                  <label className="block text-xs font-mono text-slate-400 uppercase mb-1">Gym / Project Name</label>
+                  <label className="block text-xs font-mono text-[#A8A090] uppercase mb-1">Gym / Project Name</label>
                   <input
                     type="text"
                     required
                     placeholder="Iron Sanctuary Club"
                     value={formState.gymName}
                     onChange={e => setFormState({ ...formState, gymName: e.target.value })}
-                    className="w-full bg-[#090C10] border border-white/10 rounded-xl px-4 py-2.5 text-sm text-white placeholder-slate-600 focus:outline-none focus:border-[#D26539]"
+                    className="w-full bg-[#090C10] border border-white/10 rounded-xl px-4 py-2.5 text-sm text-white placeholder-[#6B6358] focus:outline-none focus:border-[#D26539]"
                   />
                 </div>
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
-                    <label className="block text-xs font-mono text-slate-400 uppercase mb-1">Mobile Hotline</label>
+                    <label className="block text-xs font-mono text-[#A8A090] uppercase mb-1">Mobile Hotline</label>
                     <input
                       type="tel"
                       required
                       placeholder="+91 98765 43210"
                       value={formState.mobile}
                       onChange={e => setFormState({ ...formState, mobile: e.target.value })}
-                      className="w-full bg-[#090C10] border border-white/10 rounded-xl px-4 py-2.5 text-sm text-white placeholder-slate-600 focus:outline-none focus:border-[#D26539]"
+                      className="w-full bg-[#090C10] border border-white/10 rounded-xl px-4 py-2.5 text-sm text-white placeholder-[#6B6358] focus:outline-none focus:border-[#D26539]"
                     />
                   </div>
                   <div>
-                    <label className="block text-xs font-mono text-slate-400 uppercase mb-1">Work Email</label>
+                    <label className="block text-xs font-mono text-[#A8A090] uppercase mb-1">Work Email</label>
                     <input
                       type="email"
                       placeholder="sameer@ironclub.in"
                       value={formState.email}
                       onChange={e => setFormState({ ...formState, email: e.target.value })}
-                      className="w-full bg-[#090C10] border border-white/10 rounded-xl px-4 py-2.5 text-sm text-white placeholder-slate-600 focus:outline-none focus:border-[#D26539]"
+                      className="w-full bg-[#090C10] border border-white/10 rounded-xl px-4 py-2.5 text-sm text-white placeholder-[#6B6358] focus:outline-none focus:border-[#D26539]"
                     />
                   </div>
                 </div>
 
                 <div>
-                  <label className="block text-xs font-mono text-slate-400 uppercase mb-1">Specific Requirements</label>
+                  <label className="block text-xs font-mono text-[#A8A090] uppercase mb-1">Specific Requirements</label>
                   <textarea
                     rows={3}
                     placeholder="Tell us about your square footage, location, floor acoustic needs..."
                     value={formState.additionalRequirements}
                     onChange={e => setFormState({ ...formState, additionalRequirements: e.target.value })}
-                    className="w-full bg-[#090C10] border border-white/10 rounded-xl p-3 text-sm text-white placeholder-slate-600 focus:outline-none focus:border-[#D26539]"
+                    className="w-full bg-[#090C10] border border-white/10 rounded-xl p-3 text-sm text-white placeholder-[#6B6358] focus:outline-none focus:border-[#D26539]"
                   />
                 </div>
 

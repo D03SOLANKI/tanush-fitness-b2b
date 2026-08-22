@@ -64,12 +64,12 @@ export const PdfQuoteDispatcherTab: React.FC = () => {
 
   return (
     <div className="space-y-6 font-mono text-xs">
-      <div className="bg-white p-4 rounded-2xl border border-slate-200 shadow-sm flex items-center justify-between">
+      <div className="bg-[#1A2018] p-4 rounded-none border border-white/10 shadow-sm flex items-center justify-between">
         <div>
-          <h3 className="text-sm font-black text-slate-900 font-heading uppercase">
+          <h3 className="text-sm font-black text-[#090C10] font-satoshi uppercase">
             B2B PDF Quotation Generator & Dispatcher
           </h3>
-          <p className="text-[10px] text-slate-500 font-normal">
+          <p className="text-[10px] text-[#6B6358] font-normal">
             Convert incoming RFQ enquiries into formal itemized price quotes with discounts & GST.
           </p>
         </div>
@@ -78,12 +78,12 @@ export const PdfQuoteDispatcherTab: React.FC = () => {
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
         {/* RFQ Enquiries List */}
         <div className="lg:col-span-5 space-y-3">
-          <div className="text-xs font-black uppercase text-slate-700 font-heading">
+          <div className="text-xs font-black uppercase text-[#7A7268] font-satoshi">
             Pending RFQs ({equipmentEnquiries.length})
           </div>
 
           {equipmentEnquiries.length === 0 ? (
-            <div className="p-8 text-center bg-white rounded-2xl border border-slate-200 text-slate-400">
+            <div className="p-8 text-center bg-[#1A2018] rounded-none border border-white/10 text-[#A8A090]">
               No RFQ enquiries submitted yet.
             </div>
           ) : (
@@ -91,21 +91,21 @@ export const PdfQuoteDispatcherTab: React.FC = () => {
               <div
                 key={rfq.id}
                 onClick={() => handleOpenQuoteGenerator(rfq)}
-                className={`p-4 rounded-2xl border cursor-pointer transition-all ${
+                className={`p-4 rounded-none border cursor-pointer transition-all ${
                   selectedEnquiry?.id === rfq.id
-                    ? 'bg-blue-50/70 border-blue-600 shadow-md'
-                    : 'bg-white border-slate-200 hover:border-slate-300'
+                    ? 'bg-[#D26539]/10/70 border-[#D26539] shadow-md'
+                    : 'bg-[#1A2018] border-white/10 hover:border-white/15'
                 }`}
               >
                 <div className="flex items-center justify-between mb-1">
-                  <span className="text-[10px] font-bold text-blue-600 font-mono">{rfq.rfqReference}</span>
-                  <span className="text-[9px] font-bold px-2 py-0.5 rounded bg-blue-100 text-blue-900 uppercase">
+                  <span className="text-[10px] font-bold text-[#D26539] font-mono">{rfq.rfqReference}</span>
+                  <span className="text-[9px] font-bold px-2 py-0.5 rounded bg-[#D26539]/10 text-[#090C10] uppercase">
                     {rfq.status}
                   </span>
                 </div>
-                <div className="font-black text-slate-900 font-heading uppercase text-sm">{rfq.companyGymName}</div>
-                <div className="text-[11px] text-slate-600">{rfq.name} • {rfq.mobile}</div>
-                <div className="text-[10px] text-slate-500 mt-2 font-bold">
+                <div className="font-black text-[#090C10] font-satoshi uppercase text-sm">{rfq.companyGymName}</div>
+                <div className="text-[11px] text-[#7A7268]">{rfq.name} • {rfq.mobile}</div>
+                <div className="text-[10px] text-[#6B6358] mt-2 font-bold">
                   Items Requested: {rfq.selectedProducts.length} Models
                 </div>
               </div>
@@ -116,43 +116,43 @@ export const PdfQuoteDispatcherTab: React.FC = () => {
         {/* Pricing Calculator & PDF Preview */}
         <div className="lg:col-span-7">
           {selectedEnquiry ? (
-            <div className="bg-white rounded-3xl border border-slate-200 p-6 space-y-6 shadow-sm">
-              <div className="flex items-center justify-between border-b border-slate-100 pb-3">
+            <div className="bg-[#1A2018] rounded-none border border-white/10 p-6 space-y-6 shadow-sm">
+              <div className="flex items-center justify-between border-b border-white/8 pb-3">
                 <div>
-                  <span className="text-[10px] font-bold text-blue-600 uppercase font-mono">
+                  <span className="text-[10px] font-bold text-[#D26539] uppercase font-mono">
                     RFQ: {selectedEnquiry.rfqReference}
                   </span>
-                  <h3 className="text-base font-black text-slate-900 font-heading uppercase">
+                  <h3 className="text-base font-black text-[#090C10] font-satoshi uppercase">
                     {selectedEnquiry.companyGymName}
                   </h3>
                 </div>
                 <div className="text-right text-xs">
-                  <div className="font-bold text-slate-900">{selectedEnquiry.name}</div>
-                  <div className="text-blue-600 font-bold">{selectedEnquiry.mobile}</div>
+                  <div className="font-bold text-[#090C10]">{selectedEnquiry.name}</div>
+                  <div className="text-[#D26539] font-bold">{selectedEnquiry.mobile}</div>
                 </div>
               </div>
 
               {/* Item Pricing Matrix */}
               <div className="space-y-3">
-                <div className="text-xs font-black uppercase text-slate-700">
+                <div className="text-xs font-black uppercase text-[#7A7268]">
                   Itemized Wholesale Unit Pricing
                 </div>
 
-                <div className="space-y-2 divide-y divide-slate-100">
+                <div className="space-y-2 divide-y divide-white/8">
                   {selectedEnquiry.selectedProducts.map((item: any) => (
                     <div key={item.id} className="pt-2 flex items-center justify-between gap-3">
                       <div>
-                        <div className="font-bold text-slate-900 uppercase">{item.name}</div>
-                        <div className="text-[10px] text-slate-500">Qty: {item.quantity} Units</div>
+                        <div className="font-bold text-[#090C10] uppercase">{item.name}</div>
+                        <div className="text-[10px] text-[#6B6358]">Qty: {item.quantity} Units</div>
                       </div>
 
                       <div className="flex items-center gap-2">
-                        <span className="text-slate-500 font-bold">₹/unit:</span>
+                        <span className="text-[#6B6358] font-bold">₹/unit:</span>
                         <input
                           type="number"
                           value={unitPrices[item.id] || 45000}
                           onChange={e => handleUnitPriceChange(item.id, parseFloat(e.target.value))}
-                          className="w-28 bg-slate-50 border border-slate-200 rounded-xl p-1.5 text-xs font-bold text-right text-slate-900"
+                          className="w-28 bg-[#F0EBE3]/10 border border-white/10 rounded-xl p-1.5 text-xs font-bold text-right text-[#090C10]"
                         />
                       </div>
                     </div>
@@ -161,41 +161,41 @@ export const PdfQuoteDispatcherTab: React.FC = () => {
               </div>
 
               {/* Adjustments (Discount, Freight, GST) */}
-              <div className="grid grid-cols-3 gap-3 pt-3 border-t border-slate-100">
+              <div className="grid grid-cols-3 gap-3 pt-3 border-t border-white/8">
                 <div>
-                  <label className="text-[10px] font-bold text-slate-500 uppercase block mb-1">Discount %</label>
+                  <label className="text-[10px] font-bold text-[#6B6358] uppercase block mb-1">Discount %</label>
                   <input
                     type="number"
                     value={discountPercent}
                     onChange={e => setDiscountPercent(parseFloat(e.target.value) || 0)}
-                    className="w-full bg-slate-50 border border-slate-200 rounded-xl p-2 text-xs font-bold text-slate-900"
+                    className="w-full bg-[#F0EBE3]/10 border border-white/10 rounded-xl p-2 text-xs font-bold text-[#090C10]"
                   />
                 </div>
 
                 <div>
-                  <label className="text-[10px] font-bold text-slate-500 uppercase block mb-1">Freight Charges (₹)</label>
+                  <label className="text-[10px] font-bold text-[#6B6358] uppercase block mb-1">Freight Charges (₹)</label>
                   <input
                     type="number"
                     value={freightCharges}
                     onChange={e => setFreightCharges(parseFloat(e.target.value) || 0)}
-                    className="w-full bg-slate-50 border border-slate-200 rounded-xl p-2 text-xs font-bold text-slate-900"
+                    className="w-full bg-[#F0EBE3]/10 border border-white/10 rounded-xl p-2 text-xs font-bold text-[#090C10]"
                   />
                 </div>
 
                 <div>
-                  <label className="text-[10px] font-bold text-slate-500 uppercase block mb-1">GST Tax %</label>
+                  <label className="text-[10px] font-bold text-[#6B6358] uppercase block mb-1">GST Tax %</label>
                   <input
                     type="number"
                     value={gstPercent}
                     onChange={e => setGstPercent(parseFloat(e.target.value) || 0)}
-                    className="w-full bg-slate-50 border border-slate-200 rounded-xl p-2 text-xs font-bold text-slate-900"
+                    className="w-full bg-[#F0EBE3]/10 border border-white/10 rounded-xl p-2 text-xs font-bold text-[#090C10]"
                   />
                 </div>
               </div>
 
               {/* Calculated Totals Summary */}
-              <div className="p-4 bg-slate-900 text-white rounded-2xl space-y-1.5">
-                <div className="flex justify-between text-xs text-slate-300">
+              <div className="p-4 bg-[#090C10] text-white rounded-none space-y-1.5">
+                <div className="flex justify-between text-xs text-[#A8A090]">
                   <span>Subtotal:</span>
                   <span>₹{totals.subtotal.toLocaleString('en-IN')}</span>
                 </div>
@@ -203,15 +203,15 @@ export const PdfQuoteDispatcherTab: React.FC = () => {
                   <span>Discount ({discountPercent}%):</span>
                   <span>- ₹{totals.discount.toLocaleString('en-IN')}</span>
                 </div>
-                <div className="flex justify-between text-xs text-slate-300">
+                <div className="flex justify-between text-xs text-[#A8A090]">
                   <span>Freight & Handling:</span>
                   <span>+ ₹{totals.freight.toLocaleString('en-IN')}</span>
                 </div>
-                <div className="flex justify-between text-xs text-blue-400 font-bold">
+                <div className="flex justify-between text-xs text-[#D26539] font-bold">
                   <span>GST ({gstPercent}%):</span>
                   <span>+ ₹{totals.gst.toLocaleString('en-IN')}</span>
                 </div>
-                <div className="flex justify-between text-base font-black text-white pt-2 border-t border-slate-800">
+                <div className="flex justify-between text-base font-black text-white pt-2 border-t border-white/10">
                   <span>Grand Total:</span>
                   <span className="text-amber-400">₹{totals.grandTotal.toLocaleString('en-IN')}</span>
                 </div>
@@ -232,7 +232,7 @@ export const PdfQuoteDispatcherTab: React.FC = () => {
                     window.print();
                     showToast('PDF Quotation ready for download/print');
                   }}
-                  className="py-3 px-4 rounded-xl bg-blue-600 hover:bg-blue-700 text-white font-black uppercase flex items-center justify-center gap-2 shadow-md"
+                  className="py-3 px-4 rounded-xl bg-[#D26539] hover:bg-[#D26539] text-white font-black uppercase flex items-center justify-center gap-2 shadow-md"
                 >
                   <Printer className="w-4 h-4" />
                   <span>Print / Save PDF</span>
@@ -240,7 +240,7 @@ export const PdfQuoteDispatcherTab: React.FC = () => {
               </div>
             </div>
           ) : (
-            <div className="p-12 text-center bg-white rounded-3xl border border-slate-200 text-slate-400">
+            <div className="p-12 text-center bg-[#1A2018] rounded-none border border-white/10 text-[#A8A090]">
               Select an RFQ enquiry on the left to generate quotation & dispatch via WhatsApp.
             </div>
           )}

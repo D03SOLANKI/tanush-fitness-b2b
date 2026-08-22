@@ -21,12 +21,12 @@ export const JobModerationTab: React.FC = () => {
   return (
     <div className="space-y-6">
       {/* Header Banner - Modern Light */}
-      <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 bg-white border border-slate-200 p-6 rounded-2xl shadow-sm">
+      <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 bg-[#1A2018] border border-white/10 p-6 rounded-none shadow-sm">
         <div>
-          <h2 className="text-xl font-bold text-slate-900 flex items-center gap-2">
-            <Briefcase className="w-5 h-5 text-blue-600" /> Job Moderation & Spam Protection
+          <h2 className="text-xl font-bold text-[#090C10] flex items-center gap-2">
+            <Briefcase className="w-5 h-5 text-[#D26539]" /> Job Moderation & Spam Protection
           </h2>
-          <p className="text-sm text-slate-500 mt-1">
+          <p className="text-sm text-[#6B6358] mt-1">
             Review and moderate job postings submitted by Gym Owners before they appear on the live Manpower Services portal.
           </p>
         </div>
@@ -35,29 +35,29 @@ export const JobModerationTab: React.FC = () => {
       {/* Jobs Grid */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         {jobListings.map(job => (
-          <div key={job.id} className="bg-white border border-slate-200 rounded-2xl p-6 flex flex-col justify-between space-y-4 shadow-sm hover:shadow-md transition">
+          <div key={job.id} className="bg-[#1A2018] border border-white/10 rounded-none p-6 flex flex-col justify-between space-y-4 shadow-sm hover:shadow-md transition">
             <div>
               <div className="flex items-center justify-between gap-2 mb-2">
                 <span className={`text-xs px-2.5 py-1 rounded-full font-bold ${job.isActive ? 'bg-emerald-100 text-emerald-900 border border-emerald-300' : 'bg-red-100 text-red-900 border border-red-300'}`}>
                   {job.isActive ? 'Active & Live' : 'Moderated / Suspended'}
                 </span>
-                <span className="text-xs text-slate-500 font-mono">Posted: {job.createdAt}</span>
+                <span className="text-xs text-[#6B6358] font-mono">Posted: {job.createdAt}</span>
               </div>
 
-              <h3 className="text-lg font-bold text-slate-900 mb-1">{job.title}</h3>
+              <h3 className="text-lg font-bold text-[#090C10] mb-1">{job.title}</h3>
               
-              <div className="flex flex-wrap items-center gap-3 text-xs text-slate-600 mb-3 font-semibold">
-                <span className="flex items-center gap-1"><Building2 className="w-3.5 h-3.5 text-blue-600" /> {job.companyName || job.gymName || 'Gym Center'}</span>
-                <span className="flex items-center gap-1"><MapPin className="w-3.5 h-3.5 text-blue-600" /> {job.location}</span>
-                <span className="text-blue-700 font-bold">{job.salaryRange}</span>
+              <div className="flex flex-wrap items-center gap-3 text-xs text-[#7A7268] mb-3 font-semibold">
+                <span className="flex items-center gap-1"><Building2 className="w-3.5 h-3.5 text-[#D26539]" /> {job.companyName || job.gymName || 'Gym Center'}</span>
+                <span className="flex items-center gap-1"><MapPin className="w-3.5 h-3.5 text-[#D26539]" /> {job.location}</span>
+                <span className="text-[#D26539] font-bold">{job.salaryRange}</span>
               </div>
 
-              <p className="text-xs text-slate-800 leading-relaxed line-clamp-3 bg-[#F4F9FF] p-3.5 rounded-xl border border-blue-100 font-sans">
+              <p className="text-xs text-[#3A3028] leading-relaxed line-clamp-3 bg-[#F4F9FF] p-3.5 rounded-xl border border-[#D26539]/10 font-sans">
                 {job.description}
               </p>
             </div>
 
-            <div className="flex items-center justify-end gap-3 pt-3 border-t border-slate-100">
+            <div className="flex items-center justify-end gap-3 pt-3 border-t border-white/8">
               {job.isActive ? (
                 <button
                   onClick={() => handleAction(job.id, 'REJECT')}

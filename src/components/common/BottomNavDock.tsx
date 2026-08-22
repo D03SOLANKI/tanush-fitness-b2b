@@ -36,14 +36,14 @@ export const BottomNavDock: React.FC = () => {
         </div>
 
         {/* Center Floating Dock */}
-        <div className="pointer-events-auto hidden md:flex items-center gap-2 bg-[#0D1811] border border-white/15 p-2 rounded-full shadow-2xl font-general text-xs sm:text-[13px] uppercase tracking-wider">
+        <div className="pointer-events-auto hidden md:flex items-center gap-2 bg-[#0D1811] border border-white/15 p-2 rounded-full shadow-2xl font-satoshi text-xs sm:text-[13px] uppercase tracking-wider">
           <button
             type="button"
             onClick={() => handleNav('home', 'about')}
             className={`px-5 py-2.5 rounded-full font-bold transition-colors cursor-pointer ${
               currentPage === 'home'
                 ? 'bg-[#D26539] text-white shadow-md'
-                : 'text-slate-300 hover:text-white hover:bg-white/5'
+                : 'text-[#A8A090] hover:text-white hover:bg-white/5'
             }`}
           >
             About
@@ -55,7 +55,7 @@ export const BottomNavDock: React.FC = () => {
             className={`px-5 py-2.5 rounded-full font-semibold transition-colors cursor-pointer ${
               currentPage === 'equipment'
                 ? 'bg-[#D26539] text-white font-bold shadow-md'
-                : 'text-slate-300 hover:text-white hover:bg-white/5'
+                : 'text-[#A8A090] hover:text-white hover:bg-white/5'
             }`}
           >
             Equipment
@@ -67,7 +67,7 @@ export const BottomNavDock: React.FC = () => {
             className={`px-5 py-2.5 rounded-full font-semibold transition-colors cursor-pointer ${
               currentPage === 'services'
                 ? 'bg-[#D26539] text-white font-bold shadow-md'
-                : 'text-slate-300 hover:text-white hover:bg-white/5'
+                : 'text-[#A8A090] hover:text-white hover:bg-white/5'
             }`}
           >
             Gym Management
@@ -79,7 +79,7 @@ export const BottomNavDock: React.FC = () => {
             className={`px-5 py-2.5 rounded-full font-semibold transition-colors cursor-pointer ${
               currentPage === 'manpower'
                 ? 'bg-[#D26539] text-white font-bold shadow-md'
-                : 'text-slate-300 hover:text-white hover:bg-white/5'
+                : 'text-[#A8A090] hover:text-white hover:bg-white/5'
             }`}
           >
             Manpower
@@ -91,7 +91,7 @@ export const BottomNavDock: React.FC = () => {
             className={`px-5 py-2.5 rounded-full font-semibold transition-colors cursor-pointer ${
               currentPage === 'contact'
                 ? 'bg-[#D26539] text-white font-bold shadow-md'
-                : 'text-slate-300 hover:text-white hover:bg-white/5'
+                : 'text-[#A8A090] hover:text-white hover:bg-white/5'
             }`}
           >
             Consultation
@@ -107,8 +107,8 @@ export const BottomNavDock: React.FC = () => {
             aria-label="Scroll to Directory Section"
             title="Navigate to Directory"
           >
-            <span className="w-5 sm:w-6 h-[2px] bg-white rounded-full transition-transform group-hover:scale-x-110" />
-            <span className="w-5 sm:w-6 h-[2px] bg-white rounded-full transition-transform group-hover:scale-x-110" />
+            <span className="w-5 sm:w-6 h-[2px] bg-[#1A2018] rounded-full transition-transform group-hover:scale-x-110" />
+            <span className="w-5 sm:w-6 h-[2px] bg-[#1A2018] rounded-full transition-transform group-hover:scale-x-110" />
           </button>
         </div>
       </div>
