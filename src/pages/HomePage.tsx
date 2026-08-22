@@ -127,13 +127,13 @@ export const HomePage: React.FC = () => {
       />
 
       {/* ========================================================================= */}
-      {/* SECTION 1: EXACT VERTICAL STRUCTURE (LOGO -> HEADLINE -> MARQUEE -> CTA)  */}
+      {/* SECTION 1: PERFECT 2-LINE HEADLINE WITH BALANCED SPACIOUS VERTICAL GAPS   */}
       {/* ========================================================================= */}
-      <section className="relative h-[100dvh] min-h-[100dvh] max-h-[100dvh] w-full bg-[#26452D] text-[#ECE6DB] flex flex-col justify-between items-center px-4 sm:px-6 pt-6 sm:pt-8 pb-20 sm:pb-24 overflow-hidden select-none">
-        {/* 1. TOP LOGO EMBLEM (CENTERED WITH GENEROUS SPACE) */}
-        <div className="z-10 pt-2 sm:pt-4 shrink-0">
+      <section className="relative h-[100dvh] min-h-[100dvh] max-h-[100dvh] w-full bg-[#26452D] text-[#ECE6DB] flex flex-col justify-between items-center px-4 sm:px-8 pt-8 sm:pt-12 pb-28 sm:pb-32 overflow-hidden select-none">
+        {/* 1. TOP LOGO EMBLEM (CENTERED & PROPORTIONATE) */}
+        <div className="z-10 shrink-0">
           <svg
-            className="w-12 h-12 sm:w-16 sm:h-16 md:w-20 md:h-20 text-white fill-none stroke-current"
+            className="w-10 h-10 sm:w-14 sm:h-14 md:w-16 md:h-16 text-white fill-none stroke-current"
             viewBox="0 0 100 100"
             strokeWidth="3.2"
             strokeLinecap="round"
@@ -144,19 +144,19 @@ export const HomePage: React.FC = () => {
           </svg>
         </div>
 
-        {/* 2. MAIN HEADLINE (DIRECTLY BELOW LOGO) */}
-        <div className="max-w-6xl mx-auto w-full text-center my-auto py-1 z-10">
-          <div className="space-y-3 sm:space-y-4 md:space-y-5 select-none">
+        {/* 2. MAIN HEADLINE (EXACT 2 LINES - NO BREAKING OR WRAPPING) */}
+        <div className="max-w-5xl mx-auto w-full text-center my-auto py-2 z-10">
+          <div className="space-y-2.5 sm:space-y-3.5 md:space-y-4 select-none">
             {/* Row 1 */}
-            <div className="flex flex-wrap items-center justify-center gap-2.5 sm:gap-4 md:gap-5 font-satoshi text-2xl sm:text-4xl md:text-5xl lg:text-[54px] xl:text-[62px] font-black uppercase tracking-tight text-white leading-none">
+            <div className="flex items-center justify-center gap-2 sm:gap-3 md:gap-4 flex-nowrap whitespace-nowrap font-satoshi text-xl sm:text-3xl md:text-4xl lg:text-[42px] xl:text-[48px] font-black uppercase tracking-tight text-white leading-none">
               <span className="relative inline-block whitespace-nowrap">
                 GET READY
                 {/* Terracotta Orange Hand-Drawn Brush Stroke Accent */}
-                <span className="absolute -bottom-1.5 sm:-bottom-2.5 left-0 right-0 h-1.5 sm:h-2.5 bg-[#D26539] rounded-full -rotate-1 opacity-90" />
+                <span className="absolute -bottom-1 sm:-bottom-2 left-0 right-0 h-1 sm:h-2 bg-[#D26539] rounded-full -rotate-1 opacity-90" />
               </span>
 
               {/* Capsule Image Pill 1 */}
-              <div className="inline-block h-8 sm:h-11 md:h-13 lg:h-15 w-24 sm:w-36 md:w-44 lg:w-52 rounded-full overflow-hidden border border-white/40 shadow-2xl shrink-0 align-middle transform hover:scale-105 transition-transform duration-300">
+              <div className="inline-block h-6 sm:h-8 md:h-10 lg:h-12 w-16 sm:w-24 md:w-32 lg:w-40 rounded-full overflow-hidden border border-white/40 shadow-xl shrink-0 align-middle transform hover:scale-105 transition-transform duration-300">
                 <img
                   src="https://images.unsplash.com/photo-1517838277536-f5f99be501cd?auto=format&fit=crop&w=600&q=80"
                   alt="Tanush Commercial Strength Equipment"
@@ -168,11 +168,11 @@ export const HomePage: React.FC = () => {
             </div>
 
             {/* Row 2 */}
-            <div className="flex flex-wrap items-center justify-center gap-2.5 sm:gap-4 md:gap-5 font-satoshi text-2xl sm:text-4xl md:text-5xl lg:text-[54px] xl:text-[62px] font-black uppercase tracking-tight text-white leading-none">
+            <div className="flex items-center justify-center gap-2 sm:gap-3 md:gap-4 flex-nowrap whitespace-nowrap font-satoshi text-xl sm:text-3xl md:text-4xl lg:text-[42px] xl:text-[48px] font-black uppercase tracking-tight text-white leading-none">
               <span className="whitespace-nowrap">YOUR</span>
 
               {/* Capsule Image Pill 2 */}
-              <div className="inline-block h-8 sm:h-11 md:h-13 lg:h-15 w-28 sm:w-40 md:w-48 lg:w-56 rounded-full overflow-hidden border border-white/40 shadow-2xl shrink-0 align-middle transform hover:scale-105 transition-transform duration-300">
+              <div className="inline-block h-6 sm:h-8 md:h-10 lg:h-12 w-20 sm:w-28 md:w-36 lg:w-44 rounded-full overflow-hidden border border-white/40 shadow-xl shrink-0 align-middle transform hover:scale-105 transition-transform duration-300">
                 <img
                   src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=600&q=80"
                   alt="Tanush Fitness Sanctuary"
@@ -183,7 +183,7 @@ export const HomePage: React.FC = () => {
               <span className="whitespace-nowrap">INNER POTENTIAL</span>
 
               {/* Capsule Image Pill 3 */}
-              <div className="inline-block h-8 sm:h-11 md:h-13 lg:h-15 w-24 sm:w-36 md:w-44 lg:w-52 rounded-full overflow-hidden border border-white/40 shadow-2xl shrink-0 align-middle transform hover:scale-105 transition-transform duration-300">
+              <div className="inline-block h-6 sm:h-8 md:h-10 lg:h-12 w-16 sm:w-24 md:w-32 lg:w-40 rounded-full overflow-hidden border border-white/40 shadow-xl shrink-0 align-middle transform hover:scale-105 transition-transform duration-300">
                 <img
                   src="https://images.unsplash.com/photo-1540497077202-7c8a3999166f?auto=format&fit=crop&w=600&q=80"
                   alt="Tanush Athletic Training"
@@ -194,16 +194,16 @@ export const HomePage: React.FC = () => {
           </div>
         </div>
 
-        {/* 3. MARQUEE ROW (SEPARATE HORIZONTAL ROW BELOW HEADLINE — NOT BACKGROUND) */}
-        <div className="w-full overflow-hidden py-2 sm:py-3 z-10 select-none pointer-events-none">
-          <div className="flex items-center gap-12 sm:gap-16 animate-marquee-slow whitespace-nowrap font-satoshi font-black text-2xl sm:text-4xl md:text-5xl tracking-[0.25em] text-[#3A563F] opacity-40 uppercase">
+        {/* 3. MARQUEE ROW (SEPARATE HORIZONTAL ROW WITH BALANCED SPACING) */}
+        <div className="w-full overflow-hidden my-auto py-2 sm:py-4 z-10 select-none pointer-events-none">
+          <div className="flex items-center gap-12 sm:gap-16 animate-marquee-slow whitespace-nowrap font-satoshi font-black text-xl sm:text-2xl md:text-3xl lg:text-4xl tracking-[0.25em] text-[#3A563F] opacity-35 uppercase">
             <span>✦ BEYOND FITNESS ✦ BEYOND FITNESS ✦ BEYOND FITNESS ✦ BEYOND FITNESS ✦</span>
             <span>✦ BEYOND FITNESS ✦ BEYOND FITNESS ✦ BEYOND FITNESS ✦ BEYOND FITNESS ✦</span>
           </div>
         </div>
 
         {/* 4. CLEAR SPACING GAP & 5. CTA BUTTON & 6. CIRCULAR DOWN ARROW */}
-        <div className="pt-2 sm:pt-3 flex flex-col items-center justify-center gap-3 z-10">
+        <div className="mt-auto flex flex-col items-center justify-center gap-3 sm:gap-3.5 z-10">
           <button
             type="button"
             onClick={() => navigateTo('equipment')}
