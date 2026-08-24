@@ -125,48 +125,152 @@ export const ManpowerPage: React.FC = () => {
     });
   };
 
-  const MANPOWER_SERVICES = [
+  const MANPOWER_SERVICES: {
+    id: string;
+    category: JobRoleCategory;
+    title: string;
+    rolesIncluded: string;
+    image: string;
+    badge: string;
+    tagline: string;
+    description: string;
+    rolesList: string[];
+    deliverables: string[];
+    experienceLevel: string;
+    deploymentTime: string;
+  }[] = [
     {
+      id: 'management',
       category: 'Management',
-      roles: 'Club Manager',
-      description: 'Senior club general managers, operations directors, and P&L managers responsible for executive facility governance and membership growth.',
-      badge: 'Executive Level'
+      title: 'Executive Club Management',
+      rolesIncluded: 'Club Manager',
+      image: 'https://images.unsplash.com/photo-1574680096145-d05b474e2155?auto=format&fit=crop&w=800&q=80',
+      badge: 'Executive Leadership',
+      tagline: 'Strategic Club General Managers & Operations Directors',
+      description: 'Senior club general managers and operations directors equipped to oversee commercial facility P&L, membership retention protocols, departmental staffing KPIs, and high-standard hospitality governance.',
+      rolesList: ['Club General Manager', 'Operations Director', 'Branch Head / Facility Lead'],
+      deliverables: [
+        'Comprehensive club P&L & financial revenue management',
+        'Cross-departmental staff scheduling & team KPI governance',
+        'VIP member satisfaction, retention & escalation handling',
+        'Facility hygiene, safety compliance & SOP governance'
+      ],
+      experienceLevel: '4+ to 8+ Years Experience',
+      deploymentTime: '7-14 Days Pan-India'
     },
     {
+      id: 'hr-admin',
       category: 'HR & Administration',
-      roles: 'HR/Admin',
-      description: 'Human resources coordinators, facility administrators, payroll specialists, compliance officers, and staff roster managers.',
-      badge: 'Operations & HR'
+      title: 'HR & Administrative Operations',
+      rolesIncluded: 'HR/Admin',
+      image: 'https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=800&q=80',
+      badge: 'Facility Governance',
+      tagline: 'Dedicated Facility HR, Payroll & Administrative Officers',
+      description: 'Specialized fitness human resource and administrative coordinators to run structured trainer recruitment pipelines, biometric attendance, staff payroll, vendor contracts, and facility documentation.',
+      rolesList: ['Facility HR Specialist', 'Administrative Officer', 'Payroll & Compliance Manager'],
+      deliverables: [
+        'Trainer onboarding, background checks & credentials verification',
+        'Monthly staff payroll calculation, commissions & tax compliance',
+        'Vendor contracts, utility management & purchase invoice tracking',
+        'Daily facility administration and staff attendance governance'
+      ],
+      experienceLevel: '2+ to 5+ Years Experience',
+      deploymentTime: '5-10 Days Pan-India'
     },
     {
+      id: 'sales-front-desk',
       category: 'Sales & Front Desk',
-      roles: 'Sales Executive + Receptionist',
-      description: 'High-converting membership sales executives, VIP club receptionists, desk officers, and member relationship coordinators.',
-      badge: 'Client Servicing'
+      title: 'Sales & Front Desk Concierge',
+      rolesIncluded: 'Sales Executive + Receptionist',
+      image: 'https://images.unsplash.com/photo-1570872626485-d8ffea69f463?auto=format&fit=crop&w=800&q=80',
+      badge: 'Frontline Revenue',
+      tagline: 'High-Converting Sales Executives & Front Desk Receptionists',
+      description: 'Results-driven membership sales executives and welcoming front desk receptionists skilled in luxury club tour presentations, corporate wellness sales, walk-in conversions, and gym CRM POS management.',
+      rolesList: ['Membership Sales Executive', 'Front Desk Receptionist', 'Client Relations Specialist'],
+      deliverables: [
+        'High-converting floor tours & membership package sales',
+        'Front desk greeting, RFID member check-in & call handling',
+        'CRM lead pipeline management, tele-calling & renewals',
+        'POS retail smoothie bar and merchandise billing'
+      ],
+      experienceLevel: '1+ to 4+ Years Experience',
+      deploymentTime: '3-7 Days Pan-India'
     },
     {
+      id: 'fitness-team',
       category: 'Fitness Team',
-      roles: 'Head Trainer + Gym Trainers + Personal Trainers (PTs)',
-      description: 'Certified master biomechanics coaches, floor gym trainers, and dedicated 1-on-1 personal trainers (NASM, CSCS, ACE, K11).',
-      badge: 'Core Athletic Team'
+      title: 'Elite Athletic Fitness Team',
+      rolesIncluded: 'Head Trainer + Gym Trainers + Personal Trainers (PTs)',
+      image: 'https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=800&q=80',
+      badge: 'Core Athletic Team',
+      tagline: 'CSCS / NASM / ACE Certified Strength & Biomechanics Coaches',
+      description: 'Certified master personal trainers, dedicated floor instructors, and head coaches specialized in functional hypertrophy, biomechanics, lifting form safety, and high-ticket 1-on-1 personal training packages.',
+      rolesList: ['Head Trainer / Fitness Director', 'Gym Floor Instructor', 'Personal Trainer (PT)'],
+      deliverables: [
+        'Periodized strength, hypertrophy & body recomposition plans',
+        'Lifting technique correction & equipment safety monitoring',
+        '1-on-1 VIP personal training sessions & client retention',
+        'Initial member fitness assessments & mobility screenings'
+      ],
+      experienceLevel: '2+ to 6+ Years (NASM/CSCS/ACE/K11)',
+      deploymentTime: '5-10 Days Pan-India'
     },
     {
+      id: 'group-classes',
       category: 'Group Classes',
-      roles: 'Yoga, Zumba, CrossFit/HIIT + Sound Healing',
-      description: 'Dynamic group studio instructors specialized in Vinyasa Yoga, licensed Zumba dance fitness, CrossFit/HIIT conditioning, and sound healing.',
-      badge: 'Studio Specialists'
+      title: 'Group Studio Class Coaches',
+      rolesIncluded: 'Yoga, Zumba, CrossFit/HIIT + Sound Healing',
+      image: 'https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&fit=crop&w=800&q=80',
+      badge: 'Studio Atmosphere',
+      tagline: 'Master Coaches for Yoga, Zumba, CrossFit & Sound Healing',
+      description: 'Dynamic group fitness coaches delivering electrifying studio classes across Vinyasa Yoga, licensed Zumba dance fitness, high-octane CrossFit/HIIT conditioning, and restorative sound healing meditation.',
+      rolesList: ['Yoga Instructor (RYT 200/500)', 'Zumba Licensed Instructor', 'CrossFit / HIIT Circuit Coach', 'Sound Healing Practitioner'],
+      deliverables: [
+        'High-energy studio atmosphere, music curation & group pacing',
+        'Functional interval circuits (CrossFit, Tabata, HIIT, Bootcamp)',
+        'Mind-body sound bath meditation, breathwork & deep recovery',
+        'Multi-level movement scaling for beginners to advanced athletes'
+      ],
+      experienceLevel: '2+ to 5+ Years Group Coaching',
+      deploymentTime: '5-10 Days Pan-India'
     },
     {
+      id: 'nutrition-recovery',
       category: 'Nutrition & Recovery',
-      roles: 'Dietitian/Nutritionist + Physiotherapist',
-      description: 'Sports nutritionists designing metabolic meal protocols and licensed physiotherapists delivering musculoskeletal recovery and rehabilitation.',
-      badge: 'Clinical & Wellness'
+      title: 'Clinical Nutrition & Physiotherapy',
+      rolesIncluded: 'Dietitian/Nutritionist + Physiotherapist',
+      image: 'https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=800&q=80',
+      badge: 'Clinical & Wellness',
+      tagline: 'Registered Sports Dietitians & Sports Physiotherapists',
+      description: 'Qualified clinical sports nutritionists providing personalized metabolic meal plans and licensed physiotherapists delivering sports injury rehabilitation, dry needling, postural alignment, and recovery therapy.',
+      rolesList: ['Registered Sports Dietitian', 'Certified Clinical Nutritionist', 'Sports Physiotherapist (BPT/MPT)'],
+      deliverables: [
+        'Body composition (InBody / DEXA) scanning & metabolic profiling',
+        'Customized macronutrient, hydration & supplement protocols',
+        'Sports injury rehabilitation, dry needling & kinesio-taping',
+        'Manual therapy, mobility restoration & post-injury reconditioning'
+      ],
+      experienceLevel: '3+ to 7+ Years (B.Sc / M.Sc / BPT / MPT)',
+      deploymentTime: '7-14 Days Pan-India'
     },
     {
+      id: 'facility-operations',
       category: 'Facility Operations',
-      roles: 'Housekeeping + Maintenance + Security',
-      description: '24/7 facility sanitation crew, steam/sauna hygiene leads, equipment preventive maintenance engineers, and access security personnel.',
-      badge: 'Sanitation & Safety'
+      title: 'Facility Hygiene, Maintenance & Security',
+      rolesIncluded: 'Housekeeping + Maintenance + Security',
+      image: 'https://images.unsplash.com/photo-1584820927498-cfe5211fd8bf?auto=format&fit=crop&w=800&q=80',
+      badge: 'Sanitation & Safety',
+      tagline: 'Round-the-Clock Hygiene Crew, Machine Technicians & Security',
+      description: 'Dedicated housekeeping crew, equipment preventive maintenance technicians, and security personnel ensuring spotless hygiene, sanitized steam rooms, smooth cable machinery, and visitor safety.',
+      rolesList: ['Housekeeping & Sanitation Crew', 'Equipment Maintenance Technician', 'Facility Security Officer'],
+      deliverables: [
+        'Continuous locker room, shower & steam suite sanitation',
+        '11-gauge machinery cable inspection & preventive lubrication',
+        'Disinfectant wiping across all free-weight & selectorized zones',
+        'RFID turnstile access monitoring & front-gate security vigilance'
+      ],
+      experienceLevel: '1+ to 4+ Years Experience',
+      deploymentTime: '3-7 Days Pan-India'
     }
   ];
 
@@ -181,20 +285,21 @@ export const ManpowerPage: React.FC = () => {
     'Facility Operations'
   ];
 
-  const filteredJobs = jobListings.filter(j => {
-    if (selectedCategory !== 'all' && j.category !== selectedCategory) return false;
+  const filteredServices = MANPOWER_SERVICES.filter(serv => {
+    if (selectedCategory !== 'all' && serv.category !== selectedCategory) return false;
     if (searchQuery) {
       const q = searchQuery.toLowerCase();
-      const matchTitle = j.title.toLowerCase().includes(q);
-      const matchGym = j.gymName.toLowerCase().includes(q);
-      const matchLoc = j.location.toLowerCase().includes(q);
-      if (!matchTitle && !matchGym && !matchLoc) return false;
+      const matchTitle = serv.title.toLowerCase().includes(q);
+      const matchRoles = serv.rolesIncluded.toLowerCase().includes(q);
+      const matchDesc = serv.description.toLowerCase().includes(q);
+      const matchCat = serv.category.toLowerCase().includes(q);
+      if (!matchTitle && !matchRoles && !matchDesc && !matchCat) return false;
     }
     return true;
   });
 
   return (
-    <main className="pt-24 pb-20 bg-[#090C10] min-h-screen text-[#F0EBE3] ">
+    <main className="pt-24 pb-20 bg-[#090C10] min-h-screen text-[#F0EBE3]">
       <SEO
         title="Master Coaches & Staffing Sanctuary | Tanush Fitness B2B"
         description="Recruit Club Managers, HR/Admin, Sales Executives, Fitness Trainers, Group Class Coaches, Nutritionists & Physiotherapists nationwide."
@@ -214,33 +319,43 @@ export const ManpowerPage: React.FC = () => {
             </h1>
 
             <p className="text-sm sm:text-base text-white/90 max-w-2xl font-sans leading-relaxed">
-              Full-spectrum gym manpower solutions spanning Club Management, HR & Admin, Sales & Front Desk, Fitness Teams, Group Classes, Nutrition & Recovery, and Facility Operations.
+              Complete 7-division talent placement and staffing infrastructure for commercial health clubs, high-performance gyms, and luxury wellness destinations nationwide.
             </p>
           </div>
 
-          {/* Role Switcher Tabs */}
-          <div className="flex items-center bg-[#0D1118] p-1.5 rounded-full border border-white/10 shrink-0">
+          {/* Action CTAs */}
+          <div className="flex items-center gap-3 shrink-0">
             <button
               type="button"
-              onClick={() => setActiveUserRole('candidate')}
-              className={`px-5 py-2 rounded-full text-xs font-mono uppercase tracking-wider transition ${
-                activeUserRole === 'candidate'
-                  ? 'bg-[#D26539] text-[#090C10] font-bold shadow-md'
-                  : 'text-[#A8A090] hover:text-white'
-              }`}
+              onClick={() => setIsPostJobModalOpen(true)}
+              className="btn-vault px-6 py-3 text-xs flex items-center gap-2 cursor-pointer shadow-lg"
             >
-              Certified Talent
+              <Plus className="w-4 h-4" />
+              <span>Hire Facility Staff</span>
             </button>
             <button
               type="button"
-              onClick={() => setActiveUserRole('employer')}
-              className={`px-5 py-2 rounded-full text-xs font-mono uppercase tracking-wider transition ${
-                activeUserRole === 'employer'
-                  ? 'bg-[#1A2018] text-[#F0EBE3] font-bold shadow-md'
-                  : 'text-[#A8A090] hover:text-white'
-              }`}
+              onClick={() => {
+                setSelectedJob({
+                  id: 'general-talent',
+                  title: 'Certified Fitness Talent Roster',
+                  category: 'Fitness Team',
+                  gymName: 'Tanush Fitness Commercial Network',
+                  location: 'Pan-India',
+                  salaryRange: 'Market Competitive',
+                  type: 'Full-time',
+                  experience: '1+ Years',
+                  description: 'Apply to join our vetted talent network for placements across top fitness brands.',
+                  requirements: ['Certified in your designated domain'],
+                  createdAt: 'Today',
+                  applicationsCount: 0,
+                });
+                setIsApplyModalOpen(true);
+              }}
+              className="px-5 py-3 rounded-none border border-white/20 hover:border-white text-white text-xs font-mono uppercase tracking-wider transition hover:bg-white/5 flex items-center gap-2 cursor-pointer"
             >
-              Club Employers
+              <UserCheck className="w-4 h-4" />
+              <span>Join Talent Network</span>
             </button>
           </div>
         </div>
@@ -249,172 +364,176 @@ export const ManpowerPage: React.FC = () => {
       {/* Marquee Banner */}
       <MarqueeStrip theme="orange" speed="slow" />
 
-      {/* 7 MANPOWER SERVICES SHOWCASE SECTION */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="mb-8">
-          <span className="text-xs font-mono text-white/80 uppercase tracking-widest block mb-1">
-            SANCTUARY MANPOWER VERTICALS
-          </span>
-          <h2 className="text-2xl sm:text-3xl font-extrabold text-white uppercase font-satoshi">
-            Complete Facility Staffing Solutions
-          </h2>
-          <p className="text-sm text-[#A8A090] max-w-2xl mt-1">
-            Explore our 7 specialized talent recruitment and staffing divisions designed for commercial health clubs and high-performance gyms.
-          </p>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 space-y-10">
+        {/* Search & Category Filter Strip */}
+        <div className="flex flex-col md:flex-row items-stretch md:items-center justify-between gap-4 border-b border-white/10 pb-6">
+          <div className="relative flex-1 max-w-md">
+            <Search className="w-4 h-4 absolute left-3.5 top-1/2 -translate-y-1/2 text-[#6B6358]" />
+            <input
+              type="text"
+              placeholder="Search category (e.g. Management, Yoga, Physiotherapist, Receptionist)..."
+              value={searchQuery}
+              onChange={e => setSearchQuery(e.target.value)}
+              className="w-full bg-[#0D1118] border border-white/10 rounded-full pl-10 pr-4 py-2.5 text-xs text-white placeholder-[#6B6358] focus:outline-none focus:border-white"
+            />
+          </div>
+
+          <div className="flex items-center gap-2 overflow-x-auto pb-2 scrollbar-none">
+            {CATEGORY_TABS.map((cat) => (
+              <button
+                key={cat}
+                type="button"
+                onClick={() => setSelectedCategory(cat)}
+                className={`px-4 py-2 rounded-full text-xs font-mono uppercase tracking-wider transition whitespace-nowrap ${
+                  selectedCategory === cat
+                    ? 'bg-[#D26539] text-[#090C10] font-bold shadow-md'
+                    : 'bg-[#0D1118] text-[#A8A090] border border-white/5 hover:border-white/20 hover:text-white'
+                }`}
+              >
+                {cat === 'all' ? 'All Services' : cat}
+              </button>
+            ))}
+          </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
-          {MANPOWER_SERVICES.map((serv) => (
-            <div
-              key={serv.category}
-              onClick={() => setSelectedCategory(serv.category)}
-              className={`p-5 rounded-none border transition-all cursor-pointer flex flex-col justify-between space-y-4 group ${
-                selectedCategory === serv.category
-                  ? 'bg-[#1A2018] border-white/40 shadow-lg'
-                  : 'bg-[#0D1118] border-white/10 hover:border-white/30'
-              }`}
+        {/* 7 MANPOWER VISUAL SERVICES GRID */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+          {filteredServices.map((service) => (
+            <motion.div
+              key={service.id}
+              initial={{ opacity: 0, y: 15 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.3 }}
+              className="bg-[#0D1118] border border-white/10 rounded-none overflow-hidden flex flex-col justify-between group hover:border-white/30 transition-all duration-300 shadow-xl"
             >
-              <div className="space-y-2">
-                <div className="flex items-center justify-between">
-                  <span className="text-[10px] font-mono uppercase tracking-wider px-2 py-0.5 rounded-none bg-white/5 border border-white/10 text-white/80">
-                    {serv.badge}
-                  </span>
-                  <Award className="w-4 h-4 text-white/50 group-hover:text-white transition" />
+              <div>
+                {/* Visual Image Header */}
+                <div className="relative aspect-[16/9] w-full overflow-hidden bg-[#090C10]">
+                  <img
+                    src={service.image}
+                    alt={service.title}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                    loading="lazy"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#0D1118] via-[#0D1118]/40 to-transparent" />
+                  
+                  {/* Category Pill on Image */}
+                  <div className="absolute top-4 left-4 flex items-center gap-2">
+                    <span className="px-3 py-1 rounded-none bg-[#090C10]/90 backdrop-blur-md border border-white/20 text-[10px] font-mono text-white uppercase tracking-widest font-bold shadow-lg">
+                      {service.category}
+                    </span>
+                    <span className="px-2.5 py-1 rounded-none bg-white/10 backdrop-blur-md text-[9px] font-mono text-white/80 uppercase tracking-wider">
+                      {service.badge}
+                    </span>
+                  </div>
+
+                  {/* Deployment Speed Pill */}
+                  <div className="absolute bottom-4 right-4 bg-[#090C10]/90 px-3 py-1 border border-white/10 rounded-none text-[10px] font-mono text-emerald-400 font-bold">
+                    ⚡ {service.deploymentTime}
+                  </div>
                 </div>
-                <h3 className="font-satoshi text-lg font-bold text-white uppercase">
-                  {serv.category}
-                </h3>
-                <div className="text-xs font-mono text-white/90 font-bold">
-                  {serv.roles}
-                </div>
-                <p className="text-xs text-[#A8A090] font-sans leading-relaxed">
-                  {serv.description}
-                </p>
-              </div>
 
-              <div className="pt-2 border-t border-white/5 flex items-center justify-between text-[11px] font-mono text-white/70 group-hover:text-white">
-                <span>View Openings</span>
-                <span>→</span>
-              </div>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 space-y-8">
-        {/* Candidate Portal View */}
-        {activeUserRole === 'candidate' ? (
-          <div className="space-y-6">
-            {/* Search & Categories */}
-            <div className="flex flex-col md:flex-row items-stretch md:items-center justify-between gap-4">
-              <div className="relative flex-1 max-w-md">
-                <Search className="w-4 h-4 absolute left-3.5 top-1/2 -translate-y-1/2 text-[#6B6358]" />
-                <input
-                  type="text"
-                  placeholder="Search role, club, city (Bengaluru, Mumbai, Delhi)..."
-                  value={searchQuery}
-                  onChange={e => setSearchQuery(e.target.value)}
-                  className="w-full bg-[#0D1118] border border-white/10 rounded-full pl-10 pr-4 py-2.5 text-xs text-white placeholder-[#6B6358] focus:outline-none focus:border-white"
-                />
-              </div>
-
-              <div className="flex items-center gap-2 overflow-x-auto pb-2 scrollbar-none">
-                {CATEGORY_TABS.map((cat) => (
-                  <button
-                    key={cat}
-                    type="button"
-                    onClick={() => setSelectedCategory(cat)}
-                    className={`px-4 py-2 rounded-full text-xs font-mono uppercase tracking-wider transition whitespace-nowrap ${
-                      selectedCategory === cat
-                        ? 'bg-[#D26539] text-[#090C10] font-bold'
-                        : 'bg-[#0D1118] text-[#A8A090] border border-white/5 hover:border-white/20'
-                    }`}
-                  >
-                    {cat === 'all' ? 'All Services' : cat}
-                  </button>
-                ))}
-              </div>
-            </div>
-
-            {/* Jobs Roster */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {filteredJobs.map((job) => (
-                <div
-                  key={job.id}
-                  className="bg-[#0D1118] border border-white/10 rounded-none p-6 luxury-card flex flex-col justify-between space-y-5"
-                >
-                  <div className="space-y-3">
-                    <div className="flex items-center justify-between">
-                      <span className="px-3 py-0.5 rounded-full bg-white/5 border border-white/10 text-[9px] font-mono text-[#A8A090] uppercase tracking-wider font-bold">
-                        {job.category}
-                      </span>
-                      <span className="text-xs font-mono text-emerald-400 font-bold">
-                        {job.salaryRange}
-                      </span>
+                {/* Card Content */}
+                <div className="p-6 sm:p-8 space-y-6">
+                  <div>
+                    <div className="text-xs font-mono text-[#D26539] uppercase tracking-widest font-bold">
+                      {service.rolesIncluded}
                     </div>
-
-                    <h3 className="font-satoshi text-lg font-bold text-white uppercase">
-                      {job.title}
+                    <h3 className="font-satoshi text-2xl font-bold uppercase text-white tracking-tight mt-1">
+                      {service.title}
                     </h3>
-
-                    <div className="flex items-center gap-4 text-xs font-mono text-[#A8A090]">
-                      <span className="flex items-center gap-1">
-                        <Briefcase className="w-3.5 h-3.5 text-[#D26539]" />
-                        {job.gymName}
-                      </span>
-                      <span className="flex items-center gap-1">
-                        <MapPin className="w-3.5 h-3.5 text-[#6B6358]" />
-                        {job.location}
-                      </span>
-                    </div>
-
-                    <p className="text-xs text-[#A8A090] font-sans line-clamp-2 leading-relaxed">
-                      {job.description}
+                    <p className="text-xs text-white/80 font-sans leading-relaxed mt-2.5">
+                      {service.description}
                     </p>
                   </div>
 
-                  <button
-                    type="button"
-                    onClick={() => {
-                      setSelectedJob(job);
-                      setIsApplyModalOpen(true);
-                    }}
-                    className="btn-vault w-full py-2.5 text-xs flex items-center justify-center gap-2"
-                  >
-                    <UserCheck className="w-3.5 h-3.5" />
-                    <span>Apply with 1-Click</span>
-                  </button>
+                  {/* Roles Breakdown */}
+                  <div className="space-y-2 pt-2 border-t border-white/5">
+                    <div className="text-[11px] font-mono text-white/60 uppercase tracking-wider font-semibold">
+                      Roles Included in Service:
+                    </div>
+                    <div className="flex flex-wrap gap-2">
+                      {service.rolesList.map((r, i) => (
+                        <span
+                          key={i}
+                          className="px-2.5 py-1 rounded-none bg-white/5 border border-white/10 text-white text-[11px] font-mono"
+                        >
+                          ✦ {r}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* Deliverables / Scope */}
+                  <div className="space-y-2.5 pt-2 border-t border-white/5">
+                    <div className="text-[11px] font-mono text-white/60 uppercase tracking-wider font-semibold">
+                      Key Scope & Deliverables:
+                    </div>
+                    <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs font-sans text-[#A8A090]">
+                      {service.deliverables.map((item, i) => (
+                        <li key={i} className="flex items-start gap-2">
+                          <CheckCircle2 className="w-3.5 h-3.5 text-white shrink-0 mt-0.5" />
+                          <span className="leading-snug">{item}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
                 </div>
-              ))}
-            </div>
-          </div>
-        ) : (
-          /* Employer View */
-          <div className="space-y-8">
-            <div className="bg-[#0D1118] border border-white/10 rounded-none p-8 flex flex-col md:flex-row items-center justify-between gap-6 ">
-              <div className="space-y-2">
-                <span className="text-xs font-mono text-[#D26539] uppercase tracking-widest block">
-                  COMMERCIAL CLUB TALENT ACQUISITION
-                </span>
-                <h2 className="font-satoshi text-2xl sm:text-3xl font-extrabold text-white uppercase">
-                  Recruit Master Certified Staff for Your Facility
-                </h2>
-                <p className="text-sm text-[#A8A090] font-sans max-w-2xl">
-                  Post open head trainer, general manager, and sales coordinator positions. Receive verified candidates screened for NASM/CSCS credentials.
-                </p>
               </div>
 
-              <button
-                type="button"
-                onClick={() => setIsPostJobModalOpen(true)}
-                className="btn-vault shrink-0 px-6 py-3.5 text-xs flex items-center gap-2"
-              >
-                <Plus className="w-4 h-4" />
-                <span>Post Staff Opening</span>
-              </button>
-            </div>
-          </div>
-        )}
+              {/* Bottom Action Footer */}
+              <div className="p-6 sm:p-8 pt-0 flex flex-col sm:flex-row items-center gap-3 border-t border-white/5 mt-4">
+                <button
+                  type="button"
+                  onClick={() => {
+                    setJobForm({
+                      title: service.title,
+                      category: service.category,
+                      gymName: '',
+                      location: '',
+                      salaryRange: 'Market Competitive',
+                      type: 'Full-time',
+                      experience: service.experienceLevel,
+                      description: `Requesting staffing for ${service.rolesIncluded}`,
+                      requirements: service.deliverables.join(', '),
+                    });
+                    setIsPostJobModalOpen(true);
+                  }}
+                  className="btn-vault flex-1 w-full py-3 text-xs flex items-center justify-center gap-2 cursor-pointer"
+                >
+                  <Plus className="w-4 h-4" />
+                  <span>Hire {service.category} Staff</span>
+                </button>
+
+                <button
+                  type="button"
+                  onClick={() => {
+                    setSelectedJob({
+                      id: service.id,
+                      title: service.title,
+                      category: service.category,
+                      gymName: 'Tanush Fitness Commercial Network',
+                      location: 'Pan-India Deployment',
+                      salaryRange: service.experienceLevel,
+                      type: 'Full-time',
+                      experience: service.experienceLevel,
+                      description: service.description,
+                      requirements: service.deliverables,
+                      createdAt: 'Live Roster',
+                      applicationsCount: 0,
+                    });
+                    setIsApplyModalOpen(true);
+                  }}
+                  className="w-full sm:w-auto px-5 py-3 rounded-none border border-white/10 hover:border-white text-white text-xs font-mono uppercase tracking-wider transition hover:bg-white/5 flex items-center justify-center gap-2 cursor-pointer"
+                >
+                  <UserCheck className="w-3.5 h-3.5" />
+                  <span>Apply for Role</span>
+                </button>
+              </div>
+            </motion.div>
+          ))}
+        </div>
       </div>
 
       {/* Candidate Apply Modal */}
