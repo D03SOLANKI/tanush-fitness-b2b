@@ -24,14 +24,14 @@ export const BottomNavDock: React.FC = () => {
   return (
     <div className="fixed bottom-6 left-0 right-0 z-40 px-4 sm:px-8 pointer-events-none select-none transform-gpu translate-z-0">
       <div className="max-w-7xl mx-auto flex items-center justify-between gap-4">
-        {/* Left Floating Pill: TANUSH */}
+        {/* Left Floating Pill: TANUSH FITNESS */}
         <div className="pointer-events-auto">
           <button
             type="button"
             onClick={() => handleNav('home')}
-            className="bg-[#0D1811] border border-white/15 px-6 sm:px-8 py-3 rounded-full font-satoshi font-black text-xs sm:text-sm tracking-[0.2em] text-white hover:text-[#D26539] hover:border-[#D26539]/50 transition-colors shadow-2xl uppercase cursor-pointer"
+            className="bg-[#0D1811] border border-[#D26539]/40 hover:border-[#D26539] px-6 sm:px-8 py-3 rounded-full font-satoshi font-black text-xs sm:text-sm tracking-[0.2em] text-[#D26539] transition-colors shadow-2xl uppercase cursor-pointer"
           >
-            TANUSH
+            TANUSH FITNESS
           </button>
         </div>
 

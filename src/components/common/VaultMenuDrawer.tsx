@@ -147,9 +147,9 @@ export const VaultMenuDrawer: React.FC<VaultMenuDrawerProps> = ({ isOpen, onClos
                 <button
                   type="button"
                   onClick={() => handleNav('home')}
-                  className="bg-[#0D1811] text-white px-6 sm:px-7 py-2.5 sm:py-3 rounded-full font-satoshi font-black text-xs sm:text-sm uppercase tracking-[0.2em] shadow-xl hover:text-[#D26539] transition"
+                  className="bg-[#0D1811] text-[#D26539] border border-[#D26539]/40 hover:border-[#D26539] px-6 sm:px-7 py-2.5 sm:py-3 rounded-full font-satoshi font-black text-xs sm:text-sm uppercase tracking-[0.2em] shadow-xl transition"
                 >
-                  TANUSH
+                  TANUSH FITNESS
                 </button>
 
                 <button
