@@ -62,18 +62,18 @@ export const GlobalSearchModal: React.FC<GlobalSearchModalProps> = ({ isOpen, on
         >
           {/* Header Search Input */}
           <div className="p-4 sm:p-6 border-b border-white/10 flex items-center gap-3">
-            <Search className="w-5 h-5 text-[#D26539] shrink-0" />
+            <Search className="w-5 h-5 text-white/80 shrink-0" />
             <input
               type="text"
               autoFocus
               placeholder="Global search equipment, hiring openings, or business services..."
               value={query}
               onChange={e => setQuery(e.target.value)}
-              className="w-full text-sm font-mono text-[#090C10] placeholder-[#7A7268] focus:outline-none bg-transparent"
+              className="w-full text-sm font-mono text-white placeholder-[#6B6358] focus:outline-none bg-transparent"
             />
             <button
               onClick={onClose}
-              className="p-2 rounded-full bg-[#ECE6DB] text-[#6B6358] hover:text-[#090C10] shrink-0"
+              className="p-2 rounded-full bg-white/5 text-white/70 hover:text-white shrink-0"
             >
               <X className="w-4 h-4" />
             </button>
@@ -85,10 +85,10 @@ export const GlobalSearchModal: React.FC<GlobalSearchModalProps> = ({ isOpen, on
               <div className="py-8 text-center text-xs font-mono text-[#A8A090] space-y-2">
                 <p>Type to search across Tanush Fitness B2B ecosystem.</p>
                 <div className="flex flex-wrap justify-center gap-2 pt-2">
-                  <span className="px-2.5 py-1 rounded-lg bg-[#ECE6DB] text-[#7A7268] text-[10px]">Power Rack</span>
-                  <span className="px-2.5 py-1 rounded-lg bg-[#ECE6DB] text-[#7A7268] text-[10px]">Personal Trainer</span>
-                  <span className="px-2.5 py-1 rounded-lg bg-[#ECE6DB] text-[#7A7268] text-[10px]">Meta Ads</span>
-                  <span className="px-2.5 py-1 rounded-lg bg-[#ECE6DB] text-[#7A7268] text-[10px]">3D Interior</span>
+                  <span className="px-2.5 py-1 rounded-none bg-white/5 border border-white/10 text-white/80 text-[10px]">Power Rack</span>
+                  <span className="px-2.5 py-1 rounded-none bg-white/5 border border-white/10 text-white/80 text-[10px]">Personal Trainer</span>
+                  <span className="px-2.5 py-1 rounded-none bg-white/5 border border-white/10 text-white/80 text-[10px]">Meta Ads</span>
+                  <span className="px-2.5 py-1 rounded-none bg-white/5 border border-white/10 text-white/80 text-[10px]">3D Interior</span>
                 </div>
               </div>
             ) : totalResults === 0 ? (
@@ -100,11 +100,11 @@ export const GlobalSearchModal: React.FC<GlobalSearchModalProps> = ({ isOpen, on
                 {/* 1. Commercial & Residential Equipment */}
                 {searchResults.products.length > 0 && (
                   <div className="space-y-3">
-                    <div className="text-[10px] font-bold uppercase text-[#D26539] font-mono tracking-wider flex items-center gap-1.5">
+                    <div className="text-[10px] font-bold uppercase text-white/80 font-mono tracking-wider flex items-center gap-1.5">
                       <Dumbbell className="w-3.5 h-3.5" />
                       <span>Commercial & Residential Equipment ({searchResults.products.length})</span>
                     </div>
-                    <div className="divide-y divide-white/10 bg-[#1A2018] rounded-none border border-white/10 overflow-hidden">
+                    <div className="divide-y divide-white/10 bg-[#090C10] rounded-none border border-white/10 overflow-hidden">
                       {searchResults.products.map(p => (
                         <div
                           key={p.id}
@@ -112,16 +112,16 @@ export const GlobalSearchModal: React.FC<GlobalSearchModalProps> = ({ isOpen, on
                             navigateTo('equipment');
                             onClose();
                           }}
-                          className="p-3 hover:bg-[#1A2018] flex items-center justify-between cursor-pointer transition-colors"
+                          className="p-3 hover:bg-white/5 flex items-center justify-between cursor-pointer transition-colors"
                         >
                           <div className="flex items-center gap-3">
-                            <img src={p.image} alt={p.name} className="w-10 h-10 object-cover rounded-lg border" />
+                            <img src={p.image} alt={p.name} className="w-10 h-10 object-cover rounded-none border border-white/10" />
                             <div>
-                              <div className="text-xs font-black text-[#090C10] font-satoshi uppercase">{p.name}</div>
-                              <div className="text-[10px] font-mono text-[#6B6358]">{p.brand} • {p.category}</div>
+                              <div className="text-xs font-bold text-white font-satoshi uppercase">{p.name}</div>
+                              <div className="text-[10px] font-mono text-[#A8A090]">{p.brand} • {p.category}</div>
                             </div>
                           </div>
-                          <ArrowRight className="w-4 h-4 text-[#A8A090]" />
+                          <ArrowRight className="w-4 h-4 text-white/60" />
                         </div>
                       ))}
                     </div>
@@ -131,11 +131,11 @@ export const GlobalSearchModal: React.FC<GlobalSearchModalProps> = ({ isOpen, on
                 {/* 2. Manpower Openings */}
                 {searchResults.jobs.length > 0 && (
                   <div className="space-y-3">
-                    <div className="text-[10px] font-bold uppercase text-amber-600 font-mono tracking-wider flex items-center gap-1.5">
+                    <div className="text-[10px] font-bold uppercase text-white/80 font-mono tracking-wider flex items-center gap-1.5">
                       <Users className="w-3.5 h-3.5" />
                       <span>Gym Openings ({searchResults.jobs.length})</span>
                     </div>
-                    <div className="divide-y divide-white/10 bg-[#1A2018] rounded-none border border-white/10 overflow-hidden">
+                    <div className="divide-y divide-white/10 bg-[#090C10] rounded-none border border-white/10 overflow-hidden">
                       {searchResults.jobs.map(j => (
                         <div
                           key={j.id}
@@ -143,13 +143,13 @@ export const GlobalSearchModal: React.FC<GlobalSearchModalProps> = ({ isOpen, on
                             navigateTo('manpower');
                             onClose();
                           }}
-                          className="p-3 hover:bg-[#1A2018] flex items-center justify-between cursor-pointer transition-colors"
+                          className="p-3 hover:bg-white/5 flex items-center justify-between cursor-pointer transition-colors"
                         >
                           <div>
-                            <div className="text-xs font-black text-[#090C10] font-satoshi uppercase">{j.title}</div>
-                            <div className="text-[10px] font-mono text-[#6B6358]">{j.gymName} • {j.location}</div>
+                            <div className="text-xs font-bold text-white font-satoshi uppercase">{j.title}</div>
+                            <div className="text-[10px] font-mono text-[#A8A090]">{j.gymName} • {j.location}</div>
                           </div>
-                          <ArrowRight className="w-4 h-4 text-[#A8A090]" />
+                          <ArrowRight className="w-4 h-4 text-white/60" />
                         </div>
                       ))}
                     </div>
@@ -159,11 +159,11 @@ export const GlobalSearchModal: React.FC<GlobalSearchModalProps> = ({ isOpen, on
                 {/* 3. Business Growth Services */}
                 {searchResults.services.length > 0 && (
                   <div className="space-y-3">
-                    <div className="text-[10px] font-bold uppercase text-emerald-600 font-mono tracking-wider flex items-center gap-1.5">
+                    <div className="text-[10px] font-bold uppercase text-white/80 font-mono tracking-wider flex items-center gap-1.5">
                       <Briefcase className="w-3.5 h-3.5" />
                       <span>Business Growth Services ({searchResults.services.length})</span>
                     </div>
-                    <div className="divide-y divide-white/10 bg-[#1A2018] rounded-none border border-white/10 overflow-hidden">
+                    <div className="divide-y divide-white/10 bg-[#090C10] rounded-none border border-white/10 overflow-hidden">
                       {searchResults.services.map(s => (
                         <div
                           key={s.id}
@@ -171,16 +171,16 @@ export const GlobalSearchModal: React.FC<GlobalSearchModalProps> = ({ isOpen, on
                             navigateTo('services');
                             onClose();
                           }}
-                          className="p-3 hover:bg-[#1A2018] flex items-center justify-between cursor-pointer transition-colors"
+                          className="p-3 hover:bg-white/5 flex items-center justify-between cursor-pointer transition-colors"
                         >
                           <div className="flex items-center gap-3">
-                            <img src={s.image} alt={s.name} className="w-10 h-10 object-cover rounded-lg border" />
+                            <img src={s.image} alt={s.name} className="w-10 h-10 object-cover rounded-none border border-white/10" />
                             <div>
-                              <div className="text-xs font-black text-[#090C10] font-satoshi uppercase">{s.name}</div>
-                              <div className="text-[10px] font-mono text-[#6B6358]">{s.category}</div>
+                              <div className="text-xs font-bold text-white font-satoshi uppercase">{s.name}</div>
+                              <div className="text-[10px] font-mono text-[#A8A090]">{s.category}</div>
                             </div>
                           </div>
-                          <ArrowRight className="w-4 h-4 text-[#A8A090]" />
+                          <ArrowRight className="w-4 h-4 text-white/60" />
                         </div>
                       ))}
                     </div>

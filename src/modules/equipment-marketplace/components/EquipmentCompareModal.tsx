@@ -43,7 +43,7 @@ export const EquipmentCompareModal: React.FC<EquipmentCompareModalProps> = ({
           </button>
 
           <div className="mb-6">
-            <span className="text-[10px] font-bold uppercase text-[#D26539] font-mono flex items-center gap-1">
+            <span className="text-[10px] font-bold uppercase text-white/80 font-mono flex items-center gap-1">
               <Dumbbell className="w-3.5 h-3.5" />
               <span>EQUIPMENT SPECIFICATION COMPARISON</span>
             </span>
@@ -76,7 +76,7 @@ export const EquipmentCompareModal: React.FC<EquipmentCompareModalProps> = ({
                       <div className="text-xs font-black text-[#090C10] font-satoshi uppercase text-center line-clamp-2">
                         {p.name}
                       </div>
-                      <div className="text-[10px] font-bold text-[#D26539] uppercase text-center font-mono mt-0.5">
+                      <div className="text-[10px] font-bold text-[#A8A090] uppercase text-center font-mono mt-0.5">
                         {p.brand}
                       </div>
                     </th>
@@ -101,7 +101,7 @@ export const EquipmentCompareModal: React.FC<EquipmentCompareModalProps> = ({
                     <td key={p.id} className="p-4 text-center">
                       <div className="flex flex-wrap justify-center gap-1">
                         {(p.applicationTypes || ['Commercial & Residential Gym']).map((app, i) => (
-                          <span key={i} className="text-[10px] px-2 py-0.5 rounded bg-[#D26539]/10 text-[#D26539] font-bold border border-[#D26539]/10">
+                          <span key={i} className="text-[10px] px-2 py-0.5 rounded-none bg-white/5 text-white/80 font-bold border border-white/10">
                             {app}
                           </span>
                         ))}

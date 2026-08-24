@@ -41,7 +41,7 @@ export const VaultContactFormSection: React.FC = () => {
 
           {/* Bottom Left Badge */}
           <div className="absolute bottom-8 left-8 right-8 text-white space-y-1">
-            <div className="font-mono text-[11px] text-[#D26539] uppercase tracking-widest font-semibold">
+            <div className="font-mono text-[11px] text-white/80 uppercase tracking-widest font-semibold">
               ✦ BESPOKE COMMERCIAL FACILITY OUTFITTING
             </div>
             <h3 className="font-satoshi text-xl sm:text-2xl font-bold uppercase tracking-tight">
@@ -65,15 +65,15 @@ export const VaultContactFormSection: React.FC = () => {
 
           <div className="relative z-10 max-w-xl w-full mx-auto space-y-8">
             {isSubmitted ? (
-              <div className="bg-white/80 border border-[#D26539]/30 p-8 text-center space-y-4 rounded-lg shadow-xl">
+              <div className="bg-white/90 border border-[#090C10]/20 p-8 text-center space-y-4 rounded-none shadow-xl">
                 <div className="w-12 h-12 rounded-full bg-[#26452D] text-white flex items-center justify-center mx-auto">
-                  <CheckCircle2 className="w-6 h-6 text-[#D26539]" />
+                  <CheckCircle2 className="w-6 h-6 text-white" />
                 </div>
                 <h3 className="font-satoshi text-2xl font-bold uppercase text-[#090C10]">
                   Proposal Request Received
                 </h3>
                 <p className="font-satoshi text-sm text-[#090C10]/80 leading-relaxed">
-                  Thank you, <strong className="text-white font-bold">{name}</strong>. Our Commercial Outfitting Directorate will review your facility requirements and get in touch with you shortly.
+                  Thank you, <strong className="text-[#090C10] font-bold">{name}</strong>. Our Commercial Outfitting Directorate will review your facility requirements and get in touch with you shortly.
                 </p>
                 <button
                   type="button"

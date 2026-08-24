@@ -159,7 +159,7 @@ export const AuthModal: React.FC<AuthModalProps> = ({
 
           {/* Title Header */}
           <div className="mb-6">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#D26539]/10 text-[#D26539] text-[10px] font-bold uppercase tracking-wider mb-2 border border-[#D26539]/10">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 text-white/80 text-[10px] font-bold uppercase tracking-wider mb-2 border border-white/10">
               <Lock className="w-3 h-3" />
               <span>AUTHENTICATION GATE</span>
             </div>
@@ -218,13 +218,13 @@ export const AuthModal: React.FC<AuthModalProps> = ({
                       onClick={() => setRole('GYM_OWNER')}
                       className={`p-3 rounded-none border text-center transition-all ${
                         role === 'GYM_OWNER'
-                          ? 'border-[#D26539] bg-[#D26539]/10 text-[#090C10] font-bold'
-                          : 'border-white/10 text-[#7A7268] hover:bg-[#F0EBE3]/10'
+                          ? 'border-[#090C10] bg-[#090C10] text-white font-bold'
+                          : 'border-black/10 text-[#7A7268] hover:bg-black/5'
                       }`}
                     >
-                      <Building2 className="w-4 h-4 mx-auto mb-1 text-[#D26539]" />
+                      <Building2 className="w-4 h-4 mx-auto mb-1 text-current" />
                       <div className="text-[11px] font-bold uppercase">Gym Owner</div>
-                      <div className="text-[9px] text-[#6B6358] font-normal">Buy Gear & Post Jobs</div>
+                      <div className="text-[9px] text-[#A8A090] font-normal">Buy Gear & Post Jobs</div>
                     </button>
 
                     <button
@@ -232,13 +232,13 @@ export const AuthModal: React.FC<AuthModalProps> = ({
                       onClick={() => setRole('JOB_SEEKER')}
                       className={`p-3 rounded-none border text-center transition-all ${
                         role === 'JOB_SEEKER'
-                          ? 'border-[#D26539] bg-[#D26539]/10 text-[#090C10] font-bold'
-                          : 'border-white/10 text-[#7A7268] hover:bg-[#F0EBE3]/10'
+                          ? 'border-[#090C10] bg-[#090C10] text-white font-bold'
+                          : 'border-black/10 text-[#7A7268] hover:bg-black/5'
                       }`}
                     >
-                      <User className="w-4 h-4 mx-auto mb-1 text-[#D26539]" />
+                      <User className="w-4 h-4 mx-auto mb-1 text-current" />
                       <div className="text-[11px] font-bold uppercase">Job Seeker</div>
-                      <div className="text-[9px] text-[#6B6358] font-normal">Apply for Careers</div>
+                      <div className="text-[9px] text-[#A8A090] font-normal">Apply for Careers</div>
                     </button>
                   </div>
                 </div>

@@ -130,12 +130,12 @@ export const Navbar: React.FC = () => {
                 type="button"
                 onClick={() => handleNav('home')}
                 className={`transition-colors py-1 relative ${
-                  currentPage === 'home' ? 'text-[#D26539]' : 'text-[#A8A090] hover:text-white'
+                  currentPage === 'home' ? 'text-white font-bold' : 'text-white/60 hover:text-white'
                 }`}
               >
                 Overview
                 {currentPage === 'home' && (
-                  <span className="absolute bottom-0 left-0 right-0 h-[2px] bg-[#D26539] rounded-full" />
+                  <span className="absolute bottom-0 left-0 right-0 h-[2px] bg-white rounded-full" />
                 )}
               </button>
 
@@ -143,12 +143,12 @@ export const Navbar: React.FC = () => {
                 type="button"
                 onClick={() => handleNav('services')}
                 className={`transition-colors py-1 relative ${
-                  currentPage === 'services' ? 'text-[#D26539]' : 'text-[#A8A090] hover:text-white'
+                  currentPage === 'services' ? 'text-white font-bold' : 'text-white/60 hover:text-white'
                 }`}
               >
                 Services
                 {currentPage === 'services' && (
-                  <span className="absolute bottom-0 left-0 right-0 h-[2px] bg-[#D26539] rounded-full" />
+                  <span className="absolute bottom-0 left-0 right-0 h-[2px] bg-white rounded-full" />
                 )}
               </button>
 
@@ -156,12 +156,12 @@ export const Navbar: React.FC = () => {
                 type="button"
                 onClick={() => handleNav('equipment')}
                 className={`transition-colors py-1 relative ${
-                  currentPage === 'equipment' ? 'text-[#D26539]' : 'text-[#A8A090] hover:text-white'
+                  currentPage === 'equipment' ? 'text-white font-bold' : 'text-white/60 hover:text-white'
                 }`}
               >
                 Equipment
                 {currentPage === 'equipment' && (
-                  <span className="absolute bottom-0 left-0 right-0 h-[2px] bg-[#D26539] rounded-full" />
+                  <span className="absolute bottom-0 left-0 right-0 h-[2px] bg-white rounded-full" />
                 )}
               </button>
 
@@ -169,12 +169,12 @@ export const Navbar: React.FC = () => {
                 type="button"
                 onClick={() => handleNav('manpower')}
                 className={`transition-colors py-1 relative ${
-                  currentPage === 'manpower' ? 'text-[#D26539]' : 'text-[#A8A090] hover:text-white'
+                  currentPage === 'manpower' ? 'text-white font-bold' : 'text-white/60 hover:text-white'
                 }`}
               >
                 Manpower
                 {currentPage === 'manpower' && (
-                  <span className="absolute bottom-0 left-0 right-0 h-[2px] bg-[#D26539] rounded-full" />
+                  <span className="absolute bottom-0 left-0 right-0 h-[2px] bg-white rounded-full" />
                 )}
               </button>
 
@@ -182,12 +182,12 @@ export const Navbar: React.FC = () => {
                 type="button"
                 onClick={() => handleNav('about')}
                 className={`transition-colors py-1 relative ${
-                  currentPage === 'about' ? 'text-[#D26539]' : 'text-[#A8A090] hover:text-white'
+                  currentPage === 'about' ? 'text-white font-bold' : 'text-white/60 hover:text-white'
                 }`}
               >
                 About
                 {currentPage === 'about' && (
-                  <span className="absolute bottom-0 left-0 right-0 h-[2px] bg-[#D26539] rounded-full" />
+                  <span className="absolute bottom-0 left-0 right-0 h-[2px] bg-white rounded-full" />
                 )}
               </button>
             </nav>
@@ -198,7 +198,7 @@ export const Navbar: React.FC = () => {
               <button
                 type="button"
                 onClick={() => setIsEnquiryCartOpen(true)}
-                className="relative p-2.5 rounded-full bg-white/5 hover:bg-white/10 text-[#A8A090] hover:text-[#D26539] border border-white/5 transition"
+                className="relative p-2.5 rounded-full bg-white/5 hover:bg-white/10 text-white/80 hover:text-white border border-white/5 transition"
                 title="commercial & residential outfitting RFQ Cart"
               >
                 <FileText className="w-4 h-4" />
@@ -223,7 +223,7 @@ export const Navbar: React.FC = () => {
               <button
                 type="button"
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
-                className="p-2.5 rounded-full bg-white/5 hover:bg-white/10 text-[#A8A090] hover:text-white border border-white/10 transition"
+                className="p-2.5 rounded-full bg-white/5 hover:bg-white/10 text-white/80 hover:text-white border border-white/10 transition"
                 aria-label="Toggle Navigation Menu"
               >
                 {isMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
@@ -249,14 +249,14 @@ export const Navbar: React.FC = () => {
                 onClick={() => handleNav('home')}
                 className="flex items-center gap-3 cursor-pointer"
               >
-                <div className="w-10 h-10 rounded-full bg-gradient-to-br from-[#26452D] to-[#1A2018] border border-[#D26539]/40 flex items-center justify-center shadow-lg">
-                  <span className="font-satoshi font-black text-lg text-[#D26539]">T</span>
+                <div className="w-10 h-10 rounded-full bg-gradient-to-br from-[#26452D] to-[#1A2018] border border-white/20 flex items-center justify-center shadow-lg">
+                  <span className="font-satoshi font-black text-lg text-white">T</span>
                 </div>
                 <div className="flex flex-col">
                   <span className="font-satoshi font-black text-lg tracking-[0.12em] text-[#ECE6DB] uppercase">
                     TANUSH
                   </span>
-                  <span className="text-[9px] font-mono tracking-[0.3em] text-[#D26539] uppercase">
+                  <span className="text-[9px] font-mono tracking-[0.3em] text-[#A8A090] uppercase">
                     FITNESS SANCTUARY
                   </span>
                 </div>
@@ -265,7 +265,7 @@ export const Navbar: React.FC = () => {
               <button
                 type="button"
                 onClick={() => setIsMenuOpen(false)}
-                className="p-3 rounded-full bg-white/5 border border-white/10 text-[#A8A090] hover:text-white transition"
+                className="p-3 rounded-full bg-white/5 border border-white/10 text-white/80 hover:text-white transition"
               >
                 <X className="w-6 h-6" />
               </button>
@@ -278,12 +278,12 @@ export const Navbar: React.FC = () => {
                   <div
                     key={link.label}
                     onClick={() => handleNav(link.page)}
-                    className="p-6 rounded-none bg-[#0D1118] border border-white/10 hover:border-[#D26539] transition-all cursor-pointer group flex items-start justify-between"
+                    className="p-6 rounded-none bg-[#0D1118] border border-white/10 hover:border-white/30 transition-all cursor-pointer group flex items-start justify-between"
                   >
                     <div className="space-y-1">
                       <div className="flex items-center gap-3">
-                        <span className="text-xs font-mono text-[#D26539]">0{idx + 1}</span>
-                        <h3 className="font-satoshi text-xl sm:text-2xl font-bold uppercase text-[#D8CDC0] group-hover:text-white transition">
+                        <span className="text-xs font-mono text-white/40">0{idx + 1}</span>
+                        <h3 className="font-satoshi text-xl sm:text-2xl font-bold uppercase text-[#ECE6DB] group-hover:text-white transition">
                           {link.label}
                         </h3>
                       </div>
@@ -292,7 +292,7 @@ export const Navbar: React.FC = () => {
                       </p>
                     </div>
 
-                    <div className="w-8 h-8 rounded-full bg-white/5 flex items-center justify-center text-[#A8A090] group-hover:text-[#D26539] group-hover:bg-[#D26539]/10 transition">
+                    <div className="w-8 h-8 rounded-full bg-white/5 flex items-center justify-center text-white/60 group-hover:text-white group-hover:bg-white/10 transition">
                       <ArrowRight className="w-4 h-4" />
                     </div>
                   </div>

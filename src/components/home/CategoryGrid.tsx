@@ -55,19 +55,19 @@ export const CategoryGrid: React.FC = () => {
               </div>
 
               {/* Bottom Card Content */}
-              <div className="p-5 flex-1 flex flex-col justify-between space-y-3 bg-[#1A2018]">
+              <div className="p-5 flex-1 flex flex-col justify-between space-y-3 bg-[#0D1118]">
                 <div>
-                  <h3 className="text-base font-black text-[#090C10] group-hover:text-[#D26539] transition-colors leading-snug font-satoshi uppercase">
+                  <h3 className="text-base font-bold text-white group-hover:text-[#D26539] transition-colors leading-snug font-satoshi uppercase">
                     {cat.name}
                   </h3>
-                  <p className="mt-1.5 text-xs text-[#7A7268] line-clamp-2 leading-relaxed font-normal">
+                  <p className="mt-1.5 text-xs text-[#A8A090] line-clamp-2 leading-relaxed font-normal">
                     {cat.description}
                   </p>
                 </div>
 
-                <div className="pt-3 border-t border-white/10 flex items-center justify-between text-xs font-black text-[#D26539] uppercase tracking-wider font-mono group-hover:translate-x-1 transition-all">
+                <div className="pt-3 border-t border-white/10 flex items-center justify-between text-xs font-bold text-white/80 group-hover:text-white uppercase tracking-wider font-mono group-hover:translate-x-1 transition-all">
                   <span>Explore Category</span>
-                  <ArrowRight className="w-4 h-4 stroke-[3]" />
+                  <ArrowRight className="w-4 h-4" />
                 </div>
               </div>
             </motion.div>
