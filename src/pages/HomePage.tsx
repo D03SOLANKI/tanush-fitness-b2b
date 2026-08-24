@@ -206,10 +206,45 @@ export const HomePage: React.FC = () => {
 
         {/* 🌊 3. HORIZONTAL STRENGTH PERFORMANCE DISCIPLINE RESULTS MARQUEE */}
         <div className="w-full overflow-hidden py-3 sm:py-5 z-10 select-none pointer-events-none">
-          <div className="flex items-center gap-10 sm:gap-14 animate-marquee whitespace-nowrap font-satoshi font-extrabold text-base sm:text-lg md:text-xl lg:text-[22px] tracking-[0.24em] text-white/55 uppercase">
-            <span>✦ STRENGTH ✦ PERFORMANCE ✦ DISCIPLINE ✦ RESULTS ✦</span>
-            <span>✦ STRENGTH ✦ PERFORMANCE ✦ DISCIPLINE ✦ RESULTS ✦</span>
-            <span>✦ STRENGTH ✦ PERFORMANCE ✦ DISCIPLINE ✦ RESULTS ✦</span>
+          <div className="flex w-max animate-marquee select-none">
+            {/* Track 1 */}
+            <div className="flex items-center gap-8 sm:gap-14 shrink-0 pr-8 sm:pr-14 font-satoshi font-extrabold text-base sm:text-lg md:text-xl lg:text-[22px] tracking-[0.24em] text-white/55 uppercase">
+              <span>✦</span>
+              <span>STRENGTH</span>
+              <span>✦</span>
+              <span>PERFORMANCE</span>
+              <span>✦</span>
+              <span>DISCIPLINE</span>
+              <span>✦</span>
+              <span>RESULTS</span>
+              <span>✦</span>
+              <span>STRENGTH</span>
+              <span>✦</span>
+              <span>PERFORMANCE</span>
+              <span>✦</span>
+              <span>DISCIPLINE</span>
+              <span>✦</span>
+              <span>RESULTS</span>
+            </div>
+            {/* Track 2 (Exact Duplicate for 100% Seamless Infinite Revolving Loop) */}
+            <div className="flex items-center gap-8 sm:gap-14 shrink-0 pr-8 sm:pr-14 font-satoshi font-extrabold text-base sm:text-lg md:text-xl lg:text-[22px] tracking-[0.24em] text-white/55 uppercase">
+              <span>✦</span>
+              <span>STRENGTH</span>
+              <span>✦</span>
+              <span>PERFORMANCE</span>
+              <span>✦</span>
+              <span>DISCIPLINE</span>
+              <span>✦</span>
+              <span>RESULTS</span>
+              <span>✦</span>
+              <span>STRENGTH</span>
+              <span>✦</span>
+              <span>PERFORMANCE</span>
+              <span>✦</span>
+              <span>DISCIPLINE</span>
+              <span>✦</span>
+              <span>RESULTS</span>
+            </div>
           </div>
         </div>
 
