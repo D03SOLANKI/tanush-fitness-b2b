@@ -84,11 +84,11 @@ export const OrangeDirectorySection: React.FC = () => {
         {/* Giant Faint Star Watermark on Right */}
         <div className="absolute -right-20 top-1/2 -translate-y-1/2 pointer-events-none select-none opacity-20 hidden md:block">
           <svg
-            className="w-[580px] h-[580px] text-[#D26539]/20 fill-none stroke-current"
+            className="w-[580px] h-[580px] text-white/10 fill-none stroke-current"
             viewBox="0 0 100 100"
             strokeWidth="1.5"
           >
-            <path d="M 50 5 L 56 38 L 88 20 L 64 46 L 95 50 L 64 54 L 88 80 L 56 62 L 50 95 L 44 62 L 12 80 L 36 54 L 5 50 L 36 46 L 12 20 L 44 38 Z" fill="rgba(210,101,57,0.03)" stroke="currentColor" />
+            <path d="M 50 5 L 56 38 L 88 20 L 64 46 L 95 50 L 64 54 L 88 80 L 56 62 L 50 95 L 44 62 L 12 80 L 36 54 L 5 50 L 36 46 L 12 20 L 44 38 Z" fill="rgba(255,255,255,0.01)" stroke="currentColor" />
           </svg>
         </div>
 
@@ -100,7 +100,7 @@ export const OrangeDirectorySection: React.FC = () => {
               onClick={() => handleNav(item.page)}
               className="group flex items-baseline gap-4 sm:gap-6 cursor-pointer select-none"
             >
-              <span className="font-mono text-xs sm:text-sm md:text-base text-[#D26539] font-bold tracking-widest shrink-0">
+              <span className="font-mono text-xs sm:text-sm md:text-base text-[#A8A090] group-hover:text-[#D26539] font-bold tracking-widest shrink-0 transition-colors">
                 {item.num}
               </span>
 

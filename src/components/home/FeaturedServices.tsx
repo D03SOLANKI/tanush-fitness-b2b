@@ -29,10 +29,10 @@ export const FeaturedServices: React.FC = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.3, delay: idx * 0.06 }}
-              className="group rounded-xl bg-[#1A2018] border border-white/10 hover:border-white/20 overflow-hidden flex flex-col justify-between shadow-sm"
+              className="group rounded-none bg-[#0D1118] border border-white/10 hover:border-white/20 overflow-hidden flex flex-col justify-between shadow-sm"
             >
               {/* Image */}
-              <div className="relative aspect-[16/10] bg-[#ECE6DB] overflow-hidden border-b border-white/10">
+              <div className="relative aspect-[16/10] bg-[#090C10] overflow-hidden border-b border-white/10">
                 <img
                   src={service.image}
                   alt={service.name}
@@ -50,15 +50,15 @@ export const FeaturedServices: React.FC = () => {
               {/* Content */}
               <div className="p-5 flex-1 flex flex-col justify-between space-y-4">
                 <div>
-                  <div className="text-[10px] font-bold text-[#D26539] font-mono uppercase tracking-wide">
+                  <div className="text-[10px] font-mono text-[#A8A090] uppercase tracking-wide">
                     {service.category}
                   </div>
 
-                  <h3 className="text-sm font-bold text-[#090C10] leading-snug font-satoshi group-hover:text-[#D26539] transition-colors mt-1">
+                  <h3 className="text-sm font-bold text-white leading-snug font-satoshi group-hover:text-[#D26539] transition-colors mt-1 uppercase">
                     {service.name}
                   </h3>
 
-                  <p className="mt-1.5 text-xs text-[#7A7268] line-clamp-2 leading-relaxed">
+                  <p className="mt-1.5 text-xs text-[#A8A090] line-clamp-2 leading-relaxed">
                     {service.shortDesc}
                   </p>
                 </div>
@@ -67,9 +67,9 @@ export const FeaturedServices: React.FC = () => {
                 <div className="pt-3 border-t border-white/10">
                   <button
                     onClick={() => openServiceModal(service)}
-                    className="w-full py-2 px-3 rounded-lg bg-[#090C10] hover:bg-[#1A2018] text-white font-semibold text-xs flex items-center justify-center gap-1.5 transition-colors shadow-sm"
+                    className="w-full py-2.5 px-3 rounded-none bg-[#090C10] hover:bg-[#D26539] text-white font-semibold text-xs flex items-center justify-center gap-1.5 transition-colors shadow-sm uppercase font-mono"
                   >
-                    <Send className="w-3.5 h-3.5 text-[#D26539]" />
+                    <Send className="w-3.5 h-3.5 text-white/80" />
                     <span>Request Proposal</span>
                   </button>
                 </div>

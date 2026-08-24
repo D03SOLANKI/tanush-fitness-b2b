@@ -34,11 +34,11 @@ export const Hero: React.FC = () => {
             {/* Master Headline */}
             <h1 className="text-3xl sm:text-5xl xl:text-6xl font-extrabold tracking-tight text-[#090C10] font-satoshi uppercase leading-[1.1]">
               Commercial & Residential Gym OUTFITTING.{' '}
-              <span className="text-[#C2552F] block mt-1">DIRECT FROM FACTORY.</span>
+              <span className="text-[#26452D] block mt-1">DIRECT FROM FACTORY.</span>
             </h1>
 
             {/* Value Proposition Description */}
-            <p className="text-sm sm:text-base text-[#7A7268] max-w-2xl font-normal leading-relaxed">
+            <p className="text-sm sm:text-base text-[#6B6358] max-w-2xl font-normal leading-relaxed">
               Engineered with 11-gauge precision laser-cut structural steel. We outfit health clubs, CrossFit boxes, university athletic centers, and luxury residential gyms across India with certified machinery and GYM MANAGEMENT ASSEMBLY.
             </p>
 
@@ -46,28 +46,28 @@ export const Hero: React.FC = () => {
             <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 pt-2">
               <button
                 onClick={() => navigateTo('equipment')}
-                className="px-6 py-3.5 rounded-lg bg-[#C2552F] hover:bg-[#090C10] text-white font-bold text-sm flex items-center justify-center gap-2 transition-colors shadow-sm"
+                className="px-6 py-3.5 rounded-none bg-[#D26539] hover:bg-[#C2552F] text-white font-bold text-xs uppercase font-mono flex items-center justify-center gap-2 transition-colors shadow-sm"
               >
-                <span>Build Commercial & Residential RFQ Package</span>
-                <ArrowRight className="w-4 h-4 text-[#D26539]/20" />
+                <span>Build RFQ Package</span>
+                <ArrowRight className="w-4 h-4" />
               </button>
 
               <button
                 onClick={() => navigateTo('contact')}
-                className="px-6 py-3.5 rounded-lg bg-[#090C10] hover:bg-[#090C10] text-white font-bold text-sm flex items-center justify-center gap-2 transition-colors shadow-sm"
+                className="px-6 py-3.5 rounded-none bg-[#090C10] hover:bg-[#1A2018] text-white font-bold text-xs uppercase font-mono flex items-center justify-center gap-2 transition-colors shadow-sm"
               >
-                <FileDown className="w-4 h-4 text-[#D26539]" />
+                <FileDown className="w-4 h-4 text-white/80" />
                 <span>Request 2026 Master Spec Sheet</span>
               </button>
             </div>
 
             {/* Direct Line & Fast Invoicing Notice */}
-            <div className="pt-2 flex flex-wrap items-center gap-4 text-xs font-mono text-[#7A7268]">
+            <div className="pt-2 flex flex-wrap items-center gap-4 text-xs font-mono text-[#6B6358]">
               <a
                 href="tel:+918160918894"
-                className="inline-flex items-center gap-1.5 text-[#C2552F] hover:text-[#1A2018] font-bold"
+                className="inline-flex items-center gap-1.5 text-[#26452D] hover:text-[#D26539] font-bold"
               >
-                <PhoneCall className="w-3.5 h-3.5 text-[#C2552F]" />
+                <PhoneCall className="w-3.5 h-3.5" />
                 <span>Commercial & Residential Desk: +91 81609 18894</span>
               </a>
               <span className="text-[#A8A090] hidden sm:inline">•</span>
@@ -75,18 +75,18 @@ export const Hero: React.FC = () => {
             </div>
 
             {/* Technical Verification Badges */}
-            <div className="pt-4 border-t border-white/10 grid grid-cols-2 sm:grid-cols-3 gap-3 font-mono text-xs text-[#7A7268]">
+            <div className="pt-4 border-t border-[#090C10]/10 grid grid-cols-2 sm:grid-cols-3 gap-3 font-mono text-xs text-[#6B6358]">
               <div className="flex items-center gap-1.5">
-                <CheckCircle2 className="w-4 h-4 text-[#C2552F] shrink-0" />
-                <span className="font-semibold">11-Gauge Solid Steel</span>
+                <CheckCircle2 className="w-4 h-4 text-[#26452D] shrink-0" />
+                <span className="font-semibold text-[#090C10]">11-Gauge Solid Steel</span>
               </div>
               <div className="flex items-center gap-1.5">
-                <CheckCircle2 className="w-4 h-4 text-[#C2552F] shrink-0" />
-                <span className="font-semibold">1,000kg Tested Load</span>
+                <CheckCircle2 className="w-4 h-4 text-[#26452D] shrink-0" />
+                <span className="font-semibold text-[#090C10]">1,000kg Tested Load</span>
               </div>
               <div className="flex items-center gap-1.5 col-span-2 sm:col-span-1">
-                <CheckCircle2 className="w-4 h-4 text-[#C2552F] shrink-0" />
-                <span className="font-semibold">10-Year Frame Warranty</span>
+                <CheckCircle2 className="w-4 h-4 text-[#26452D] shrink-0" />
+                <span className="font-semibold text-[#090C10]">10-Year Frame Warranty</span>
               </div>
             </div>
 
@@ -94,7 +94,7 @@ export const Hero: React.FC = () => {
 
           {/* Right Column: Industrial Spec Rig Showcase */}
           <div className="lg:col-span-5">
-            <div className="bg-[#1A2018] border border-white/15 rounded-lg overflow-hidden shadow-sm">
+            <div className="bg-[#090C10] border border-white/10 rounded-none overflow-hidden shadow-sm">
               
               {/* Product Header Bar */}
               <div className="bg-[#090C10] text-white px-4 py-3 flex items-center justify-between border-b border-white/10">
@@ -104,13 +104,13 @@ export const Hero: React.FC = () => {
                     FEATURED SPEC // RIG-900-X
                   </span>
                 </div>
-                <span className="px-2 py-0.5 rounded bg-[#1A2018] text-amber-300 font-mono text-[10px] font-bold border border-white/10">
+                <span className="px-2 py-0.5 rounded bg-white/10 text-[#ECE6DB] font-mono text-[10px] font-bold border border-white/10">
                   COMMERCIAL & RESIDENTIAL GRADE
                 </span>
               </div>
 
               {/* High-Definition Rig Image */}
-              <div className="relative aspect-[4/3] bg-[#ECE6DB] overflow-hidden border-b border-white/10">
+              <div className="relative aspect-[4/3] bg-[#090C10] overflow-hidden border-b border-white/10">
                 <img
                   src="https://images.unsplash.com/photo-1540497077202-7c8a3999166f?auto=format&fit=crop&w=1000&q=80"
                   alt="Industrial Commercial & Residential Gym Power Rack"
@@ -119,12 +119,12 @@ export const Hero: React.FC = () => {
                 
                 {/* Engineering Callout Overlay Badges */}
                 <div className="absolute top-3 left-3 bg-[#090C10]/90 text-white text-[10px] font-mono font-bold px-2 py-1 rounded border border-white/10 shadow-sm flex items-center gap-1">
-                  <Layers className="w-3 h-3 text-[#D26539]" />
+                  <Layers className="w-3 h-3 text-white/80" />
                   <span>3x3" 11-Gauge Structural Uprights</span>
                 </div>
 
                 <div className="absolute bottom-3 right-3 bg-[#090C10]/90 text-white text-[10px] font-mono font-bold px-2 py-1 rounded border border-white/10 shadow-sm flex items-center gap-1">
-                  <Award className="w-3 h-3 text-[#D26539]" />
+                  <Award className="w-3 h-3 text-white/80" />
                   <span>ISO 9001 Structural Rig</span>
                 </div>
               </div>

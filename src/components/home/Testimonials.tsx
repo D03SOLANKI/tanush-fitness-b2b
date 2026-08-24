@@ -23,23 +23,23 @@ export const Testimonials: React.FC = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.4, delay: idx * 0.1 }}
-              className="p-8 rounded-none bg-[#1A2018] border border-white/10 hover:border-[#D26539]/50 transition-all flex flex-col justify-between space-y-6 group hover:-translate-y-1"
+              className="p-8 rounded-none bg-[#0D1118] border border-white/10 hover:border-white/20 transition-all flex flex-col justify-between space-y-6 group hover:-translate-y-1"
             >
               <div className="space-y-4">
                 <div className="flex items-center justify-between">
-                  <div className="flex items-center gap-1 text-[#D26539] font-bold">
+                  <div className="flex items-center gap-1 text-amber-400/90">
                     {[...Array(item.rating)].map((_, i) => (
-                      <Star key={i} className="w-4 h-4 fill-[#D26539]" />
+                      <Star key={i} className="w-3.5 h-3.5 fill-amber-400/90" />
                     ))}
                   </div>
-                  <span className="text-xs font-bold px-3 py-1 rounded-full bg-[#D26539]/10 text-[#D26539] border border-[#D26539]/20 uppercase font-mono">
+                  <span className="text-[10px] font-bold px-2.5 py-0.5 rounded-full bg-white/5 text-[#F0EBE3] border border-white/10 uppercase font-mono">
                     {item.stats}
                   </span>
                 </div>
 
-                <Quote className="w-8 h-8 text-[#D26539]/20" />
+                <Quote className="w-7 h-7 text-white/10" />
 
-                <p className="text-xs sm:text-sm text-[#7A7268] leading-relaxed italic font-normal">
+                <p className="text-xs sm:text-sm text-[#A8A090] leading-relaxed italic font-normal">
                   "{item.quote}"
                 </p>
               </div>
@@ -48,15 +48,15 @@ export const Testimonials: React.FC = () => {
                 <img
                   src={item.image}
                   alt={item.author}
-                  className="w-12 h-12 rounded-full object-cover border border-[#D26539]/20 shrink-0 shadow-sm"
+                  className="w-11 h-11 rounded-full object-cover border border-white/10 shrink-0 shadow-sm"
                 />
                 <div>
                   <div className="flex items-center gap-1.5">
-                    <span className="text-sm font-black text-[#090C10] font-satoshi">{item.author}</span>
-                    <CheckCircle2 className="w-3.5 h-3.5 text-[#D26539]" />
+                    <span className="text-sm font-bold text-white font-satoshi">{item.author}</span>
+                    <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400" />
                   </div>
-                  <div className="text-xs text-[#6B6358] font-semibold">{item.title}</div>
-                  <div className="text-[11px] text-[#D26539] font-bold font-mono uppercase">{item.gymName} · {item.location}</div>
+                  <div className="text-xs text-[#A8A090]">{item.title}</div>
+                  <div className="text-[11px] text-[#6B6358] font-mono uppercase mt-0.5">{item.gymName} · {item.location}</div>
                 </div>
               </div>
             </motion.div>

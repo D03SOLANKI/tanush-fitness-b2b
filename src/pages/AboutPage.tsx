@@ -110,7 +110,7 @@ export const AboutPage: React.FC = () => {
                   <p>
                     With direct-from-factory pricing, 100% GST 18% Input Tax Credit invoicing, zero middleman markups, and dedicated master coach recruitment, Tanush is the trusted infrastructure partner for over 500+ commercial clubs nationwide.
                   </p>
-                  <div className="p-4 rounded-xl bg-white/5 border border-white/10 font-mono text-xs text-[#D26539] italic">
+                  <div className="p-4 rounded-none bg-white/5 border border-white/10 font-mono text-xs text-[#ECE6DB] italic">
                     "Tanush Fitness is not merely an equipment vendor; it is an end-to-end commercial infrastructure partner built for gym owners who demand perfection."
                   </div>
                 </div>
@@ -118,15 +118,15 @@ export const AboutPage: React.FC = () => {
 
               <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 pt-4 font-mono text-xs text-[#A8A090] border-t border-white/5">
                 <div>
-                  <span className="text-[#D26539] font-bold block text-xl font-satoshi">500+</span>
+                  <span className="text-white font-extrabold block text-2xl font-satoshi">500+</span>
                   <span className="text-[#A8A090] text-[10px] uppercase">CLUBS OUTFITTED</span>
                 </div>
                 <div>
-                  <span className="text-[#D26539] font-bold block text-xl font-satoshi">11-GAUGE</span>
+                  <span className="text-white font-extrabold block text-2xl font-satoshi">11-GAUGE</span>
                   <span className="text-[#A8A090] text-[10px] uppercase">PRECISION STEEL</span>
                 </div>
                 <div>
-                  <span className="text-[#D26539] font-bold block text-xl font-satoshi">ISO 9001</span>
+                  <span className="text-white font-extrabold block text-2xl font-satoshi">ISO 9001</span>
                   <span className="text-[#A8A090] text-[10px] uppercase">CERTIFIED PLANT</span>
                 </div>
               </div>
@@ -151,8 +151,8 @@ export const AboutPage: React.FC = () => {
 
         {/* Pillars / USPs */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          <div className="bg-[#0D1118] border border-white/10 rounded-none p-8 space-y-4 luxury-card">
-            <div className="w-12 h-12 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-[#D26539]">
+          <div className="bg-[#0D1118] border border-white/10 rounded-none p-8 space-y-4 luxury-card group">
+            <div className="w-12 h-12 rounded-none bg-white/5 border border-white/10 flex items-center justify-center text-white/90 group-hover:text-[#D26539] transition-colors">
               <Wrench className="w-6 h-6" />
             </div>
             <h3 className="font-satoshi text-xl font-bold text-white uppercase">Direct Factory Direct</h3>
@@ -161,8 +161,8 @@ export const AboutPage: React.FC = () => {
             </p>
           </div>
 
-          <div className="bg-[#0D1118] border border-white/10 rounded-none p-8 space-y-4 luxury-card">
-            <div className="w-12 h-12 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-[#D26539]">
+          <div className="bg-[#0D1118] border border-white/10 rounded-none p-8 space-y-4 luxury-card group">
+            <div className="w-12 h-12 rounded-none bg-white/5 border border-white/10 flex items-center justify-center text-white/90 group-hover:text-[#D26539] transition-colors">
               <Cpu className="w-6 h-6" />
             </div>
             <h3 className="font-satoshi text-xl font-bold text-white uppercase">3D CAD GYM MANAGEMENT Suites</h3>
@@ -171,13 +171,13 @@ export const AboutPage: React.FC = () => {
             </p>
           </div>
 
-          <div className="bg-[#0D1118] border border-white/10 rounded-none p-8 space-y-4 luxury-card">
-            <div className="w-12 h-12 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-[#D26539]">
-              <Users className="w-6 h-6" />
+          <div className="bg-[#0D1118] border border-white/10 rounded-none p-8 space-y-4 luxury-card group">
+            <div className="w-12 h-12 rounded-none bg-white/5 border border-white/10 flex items-center justify-center text-white/90 group-hover:text-[#D26539] transition-colors">
+              <Award className="w-6 h-6" />
             </div>
-            <h3 className="font-satoshi text-xl font-bold text-white uppercase">Master Coach Placement</h3>
+            <h3 className="font-satoshi text-xl font-bold text-white uppercase">Certified Master Staffing</h3>
             <p className="text-[#A8A090] text-xs sm:text-sm leading-relaxed font-sans">
-              Access India’s certified roster of NASM, CSCS, and K11 personal trainers and general managers for rapid club launch readiness.
+              Recruit credentialed NASM, CSCS, ACE, and K11 fitness directors and personal training talent through verified recruitment funnels.
             </p>
           </div>
         </div>

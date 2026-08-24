@@ -241,7 +241,7 @@ export const EquipmentPage: React.FC = () => {
                     <div className="absolute inset-0 bg-gradient-to-t from-[#0D1118] via-transparent to-transparent opacity-60" />
 
                     <div className="absolute top-3 left-3 flex flex-col gap-1.5">
-                      <span className="px-2.5 py-0.5 rounded-full bg-[#090C10]/80  border border-white/10 text-[9px] font-mono text-[#D26539] uppercase tracking-wider font-bold">
+                      <span className="px-2.5 py-0.5 rounded-full bg-[#090C10]/80 border border-white/10 text-[9px] font-mono text-white/90 uppercase tracking-wider font-bold">
                         {product.specs?.['Steel Frame'] || '11-GAUGE STEEL'}
                       </span>
                     </div>
@@ -252,9 +252,9 @@ export const EquipmentPage: React.FC = () => {
                         e.stopPropagation();
                         toggleWishlist(product.id);
                       }}
-                      className={`absolute top-3 right-3 p-2 rounded-full  border transition ${
+                      className={`absolute top-3 right-3 p-2 rounded-full border transition ${
                         isWish
-                          ? 'bg-[#D26539] text-[#090C10] border-[#D26539]'
+                          ? 'bg-[#D26539] text-white border-[#D26539]'
                           : 'bg-[#090C10]/60 text-[#A8A090] border-white/10 hover:text-white'
                       }`}
                     >
@@ -280,13 +280,13 @@ export const EquipmentPage: React.FC = () => {
                     </p>
 
                     <div className="grid grid-cols-2 gap-2 pt-3 border-t border-white/5 font-mono text-[10px] text-[#A8A090]">
-                      <div className="bg-white/5 p-2 rounded-lg">
+                      <div className="bg-white/5 p-2 rounded-none">
                         <span className="text-[#6B6358] block">CAPACITY:</span>
                         <span className="text-white font-bold">{product.specs?.['Max Load'] || product.specs?.['Weight Capacity'] || '600 KG'}</span>
                       </div>
-                      <div className="bg-white/5 p-2 rounded-lg">
+                      <div className="bg-white/5 p-2 rounded-none">
                         <span className="text-[#6B6358] block">WARRANTY:</span>
-                        <span className="text-[#D26539] font-bold">{product.specs?.['Warranty'] || '10 Yrs Frame'}</span>
+                        <span className="text-white font-bold">{product.specs?.['Warranty'] || '10 Yrs Frame'}</span>
                       </div>
                     </div>
                   </div>
@@ -349,7 +349,7 @@ export const EquipmentPage: React.FC = () => {
             >
               <div className="flex items-start justify-between border-b border-white/10 pb-4">
                 <div>
-                  <span className="text-[10px] font-mono text-[#D26539] uppercase tracking-widest block mb-1">
+                  <span className="text-[10px] font-mono text-[#A8A090] uppercase tracking-widest block mb-1">
                     COMMERCIAL & RESIDENTIAL MACHINERY SCHEMATICS // {selectedProduct.brand}
                   </span>
                   <h2 className="font-satoshi text-2xl sm:text-3xl font-extrabold text-white uppercase">
@@ -402,7 +402,7 @@ export const EquipmentPage: React.FC = () => {
                   <div className="space-y-2.5 font-mono text-xs text-[#A8A090] bg-[#090C10] p-4 rounded-xl border border-white/5">
                     <div className="flex justify-between py-1 border-b border-white/5">
                       <span className="text-[#6B6358]">FRAME STEEL:</span>
-                      <span className="text-[#D26539] font-bold">{selectedProduct.specs?.['Steel Frame'] || '11-Gauge (3.0mm) Laser Cut'}</span>
+                      <span className="text-white font-bold">{selectedProduct.specs?.['Steel Frame'] || '11-Gauge (3.0mm) Laser Cut'}</span>
                     </div>
                     <div className="flex justify-between py-1 border-b border-white/5">
                       <span className="text-[#6B6358]">WEIGHT CAPACITY:</span>

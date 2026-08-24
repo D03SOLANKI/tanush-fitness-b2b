@@ -141,7 +141,7 @@ export const EnquiryCartDrawer: React.FC = () => {
                   <h2 className="font-satoshi text-lg font-bold uppercase text-white leading-tight">
                     Project RFQ Basket
                   </h2>
-                  <span className="px-2 py-0.5 rounded-full bg-[#D26539]/10 text-[#D26539] font-mono text-[9px] font-bold uppercase border border-[#D26539]/30">
+                  <span className="px-2 py-0.5 rounded-full bg-white/5 text-white/90 font-mono text-[9px] font-bold uppercase border border-white/10">
                     B2B DIRECT
                   </span>
                 </div>
@@ -173,14 +173,14 @@ export const EnquiryCartDrawer: React.FC = () => {
                 </div>
 
                 <div>
-                  <span className="text-[10px] font-mono text-[#D26539] uppercase tracking-widest block mb-1">
+                  <span className="text-[10px] font-mono text-[#A8A090] uppercase tracking-widest block mb-1">
                     OFFICIAL RFQ SPECIFICATION DISPATCHED
                   </span>
                   <h3 className="font-satoshi text-2xl font-bold uppercase">
                     Quotation Logged
                   </h3>
                   <div className="text-xs font-mono text-[#A8A090] mt-1">
-                    Reference Code: <span className="text-[#D26539] font-bold">{rfqRef}</span>
+                    Reference Code: <span className="text-white font-bold">{rfqRef}</span>
                   </div>
                 </div>
 
@@ -192,7 +192,7 @@ export const EnquiryCartDrawer: React.FC = () => {
                 </div>
 
                 <div className="p-3 bg-white/5 rounded-xl border border-white/5 text-left text-xs text-[#A8A090] leading-relaxed flex items-start gap-2">
-                  <Clock className="w-4 h-4 text-[#D26539] shrink-0 mt-0.5" />
+                  <Clock className="w-4 h-4 text-[#A8A090] shrink-0 mt-0.5" />
                   <span>
                     Our engineering desk is preparing your itemized PDF quote with structural frame certifications. You will receive it via WhatsApp and Email within 2 hours.
                   </span>
@@ -215,7 +215,7 @@ export const EnquiryCartDrawer: React.FC = () => {
                 <div className="space-y-3">
                   <div className="flex items-center justify-between text-xs font-mono text-[#A8A090] uppercase">
                     <span>Selected Machinery ({enquiryCart.length})</span>
-                    <span className="text-[#D26539] font-bold">Total: {totalQuantity} Units</span>
+                    <span className="text-white font-bold">Total: {totalQuantity} Units</span>
                   </div>
 
                   {enquiryCart.length === 0 ? (
@@ -228,15 +228,13 @@ export const EnquiryCartDrawer: React.FC = () => {
                         <div key={item.product.id} className="p-4 flex items-center justify-between gap-3">
                           <div className="flex items-center gap-3">
                             <img
-                              src={item.product.image || 'https://images.unsplash.com/photo-1540497077202-7c8a3999166f?auto=format&fit=crop&w=300&q=80'}
+                              src={item.product.image || 'https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=300&q=80'}
                               alt={item.product.name}
-                              className="w-12 h-12 object-cover rounded-xl border border-white/10"
+                              className="w-12 h-12 rounded-lg object-cover border border-white/10"
                             />
                             <div>
-                              <div className="text-xs font-bold text-white font-satoshi uppercase line-clamp-1">
-                                {item.product.name}
-                              </div>
-                              <div className="text-[10px] text-[#D26539] font-mono">
+                              <div className="font-satoshi text-xs font-bold text-white line-clamp-1">{item.product.name}</div>
+                              <div className="text-[10px] text-[#A8A090] font-mono">
                                 {item.product.brand} · 11-Gauge
                               </div>
                             </div>
