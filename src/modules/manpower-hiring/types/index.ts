@@ -1,12 +1,11 @@
 export type JobRoleCategory =
-  | 'Personal Trainer'
-  | 'Gym Trainer'
-  | 'Receptionist'
-  | 'Sales Executive'
-  | 'Housekeeping'
-  | 'Cleaning Staff'
-  | 'Nutritionist'
-  | 'Gym Manager';
+  | 'Management'
+  | 'HR & Administration'
+  | 'Sales & Front Desk'
+  | 'Fitness Team'
+  | 'Group Classes'
+  | 'Nutrition & Recovery'
+  | 'Facility Operations';
 
 export interface JobListing {
   id: string;

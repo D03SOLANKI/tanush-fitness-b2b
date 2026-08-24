@@ -41,8 +41,8 @@ const USP_CARDS = [
   {
     id: 3,
     title: 'Manpower Services & Staffing',
-    description: 'Pre-screened ecosystem connecting commercial facilities with NASM, CSCS, ACE, and K11 accredited trainers and gym operations leads.',
-    brands: ['Certified Trainers', 'Gym Managers', 'Floor Supervisors'],
+    description: 'Specialized 7-division talent placement covering Club Management, HR/Admin, Sales & Front Desk, Fitness Teams, Group Classes, Nutrition & Recovery, and Facility Operations.',
+    brands: ['Management', 'HR & Admin', 'Fitness Team', 'Sales & Front Desk', 'Group Classes', 'Nutrition & Recovery', 'Facility Ops'],
     icon: <Users className="w-7 h-7 text-[#A8A090] group-hover:text-[#D26539] transition-colors" />,
   },
   {
@@ -78,15 +78,15 @@ const CORE_PILLARS = [
     category: 'CORE VERTICAL',
     title: 'Gym Management & GYM MANAGEMENT SETUP',
     tagline: 'End-to-end gym setup including planning, architectural acoustics, equipment, and automated operations',
-    description: 'Complete 360° architectural spatial floor planning, high-density acoustic rubber isolation flooring, biometric RFID access turnstiles, and pre-sales digital lead acquisition funnels.',
+    description: 'Complete gym transformation from raw space to profitable launch: 3D CAD facility design, soundproof shock-absorption rubber flooring, and turnkey outfitting.',
     image: 'https://images.unsplash.com/photo-1540497077202-7c8a3999166f?auto=format&fit=crop&w=800&q=80',
     icon: Briefcase,
     page: 'services' as const,
-    btnText: 'Explore GYM MANAGEMENT Management',
+    btnText: 'Discover Gym Management Services',
     points: [
-      '3D CAD Spatial Floor Schematics',
-      'Acoustic Flooring & Access Turnstiles',
-      'End-to-End Installation & Launch Support'
+      'Turnkey 3D Architectural Space Planning',
+      'Heavy-Duty Acoustic & Vibration Isolation Flooring',
+      'Annual Maintenance Contracts (AMC)'
     ],
   },
   {
@@ -94,16 +94,16 @@ const CORE_PILLARS = [
     number: '03',
     category: 'CORE VERTICAL',
     title: 'Manpower Services',
-    tagline: 'Certified trainers, gym managers, and fitness professionals for Commercial & Residential Gyms',
-    description: 'Verified recruitment and placement ecosystem connecting commercial health clubs with NASM, CSCS, ACE, and K11 accredited master personal trainers and floor operations leadership.',
+    tagline: '7 specialized staffing verticals for Commercial & Residential Gym facilities',
+    description: 'Verified recruitment and placement covering Club Managers, HR/Admin, Sales Executives, Receptionists, Head & Gym Trainers, Group Class Instructors, Nutritionists, Physiotherapists, and Facility Operations.',
     image: 'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?auto=format&fit=crop&w=800&q=80',
     icon: Users,
     page: 'manpower' as const,
     btnText: 'Open Recruitment Portal',
     points: [
-      'Pre-Screened & Certified Trainer Profiles',
-      'Operations Managers & Floor Supervisors',
-      'Direct Placement & Applicant Tracker'
+      'Management, HR/Admin & Sales Desk Placement',
+      'Certified Fitness Teams & Group Class Coaches',
+      'Nutrition, Recovery & Facility Operations Staffing'
     ],
   },
 ];

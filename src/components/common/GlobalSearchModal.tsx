@@ -86,8 +86,8 @@ export const GlobalSearchModal: React.FC<GlobalSearchModalProps> = ({ isOpen, on
                 <p>Type to search across Tanush Fitness B2B ecosystem.</p>
                 <div className="flex flex-wrap justify-center gap-2 pt-2">
                   <span className="px-2.5 py-1 rounded-none bg-white/5 border border-white/10 text-white/80 text-[10px]">Power Rack</span>
-                  <span className="px-2.5 py-1 rounded-none bg-white/5 border border-white/10 text-white/80 text-[10px]">Personal Trainer</span>
-                  <span className="px-2.5 py-1 rounded-none bg-white/5 border border-white/10 text-white/80 text-[10px]">Meta Ads</span>
+                  <span className="px-2.5 py-1 rounded-none bg-white/5 border border-white/10 text-white/80 text-[10px]">Club Manager</span>
+                  <span className="px-2.5 py-1 rounded-none bg-white/5 border border-white/10 text-white/80 text-[10px]">Fitness Trainer</span>
                   <span className="px-2.5 py-1 rounded-none bg-white/5 border border-white/10 text-white/80 text-[10px]">3D Interior</span>
                 </div>
               </div>

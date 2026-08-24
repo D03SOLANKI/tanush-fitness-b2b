@@ -45,22 +45,22 @@ export const ManpowerPage: React.FC = () => {
     experience: '3-5 Years',
     preferredCity: '',
     preferredSalary: '₹40,000 - ₹60,000 / month',
-    skills: 'Personal Training, Biomechanics, Hypertrophy, Rehab',
-    certifications: 'NASM-CPT / CSCS / ACE / K11 Certified',
+    skills: 'Personal Training, Club Management, Biomechanics, Sales, Group Fitness',
+    certifications: 'NASM-CPT / CSCS / ACE / K11 / RYT-200 Certified',
     resumeFileName: 'Resume_Executive.pdf',
   });
 
   // Employer Post Job Form
   const [jobForm, setJobForm] = useState({
     title: '',
-    category: 'Personal Trainer' as JobRoleCategory,
+    category: 'Fitness Team' as JobRoleCategory,
     gymName: '',
     location: '',
     salaryRange: '₹45,000 - ₹75,000 / month',
     type: 'Full-time' as 'Full-time' | 'Part-time' | 'Contract',
     experience: '2-4 Years',
     description: '',
-    requirements: 'NASM/CSCS Certified, 2+ Years Commercial Experience',
+    requirements: 'Certified in designated discipline, 2+ Years Commercial Experience',
   });
 
   const handleApplySubmit = (e: React.FormEvent) => {
@@ -114,7 +114,7 @@ export const ManpowerPage: React.FC = () => {
     setIsPostJobModalOpen(false);
     setJobForm({
       title: '',
-      category: 'Personal Trainer',
+      category: 'Fitness Team',
       gymName: '',
       location: '',
       salaryRange: '₹45,000 - ₹75,000 / month',
@@ -124,6 +124,62 @@ export const ManpowerPage: React.FC = () => {
       requirements: '',
     });
   };
+
+  const MANPOWER_SERVICES = [
+    {
+      category: 'Management',
+      roles: 'Club Manager',
+      description: 'Senior club general managers, operations directors, and P&L managers responsible for executive facility governance and membership growth.',
+      badge: 'Executive Level'
+    },
+    {
+      category: 'HR & Administration',
+      roles: 'HR/Admin',
+      description: 'Human resources coordinators, facility administrators, payroll specialists, compliance officers, and staff roster managers.',
+      badge: 'Operations & HR'
+    },
+    {
+      category: 'Sales & Front Desk',
+      roles: 'Sales Executive + Receptionist',
+      description: 'High-converting membership sales executives, VIP club receptionists, desk officers, and member relationship coordinators.',
+      badge: 'Client Servicing'
+    },
+    {
+      category: 'Fitness Team',
+      roles: 'Head Trainer + Gym Trainers + Personal Trainers (PTs)',
+      description: 'Certified master biomechanics coaches, floor gym trainers, and dedicated 1-on-1 personal trainers (NASM, CSCS, ACE, K11).',
+      badge: 'Core Athletic Team'
+    },
+    {
+      category: 'Group Classes',
+      roles: 'Yoga, Zumba, CrossFit/HIIT + Sound Healing',
+      description: 'Dynamic group studio instructors specialized in Vinyasa Yoga, licensed Zumba dance fitness, CrossFit/HIIT conditioning, and sound healing.',
+      badge: 'Studio Specialists'
+    },
+    {
+      category: 'Nutrition & Recovery',
+      roles: 'Dietitian/Nutritionist + Physiotherapist',
+      description: 'Sports nutritionists designing metabolic meal protocols and licensed physiotherapists delivering musculoskeletal recovery and rehabilitation.',
+      badge: 'Clinical & Wellness'
+    },
+    {
+      category: 'Facility Operations',
+      roles: 'Housekeeping + Maintenance + Security',
+      description: '24/7 facility sanitation crew, steam/sauna hygiene leads, equipment preventive maintenance engineers, and access security personnel.',
+      badge: 'Sanitation & Safety'
+    }
+  ];
+
+  const CATEGORY_TABS = [
+    'all',
+    'Management',
+    'HR & Administration',
+    'Sales & Front Desk',
+    'Fitness Team',
+    'Group Classes',
+    'Nutrition & Recovery',
+    'Facility Operations'
+  ];
 
   const filteredJobs = jobListings.filter(j => {
     if (selectedCategory !== 'all' && j.category !== selectedCategory) return false;
@@ -141,14 +197,14 @@ export const ManpowerPage: React.FC = () => {
     <main className="pt-24 pb-20 bg-[#090C10] min-h-screen text-[#F0EBE3] ">
       <SEO
         title="Master Coaches & Staffing Sanctuary | Tanush Fitness B2B"
-        description="Recruit NASM/CSCS certified personal trainers, master coaches, gym directors, and front desk executives nationwide."
+        description="Recruit Club Managers, HR/Admin, Sales Executives, Fitness Trainers, Group Class Coaches, Nutritionists & Physiotherapists nationwide."
       />
 
       {/* Hero Header */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 pb-12">
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 border-b border-white/10 pb-8">
           <div className="space-y-3">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-xs font-mono text-[#A8A090] tracking-widest uppercase">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-xs font-mono text-white/80 tracking-widest uppercase">
               <Sparkles className="w-3.5 h-3.5" />
               <span>ELITE COMMERCIAL TALENT SANCTUARY</span>
             </div>
@@ -157,8 +213,8 @@ export const ManpowerPage: React.FC = () => {
               MASTER STAFFING
             </h1>
 
-            <p className="text-sm sm:text-base text-[#A8A090] max-w-2xl font-sans leading-relaxed">
-              Recruit certified master coaches (NASM, CSCS, ACE, K11) and commercial health club directors. Fast-track talent placement for newly launched fitness destinations.
+            <p className="text-sm sm:text-base text-white/90 max-w-2xl font-sans leading-relaxed">
+              Full-spectrum gym manpower solutions spanning Club Management, HR & Admin, Sales & Front Desk, Fitness Teams, Group Classes, Nutrition & Recovery, and Facility Operations.
             </p>
           </div>
 
@@ -191,9 +247,61 @@ export const ManpowerPage: React.FC = () => {
       </section>
 
       {/* Marquee Banner */}
-      <MarqueeStrip theme="gold" speed="slow" />
+      <MarqueeStrip theme="orange" speed="slow" />
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 space-y-8">
+      {/* 7 MANPOWER SERVICES SHOWCASE SECTION */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div className="mb-8">
+          <span className="text-xs font-mono text-white/80 uppercase tracking-widest block mb-1">
+            SANCTUARY MANPOWER VERTICALS
+          </span>
+          <h2 className="text-2xl sm:text-3xl font-extrabold text-white uppercase font-satoshi">
+            Complete Facility Staffing Solutions
+          </h2>
+          <p className="text-sm text-[#A8A090] max-w-2xl mt-1">
+            Explore our 7 specialized talent recruitment and staffing divisions designed for commercial health clubs and high-performance gyms.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
+          {MANPOWER_SERVICES.map((serv) => (
+            <div
+              key={serv.category}
+              onClick={() => setSelectedCategory(serv.category)}
+              className={`p-5 rounded-none border transition-all cursor-pointer flex flex-col justify-between space-y-4 group ${
+                selectedCategory === serv.category
+                  ? 'bg-[#1A2018] border-white/40 shadow-lg'
+                  : 'bg-[#0D1118] border-white/10 hover:border-white/30'
+              }`}
+            >
+              <div className="space-y-2">
+                <div className="flex items-center justify-between">
+                  <span className="text-[10px] font-mono uppercase tracking-wider px-2 py-0.5 rounded-none bg-white/5 border border-white/10 text-white/80">
+                    {serv.badge}
+                  </span>
+                  <Award className="w-4 h-4 text-white/50 group-hover:text-white transition" />
+                </div>
+                <h3 className="font-satoshi text-lg font-bold text-white uppercase">
+                  {serv.category}
+                </h3>
+                <div className="text-xs font-mono text-white/90 font-bold">
+                  {serv.roles}
+                </div>
+                <p className="text-xs text-[#A8A090] font-sans leading-relaxed">
+                  {serv.description}
+                </p>
+              </div>
+
+              <div className="pt-2 border-t border-white/5 flex items-center justify-between text-[11px] font-mono text-white/70 group-hover:text-white">
+                <span>View Openings</span>
+                <span>→</span>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 space-y-8">
         {/* Candidate Portal View */}
         {activeUserRole === 'candidate' ? (
           <div className="space-y-6">
@@ -203,15 +311,15 @@ export const ManpowerPage: React.FC = () => {
                 <Search className="w-4 h-4 absolute left-3.5 top-1/2 -translate-y-1/2 text-[#6B6358]" />
                 <input
                   type="text"
-                  placeholder="Search master trainer, club manager, Delhi, Bengaluru..."
+                  placeholder="Search role, club, city (Bengaluru, Mumbai, Delhi)..."
                   value={searchQuery}
                   onChange={e => setSearchQuery(e.target.value)}
-                  className="w-full bg-[#0D1118] border border-white/10 rounded-full pl-10 pr-4 py-2.5 text-xs text-white placeholder-[#6B6358] focus:outline-none focus:border-[#D26539]"
+                  className="w-full bg-[#0D1118] border border-white/10 rounded-full pl-10 pr-4 py-2.5 text-xs text-white placeholder-[#6B6358] focus:outline-none focus:border-white"
                 />
               </div>
 
               <div className="flex items-center gap-2 overflow-x-auto pb-2 scrollbar-none">
-                {['all', 'Personal Trainer', 'Gym Manager', 'Floor Trainer', 'Front Desk', 'Nutritionist'].map((cat) => (
+                {CATEGORY_TABS.map((cat) => (
                   <button
                     key={cat}
                     type="button"
@@ -222,7 +330,7 @@ export const ManpowerPage: React.FC = () => {
                         : 'bg-[#0D1118] text-[#A8A090] border border-white/5 hover:border-white/20'
                     }`}
                   >
-                    {cat === 'all' ? 'All Roles' : cat}
+                    {cat === 'all' ? 'All Services' : cat}
                   </button>
                 ))}
               </div>
@@ -476,15 +584,15 @@ export const ManpowerPage: React.FC = () => {
                     <select
                       value={jobForm.category}
                       onChange={e => setJobForm({ ...jobForm, category: e.target.value as any })}
-                      className="w-full bg-[#090C10] border border-white/10 rounded-xl px-4 py-2.5 text-sm text-white focus:outline-none focus:border-[#D26539] uppercase font-mono"
+                      className="w-full bg-[#090C10] border border-white/10 rounded-xl px-4 py-2.5 text-sm text-white focus:outline-none focus:border-white uppercase font-mono"
                     >
-                      <option value="Personal Trainer">Personal Trainer</option>
-                      <option value="Gym Trainer">Gym Trainer</option>
-                      <option value="Receptionist">Receptionist</option>
-                      <option value="Sales Executive">Sales Executive</option>
-                      <option value="Housekeeping">Housekeeping</option>
-                      <option value="Nutritionist">Nutritionist</option>
-                      <option value="Gym Manager">Gym Manager</option>
+                      <option value="Management">Management (Club Manager)</option>
+                      <option value="HR & Administration">HR & Administration (HR/Admin)</option>
+                      <option value="Sales & Front Desk">Sales & Front Desk (Sales Executive + Receptionist)</option>
+                      <option value="Fitness Team">Fitness Team (Head Trainer, Gym Trainers, PTs)</option>
+                      <option value="Group Classes">Group Classes (Yoga, Zumba, CrossFit/HIIT, Sound Healing)</option>
+                      <option value="Nutrition & Recovery">Nutrition & Recovery (Dietitian/Nutritionist, Physiotherapist)</option>
+                      <option value="Facility Operations">Facility Operations (Housekeeping, Maintenance, Security)</option>
                     </select>
                   </div>
                   <div>
