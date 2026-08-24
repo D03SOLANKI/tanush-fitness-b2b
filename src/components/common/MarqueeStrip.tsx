@@ -29,16 +29,14 @@ export const MarqueeStrip: React.FC<MarqueeStripProps> = ({
 
   const getThemeClass = () => {
     switch (theme) {
-      case 'orange':
-        return 'bg-[#D26539] text-[#090C10] py-3 sm:py-3.5 shadow-lg border-y border-[#C2552F]';
-      case 'gold':
-        return 'bg-[#D8CDC0] text-[#090C10] py-3 sm:py-3.5 shadow-lg border-y border-[#D26539]';
       case 'green':
-        return 'bg-[#26452D] text-[#ECE6DB] py-3 sm:py-3.5 border-y border-[#3A563F]';
+        return 'bg-[#D26539] text-[#090C10] py-3 sm:py-3.5 border-y border-[#C2552F]';
       case 'minimal':
-        return 'bg-transparent text-[#A8A090] border-y border-white/5 py-3';
+        return 'bg-[#D26539] text-[#090C10] border-y border-[#C2552F] py-3';
+      case 'gold':
+      case 'orange':
       default:
-        return 'bg-[#0D1118] text-[#D26539] border-y border-white/5 py-3';
+        return 'bg-[#D26539] text-[#090C10] py-3 sm:py-3.5 shadow-lg border-y border-[#C2552F]';
     }
   };
 
