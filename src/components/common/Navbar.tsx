@@ -118,7 +118,7 @@ export const Navbar: React.FC = () => {
                 <span className="font-satoshi font-black text-lg tracking-[0.12em] text-[#ECE6DB] group-hover:text-white uppercase leading-none">
                   TANUSH
                 </span>
-                <span className="text-[9px] font-mono tracking-[0.3em] text-[#A8A090] uppercase mt-0.5">
+                <span className="text-[9px] font-mono tracking-[0.3em] text-[#D26539] uppercase mt-0.5">
                   FITNESS SANCTUARY
                 </span>
               </div>

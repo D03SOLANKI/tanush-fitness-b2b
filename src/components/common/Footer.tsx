@@ -32,25 +32,25 @@ export const Footer: React.FC = () => {
               </div>
             </div>
 
-            <p className="text-sm text-[#A8A090] leading-relaxed font-sans">
+            <p className="text-sm text-white/90 leading-relaxed font-sans">
               India's premier commercial fitness destination & outfitting brand. Elevating physical and mental performance through world-class biomechanical engineering and custom sanctuary architecture.
             </p>
 
-            <div className="flex flex-wrap items-center gap-3 text-xs font-mono text-[#A8A090] pt-2">
-              <span className="flex items-center gap-1.5 text-[#F0EBE3]">
+            <div className="flex flex-wrap items-center gap-3 text-xs font-mono text-white/80 pt-2">
+              <span className="flex items-center gap-1.5 text-white">
                 <ShieldCheck className="w-4 h-4 text-[#D26539]" /> ISO 9001:2015
               </span>
-              <span>•</span>
-              <span>18% GST ITC Ready</span>
+              <span className="text-white/30">•</span>
+              <span className="text-white/80">18% GST ITC Ready</span>
             </div>
           </div>
 
           {/* Col 2: Navigation */}
           <div className="space-y-4 font-sans text-sm">
-            <h4 className="font-mono text-xs font-bold uppercase tracking-[0.2em] text-[#F0EBE3]">
+            <h4 className="font-mono text-xs font-bold uppercase tracking-[0.2em] text-white">
               Solutions
             </h4>
-            <ul className="space-y-2.5 text-[#A8A090]">
+            <ul className="space-y-2.5 text-white/80">
               <li>
                 <button onClick={() => navigateTo('home')} className="hover:text-[#D26539] transition-colors text-left">
                   Overview
@@ -81,48 +81,48 @@ export const Footer: React.FC = () => {
 
           {/* Col 3: Core Procurement Pillars */}
           <div className="space-y-4 font-sans text-sm">
-            <h4 className="font-mono text-xs font-bold uppercase tracking-[0.2em] text-[#F0EBE3]">
+            <h4 className="font-mono text-xs font-bold uppercase tracking-[0.2em] text-white">
               Core Pillars
             </h4>
-            <ul className="space-y-2.5 text-[#A8A090]">
+            <ul className="space-y-2.5 text-white/80">
               <li className="flex items-center justify-between group cursor-pointer hover:text-white" onClick={() => navigateTo('equipment')}>
                 <span>Commercial & Residential Machinery</span>
-                <ArrowUpRight className="w-3.5 h-3.5 text-[#7A7268] group-hover:text-[#D26539] transition" />
+                <ArrowUpRight className="w-3.5 h-3.5 text-white/50 group-hover:text-[#D26539] transition" />
               </li>
               <li className="flex items-center justify-between group cursor-pointer hover:text-white" onClick={() => navigateTo('manpower')}>
                 <span>Certified Trainer Staffing</span>
-                <ArrowUpRight className="w-3.5 h-3.5 text-[#7A7268] group-hover:text-[#D26539] transition" />
+                <ArrowUpRight className="w-3.5 h-3.5 text-white/50 group-hover:text-[#D26539] transition" />
               </li>
               <li className="flex items-center justify-between group cursor-pointer hover:text-white" onClick={() => navigateTo('services')}>
                 <span>3D Architectural GYM MANAGEMENT</span>
-                <ArrowUpRight className="w-3.5 h-3.5 text-[#7A7268] group-hover:text-[#D26539] transition" />
+                <ArrowUpRight className="w-3.5 h-3.5 text-white/50 group-hover:text-[#D26539] transition" />
               </li>
               <li className="flex items-center justify-between group cursor-pointer hover:text-white" onClick={() => navigateTo('contact')}>
                 <span>Wholesale Project RFQs</span>
-                <ArrowUpRight className="w-3.5 h-3.5 text-[#7A7268] group-hover:text-[#D26539] transition" />
+                <ArrowUpRight className="w-3.5 h-3.5 text-white/50 group-hover:text-[#D26539] transition" />
               </li>
             </ul>
           </div>
 
           {/* Col 4: Executive Contacts */}
           <div className="space-y-4 font-sans text-sm">
-            <h4 className="font-mono text-xs font-bold uppercase tracking-[0.2em] text-[#F0EBE3]">
+            <h4 className="font-mono text-xs font-bold uppercase tracking-[0.2em] text-white">
               Direct Contact
             </h4>
-            <div className="space-y-3 text-[#A8A090] text-xs">
+            <div className="space-y-3 text-white/90 text-xs">
               <div className="flex items-start gap-3">
-                <MapPin className="w-4 h-4 text-[#A8A090] shrink-0 mt-0.5" />
+                <MapPin className="w-4 h-4 text-white/70 shrink-0 mt-0.5" />
                 <span>The landmark Complex, A - 301 - 304, near Podar International School, Urjanagar 1, Kudasan, Gandhinagar, Gujarat 382419</span>
               </div>
               <div className="flex items-center gap-3">
-                <Phone className="w-4 h-4 text-[#A8A090] shrink-0" />
-                <a href="tel:+918160918894" className="hover:text-white transition font-mono">
+                <Phone className="w-4 h-4 text-white/70 shrink-0" />
+                <a href="tel:+918160918894" className="hover:text-[#D26539] transition font-mono text-white">
                   +91 81609 18894
                 </a>
               </div>
               <div className="flex items-center gap-3">
-                <Mail className="w-4 h-4 text-[#A8A090] shrink-0" />
-                <a href="mailto:Info@tanushfitness.com" className="hover:text-white transition font-mono">
+                <Mail className="w-4 h-4 text-white/70 shrink-0" />
+                <a href="mailto:Info@tanushfitness.com" className="hover:text-[#D26539] transition font-mono text-white">
                   Info@tanushfitness.com
                 </a>
               </div>
