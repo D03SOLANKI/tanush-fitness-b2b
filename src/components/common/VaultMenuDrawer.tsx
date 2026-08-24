@@ -147,7 +147,7 @@ export const VaultMenuDrawer: React.FC<VaultMenuDrawerProps> = ({ isOpen, onClos
                 <button
                   type="button"
                   onClick={() => handleNav('home')}
-                  className="bg-[#0D1811] text-white border border-white/20 hover:border-[#D26539] px-6 sm:px-7 py-2.5 sm:py-3 rounded-full font-satoshi font-black text-xs sm:text-sm uppercase tracking-[0.2em] shadow-xl transition"
+                  className="bg-[#0D1811] text-white border border-white/20 hover:border-white hover:bg-white hover:text-[#26452D] px-6 sm:px-7 py-2.5 sm:py-3 rounded-full font-satoshi font-black text-xs sm:text-sm uppercase tracking-[0.2em] shadow-xl transition-all duration-300"
                 >
                   TANUSH FITNESS
                 </button>
@@ -166,8 +166,8 @@ export const VaultMenuDrawer: React.FC<VaultMenuDrawerProps> = ({ isOpen, onClos
                 <button
                   type="button"
                   onClick={() => handleNav('home')}
-                  className={`px-4 py-1.5 rounded-full font-semibold transition ${
-                    currentPage === 'home' ? 'bg-[#D26539] text-white font-bold' : 'hover:text-white'
+                  className={`px-4 py-1.5 rounded-full font-semibold transition-all duration-300 ${
+                    currentPage === 'home' ? 'bg-[#D26539] text-white font-bold hover:bg-white hover:text-[#26452D]' : 'hover:bg-white hover:text-[#26452D]'
                   }`}
                 >
                   About
@@ -175,8 +175,8 @@ export const VaultMenuDrawer: React.FC<VaultMenuDrawerProps> = ({ isOpen, onClos
                 <button
                   type="button"
                   onClick={() => handleNav('equipment')}
-                  className={`px-4 py-1.5 rounded-full transition ${
-                    currentPage === 'equipment' ? 'bg-[#D26539] text-white font-bold' : 'hover:text-white'
+                  className={`px-4 py-1.5 rounded-full transition-all duration-300 ${
+                    currentPage === 'equipment' ? 'bg-[#D26539] text-white font-bold hover:bg-white hover:text-[#26452D]' : 'hover:bg-white hover:text-[#26452D]'
                   }`}
                 >
                   Equipment
