@@ -157,10 +157,10 @@ export const HomePage: React.FC = () => {
         {/* 💎 2. MAIN 2-LINE HEADLINE (EXACT VAULT TYPOGRAPHY & PILL RATIO) */}
         <div className="max-w-5xl mx-auto w-full text-center py-2 sm:py-4 z-10">
           <div className="space-y-3 sm:space-y-4 select-none">
-            {/* Row 1: GET READY [PILL 1] TO UNLEASH */}
+            {/* Row 1: UNLOCK YOUR [PILL 1] STRENGTH */}
             <div className="flex items-center justify-center gap-2.5 sm:gap-4 md:gap-5 flex-nowrap whitespace-nowrap font-satoshi text-xl sm:text-3xl md:text-4xl lg:text-[44px] xl:text-[50px] font-black uppercase tracking-tight text-white leading-none">
               <span className="relative inline-block whitespace-nowrap">
-                GET READY
+                UNLOCK YOUR
                 {/* Terracotta Orange Hand-Drawn Brush Accent */}
                 <span className="absolute -bottom-1.5 sm:-bottom-2.5 left-0 right-0 h-1.5 sm:h-2.5 bg-[#D26539] rounded-full -rotate-1 opacity-90" />
               </span>
@@ -174,12 +174,12 @@ export const HomePage: React.FC = () => {
                 />
               </div>
 
-              <span className="whitespace-nowrap">TO UNLEASH</span>
+              <span className="whitespace-nowrap">STRENGTH</span>
             </div>
 
-            {/* Row 2: YOUR [PILL 2] INNER POTENTIAL [PILL 3] */}
+            {/* Row 2: OWN YOUR [PILL 2] POTENTIAL [PILL 3] */}
             <div className="flex items-center justify-center gap-2.5 sm:gap-4 md:gap-5 flex-nowrap whitespace-nowrap font-satoshi text-xl sm:text-3xl md:text-4xl lg:text-[44px] xl:text-[50px] font-black uppercase tracking-tight text-white leading-none">
-              <span className="whitespace-nowrap">YOUR</span>
+              <span className="whitespace-nowrap">OWN YOUR</span>
 
               {/* Pill 2 */}
               <div className="inline-block h-7 sm:h-9 md:h-11 lg:h-13 w-24 sm:w-32 md:w-40 lg:w-48 rounded-full overflow-hidden border border-white/40 shadow-xl shrink-0 align-middle transform hover:scale-105 transition-transform duration-300">
@@ -190,7 +190,7 @@ export const HomePage: React.FC = () => {
                 />
               </div>
 
-              <span className="whitespace-nowrap">INNER POTENTIAL</span>
+              <span className="whitespace-nowrap">POTENTIAL</span>
 
               {/* Pill 3 */}
               <div className="inline-block h-7 sm:h-9 md:h-11 lg:h-13 w-20 sm:w-28 md:w-36 lg:w-44 rounded-full overflow-hidden border border-white/40 shadow-xl shrink-0 align-middle transform hover:scale-105 transition-transform duration-300">
@@ -204,11 +204,12 @@ export const HomePage: React.FC = () => {
           </div>
         </div>
 
-        {/* 🌊 3. HORIZONTAL BEYOND FITNESS MARQUEE (REFINED TEXT SIZE & CALM SPEED) */}
+        {/* 🌊 3. HORIZONTAL STRENGTH PERFORMANCE DISCIPLINE RESULTS MARQUEE */}
         <div className="w-full overflow-hidden py-3 sm:py-5 z-10 select-none pointer-events-none">
           <div className="flex items-center gap-10 sm:gap-14 animate-marquee whitespace-nowrap font-satoshi font-extrabold text-base sm:text-lg md:text-xl lg:text-[22px] tracking-[0.24em] text-white/55 uppercase">
-            <span>✦ BEYOND FITNESS ✦ BEYOND FITNESS ✦ BEYOND FITNESS ✦ BEYOND FITNESS ✦</span>
-            <span>✦ BEYOND FITNESS ✦ BEYOND FITNESS ✦ BEYOND FITNESS ✦ BEYOND FITNESS ✦</span>
+            <span>✦ STRENGTH ✦ PERFORMANCE ✦ DISCIPLINE ✦ RESULTS ✦</span>
+            <span>✦ STRENGTH ✦ PERFORMANCE ✦ DISCIPLINE ✦ RESULTS ✦</span>
+            <span>✦ STRENGTH ✦ PERFORMANCE ✦ DISCIPLINE ✦ RESULTS ✦</span>
           </div>
         </div>
 
@@ -230,6 +231,10 @@ export const HomePage: React.FC = () => {
       {/* ========================================================================= */}
       <MarqueeStrip
         items={[
+          'STRENGTH',
+          'PERFORMANCE',
+          'DISCIPLINE',
+          'RESULTS',
           'COMMERCIAL & RESIDENTIAL EQUIPMENT',
           'GYM MANAGEMENT',
           'MANPOWER SERVICES',
