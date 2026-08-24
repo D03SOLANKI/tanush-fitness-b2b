@@ -123,6 +123,9 @@ export const ServicesPage: React.FC = () => {
                   <img
                     src={service.image}
                     alt={service.name}
+                    onError={(e) => {
+                      (e.target as HTMLImageElement).src = 'https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=1000&q=80';
+                    }}
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 opacity-90 group-hover:opacity-100"
                     loading="lazy"
                   />

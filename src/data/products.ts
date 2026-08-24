@@ -143,9 +143,10 @@ export const PRODUCTS: Product[] = [
     leadTime: '2-4 Business Days',
     badge: 'Zero Utility Cost',
     minOrderQty: 1,
-    image: 'https://images.unsplash.com/photo-1576678927484-cc909957088c?auto=format&fit=crop&w=1000&q=80',
+    image: 'https://images.unsplash.com/photo-1538805060514-97d9cc17730c?auto=format&fit=crop&w=1000&q=80',
     gallery: [
-      'https://images.unsplash.com/photo-1576678927484-cc909957088c?auto=format&fit=crop&w=1000&q=80'
+      'https://images.unsplash.com/photo-1538805060514-97d9cc17730c?auto=format&fit=crop&w=1000&q=80',
+      'https://images.unsplash.com/photo-1574680096145-d05b474e2155?auto=format&fit=crop&w=1000&q=80'
     ],
     description: 'Commercial motorless curved runner powered entirely by user stride. Heavy vulcanized rubber slat belt delivers up to 30% higher calorie burn compared to traditional electric treadmills.',
     specs: {
@@ -183,9 +184,10 @@ export const PRODUCTS: Product[] = [
     leadTime: '1-3 Business Days',
     badge: 'HIIT Studio Standard',
     minOrderQty: 2,
-    image: 'https://images.unsplash.com/photo-1576678927484-cc909957088c?auto=format&fit=crop&w=1000&q=80',
+    image: 'https://images.unsplash.com/photo-1590239926044-4131f5d0654d?auto=format&fit=crop&w=1000&q=80',
     gallery: [
-      'https://images.unsplash.com/photo-1576678927484-cc909957088c?auto=format&fit=crop&w=1000&q=80'
+      'https://images.unsplash.com/photo-1590239926044-4131f5d0654d?auto=format&fit=crop&w=1000&q=80',
+      'https://images.unsplash.com/photo-1517838277536-f5f99be501cd?auto=format&fit=crop&w=1000&q=80'
     ],
     description: 'Built with 27" steel resistance fan blade and sealed cartridge bearings. Designed to take brutal punishment in CrossFit boxes, HIIT group studios, and commercial weight rooms.',
     specs: {

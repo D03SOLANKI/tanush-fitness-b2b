@@ -237,7 +237,11 @@ export const EquipmentPage: React.FC = () => {
                     <img
                       src={product.image || fallbackImage}
                       alt={product.name}
+                      onError={(e) => {
+                        (e.target as HTMLImageElement).src = fallbackImage;
+                      }}
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 opacity-90 group-hover:opacity-100"
+                      loading="lazy"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-[#0D1118] via-[#0D1118]/30 to-transparent" />
 
@@ -376,6 +380,9 @@ export const EquipmentPage: React.FC = () => {
                     <img
                       src={selectedProduct.gallery?.[selectedImage] || selectedProduct.image || fallbackImage}
                       alt={selectedProduct.name}
+                      onError={(e) => {
+                        (e.target as HTMLImageElement).src = fallbackImage;
+                      }}
                       className="w-full h-full object-cover"
                     />
                   </div>
