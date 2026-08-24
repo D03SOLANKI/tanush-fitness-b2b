@@ -62,9 +62,9 @@ export const Navbar: React.FC = () => {
           <div className="flex items-center gap-4">
             <a
               href="tel:+918160918894"
-              className="flex items-center gap-1.5 text-[#A8A090] hover:text-[#D26539] transition-colors font-bold whitespace-nowrap"
+              className="flex items-center gap-1.5 text-[#A8A090] hover:text-[#D26539] transition-colors font-bold whitespace-nowrap group"
             >
-              <Phone className="w-3 h-3 text-[#D26539]" />
+              <Phone className="w-3 h-3 text-[#A8A090] group-hover:text-[#D26539] transition-colors" />
               <span>+91 81609 18894</span>
               <span className="text-[#6B6358] font-normal hidden sm:inline">(commercial & residential outfitting Desk)</span>
             </a>
@@ -72,14 +72,14 @@ export const Navbar: React.FC = () => {
             <span className="text-white/10 hidden sm:inline">•</span>
 
             <div className="hidden sm:flex items-center gap-1.5 text-[#A8A090] whitespace-nowrap">
-              <ShieldCheck className="w-3.5 h-3.5 text-[#D26539]" />
+              <ShieldCheck className="w-3.5 h-3.5 text-[#A8A090]" />
               <span>100% Commercial GST Invoicing (18% ITC)</span>
             </div>
           </div>
 
           <div className="flex items-center gap-4 whitespace-nowrap">
             <div className="hidden md:flex items-center gap-1.5 text-[#A8A090]">
-              <CheckCircle2 className="w-3.5 h-3.5 text-[#3A563F]" />
+              <CheckCircle2 className="w-3.5 h-3.5 text-[#A8A090]" />
               <span>Pan-India GYM MANAGEMENT ASSEMBLY</span>
             </div>
 
@@ -118,7 +118,7 @@ export const Navbar: React.FC = () => {
                 <span className="font-satoshi font-black text-lg tracking-[0.12em] text-[#ECE6DB] group-hover:text-white uppercase leading-none">
                   TANUSH
                 </span>
-                <span className="text-[9px] font-mono tracking-[0.3em] text-[#D26539] uppercase mt-0.5">
+                <span className="text-[9px] font-mono tracking-[0.3em] text-[#A8A090] uppercase mt-0.5">
                   FITNESS SANCTUARY
                 </span>
               </div>

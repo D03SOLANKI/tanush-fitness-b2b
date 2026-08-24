@@ -12,8 +12,8 @@ export const CallToAction: React.FC = () => {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
             
             <div className="lg:col-span-8 space-y-4">
-              <div className="inline-flex items-center gap-2 px-2.5 py-1 rounded bg-[#1A2018] border border-white/10 text-[#D26539] font-mono text-[11px] font-bold uppercase tracking-wider">
-                <ShieldCheck className="w-3.5 h-3.5 text-[#D26539]" />
+              <div className="inline-flex items-center gap-2 px-2.5 py-1 rounded bg-[#1A2018] border border-white/10 text-[#A8A090] font-mono text-[11px] font-bold uppercase tracking-wider">
+                <ShieldCheck className="w-3.5 h-3.5 text-[#A8A090]" />
                 <span>FACTORY DIRECT COMMERCIAL & RESIDENTIAL PROCUREMENT</span>
               </div>
 
@@ -37,7 +37,7 @@ export const CallToAction: React.FC = () => {
                 onClick={() => navigateTo('equipment')}
                 className="w-full py-3 px-5 rounded-lg bg-[#D26539] hover:bg-[#C2552F] text-white font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-2 transition-colors shadow-sm"
               >
-                <Dumbbell className="w-3.5 h-3.5 text-[#D26539]/20" />
+                <Dumbbell className="w-3.5 h-3.5 text-white/80" />
                 <span>Build Project RFQ</span>
                 <ArrowRight className="w-3.5 h-3.5" />
               </button>
@@ -46,7 +46,7 @@ export const CallToAction: React.FC = () => {
                 onClick={() => navigateTo('contact')}
                 className="w-full py-3 px-5 rounded-lg bg-[#1A2018] hover:bg-[#1A2018] text-[#D8CDC0] border border-white/10 font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-2 transition-colors"
               >
-                <PhoneCall className="w-3.5 h-3.5 text-[#D26539]" />
+                <PhoneCall className="w-3.5 h-3.5 text-white/80" />
                 <span>Schedule Consultation</span>
               </button>
             </div>

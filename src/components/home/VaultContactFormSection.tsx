@@ -73,7 +73,7 @@ export const VaultContactFormSection: React.FC = () => {
                   Proposal Request Received
                 </h3>
                 <p className="font-satoshi text-sm text-[#090C10]/80 leading-relaxed">
-                  Thank you, <strong className="text-[#D26539]">{name}</strong>. Our Commercial Outfitting Directorate will review your facility requirements and get in touch with you shortly.
+                  Thank you, <strong className="text-white font-bold">{name}</strong>. Our Commercial Outfitting Directorate will review your facility requirements and get in touch with you shortly.
                 </p>
                 <button
                   type="button"

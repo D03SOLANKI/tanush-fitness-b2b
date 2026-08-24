@@ -109,13 +109,13 @@ export const EquipmentPage: React.FC = () => {
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 pb-12">
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 border-b border-white/10 pb-8">
           <div className="space-y-3">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-[#D26539]/30 text-xs font-mono text-[#D26539] tracking-widest uppercase">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-xs font-mono text-[#A8A090] tracking-widest uppercase">
               <Sparkles className="w-3.5 h-3.5" />
               <span>PRECISION BIOMECHANICS // ISO 9001:2015 CERTIFIED</span>
             </div>
 
             <h1 className="font-satoshi text-3xl sm:text-5xl md:text-6xl font-extrabold uppercase text-white tracking-tight">
-              EQUIPMENT <span className="text-[#D26539]">SANCTUARY</span>
+              EQUIPMENT SANCTUARY
             </h1>
 
             <p className="text-sm sm:text-base text-[#A8A090] max-w-2xl font-sans leading-relaxed">

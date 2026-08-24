@@ -19,13 +19,13 @@ export const AboutPage: React.FC = () => {
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 pb-12">
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 border-b border-white/10 pb-8">
           <div className="space-y-3">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-[#D26539]/30 text-xs font-mono text-[#D26539] tracking-widest uppercase">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-xs font-mono text-[#A8A090] tracking-widest uppercase">
               <Sparkles className="w-3.5 h-3.5" />
               <span>THE ARCHITECTURAL DISCIPLINE // EST. 2018</span>
             </div>
 
             <h1 className="font-satoshi text-3xl sm:text-5xl md:text-6xl font-extrabold uppercase text-white tracking-tight">
-              THE TANUSH <span className="text-[#D26539]">LEGACY</span>
+              THE TANUSH LEGACY
             </h1>
 
             <p className="text-sm sm:text-base text-[#A8A090] max-w-2xl font-sans leading-relaxed">
@@ -54,7 +54,7 @@ export const AboutPage: React.FC = () => {
         <div className="bg-[#0D1118] border border-white/10 rounded-none p-8 sm:p-12 space-y-8">
           <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6 border-b border-white/10 pb-6">
             <div className="space-y-1">
-              <span className="text-[11px] font-mono tracking-[0.25em] text-[#D26539] uppercase">
+              <span className="text-[11px] font-mono tracking-[0.25em] text-[#A8A090] uppercase">
                 THE TANUSH PHILOSOPHY
               </span>
               <h2 className="font-satoshi text-2xl sm:text-3xl font-extrabold text-white uppercase">
@@ -99,7 +99,7 @@ export const AboutPage: React.FC = () => {
                     At Tanush, we redefine the fitness outfitting landscape with state-of-the-art 11-gauge laser-cut equipment, certified trainer placements, and bespoke 3D CAD facility design.
                   </p>
                   <p>
-                    Our commitment goes beyond machinery; we offer a holistic <span className="text-[#D26539] font-bold">360-degree GYM MANAGEMENT solution</span> to transform empty commercial square footage into world-class athletic destinations.
+                    Our commitment goes beyond machinery; we offer a holistic <span className="text-white font-semibold">360-degree GYM MANAGEMENT solution</span> to transform empty commercial square footage into world-class athletic destinations.
                   </p>
                 </div>
               ) : (

@@ -6,22 +6,22 @@ import { motion } from 'framer-motion';
 export const WhyTanush: React.FC = () => {
   const valueProps = [
     {
-      icon: <ShieldCheck className="w-6 h-6 text-[#D26539]" />,
+      icon: <ShieldCheck className="w-6 h-6 text-[#A8A090] group-hover:text-[#D26539] transition-colors" />,
       title: 'Verified Commercial & Residential Manufacturers',
       description: '100% of equipment suppliers pass rigorous ISO structural safety and commercial & residential durability audits before listing on our marketplace.'
     },
     {
-      icon: <Percent className="w-6 h-6 text-[#D26539]" />,
+      icon: <Percent className="w-6 h-6 text-[#A8A090] group-hover:text-[#D26539] transition-colors" />,
       title: 'Wholesale Tier Pricing',
       description: 'Lock in automated volume discounts up to 35% off MSRP when outfitting complete gym zones or ordering bulk supplement cases.'
     },
     {
-      icon: <CreditCard className="w-6 h-6 text-[#D26539]" />,
+      icon: <CreditCard className="w-6 h-6 text-[#A8A090] group-hover:text-[#D26539] transition-colors" />,
       title: 'Flexible Commercial & Residential Leasing',
       description: 'Preserve cash flow with 12 to 60 month equipment leasing lines, tax-deductible Section 179 benefits, and zero down payment options.'
     },
     {
-      icon: <Clock className="w-6 h-6 text-[#D26539]" />,
+      icon: <Clock className="w-6 h-6 text-[#A8A090] group-hover:text-[#D26539] transition-colors" />,
       title: 'Dedicated Account Executive',
       description: 'Every gym chain receives a personal commercial & residential concierge to coordinate white-glove freight, liftgate offloading, and room-of-choice assembly.'
     }

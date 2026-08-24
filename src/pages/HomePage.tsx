@@ -29,28 +29,28 @@ const USP_CARDS = [
     title: 'Commercial & Residential Equipment',
     description: 'Experience biomechanical perfection with Tanush meticulously curated 11-gauge laser-cut strength lines, modular rigs, and cardio suites.',
     brands: ['Matrix', 'Torque USA', 'Concept 2', 'Precor'],
-    icon: <Dumbbell className="w-7 h-7 text-[#D26539]" />,
+    icon: <Dumbbell className="w-7 h-7 text-[#A8A090] group-hover:text-[#D26539] transition-colors" />,
   },
   {
     id: 2,
     title: 'GYM MANAGEMENT Gym Management',
     description: '360° architectural 3D CAD space modeling, acoustic rubber isolation, digital RFID access turnstiles, and launch funnels.',
     brands: ['3D CAD Layouts', 'Acoustics', 'RFID Access', 'AMC Care'],
-    icon: <Briefcase className="w-7 h-7 text-[#D26539]" />,
+    icon: <Briefcase className="w-7 h-7 text-[#A8A090] group-hover:text-[#D26539] transition-colors" />,
   },
   {
     id: 3,
     title: 'Manpower Services & Staffing',
     description: 'Pre-screened ecosystem connecting commercial facilities with NASM, CSCS, ACE, and K11 accredited trainers and gym operations leads.',
     brands: ['Certified Trainers', 'Gym Managers', 'Floor Supervisors'],
-    icon: <Users className="w-7 h-7 text-[#D26539]" />,
+    icon: <Users className="w-7 h-7 text-[#A8A090] group-hover:text-[#D26539] transition-colors" />,
   },
   {
     id: 4,
     title: 'Recovery Room — Hyperice',
     description: 'Revitalize in exclusive biohacking recovery suites offering pneumatic compression boots, percussion therapy, and contrast plunge baths.',
     brands: ['Hyperice Partner', 'Normatec 3', 'Hydrotherapy'],
-    icon: <Zap className="w-7 h-7 text-[#D26539]" />,
+    icon: <Zap className="w-7 h-7 text-[#A8A090] group-hover:text-[#D26539] transition-colors" />,
   },
 ];
 
@@ -290,7 +290,7 @@ export const HomePage: React.FC = () => {
               {visionTab === 'what' ? (
                 <div className="space-y-4 text-[#A8A090] font-satoshi text-sm sm:text-base leading-relaxed">
                   <p>
-                    Introducing India's premier commercial & residential fitness sanctuary & outfitting brand: <span className="text-[#D26539] font-bold">Tanush Fitness</span>, where precision engineering reaches new heights and commercial strength takes center stage.
+                    Introducing India's premier commercial & residential fitness sanctuary & outfitting brand: <span className="text-white font-bold">Tanush Fitness</span>, where precision engineering reaches new heights and commercial strength takes center stage.
                   </p>
                   <p>
                     At Tanush, we redefine the fitness outfitting landscape with <span className="text-white font-semibold">state-of-the-art 11-gauge laser-cut equipment</span>, curated to empower facility owners to launch world-class destinations. Our commitment goes beyond machinery; we deliver a holistic <span className="text-white font-semibold">360-degree GYM MANAGEMENT solution</span> encompassing Commercial & Residential Equipment, Gym Management, and Manpower Services.
@@ -309,7 +309,7 @@ export const HomePage: React.FC = () => {
               ) : (
                 <div className="space-y-4 text-[#A8A090] font-satoshi text-sm sm:text-base leading-relaxed">
                   <p>
-                    As a testament to unwavering commitment to biomechanical excellence, <span className="text-[#D26539] font-bold">Tanush Fitness</span> aims to redefine commercial fitness spaces by offering direct factory procurement, 18% GST Input Tax Credit invoicing, zero middleman trading markups, and verified trainer placement pipelines.
+                    As a testament to unwavering commitment to biomechanical excellence, <span className="text-white font-bold">Tanush Fitness</span> aims to redefine commercial fitness spaces by offering direct factory procurement, 18% GST Input Tax Credit invoicing, zero middleman trading markups, and verified trainer placement pipelines.
                   </p>
                   <blockquote className="p-6 rounded-none bg-[#0D1118] border-l-2 border-[#D26539] text-[#F0EBE3] italic font-satoshi text-base sm:text-lg leading-relaxed">
                     "Tanush Fitness is not merely an equipment vendor; it is an end-to-end commercial infrastructure partner built for gym owners who demand perfection in every square foot."
@@ -394,7 +394,7 @@ export const HomePage: React.FC = () => {
                       <div className="absolute inset-0 bg-gradient-to-t from-[#0D1118] via-transparent to-black/40" />
 
                       <div className="absolute top-4 left-4">
-                        <span className="px-3 py-1 rounded-full bg-[#090C10] border border-[#D26539]/30 text-[10px] font-mono text-[#D26539] font-bold uppercase tracking-wider">
+                        <span className="px-3 py-1 rounded-full bg-[#090C10] border border-white/10 text-[10px] font-mono text-[#A8A090] font-bold uppercase tracking-wider">
                           PILLAR {pillar.number} // {pillar.category}
                         </span>
                       </div>

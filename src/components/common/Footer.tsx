@@ -37,8 +37,8 @@ export const Footer: React.FC = () => {
             </p>
 
             <div className="flex flex-wrap items-center gap-3 text-xs font-mono text-[#A8A090] pt-2">
-              <span className="flex items-center gap-1.5 text-[#D26539]">
-                <ShieldCheck className="w-4 h-4" /> ISO 9001:2015
+              <span className="flex items-center gap-1.5 text-[#F0EBE3]">
+                <ShieldCheck className="w-4 h-4 text-[#D26539]" /> ISO 9001:2015
               </span>
               <span>•</span>
               <span>18% GST ITC Ready</span>
@@ -47,7 +47,7 @@ export const Footer: React.FC = () => {
 
           {/* Col 2: Navigation */}
           <div className="space-y-4 font-sans text-sm">
-            <h4 className="font-satoshi text-xs font-bold uppercase tracking-[0.2em] text-[#D26539]">
+            <h4 className="font-mono text-xs font-bold uppercase tracking-[0.2em] text-[#F0EBE3]">
               Solutions
             </h4>
             <ul className="space-y-2.5 text-[#A8A090]">
@@ -81,7 +81,7 @@ export const Footer: React.FC = () => {
 
           {/* Col 3: Core Procurement Pillars */}
           <div className="space-y-4 font-sans text-sm">
-            <h4 className="font-satoshi text-xs font-bold uppercase tracking-[0.2em] text-[#D26539]">
+            <h4 className="font-mono text-xs font-bold uppercase tracking-[0.2em] text-[#F0EBE3]">
               Core Pillars
             </h4>
             <ul className="space-y-2.5 text-[#A8A090]">
@@ -106,22 +106,22 @@ export const Footer: React.FC = () => {
 
           {/* Col 4: Executive Contacts */}
           <div className="space-y-4 font-sans text-sm">
-            <h4 className="font-satoshi text-xs font-bold uppercase tracking-[0.2em] text-[#D26539]">
+            <h4 className="font-mono text-xs font-bold uppercase tracking-[0.2em] text-[#F0EBE3]">
               Direct Contact
             </h4>
             <div className="space-y-3 text-[#A8A090] text-xs">
               <div className="flex items-start gap-3">
-                <MapPin className="w-4 h-4 text-[#D26539] shrink-0 mt-0.5" />
+                <MapPin className="w-4 h-4 text-[#A8A090] shrink-0 mt-0.5" />
                 <span>The landmark Complex, A - 301 - 304, near Podar International School, Urjanagar 1, Kudasan, Gandhinagar, Gujarat 382419</span>
               </div>
               <div className="flex items-center gap-3">
-                <Phone className="w-4 h-4 text-[#D26539] shrink-0" />
+                <Phone className="w-4 h-4 text-[#A8A090] shrink-0" />
                 <a href="tel:+918160918894" className="hover:text-white transition font-mono">
                   +91 81609 18894
                 </a>
               </div>
               <div className="flex items-center gap-3">
-                <Mail className="w-4 h-4 text-[#D26539] shrink-0" />
+                <Mail className="w-4 h-4 text-[#A8A090] shrink-0" />
                 <a href="mailto:Info@tanushfitness.com" className="hover:text-white transition font-mono">
                   Info@tanushfitness.com
                 </a>

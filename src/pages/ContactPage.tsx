@@ -16,11 +16,11 @@ export const ContactPage: React.FC = () => {
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-10">
         <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 border-b border-white/10 pb-8">
           <div className="space-y-2">
-            <div className="font-mono text-xs text-[#D26539] tracking-widest uppercase">
+            <div className="font-mono text-xs text-[#A8A090] tracking-widest uppercase">
               ✦ DIRECT EXECUTIVE HELPLINE // 24/7 B2B PROCUREMENT
             </div>
             <h1 className="font-satoshi text-3xl sm:text-5xl font-extrabold uppercase text-white tracking-tight">
-              OUTFITTING <span className="text-[#D26539]">DESK</span>
+              OUTFITTING DESK
             </h1>
           </div>
 
@@ -52,8 +52,8 @@ export const ContactPage: React.FC = () => {
       {/* Showroom & Logistics Hubs */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 border-t border-white/5">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          <div className="bg-[#0D1118] border border-white/10 rounded-none p-7 space-y-3">
-            <div className="flex items-center gap-2 text-[#D26539] font-mono text-xs uppercase tracking-wider">
+          <div className="bg-[#0D1118] border border-white/10 rounded-none p-7 space-y-3 group hover:border-white/20 transition-all">
+            <div className="flex items-center gap-2 text-[#A8A090] group-hover:text-[#D26539] font-mono text-xs uppercase tracking-wider transition-colors">
               <MapPin className="w-4 h-4" />
               <span>National Showroom</span>
             </div>
@@ -65,8 +65,8 @@ export const ContactPage: React.FC = () => {
             </p>
           </div>
 
-          <div className="bg-[#0D1118] border border-white/10 rounded-none p-7 space-y-3">
-            <div className="flex items-center gap-2 text-[#D26539] font-mono text-xs uppercase tracking-wider">
+          <div className="bg-[#0D1118] border border-white/10 rounded-none p-7 space-y-3 group hover:border-white/20 transition-all">
+            <div className="flex items-center gap-2 text-[#A8A090] group-hover:text-[#D26539] font-mono text-xs uppercase tracking-wider transition-colors">
               <ShieldCheck className="w-4 h-4" />
               <span>Manufacturing Works</span>
             </div>
@@ -78,8 +78,8 @@ export const ContactPage: React.FC = () => {
             </p>
           </div>
 
-          <div className="bg-[#0D1118] border border-white/10 rounded-none p-7 space-y-3">
-            <div className="flex items-center gap-2 text-[#D26539] font-mono text-xs uppercase tracking-wider">
+          <div className="bg-[#0D1118] border border-white/10 rounded-none p-7 space-y-3 group hover:border-white/20 transition-all">
+            <div className="flex items-center gap-2 text-[#A8A090] group-hover:text-[#D26539] font-mono text-xs uppercase tracking-wider transition-colors">
               <Mail className="w-4 h-4" />
               <span>Official Desk</span>
             </div>

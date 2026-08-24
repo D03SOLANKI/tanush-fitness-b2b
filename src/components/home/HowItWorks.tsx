@@ -7,19 +7,19 @@ export const HowItWorks: React.FC = () => {
   const steps = [
     {
       num: '01',
-      icon: <Search className="w-6 h-6 text-[#D26539]" />,
+      icon: <Search className="w-6 h-6 text-[#A8A090] group-hover:text-[#D26539] transition-colors" />,
       title: 'Source & Compare Products',
       description: 'Filter across 12 commercial & residential categories. Compare heavy-gauge steel specs, warranty terms, and manufacturer lead times side-by-side.'
     },
     {
       num: '02',
-      icon: <FileCheck className="w-6 h-6 text-[#D26539]" />,
+      icon: <FileCheck className="w-6 h-6 text-[#A8A090] group-hover:text-[#D26539] transition-colors" />,
       title: 'Lock Bulk Pricing & Quotes',
       description: 'Add items to your cart to trigger volume wholesale discounts or request a custom leasing schedule from our finance team.'
     },
     {
       num: '03',
-      icon: <Truck className="w-6 h-6 text-[#D26539]" />,
+      icon: <Truck className="w-6 h-6 text-[#A8A090] group-hover:text-[#D26539] transition-colors" />,
       title: 'Unified Freight & On-Site Assembly',
       description: 'Receive tracking for your liftgate delivery. Optional certified installation technicians assemble and test all equipment on-site.'
     }
