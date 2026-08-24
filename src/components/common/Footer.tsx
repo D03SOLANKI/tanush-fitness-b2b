@@ -19,14 +19,14 @@ export const Footer: React.FC = () => {
               }}
               className="flex items-center gap-3 cursor-pointer group select-none"
             >
-              <div className="w-10 h-10 rounded-full bg-gradient-to-br from-[#26452D] to-[#1A2018] border border-[#D26539]/40 flex items-center justify-center shadow-lg group-hover:border-[#D26539] transition-colors">
-                <span className="font-satoshi font-black text-lg text-[#D26539]">T</span>
+              <div className="w-10 h-10 rounded-full bg-gradient-to-br from-[#26452D] to-[#1A2018] border border-white/20 flex items-center justify-center shadow-lg group-hover:border-white transition-colors">
+                <span className="font-satoshi font-black text-lg text-white">T</span>
               </div>
               <div className="flex flex-col">
                 <span className="font-satoshi font-black text-xl tracking-[0.12em] text-[#ECE6DB] group-hover:text-white uppercase leading-none">
                   TANUSH
                 </span>
-                <span className="text-[10px] font-mono tracking-[0.3em] text-[#D26539] uppercase mt-0.5">
+                <span className="text-[10px] font-mono tracking-[0.3em] text-[#F0EBE3] uppercase mt-0.5">
                   FITNESS SANCTUARY
                 </span>
               </div>
@@ -38,7 +38,7 @@ export const Footer: React.FC = () => {
 
             <div className="flex flex-wrap items-center gap-3 text-xs font-mono text-white/80 pt-2">
               <span className="flex items-center gap-1.5 text-white">
-                <ShieldCheck className="w-4 h-4 text-[#D26539]" /> ISO 9001:2015
+                <ShieldCheck className="w-4 h-4 text-white/90" /> ISO 9001:2015
               </span>
               <span className="text-white/30">•</span>
               <span className="text-white/80">18% GST ITC Ready</span>
@@ -52,27 +52,27 @@ export const Footer: React.FC = () => {
             </h4>
             <ul className="space-y-2.5 text-white/80">
               <li>
-                <button onClick={() => navigateTo('home')} className="hover:text-[#D26539] transition-colors text-left">
+                <button onClick={() => navigateTo('home')} className="hover:text-white transition-colors text-left">
                   Overview
                 </button>
               </li>
               <li>
-                <button onClick={() => navigateTo('services')} className="hover:text-[#D26539] transition-colors text-left">
+                <button onClick={() => navigateTo('services')} className="hover:text-white transition-colors text-left">
                   GYM MANAGEMENT Services
                 </button>
               </li>
               <li>
-                <button onClick={() => navigateTo('equipment')} className="hover:text-[#D26539] transition-colors text-left">
+                <button onClick={() => navigateTo('equipment')} className="hover:text-white transition-colors text-left">
                   Equipment Sanctuary
                 </button>
               </li>
               <li>
-                <button onClick={() => navigateTo('manpower')} className="hover:text-[#D26539] transition-colors text-left">
+                <button onClick={() => navigateTo('manpower')} className="hover:text-white transition-colors text-left">
                   Master Staffing
                 </button>
               </li>
               <li>
-                <button onClick={() => navigateTo('about')} className="hover:text-[#D26539] transition-colors text-left">
+                <button onClick={() => navigateTo('about')} className="hover:text-white transition-colors text-left">
                   Vision & Legacy
                 </button>
               </li>
@@ -87,19 +87,19 @@ export const Footer: React.FC = () => {
             <ul className="space-y-2.5 text-white/80">
               <li className="flex items-center justify-between group cursor-pointer hover:text-white" onClick={() => navigateTo('equipment')}>
                 <span>Commercial & Residential Machinery</span>
-                <ArrowUpRight className="w-3.5 h-3.5 text-white/50 group-hover:text-[#D26539] transition" />
+                <ArrowUpRight className="w-3.5 h-3.5 text-white/50 group-hover:text-white transition" />
               </li>
               <li className="flex items-center justify-between group cursor-pointer hover:text-white" onClick={() => navigateTo('manpower')}>
                 <span>Certified Trainer Staffing</span>
-                <ArrowUpRight className="w-3.5 h-3.5 text-white/50 group-hover:text-[#D26539] transition" />
+                <ArrowUpRight className="w-3.5 h-3.5 text-white/50 group-hover:text-white transition" />
               </li>
               <li className="flex items-center justify-between group cursor-pointer hover:text-white" onClick={() => navigateTo('services')}>
                 <span>3D Architectural GYM MANAGEMENT</span>
-                <ArrowUpRight className="w-3.5 h-3.5 text-white/50 group-hover:text-[#D26539] transition" />
+                <ArrowUpRight className="w-3.5 h-3.5 text-white/50 group-hover:text-white transition" />
               </li>
               <li className="flex items-center justify-between group cursor-pointer hover:text-white" onClick={() => navigateTo('contact')}>
                 <span>Wholesale Project RFQs</span>
-                <ArrowUpRight className="w-3.5 h-3.5 text-white/50 group-hover:text-[#D26539] transition" />
+                <ArrowUpRight className="w-3.5 h-3.5 text-white/50 group-hover:text-white transition" />
               </li>
             </ul>
           </div>
@@ -116,13 +116,13 @@ export const Footer: React.FC = () => {
               </div>
               <div className="flex items-center gap-3">
                 <Phone className="w-4 h-4 text-white/70 shrink-0" />
-                <a href="tel:+918160918894" className="hover:text-[#D26539] transition font-mono text-white">
+                <a href="tel:+918160918894" className="hover:text-white transition font-mono text-white">
                   +91 81609 18894
                 </a>
               </div>
               <div className="flex items-center gap-3">
                 <Mail className="w-4 h-4 text-white/70 shrink-0" />
-                <a href="mailto:Info@tanushfitness.com" className="hover:text-[#D26539] transition font-mono text-white">
+                <a href="mailto:Info@tanushfitness.com" className="hover:text-white transition font-mono text-white">
                   Info@tanushfitness.com
                 </a>
               </div>
@@ -139,13 +139,13 @@ export const Footer: React.FC = () => {
           <div className="flex items-center gap-6">
             <button
               onClick={() => navigateTo('admin')}
-              className="flex items-center gap-1.5 hover:text-[#D26539] transition-colors"
+              className="flex items-center gap-1.5 hover:text-white transition-colors"
             >
               <Lock className="w-3 h-3" />
               <span>Admin Portal</span>
             </button>
             <span className="text-white/10">•</span>
-            <button onClick={() => navigateTo('contact')} className="hover:text-[#D26539] transition-colors">
+            <button onClick={() => navigateTo('contact')} className="hover:text-white transition-colors">
               Support Desk
             </button>
           </div>

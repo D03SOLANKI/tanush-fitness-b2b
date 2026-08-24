@@ -65,7 +65,7 @@ export const Hero: React.FC = () => {
             <div className="pt-2 flex flex-wrap items-center gap-4 text-xs font-mono text-[#6B6358]">
               <a
                 href="tel:+918160918894"
-                className="inline-flex items-center gap-1.5 text-[#26452D] hover:text-[#D26539] font-bold"
+                className="inline-flex items-center gap-1.5 text-white/90 hover:text-white font-bold"
               >
                 <PhoneCall className="w-3.5 h-3.5" />
                 <span>Commercial & Residential Desk: +91 81609 18894</span>

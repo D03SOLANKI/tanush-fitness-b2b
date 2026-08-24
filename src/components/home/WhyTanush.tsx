@@ -6,22 +6,22 @@ import { motion } from 'framer-motion';
 export const WhyTanush: React.FC = () => {
   const valueProps = [
     {
-      icon: <ShieldCheck className="w-6 h-6 text-[#A8A090] group-hover:text-[#D26539] transition-colors" />,
+      icon: <ShieldCheck className="w-6 h-6 text-[#A8A090] group-hover:text-white transition-colors" />,
       title: 'Verified Commercial & Residential Manufacturers',
       description: '100% of equipment suppliers pass rigorous ISO structural safety and commercial & residential durability audits before listing on our marketplace.'
     },
     {
-      icon: <Percent className="w-6 h-6 text-[#A8A090] group-hover:text-[#D26539] transition-colors" />,
+      icon: <Percent className="w-6 h-6 text-[#A8A090] group-hover:text-white transition-colors" />,
       title: 'Wholesale Tier Pricing',
       description: 'Lock in automated volume discounts up to 35% off MSRP when outfitting complete gym zones or ordering bulk supplement cases.'
     },
     {
-      icon: <CreditCard className="w-6 h-6 text-[#A8A090] group-hover:text-[#D26539] transition-colors" />,
+      icon: <CreditCard className="w-6 h-6 text-[#A8A090] group-hover:text-white transition-colors" />,
       title: 'Flexible Commercial & Residential Leasing',
       description: 'Preserve cash flow with 12 to 60 month equipment leasing lines, tax-deductible Section 179 benefits, and zero down payment options.'
     },
     {
-      icon: <Clock className="w-6 h-6 text-[#A8A090] group-hover:text-[#D26539] transition-colors" />,
+      icon: <Clock className="w-6 h-6 text-[#A8A090] group-hover:text-white transition-colors" />,
       title: 'Dedicated Account Executive',
       description: 'Every gym chain receives a personal commercial & residential concierge to coordinate white-glove freight, liftgate offloading, and room-of-choice assembly.'
     }
@@ -45,9 +45,9 @@ export const WhyTanush: React.FC = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.4, delay: idx * 0.08 }}
-              className="p-6 rounded-none bg-[#1A2018] border border-white/10 hover:border-[#D26539]/50 transition-all duration-300 group hover:-translate-y-1"
+              className="p-6 rounded-none bg-[#1A2018] border border-white/10 hover:border-white/40 transition-all duration-300 group hover:-translate-y-1"
             >
-              <div className="w-12 h-12 rounded-none bg-[#D26539]/10 border border-[#D26539]/20 flex items-center justify-center mb-5 group-hover:scale-110 transition-transform">
+              <div className="w-12 h-12 rounded-none bg-white/5 border border-white/10 flex items-center justify-center mb-5 group-hover:scale-110 transition-transform">
                 {item.icon}
               </div>
               <h3 className="text-lg font-black text-[#090C10] font-satoshi uppercase leading-snug">

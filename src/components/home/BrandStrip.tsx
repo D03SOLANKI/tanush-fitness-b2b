@@ -21,10 +21,10 @@ export const BrandStrip: React.FC = () => {
               className="p-4 rounded-none bg-[#1A2018] border border-white/10 shadow-sm hover:border-[#D26539]/50 hover: transition-all flex flex-col items-center justify-center text-center group cursor-pointer"
             >
               <div
-                dangerouslySetInnerHTML={{ __html: partner.symbolSvg.replace(/text-zinc-400/g, 'text-[#7A7268] group-hover:text-[#D26539]') }}
+                dangerouslySetInnerHTML={{ __html: partner.symbolSvg.replace(/text-zinc-400/g, 'text-white/40 group-hover:text-white') }}
                 className="mb-2"
               />
-              <span className="text-xs font-black text-[#3A3028] group-hover:text-[#D26539] tracking-wider font-satoshi uppercase">
+              <span className="text-xs font-black text-white/70 group-hover:text-white tracking-wider font-satoshi uppercase">
                 {partner.name}
               </span>
               <span className="text-[10px] text-[#6B6358] line-clamp-1 mt-0.5 font-medium">

@@ -269,7 +269,7 @@ export const EquipmentPage: React.FC = () => {
                   {/* Card Content */}
                   <div className="p-5 sm:p-6 space-y-4">
                     <div>
-                      <div className="text-[11px] font-mono text-[#D26539] uppercase tracking-wider font-bold">
+                      <div className="text-[11px] font-mono text-[#F0EBE3] uppercase tracking-wider font-bold">
                         {product.brand} // {product.category}
                       </div>
 
@@ -327,7 +327,7 @@ export const EquipmentPage: React.FC = () => {
                       onClick={() => handleToggleCompare(product)}
                       className={`px-3 py-1.5 rounded-none text-[11px] font-mono border transition cursor-pointer ${
                         isCompared
-                          ? 'bg-[#D26539]/20 text-[#D26539] border-[#D26539]'
+                          ? 'bg-white/10 text-white border-white/40 font-bold'
                           : 'bg-[#0D1118] text-[#A8A090] border-white/10 hover:text-white'
                       }`}
                     >

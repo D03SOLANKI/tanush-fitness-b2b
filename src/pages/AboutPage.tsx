@@ -152,7 +152,7 @@ export const AboutPage: React.FC = () => {
         {/* Pillars / USPs */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div className="bg-[#0D1118] border border-white/10 rounded-none p-8 space-y-4 luxury-card group">
-            <div className="w-12 h-12 rounded-none bg-white/5 border border-white/10 flex items-center justify-center text-white/90 group-hover:text-[#D26539] transition-colors">
+            <div className="w-12 h-12 rounded-none bg-white/5 border border-white/10 flex items-center justify-center text-white/90 group-hover:text-white transition-colors">
               <Wrench className="w-6 h-6" />
             </div>
             <h3 className="font-satoshi text-xl font-bold text-white uppercase">Direct Factory Direct</h3>
@@ -162,7 +162,7 @@ export const AboutPage: React.FC = () => {
           </div>
 
           <div className="bg-[#0D1118] border border-white/10 rounded-none p-8 space-y-4 luxury-card group">
-            <div className="w-12 h-12 rounded-none bg-white/5 border border-white/10 flex items-center justify-center text-white/90 group-hover:text-[#D26539] transition-colors">
+            <div className="w-12 h-12 rounded-none bg-white/5 border border-white/10 flex items-center justify-center text-white/90 group-hover:text-white transition-colors">
               <Cpu className="w-6 h-6" />
             </div>
             <h3 className="font-satoshi text-xl font-bold text-white uppercase">3D CAD GYM MANAGEMENT Suites</h3>
@@ -172,7 +172,7 @@ export const AboutPage: React.FC = () => {
           </div>
 
           <div className="bg-[#0D1118] border border-white/10 rounded-none p-8 space-y-4 luxury-card group">
-            <div className="w-12 h-12 rounded-none bg-white/5 border border-white/10 flex items-center justify-center text-white/90 group-hover:text-[#D26539] transition-colors">
+            <div className="w-12 h-12 rounded-none bg-white/5 border border-white/10 flex items-center justify-center text-white/90 group-hover:text-white transition-colors">
               <Award className="w-6 h-6" />
             </div>
             <h3 className="font-satoshi text-xl font-bold text-white uppercase">Certified Master Staffing</h3>
@@ -185,7 +185,7 @@ export const AboutPage: React.FC = () => {
         {/* Executive Engineering Leadership */}
         <div className="space-y-8">
           <div className="text-center max-w-2xl mx-auto space-y-2">
-            <span className="text-xs font-mono text-[#D26539] uppercase tracking-widest block">
+            <span className="text-xs font-mono text-white/80 uppercase tracking-widest block">
               EXECUTIVE LEADERSHIP & ENGINEERING
             </span>
             <h2 className="font-satoshi text-2xl sm:text-3xl font-extrabold text-white uppercase">
@@ -203,7 +203,7 @@ export const AboutPage: React.FC = () => {
                 <img src={team.image} alt={team.name} className="w-20 h-20 rounded-none object-cover border border-white/10" />
                 <div className="space-y-1">
                   <h3 className="font-satoshi text-lg font-bold text-white uppercase">{team.name}</h3>
-                  <div className="text-xs font-mono text-[#D26539] uppercase">{team.title}</div>
+                  <div className="text-xs font-mono text-white/80 uppercase">{team.title}</div>
                   <p className="text-xs text-[#A8A090] font-sans leading-relaxed pt-2">{team.bio}</p>
                 </div>
               </div>
@@ -214,7 +214,7 @@ export const AboutPage: React.FC = () => {
         {/* CTA Bar */}
         <div className="bg-gradient-to-r from-[#0D1118] via-[#111622] to-[#0D1118] border border-white/10 rounded-none p-8 sm:p-12 flex flex-col md:flex-row items-center justify-between gap-6 ">
           <div className="space-y-2">
-            <span className="text-xs font-mono text-[#D26539] uppercase tracking-widest block">COMMERCIAL & RESIDENTIAL INQUIRIES</span>
+            <span className="text-xs font-mono text-white/80 uppercase tracking-widest block">COMMERCIAL & RESIDENTIAL INQUIRIES</span>
             <h3 className="font-satoshi text-2xl sm:text-3xl font-extrabold text-white uppercase">
               Ready to Outfit Your Commercial Sanctuary?
             </h3>

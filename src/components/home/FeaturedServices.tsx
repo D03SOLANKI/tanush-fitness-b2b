@@ -54,7 +54,7 @@ export const FeaturedServices: React.FC = () => {
                     {service.category}
                   </div>
 
-                  <h3 className="text-sm font-bold text-white leading-snug font-satoshi group-hover:text-[#D26539] transition-colors mt-1 uppercase">
+                  <h3 className="text-sm font-bold text-white leading-snug font-satoshi group-hover:text-white transition-colors mt-1 uppercase">
                     {service.name}
                   </h3>
 

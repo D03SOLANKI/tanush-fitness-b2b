@@ -29,28 +29,28 @@ const USP_CARDS = [
     title: 'Commercial & Residential Equipment',
     description: 'Experience biomechanical perfection with Tanush meticulously curated 11-gauge laser-cut strength lines, modular rigs, and cardio suites.',
     brands: ['Matrix', 'Torque USA', 'Concept 2', 'Precor'],
-    icon: <Dumbbell className="w-7 h-7 text-[#A8A090] group-hover:text-[#D26539] transition-colors" />,
+    icon: <Dumbbell className="w-7 h-7 text-[#A8A090] group-hover:text-white transition-colors" />,
   },
   {
     id: 2,
     title: 'GYM MANAGEMENT Gym Management',
     description: '360° architectural 3D CAD space modeling, acoustic rubber isolation, digital RFID access turnstiles, and launch funnels.',
     brands: ['3D CAD Layouts', 'Acoustics', 'RFID Access', 'AMC Care'],
-    icon: <Briefcase className="w-7 h-7 text-[#A8A090] group-hover:text-[#D26539] transition-colors" />,
+    icon: <Briefcase className="w-7 h-7 text-[#A8A090] group-hover:text-white transition-colors" />,
   },
   {
     id: 3,
     title: 'Manpower Services & Staffing',
     description: 'Specialized 7-division talent placement covering Club Management, HR/Admin, Sales & Front Desk, Fitness Teams, Group Classes, Nutrition & Recovery, and Facility Operations.',
     brands: ['Management', 'HR & Admin', 'Fitness Team', 'Sales & Front Desk', 'Group Classes', 'Nutrition & Recovery', 'Facility Ops'],
-    icon: <Users className="w-7 h-7 text-[#A8A090] group-hover:text-[#D26539] transition-colors" />,
+    icon: <Users className="w-7 h-7 text-[#A8A090] group-hover:text-white transition-colors" />,
   },
   {
     id: 4,
     title: 'Recovery Room — Hyperice',
     description: 'Revitalize in exclusive biohacking recovery suites offering pneumatic compression boots, percussion therapy, and contrast plunge baths.',
     brands: ['Hyperice Partner', 'Normatec 3', 'Hydrotherapy'],
-    icon: <Zap className="w-7 h-7 text-[#A8A090] group-hover:text-[#D26539] transition-colors" />,
+    icon: <Zap className="w-7 h-7 text-[#A8A090] group-hover:text-white transition-colors" />,
   },
 ];
 
@@ -249,7 +249,7 @@ export const HomePage: React.FC = () => {
           {/* Header & Tab Switcher */}
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-6">
             <div className="space-y-2">
-              <div className="text-[10px] sm:text-[11px] font-mono tracking-[0.3em] text-[#D26539] uppercase">
+              <div className="text-[10px] sm:text-[11px] font-mono tracking-[0.3em] text-white/80 uppercase">
                 THE TANUSH PHILOSOPHY
               </div>
               <h2 className="font-satoshi text-2xl sm:text-4xl lg:text-[38px] font-extrabold uppercase text-white tracking-tight">
@@ -302,7 +302,7 @@ export const HomePage: React.FC = () => {
                       className="btn-vault-outline text-xs flex items-center gap-2"
                     >
                       <span>Read Our Full Story</span>
-                      <ArrowRight className="w-3.5 h-3.5 text-[#D26539]" />
+                      <ArrowRight className="w-3.5 h-3.5 text-white/80" />
                     </button>
                   </div>
                 </div>
@@ -336,7 +336,7 @@ export const HomePage: React.FC = () => {
                   className="w-full h-[380px] object-cover transform group-hover:scale-105 transition-transform duration-700"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#090C10] via-transparent to-transparent opacity-60" />
-                <div className="absolute bottom-5 left-5 right-5 p-3.5 rounded-xl bg-[#0D1118]/90 border border-white/10 font-mono text-[11px] text-[#D26539] flex items-center justify-between">
+                <div className="absolute bottom-5 left-5 right-5 p-3.5 rounded-xl bg-[#0D1118]/90 border border-white/10 font-mono text-[11px] text-[#F0EBE3] flex items-center justify-between">
                   <span>ISO 9001:2015 CERTIFIED</span>
                   <span>500+ COMMERCIAL & RESIDENTIAL SANCTUARIES</span>
                 </div>
@@ -353,7 +353,7 @@ export const HomePage: React.FC = () => {
         <div className="space-y-10">
           <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-6">
             <div className="space-y-2">
-              <div className="text-[10px] sm:text-[11px] font-mono tracking-[0.3em] text-[#D26539] uppercase">
+              <div className="text-[10px] sm:text-[11px] font-mono tracking-[0.3em] text-white/80 uppercase">
                 CORE PROCUREMENT VERTICALS
               </div>
               <h2 className="font-satoshi text-2xl sm:text-4xl lg:text-[38px] font-extrabold uppercase text-white tracking-tight">
@@ -400,7 +400,7 @@ export const HomePage: React.FC = () => {
 
                     <div className="p-5 sm:p-6 space-y-5">
                       <div>
-                        <div className="text-[11px] font-mono text-[#D26539] uppercase tracking-wider font-bold">
+                        <div className="text-[11px] font-mono text-[#F0EBE3] uppercase tracking-wider font-bold">
                           PILLAR 0{pillar.number} // {pillar.category}
                         </div>
 
@@ -456,7 +456,7 @@ export const HomePage: React.FC = () => {
         <div className="space-y-10">
           <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-6">
             <div className="space-y-2">
-              <div className="text-[10px] sm:text-[11px] font-mono tracking-[0.3em] text-[#D26539] uppercase">
+              <div className="text-[10px] sm:text-[11px] font-mono tracking-[0.3em] text-white/80 uppercase">
                 EXCLUSIVE ADVANTAGES
               </div>
               <h2 className="font-satoshi text-2xl sm:text-4xl lg:text-[38px] font-extrabold uppercase text-white tracking-tight">
@@ -469,7 +469,7 @@ export const HomePage: React.FC = () => {
               className="btn-vault-outline text-xs flex items-center gap-2"
             >
               <span>Know More</span>
-              <ArrowRight className="w-3.5 h-3.5 text-[#D26539]" />
+              <ArrowRight className="w-3.5 h-3.5 text-white/80" />
             </button>
           </div>
 
@@ -480,11 +480,11 @@ export const HomePage: React.FC = () => {
                 className="bg-[#0D1118] border border-white/10 rounded-none p-6 space-y-4 luxury-card flex flex-col justify-between group"
               >
                 <div className="space-y-3">
-                  <div className="w-12 h-12 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center group-hover:border-[#D26539] transition-colors">
+                  <div className="w-12 h-12 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center group-hover:border-white/30 transition-colors">
                     {card.icon}
                   </div>
 
-                  <h3 className="font-satoshi text-base sm:text-lg font-bold text-white group-hover:text-[#D26539] transition uppercase">
+                  <h3 className="font-satoshi text-base sm:text-lg font-bold text-white group-hover:text-white transition uppercase">
                     {card.title}
                   </h3>
 

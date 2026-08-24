@@ -133,7 +133,7 @@ export const EnquiryCartDrawer: React.FC = () => {
           {/* Header */}
           <div className="p-6 border-b border-white/10 bg-[#090C10] text-white flex items-center justify-between">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-[#D26539]">
+              <div className="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-white">
                 <FileText className="w-5 h-5" />
               </div>
               <div>
@@ -276,7 +276,7 @@ export const EnquiryCartDrawer: React.FC = () => {
                 {/* Structured Form */}
                 {enquiryCart.length > 0 && (
                   <form onSubmit={handleSubmit} className="space-y-4 pt-4 border-t border-white/10">
-                    <div className="text-xs font-mono text-[#D26539] uppercase tracking-widest">
+                    <div className="text-xs font-mono text-white/80 uppercase tracking-widest">
                       Procurement Officer & Delivery Information
                     </div>
 

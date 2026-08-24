@@ -72,7 +72,7 @@ export const FeaturedProducts: React.FC = () => {
 
                     <h3
                       onClick={() => navigateTo('equipment')}
-                      className="text-base font-bold text-white hover:text-[#D26539] transition-colors leading-snug cursor-pointer line-clamp-1 font-satoshi uppercase"
+                      className="text-base font-bold text-white hover:text-white transition-colors leading-snug cursor-pointer line-clamp-1 font-satoshi uppercase"
                     >
                       {product.name}
                     </h3>

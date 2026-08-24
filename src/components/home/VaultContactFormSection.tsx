@@ -201,7 +201,7 @@ export const VaultContactFormSection: React.FC = () => {
                 <div className="flex justify-end pt-2">
                   <button
                     type="submit"
-                    className="border border-[#D26539] text-[#D26539] hover:bg-[#D26539] hover:text-white px-10 py-3.5 font-mono text-xs uppercase tracking-[0.25em] font-bold transition-all duration-200 cursor-pointer shadow-sm"
+                    className="bg-[#090C10] text-white hover:bg-black border border-[#090C10] px-10 py-3.5 font-mono text-xs uppercase tracking-[0.25em] font-bold transition-all duration-200 cursor-pointer shadow-sm"
                   >
                     SUBMIT
                   </button>

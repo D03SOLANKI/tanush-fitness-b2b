@@ -57,7 +57,7 @@ export const CategoryGrid: React.FC = () => {
               {/* Bottom Card Content */}
               <div className="p-5 flex-1 flex flex-col justify-between space-y-3 bg-[#0D1118]">
                 <div>
-                  <h3 className="text-base font-bold text-white group-hover:text-[#D26539] transition-colors leading-snug font-satoshi uppercase">
+                  <h3 className="text-base font-bold text-white group-hover:text-white transition-colors leading-snug font-satoshi uppercase">
                     {cat.name}
                   </h3>
                   <p className="mt-1.5 text-xs text-[#A8A090] line-clamp-2 leading-relaxed font-normal">

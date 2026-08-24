@@ -142,7 +142,7 @@ export const ServicesPage: React.FC = () => {
                 {/* Card Content */}
                 <div className="p-5 sm:p-6 space-y-5">
                   <div>
-                    <div className="text-[11px] font-mono text-[#D26539] uppercase tracking-wider font-bold">
+                    <div className="text-[11px] font-mono text-[#F0EBE3] uppercase tracking-wider font-bold">
                       {service.category || 'COMMERCIAL & RESIDENTIAL SETUP'}
                     </div>
                     <h3 className="font-satoshi text-lg sm:text-xl font-bold uppercase text-white tracking-tight mt-1 group-hover:text-white transition">
@@ -205,7 +205,7 @@ export const ServicesPage: React.FC = () => {
             >
               <div className="flex items-start justify-between border-b border-white/10 pb-4">
                 <div>
-                  <span className="text-[10px] font-mono text-[#D26539] uppercase tracking-widest block mb-1">
+                  <span className="text-[10px] font-mono text-white/80 uppercase tracking-widest block mb-1">
                     GYM MANAGEMENT PROPOSAL
                   </span>
                   <h3 className="font-satoshi text-2xl font-bold text-white uppercase">

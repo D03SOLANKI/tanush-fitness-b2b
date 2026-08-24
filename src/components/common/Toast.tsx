@@ -13,7 +13,7 @@ export const Toast: React.FC = () => {
       case 'success':
         return <CheckCircle2 className="w-5 h-5 text-emerald-400" />;
       case 'info':
-        return <Info className="w-5 h-5 text-[#D26539]" />;
+        return <Info className="w-5 h-5 text-white" />;
       case 'error':
         return <AlertCircle className="w-5 h-5 text-rose-400" />;
       default:

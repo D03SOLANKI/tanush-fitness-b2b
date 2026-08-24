@@ -62,9 +62,9 @@ export const Navbar: React.FC = () => {
           <div className="flex items-center gap-4">
             <a
               href="tel:+918160918894"
-              className="flex items-center gap-1.5 text-[#A8A090] hover:text-[#D26539] transition-colors font-bold whitespace-nowrap group"
+              className="flex items-center gap-1.5 text-[#A8A090] hover:text-white transition-colors font-bold whitespace-nowrap group"
             >
-              <Phone className="w-3 h-3 text-[#A8A090] group-hover:text-[#D26539] transition-colors" />
+              <Phone className="w-3 h-3 text-[#A8A090] group-hover:text-white transition-colors" />
               <span>+91 81609 18894</span>
               <span className="text-[#6B6358] font-normal hidden sm:inline">(commercial & residential outfitting Desk)</span>
             </a>
@@ -111,14 +111,14 @@ export const Navbar: React.FC = () => {
               onClick={() => handleNav('home')}
               className="flex items-center gap-3 cursor-pointer group select-none"
             >
-              <div className="w-10 h-10 rounded-full bg-gradient-to-br from-[#26452D] to-[#1A2018] border border-[#D26539]/40 flex items-center justify-center shadow-lg group-hover:border-[#D26539] transition-colors">
-                <span className="font-satoshi font-black text-lg text-[#D26539]">T</span>
+              <div className="w-10 h-10 rounded-full bg-gradient-to-br from-[#26452D] to-[#1A2018] border border-white/20 flex items-center justify-center shadow-lg group-hover:border-white transition-colors">
+                <span className="font-satoshi font-black text-lg text-white">T</span>
               </div>
               <div className="flex flex-col">
                 <span className="font-satoshi font-black text-lg tracking-[0.12em] text-[#ECE6DB] group-hover:text-white uppercase leading-none">
                   TANUSH
                 </span>
-                <span className="text-[9px] font-mono tracking-[0.3em] text-[#D26539] uppercase mt-0.5">
+                <span className="text-[9px] font-mono tracking-[0.3em] text-[#F0EBE3] uppercase mt-0.5">
                   FITNESS SANCTUARY
                 </span>
               </div>
@@ -307,7 +307,7 @@ export const Navbar: React.FC = () => {
                 <span>•</span>
                 <span>ISO 9001:2015 CERTIFIED</span>
               </div>
-              <a href="tel:+918160918894" className="text-[#D26539] hover:underline">
+              <a href="tel:+918160918894" className="text-white hover:underline">
                 Direct Desk: +91 81609 18894
               </a>
             </div>

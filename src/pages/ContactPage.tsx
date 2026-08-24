@@ -53,7 +53,7 @@ export const ContactPage: React.FC = () => {
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 border-t border-white/5">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           <div className="bg-[#0D1118] border border-white/10 rounded-none p-7 space-y-3 group hover:border-white/20 transition-all">
-            <div className="flex items-center gap-2 text-[#A8A090] group-hover:text-[#D26539] font-mono text-xs uppercase tracking-wider transition-colors">
+            <div className="flex items-center gap-2 text-[#A8A090] group-hover:text-white font-mono text-xs uppercase tracking-wider transition-colors">
               <MapPin className="w-4 h-4" />
               <span>National Showroom</span>
             </div>
@@ -66,7 +66,7 @@ export const ContactPage: React.FC = () => {
           </div>
 
           <div className="bg-[#0D1118] border border-white/10 rounded-none p-7 space-y-3 group hover:border-white/20 transition-all">
-            <div className="flex items-center gap-2 text-[#A8A090] group-hover:text-[#D26539] font-mono text-xs uppercase tracking-wider transition-colors">
+            <div className="flex items-center gap-2 text-[#A8A090] group-hover:text-white font-mono text-xs uppercase tracking-wider transition-colors">
               <ShieldCheck className="w-4 h-4" />
               <span>Manufacturing Works</span>
             </div>
@@ -79,7 +79,7 @@ export const ContactPage: React.FC = () => {
           </div>
 
           <div className="bg-[#0D1118] border border-white/10 rounded-none p-7 space-y-3 group hover:border-white/20 transition-all">
-            <div className="flex items-center gap-2 text-[#A8A090] group-hover:text-[#D26539] font-mono text-xs uppercase tracking-wider transition-colors">
+            <div className="flex items-center gap-2 text-[#A8A090] group-hover:text-white font-mono text-xs uppercase tracking-wider transition-colors">
               <Mail className="w-4 h-4" />
               <span>Official Desk</span>
             </div>
