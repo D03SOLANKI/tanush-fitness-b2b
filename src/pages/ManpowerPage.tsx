@@ -396,8 +396,8 @@ export const ManpowerPage: React.FC = () => {
           </div>
         </div>
 
-        {/* 7 MANPOWER VISUAL SERVICES GRID */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        {/* 7 MANPOWER VISUAL SERVICES GRID (3 PER ROW LIKE EQUIPMENT & SERVICES) */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
           {filteredServices.map((service) => (
             <motion.div
               key={service.id}
@@ -409,55 +409,55 @@ export const ManpowerPage: React.FC = () => {
             >
               <div>
                 {/* Visual Image Header */}
-                <div className="relative aspect-[16/9] w-full overflow-hidden bg-[#090C10]">
+                <div className="relative aspect-[16/10] w-full overflow-hidden bg-[#090C10]">
                   <img
                     src={service.image}
                     alt={service.title}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 opacity-90 group-hover:opacity-100"
                     loading="lazy"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#0D1118] via-[#0D1118]/40 to-transparent" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#0D1118] via-[#0D1118]/30 to-transparent" />
                   
                   {/* Category Pill on Image */}
-                  <div className="absolute top-4 left-4 flex items-center gap-2">
-                    <span className="px-3 py-1 rounded-none bg-[#090C10]/90 backdrop-blur-md border border-white/20 text-[10px] font-mono text-white uppercase tracking-widest font-bold shadow-lg">
+                  <div className="absolute top-3 left-3 flex items-center gap-1.5 flex-wrap">
+                    <span className="px-2.5 py-0.5 rounded-none bg-[#090C10]/90 backdrop-blur-md border border-white/20 text-[9px] font-mono text-white uppercase tracking-widest font-bold shadow-lg">
                       {service.category}
                     </span>
-                    <span className="px-2.5 py-1 rounded-none bg-white/10 backdrop-blur-md text-[9px] font-mono text-white/80 uppercase tracking-wider">
+                    <span className="px-2 py-0.5 rounded-none bg-white/10 backdrop-blur-md text-[8px] font-mono text-white/80 uppercase tracking-wider">
                       {service.badge}
                     </span>
                   </div>
 
                   {/* Deployment Speed Pill */}
-                  <div className="absolute bottom-4 right-4 bg-[#090C10]/90 px-3 py-1 border border-white/10 rounded-none text-[10px] font-mono text-emerald-400 font-bold">
+                  <div className="absolute bottom-3 right-3 bg-[#090C10]/90 px-2.5 py-0.5 border border-white/10 rounded-none text-[9px] font-mono text-emerald-400 font-bold">
                     ⚡ {service.deploymentTime}
                   </div>
                 </div>
 
                 {/* Card Content */}
-                <div className="p-6 sm:p-8 space-y-6">
+                <div className="p-5 sm:p-6 space-y-5">
                   <div>
-                    <div className="text-xs font-mono text-[#D26539] uppercase tracking-widest font-bold">
+                    <div className="text-[11px] font-mono text-[#D26539] uppercase tracking-wider font-bold">
                       {service.rolesIncluded}
                     </div>
-                    <h3 className="font-satoshi text-2xl font-bold uppercase text-white tracking-tight mt-1">
+                    <h3 className="font-satoshi text-lg sm:text-xl font-bold uppercase text-white tracking-tight mt-1">
                       {service.title}
                     </h3>
-                    <p className="text-xs text-white/80 font-sans leading-relaxed mt-2.5">
+                    <p className="text-xs text-white/80 font-sans leading-relaxed mt-2 line-clamp-3">
                       {service.description}
                     </p>
                   </div>
 
                   {/* Roles Breakdown */}
-                  <div className="space-y-2 pt-2 border-t border-white/5">
-                    <div className="text-[11px] font-mono text-white/60 uppercase tracking-wider font-semibold">
-                      Roles Included in Service:
+                  <div className="space-y-1.5 pt-2 border-t border-white/5">
+                    <div className="text-[10px] font-mono text-white/60 uppercase tracking-wider font-semibold">
+                      Roles Included:
                     </div>
-                    <div className="flex flex-wrap gap-2">
+                    <div className="flex flex-wrap gap-1.5">
                       {service.rolesList.map((r, i) => (
                         <span
                           key={i}
-                          className="px-2.5 py-1 rounded-none bg-white/5 border border-white/10 text-white text-[11px] font-mono"
+                          className="px-2 py-0.5 rounded-none bg-white/5 border border-white/10 text-white text-[10px] font-mono"
                         >
                           ✦ {r}
                         </span>
@@ -466,15 +466,15 @@ export const ManpowerPage: React.FC = () => {
                   </div>
 
                   {/* Deliverables / Scope */}
-                  <div className="space-y-2.5 pt-2 border-t border-white/5">
-                    <div className="text-[11px] font-mono text-white/60 uppercase tracking-wider font-semibold">
-                      Key Scope & Deliverables:
+                  <div className="space-y-1.5 pt-2 border-t border-white/5">
+                    <div className="text-[10px] font-mono text-white/60 uppercase tracking-wider font-semibold">
+                      Key Scope:
                     </div>
-                    <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs font-sans text-[#A8A090]">
-                      {service.deliverables.map((item, i) => (
+                    <ul className="space-y-1.5 text-xs font-sans text-[#A8A090]">
+                      {service.deliverables.slice(0, 3).map((item, i) => (
                         <li key={i} className="flex items-start gap-2">
                           <CheckCircle2 className="w-3.5 h-3.5 text-white shrink-0 mt-0.5" />
-                          <span className="leading-snug">{item}</span>
+                          <span className="leading-snug text-[11px]">{item}</span>
                         </li>
                       ))}
                     </ul>
@@ -483,7 +483,7 @@ export const ManpowerPage: React.FC = () => {
               </div>
 
               {/* Bottom Action Footer */}
-              <div className="p-6 sm:p-8 pt-0 flex flex-col sm:flex-row items-center gap-3 border-t border-white/5 mt-4">
+              <div className="p-5 sm:p-6 pt-0 flex flex-col sm:flex-row items-center gap-2.5 border-t border-white/5 mt-3">
                 <button
                   type="button"
                   onClick={() => {
@@ -500,10 +500,10 @@ export const ManpowerPage: React.FC = () => {
                     });
                     setIsPostJobModalOpen(true);
                   }}
-                  className="btn-vault flex-1 w-full py-3 text-xs flex items-center justify-center gap-2 cursor-pointer"
+                  className="btn-vault flex-1 w-full py-2.5 text-xs flex items-center justify-center gap-1.5 cursor-pointer"
                 >
-                  <Plus className="w-4 h-4" />
-                  <span>Hire {service.category} Staff</span>
+                  <Plus className="w-3.5 h-3.5" />
+                  <span>Hire Staff</span>
                 </button>
 
                 <button
@@ -525,10 +525,10 @@ export const ManpowerPage: React.FC = () => {
                     });
                     setIsApplyModalOpen(true);
                   }}
-                  className="w-full sm:w-auto px-5 py-3 rounded-none border border-white/10 hover:border-white text-white text-xs font-mono uppercase tracking-wider transition hover:bg-white/5 flex items-center justify-center gap-2 cursor-pointer"
+                  className="w-full sm:w-auto px-4 py-2.5 rounded-none border border-white/10 hover:border-white text-white text-xs font-mono uppercase tracking-wider transition hover:bg-white/5 flex items-center justify-center gap-1.5 cursor-pointer"
                 >
                   <UserCheck className="w-3.5 h-3.5" />
-                  <span>Apply for Role</span>
+                  <span>Apply</span>
                 </button>
               </div>
             </motion.div>
