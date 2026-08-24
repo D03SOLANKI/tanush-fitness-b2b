@@ -417,16 +417,6 @@ export const ManpowerPage: React.FC = () => {
                     loading="lazy"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-[#0D1118] via-[#0D1118]/30 to-transparent" />
-                  
-                  {/* Category Pill on Image */}
-                  <div className="absolute top-3 left-3 flex items-center gap-1.5 flex-wrap">
-                    <span className="px-2.5 py-0.5 rounded-none bg-[#090C10]/90 backdrop-blur-md border border-white/20 text-[9px] font-mono text-white uppercase tracking-widest font-bold shadow-lg">
-                      {service.category}
-                    </span>
-                    <span className="px-2 py-0.5 rounded-none bg-white/10 backdrop-blur-md text-[8px] font-mono text-white/80 uppercase tracking-wider">
-                      {service.badge}
-                    </span>
-                  </div>
 
                   {/* Deployment Speed Pill */}
                   <div className="absolute bottom-3 right-3 bg-[#090C10]/90 px-2.5 py-0.5 border border-white/10 rounded-none text-[9px] font-mono text-emerald-400 font-bold">

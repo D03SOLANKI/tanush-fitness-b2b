@@ -240,12 +240,6 @@ export const EquipmentPage: React.FC = () => {
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-[#0D1118] via-transparent to-transparent opacity-60" />
 
-                    <div className="absolute top-3 left-3 flex flex-col gap-1.5">
-                      <span className="px-2.5 py-0.5 rounded-full bg-[#090C10]/80 border border-white/10 text-[9px] font-mono text-white/90 uppercase tracking-wider font-bold">
-                        {product.specs?.['Steel Frame'] || '11-GAUGE STEEL'}
-                      </span>
-                    </div>
-
                     <button
                       type="button"
                       onClick={(e) => {

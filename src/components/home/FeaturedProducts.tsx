@@ -46,14 +46,6 @@ export const FeaturedProducts: React.FC = () => {
                     className="w-full h-full object-cover group-hover:scale-102 transition-transform duration-300"
                   />
 
-                  {product.badge && (
-                    <div className="absolute top-2.5 left-2.5">
-                      <span className="px-2 py-0.5 rounded bg-[#090C10]/90 text-white font-mono text-[10px] font-bold uppercase tracking-wider border border-white/10">
-                        {product.badge}
-                      </span>
-                    </div>
-                  )}
-
                   <button
                     onClick={() => toggleWishlist(product.id)}
                     className={`absolute top-2.5 right-2.5 p-1.5 rounded-lg border transition-colors ${
