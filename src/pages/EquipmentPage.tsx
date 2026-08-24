@@ -109,7 +109,7 @@ export const EquipmentPage: React.FC = () => {
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 pb-12">
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 border-b border-white/10 pb-8">
           <div className="space-y-3">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-xs font-mono text-[#A8A090] tracking-widest uppercase">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-xs font-mono text-white/80 tracking-widest uppercase">
               <Sparkles className="w-3.5 h-3.5" />
               <span>PRECISION BIOMECHANICS // ISO 9001:2015 CERTIFIED</span>
             </div>
@@ -118,7 +118,7 @@ export const EquipmentPage: React.FC = () => {
               EQUIPMENT SANCTUARY
             </h1>
 
-            <p className="text-sm sm:text-base text-[#A8A090] max-w-2xl font-sans leading-relaxed">
+            <p className="text-sm sm:text-base text-white/90 max-w-2xl font-sans leading-relaxed">
               Precision-engineered commercial & residential strength lines, selectorized pin-loaded stacks, and Olympic competition platforms. Add items to your project list for official 18% GST ITC procurement quotes.
             </p>
           </div>
@@ -126,7 +126,7 @@ export const EquipmentPage: React.FC = () => {
           <div className="flex items-center gap-3 shrink-0">
             <a
               href="tel:+918160918894"
-              className="btn-vault flex items-center gap-2 text-xs py-2.5 px-5"
+              className="btn-vault flex items-center gap-2 text-xs py-3 px-6 shadow-lg cursor-pointer"
             >
               <Phone className="w-3.5 h-3.5" />
               <span>Direct Outfitting Desk</span>
@@ -138,9 +138,9 @@ export const EquipmentPage: React.FC = () => {
       {/* Marquee Banner */}
       <MarqueeStrip theme="orange" speed="slow" />
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 space-y-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 space-y-10">
         {/* Controls Bar: Search & Category Pills */}
-        <div className="space-y-4">
+        <div className="space-y-4 border-b border-white/10 pb-6">
           {/* Search & Brands Strip */}
           <div className="flex flex-col md:flex-row items-stretch md:items-center justify-between gap-4">
             <div className="relative flex-1 max-w-md">
@@ -150,7 +150,7 @@ export const EquipmentPage: React.FC = () => {
                 placeholder="Search power racks, cable crossover, dumbbells..."
                 value={searchQuery}
                 onChange={e => setSearchQuery(e.target.value)}
-                className="w-full bg-[#0D1118] border border-white/10 rounded-full pl-10 pr-4 py-2.5 text-xs text-white placeholder-[#6B6358] focus:outline-none focus:border-[#D26539]"
+                className="w-full bg-[#0D1118] border border-white/10 rounded-full pl-10 pr-4 py-2.5 text-xs text-white placeholder-[#6B6358] focus:outline-none focus:border-white"
               />
               {searchQuery && (
                 <button
@@ -165,7 +165,7 @@ export const EquipmentPage: React.FC = () => {
 
             {/* Application Filters */}
             <div className="flex flex-wrap items-center gap-2">
-              <span className="text-xs font-mono text-[#6B6358] uppercase mr-1 hidden sm:inline">Facility:</span>
+              <span className="text-xs font-mono text-white/60 uppercase mr-1 hidden sm:inline">Facility:</span>
               {['all', 'Commercial & Residential Gym', 'CrossFit Box', 'Hotel & Resort', 'Corporate Campus'].map((app) => (
                 <button
                   key={app}
@@ -174,7 +174,7 @@ export const EquipmentPage: React.FC = () => {
                   className={`px-3 py-1.5 rounded-full text-xs font-mono uppercase tracking-wider transition ${
                     activeApplication === app
                       ? 'bg-[#D26539] text-[#090C10] font-bold shadow-md'
-                      : 'bg-[#0D1118] text-[#A8A090] border border-white/5 hover:border-white/20'
+                      : 'bg-[#0D1118] text-[#A8A090] border border-white/5 hover:border-white/20 hover:text-white'
                   }`}
                 >
                   {app === 'all' ? 'All Spaces' : app}
@@ -190,8 +190,8 @@ export const EquipmentPage: React.FC = () => {
               onClick={() => setActiveCategory('all')}
               className={`px-5 py-2.5 rounded-full text-xs font-mono uppercase tracking-wider whitespace-nowrap transition ${
                 activeCategory === 'all'
-                  ? 'bg-[#1A2018] text-[#F0EBE3] font-bold shadow-lg'
-                  : 'bg-[#0D1118] text-[#A8A090] border border-white/5 hover:border-white/20'
+                  ? 'bg-[#D26539] text-[#090C10] font-bold shadow-md'
+                  : 'bg-[#0D1118] text-[#A8A090] border border-white/5 hover:border-white/20 hover:text-white'
               }`}
             >
               All Machinery ({products.length})
@@ -205,8 +205,8 @@ export const EquipmentPage: React.FC = () => {
                   onClick={() => setActiveCategory(cat.id)}
                   className={`px-5 py-2.5 rounded-full text-xs font-mono uppercase tracking-wider whitespace-nowrap transition flex items-center gap-2 ${
                     activeCategory === cat.id
-                      ? 'bg-[#D26539] text-[#090C10] font-bold shadow-lg shadow-[#D26539]/20'
-                      : 'bg-[#0D1118] text-[#A8A090] border border-white/5 hover:border-white/20'
+                      ? 'bg-[#D26539] text-[#090C10] font-bold shadow-md'
+                      : 'bg-[#0D1118] text-[#A8A090] border border-white/5 hover:border-white/20 hover:text-white'
                   }`}
                 >
                   <span>{cat.name}</span>
@@ -217,8 +217,8 @@ export const EquipmentPage: React.FC = () => {
           </div>
         </div>
 
-        {/* Product Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+        {/* Product Grid (3 PER ROW MATCHING SERVICES & MANPOWER) */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
           {filteredProducts.map((product) => {
             const isWish = isInWishlist(product.id);
             const isCompared = compareList.some(p => p.id === product.id);
@@ -226,19 +226,25 @@ export const EquipmentPage: React.FC = () => {
             return (
               <div
                 key={product.id}
-                className="bg-[#0D1118] border border-white/10 rounded-none overflow-hidden luxury-card flex flex-col justify-between group"
+                className="bg-[#0D1118] border border-white/10 rounded-none overflow-hidden flex flex-col justify-between group hover:border-white/30 transition-all duration-300 shadow-xl"
               >
                 <div>
+                  {/* Visual Image Header */}
                   <div
                     onClick={() => handleOpenDetailModal(product)}
-                    className="relative h-60 overflow-hidden cursor-pointer bg-[#090C10]"
+                    className="relative aspect-[16/10] w-full overflow-hidden cursor-pointer bg-[#090C10]"
                   >
                     <img
                       src={product.image || fallbackImage}
                       alt={product.name}
-                      className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700 opacity-90 group-hover:opacity-100"
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 opacity-90 group-hover:opacity-100"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-[#0D1118] via-transparent to-transparent opacity-60" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#0D1118] via-[#0D1118]/30 to-transparent" />
+
+                    {/* Bottom Right Steel Spec Pill */}
+                    <div className="absolute bottom-3 right-3 bg-[#090C10]/90 px-2.5 py-0.5 border border-white/10 rounded-none text-[9px] font-mono text-emerald-400 font-bold">
+                      ⚡ {product.specs?.['Steel Frame'] || '11-GAUGE STEEL'}
+                    </div>
 
                     <button
                       type="button"
@@ -256,44 +262,48 @@ export const EquipmentPage: React.FC = () => {
                     </button>
                   </div>
 
-                  <div className="p-5 space-y-3">
-                    <div className="flex items-center justify-between text-[10px] font-mono text-[#6B6358] uppercase">
-                      <span>{product.brand}</span>
-                      <span>{product.category}</span>
+                  {/* Card Content */}
+                  <div className="p-5 sm:p-6 space-y-4">
+                    <div>
+                      <div className="text-[11px] font-mono text-[#D26539] uppercase tracking-wider font-bold">
+                        {product.brand} // {product.category}
+                      </div>
+
+                      <h3
+                        onClick={() => handleOpenDetailModal(product)}
+                        className="font-satoshi text-lg sm:text-xl font-bold uppercase text-white tracking-tight mt-1 group-hover:text-white transition cursor-pointer line-clamp-1"
+                      >
+                        {product.name}
+                      </h3>
+
+                      <p className="text-xs text-white/80 font-sans leading-relaxed mt-2 line-clamp-2">
+                        {product.description}
+                      </p>
                     </div>
 
-                    <h3
-                      onClick={() => handleOpenDetailModal(product)}
-                      className="font-satoshi text-base font-bold text-white group-hover:text-[#D26539] transition uppercase cursor-pointer line-clamp-1"
-                    >
-                      {product.name}
-                    </h3>
-
-                    <p className="text-xs text-[#A8A090] font-sans line-clamp-2 leading-relaxed">
-                      {product.description}
-                    </p>
-
-                    <div className="grid grid-cols-2 gap-2 pt-3 border-t border-white/5 font-mono text-[10px] text-[#A8A090]">
-                      <div className="bg-white/5 p-2 rounded-none">
-                        <span className="text-[#6B6358] block">CAPACITY:</span>
+                    {/* Specifications Grid */}
+                    <div className="grid grid-cols-2 gap-2 pt-2 border-t border-white/5 font-mono text-[10px]">
+                      <div className="bg-white/5 p-2 rounded-none border border-white/5">
+                        <span className="text-[#6B6358] block text-[9px] font-mono uppercase">CAPACITY:</span>
                         <span className="text-white font-bold">{product.specs?.['Max Load'] || product.specs?.['Weight Capacity'] || '600 KG'}</span>
                       </div>
-                      <div className="bg-white/5 p-2 rounded-none">
-                        <span className="text-[#6B6358] block">WARRANTY:</span>
+                      <div className="bg-white/5 p-2 rounded-none border border-white/5">
+                        <span className="text-[#6B6358] block text-[9px] font-mono uppercase">WARRANTY:</span>
                         <span className="text-white font-bold">{product.specs?.['Warranty'] || '10 Yrs Frame'}</span>
                       </div>
                     </div>
                   </div>
                 </div>
 
-                <div className="p-5 pt-0 space-y-2">
+                {/* Bottom Action Footer */}
+                <div className="p-5 sm:p-6 pt-0 space-y-2.5 border-t border-white/5 mt-3">
                   <button
                     type="button"
                     onClick={() => {
                       addToEnquiryCart(product, 1);
                       setIsEnquiryCartOpen(true);
                     }}
-                    className="btn-vault w-full py-2.5 text-xs flex items-center justify-center gap-2"
+                    className="btn-vault w-full py-2.5 text-xs flex items-center justify-center gap-1.5 cursor-pointer"
                   >
                     <FileText className="w-3.5 h-3.5" />
                     <span>Add to RFQ Project List</span>
@@ -303,7 +313,7 @@ export const EquipmentPage: React.FC = () => {
                     <button
                       type="button"
                       onClick={() => handleOpenDetailModal(product)}
-                      className="btn-vault-outline flex-1 py-1.5 text-[11px] flex items-center justify-center gap-1.5"
+                      className="btn-vault-outline flex-1 py-1.5 text-[11px] flex items-center justify-center gap-1.5 cursor-pointer"
                     >
                       <Eye className="w-3.5 h-3.5" />
                       <span>CAD Specs</span>
@@ -311,7 +321,7 @@ export const EquipmentPage: React.FC = () => {
                     <button
                       type="button"
                       onClick={() => handleToggleCompare(product)}
-                      className={`px-3 py-1.5 rounded-full text-[11px] font-mono border transition ${
+                      className={`px-3 py-1.5 rounded-none text-[11px] font-mono border transition cursor-pointer ${
                         isCompared
                           ? 'bg-[#D26539]/20 text-[#D26539] border-[#D26539]'
                           : 'bg-[#0D1118] text-[#A8A090] border-white/10 hover:text-white'

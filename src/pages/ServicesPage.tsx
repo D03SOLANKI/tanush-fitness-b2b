@@ -76,7 +76,7 @@ export const ServicesPage: React.FC = () => {
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 pb-12">
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 border-b border-white/10 pb-8">
           <div className="space-y-3">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-xs font-mono text-[#A8A090] tracking-widest uppercase">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-xs font-mono text-white/80 tracking-widest uppercase">
               <Sparkles className="w-3.5 h-3.5" />
               <span>360° COMMERCIAL & RESIDENTIAL GYM MANAGEMENT</span>
             </div>
@@ -85,7 +85,7 @@ export const ServicesPage: React.FC = () => {
               GYM MANAGEMENT OUTFITTING
             </h1>
 
-            <p className="text-sm sm:text-base text-[#A8A090] max-w-2xl font-sans leading-relaxed">
+            <p className="text-sm sm:text-base text-white/90 max-w-2xl font-sans leading-relaxed">
               From raw commercial square footage to fully commissioned athletic destinations. 3D CAD blueprints, high-density acoustic flooring, turnstiles, and automated operational management.
             </p>
           </div>
@@ -93,10 +93,10 @@ export const ServicesPage: React.FC = () => {
           <div className="flex items-center gap-3 shrink-0">
             <a
               href="tel:+918160918894"
-              className="btn-vault flex items-center gap-2 text-xs py-2.5 px-5"
+              className="btn-vault flex items-center gap-2 text-xs py-3 px-6 shadow-lg cursor-pointer"
             >
               <Phone className="w-3.5 h-3.5" />
-              <span>Book GYM MANAGEMENT Consultation</span>
+              <span>Book Consultation</span>
             </a>
           </div>
         </div>
@@ -105,70 +105,79 @@ export const ServicesPage: React.FC = () => {
       {/* Marquee Banner */}
       <MarqueeStrip theme="orange" speed="slow" />
 
-      {/* Services Grid */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {/* Services Grid (3 PER ROW MATCHING MANPOWER & EQUIPMENT) */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 space-y-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
           {BUSINESS_SERVICES.map((service, idx) => (
             <motion.div
               key={service.id}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.4, delay: idx * 0.05 }}
-              className="bg-[#0D1118] border border-white/10 rounded-none overflow-hidden luxury-card flex flex-col justify-between group"
+              initial={{ opacity: 0, y: 15 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.3, delay: idx * 0.05 }}
+              className="bg-[#0D1118] border border-white/10 rounded-none overflow-hidden flex flex-col justify-between group hover:border-white/30 transition-all duration-300 shadow-xl"
             >
               <div>
-                {/* Visual Image */}
-                <div className="relative h-56 overflow-hidden bg-[#090C10]">
+                {/* Visual Image Header */}
+                <div className="relative aspect-[16/10] w-full overflow-hidden bg-[#090C10]">
                   <img
                     src={service.image}
                     alt={service.name}
-                    className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700 opacity-85 group-hover:opacity-100"
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 opacity-90 group-hover:opacity-100"
+                    loading="lazy"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#0D1118] via-transparent to-black/30" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#0D1118] via-[#0D1118]/30 to-transparent" />
+
+                  {/* Impact Tag in Bottom Right */}
                   {service.badge && (
-                    <span className="absolute top-4 left-4 px-3 py-1 rounded-full bg-[#090C10]/80  border border-white/10 text-[10px] font-mono text-[#D26539] uppercase tracking-wider font-bold">
-                      {service.badge}
-                    </span>
+                    <div className="absolute bottom-3 right-3 bg-[#090C10]/90 px-2.5 py-0.5 border border-white/10 rounded-none text-[9px] font-mono text-emerald-400 font-bold">
+                      ⚡ {service.badge}
+                    </div>
                   )}
                 </div>
 
-                {/* Content */}
-                <div className="p-6 space-y-4">
-                  <span className="text-[10px] font-mono text-[#6B6358] uppercase tracking-wider block">
-                    {service.category || 'COMMERCIAL & RESIDENTIAL SETUP'}
-                  </span>
+                {/* Card Content */}
+                <div className="p-5 sm:p-6 space-y-5">
+                  <div>
+                    <div className="text-[11px] font-mono text-[#D26539] uppercase tracking-wider font-bold">
+                      {service.category || 'COMMERCIAL & RESIDENTIAL SETUP'}
+                    </div>
+                    <h3 className="font-satoshi text-lg sm:text-xl font-bold uppercase text-white tracking-tight mt-1 group-hover:text-white transition">
+                      {service.name}
+                    </h3>
+                    <p className="text-xs text-white/80 font-sans leading-relaxed mt-2 line-clamp-3">
+                      {service.shortDesc}
+                    </p>
+                  </div>
 
-                  <h3 className="font-satoshi text-xl font-bold text-white group-hover:text-[#D26539] transition uppercase">
-                    {service.name}
-                  </h3>
-
-                  <p className="text-xs sm:text-sm text-[#A8A090] font-sans leading-relaxed">
-                    {service.shortDesc}
-                  </p>
-
-                  {/* Highlights */}
+                  {/* Key Scope & Deliverables */}
                   {service.benefits && service.benefits.length > 0 && (
-                    <div className="pt-3 border-t border-white/5 space-y-2 font-mono text-xs text-[#A8A090]">
-                      {service.benefits.slice(0, 3).map((f, fIdx) => (
-                        <div key={fIdx} className="flex items-center gap-2">
-                          <CheckCircle2 className="w-3.5 h-3.5 text-[#D26539] shrink-0" />
-                          <span className="font-sans text-xs">{f}</span>
-                        </div>
-                      ))}
+                    <div className="space-y-1.5 pt-2 border-t border-white/5">
+                      <div className="text-[10px] font-mono text-white/60 uppercase tracking-wider font-semibold">
+                        Key Deliverables:
+                      </div>
+                      <ul className="space-y-1.5 text-xs font-sans text-[#A8A090]">
+                        {service.benefits.slice(0, 3).map((f, fIdx) => (
+                          <li key={fIdx} className="flex items-start gap-2">
+                            <CheckCircle2 className="w-3.5 h-3.5 text-white shrink-0 mt-0.5" />
+                            <span className="leading-snug text-[11px]">{f}</span>
+                          </li>
+                        ))}
+                      </ul>
                     </div>
                   )}
                 </div>
               </div>
 
-              {/* Action */}
-              <div className="p-6 pt-0">
+              {/* Bottom Action Footer */}
+              <div className="p-5 sm:p-6 pt-0 flex flex-col sm:flex-row items-center gap-2.5 border-t border-white/5 mt-3">
                 <button
                   type="button"
                   onClick={() => handleOpenEnquiryModal(service)}
-                  className="btn-vault w-full py-2.5 text-xs flex items-center justify-center gap-2"
+                  className="btn-vault flex-1 w-full py-2.5 text-xs flex items-center justify-center gap-1.5 cursor-pointer"
                 >
                   <Briefcase className="w-3.5 h-3.5" />
-                  <span>Request Service Proposal</span>
+                  <span>Request Proposal</span>
                 </button>
               </div>
             </motion.div>

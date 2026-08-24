@@ -373,70 +373,70 @@ export const HomePage: React.FC = () => {
             </button>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
             {CORE_PILLARS.map((pillar) => {
               const IconComp = pillar.icon;
               return (
                 <div
                   key={pillar.id}
-                  className="bg-[#0D1118] border border-white/10 rounded-none overflow-hidden luxury-card flex flex-col justify-between group"
+                  className="bg-[#0D1118] border border-white/10 rounded-none overflow-hidden flex flex-col justify-between group hover:border-white/30 transition-all duration-300 shadow-xl"
                 >
                   <div>
                     <div
-                      className="relative h-56 overflow-hidden cursor-pointer"
+                      className="relative aspect-[16/10] w-full overflow-hidden cursor-pointer bg-[#090C10]"
                       onClick={() => navigateTo(pillar.page)}
                     >
                       <img
                         src={pillar.image}
                         alt={pillar.title}
-                        className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700 opacity-85 group-hover:opacity-100"
+                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 opacity-90 group-hover:opacity-100"
                       />
-                      <div className="absolute inset-0 bg-gradient-to-t from-[#0D1118] via-transparent to-black/40" />
+                      <div className="absolute inset-0 bg-gradient-to-t from-[#0D1118] via-[#0D1118]/30 to-transparent" />
 
-                      <div className="absolute top-4 left-4">
-                        <span className="px-3 py-1 rounded-full bg-[#090C10] border border-white/10 text-[10px] font-mono text-[#A8A090] font-bold uppercase tracking-wider">
-                          PILLAR {pillar.number} // {pillar.category}
-                        </span>
-                      </div>
-
-                      <div className="absolute top-4 right-4 w-8 h-8 rounded-full bg-[#090C10] border border-white/10 flex items-center justify-center text-[#D26539]">
+                      <div className="absolute top-4 right-4 w-8 h-8 rounded-full bg-[#090C10]/90 border border-white/10 flex items-center justify-center text-white">
                         <IconComp className="w-4 h-4" />
                       </div>
                     </div>
 
-                    <div className="p-6 space-y-3.5">
+                    <div className="p-5 sm:p-6 space-y-5">
                       <div>
+                        <div className="text-[11px] font-mono text-[#D26539] uppercase tracking-wider font-bold">
+                          PILLAR 0{pillar.number} // {pillar.category}
+                        </div>
+
                         <h3
                           onClick={() => navigateTo(pillar.page)}
-                          className="font-satoshi text-lg sm:text-xl font-bold text-white group-hover:text-[#D26539] transition uppercase cursor-pointer"
+                          className="font-satoshi text-lg sm:text-xl font-bold uppercase text-white tracking-tight mt-1 group-hover:text-white transition cursor-pointer"
                         >
                           {pillar.title}
                         </h3>
-                        <p className="text-xs font-mono text-[#D26539] mt-1">
-                          {pillar.tagline}
+
+                        <p className="text-xs text-white/80 font-sans leading-relaxed mt-2 line-clamp-3">
+                          {pillar.description}
                         </p>
                       </div>
 
-                      <p className="text-xs sm:text-sm text-[#A8A090] font-satoshi leading-relaxed">
-                        {pillar.description}
-                      </p>
-
-                      <div className="space-y-2 pt-3 border-t border-white/5 font-mono text-xs text-[#A8A090]">
-                        {pillar.points.map((pt, ptIdx) => (
-                          <div key={ptIdx} className="flex items-center gap-2">
-                            <CheckCircle2 className="w-3.5 h-3.5 text-[#D26539]" />
-                            <span>{pt}</span>
-                          </div>
-                        ))}
+                      <div className="space-y-1.5 pt-2 border-t border-white/5 font-sans text-xs text-[#A8A090]">
+                        <div className="text-[10px] font-mono text-white/60 uppercase tracking-wider font-semibold">
+                          Core Focus:
+                        </div>
+                        <ul className="space-y-1.5">
+                          {pillar.points.map((pt, ptIdx) => (
+                            <li key={ptIdx} className="flex items-start gap-2">
+                              <CheckCircle2 className="w-3.5 h-3.5 text-white shrink-0 mt-0.5" />
+                              <span className="leading-snug text-[11px]">{pt}</span>
+                            </li>
+                          ))}
+                        </ul>
                       </div>
                     </div>
                   </div>
 
-                  <div className="p-6 pt-0">
+                  <div className="p-5 sm:p-6 pt-0 border-t border-white/5 mt-3">
                     <button
                       type="button"
                       onClick={() => navigateTo(pillar.page)}
-                      className="btn-vault w-full py-2.5 text-xs flex items-center justify-center gap-2 uppercase tracking-wider"
+                      className="btn-vault w-full py-2.5 text-xs flex items-center justify-center gap-1.5 uppercase tracking-wider cursor-pointer"
                     >
                       <span>{pillar.btnText}</span>
                       <ArrowRight className="w-3.5 h-3.5" />
