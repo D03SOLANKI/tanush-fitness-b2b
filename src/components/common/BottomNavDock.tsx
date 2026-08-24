@@ -29,7 +29,7 @@ export const BottomNavDock: React.FC = () => {
           <button
             type="button"
             onClick={() => handleNav('home')}
-            className="bg-[#0D1811] border border-[#D26539]/40 hover:border-[#D26539] px-6 sm:px-8 py-3 rounded-full font-satoshi font-black text-xs sm:text-sm tracking-[0.2em] text-[#D26539] transition-colors shadow-2xl uppercase cursor-pointer"
+            className="bg-[#0D1811] border border-white/20 hover:border-[#D26539] px-6 sm:px-8 py-3 rounded-full font-satoshi font-black text-xs sm:text-sm tracking-[0.2em] text-white hover:text-white transition-colors shadow-2xl uppercase cursor-pointer"
           >
             TANUSH FITNESS
           </button>
