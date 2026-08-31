@@ -164,10 +164,6 @@ export const HomePage: React.FC = () => {
                 </span>
               </span>
             </h1>
-
-            <p className="font-sans text-base sm:text-lg text-[#D0CFCA] max-w-2xl mx-auto leading-relaxed font-normal">
-              India's premier commercial & residential fitness infrastructure manufacturer. We engineer heavy-duty 11-gauge laser-cut machinery, deliver 3D CAD space modeling, and supply certified 7-division gym personnel.
-            </p>
           </div>
 
           {/* Action CTAs */}
