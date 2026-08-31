@@ -74,6 +74,7 @@ export default {
       },
       fontFamily: {
         sans: ['General Sans', 'Plus Jakarta Sans', 'Montserrat', 'system-ui', 'sans-serif'],
+        montserrat: ['Montserrat', 'sans-serif'],
         satoshi: ['Monument Extended', 'Unbounded', 'Syne', 'Clash Display', 'Satoshi', 'sans-serif'],
         display: ['Monument Extended', 'Unbounded', 'Syne', 'Clash Display', 'sans-serif'],
         heading: ['Monument Extended', 'Unbounded', 'Syne', 'Clash Display', 'sans-serif'],
