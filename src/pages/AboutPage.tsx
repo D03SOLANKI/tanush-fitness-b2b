@@ -187,18 +187,17 @@ export const AboutPage: React.FC = () => {
             </h2>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
             {[
-              { name: 'Dev Solanki', title: 'Managing Director & Biomechanics Engineer', image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=400&q=80', bio: 'Specializing in 11-gauge industrial frame geometry and commercial facility outfitting nationwide.' },
-              { name: 'Rohan Mehta', title: 'Director of Laser Manufacturing', image: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=400&q=80', bio: 'Directs ISO 9001:2015 robotic welding calibration and heavy tensile stress tests for selectorized machines.' },
-              { name: 'Priya Sharma', title: 'VP of Master Staffing & Academy', image: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=400&q=80', bio: 'Head of credential vetting for NASM, CSCS, and ACE certified master personal trainer placements.' }
+              { name: 'Pravinsinh Zala', title: 'Managing Director & Biomechanics Engineer', image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=400&q=80', bio: 'Specializing in 11-gauge industrial frame geometry and commercial facility outfitting nationwide.' },
+              { name: 'Greeshma Patel', title: 'Director of Operations & Gym Management', image: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=400&q=80', bio: 'Head of credential vetting, 3D CAD space modeling, and institutional commercial gym outfitting.' }
             ].map((team, i) => (
-              <div key={i} className="bg-[#E8E8E8] text-[#0F1926] border border-[#2A2A2B]/10 rounded-2xl p-6 space-y-4 shadow-2xl group hover:-translate-y-1.5 transition-all duration-300 hover:border-[#0F1926]">
+              <div key={i} className="bg-[#E8E8E8] text-[#0F1926] border border-[#2A2A2B]/10 rounded-2xl p-6 sm:p-8 space-y-4 shadow-2xl group hover:-translate-y-1.5 transition-all duration-300 hover:border-[#0F1926]">
                 <img src={team.image} alt={team.name} className="w-20 h-20 rounded-xl object-cover border border-[#0F1926]/15 shadow-md" />
                 <div className="space-y-1">
-                  <h3 className="font-satoshi text-lg font-bold text-[#0F1926] uppercase">{team.name}</h3>
+                  <h3 className="font-satoshi text-lg sm:text-xl font-bold text-[#0F1926] uppercase">{team.name}</h3>
                   <div className="text-xs font-mono text-[#2A2A2B] uppercase font-bold">{team.title}</div>
-                  <p className="text-xs text-[#2A2A2B]/80 font-sans leading-relaxed pt-2">{team.bio}</p>
+                  <p className="text-xs sm:text-sm text-[#2A2A2B]/80 font-sans leading-relaxed pt-2">{team.bio}</p>
                 </div>
               </div>
             ))}
