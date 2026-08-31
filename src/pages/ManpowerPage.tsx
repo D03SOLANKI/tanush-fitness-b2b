@@ -438,14 +438,14 @@ export const ManpowerPage: React.FC = () => {
 
                   {/* Roles Breakdown */}
                   <div className="space-y-1.5 pt-3 border-t border-[#0F1926]/10">
-                    <div className="text-[10px] font-mono text-[#0F1926] uppercase tracking-wider font-bold">
+                    <div className="text-[11px] font-sans text-[#0F1926] uppercase tracking-wider font-extrabold">
                       Roles Included:
                     </div>
                     <div className="flex flex-wrap gap-1.5">
                       {service.rolesList.map((r, i) => (
                         <span
                           key={i}
-                          className="px-2 py-0.5 rounded bg-[#0F1926]/10 text-[#0F1926] text-[10px] font-mono font-medium"
+                          className="px-2 py-0.5 rounded bg-[#0F1926]/10 text-[#0F1926] text-[10px] font-sans font-semibold"
                         >
                           {r}
                         </span>
@@ -455,7 +455,7 @@ export const ManpowerPage: React.FC = () => {
 
                   {/* Deliverables / Scope */}
                   <div className="space-y-1.5 pt-3 border-t border-[#0F1926]/10">
-                    <div className="text-[10px] font-mono text-[#0F1926] uppercase tracking-wider font-bold">
+                    <div className="text-[11px] font-sans text-[#0F1926] uppercase tracking-wider font-extrabold">
                       Key Scope:
                     </div>
                     <ul className="space-y-1.5 text-xs font-sans text-[#2A2A2B]/80">

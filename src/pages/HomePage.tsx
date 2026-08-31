@@ -406,7 +406,7 @@ export const HomePage: React.FC = () => {
                       </div>
 
                       <div className="space-y-2 pt-4 border-t border-[#0F1926]/10 font-sans text-xs text-[#2A2A2B]">
-                        <div className="text-[11px] font-mono text-[#0F1926] uppercase tracking-wider font-bold">
+                        <div className="text-xs font-sans text-[#0F1926] uppercase tracking-wider font-extrabold">
                           Core Focus:
                         </div>
                         <ul className="space-y-2">

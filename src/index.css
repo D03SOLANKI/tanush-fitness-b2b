@@ -130,9 +130,9 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 0.75rem 1.75rem;
+  padding: 0.75rem 1.5rem;
   border-radius: 9999px;
-  font-family: 'Monument Extended', 'Unbounded', 'Syne', 'Clash Display', 'Satoshi', sans-serif;
+  font-family: 'General Sans', 'Plus Jakarta Sans', 'Montserrat', sans-serif;
   font-size: 0.75rem;
   font-weight: 800;
   text-transform: uppercase;
@@ -143,6 +143,7 @@
   transform: translateZ(0);
   transition: transform 0.2s ease, background-color 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
   cursor: pointer;
+  white-space: nowrap;
 }
 
 .btn-primary:hover,
@@ -160,9 +161,9 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 0.75rem 1.75rem;
+  padding: 0.75rem 1.5rem;
   border-radius: 9999px;
-  font-family: 'Monument Extended', 'Unbounded', 'Syne', 'Clash Display', 'Satoshi', sans-serif;
+  font-family: 'General Sans', 'Plus Jakarta Sans', 'Montserrat', sans-serif;
   font-size: 0.75rem;
   font-weight: 800;
   text-transform: uppercase;
@@ -173,6 +174,7 @@
   transform: translateZ(0);
   transition: transform 0.2s ease, background-color 0.2s ease, border-color 0.2s ease;
   cursor: pointer;
+  white-space: nowrap;
 }
 
 .btn-dark:hover {
@@ -188,9 +190,9 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 0.75rem 1.75rem;
+  padding: 0.75rem 1.5rem;
   border-radius: 9999px;
-  font-family: 'Monument Extended', 'Unbounded', 'Syne', 'Clash Display', 'Satoshi', sans-serif;
+  font-family: 'General Sans', 'Plus Jakarta Sans', 'Montserrat', sans-serif;
   font-size: 0.75rem;
   font-weight: 800;
   text-transform: uppercase;
@@ -201,6 +203,7 @@
   transform: translateZ(0);
   transition: transform 0.2s ease, background-color 0.2s ease, border-color 0.2s ease;
   cursor: pointer;
+  white-space: nowrap;
 }
 
 .btn-charcoal:hover,
@@ -217,10 +220,10 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 0.75rem 1.75rem;
+  padding: 0.75rem 1.5rem;
   border-radius: 9999px;
   border: 1px solid rgba(232, 232, 232, 0.3);
-  font-family: 'Monument Extended', 'Unbounded', 'Syne', 'Clash Display', 'Satoshi', sans-serif;
+  font-family: 'General Sans', 'Plus Jakarta Sans', 'Montserrat', sans-serif;
   font-size: 0.75rem;
   font-weight: 800;
   text-transform: uppercase;
@@ -230,6 +233,7 @@
   transform: translateZ(0);
   transition: transform 0.2s ease, border-color 0.2s ease, background-color 0.2s ease, color 0.2s ease;
   cursor: pointer;
+  white-space: nowrap;
 }
 
 .btn-outline:hover,

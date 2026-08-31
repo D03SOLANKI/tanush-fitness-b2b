@@ -151,7 +151,7 @@ export const ServicesPage: React.FC = () => {
                   {/* Key Scope & Deliverables */}
                   {service.benefits && service.benefits.length > 0 && (
                     <div className="space-y-1.5 pt-3 border-t border-[#0F1926]/10">
-                      <div className="text-[10px] font-mono text-[#0F1926] uppercase tracking-wider font-bold">
+                      <div className="text-[11px] font-sans text-[#0F1926] uppercase tracking-wider font-extrabold">
                         Key Deliverables:
                       </div>
                       <ul className="space-y-1.5 text-xs font-sans text-[#2A2A2B]/80">
