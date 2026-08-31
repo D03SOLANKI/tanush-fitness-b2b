@@ -16,7 +16,7 @@ export const ContactPage: React.FC = () => {
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-10">
         <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 border-b border-[#2A2A2B] pb-8">
           <div className="space-y-2">
-            <h1 className="font-satoshi text-3xl sm:text-5xl font-extrabold uppercase text-[#F2F0EC] tracking-tight">
+            <h1 className="font-satoshi text-2xl sm:text-4xl md:text-5xl font-extrabold uppercase text-[#F2F0EC] tracking-[0.04em] leading-snug">
               OUTFITTING DESK
             </h1>
           </div>

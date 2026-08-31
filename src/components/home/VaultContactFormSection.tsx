@@ -39,7 +39,7 @@ export const VaultContactFormSection: React.FC = () => {
 
           {/* Bottom Left Badge */}
           <div className="absolute bottom-8 left-8 right-8 text-[#F2F0EC] space-y-1 z-10">
-            <h3 className="font-satoshi text-xl sm:text-2xl font-bold uppercase tracking-tight text-[#F2F0EC]">
+            <h3 className="font-satoshi text-lg sm:text-xl font-bold uppercase tracking-[0.03em] text-[#F2F0EC] leading-snug">
               ELEVATE YOUR ATHLETIC DESTINATION
             </h3>
           </div>

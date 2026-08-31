@@ -32,7 +32,7 @@ export const Hero: React.FC = () => {
             </div>
 
             {/* Master Headline */}
-            <h1 className="text-3xl sm:text-5xl xl:text-6xl font-extrabold tracking-tight text-[#090C10] font-satoshi uppercase leading-[1.1]">
+            <h1 className="text-2xl sm:text-4xl xl:text-5xl font-extrabold tracking-[0.04em] text-[#090C10] font-satoshi uppercase leading-snug">
               Commercial & Residential Gym OUTFITTING.{' '}
               <span className="text-[#26452D] block mt-1">DIRECT FROM FACTORY.</span>
             </h1>

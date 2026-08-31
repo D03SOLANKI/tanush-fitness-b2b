@@ -163,7 +163,7 @@ export const AuthModal: React.FC<AuthModalProps> = ({
               <Lock className="w-3 h-3 text-[#0F1926]" />
               <span>AUTHENTICATION GATE</span>
             </div>
-            <h2 className="text-2xl font-black text-[#0F1926] font-satoshi uppercase tracking-tight">
+            <h2 className="text-xl font-black text-[#0F1926] font-satoshi uppercase tracking-[0.03em] leading-snug">
               {isLogin ? 'Welcome Back' : 'Create Account'}
             </h2>
             <p className="text-xs text-[#2A2A2B]/80 mt-1 font-normal leading-relaxed">

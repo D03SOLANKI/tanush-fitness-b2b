@@ -124,7 +124,7 @@ export const HomePage: React.FC = () => {
         <div className="max-w-5xl mx-auto text-center space-y-8 relative z-10">
           {/* Clean Grand Headline */}
           <div className="space-y-4">
-            <h1 className="font-satoshi text-4xl sm:text-6xl md:text-7xl font-black uppercase tracking-tight text-[#F2F0EC] leading-[1.06]">
+            <h1 className="font-satoshi text-3xl sm:text-5xl md:text-6xl font-black uppercase tracking-[0.04em] text-[#F2F0EC] leading-[1.25] sm:leading-[1.2]">
               UNLOCK YOUR STRENGTH.
               <br />
               <span className="text-[#D0CFCA]">OWN YOUR POTENTIAL.</span>
@@ -218,7 +218,7 @@ export const HomePage: React.FC = () => {
           {/* Header & Tab Switcher */}
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-6">
             <div className="space-y-2">
-              <h2 className="font-satoshi text-3xl sm:text-5xl font-extrabold uppercase text-[#F2F0EC] tracking-tight">
+              <h2 className="font-satoshi text-2xl sm:text-4xl font-extrabold uppercase text-[#F2F0EC] tracking-[0.03em] leading-snug">
                 {visionTab === 'what' ? 'What is Tanush?' : 'Why Tanush?'}
               </h2>
             </div>
@@ -319,7 +319,7 @@ export const HomePage: React.FC = () => {
         <div className="space-y-12">
           <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-6">
             <div className="space-y-2">
-              <h2 className="font-satoshi text-3xl sm:text-5xl font-extrabold uppercase text-[#F2F0EC] tracking-tight">
+              <h2 className="font-satoshi text-2xl sm:text-4xl font-extrabold uppercase text-[#F2F0EC] tracking-[0.03em] leading-snug">
                 THREE PILLARS OF GYM OUTFITTING
               </h2>
               <p className="text-sm text-[#D0CFCA] font-sans max-w-2xl mt-1 leading-relaxed">
@@ -369,7 +369,7 @@ export const HomePage: React.FC = () => {
 
                         <h3
                           onClick={() => navigateTo(pillar.page)}
-                          className="font-satoshi text-xl font-bold uppercase text-[#0F1926] tracking-tight mt-1 group-hover:text-[#2A2A2B] transition cursor-pointer"
+                          className="font-satoshi text-lg sm:text-xl font-bold uppercase text-[#0F1926] tracking-[0.03em] mt-1 group-hover:text-[#2A2A2B] transition cursor-pointer leading-snug"
                         >
                           {pillar.title}
                         </h3>
@@ -419,7 +419,7 @@ export const HomePage: React.FC = () => {
         <div className="space-y-12">
           <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-6">
             <div className="space-y-2">
-              <h2 className="font-satoshi text-3xl sm:text-5xl font-extrabold uppercase text-[#F2F0EC] tracking-tight">
+              <h2 className="font-satoshi text-2xl sm:text-4xl font-extrabold uppercase text-[#F2F0EC] tracking-[0.03em] leading-snug">
                 OUR USP
               </h2>
             </div>

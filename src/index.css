@@ -51,12 +51,14 @@
 
   h1, h2, h3, h4, h5, h6 {
     font-family: 'Monument Extended', 'Unbounded', 'Syne', 'Clash Display', 'Satoshi', sans-serif;
-    letter-spacing: -0.01em;
+    letter-spacing: 0.05em;
+    line-height: 1.25;
     font-weight: 800;
   }
 
   .font-satoshi, .font-heading, .font-display {
     font-family: 'Monument Extended', 'Unbounded', 'Syne', 'Clash Display', 'Satoshi', sans-serif;
+    letter-spacing: 0.04em;
   }
 
   .font-mono, code, pre {

@@ -16,7 +16,7 @@ export const Footer: React.FC = () => {
       <div className="bg-[#0F1926] border-b border-[#2A2A2B] py-10 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
           <div className="space-y-1 text-center md:text-left">
-            <h3 className="font-satoshi text-2xl sm:text-3xl font-extrabold text-[#F2F0EC] uppercase tracking-tight">
+            <h3 className="font-satoshi text-xl sm:text-2xl font-extrabold text-[#F2F0EC] uppercase tracking-[0.03em] leading-snug">
               READY TO OUTFIT YOUR ATHLETIC DESTINATION?
             </h3>
             <p className="text-xs text-[#D0CFCA] font-sans max-w-xl">

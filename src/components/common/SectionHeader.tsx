@@ -26,7 +26,7 @@ export const SectionHeader: React.FC<SectionHeaderProps> = ({
             {subtitle}
           </span>
         </div>
-        <h2 className="text-3xl sm:text-5xl lg:text-6xl font-black text-white tracking-tight leading-[1.08] font-satoshi uppercase">
+        <h2 className="text-2xl sm:text-4xl lg:text-5xl font-black text-white tracking-[0.04em] leading-snug font-satoshi uppercase">
           {title}
         </h2>
         {description && (

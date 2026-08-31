@@ -17,7 +17,7 @@ export const CallToAction: React.FC = () => {
                 <span>FACTORY DIRECT COMMERCIAL & RESIDENTIAL PROCUREMENT</span>
               </div>
 
-              <h2 className="text-2xl sm:text-4xl font-extrabold font-satoshi uppercase tracking-tight leading-tight">
+              <h2 className="text-xl sm:text-3xl font-extrabold font-satoshi uppercase tracking-[0.03em] leading-snug">
                 Ready to Outfit Your Commercial Facility?
               </h2>
 

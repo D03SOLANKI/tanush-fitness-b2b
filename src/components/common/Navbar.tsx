@@ -176,7 +176,7 @@ export const Navbar: React.FC = () => {
                       <div className="flex items-center gap-4">
                         <span className="font-mono text-xs text-[#D0CFCA]">0{idx + 1}</span>
                         <span
-                          className={`font-satoshi text-2xl font-bold uppercase tracking-tight transition ${
+                          className={`font-satoshi text-xl font-bold uppercase tracking-[0.04em] transition ${
                             isActive ? 'text-[#F2F0EC]' : 'text-[#D0CFCA] group-hover:text-[#F2F0EC]'
                           }`}
                         >
