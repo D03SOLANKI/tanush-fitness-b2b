@@ -33,7 +33,7 @@ export const EquipmentCompareModal: React.FC<EquipmentCompareModalProps> = ({
           initial={{ scale: 0.95, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
           exit={{ scale: 0.95, opacity: 0 }}
-          className="bg-[#5E656E] text-[#0F1926] rounded-2xl max-w-5xl w-full p-6 sm:p-8 overflow-hidden shadow-2xl border border-[#2A2A2B]/20 relative my-8"
+          className="bg-[#E8E8E8] text-[#0F1926] rounded-2xl max-w-5xl w-full p-6 sm:p-8 overflow-hidden shadow-2xl border border-[#2A2A2B]/20 relative my-8"
         >
           <button
             onClick={onClose}

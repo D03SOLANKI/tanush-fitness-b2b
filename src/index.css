@@ -6,20 +6,20 @@
   --primary-navy: #0F1926;
   --dark-base: #0C1015;
   --charcoal: #2A2A2B;
-  --off-white: #5E656E;
+  --off-white: #E8E8E8;
   --light-gray: #D0CFCA;
 
   /* Backward Compatibility Aliases */
   --navy-bg: #0F1926;
-  --navy-card: #5E656E;
-  --navy-heading: #5E656E;
+  --navy-card: #E8E8E8;
+  --navy-heading: #E8E8E8;
   --navy-muted: #D0CFCA;
   --navy-card-heading: #0F1926;
   --navy-card-body: #2A2A2B;
 
   --charcoal-bg: #0F1926;
-  --charcoal-card: #5E656E;
-  --charcoal-heading: #5E656E;
+  --charcoal-card: #E8E8E8;
+  --charcoal-heading: #E8E8E8;
   --charcoal-muted: #D0CFCA;
   --charcoal-card-heading: #0F1926;
   --charcoal-card-body: #2A2A2B;
@@ -38,13 +38,13 @@
   }
 
   ::selection {
-    background-color: #5E656E;
+    background-color: #E8E8E8;
     color: #0F1926;
   }
 
   body {
     background-color: #0F1926;
-    color: #5E656E;
+    color: #E8E8E8;
     font-family: 'General Sans', 'Plus Jakarta Sans', 'Montserrat', system-ui, sans-serif;
     overflow-x: hidden;
   }
@@ -119,7 +119,7 @@
 .luxury-card:hover,
 .card-lift:hover {
   transform: translateY(-4px) translateZ(0);
-  box-shadow: 0 20px 35px -10px rgba(0, 0, 0, 0.5), 0 0 20px -4px rgba(94, 101, 110, 0.08);
+  box-shadow: 0 20px 35px -10px rgba(0, 0, 0, 0.5), 0 0 20px -4px rgba(232, 232, 232, 0.08);
 }
 
 /* Monochromatic Signature Button Styles (No Orange) */
@@ -137,9 +137,9 @@
   font-weight: 800;
   text-transform: uppercase;
   letter-spacing: 0.08em;
-  background-color: #5E656E;
+  background-color: #E8E8E8;
   color: #0F1926;
-  border: 1px solid #5E656E;
+  border: 1px solid #E8E8E8;
   transform: translateZ(0);
   transition: transform 0.2s ease, background-color 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
   cursor: pointer;
@@ -152,7 +152,7 @@
   color: #0F1926;
   border-color: #D0CFCA;
   transform: translateY(-2px) translateZ(0);
-  box-shadow: 0 8px 24px -4px rgba(94, 101, 110, 0.2);
+  box-shadow: 0 8px 24px -4px rgba(232, 232, 232, 0.2);
 }
 
 .btn-dark {
@@ -168,8 +168,8 @@
   text-transform: uppercase;
   letter-spacing: 0.08em;
   background-color: #0F1926;
-  color: #5E656E;
-  border: 1px solid rgba(94, 101, 110, 0.2);
+  color: #E8E8E8;
+  border: 1px solid rgba(232, 232, 232, 0.2);
   transform: translateZ(0);
   transition: transform 0.2s ease, background-color 0.2s ease, border-color 0.2s ease;
   cursor: pointer;
@@ -177,8 +177,8 @@
 
 .btn-dark:hover {
   background-color: #0C1015;
-  color: #5E656E;
-  border-color: #5E656E;
+  color: #E8E8E8;
+  border-color: #E8E8E8;
   transform: translateY(-2px) translateZ(0);
 }
 
@@ -196,7 +196,7 @@
   text-transform: uppercase;
   letter-spacing: 0.08em;
   background-color: #2A2A2B;
-  color: #5E656E;
+  color: #E8E8E8;
   border: 1px solid rgba(208, 207, 202, 0.2);
   transform: translateZ(0);
   transition: transform 0.2s ease, background-color 0.2s ease, border-color 0.2s ease;
@@ -206,8 +206,8 @@
 .btn-charcoal:hover,
 .btn-steel:hover {
   background-color: #0F1926;
-  border-color: #5E656E;
-  color: #5E656E;
+  border-color: #E8E8E8;
+  color: #E8E8E8;
   transform: translateY(-2px) translateZ(0);
 }
 
@@ -219,14 +219,14 @@
   justify-content: center;
   padding: 0.75rem 1.75rem;
   border-radius: 9999px;
-  border: 1px solid rgba(94, 101, 110, 0.3);
+  border: 1px solid rgba(232, 232, 232, 0.3);
   font-family: 'Monument Extended', 'Unbounded', 'Syne', 'Clash Display', 'Satoshi', sans-serif;
   font-size: 0.75rem;
   font-weight: 800;
   text-transform: uppercase;
   letter-spacing: 0.08em;
   background-color: transparent;
-  color: #5E656E;
+  color: #E8E8E8;
   transform: translateZ(0);
   transition: transform 0.2s ease, border-color 0.2s ease, background-color 0.2s ease, color 0.2s ease;
   cursor: pointer;
@@ -234,11 +234,11 @@
 
 .btn-outline:hover,
 .btn-vault-outline:hover {
-  border-color: #5E656E;
-  background-color: #5E656E;
+  border-color: #E8E8E8;
+  background-color: #E8E8E8;
   color: #0F1926;
   transform: translateY(-2px) translateZ(0);
-  box-shadow: 0 8px 20px -4px rgba(94, 101, 110, 0.25);
+  box-shadow: 0 8px 20px -4px rgba(232, 232, 232, 0.25);
 }
 
 

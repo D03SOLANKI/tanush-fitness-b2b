@@ -144,7 +144,7 @@ export const AuthModal: React.FC<AuthModalProps> = ({
           initial={{ opacity: 0, scale: 0.95, y: 10 }}
           animate={{ opacity: 1, scale: 1, y: 0 }}
           exit={{ opacity: 0, scale: 0.95, y: 10 }}
-          className="bg-[#5E656E] rounded-2xl max-w-md w-full p-6 sm:p-8 overflow-hidden shadow-2xl border border-[#2A2A2B]/20 relative my-8 text-[#0F1926]"
+          className="bg-[#E8E8E8] rounded-2xl max-w-md w-full p-6 sm:p-8 overflow-hidden shadow-2xl border border-[#2A2A2B]/20 relative my-8 text-[#0F1926]"
         >
           {/* Close Button */}
           <button

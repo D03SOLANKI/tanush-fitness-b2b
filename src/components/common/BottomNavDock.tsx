@@ -43,8 +43,8 @@ export const BottomNavDock: React.FC = () => {
             onClick={() => handleNav('about')}
             className={`px-5 py-2 rounded-full font-bold transition-all duration-300 cursor-pointer ${
               currentPage === 'about'
-                ? 'bg-[#5E656E] text-[#0F1926] shadow-md font-black'
-                : 'text-[#D0CFCA] hover:text-[#5E656E] hover:bg-white/10'
+                ? 'bg-[#E8E8E8] text-[#0F1926] shadow-md font-black'
+                : 'text-[#D0CFCA] hover:text-[#E8E8E8] hover:bg-white/10'
             }`}
           >
             About
@@ -55,8 +55,8 @@ export const BottomNavDock: React.FC = () => {
             onClick={() => handleNav('equipment')}
             className={`px-5 py-2 rounded-full font-semibold transition-all duration-300 cursor-pointer ${
               currentPage === 'equipment'
-                ? 'bg-[#5E656E] text-[#0F1926] font-black shadow-md'
-                : 'text-[#D0CFCA] hover:text-[#5E656E] hover:bg-white/10'
+                ? 'bg-[#E8E8E8] text-[#0F1926] font-black shadow-md'
+                : 'text-[#D0CFCA] hover:text-[#E8E8E8] hover:bg-white/10'
             }`}
           >
             Equipment
@@ -67,8 +67,8 @@ export const BottomNavDock: React.FC = () => {
             onClick={() => handleNav('services')}
             className={`px-5 py-2 rounded-full font-semibold transition-all duration-300 cursor-pointer ${
               currentPage === 'services'
-                ? 'bg-[#5E656E] text-[#0F1926] font-black shadow-md'
-                : 'text-[#D0CFCA] hover:text-[#5E656E] hover:bg-white/10'
+                ? 'bg-[#E8E8E8] text-[#0F1926] font-black shadow-md'
+                : 'text-[#D0CFCA] hover:text-[#E8E8E8] hover:bg-white/10'
             }`}
           >
             Gym Management
@@ -79,8 +79,8 @@ export const BottomNavDock: React.FC = () => {
             onClick={() => handleNav('manpower')}
             className={`px-5 py-2 rounded-full font-semibold transition-all duration-300 cursor-pointer ${
               currentPage === 'manpower'
-                ? 'bg-[#5E656E] text-[#0F1926] font-black shadow-md'
-                : 'text-[#D0CFCA] hover:text-[#5E656E] hover:bg-white/10'
+                ? 'bg-[#E8E8E8] text-[#0F1926] font-black shadow-md'
+                : 'text-[#D0CFCA] hover:text-[#E8E8E8] hover:bg-white/10'
             }`}
           >
             Manpower
@@ -91,8 +91,8 @@ export const BottomNavDock: React.FC = () => {
             onClick={() => handleNav('contact')}
             className={`px-5 py-2 rounded-full font-semibold transition-all duration-300 cursor-pointer ${
               currentPage === 'contact'
-                ? 'bg-[#5E656E] text-[#0F1926] font-black shadow-md'
-                : 'text-[#D0CFCA] hover:text-[#5E656E] hover:bg-white/10'
+                ? 'bg-[#E8E8E8] text-[#0F1926] font-black shadow-md'
+                : 'text-[#D0CFCA] hover:text-[#E8E8E8] hover:bg-white/10'
             }`}
           >
             Consultation
@@ -104,12 +104,12 @@ export const BottomNavDock: React.FC = () => {
           <button
             type="button"
             onClick={() => handleNav('home', 'directory')}
-            className="w-13 h-13 sm:w-14 sm:h-14 rounded-full bg-[#0C1015]/95 backdrop-blur-md border border-[#2A2A2B] hover:border-[#D0CFCA] hover:bg-[#5E656E] flex flex-col items-center justify-center gap-1.5 text-[#5E656E] transition-all duration-300 shadow-2xl group cursor-pointer"
+            className="w-13 h-13 sm:w-14 sm:h-14 rounded-full bg-[#0C1015]/95 backdrop-blur-md border border-[#2A2A2B] hover:border-[#D0CFCA] hover:bg-[#E8E8E8] flex flex-col items-center justify-center gap-1.5 text-[#E8E8E8] transition-all duration-300 shadow-2xl group cursor-pointer"
             aria-label="Scroll to Directory Section"
             title="Navigate to Directory"
           >
-            <span className="w-5 sm:w-6 h-[2px] bg-[#5E656E] group-hover:bg-[#0F1926] rounded-full transition-all duration-300 group-hover:scale-x-110" />
-            <span className="w-5 sm:w-6 h-[2px] bg-[#5E656E] group-hover:bg-[#0F1926] rounded-full transition-all duration-300 group-hover:scale-x-110" />
+            <span className="w-5 sm:w-6 h-[2px] bg-[#E8E8E8] group-hover:bg-[#0F1926] rounded-full transition-all duration-300 group-hover:scale-x-110" />
+            <span className="w-5 sm:w-6 h-[2px] bg-[#E8E8E8] group-hover:bg-[#0F1926] rounded-full transition-all duration-300 group-hover:scale-x-110" />
           </button>
         </div>
       </div>

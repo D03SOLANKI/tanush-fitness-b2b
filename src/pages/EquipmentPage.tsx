@@ -99,7 +99,7 @@ export const EquipmentPage: React.FC = () => {
   };
 
   return (
-    <main className="pt-24 pb-20 bg-[#0F1926] min-h-screen text-[#5E656E]">
+    <main className="pt-24 pb-20 bg-[#0F1926] min-h-screen text-[#E8E8E8]">
       <SEO
         title="Commercial & Residential Equipment Sanctuary | Tanush Fitness B2B"
         description="Factory direct 11-gauge power racks, plate-loaded selectorized machines, cardio consoles, and urethane free weights. 100% itemized RFQ quotations."
@@ -109,7 +109,7 @@ export const EquipmentPage: React.FC = () => {
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 pb-12">
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 border-b border-[#2A2A2B] pb-8">
           <div className="space-y-3">
-            <h1 className="font-satoshi text-2xl sm:text-4xl md:text-5xl font-extrabold uppercase text-[#5E656E] tracking-[0.04em] leading-snug">
+            <h1 className="font-satoshi text-2xl sm:text-4xl md:text-5xl font-extrabold uppercase text-[#E8E8E8] tracking-[0.04em] leading-snug">
               EQUIPMENT SANCTUARY
             </h1>
 
@@ -145,7 +145,7 @@ export const EquipmentPage: React.FC = () => {
                 placeholder="Search power racks, cable crossover, dumbbells..."
                 value={searchQuery}
                 onChange={e => setSearchQuery(e.target.value)}
-                className="w-full bg-[#0C1015] border border-[#2A2A2B] rounded-full pl-10 pr-4 py-2.5 text-xs text-[#5E656E] placeholder-[#D0CFCA] focus:outline-none focus:border-[#5E656E] transition-colors"
+                className="w-full bg-[#0C1015] border border-[#2A2A2B] rounded-full pl-10 pr-4 py-2.5 text-xs text-[#E8E8E8] placeholder-[#D0CFCA] focus:outline-none focus:border-[#E8E8E8] transition-colors"
               />
               {searchQuery && (
                 <button
@@ -168,7 +168,7 @@ export const EquipmentPage: React.FC = () => {
                   onClick={() => setActiveApplication(app)}
                   className={`px-3.5 py-1.5 rounded-full text-xs font-mono uppercase tracking-wider transition cursor-pointer ${
                     activeApplication === app
-                      ? 'bg-[#5E656E] text-[#0F1926] font-bold shadow-md'
+                      ? 'bg-[#E8E8E8] text-[#0F1926] font-bold shadow-md'
                       : 'bg-[#0C1015] text-[#D0CFCA] border border-[#2A2A2B] hover:border-[#D0CFCA] hover:text-white'
                   }`}
                 >
@@ -185,7 +185,7 @@ export const EquipmentPage: React.FC = () => {
               onClick={() => setActiveCategory('all')}
               className={`px-5 py-2.5 rounded-full text-xs font-mono uppercase tracking-wider whitespace-nowrap transition cursor-pointer ${
                 activeCategory === 'all'
-                  ? 'bg-[#5E656E] text-[#0F1926] font-bold shadow-md'
+                  ? 'bg-[#E8E8E8] text-[#0F1926] font-bold shadow-md'
                   : 'bg-[#0C1015] text-[#D0CFCA] border border-[#2A2A2B] hover:border-[#D0CFCA] hover:text-white'
               }`}
             >
@@ -200,7 +200,7 @@ export const EquipmentPage: React.FC = () => {
                   onClick={() => setActiveCategory(cat.id)}
                   className={`px-5 py-2.5 rounded-full text-xs font-mono uppercase tracking-wider whitespace-nowrap transition flex items-center gap-2 cursor-pointer ${
                     activeCategory === cat.id
-                      ? 'bg-[#5E656E] text-[#0F1926] font-bold shadow-md'
+                      ? 'bg-[#E8E8E8] text-[#0F1926] font-bold shadow-md'
                       : 'bg-[#0C1015] text-[#D0CFCA] border border-[#2A2A2B] hover:border-[#D0CFCA] hover:text-white'
                   }`}
                 >
@@ -221,7 +221,7 @@ export const EquipmentPage: React.FC = () => {
             return (
               <div
                 key={product.id}
-                className="bg-[#5E656E] text-[#0F1926] border border-[#2A2A2B]/10 rounded-2xl overflow-hidden flex flex-col justify-between group hover:border-[#0F1926] transition-all duration-300 shadow-2xl hover:-translate-y-1.5"
+                className="bg-[#E8E8E8] text-[#0F1926] border border-[#2A2A2B]/10 rounded-2xl overflow-hidden flex flex-col justify-between group hover:border-[#0F1926] transition-all duration-300 shadow-2xl hover:-translate-y-1.5"
               >
                 <div>
                   {/* Visual Image Header */}
@@ -241,7 +241,7 @@ export const EquipmentPage: React.FC = () => {
                     <div className="absolute inset-0 bg-gradient-to-t from-[#0F1926]/60 via-transparent to-transparent" />
 
                     {/* Bottom Right Steel Spec Pill */}
-                    <div className="absolute bottom-3 right-3 bg-[#0F1926] px-2.5 py-1 rounded-md text-[9px] font-mono text-[#5E656E] font-bold border border-white/15">
+                    <div className="absolute bottom-3 right-3 bg-[#0F1926] px-2.5 py-1 rounded-md text-[9px] font-mono text-[#E8E8E8] font-bold border border-white/15">
                       ⚡ {product.specs?.['Steel Frame'] || '11-GAUGE STEEL'}
                     </div>
 
@@ -253,7 +253,7 @@ export const EquipmentPage: React.FC = () => {
                       }}
                       className={`absolute top-3 right-3 p-2 rounded-full border transition cursor-pointer ${
                         isWish
-                          ? 'bg-[#0F1926] text-[#5E656E] border-[#0F1926]'
+                          ? 'bg-[#0F1926] text-[#E8E8E8] border-[#0F1926]'
                           : 'bg-[#0C1015]/80 text-[#D0CFCA] border-white/15 hover:text-white'
                       }`}
                     >
@@ -349,7 +349,7 @@ export const EquipmentPage: React.FC = () => {
               initial={{ scale: 0.95, y: 20 }}
               animate={{ scale: 1, y: 0 }}
               exit={{ scale: 0.95, y: 20 }}
-              className="bg-[#5E656E] text-[#0F1926] border border-[#2A2A2B]/20 rounded-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto p-6 sm:p-8 space-y-8 shadow-2xl"
+              className="bg-[#E8E8E8] text-[#0F1926] border border-[#2A2A2B]/20 rounded-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto p-6 sm:p-8 space-y-8 shadow-2xl"
             >
               <div className="flex items-start justify-between border-b border-[#0F1926]/15 pb-4">
                 <div>

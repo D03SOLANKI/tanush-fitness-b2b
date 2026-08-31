@@ -23,8 +23,8 @@ export default {
           border: 'rgba(245, 243, 238, 0.12)',
         },
         steel: {
-          DEFAULT: '#5E656E',
-          accent: '#5E656E',
+          DEFAULT: '#E8E8E8',
+          accent: '#E8E8E8',
           hover: '#737C87',
           light: '#8E97A2',
           border: 'rgba(94, 101, 110, 0.3)',

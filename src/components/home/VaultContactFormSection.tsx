@@ -38,15 +38,15 @@ export const VaultContactFormSection: React.FC = () => {
           <div className="absolute inset-0 bg-gradient-to-t from-[#0C1015]/90 via-transparent to-[#0C1015]/40" />
 
           {/* Bottom Left Badge */}
-          <div className="absolute bottom-8 left-8 right-8 text-[#5E656E] space-y-1 z-10">
-            <h3 className="font-satoshi text-lg sm:text-xl font-bold uppercase tracking-[0.03em] text-[#5E656E] leading-snug">
+          <div className="absolute bottom-8 left-8 right-8 text-[#E8E8E8] space-y-1 z-10">
+            <h3 className="font-satoshi text-lg sm:text-xl font-bold uppercase tracking-[0.03em] text-[#E8E8E8] leading-snug">
               ELEVATE YOUR ATHLETIC DESTINATION
             </h3>
           </div>
         </div>
 
         {/* RIGHT COLUMN: WARM OFF-WHITE FORM CANVAS */}
-        <div className="lg:col-span-6 bg-[#5E656E] text-[#0F1926] relative p-8 sm:p-12 lg:p-16 flex flex-col justify-center overflow-hidden">
+        <div className="lg:col-span-6 bg-[#E8E8E8] text-[#0F1926] relative p-8 sm:p-12 lg:p-16 flex flex-col justify-center overflow-hidden">
           {/* Faint Star Watermark on Top Right */}
           <div className="absolute -right-16 -top-16 pointer-events-none select-none opacity-5">
             <svg
@@ -62,7 +62,7 @@ export const VaultContactFormSection: React.FC = () => {
             {isSubmitted ? (
               <div className="bg-white border border-[#0F1926]/15 p-8 text-center space-y-4 rounded-2xl shadow-xl">
                 <div className="w-12 h-12 rounded-full bg-[#0F1926] text-white flex items-center justify-center mx-auto">
-                  <CheckCircle2 className="w-6 h-6 text-[#5E656E]" />
+                  <CheckCircle2 className="w-6 h-6 text-[#E8E8E8]" />
                 </div>
                 <h3 className="font-satoshi text-2xl font-bold uppercase text-[#0F1926]">
                   Proposal Request Received

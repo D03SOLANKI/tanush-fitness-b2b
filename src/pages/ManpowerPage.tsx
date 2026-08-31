@@ -299,7 +299,7 @@ export const ManpowerPage: React.FC = () => {
   });
 
   return (
-    <main className="pt-24 pb-20 bg-[#0F1926] min-h-screen text-[#5E656E]">
+    <main className="pt-24 pb-20 bg-[#0F1926] min-h-screen text-[#E8E8E8]">
       <SEO
         title="Master Coaches & Staffing Sanctuary | Tanush Fitness B2B"
         description="Recruit Club Managers, HR/Admin, Sales Executives, Fitness Trainers, Group Class Coaches, Nutritionists & Physiotherapists nationwide."
@@ -309,7 +309,7 @@ export const ManpowerPage: React.FC = () => {
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 pb-12">
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 border-b border-[#2A2A2B] pb-8">
           <div className="space-y-3">
-            <h1 className="font-satoshi text-2xl sm:text-4xl md:text-5xl font-extrabold uppercase text-[#5E656E] tracking-[0.04em] leading-snug">
+            <h1 className="font-satoshi text-2xl sm:text-4xl md:text-5xl font-extrabold uppercase text-[#E8E8E8] tracking-[0.04em] leading-snug">
               MASTER STAFFING
             </h1>
 
@@ -347,9 +347,9 @@ export const ManpowerPage: React.FC = () => {
                 });
                 setIsApplyModalOpen(true);
               }}
-              className="px-5 py-3 rounded-full border border-[#2A2A2B] hover:border-[#D0CFCA] text-[#5E656E] text-xs font-mono uppercase tracking-wider transition hover:bg-[#0C1015] flex items-center gap-2 cursor-pointer"
+              className="px-5 py-3 rounded-full border border-[#2A2A2B] hover:border-[#D0CFCA] text-[#E8E8E8] text-xs font-mono uppercase tracking-wider transition hover:bg-[#0C1015] flex items-center gap-2 cursor-pointer"
             >
-              <UserCheck className="w-4 h-4 text-[#5E656E]" />
+              <UserCheck className="w-4 h-4 text-[#E8E8E8]" />
               <span>Join Talent Network</span>
             </button>
           </div>
@@ -369,7 +369,7 @@ export const ManpowerPage: React.FC = () => {
               placeholder="Search category (e.g. Management, Yoga, Physiotherapist, Receptionist)..."
               value={searchQuery}
               onChange={e => setSearchQuery(e.target.value)}
-              className="w-full bg-[#0C1015] border border-[#2A2A2B] rounded-full pl-10 pr-4 py-2.5 text-xs text-[#5E656E] placeholder-[#D0CFCA] focus:outline-none focus:border-[#5E656E] transition-colors"
+              className="w-full bg-[#0C1015] border border-[#2A2A2B] rounded-full pl-10 pr-4 py-2.5 text-xs text-[#E8E8E8] placeholder-[#D0CFCA] focus:outline-none focus:border-[#E8E8E8] transition-colors"
             />
           </div>
 
@@ -381,7 +381,7 @@ export const ManpowerPage: React.FC = () => {
                 onClick={() => setSelectedCategory(cat)}
                 className={`px-4 py-2 rounded-full text-xs font-mono uppercase tracking-wider transition whitespace-nowrap cursor-pointer ${
                   selectedCategory === cat
-                    ? 'bg-[#5E656E] text-[#0F1926] font-bold shadow-md'
+                    ? 'bg-[#E8E8E8] text-[#0F1926] font-bold shadow-md'
                     : 'bg-[#0C1015] text-[#D0CFCA] border border-[#2A2A2B] hover:border-[#D0CFCA] hover:text-white'
                 }`}
               >
@@ -391,7 +391,7 @@ export const ManpowerPage: React.FC = () => {
           </div>
         </div>
 
-        {/* 7 MANPOWER VISUAL SERVICES GRID (#5E656E LIGHT CARDS) */}
+        {/* 7 MANPOWER VISUAL SERVICES GRID (#E8E8E8 LIGHT CARDS) */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
           {filteredServices.map((service) => (
             <motion.div
@@ -400,7 +400,7 @@ export const ManpowerPage: React.FC = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.3 }}
-              className="bg-[#5E656E] text-[#0F1926] border border-[#2A2A2B]/10 rounded-2xl overflow-hidden flex flex-col justify-between group hover:border-[#0F1926] transition-all duration-300 shadow-2xl hover:-translate-y-1.5"
+              className="bg-[#E8E8E8] text-[#0F1926] border border-[#2A2A2B]/10 rounded-2xl overflow-hidden flex flex-col justify-between group hover:border-[#0F1926] transition-all duration-300 shadow-2xl hover:-translate-y-1.5"
             >
               <div>
                 {/* Visual Image Header */}
@@ -417,7 +417,7 @@ export const ManpowerPage: React.FC = () => {
                   <div className="absolute inset-0 bg-gradient-to-t from-[#0F1926]/60 via-transparent to-transparent" />
 
                   {/* Deployment Speed Pill */}
-                  <div className="absolute bottom-3 right-3 bg-[#0F1926] px-2.5 py-1 rounded-md text-[9px] font-mono text-[#5E656E] font-bold border border-white/15">
+                  <div className="absolute bottom-3 right-3 bg-[#0F1926] px-2.5 py-1 rounded-md text-[9px] font-mono text-[#E8E8E8] font-bold border border-white/15">
                     ⚡ {service.deploymentTime}
                   </div>
                 </div>
@@ -537,7 +537,7 @@ export const ManpowerPage: React.FC = () => {
               initial={{ scale: 0.95, y: 20 }}
               animate={{ scale: 1, y: 0 }}
               exit={{ scale: 0.95, y: 20 }}
-              className="bg-[#5E656E] text-[#0F1926] border border-[#2A2A2B]/20 rounded-2xl max-w-lg w-full p-6 sm:p-8 space-y-6 shadow-2xl"
+              className="bg-[#E8E8E8] text-[#0F1926] border border-[#2A2A2B]/20 rounded-2xl max-w-lg w-full p-6 sm:p-8 space-y-6 shadow-2xl"
             >
               <div className="flex items-start justify-between border-b border-[#0F1926]/15 pb-4">
                 <div>
@@ -627,7 +627,7 @@ export const ManpowerPage: React.FC = () => {
               initial={{ scale: 0.95, y: 20 }}
               animate={{ scale: 1, y: 0 }}
               exit={{ scale: 0.95, y: 20 }}
-              className="bg-[#5E656E] text-[#0F1926] border border-[#2A2A2B]/20 rounded-2xl max-w-lg w-full p-6 sm:p-8 space-y-6 shadow-2xl"
+              className="bg-[#E8E8E8] text-[#0F1926] border border-[#2A2A2B]/20 rounded-2xl max-w-lg w-full p-6 sm:p-8 space-y-6 shadow-2xl"
             >
               <div className="flex items-start justify-between border-b border-[#0F1926]/15 pb-4">
                 <div>

@@ -28,15 +28,15 @@ export const MarqueeStrip: React.FC<MarqueeStripProps> = ({
   const getThemeClass = () => {
     switch (theme) {
       case 'dark':
-        return 'bg-[#0C1015] text-[#5E656E] py-3.5 sm:py-4 border-y border-[#2A2A2B]';
+        return 'bg-[#0C1015] text-[#E8E8E8] py-3.5 sm:py-4 border-y border-[#2A2A2B]';
       case 'charcoal':
-        return 'bg-[#2A2A2B] text-[#5E656E] py-3.5 sm:py-4 border-y border-[#2A2A2B]';
+        return 'bg-[#2A2A2B] text-[#E8E8E8] py-3.5 sm:py-4 border-y border-[#2A2A2B]';
       case 'navy':
-        return 'bg-[#0F1926] text-[#5E656E] py-3.5 sm:py-4 border-y border-[#2A2A2B]';
+        return 'bg-[#0F1926] text-[#E8E8E8] py-3.5 sm:py-4 border-y border-[#2A2A2B]';
       case 'white':
       case 'offwhite':
       default:
-        return 'bg-[#5E656E] text-[#0F1926] py-3.5 sm:py-4 border-y border-[#2A2A2B]/15 shadow-sm';
+        return 'bg-[#E8E8E8] text-[#0F1926] py-3.5 sm:py-4 border-y border-[#2A2A2B]/15 shadow-sm';
     }
   };
 

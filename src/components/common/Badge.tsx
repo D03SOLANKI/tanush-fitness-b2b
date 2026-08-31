@@ -20,10 +20,10 @@ export const Badge: React.FC<BadgeProps> = ({
     : "px-3.5 py-1 text-xs sm:text-sm";
 
   const variantStyles = {
-    gold: "bg-[#5E656E] text-[#0F1926] border border-[#2A2A2B]/20 font-bold",
-    dark: "bg-[#0C1015] text-[#5E656E] border border-[#2A2A2B]",
+    gold: "bg-[#E8E8E8] text-[#0F1926] border border-[#2A2A2B]/20 font-bold",
+    dark: "bg-[#0C1015] text-[#E8E8E8] border border-[#2A2A2B]",
     outline: "bg-transparent text-[#D0CFCA] border border-[#2A2A2B]",
-    green: "bg-[#2A2A2B] text-[#5E656E] border border-[#2A2A2B]",
+    green: "bg-[#2A2A2B] text-[#E8E8E8] border border-[#2A2A2B]",
   };
 
   return (

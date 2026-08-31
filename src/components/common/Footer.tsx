@@ -11,12 +11,12 @@ export const Footer: React.FC = () => {
   };
 
   return (
-    <footer className="bg-[#0C1015] text-[#5E656E] border-t border-[#2A2A2B] relative overflow-hidden">
+    <footer className="bg-[#0C1015] text-[#E8E8E8] border-t border-[#2A2A2B] relative overflow-hidden">
       {/* 🌟 1. RAPID DISPATCH BANNER */}
       <div className="bg-[#0F1926] border-b border-[#2A2A2B] py-10 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
           <div className="space-y-1 text-center md:text-left">
-            <h3 className="font-satoshi text-xl sm:text-2xl font-extrabold text-[#5E656E] uppercase tracking-[0.03em] leading-snug">
+            <h3 className="font-satoshi text-xl sm:text-2xl font-extrabold text-[#E8E8E8] uppercase tracking-[0.03em] leading-snug">
               READY TO OUTFIT YOUR ATHLETIC DESTINATION?
             </h3>
             <p className="text-xs text-[#D0CFCA] font-sans max-w-xl">
@@ -38,7 +38,7 @@ export const Footer: React.FC = () => {
             </button>
             <a
               href="tel:+918160918894"
-              className="px-5 py-3 rounded-full border border-[#2A2A2B] hover:border-[#D0CFCA] text-[#5E656E] text-xs font-mono uppercase tracking-wider transition hover:bg-[#2A2A2B]/40 flex items-center gap-2"
+              className="px-5 py-3 rounded-full border border-[#2A2A2B] hover:border-[#D0CFCA] text-[#E8E8E8] text-xs font-mono uppercase tracking-wider transition hover:bg-[#2A2A2B]/40 flex items-center gap-2"
             >
               <Phone className="w-3.5 h-3.5 text-[#D0CFCA]" />
               <span>+91 81609 18894</span>
@@ -67,7 +67,7 @@ export const Footer: React.FC = () => {
             </p>
 
             <div className="flex flex-wrap items-center gap-3 text-xs font-mono text-[#D0CFCA] pt-2">
-              <span className="flex items-center gap-1.5 text-[#5E656E] font-bold">
+              <span className="flex items-center gap-1.5 text-[#E8E8E8] font-bold">
                 <ShieldCheck className="w-4 h-4 text-[#D0CFCA]" /> ISO 9001:2015
               </span>
               <span className="text-[#2A2A2B]">•</span>
@@ -77,32 +77,32 @@ export const Footer: React.FC = () => {
 
           {/* Col 2: Solutions Navigation */}
           <div className="space-y-4 font-sans text-sm">
-            <h4 className="font-mono text-xs font-bold uppercase tracking-widest text-[#5E656E]">
+            <h4 className="font-mono text-xs font-bold uppercase tracking-widest text-[#E8E8E8]">
               Core Infrastructure
             </h4>
             <ul className="space-y-2.5 text-xs text-[#D0CFCA]">
               <li>
-                <button onClick={() => { navigateTo('equipment'); scrollToTop(); }} className="hover:text-[#5E656E] transition-colors text-left cursor-pointer flex items-center gap-1.5">
+                <button onClick={() => { navigateTo('equipment'); scrollToTop(); }} className="hover:text-[#E8E8E8] transition-colors text-left cursor-pointer flex items-center gap-1.5">
                   <span>11-Gauge Strength Machines</span>
                 </button>
               </li>
               <li>
-                <button onClick={() => { navigateTo('equipment'); scrollToTop(); }} className="hover:text-[#5E656E] transition-colors text-left cursor-pointer flex items-center gap-1.5">
+                <button onClick={() => { navigateTo('equipment'); scrollToTop(); }} className="hover:text-[#E8E8E8] transition-colors text-left cursor-pointer flex items-center gap-1.5">
                   <span>Pin-Loaded Selectorized Stations</span>
                 </button>
               </li>
               <li>
-                <button onClick={() => { navigateTo('equipment'); scrollToTop(); }} className="hover:text-[#5E656E] transition-colors text-left cursor-pointer flex items-center gap-1.5">
+                <button onClick={() => { navigateTo('equipment'); scrollToTop(); }} className="hover:text-[#E8E8E8] transition-colors text-left cursor-pointer flex items-center gap-1.5">
                   <span>Plate-Loaded Iso-Lateral Units</span>
                 </button>
               </li>
               <li>
-                <button onClick={() => { navigateTo('equipment'); scrollToTop(); }} className="hover:text-[#5E656E] transition-colors text-left cursor-pointer flex items-center gap-1.5">
+                <button onClick={() => { navigateTo('equipment'); scrollToTop(); }} className="hover:text-[#E8E8E8] transition-colors text-left cursor-pointer flex items-center gap-1.5">
                   <span>Custom Racks & Functional Cages</span>
                 </button>
               </li>
               <li>
-                <button onClick={() => { navigateTo('services'); scrollToTop(); }} className="hover:text-[#5E656E] transition-colors text-left cursor-pointer flex items-center gap-1.5">
+                <button onClick={() => { navigateTo('services'); scrollToTop(); }} className="hover:text-[#E8E8E8] transition-colors text-left cursor-pointer flex items-center gap-1.5">
                   <span>High-Density Acoustic Rubber Flooring</span>
                 </button>
               </li>
@@ -111,32 +111,32 @@ export const Footer: React.FC = () => {
 
           {/* Col 3: Services & Staffing */}
           <div className="space-y-4 font-sans text-sm">
-            <h4 className="font-mono text-xs font-bold uppercase tracking-widest text-[#5E656E]">
+            <h4 className="font-mono text-xs font-bold uppercase tracking-widest text-[#E8E8E8]">
               Management & Staffing
             </h4>
             <ul className="space-y-2.5 text-xs text-[#D0CFCA]">
               <li>
-                <button onClick={() => { navigateTo('services'); scrollToTop(); }} className="hover:text-[#5E656E] transition-colors text-left cursor-pointer">
+                <button onClick={() => { navigateTo('services'); scrollToTop(); }} className="hover:text-[#E8E8E8] transition-colors text-left cursor-pointer">
                   3D CAD Floorplan & Space Modeling
                 </button>
               </li>
               <li>
-                <button onClick={() => { navigateTo('services'); scrollToTop(); }} className="hover:text-[#5E656E] transition-colors text-left cursor-pointer">
+                <button onClick={() => { navigateTo('services'); scrollToTop(); }} className="hover:text-[#E8E8E8] transition-colors text-left cursor-pointer">
                   RFID Digital Turnstiles & Access Control
                 </button>
               </li>
               <li>
-                <button onClick={() => { navigateTo('manpower'); scrollToTop(); }} className="hover:text-[#5E656E] transition-colors text-left cursor-pointer">
+                <button onClick={() => { navigateTo('manpower'); scrollToTop(); }} className="hover:text-[#E8E8E8] transition-colors text-left cursor-pointer">
                   7-Division Certified Master Staffing
                 </button>
               </li>
               <li>
-                <button onClick={() => { navigateTo('about'); scrollToTop(); }} className="hover:text-[#5E656E] transition-colors text-left cursor-pointer">
+                <button onClick={() => { navigateTo('about'); scrollToTop(); }} className="hover:text-[#E8E8E8] transition-colors text-left cursor-pointer">
                   Corporate Wellness & Hotel Blueprints
                 </button>
               </li>
               <li>
-                <button onClick={() => { navigateTo('contact'); scrollToTop(); }} className="hover:text-[#5E656E] transition-colors text-left cursor-pointer">
+                <button onClick={() => { navigateTo('contact'); scrollToTop(); }} className="hover:text-[#E8E8E8] transition-colors text-left cursor-pointer">
                   Annual Maintenance Contracts (AMC)
                 </button>
               </li>
@@ -145,7 +145,7 @@ export const Footer: React.FC = () => {
 
           {/* Col 4: Corporate Headquarters & Manufacturing Coordinates */}
           <div className="space-y-4 font-sans text-sm">
-            <h4 className="font-mono text-xs font-bold uppercase tracking-widest text-[#5E656E]">
+            <h4 className="font-mono text-xs font-bold uppercase tracking-widest text-[#E8E8E8]">
               Coordinates & Logistics
             </h4>
             <div className="space-y-3 text-[#D0CFCA] text-xs">
@@ -155,13 +155,13 @@ export const Footer: React.FC = () => {
               </div>
               <div className="flex items-center gap-2.5">
                 <Phone className="w-4 h-4 text-[#D0CFCA] shrink-0" />
-                <a href="tel:+918160918894" className="hover:text-[#5E656E] transition font-mono text-[#5E656E]">
+                <a href="tel:+918160918894" className="hover:text-[#E8E8E8] transition font-mono text-[#E8E8E8]">
                   +91 81609 18894
                 </a>
               </div>
               <div className="flex items-center gap-2.5">
                 <Mail className="w-4 h-4 text-[#D0CFCA] shrink-0" />
-                <a href="mailto:Info@tanushfitness.com" className="hover:text-[#5E656E] transition font-mono text-[#5E656E]">
+                <a href="mailto:Info@tanushfitness.com" className="hover:text-[#E8E8E8] transition font-mono text-[#E8E8E8]">
                   Info@tanushfitness.com
                 </a>
               </div>
@@ -183,19 +183,19 @@ export const Footer: React.FC = () => {
           <div className="flex items-center gap-5">
             <button
               onClick={() => { navigateTo('admin'); scrollToTop(); }}
-              className="flex items-center gap-1.5 hover:text-[#5E656E] transition-colors cursor-pointer"
+              className="flex items-center gap-1.5 hover:text-[#E8E8E8] transition-colors cursor-pointer"
             >
               <Lock className="w-3 h-3 text-[#D0CFCA]" />
               <span>Admin Console</span>
             </button>
             <span className="text-[#2A2A2B]">•</span>
-            <button onClick={() => { navigateTo('contact'); scrollToTop(); }} className="hover:text-[#5E656E] transition-colors cursor-pointer">
+            <button onClick={() => { navigateTo('contact'); scrollToTop(); }} className="hover:text-[#E8E8E8] transition-colors cursor-pointer">
               Outfitting Desk
             </button>
             <span className="text-[#2A2A2B]">•</span>
             <button
               onClick={scrollToTop}
-              className="p-1.5 rounded-full bg-[#2A2A2B] hover:bg-[#0F1926] hover:text-white transition text-[#5E656E] cursor-pointer"
+              className="p-1.5 rounded-full bg-[#2A2A2B] hover:bg-[#0F1926] hover:text-white transition text-[#E8E8E8] cursor-pointer"
               title="Back to Top"
             >
               <ArrowUp className="w-3.5 h-3.5" />

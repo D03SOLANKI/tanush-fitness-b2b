@@ -131,17 +131,17 @@ export const EnquiryCartDrawer: React.FC = () => {
           className="w-full max-w-lg bg-[#0F1926] h-full shadow-2xl flex flex-col justify-between overflow-hidden border-l border-[#2A2A2B]"
         >
           {/* Header */}
-          <div className="p-6 border-b border-[#2A2A2B] bg-[#0C1015] text-[#5E656E] flex items-center justify-between">
+          <div className="p-6 border-b border-[#2A2A2B] bg-[#0C1015] text-[#E8E8E8] flex items-center justify-between">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-xl bg-white/5 border border-[#2A2A2B] flex items-center justify-center text-[#5E656E]">
+              <div className="w-10 h-10 rounded-xl bg-white/5 border border-[#2A2A2B] flex items-center justify-center text-[#E8E8E8]">
                 <FileText className="w-5 h-5" />
               </div>
               <div>
                 <div className="flex items-center gap-2">
-                  <h2 className="font-satoshi text-lg font-bold uppercase text-[#5E656E] leading-tight">
+                  <h2 className="font-satoshi text-lg font-bold uppercase text-[#E8E8E8] leading-tight">
                     Project RFQ Basket
                   </h2>
-                  <span className="px-2 py-0.5 rounded-full bg-[#5E656E] text-[#0F1926] font-mono text-[9px] font-bold uppercase border border-[#2A2A2B]">
+                  <span className="px-2 py-0.5 rounded-full bg-[#E8E8E8] text-[#0F1926] font-mono text-[9px] font-bold uppercase border border-[#2A2A2B]">
                     B2B DIRECT
                   </span>
                 </div>
@@ -157,7 +157,7 @@ export const EnquiryCartDrawer: React.FC = () => {
                 setIsEnquiryCartOpen(false);
                 setIsSubmitted(false);
               }}
-              className="p-2 rounded-full bg-white/5 hover:bg-white/10 text-[#D0CFCA] hover:text-[#5E656E] transition cursor-pointer"
+              className="p-2 rounded-full bg-white/5 hover:bg-white/10 text-[#D0CFCA] hover:text-[#E8E8E8] transition cursor-pointer"
             >
               <X className="w-5 h-5" />
             </button>
@@ -167,8 +167,8 @@ export const EnquiryCartDrawer: React.FC = () => {
           <div className="flex-1 overflow-y-auto p-6 space-y-6">
             {isSubmitted ? (
               /* RFQ Summary Confirmation */
-              <div className="p-6 rounded-2xl bg-[#0C1015] border border-[#2A2A2B] text-[#5E656E] space-y-5 text-center">
-                <div className="w-14 h-14 rounded-full bg-white/5 border border-[#2A2A2B] text-[#5E656E] mx-auto flex items-center justify-center">
+              <div className="p-6 rounded-2xl bg-[#0C1015] border border-[#2A2A2B] text-[#E8E8E8] space-y-5 text-center">
+                <div className="w-14 h-14 rounded-full bg-white/5 border border-[#2A2A2B] text-[#E8E8E8] mx-auto flex items-center justify-center">
                   <CheckCircle2 className="w-7 h-7" />
                 </div>
 
@@ -176,11 +176,11 @@ export const EnquiryCartDrawer: React.FC = () => {
                   <span className="text-[10px] font-mono text-[#D0CFCA] uppercase tracking-widest block mb-1">
                     OFFICIAL RFQ SPECIFICATION DISPATCHED
                   </span>
-                  <h3 className="font-satoshi text-2xl font-bold uppercase text-[#5E656E]">
+                  <h3 className="font-satoshi text-2xl font-bold uppercase text-[#E8E8E8]">
                     Quotation Logged
                   </h3>
                   <div className="text-xs font-mono text-[#D0CFCA] mt-1">
-                    Reference Code: <span className="text-[#5E656E] font-bold">{rfqRef}</span>
+                    Reference Code: <span className="text-[#E8E8E8] font-bold">{rfqRef}</span>
                   </div>
                 </div>
 
@@ -215,7 +215,7 @@ export const EnquiryCartDrawer: React.FC = () => {
                 <div className="space-y-3">
                   <div className="flex items-center justify-between text-xs font-mono text-[#D0CFCA] uppercase">
                     <span>Selected Machinery ({enquiryCart.length})</span>
-                    <span className="text-[#5E656E] font-bold">Total: {totalQuantity} Units</span>
+                    <span className="text-[#E8E8E8] font-bold">Total: {totalQuantity} Units</span>
                   </div>
 
                   {enquiryCart.length === 0 ? (
@@ -233,7 +233,7 @@ export const EnquiryCartDrawer: React.FC = () => {
                               className="w-12 h-12 rounded-lg object-cover border border-[#2A2A2B]"
                             />
                             <div>
-                              <div className="font-satoshi text-xs font-bold text-[#5E656E] line-clamp-1">{item.product.name}</div>
+                              <div className="font-satoshi text-xs font-bold text-[#E8E8E8] line-clamp-1">{item.product.name}</div>
                               <div className="text-[10px] text-[#D0CFCA] font-mono">
                                 {item.product.brand} · 11-Gauge
                               </div>
@@ -249,7 +249,7 @@ export const EnquiryCartDrawer: React.FC = () => {
                               >
                                 -
                               </button>
-                              <span className="w-6 text-center text-xs font-bold text-[#5E656E]">{item.quantity}</span>
+                              <span className="w-6 text-center text-xs font-bold text-[#E8E8E8]">{item.quantity}</span>
                               <button
                                 type="button"
                                 onClick={() => updateEnquiryCartQuantity(item.product.id, item.quantity + 1)}
@@ -276,7 +276,7 @@ export const EnquiryCartDrawer: React.FC = () => {
                 {/* Structured Form */}
                 {enquiryCart.length > 0 && (
                   <form onSubmit={handleSubmit} className="space-y-4 pt-4 border-t border-[#2A2A2B]">
-                    <div className="text-xs font-mono text-[#5E656E] uppercase tracking-widest">
+                    <div className="text-xs font-mono text-[#E8E8E8] uppercase tracking-widest">
                       Procurement Officer & Delivery Information
                     </div>
 
@@ -288,7 +288,7 @@ export const EnquiryCartDrawer: React.FC = () => {
                         placeholder="Sameer Kapoor"
                         value={formState.name}
                         onChange={e => setFormState({ ...formState, name: e.target.value })}
-                        className="w-full bg-[#0C1015] border border-[#2A2A2B] rounded-xl px-4 py-2.5 text-xs text-[#5E656E] placeholder-[#D0CFCA]/50 focus:outline-none focus:border-[#5E656E]"
+                        className="w-full bg-[#0C1015] border border-[#2A2A2B] rounded-xl px-4 py-2.5 text-xs text-[#E8E8E8] placeholder-[#D0CFCA]/50 focus:outline-none focus:border-[#E8E8E8]"
                       />
                     </div>
 
@@ -301,7 +301,7 @@ export const EnquiryCartDrawer: React.FC = () => {
                           placeholder="Iron Sanctuary Club"
                           value={formState.companyGymName}
                           onChange={e => setFormState({ ...formState, companyGymName: e.target.value })}
-                          className="w-full bg-[#0C1015] border border-[#2A2A2B] rounded-xl px-4 py-2.5 text-xs text-[#5E656E] placeholder-[#D0CFCA]/50 focus:outline-none focus:border-[#5E656E]"
+                          className="w-full bg-[#0C1015] border border-[#2A2A2B] rounded-xl px-4 py-2.5 text-xs text-[#E8E8E8] placeholder-[#D0CFCA]/50 focus:outline-none focus:border-[#E8E8E8]"
                         />
                       </div>
 
@@ -313,7 +313,7 @@ export const EnquiryCartDrawer: React.FC = () => {
                           placeholder="+91 98765 43210"
                           value={formState.mobile}
                           onChange={e => setFormState({ ...formState, mobile: e.target.value })}
-                          className="w-full bg-[#0C1015] border border-[#2A2A2B] rounded-xl px-4 py-2.5 text-xs text-[#5E656E] placeholder-[#D0CFCA]/50 focus:outline-none focus:border-[#5E656E]"
+                          className="w-full bg-[#0C1015] border border-[#2A2A2B] rounded-xl px-4 py-2.5 text-xs text-[#E8E8E8] placeholder-[#D0CFCA]/50 focus:outline-none focus:border-[#E8E8E8]"
                         />
                       </div>
                     </div>
@@ -326,7 +326,7 @@ export const EnquiryCartDrawer: React.FC = () => {
                           placeholder="Delhi / Bengaluru"
                           value={formState.city}
                           onChange={e => setFormState({ ...formState, city: e.target.value })}
-                          className="w-full bg-[#0C1015] border border-[#2A2A2B] rounded-xl px-4 py-2.5 text-xs text-[#5E656E] placeholder-[#D0CFCA]/50 focus:outline-none focus:border-[#5E656E]"
+                          className="w-full bg-[#0C1015] border border-[#2A2A2B] rounded-xl px-4 py-2.5 text-xs text-[#E8E8E8] placeholder-[#D0CFCA]/50 focus:outline-none focus:border-[#E8E8E8]"
                         />
                       </div>
 
@@ -337,7 +337,7 @@ export const EnquiryCartDrawer: React.FC = () => {
                           placeholder="24ABCDE1234F1Z5"
                           value={formState.gstin}
                           onChange={e => setFormState({ ...formState, gstin: e.target.value })}
-                          className="w-full bg-[#0C1015] border border-[#2A2A2B] rounded-xl px-4 py-2.5 text-xs text-[#5E656E] placeholder-[#D0CFCA]/50 focus:outline-none focus:border-[#5E656E] uppercase"
+                          className="w-full bg-[#0C1015] border border-[#2A2A2B] rounded-xl px-4 py-2.5 text-xs text-[#E8E8E8] placeholder-[#D0CFCA]/50 focus:outline-none focus:border-[#E8E8E8] uppercase"
                         />
                       </div>
                     </div>
