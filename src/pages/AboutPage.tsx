@@ -34,7 +34,7 @@ export const AboutPage: React.FC = () => {
               className="btn-primary flex items-center gap-2 text-xs py-3 px-6 cursor-pointer shadow-lg"
             >
               <Briefcase className="w-3.5 h-3.5 text-[#0F1926]" />
-              <span>Explore Turnkey Solutions</span>
+              <span>Explore Management Solutions</span>
             </button>
           </div>
         </div>
@@ -49,7 +49,7 @@ export const AboutPage: React.FC = () => {
         <div className="bg-[#0C1015] border border-[#2A2A2B] rounded-3xl p-8 sm:p-12 space-y-8 shadow-2xl">
           <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6 border-b border-[#2A2A2B] pb-6">
             <div className="space-y-1">
-              <h2 className="font-satoshi text-2xl sm:text-3xl font-extrabold text-[#F2F0EC] uppercase">
+              <h2 className="font-satoshi text-xl sm:text-2xl font-extrabold text-[#F2F0EC] uppercase tracking-[0.03em] leading-snug">
                 {activeTab === 'what' ? 'What is Tanush Fitness?' : 'Why Choose Tanush Fitness?'}
               </h2>
             </div>
@@ -91,7 +91,7 @@ export const AboutPage: React.FC = () => {
                     At Tanush, we redefine the fitness outfitting landscape with state-of-the-art 11-gauge laser-cut equipment, certified trainer placements, and bespoke 3D CAD facility design.
                   </p>
                   <p>
-                    Our commitment goes beyond machinery; we offer a holistic <span className="text-[#F2F0EC] font-semibold">360-degree turnkey solution</span> to transform empty commercial square footage into world-class athletic destinations.
+                    Our commitment goes beyond machinery; we offer a holistic <span className="text-[#F2F0EC] font-semibold">360-degree comprehensive solution</span> to transform empty commercial square footage into world-class athletic destinations.
                   </p>
                 </div>
               ) : (

@@ -112,7 +112,7 @@ export const Footer: React.FC = () => {
           {/* Col 3: Services & Staffing */}
           <div className="space-y-4 font-sans text-sm">
             <h4 className="font-mono text-xs font-bold uppercase tracking-widest text-[#F2F0EC]">
-              Turnkey & Staffing
+              Management & Staffing
             </h4>
             <ul className="space-y-2.5 text-xs text-[#D0CFCA]">
               <li>

@@ -15,7 +15,7 @@ export const CategoryGrid: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeader
           subtitle="COMMERCIAL & RESIDENTIAL EQUIPMENT CATEGORIES"
-          title="Explore 7 Equipment Pillars"
+          title="Explore Equipment Categories"
           description="Source commercial & residential power racks, precision cardio, urethane weights, functional rigs, rubber flooring, and lockers directly from verified B2B manufacturers."
           actionText="View Full Equipment Catalog"
           onActionClick={() => navigateTo('equipment')}

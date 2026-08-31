@@ -52,7 +52,7 @@ const USP_CARDS = [
   },
 ];
 
-const CORE_PILLARS = [
+const CORE_VERTICALS = [
   {
     id: 'equipment',
     number: '01',
@@ -74,15 +74,15 @@ const CORE_PILLARS = [
     id: 'services',
     number: '02',
     category: 'CORE VERTICAL',
-    title: 'Gym Management & Turnkey Setup',
-    tagline: 'End-to-end gym setup including planning, architectural acoustics, equipment, and automated operations',
-    description: 'Complete gym transformation from raw space to profitable launch: 3D CAD facility design, soundproof shock-absorption rubber flooring, and turnkey outfitting.',
+    title: 'Gym Management',
+    tagline: 'Comprehensive gym architecture, space modeling, acoustic rubber flooring, and automated operations',
+    description: 'Complete commercial facility transformation from raw space to profitable launch: 3D CAD facility design, soundproof shock-absorption rubber flooring, and automated operations.',
     image: 'https://images.unsplash.com/photo-1540497077202-7c8a3999166f?auto=format&fit=crop&w=800&q=80',
     icon: Briefcase,
     page: 'services' as const,
-    btnText: 'Discover Turnkey Solutions',
+    btnText: 'Discover Management Solutions',
     points: [
-      'Turnkey 3D Architectural Space Planning',
+      '3D Architectural Space Planning',
       'Heavy-Duty Acoustic & Vibration Isolation Flooring',
       'Annual Maintenance Contracts (AMC)'
     ],
@@ -259,7 +259,7 @@ export const HomePage: React.FC = () => {
                     Introducing India's premier commercial & residential fitness sanctuary & outfitting brand: <span className="text-[#F2F0EC] font-bold">Tanush Fitness</span>, where precision engineering reaches new heights and commercial strength takes center stage.
                   </p>
                   <p>
-                    At Tanush, we redefine the fitness outfitting landscape with <span className="text-[#F2F0EC] font-semibold">state-of-the-art 11-gauge laser-cut equipment</span>, curated to empower facility owners to launch world-class destinations. Our commitment goes beyond machinery; we deliver a holistic <span className="text-[#F2F0EC] font-semibold">360-degree turnkey solution</span> encompassing Commercial & Residential Equipment, Gym Management, and Manpower Services.
+                    At Tanush, we redefine the fitness outfitting landscape with <span className="text-[#F2F0EC] font-semibold">state-of-the-art 11-gauge laser-cut equipment</span>, curated to empower facility owners to launch world-class destinations. Our commitment goes beyond machinery; we deliver a holistic <span className="text-[#F2F0EC] font-semibold">360-degree comprehensive solution</span> encompassing Commercial & Residential Equipment, Gym Management, and Manpower Services.
                   </p>
                   <div className="pt-2">
                     <button
@@ -313,14 +313,14 @@ export const HomePage: React.FC = () => {
       </section>
 
       {/* ========================================================================= */}
-      {/* SECTION 4: CORE THREE PILLARS (#F2F0EC OFF-WHITE LUXURY CARDS)             */}
+      {/* SECTION 4: CORE VERTICALS (#F2F0EC OFF-WHITE LUXURY CARDS)                 */}
       {/* ========================================================================= */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 border-b border-[#2A2A2B]">
         <div className="space-y-12">
           <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-6">
             <div className="space-y-2">
               <h2 className="font-satoshi text-2xl sm:text-4xl font-extrabold uppercase text-[#F2F0EC] tracking-[0.03em] leading-snug">
-                THREE PILLARS OF GYM OUTFITTING
+                CORE PROCUREMENT VERTICALS
               </h2>
               <p className="text-sm text-[#D0CFCA] font-sans max-w-2xl mt-1 leading-relaxed">
                 Complete commercial & residential equipment supply, 3D CAD gym management, and verified manpower recruitment.
@@ -337,21 +337,21 @@ export const HomePage: React.FC = () => {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {CORE_PILLARS.map((pillar) => {
-              const IconComp = pillar.icon;
+            {CORE_VERTICALS.map((vertical) => {
+              const IconComp = vertical.icon;
               return (
                 <div
-                  key={pillar.id}
+                  key={vertical.id}
                   className="bg-[#F2F0EC] text-[#0F1926] border border-[#2A2A2B]/10 rounded-3xl overflow-hidden flex flex-col justify-between group hover:border-[#0F1926] transition-all duration-300 shadow-2xl hover:-translate-y-2"
                 >
                   <div>
                     <div
                       className="relative aspect-[16/10] w-full overflow-hidden cursor-pointer bg-[#0F1926]"
-                      onClick={() => navigateTo(pillar.page)}
+                      onClick={() => navigateTo(vertical.page)}
                     >
                       <img
-                        src={pillar.image}
-                        alt={pillar.title}
+                        src={vertical.image}
+                        alt={vertical.title}
                         className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 opacity-95 group-hover:opacity-100"
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-[#0F1926]/60 via-transparent to-transparent" />
@@ -363,19 +363,15 @@ export const HomePage: React.FC = () => {
 
                     <div className="p-7 space-y-4">
                       <div>
-                        <div className="text-xs font-mono text-[#2A2A2B] uppercase tracking-wider font-bold">
-                          PILLAR 0{pillar.number} // {pillar.category}
-                        </div>
-
                         <h3
-                          onClick={() => navigateTo(pillar.page)}
+                          onClick={() => navigateTo(vertical.page)}
                           className="font-satoshi text-lg sm:text-xl font-bold uppercase text-[#0F1926] tracking-[0.03em] mt-1 group-hover:text-[#2A2A2B] transition cursor-pointer leading-snug"
                         >
-                          {pillar.title}
+                          {vertical.title}
                         </h3>
 
                         <p className="text-xs sm:text-sm text-[#2A2A2B]/80 font-sans leading-relaxed mt-2 line-clamp-3">
-                          {pillar.description}
+                          {vertical.description}
                         </p>
                       </div>
 
@@ -384,7 +380,7 @@ export const HomePage: React.FC = () => {
                           Core Focus:
                         </div>
                         <ul className="space-y-2">
-                          {pillar.points.map((pt, ptIdx) => (
+                          {vertical.points.map((pt, ptIdx) => (
                             <li key={ptIdx} className="flex items-start gap-2.5">
                               <CheckCircle2 className="w-4 h-4 text-[#0F1926] shrink-0 mt-0.5" />
                               <span className="leading-snug text-xs text-[#2A2A2B] font-medium">{pt}</span>
@@ -398,10 +394,10 @@ export const HomePage: React.FC = () => {
                   <div className="p-7 pt-0 border-t border-[#0F1926]/10 mt-3">
                     <button
                       type="button"
-                      onClick={() => navigateTo(pillar.page)}
+                      onClick={() => navigateTo(vertical.page)}
                       className="btn-dark w-full py-3 text-xs flex items-center justify-center gap-1.5 uppercase tracking-wider cursor-pointer shadow-lg"
                     >
-                      <span>{pillar.btnText}</span>
+                      <span>{vertical.btnText}</span>
                       <ArrowRight className="w-3.5 h-3.5" />
                     </button>
                   </div>
