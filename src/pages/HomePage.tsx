@@ -130,14 +130,11 @@ export const HomePage: React.FC = () => {
             />
           </div>
 
-          {/* Clean Grand Headline */}
+          {/* Clean Grand Headline (Unbolded, Refined Proportions) */}
           <div className="space-y-4">
-            <h1 className="font-satoshi text-2xl sm:text-3xl md:text-4xl lg:text-[42px] font-black uppercase tracking-[0.025em] text-[#E8E8E8] leading-[1.4] sm:leading-[1.3] max-w-5xl mx-auto">
+            <h1 className="font-satoshi text-2xl sm:text-3xl md:text-4xl lg:text-[40px] font-bold uppercase tracking-[0.025em] text-[#E8E8E8] leading-[1.4] sm:leading-[1.3] max-w-5xl mx-auto">
               <span className="inline-flex items-center justify-center flex-wrap gap-x-3 gap-y-2">
-                <span className="relative">
-                  GET READY
-                  <span className="absolute -bottom-1 left-0 right-0 h-[2px] bg-[#D0CFCA]/40 rounded-full" />
-                </span>
+                <span>GET READY</span>
                 <span className="inline-block h-7 sm:h-9 md:h-10 w-16 sm:w-24 md:w-28 rounded-full overflow-hidden border border-white/20 shadow-md align-middle shrink-0">
                   <img
                     src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=400&q=80"
@@ -168,29 +165,20 @@ export const HomePage: React.FC = () => {
               </span>
             </h1>
 
-            <p className="font-sans text-base sm:text-lg text-[#D0CFCA] max-w-2xl mx-auto leading-relaxed font-normal">
+            <p className="font-sans text-sm sm:text-base text-[#D0CFCA] max-w-2xl mx-auto leading-relaxed font-normal">
               India's premier commercial & residential fitness infrastructure manufacturer. We engineer heavy-duty 11-gauge laser-cut machinery, deliver 3D CAD space modeling, and supply certified 7-division gym personnel.
             </p>
           </div>
 
-          {/* Action CTAs */}
+          {/* Action CTA Button (Vault Outline Style) */}
           <div className="flex flex-wrap items-center justify-center gap-4 pt-2">
             <button
               type="button"
               onClick={() => navigateTo('equipment')}
-              className="btn-primary px-8 py-3.5 text-xs font-bold uppercase tracking-wider flex items-center gap-2 cursor-pointer shadow-xl"
+              className="px-6 py-2.5 rounded border border-[#E8E8E8]/50 hover:border-[#E8E8E8] hover:bg-white/5 text-[#E8E8E8] font-mono text-xs uppercase tracking-widest flex items-center gap-2 cursor-pointer transition-all shadow-md"
             >
-              <span>Explore Equipment Sanctuary</span>
-              <ArrowRight className="w-4 h-4" />
-            </button>
-
-            <button
-              type="button"
-              onClick={() => navigateTo('services')}
-              className="btn-outline px-8 py-3.5 text-xs font-bold uppercase tracking-wider flex items-center gap-2 cursor-pointer"
-            >
-              <Briefcase className="w-4 h-4 text-[#D0CFCA]" />
-              <span>Book 3D CAD Blueprint</span>
+              <span>JOIN TANUSH</span>
+              <ArrowUpRight className="w-3.5 h-3.5" />
             </button>
           </div>
 
@@ -207,20 +195,20 @@ export const HomePage: React.FC = () => {
               {/* Clean 4-Stat Ribbon Overlay */}
               <div className="absolute bottom-4 left-4 right-4 sm:bottom-6 sm:left-6 sm:right-6 p-4 sm:p-5 rounded-2xl bg-[#0C1015]/95 backdrop-blur-md border border-[#2A2A2B] grid grid-cols-2 sm:grid-cols-4 gap-4 text-center font-mono">
                 <div>
-                  <div className="font-satoshi text-lg sm:text-2xl font-black text-[#E8E8E8]">500+</div>
-                  <div className="text-[10px] text-[#D0CFCA] uppercase font-bold">Clubs Outfitted</div>
+                  <div className="font-satoshi text-lg sm:text-2xl font-bold text-[#E8E8E8]">500+</div>
+                  <div className="text-[10px] text-[#D0CFCA] uppercase font-medium">Clubs Outfitted</div>
                 </div>
                 <div>
-                  <div className="font-satoshi text-lg sm:text-2xl font-black text-[#E8E8E8]">11-GAUGE</div>
-                  <div className="text-[10px] text-[#D0CFCA] uppercase font-bold">Laser-Cut Steel</div>
+                  <div className="font-satoshi text-lg sm:text-2xl font-bold text-[#E8E8E8]">11-GAUGE</div>
+                  <div className="text-[10px] text-[#D0CFCA] uppercase font-medium">Laser-Cut Steel</div>
                 </div>
                 <div>
-                  <div className="font-satoshi text-lg sm:text-2xl font-black text-[#E8E8E8]">ISO 9001</div>
-                  <div className="text-[10px] text-[#D0CFCA] uppercase font-bold">Certified Plant</div>
+                  <div className="font-satoshi text-lg sm:text-2xl font-bold text-[#E8E8E8]">ISO 9001</div>
+                  <div className="text-[10px] text-[#D0CFCA] uppercase font-medium">Certified Plant</div>
                 </div>
                 <div>
-                  <div className="font-satoshi text-lg sm:text-2xl font-black text-[#E8E8E8]">18% ITC</div>
-                  <div className="text-[10px] text-[#D0CFCA] uppercase font-bold">GST Direct Billing</div>
+                  <div className="font-satoshi text-lg sm:text-2xl font-bold text-[#E8E8E8]">18% ITC</div>
+                  <div className="text-[10px] text-[#D0CFCA] uppercase font-medium">GST Direct Billing</div>
                 </div>
               </div>
             </div>
@@ -256,7 +244,7 @@ export const HomePage: React.FC = () => {
           {/* Header & Tab Switcher */}
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-6">
             <div className="space-y-2">
-              <h2 className="font-satoshi text-2xl sm:text-4xl font-extrabold uppercase text-[#E8E8E8] tracking-[0.03em] leading-snug">
+              <h2 className="font-satoshi text-2xl sm:text-3xl font-bold uppercase text-[#E8E8E8] tracking-[0.03em] leading-snug">
                 {visionTab === 'what' ? 'What is Tanush?' : 'Why Tanush?'}
               </h2>
             </div>
@@ -268,7 +256,7 @@ export const HomePage: React.FC = () => {
                 onClick={() => setVisionTab('what')}
                 className={`px-6 py-2.5 rounded-full transition cursor-pointer ${
                   visionTab === 'what'
-                    ? 'bg-[#E8E8E8] text-[#0F1926] font-bold shadow-md'
+                    ? 'bg-[#E8E8E8] text-[#0F1926] font-semibold shadow-md'
                     : 'text-[#D0CFCA] hover:text-[#E8E8E8]'
                 }`}
               >
@@ -279,7 +267,7 @@ export const HomePage: React.FC = () => {
                 onClick={() => setVisionTab('why')}
                 className={`px-6 py-2.5 rounded-full transition cursor-pointer ${
                   visionTab === 'why'
-                    ? 'bg-[#E8E8E8] text-[#0F1926] font-bold shadow-md'
+                    ? 'bg-[#E8E8E8] text-[#0F1926] font-semibold shadow-md'
                     : 'text-[#D0CFCA] hover:text-[#E8E8E8]'
                 }`}
               >
@@ -294,7 +282,7 @@ export const HomePage: React.FC = () => {
               {visionTab === 'what' ? (
                 <div className="space-y-5 text-[#D0CFCA] font-sans text-sm sm:text-base leading-relaxed">
                   <p>
-                    Introducing India's premier commercial & residential fitness sanctuary & outfitting brand: <span className="text-[#E8E8E8] font-bold">Tanush Fitness</span>, where precision engineering reaches new heights and commercial strength takes center stage.
+                    Introducing India's premier commercial & residential fitness sanctuary & outfitting brand: <span className="text-[#E8E8E8] font-semibold">Tanush Fitness</span>, where precision engineering reaches new heights and commercial strength takes center stage.
                   </p>
                   <p>
                     At Tanush, we redefine the fitness outfitting landscape with <span className="text-[#E8E8E8] font-semibold">state-of-the-art 11-gauge laser-cut equipment</span>, curated to empower facility owners to launch world-class destinations. Our commitment goes beyond machinery; we deliver a holistic <span className="text-[#E8E8E8] font-semibold">360-degree comprehensive solution</span> encompassing Commercial & Residential Equipment, Gym Management, and Manpower Services.
@@ -313,7 +301,7 @@ export const HomePage: React.FC = () => {
               ) : (
                 <div className="space-y-5 text-[#D0CFCA] font-sans text-sm sm:text-base leading-relaxed">
                   <p>
-                    As a testament to unwavering commitment to biomechanical excellence, <span className="text-[#E8E8E8] font-bold">Tanush Fitness</span> aims to redefine commercial fitness spaces by offering direct factory procurement, 18% GST Input Tax Credit invoicing, zero middleman trading markups, and verified trainer placement pipelines.
+                    As a testament to unwavering commitment to biomechanical excellence, <span className="text-[#E8E8E8] font-semibold">Tanush Fitness</span> aims to redefine commercial fitness spaces by offering direct factory procurement, 18% GST Input Tax Credit invoicing, zero middleman trading markups, and verified trainer placement pipelines.
                   </p>
                   <blockquote className="p-6 sm:p-8 rounded-3xl bg-[#0C1015] border-l-4 border-[#E8E8E8] text-[#E8E8E8] italic font-sans text-base sm:text-lg leading-relaxed shadow-2xl">
                     "Tanush Fitness is not merely an equipment vendor; it is an end-to-end commercial infrastructure partner built for gym owners who demand perfection in every square foot."
@@ -341,7 +329,7 @@ export const HomePage: React.FC = () => {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#0C1015] via-transparent to-transparent opacity-60" />
                 <div className="absolute bottom-5 left-5 right-5 p-4 rounded-2xl bg-[#0C1015]/95 border border-[#2A2A2B] font-mono text-xs text-[#E8E8E8] flex items-center justify-between shadow-2xl">
-                  <span className="text-[#E8E8E8] font-bold">ISO 9001:2015 CERTIFIED</span>
+                  <span className="text-[#E8E8E8] font-semibold">ISO 9001:2015 CERTIFIED</span>
                   <span className="text-[#D0CFCA]">500+ SANCTUARIES</span>
                 </div>
               </div>
@@ -357,7 +345,7 @@ export const HomePage: React.FC = () => {
         <div className="space-y-12">
           <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-6">
             <div className="space-y-2">
-              <h2 className="font-satoshi text-2xl sm:text-4xl font-extrabold uppercase text-[#E8E8E8] tracking-[0.03em] leading-snug">
+              <h2 className="font-satoshi text-2xl sm:text-3xl font-bold uppercase text-[#E8E8E8] tracking-[0.03em] leading-snug">
                 CORE PROCUREMENT VERTICALS
               </h2>
               <p className="text-sm text-[#D0CFCA] font-sans max-w-2xl mt-1 leading-relaxed">
@@ -414,7 +402,7 @@ export const HomePage: React.FC = () => {
                       </div>
 
                       <div className="space-y-2 pt-4 border-t border-[#0F1926]/10 font-sans text-xs text-[#2A2A2B]">
-                        <div className="text-xs font-sans text-[#0F1926] uppercase tracking-wider font-extrabold">
+                        <div className="text-xs font-sans text-[#0F1926] uppercase tracking-wider font-semibold">
                           Core Focus:
                         </div>
                         <ul className="space-y-2">
@@ -453,7 +441,7 @@ export const HomePage: React.FC = () => {
         <div className="space-y-12">
           <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-6">
             <div className="space-y-2">
-              <h2 className="font-satoshi text-2xl sm:text-4xl font-extrabold uppercase text-[#E8E8E8] tracking-[0.03em] leading-snug">
+              <h2 className="font-satoshi text-2xl sm:text-3xl font-bold uppercase text-[#E8E8E8] tracking-[0.03em] leading-snug">
                 OUR USP
               </h2>
             </div>
@@ -491,7 +479,7 @@ export const HomePage: React.FC = () => {
                   {card.brands.map((b, bIdx) => (
                     <span
                       key={bIdx}
-                      className="px-2.5 py-1 rounded-md bg-[#0F1926]/10 text-[10px] font-mono text-[#0F1926] font-bold"
+                      className="px-2.5 py-1 rounded-md bg-[#0F1926]/10 text-[10px] font-mono text-[#0F1926] font-semibold"
                     >
                       {b}
                     </span>
