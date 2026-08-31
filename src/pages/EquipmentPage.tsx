@@ -99,7 +99,7 @@ export const EquipmentPage: React.FC = () => {
   };
 
   return (
-    <main className="pt-24 pb-20 bg-[#090C10] min-h-screen text-[#F0EBE3] ">
+    <main className="pt-24 pb-20 bg-[#0F1926] min-h-screen text-[#F2F0EC]">
       <SEO
         title="Commercial & Residential Equipment Sanctuary | Tanush Fitness B2B"
         description="Factory direct 11-gauge power racks, plate-loaded selectorized machines, cardio consoles, and urethane free weights. 100% itemized RFQ quotations."
@@ -107,18 +107,13 @@ export const EquipmentPage: React.FC = () => {
 
       {/* Hero Header */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 pb-12">
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 border-b border-white/10 pb-8">
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 border-b border-[#2A2A2B] pb-8">
           <div className="space-y-3">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-xs font-mono text-white/80 tracking-widest uppercase">
-              <Sparkles className="w-3.5 h-3.5" />
-              <span>PRECISION BIOMECHANICS // ISO 9001:2015 CERTIFIED</span>
-            </div>
-
-            <h1 className="font-satoshi text-3xl sm:text-5xl md:text-6xl font-extrabold uppercase text-white tracking-tight">
+            <h1 className="font-satoshi text-3xl sm:text-5xl md:text-6xl font-extrabold uppercase text-[#F2F0EC] tracking-tight">
               EQUIPMENT SANCTUARY
             </h1>
 
-            <p className="text-sm sm:text-base text-white/90 max-w-2xl font-sans leading-relaxed">
+            <p className="text-sm sm:text-base text-[#D0CFCA] max-w-2xl font-sans leading-relaxed">
               Precision-engineered commercial & residential strength lines, selectorized pin-loaded stacks, and Olympic competition platforms. Add items to your project list for official 18% GST ITC procurement quotes.
             </p>
           </div>
@@ -126,9 +121,9 @@ export const EquipmentPage: React.FC = () => {
           <div className="flex items-center gap-3 shrink-0">
             <a
               href="tel:+918160918894"
-              className="btn-vault flex items-center gap-2 text-xs py-3 px-6 shadow-lg cursor-pointer"
+              className="btn-primary flex items-center gap-2 text-xs py-3 px-6 shadow-lg cursor-pointer"
             >
-              <Phone className="w-3.5 h-3.5" />
+              <Phone className="w-3.5 h-3.5 text-[#0F1926]" />
               <span>Direct Outfitting Desk</span>
             </a>
           </div>
@@ -136,27 +131,27 @@ export const EquipmentPage: React.FC = () => {
       </section>
 
       {/* Marquee Banner */}
-      <MarqueeStrip theme="orange" speed="slow" />
+      <MarqueeStrip theme="white" speed="slow" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 space-y-10">
         {/* Controls Bar: Search & Category Pills */}
-        <div className="space-y-4 border-b border-white/10 pb-6">
+        <div className="space-y-4 border-b border-[#2A2A2B] pb-6">
           {/* Search & Brands Strip */}
           <div className="flex flex-col md:flex-row items-stretch md:items-center justify-between gap-4">
             <div className="relative flex-1 max-w-md">
-              <Search className="w-4 h-4 absolute left-3.5 top-1/2 -translate-y-1/2 text-[#6B6358]" />
+              <Search className="w-4 h-4 absolute left-3.5 top-1/2 -translate-y-1/2 text-[#D0CFCA]" />
               <input
                 type="text"
                 placeholder="Search power racks, cable crossover, dumbbells..."
                 value={searchQuery}
                 onChange={e => setSearchQuery(e.target.value)}
-                className="w-full bg-[#0D1118] border border-white/10 rounded-full pl-10 pr-4 py-2.5 text-xs text-white placeholder-[#6B6358] focus:outline-none focus:border-white"
+                className="w-full bg-[#0C1015] border border-[#2A2A2B] rounded-full pl-10 pr-4 py-2.5 text-xs text-[#F2F0EC] placeholder-[#D0CFCA] focus:outline-none focus:border-[#F2F0EC] transition-colors"
               />
               {searchQuery && (
                 <button
                   type="button"
                   onClick={() => setSearchQuery('')}
-                  className="absolute right-3.5 top-1/2 -translate-y-1/2 text-[#6B6358] hover:text-white"
+                  className="absolute right-3.5 top-1/2 -translate-y-1/2 text-[#D0CFCA] hover:text-white cursor-pointer"
                 >
                   <X className="w-3.5 h-3.5" />
                 </button>
@@ -165,16 +160,16 @@ export const EquipmentPage: React.FC = () => {
 
             {/* Application Filters */}
             <div className="flex flex-wrap items-center gap-2">
-              <span className="text-xs font-mono text-white/60 uppercase mr-1 hidden sm:inline">Facility:</span>
+              <span className="text-xs font-mono text-[#D0CFCA] uppercase mr-1 hidden sm:inline font-bold">Facility:</span>
               {['all', 'Commercial & Residential Gym', 'CrossFit Box', 'Hotel & Resort', 'Corporate Campus'].map((app) => (
                 <button
                   key={app}
                   type="button"
                   onClick={() => setActiveApplication(app)}
-                  className={`px-3 py-1.5 rounded-full text-xs font-mono uppercase tracking-wider transition ${
+                  className={`px-3.5 py-1.5 rounded-full text-xs font-mono uppercase tracking-wider transition cursor-pointer ${
                     activeApplication === app
-                      ? 'bg-[#D26539] text-[#090C10] font-bold shadow-md'
-                      : 'bg-[#0D1118] text-[#A8A090] border border-white/5 hover:border-white/20 hover:text-white'
+                      ? 'bg-[#F2F0EC] text-[#0F1926] font-bold shadow-md'
+                      : 'bg-[#0C1015] text-[#D0CFCA] border border-[#2A2A2B] hover:border-[#D0CFCA] hover:text-white'
                   }`}
                 >
                   {app === 'all' ? 'All Spaces' : app}
@@ -188,10 +183,10 @@ export const EquipmentPage: React.FC = () => {
             <button
               type="button"
               onClick={() => setActiveCategory('all')}
-              className={`px-5 py-2.5 rounded-full text-xs font-mono uppercase tracking-wider whitespace-nowrap transition ${
+              className={`px-5 py-2.5 rounded-full text-xs font-mono uppercase tracking-wider whitespace-nowrap transition cursor-pointer ${
                 activeCategory === 'all'
-                  ? 'bg-[#D26539] text-[#090C10] font-bold shadow-md'
-                  : 'bg-[#0D1118] text-[#A8A090] border border-white/5 hover:border-white/20 hover:text-white'
+                  ? 'bg-[#F2F0EC] text-[#0F1926] font-bold shadow-md'
+                  : 'bg-[#0C1015] text-[#D0CFCA] border border-[#2A2A2B] hover:border-[#D0CFCA] hover:text-white'
               }`}
             >
               All Machinery ({products.length})
@@ -203,10 +198,10 @@ export const EquipmentPage: React.FC = () => {
                   key={cat.id}
                   type="button"
                   onClick={() => setActiveCategory(cat.id)}
-                  className={`px-5 py-2.5 rounded-full text-xs font-mono uppercase tracking-wider whitespace-nowrap transition flex items-center gap-2 ${
+                  className={`px-5 py-2.5 rounded-full text-xs font-mono uppercase tracking-wider whitespace-nowrap transition flex items-center gap-2 cursor-pointer ${
                     activeCategory === cat.id
-                      ? 'bg-[#D26539] text-[#090C10] font-bold shadow-md'
-                      : 'bg-[#0D1118] text-[#A8A090] border border-white/5 hover:border-white/20 hover:text-white'
+                      ? 'bg-[#F2F0EC] text-[#0F1926] font-bold shadow-md'
+                      : 'bg-[#0C1015] text-[#D0CFCA] border border-[#2A2A2B] hover:border-[#D0CFCA] hover:text-white'
                   }`}
                 >
                   <span>{cat.name}</span>
@@ -217,7 +212,7 @@ export const EquipmentPage: React.FC = () => {
           </div>
         </div>
 
-        {/* Product Grid (3 PER ROW MATCHING SERVICES & MANPOWER) */}
+        {/* Product Grid (3 PER ROW) */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
           {filteredProducts.map((product) => {
             const isWish = isInWishlist(product.id);
@@ -226,13 +221,13 @@ export const EquipmentPage: React.FC = () => {
             return (
               <div
                 key={product.id}
-                className="bg-[#0D1118] border border-white/10 rounded-none overflow-hidden flex flex-col justify-between group hover:border-white/30 transition-all duration-300 shadow-xl"
+                className="bg-[#F2F0EC] text-[#0F1926] border border-[#2A2A2B]/10 rounded-2xl overflow-hidden flex flex-col justify-between group hover:border-[#0F1926] transition-all duration-300 shadow-2xl hover:-translate-y-1.5"
               >
                 <div>
                   {/* Visual Image Header */}
                   <div
                     onClick={() => handleOpenDetailModal(product)}
-                    className="relative aspect-[16/10] w-full overflow-hidden cursor-pointer bg-[#090C10]"
+                    className="relative aspect-[16/10] w-full overflow-hidden cursor-pointer bg-[#0F1926]"
                   >
                     <img
                       src={product.image || fallbackImage}
@@ -240,13 +235,13 @@ export const EquipmentPage: React.FC = () => {
                       onError={(e) => {
                         (e.target as HTMLImageElement).src = fallbackImage;
                       }}
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 opacity-90 group-hover:opacity-100"
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 opacity-95 group-hover:opacity-100"
                       loading="lazy"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-[#0D1118] via-[#0D1118]/30 to-transparent" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#0F1926]/60 via-transparent to-transparent" />
 
                     {/* Bottom Right Steel Spec Pill */}
-                    <div className="absolute bottom-3 right-3 bg-[#090C10]/90 px-2.5 py-0.5 border border-white/10 rounded-none text-[9px] font-mono text-emerald-400 font-bold">
+                    <div className="absolute bottom-3 right-3 bg-[#0F1926] px-2.5 py-1 rounded-md text-[9px] font-mono text-[#F2F0EC] font-bold border border-white/15">
                       ⚡ {product.specs?.['Steel Frame'] || '11-GAUGE STEEL'}
                     </div>
 
@@ -256,10 +251,10 @@ export const EquipmentPage: React.FC = () => {
                         e.stopPropagation();
                         toggleWishlist(product.id);
                       }}
-                      className={`absolute top-3 right-3 p-2 rounded-full border transition ${
+                      className={`absolute top-3 right-3 p-2 rounded-full border transition cursor-pointer ${
                         isWish
-                          ? 'bg-[#D26539] text-white border-[#D26539]'
-                          : 'bg-[#090C10]/60 text-[#A8A090] border-white/10 hover:text-white'
+                          ? 'bg-[#0F1926] text-[#F2F0EC] border-[#0F1926]'
+                          : 'bg-[#0C1015]/80 text-[#D0CFCA] border-white/15 hover:text-white'
                       }`}
                     >
                       <Heart className="w-3.5 h-3.5 fill-current" />
@@ -267,47 +262,47 @@ export const EquipmentPage: React.FC = () => {
                   </div>
 
                   {/* Card Content */}
-                  <div className="p-5 sm:p-6 space-y-4">
+                  <div className="p-6 space-y-4">
                     <div>
-                      <div className="text-[11px] font-mono text-[#F0EBE3] uppercase tracking-wider font-bold">
+                      <div className="text-[11px] font-mono text-[#2A2A2B] uppercase tracking-wider font-bold">
                         {product.brand} // {product.category}
                       </div>
 
                       <h3
                         onClick={() => handleOpenDetailModal(product)}
-                        className="font-satoshi text-lg sm:text-xl font-bold uppercase text-white tracking-tight mt-1 group-hover:text-white transition cursor-pointer line-clamp-1"
+                        className="font-satoshi text-lg sm:text-xl font-bold uppercase text-[#0F1926] tracking-tight mt-1 group-hover:text-[#2A2A2B] transition cursor-pointer line-clamp-1"
                       >
                         {product.name}
                       </h3>
 
-                      <p className="text-xs text-white/80 font-sans leading-relaxed mt-2 line-clamp-2">
+                      <p className="text-xs text-[#2A2A2B]/80 font-sans leading-relaxed mt-2 line-clamp-2">
                         {product.description}
                       </p>
                     </div>
 
                     {/* Specifications Grid */}
-                    <div className="grid grid-cols-2 gap-2 pt-2 border-t border-white/5 font-mono text-[10px]">
-                      <div className="bg-white/5 p-2 rounded-none border border-white/5">
-                        <span className="text-[#6B6358] block text-[9px] font-mono uppercase">CAPACITY:</span>
-                        <span className="text-white font-bold">{product.specs?.['Max Load'] || product.specs?.['Weight Capacity'] || '600 KG'}</span>
+                    <div className="grid grid-cols-2 gap-2 pt-2 border-t border-[#0F1926]/10 font-mono text-[10px]">
+                      <div className="bg-[#0F1926]/5 p-2 rounded-lg border border-[#0F1926]/10">
+                        <span className="text-[#2A2A2B] block text-[9px] font-mono uppercase font-semibold">CAPACITY:</span>
+                        <span className="text-[#0F1926] font-bold">{product.specs?.['Max Load'] || product.specs?.['Weight Capacity'] || '600 KG'}</span>
                       </div>
-                      <div className="bg-white/5 p-2 rounded-none border border-white/5">
-                        <span className="text-[#6B6358] block text-[9px] font-mono uppercase">WARRANTY:</span>
-                        <span className="text-white font-bold">{product.specs?.['Warranty'] || '10 Yrs Frame'}</span>
+                      <div className="bg-[#0F1926]/5 p-2 rounded-lg border border-[#0F1926]/10">
+                        <span className="text-[#2A2A2B] block text-[9px] font-mono uppercase font-semibold">WARRANTY:</span>
+                        <span className="text-[#0F1926] font-bold">{product.specs?.['Warranty'] || '10 Yrs Frame'}</span>
                       </div>
                     </div>
                   </div>
                 </div>
 
                 {/* Bottom Action Footer */}
-                <div className="p-5 sm:p-6 pt-0 space-y-2.5 border-t border-white/5 mt-3">
+                <div className="p-6 pt-0 space-y-2.5 border-t border-[#0F1926]/10 mt-3">
                   <button
                     type="button"
                     onClick={() => {
                       addToEnquiryCart(product, 1);
                       setIsEnquiryCartOpen(true);
                     }}
-                    className="btn-vault w-full py-2.5 text-xs flex items-center justify-center gap-1.5 cursor-pointer"
+                    className="btn-dark w-full py-2.5 text-xs flex items-center justify-center gap-1.5 cursor-pointer shadow-md"
                   >
                     <FileText className="w-3.5 h-3.5" />
                     <span>Add to RFQ Project List</span>
@@ -317,18 +312,18 @@ export const EquipmentPage: React.FC = () => {
                     <button
                       type="button"
                       onClick={() => handleOpenDetailModal(product)}
-                      className="btn-vault-outline flex-1 py-1.5 text-[11px] flex items-center justify-center gap-1.5 cursor-pointer"
+                      className="border border-[#0F1926]/20 hover:border-[#0F1926] text-[#0F1926] flex-1 py-1.5 text-[11px] font-mono uppercase font-bold rounded-lg flex items-center justify-center gap-1.5 cursor-pointer transition-colors bg-white/50"
                     >
-                      <Eye className="w-3.5 h-3.5" />
+                      <Eye className="w-3.5 h-3.5 text-[#0F1926]" />
                       <span>CAD Specs</span>
                     </button>
                     <button
                       type="button"
                       onClick={() => handleToggleCompare(product)}
-                      className={`px-3 py-1.5 rounded-none text-[11px] font-mono border transition cursor-pointer ${
+                      className={`px-3 py-1.5 rounded-lg text-[11px] font-mono border transition cursor-pointer ${
                         isCompared
-                          ? 'bg-white/10 text-white border-white/40 font-bold'
-                          : 'bg-[#0D1118] text-[#A8A090] border-white/10 hover:text-white'
+                          ? 'bg-[#0F1926] text-white border-[#0F1926] font-bold'
+                          : 'bg-transparent text-[#2A2A2B] border-[#0F1926]/20 hover:text-[#0F1926] hover:border-[#0F1926]'
                       }`}
                     >
                       {isCompared ? 'Compared' : 'Compare'}
@@ -341,33 +336,34 @@ export const EquipmentPage: React.FC = () => {
         </div>
       </div>
 
+      {/* Machinery Detail CAD Modal */}
       <AnimatePresence>
         {selectedProduct && (
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-50 bg-black/80  flex items-center justify-center p-4 sm:p-6 overflow-y-auto"
+            className="fixed inset-0 z-50 bg-[#0C1015]/80 backdrop-blur-md flex items-center justify-center p-4 sm:p-6 overflow-y-auto"
           >
             <motion.div
               initial={{ scale: 0.95, y: 20 }}
               animate={{ scale: 1, y: 0 }}
               exit={{ scale: 0.95, y: 20 }}
-              className="bg-[#0D1118] border border-white/10 rounded-none max-w-4xl w-full max-h-[90vh] overflow-y-auto p-6 sm:p-8 space-y-8 "
+              className="bg-[#F2F0EC] text-[#0F1926] border border-[#2A2A2B]/20 rounded-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto p-6 sm:p-8 space-y-8 shadow-2xl"
             >
-              <div className="flex items-start justify-between border-b border-white/10 pb-4">
+              <div className="flex items-start justify-between border-b border-[#0F1926]/15 pb-4">
                 <div>
-                  <span className="text-[10px] font-mono text-[#A8A090] uppercase tracking-widest block mb-1">
+                  <span className="text-[10px] font-mono text-[#2A2A2B] uppercase tracking-widest block mb-1 font-bold">
                     COMMERCIAL & RESIDENTIAL MACHINERY SCHEMATICS // {selectedProduct.brand}
                   </span>
-                  <h2 className="font-satoshi text-2xl sm:text-3xl font-extrabold text-white uppercase">
+                  <h2 className="font-satoshi text-2xl sm:text-3xl font-extrabold text-[#0F1926] uppercase">
                     {selectedProduct.name}
                   </h2>
                 </div>
                 <button
                   type="button"
                   onClick={() => setSelectedProduct(null)}
-                  className="p-2 rounded-full bg-white/5 hover:bg-white/10 text-[#A8A090] hover:text-white transition"
+                  className="p-2 rounded-full bg-[#0F1926]/10 hover:bg-[#0F1926]/20 text-[#0F1926] transition cursor-pointer"
                 >
                   <X className="w-5 h-5" />
                 </button>
@@ -376,7 +372,7 @@ export const EquipmentPage: React.FC = () => {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
                 {/* Images */}
                 <div className="space-y-4">
-                  <div className="h-72 rounded-none overflow-hidden bg-[#090C10] border border-white/10">
+                  <div className="h-72 rounded-xl overflow-hidden bg-[#0F1926] border border-[#0F1926]/15 shadow-inner">
                     <img
                       src={selectedProduct.gallery?.[selectedImage] || selectedProduct.image || fallbackImage}
                       alt={selectedProduct.name}
@@ -393,7 +389,7 @@ export const EquipmentPage: React.FC = () => {
                           key={idx}
                           onClick={() => setSelectedImage(idx)}
                           className={`w-16 h-16 rounded-xl overflow-hidden cursor-pointer border ${
-                            selectedImage === idx ? 'border-[#D26539]' : 'border-white/10 opacity-60'
+                            selectedImage === idx ? 'border-[#0F1926] bg-[#0F1926]/10' : 'border-[#0F1926]/15 opacity-60'
                           }`}
                         >
                           <img src={img} alt="thumbnail" className="w-full h-full object-cover" />
@@ -405,45 +401,45 @@ export const EquipmentPage: React.FC = () => {
 
                 {/* Specifications & Actions */}
                 <div className="space-y-6">
-                  <p className="text-sm text-[#A8A090] font-sans leading-relaxed">
+                  <p className="text-sm text-[#2A2A2B] font-sans leading-relaxed">
                     {selectedProduct.description}
                   </p>
 
                   {/* Spec List */}
-                  <div className="space-y-2.5 font-mono text-xs text-[#A8A090] bg-[#090C10] p-4 rounded-xl border border-white/5">
-                    <div className="flex justify-between py-1 border-b border-white/5">
-                      <span className="text-[#6B6358]">FRAME STEEL:</span>
-                      <span className="text-white font-bold">{selectedProduct.specs?.['Steel Frame'] || '11-Gauge (3.0mm) Laser Cut'}</span>
+                  <div className="space-y-2.5 font-mono text-xs text-[#2A2A2B] bg-white p-4 rounded-xl border border-[#0F1926]/15 shadow-sm">
+                    <div className="flex justify-between py-1 border-b border-[#0F1926]/10">
+                      <span className="text-[#2A2A2B]/70">FRAME STEEL:</span>
+                      <span className="text-[#0F1926] font-bold">{selectedProduct.specs?.['Steel Frame'] || '11-Gauge (3.0mm) Laser Cut'}</span>
                     </div>
-                    <div className="flex justify-between py-1 border-b border-white/5">
-                      <span className="text-[#6B6358]">WEIGHT CAPACITY:</span>
-                      <span className="text-white font-bold">{selectedProduct.specs?.['Max Load'] || selectedProduct.specs?.['Weight Capacity'] || '650 KG Tested Load'}</span>
+                    <div className="flex justify-between py-1 border-b border-[#0F1926]/10">
+                      <span className="text-[#2A2A2B]/70">WEIGHT CAPACITY:</span>
+                      <span className="text-[#0F1926] font-bold">{selectedProduct.specs?.['Max Load'] || selectedProduct.specs?.['Weight Capacity'] || '650 KG Tested Load'}</span>
                     </div>
-                    <div className="flex justify-between py-1 border-b border-white/5">
-                      <span className="text-[#6B6358]">FINISH:</span>
-                      <span className="text-white font-bold">{selectedProduct.specs?.['Coating'] || 'Dual Electrostatic Powder Coat'}</span>
+                    <div className="flex justify-between py-1 border-b border-[#0F1926]/10">
+                      <span className="text-[#2A2A2B]/70">FINISH:</span>
+                      <span className="text-[#0F1926] font-bold">{selectedProduct.specs?.['Coating'] || 'Dual Electrostatic Powder Coat'}</span>
                     </div>
                     <div className="flex justify-between py-1">
-                      <span className="text-[#6B6358]">WARRANTY:</span>
-                      <span className="text-emerald-400 font-bold">{selectedProduct.specs?.['Warranty'] || '10 Years Structural Frame'}</span>
+                      <span className="text-[#2A2A2B]/70">WARRANTY:</span>
+                      <span className="text-[#0F1926] font-bold">{selectedProduct.specs?.['Warranty'] || '10 Years Structural Frame'}</span>
                     </div>
                   </div>
 
                   {/* Quantity & Cart Button */}
                   <div className="flex items-center gap-4">
-                    <div className="flex items-center gap-3 bg-[#090C10] border border-white/10 rounded-full px-4 py-2">
+                    <div className="flex items-center gap-3 bg-white border border-[#0F1926]/20 rounded-full px-4 py-2">
                       <button
                         type="button"
                         onClick={() => setModalQuantity(Math.max(1, modalQuantity - 1))}
-                        className="text-[#A8A090] hover:text-white"
+                        className="text-[#2A2A2B] hover:text-[#0F1926] font-bold cursor-pointer"
                       >
                         -
                       </button>
-                      <span className="font-mono text-sm font-bold text-white px-2">{modalQuantity}</span>
+                      <span className="font-mono text-sm font-bold text-[#0F1926] px-2">{modalQuantity}</span>
                       <button
                         type="button"
                         onClick={() => setModalQuantity(modalQuantity + 1)}
-                        className="text-[#A8A090] hover:text-white"
+                        className="text-[#2A2A2B] hover:text-[#0F1926] font-bold cursor-pointer"
                       >
                         +
                       </button>
@@ -456,7 +452,7 @@ export const EquipmentPage: React.FC = () => {
                         setSelectedProduct(null);
                         setIsEnquiryCartOpen(true);
                       }}
-                      className="btn-vault flex-1 py-3 text-xs flex items-center justify-center gap-2"
+                      className="btn-dark flex-1 py-3 text-xs flex items-center justify-center gap-2 cursor-pointer shadow-lg"
                     >
                       <FileText className="w-4 h-4" />
                       <span>Add to Outfitting RFQ Project</span>

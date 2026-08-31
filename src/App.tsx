@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import Lenis from 'lenis';
 import { AppProvider, useApp } from './context/AppContext';
+import { Navbar } from './components/common/Navbar';
 import { BottomNavDock } from './components/common/BottomNavDock';
 import { Footer } from './components/common/Footer';
 import { EnquiryCartDrawer } from './components/cart/EnquiryCartDrawer';
@@ -23,7 +24,7 @@ const MainContent: React.FC = () => {
     }
 
     try {
-      // Initialize buttery-smooth momentum / inertia scrolling (Vault experience)
+      // Initialize buttery-smooth momentum / inertia scrolling
       const lenis = new Lenis({
         duration: 1.1,
         easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
@@ -76,11 +77,10 @@ const MainContent: React.FC = () => {
   const isAdmin = currentPage === 'admin';
 
   return (
-    <div className="min-h-screen bg-[#090C10] text-[#ECE6DB] flex flex-col justify-between selection:bg-[#D26539] selection:text-white font-sans antialiased">
-      {isAdmin && <AdminHeader />}
+    <div className="min-h-screen bg-[#0F1926] text-[#F2F0EC] flex flex-col justify-between selection:bg-[#F2F0EC] selection:text-[#0F1926] font-sans antialiased">
+      {isAdmin ? <AdminHeader /> : <Navbar />}
       <div className="flex-1">{renderPage()}</div>
       {!isAdmin && <Footer />}
-      {!isAdmin && <BottomNavDock />}
       <EnquiryCartDrawer />
       <Toast />
     </div>

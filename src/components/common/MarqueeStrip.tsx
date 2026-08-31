@@ -4,8 +4,8 @@ import { Sparkles } from 'lucide-react';
 interface MarqueeStripProps {
   items?: string[];
   reverse?: boolean;
-  speed?: 'normal' | 'slow';
-  theme?: 'dark' | 'orange' | 'gold' | 'minimal' | 'green';
+  speed?: 'normal' | 'slow' | 'fast';
+  theme?: 'white' | 'offwhite' | 'dark' | 'navy' | 'charcoal' | 'minimal' | 'gold' | 'green' | 'orange' | 'steel';
 }
 
 const DEFAULT_ITEMS = [
@@ -23,18 +23,20 @@ export const MarqueeStrip: React.FC<MarqueeStripProps> = ({
   items = DEFAULT_ITEMS,
   reverse = false,
   speed = 'normal',
-  theme = 'orange',
+  theme = 'white',
 }) => {
   const getThemeClass = () => {
     switch (theme) {
-      case 'green':
-        return 'bg-[#D26539] text-[#090C10] py-3 sm:py-3.5 border-y border-[#C2552F]';
-      case 'minimal':
-        return 'bg-[#D26539] text-[#090C10] border-y border-[#C2552F] py-3';
-      case 'gold':
-      case 'orange':
+      case 'dark':
+        return 'bg-[#0C1015] text-[#F2F0EC] py-3.5 sm:py-4 border-y border-[#2A2A2B]';
+      case 'charcoal':
+        return 'bg-[#2A2A2B] text-[#F2F0EC] py-3.5 sm:py-4 border-y border-[#2A2A2B]';
+      case 'navy':
+        return 'bg-[#0F1926] text-[#F2F0EC] py-3.5 sm:py-4 border-y border-[#2A2A2B]';
+      case 'white':
+      case 'offwhite':
       default:
-        return 'bg-[#D26539] text-[#090C10] py-3 sm:py-3.5 shadow-lg border-y border-[#C2552F]';
+        return 'bg-[#F2F0EC] text-[#0F1926] py-3.5 sm:py-4 border-y border-[#2A2A2B]/15 shadow-sm';
     }
   };
 
@@ -52,10 +54,10 @@ export const MarqueeStrip: React.FC<MarqueeStripProps> = ({
           {items.map((text, idx) => (
             <div
               key={`t1-${idx}`}
-              className="flex items-center gap-6 mx-6 font-satoshi text-xs sm:text-sm font-black tracking-[0.2em] sm:tracking-[0.25em] uppercase whitespace-nowrap text-[#090C10]"
+              className="flex items-center gap-6 mx-6 font-satoshi text-xs sm:text-sm font-black tracking-[0.2em] sm:tracking-[0.25em] uppercase whitespace-nowrap text-current"
             >
               <span>{text}</span>
-              <span className="text-xs shrink-0 opacity-80">✦</span>
+              <span className="text-xs shrink-0 opacity-70">✦</span>
             </div>
           ))}
         </div>
@@ -64,10 +66,10 @@ export const MarqueeStrip: React.FC<MarqueeStripProps> = ({
           {items.map((text, idx) => (
             <div
               key={`t2-${idx}`}
-              className="flex items-center gap-6 mx-6 font-satoshi text-xs sm:text-sm font-black tracking-[0.2em] sm:tracking-[0.25em] uppercase whitespace-nowrap text-[#090C10]"
+              className="flex items-center gap-6 mx-6 font-satoshi text-xs sm:text-sm font-black tracking-[0.2em] sm:tracking-[0.25em] uppercase whitespace-nowrap text-current"
             >
               <span>{text}</span>
-              <span className="text-xs shrink-0 opacity-80">✦</span>
+              <span className="text-xs shrink-0 opacity-70">✦</span>
             </div>
           ))}
         </div>

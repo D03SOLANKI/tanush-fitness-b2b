@@ -4,24 +4,22 @@ import {
   Sparkles,
   ArrowRight,
   ArrowUpRight,
-  ArrowDown,
   ShieldCheck,
   CheckCircle2,
-  MapPin,
-  Phone,
-  Mail,
-  Building2,
   Dumbbell,
-  HeartPulse,
-  Award,
-  Zap,
   Briefcase,
-  Users
+  Users,
+  Zap,
+  Phone,
+  Layers,
+  Award,
+  Maximize2
 } from 'lucide-react';
 import { MarqueeStrip } from '../components/common/MarqueeStrip';
 import { VaultContactFormSection } from '../components/home/VaultContactFormSection';
 import { OrangeDirectorySection } from '../components/home/OrangeDirectorySection';
 import { SEO } from '../components/common/SEO';
+import { TanushLogo } from '../components/common/TanushLogo';
 
 const USP_CARDS = [
   {
@@ -29,28 +27,28 @@ const USP_CARDS = [
     title: 'Commercial & Residential Equipment',
     description: 'Experience biomechanical perfection with Tanush meticulously curated 11-gauge laser-cut strength lines, modular rigs, and cardio suites.',
     brands: ['Matrix', 'Torque USA', 'Concept 2', 'Precor'],
-    icon: <Dumbbell className="w-7 h-7 text-[#A8A090] group-hover:text-white transition-colors" />,
+    icon: <Dumbbell className="w-6 h-6 text-[#0F1926]" />,
   },
   {
     id: 2,
     title: 'GYM MANAGEMENT Gym Management',
     description: '360° architectural 3D CAD space modeling, acoustic rubber isolation, digital RFID access turnstiles, and launch funnels.',
     brands: ['3D CAD Layouts', 'Acoustics', 'RFID Access', 'AMC Care'],
-    icon: <Briefcase className="w-7 h-7 text-[#A8A090] group-hover:text-white transition-colors" />,
+    icon: <Briefcase className="w-6 h-6 text-[#0F1926]" />,
   },
   {
     id: 3,
     title: 'Manpower Services & Staffing',
     description: 'Specialized 7-division talent placement covering Club Management, HR/Admin, Sales & Front Desk, Fitness Teams, Group Classes, Nutrition & Recovery, and Facility Operations.',
     brands: ['Management', 'HR & Admin', 'Fitness Team', 'Sales & Front Desk', 'Group Classes', 'Nutrition & Recovery', 'Facility Ops'],
-    icon: <Users className="w-7 h-7 text-[#A8A090] group-hover:text-white transition-colors" />,
+    icon: <Users className="w-6 h-6 text-[#0F1926]" />,
   },
   {
     id: 4,
     title: 'Recovery Room — Hyperice',
     description: 'Revitalize in exclusive biohacking recovery suites offering pneumatic compression boots, percussion therapy, and contrast plunge baths.',
     brands: ['Hyperice Partner', 'Normatec 3', 'Hydrotherapy'],
-    icon: <Zap className="w-7 h-7 text-[#A8A090] group-hover:text-white transition-colors" />,
+    icon: <Zap className="w-6 h-6 text-[#0F1926]" />,
   },
 ];
 
@@ -76,13 +74,13 @@ const CORE_PILLARS = [
     id: 'services',
     number: '02',
     category: 'CORE VERTICAL',
-    title: 'Gym Management & GYM MANAGEMENT SETUP',
+    title: 'Gym Management & Turnkey Setup',
     tagline: 'End-to-end gym setup including planning, architectural acoustics, equipment, and automated operations',
     description: 'Complete gym transformation from raw space to profitable launch: 3D CAD facility design, soundproof shock-absorption rubber flooring, and turnkey outfitting.',
     image: 'https://images.unsplash.com/photo-1540497077202-7c8a3999166f?auto=format&fit=crop&w=800&q=80',
     icon: Briefcase,
     page: 'services' as const,
-    btnText: 'Discover Gym Management Services',
+    btnText: 'Discover Turnkey Solutions',
     points: [
       'Turnkey 3D Architectural Space Planning',
       'Heavy-Duty Acoustic & Vibration Isolation Flooring',
@@ -112,157 +110,88 @@ export const HomePage: React.FC = () => {
   const { navigateTo } = useApp();
   const [visionTab, setVisionTab] = useState<'what' | 'why'>('what');
 
-  const scrollToAbout = () => {
-    const el = document.getElementById('about');
-    if (el) {
-      el.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
-
   return (
-    <main className="min-h-screen bg-[#090C10] text-[#ECE6DB] overflow-hidden pb-0">
+    <main className="min-h-screen bg-[#0F1926] text-[#F2F0EC] overflow-hidden pb-0">
       <SEO
         title="Tanush Fitness | Commercial & Residential Equipment · Gym Management · Manpower Services"
         description="Experience India's premier commercial & residential fitness sanctuary. World-class 11-gauge equipment, 3D GYM MANAGEMENT gym management, and certified trainer staffing."
       />
 
       {/* ========================================================================= */}
-      {/* SECTION 1: EXACT VAULT HOMEPAGE PROPORTIONS & SPACING                     */}
+      {/* SECTION 1: SERENE & ELEGANT MONOCHROMATIC HERO                            */}
       {/* ========================================================================= */}
-      <section className="relative h-[100dvh] min-h-[100dvh] max-h-[100dvh] w-full bg-[#26452D] text-[#ECE6DB] flex flex-col justify-between items-center px-4 sm:px-8 pt-8 sm:pt-12 pb-28 sm:pb-36 overflow-hidden select-none">
-        {/* 🌟 1. TOP LOGO EMBLEM (EXACT VAULT STAR WITH INNER DIAMOND) */}
-        <div className="pt-2 sm:pt-4 shrink-0">
-          <svg
-            className="w-14 h-14 sm:w-18 sm:h-18 md:w-22 md:h-22 text-white fill-none stroke-current"
-            viewBox="0 0 100 100"
-            strokeWidth="2.5"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          >
-            <path
-              d="M 50 4 L 56 36 L 88 16 L 65 46 L 96 50 L 65 54 L 88 84 L 56 64 L 50 96 L 44 64 L 12 84 L 35 54 L 4 50 L 35 46 L 12 16 L 44 36 Z"
-              stroke="white"
-              strokeWidth="2.6"
-              fill="none"
-            />
-            <path
-              d="M 50 32 L 60 50 L 50 68 L 40 50 Z"
-              stroke="white"
-              strokeWidth="2.2"
-              fill="none"
-            />
-          </svg>
-        </div>
+      <section className="relative w-full bg-gradient-to-b from-[#0F1926] via-[#0C1015] to-[#0F1926] text-[#F2F0EC] pt-14 sm:pt-20 pb-20 px-4 sm:px-6 lg:px-8 overflow-hidden">
+        <div className="max-w-5xl mx-auto text-center space-y-8 relative z-10">
+          {/* Clean Grand Headline */}
+          <div className="space-y-4">
+            <h1 className="font-satoshi text-4xl sm:text-6xl md:text-7xl font-black uppercase tracking-tight text-[#F2F0EC] leading-[1.06]">
+              UNLOCK YOUR STRENGTH.
+              <br />
+              <span className="text-[#D0CFCA]">OWN YOUR POTENTIAL.</span>
+            </h1>
 
-        {/* 💎 2. MAIN 2-LINE HEADLINE (EXACT VAULT TYPOGRAPHY & PILL RATIO) */}
-        <div className="max-w-5xl mx-auto w-full text-center py-2 sm:py-4 z-10">
-          <div className="space-y-3 sm:space-y-4 select-none">
-            {/* Row 1: UNLOCK YOUR [PILL 1] STRENGTH */}
-            <div className="flex items-center justify-center gap-2.5 sm:gap-4 md:gap-5 flex-nowrap whitespace-nowrap font-satoshi text-xl sm:text-3xl md:text-4xl lg:text-[44px] xl:text-[50px] font-black uppercase tracking-tight text-white leading-none">
-              <span className="relative inline-block whitespace-nowrap">
-                UNLOCK YOUR
-                {/* Terracotta Orange Hand-Drawn Brush Accent */}
-                <span className="absolute -bottom-1.5 sm:-bottom-2.5 left-0 right-0 h-1.5 sm:h-2.5 bg-[#D26539] rounded-full -rotate-1 opacity-90" />
-              </span>
+            <p className="font-sans text-base sm:text-lg text-[#D0CFCA] max-w-2xl mx-auto leading-relaxed font-normal">
+              India's premier commercial & residential fitness infrastructure manufacturer. We engineer heavy-duty 11-gauge laser-cut machinery, deliver 3D CAD space modeling, and supply certified 7-division gym personnel.
+            </p>
+          </div>
 
-              {/* Pill 1 */}
-              <div className="inline-block h-7 sm:h-9 md:h-11 lg:h-13 w-20 sm:w-28 md:w-36 lg:w-44 rounded-full overflow-hidden border border-white/40 shadow-xl shrink-0 align-middle transform hover:scale-105 transition-transform duration-300">
-                <img
-                  src="https://images.unsplash.com/photo-1517838277536-f5f99be501cd?auto=format&fit=crop&w=600&q=80"
-                  alt="Tanush Commercial Strength Equipment"
-                  className="w-full h-full object-cover"
-                />
-              </div>
+          {/* Action CTAs */}
+          <div className="flex flex-wrap items-center justify-center gap-4 pt-2">
+            <button
+              type="button"
+              onClick={() => navigateTo('equipment')}
+              className="btn-primary px-8 py-3.5 text-xs font-bold uppercase tracking-wider flex items-center gap-2 cursor-pointer shadow-xl"
+            >
+              <span>Explore Equipment Sanctuary</span>
+              <ArrowRight className="w-4 h-4" />
+            </button>
 
-              <span className="whitespace-nowrap">STRENGTH</span>
-            </div>
+            <button
+              type="button"
+              onClick={() => navigateTo('services')}
+              className="btn-outline px-8 py-3.5 text-xs font-bold uppercase tracking-wider flex items-center gap-2 cursor-pointer"
+            >
+              <Briefcase className="w-4 h-4 text-[#D0CFCA]" />
+              <span>Book 3D CAD Blueprint</span>
+            </button>
+          </div>
 
-            {/* Row 2: OWN YOUR [PILL 2] POTENTIAL [PILL 3] */}
-            <div className="flex items-center justify-center gap-2.5 sm:gap-4 md:gap-5 flex-nowrap whitespace-nowrap font-satoshi text-xl sm:text-3xl md:text-4xl lg:text-[44px] xl:text-[50px] font-black uppercase tracking-tight text-white leading-none">
-              <span className="whitespace-nowrap">OWN YOUR</span>
+          {/* Hero Cinematic Showcase Image */}
+          <div className="pt-6">
+            <div className="relative rounded-3xl overflow-hidden border border-[#2A2A2B] shadow-2xl bg-[#0C1015] aspect-[16/9] max-h-[520px] w-full">
+              <img
+                src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=1600&q=85"
+                alt="Tanush Commercial Fitness Sanctuary"
+                className="w-full h-full object-cover opacity-90"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#0C1015]/90 via-transparent to-transparent" />
 
-              {/* Pill 2 */}
-              <div className="inline-block h-7 sm:h-9 md:h-11 lg:h-13 w-24 sm:w-32 md:w-40 lg:w-48 rounded-full overflow-hidden border border-white/40 shadow-xl shrink-0 align-middle transform hover:scale-105 transition-transform duration-300">
-                <img
-                  src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=600&q=80"
-                  alt="Tanush Fitness Sanctuary"
-                  className="w-full h-full object-cover"
-                />
-              </div>
-
-              <span className="whitespace-nowrap">POTENTIAL</span>
-
-              {/* Pill 3 */}
-              <div className="inline-block h-7 sm:h-9 md:h-11 lg:h-13 w-20 sm:w-28 md:w-36 lg:w-44 rounded-full overflow-hidden border border-white/40 shadow-xl shrink-0 align-middle transform hover:scale-105 transition-transform duration-300">
-                <img
-                  src="https://images.unsplash.com/photo-1540497077202-7c8a3999166f?auto=format&fit=crop&w=600&q=80"
-                  alt="Tanush Athletic Training"
-                  className="w-full h-full object-cover"
-                />
+              {/* Clean 4-Stat Ribbon Overlay */}
+              <div className="absolute bottom-4 left-4 right-4 sm:bottom-6 sm:left-6 sm:right-6 p-4 sm:p-5 rounded-2xl bg-[#0C1015]/95 backdrop-blur-md border border-[#2A2A2B] grid grid-cols-2 sm:grid-cols-4 gap-4 text-center font-mono">
+                <div>
+                  <div className="font-satoshi text-lg sm:text-2xl font-black text-[#F2F0EC]">500+</div>
+                  <div className="text-[10px] text-[#D0CFCA] uppercase font-bold">Clubs Outfitted</div>
+                </div>
+                <div>
+                  <div className="font-satoshi text-lg sm:text-2xl font-black text-[#F2F0EC]">11-GAUGE</div>
+                  <div className="text-[10px] text-[#D0CFCA] uppercase font-bold">Laser-Cut Steel</div>
+                </div>
+                <div>
+                  <div className="font-satoshi text-lg sm:text-2xl font-black text-[#F2F0EC]">ISO 9001</div>
+                  <div className="text-[10px] text-[#D0CFCA] uppercase font-bold">Certified Plant</div>
+                </div>
+                <div>
+                  <div className="font-satoshi text-lg sm:text-2xl font-black text-[#F2F0EC]">18% ITC</div>
+                  <div className="text-[10px] text-[#D0CFCA] uppercase font-bold">GST Direct Billing</div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-
-        {/* 🌊 3. HORIZONTAL STRENGTH PERFORMANCE DISCIPLINE RESULTS MARQUEE */}
-        <div className="w-full overflow-hidden py-3 sm:py-5 z-10 select-none pointer-events-none">
-          <div className="flex w-max animate-marquee select-none">
-            {/* Track 1 */}
-            <div className="flex items-center gap-8 sm:gap-14 shrink-0 pr-8 sm:pr-14 font-satoshi font-extrabold text-base sm:text-lg md:text-xl lg:text-[22px] tracking-[0.24em] text-white/55 uppercase">
-              <span>✦</span>
-              <span>STRENGTH</span>
-              <span>✦</span>
-              <span>PERFORMANCE</span>
-              <span>✦</span>
-              <span>DISCIPLINE</span>
-              <span>✦</span>
-              <span>RESULTS</span>
-              <span>✦</span>
-              <span>STRENGTH</span>
-              <span>✦</span>
-              <span>PERFORMANCE</span>
-              <span>✦</span>
-              <span>DISCIPLINE</span>
-              <span>✦</span>
-              <span>RESULTS</span>
-            </div>
-            {/* Track 2 (Exact Duplicate for 100% Seamless Infinite Revolving Loop) */}
-            <div className="flex items-center gap-8 sm:gap-14 shrink-0 pr-8 sm:pr-14 font-satoshi font-extrabold text-base sm:text-lg md:text-xl lg:text-[22px] tracking-[0.24em] text-white/55 uppercase">
-              <span>✦</span>
-              <span>STRENGTH</span>
-              <span>✦</span>
-              <span>PERFORMANCE</span>
-              <span>✦</span>
-              <span>DISCIPLINE</span>
-              <span>✦</span>
-              <span>RESULTS</span>
-              <span>✦</span>
-              <span>STRENGTH</span>
-              <span>✦</span>
-              <span>PERFORMANCE</span>
-              <span>✦</span>
-              <span>DISCIPLINE</span>
-              <span>✦</span>
-              <span>RESULTS</span>
-            </div>
-          </div>
-        </div>
-
-        {/* 🎯 4. CTA BUTTON (CENTERED OUTLINED VAULT STYLE) */}
-        <div className="flex flex-col items-center justify-center shrink-0 z-10">
-          <button
-            type="button"
-            onClick={() => navigateTo('equipment')}
-            className="border border-white/40 hover:border-white text-white font-satoshi text-[11px] sm:text-xs uppercase tracking-[0.25em] font-semibold px-8 py-3 rounded-none transition-all duration-300 hover:bg-white hover:text-[#26452D] flex items-center gap-2.5 group shadow-lg cursor-pointer"
-          >
-            <span>JOIN TANUSH</span>
-            <ArrowUpRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-          </button>
         </div>
       </section>
 
       {/* ========================================================================= */}
-      {/* SECTION 2: FULL-WIDTH MARQUEE STRIP (CORE OFFERINGS)                      */}
+      {/* SECTION 2: MONOCHROMATIC MARQUEE STRIP                                    */}
       {/* ========================================================================= */}
       <MarqueeStrip
         items={[
@@ -277,35 +206,32 @@ export const HomePage: React.FC = () => {
           'PAN-INDIA GYM MANAGEMENT ASSEMBLY',
           'ISO 9001:2015 CERTIFIED',
         ]}
-        theme="orange"
+        theme="white"
         speed="normal"
       />
 
       {/* ========================================================================= */}
       {/* SECTION 3: TABBED VISION & PHILOSOPHY (#about)                            */}
       {/* ========================================================================= */}
-      <section id="about" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 border-b border-white/5">
-        <div className="space-y-10">
+      <section id="about" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 border-b border-[#2A2A2B]">
+        <div className="space-y-12">
           {/* Header & Tab Switcher */}
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-6">
             <div className="space-y-2">
-              <div className="text-[10px] sm:text-[11px] font-mono tracking-[0.3em] text-white/80 uppercase">
-                THE TANUSH PHILOSOPHY
-              </div>
-              <h2 className="font-satoshi text-2xl sm:text-4xl lg:text-[38px] font-extrabold uppercase text-white tracking-tight">
+              <h2 className="font-satoshi text-3xl sm:text-5xl font-extrabold uppercase text-[#F2F0EC] tracking-tight">
                 {visionTab === 'what' ? 'What is Tanush?' : 'Why Tanush?'}
               </h2>
             </div>
 
             {/* Vision Tab Buttons */}
-            <div className="flex items-center gap-1.5 p-1 rounded-full bg-[#0D1118] border border-white/10 font-satoshi text-xs uppercase tracking-wider">
+            <div className="flex items-center gap-1.5 p-1.5 rounded-full bg-[#0C1015] border border-[#2A2A2B] font-satoshi text-xs uppercase tracking-wider shadow-inner">
               <button
                 type="button"
                 onClick={() => setVisionTab('what')}
-                className={`px-5 py-2 rounded-full transition ${
+                className={`px-6 py-2.5 rounded-full transition cursor-pointer ${
                   visionTab === 'what'
-                    ? 'bg-[#D26539] text-white font-bold shadow-md'
-                    : 'text-[#A8A090] hover:text-white'
+                    ? 'bg-[#F2F0EC] text-[#0F1926] font-bold shadow-md'
+                    : 'text-[#D0CFCA] hover:text-[#F2F0EC]'
                 }`}
               >
                 What is Tanush?
@@ -313,10 +239,10 @@ export const HomePage: React.FC = () => {
               <button
                 type="button"
                 onClick={() => setVisionTab('why')}
-                className={`px-5 py-2 rounded-full transition ${
+                className={`px-6 py-2.5 rounded-full transition cursor-pointer ${
                   visionTab === 'why'
-                    ? 'bg-[#D26539] text-white font-bold shadow-md'
-                    : 'text-[#A8A090] hover:text-white'
+                    ? 'bg-[#F2F0EC] text-[#0F1926] font-bold shadow-md'
+                    : 'text-[#D0CFCA] hover:text-[#F2F0EC]'
                 }`}
               >
                 Why Tanush?
@@ -325,40 +251,40 @@ export const HomePage: React.FC = () => {
           </div>
 
           {/* Vision Content */}
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
-            <div className="lg:col-span-7 space-y-5">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+            <div className="lg:col-span-7 space-y-6">
               {visionTab === 'what' ? (
-                <div className="space-y-4 text-[#A8A090] font-satoshi text-sm sm:text-base leading-relaxed">
+                <div className="space-y-5 text-[#D0CFCA] font-sans text-sm sm:text-base leading-relaxed">
                   <p>
-                    Introducing India's premier commercial & residential fitness sanctuary & outfitting brand: <span className="text-white font-bold">Tanush Fitness</span>, where precision engineering reaches new heights and commercial strength takes center stage.
+                    Introducing India's premier commercial & residential fitness sanctuary & outfitting brand: <span className="text-[#F2F0EC] font-bold">Tanush Fitness</span>, where precision engineering reaches new heights and commercial strength takes center stage.
                   </p>
                   <p>
-                    At Tanush, we redefine the fitness outfitting landscape with <span className="text-white font-semibold">state-of-the-art 11-gauge laser-cut equipment</span>, curated to empower facility owners to launch world-class destinations. Our commitment goes beyond machinery; we deliver a holistic <span className="text-white font-semibold">360-degree GYM MANAGEMENT solution</span> encompassing Commercial & Residential Equipment, Gym Management, and Manpower Services.
+                    At Tanush, we redefine the fitness outfitting landscape with <span className="text-[#F2F0EC] font-semibold">state-of-the-art 11-gauge laser-cut equipment</span>, curated to empower facility owners to launch world-class destinations. Our commitment goes beyond machinery; we deliver a holistic <span className="text-[#F2F0EC] font-semibold">360-degree turnkey solution</span> encompassing Commercial & Residential Equipment, Gym Management, and Manpower Services.
                   </p>
                   <div className="pt-2">
                     <button
                       type="button"
                       onClick={() => navigateTo('about')}
-                      className="btn-vault-outline text-xs flex items-center gap-2"
+                      className="btn-primary text-xs flex items-center gap-2 cursor-pointer shadow-lg"
                     >
                       <span>Read Our Full Story</span>
-                      <ArrowRight className="w-3.5 h-3.5 text-white/80" />
+                      <ArrowRight className="w-3.5 h-3.5" />
                     </button>
                   </div>
                 </div>
               ) : (
-                <div className="space-y-4 text-[#A8A090] font-satoshi text-sm sm:text-base leading-relaxed">
+                <div className="space-y-5 text-[#D0CFCA] font-sans text-sm sm:text-base leading-relaxed">
                   <p>
-                    As a testament to unwavering commitment to biomechanical excellence, <span className="text-white font-bold">Tanush Fitness</span> aims to redefine commercial fitness spaces by offering direct factory procurement, 18% GST Input Tax Credit invoicing, zero middleman trading markups, and verified trainer placement pipelines.
+                    As a testament to unwavering commitment to biomechanical excellence, <span className="text-[#F2F0EC] font-bold">Tanush Fitness</span> aims to redefine commercial fitness spaces by offering direct factory procurement, 18% GST Input Tax Credit invoicing, zero middleman trading markups, and verified trainer placement pipelines.
                   </p>
-                  <blockquote className="p-6 rounded-none bg-[#0D1118] border-l-2 border-[#D26539] text-[#F0EBE3] italic font-satoshi text-base sm:text-lg leading-relaxed">
+                  <blockquote className="p-6 sm:p-8 rounded-3xl bg-[#0C1015] border-l-4 border-[#F2F0EC] text-[#F2F0EC] italic font-sans text-base sm:text-lg leading-relaxed shadow-2xl">
                     "Tanush Fitness is not merely an equipment vendor; it is an end-to-end commercial infrastructure partner built for gym owners who demand perfection in every square foot."
                   </blockquote>
                   <div className="pt-2">
                     <button
                       type="button"
                       onClick={() => navigateTo('contact')}
-                      className="btn-vault text-xs flex items-center gap-2"
+                      className="btn-primary text-xs flex items-center gap-2 cursor-pointer shadow-lg"
                     >
                       <span>Connect With Factory Desk</span>
                       <ArrowRight className="w-3.5 h-3.5" />
@@ -369,16 +295,16 @@ export const HomePage: React.FC = () => {
             </div>
 
             <div className="lg:col-span-5 relative">
-              <div className="relative rounded-none overflow-hidden border border-white/10 shadow-2xl group bg-[#0D1118]">
+              <div className="relative rounded-3xl overflow-hidden border border-[#2A2A2B] shadow-2xl group bg-[#0C1015]">
                 <img
                   src="https://images.unsplash.com/photo-1540497077202-7c8a3999166f?auto=format&fit=crop&w=1000&q=80"
                   alt="Tanush Fitness Sanctuary Vision"
-                  className="w-full h-[380px] object-cover transform group-hover:scale-105 transition-transform duration-700"
+                  className="w-full h-[400px] object-cover transform group-hover:scale-105 transition-transform duration-700 opacity-90"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#090C10] via-transparent to-transparent opacity-60" />
-                <div className="absolute bottom-5 left-5 right-5 p-3.5 rounded-xl bg-[#0D1118]/90 border border-white/10 font-mono text-[11px] text-[#F0EBE3] flex items-center justify-between">
-                  <span>ISO 9001:2015 CERTIFIED</span>
-                  <span>500+ COMMERCIAL & RESIDENTIAL SANCTUARIES</span>
+                <div className="absolute inset-0 bg-gradient-to-t from-[#0C1015] via-transparent to-transparent opacity-60" />
+                <div className="absolute bottom-5 left-5 right-5 p-4 rounded-2xl bg-[#0C1015]/95 border border-[#2A2A2B] font-mono text-xs text-[#F2F0EC] flex items-center justify-between shadow-2xl">
+                  <span className="text-[#F2F0EC] font-bold">ISO 9001:2015 CERTIFIED</span>
+                  <span className="text-[#D0CFCA]">500+ SANCTUARIES</span>
                 </div>
               </div>
             </div>
@@ -387,84 +313,81 @@ export const HomePage: React.FC = () => {
       </section>
 
       {/* ========================================================================= */}
-      {/* SECTION 4: CORE THREE PILLARS (SERVICES & OFFERINGS)                      */}
+      {/* SECTION 4: CORE THREE PILLARS (#F2F0EC OFF-WHITE LUXURY CARDS)             */}
       {/* ========================================================================= */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 border-b border-white/5">
-        <div className="space-y-10">
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 border-b border-[#2A2A2B]">
+        <div className="space-y-12">
           <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-6">
             <div className="space-y-2">
-              <div className="text-[10px] sm:text-[11px] font-mono tracking-[0.3em] text-white/80 uppercase">
-                CORE PROCUREMENT VERTICALS
-              </div>
-              <h2 className="font-satoshi text-2xl sm:text-4xl lg:text-[38px] font-extrabold uppercase text-white tracking-tight">
+              <h2 className="font-satoshi text-3xl sm:text-5xl font-extrabold uppercase text-[#F2F0EC] tracking-tight">
                 THREE PILLARS OF GYM OUTFITTING
               </h2>
-              <p className="text-xs sm:text-sm text-[#A8A090] font-satoshi max-w-2xl mt-1 leading-relaxed">
-                Complete commercial & residential equipment supply, 3D GYM MANAGEMENT gym management, and verified manpower recruitment.
+              <p className="text-sm text-[#D0CFCA] font-sans max-w-2xl mt-1 leading-relaxed">
+                Complete commercial & residential equipment supply, 3D CAD gym management, and verified manpower recruitment.
               </p>
             </div>
             <button
               type="button"
               onClick={() => navigateTo('services')}
-              className="btn-vault text-xs flex items-center gap-2 shrink-0"
+              className="btn-primary text-xs flex items-center gap-2 shrink-0 cursor-pointer shadow-lg"
             >
               <span>Explore All Solutions</span>
               <ArrowRight className="w-3.5 h-3.5" />
             </button>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {CORE_PILLARS.map((pillar) => {
               const IconComp = pillar.icon;
               return (
                 <div
                   key={pillar.id}
-                  className="bg-[#0D1118] border border-white/10 rounded-none overflow-hidden flex flex-col justify-between group hover:border-white/30 transition-all duration-300 shadow-xl"
+                  className="bg-[#F2F0EC] text-[#0F1926] border border-[#2A2A2B]/10 rounded-3xl overflow-hidden flex flex-col justify-between group hover:border-[#0F1926] transition-all duration-300 shadow-2xl hover:-translate-y-2"
                 >
                   <div>
                     <div
-                      className="relative aspect-[16/10] w-full overflow-hidden cursor-pointer bg-[#090C10]"
+                      className="relative aspect-[16/10] w-full overflow-hidden cursor-pointer bg-[#0F1926]"
                       onClick={() => navigateTo(pillar.page)}
                     >
                       <img
                         src={pillar.image}
                         alt={pillar.title}
-                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 opacity-90 group-hover:opacity-100"
+                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 opacity-95 group-hover:opacity-100"
                       />
-                      <div className="absolute inset-0 bg-gradient-to-t from-[#0D1118] via-[#0D1118]/30 to-transparent" />
+                      <div className="absolute inset-0 bg-gradient-to-t from-[#0F1926]/60 via-transparent to-transparent" />
 
-                      <div className="absolute top-4 right-4 w-8 h-8 rounded-full bg-[#090C10]/90 border border-white/10 flex items-center justify-center text-white">
-                        <IconComp className="w-4 h-4" />
+                      <div className="absolute top-4 right-4 w-10 h-10 rounded-full bg-[#0F1926]/90 border border-white/20 flex items-center justify-center text-white shadow-lg">
+                        <IconComp className="w-4 h-4 text-[#F2F0EC]" />
                       </div>
                     </div>
 
-                    <div className="p-5 sm:p-6 space-y-5">
+                    <div className="p-7 space-y-4">
                       <div>
-                        <div className="text-[11px] font-mono text-[#F0EBE3] uppercase tracking-wider font-bold">
+                        <div className="text-xs font-mono text-[#2A2A2B] uppercase tracking-wider font-bold">
                           PILLAR 0{pillar.number} // {pillar.category}
                         </div>
 
                         <h3
                           onClick={() => navigateTo(pillar.page)}
-                          className="font-satoshi text-lg sm:text-xl font-bold uppercase text-white tracking-tight mt-1 group-hover:text-white transition cursor-pointer"
+                          className="font-satoshi text-xl font-bold uppercase text-[#0F1926] tracking-tight mt-1 group-hover:text-[#2A2A2B] transition cursor-pointer"
                         >
                           {pillar.title}
                         </h3>
 
-                        <p className="text-xs text-white/80 font-sans leading-relaxed mt-2 line-clamp-3">
+                        <p className="text-xs sm:text-sm text-[#2A2A2B]/80 font-sans leading-relaxed mt-2 line-clamp-3">
                           {pillar.description}
                         </p>
                       </div>
 
-                      <div className="space-y-1.5 pt-2 border-t border-white/5 font-sans text-xs text-[#A8A090]">
-                        <div className="text-[10px] font-mono text-white/60 uppercase tracking-wider font-semibold">
+                      <div className="space-y-2 pt-4 border-t border-[#0F1926]/10 font-sans text-xs text-[#2A2A2B]">
+                        <div className="text-[11px] font-mono text-[#0F1926] uppercase tracking-wider font-bold">
                           Core Focus:
                         </div>
-                        <ul className="space-y-1.5">
+                        <ul className="space-y-2">
                           {pillar.points.map((pt, ptIdx) => (
-                            <li key={ptIdx} className="flex items-start gap-2">
-                              <CheckCircle2 className="w-3.5 h-3.5 text-white shrink-0 mt-0.5" />
-                              <span className="leading-snug text-[11px]">{pt}</span>
+                            <li key={ptIdx} className="flex items-start gap-2.5">
+                              <CheckCircle2 className="w-4 h-4 text-[#0F1926] shrink-0 mt-0.5" />
+                              <span className="leading-snug text-xs text-[#2A2A2B] font-medium">{pt}</span>
                             </li>
                           ))}
                         </ul>
@@ -472,11 +395,11 @@ export const HomePage: React.FC = () => {
                     </div>
                   </div>
 
-                  <div className="p-5 sm:p-6 pt-0 border-t border-white/5 mt-3">
+                  <div className="p-7 pt-0 border-t border-[#0F1926]/10 mt-3">
                     <button
                       type="button"
                       onClick={() => navigateTo(pillar.page)}
-                      className="btn-vault w-full py-2.5 text-xs flex items-center justify-center gap-1.5 uppercase tracking-wider cursor-pointer"
+                      className="btn-dark w-full py-3 text-xs flex items-center justify-center gap-1.5 uppercase tracking-wider cursor-pointer shadow-lg"
                     >
                       <span>{pillar.btnText}</span>
                       <ArrowRight className="w-3.5 h-3.5" />
@@ -490,54 +413,51 @@ export const HomePage: React.FC = () => {
       </section>
 
       {/* ========================================================================= */}
-      {/* SECTION 5: OUR USPs & VALUE PROPOSITIONS                                  */}
+      {/* SECTION 5: OUR USPs & VALUE PROPOSITIONS (#F2F0EC LIGHT CARDS)            */}
       {/* ========================================================================= */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 border-b border-white/5">
-        <div className="space-y-10">
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 border-b border-[#2A2A2B]">
+        <div className="space-y-12">
           <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-6">
             <div className="space-y-2">
-              <div className="text-[10px] sm:text-[11px] font-mono tracking-[0.3em] text-white/80 uppercase">
-                EXCLUSIVE ADVANTAGES
-              </div>
-              <h2 className="font-satoshi text-2xl sm:text-4xl lg:text-[38px] font-extrabold uppercase text-white tracking-tight">
+              <h2 className="font-satoshi text-3xl sm:text-5xl font-extrabold uppercase text-[#F2F0EC] tracking-tight">
                 OUR USP
               </h2>
             </div>
             <button
               type="button"
               onClick={() => navigateTo('equipment')}
-              className="btn-vault-outline text-xs flex items-center gap-2"
+              className="btn-primary text-xs flex items-center gap-2 cursor-pointer shadow-lg"
             >
               <span>Know More</span>
-              <ArrowRight className="w-3.5 h-3.5 text-white/80" />
+              <ArrowRight className="w-3.5 h-3.5" />
             </button>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
             {USP_CARDS.map((card) => (
               <div
                 key={card.id}
-                className="bg-[#0D1118] border border-white/10 rounded-none p-6 space-y-4 luxury-card flex flex-col justify-between group"
+                className="bg-[#F2F0EC] text-[#0F1926] border border-[#2A2A2B]/10 rounded-3xl p-7 space-y-5 flex flex-col justify-between group shadow-2xl hover:-translate-y-2 transition-all duration-300 hover:border-[#0F1926]"
               >
-                <div className="space-y-3">
-                  <div className="w-12 h-12 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center group-hover:border-white/30 transition-colors">
+                <div className="space-y-4">
+                  <div className="w-14 h-14 rounded-2xl bg-[#0F1926]/10 border border-[#0F1926]/15 flex items-center justify-center group-hover:border-[#0F1926] transition-colors shadow-sm">
                     {card.icon}
                   </div>
 
-                  <h3 className="font-satoshi text-base sm:text-lg font-bold text-white group-hover:text-white transition uppercase">
+                  <h3 className="font-satoshi text-lg sm:text-xl font-bold text-[#0F1926] transition uppercase leading-snug">
                     {card.title}
                   </h3>
 
-                  <p className="text-xs text-[#A8A090] font-satoshi leading-relaxed">
+                  <p className="text-xs sm:text-sm text-[#2A2A2B]/80 font-sans leading-relaxed">
                     {card.description}
                   </p>
                 </div>
 
-                <div className="pt-3 border-t border-white/5 flex flex-wrap gap-1.5">
+                <div className="pt-4 border-t border-[#0F1926]/10 flex flex-wrap gap-1.5">
                   {card.brands.map((b, bIdx) => (
                     <span
                       key={bIdx}
-                      className="px-2 py-0.5 rounded bg-white/5 text-[10px] font-mono text-[#A8A090]"
+                      className="px-2.5 py-1 rounded-md bg-[#0F1926]/10 text-[10px] font-mono text-[#0F1926] font-bold"
                     >
                       {b}
                     </span>
@@ -555,7 +475,7 @@ export const HomePage: React.FC = () => {
       <VaultContactFormSection />
 
       {/* ========================================================================= */}
-      {/* SECTION 7: FULL ORANGE NUMBERED DIRECTORY (AT LAST JUST ABOVE FOOTER)     */}
+      {/* SECTION 7: FULL NUMBERED DIRECTORY                                        */}
       {/* ========================================================================= */}
       <OrangeDirectorySection />
     </main>

@@ -14,9 +14,12 @@ import {
   Dumbbell,
   Users,
   Briefcase,
-  Compass
+  Compass,
+  User,
+  ArrowUpRight
 } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { TanushLogo } from './TanushLogo';
 
 export const Navbar: React.FC = () => {
   const {
@@ -24,6 +27,8 @@ export const Navbar: React.FC = () => {
     navigateTo,
     enquiryCart,
     setIsEnquiryCartOpen,
+    openAuthModal,
+    currentUser,
   } = useApp();
 
   const [isScrolled, setIsScrolled] = useState(false);
@@ -39,13 +44,13 @@ export const Navbar: React.FC = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const navLinks: { label: string; page: PageType; subtitle: string; icon: React.ReactNode }[] = [
-    { label: 'Overview', page: 'home', subtitle: 'Sanctuary & Flagship Hub', icon: <Sparkles className="w-4 h-4" /> },
-    { label: 'Services', page: 'services', subtitle: '360° GYM MANAGEMENT Architecture & Setup', icon: <Briefcase className="w-4 h-4" /> },
-    { label: 'Equipment', page: 'equipment', subtitle: 'Biomechanical Machines & Rigs', icon: <Dumbbell className="w-4 h-4" /> },
-    { label: 'Manpower', page: 'manpower', subtitle: 'Certified Trainers & Operation Leads', icon: <Users className="w-4 h-4" /> },
-    { label: 'About', page: 'about', subtitle: 'Vision, Legacy & What/Why Tanush', icon: <Compass className="w-4 h-4" /> },
-    { label: 'VIP Consultation', page: 'contact', subtitle: 'Direct Outfitting Procurement', icon: <Phone className="w-4 h-4" /> },
+  const navLinks: { label: string; page: PageType }[] = [
+    { label: 'Overview', page: 'home' },
+    { label: 'Equipment Sanctuary', page: 'equipment' },
+    { label: 'Gym Management', page: 'services' },
+    { label: 'Manpower Services', page: 'manpower' },
+    { label: 'About', page: 'about' },
+    { label: 'Outfitting Desk', page: 'contact' },
   ];
 
   const handleNav = (page: PageType) => {
@@ -56,174 +61,72 @@ export const Navbar: React.FC = () => {
 
   return (
     <>
-      {/* Top Urgent Announcement / Direct Hotline Bar */}
-      <div className="w-full bg-[#090C10] text-[#A8A090] border-b border-white/5 font-mono text-[11px] select-none z-40 relative">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-8 flex items-center justify-between gap-4">
-          <div className="flex items-center gap-4">
-            <a
-              href="tel:+918160918894"
-              className="flex items-center gap-1.5 text-[#A8A090] hover:text-white transition-colors font-bold whitespace-nowrap group"
-            >
-              <Phone className="w-3 h-3 text-[#A8A090] group-hover:text-white transition-colors" />
-              <span>+91 81609 18894</span>
-              <span className="text-[#6B6358] font-normal hidden sm:inline">(commercial & residential outfitting Desk)</span>
-            </a>
-
-            <span className="text-white/10 hidden sm:inline">•</span>
-
-            <div className="hidden sm:flex items-center gap-1.5 text-[#A8A090] whitespace-nowrap">
-              <ShieldCheck className="w-3.5 h-3.5 text-[#A8A090]" />
-              <span>100% Commercial GST Invoicing (18% ITC)</span>
-            </div>
-          </div>
-
-          <div className="flex items-center gap-4 whitespace-nowrap">
-            <div className="hidden md:flex items-center gap-1.5 text-[#A8A090]">
-              <CheckCircle2 className="w-3.5 h-3.5 text-[#A8A090]" />
-              <span>Pan-India GYM MANAGEMENT ASSEMBLY</span>
-            </div>
-
-            <span className="text-white/10 hidden md:inline">•</span>
-
-            <a
-              href="mailto:Info@tanushfitness.com"
-              className="flex items-center gap-1.5 text-[#A8A090] hover:text-white transition-colors"
-            >
-              <Mail className="w-3.5 h-3.5 text-[#6B6358]" />
-              <span>Info@tanushfitness.com</span>
-            </a>
-          </div>
-        </div>
-      </div>
-
-      {/* Floating Main Navbar */}
+      {/* Main Sticky Header */}
       <header
         className={`sticky top-0 left-0 right-0 z-40 transition-all duration-300 ${
           isScrolled
-            ? 'bg-[#090C10]/95 backdrop-blur-xl border-b border-white/10 shadow-2xl py-3'
-            : 'bg-[#090C10]/70 backdrop-blur-md border-b border-white/5 py-4'
+            ? 'bg-[#0C1015]/95 backdrop-blur-md border-b border-[#2A2A2B] shadow-2xl py-3'
+            : 'bg-[#0F1926]/90 backdrop-blur-sm border-b border-[#2A2A2B]/60 py-3 sm:py-4'
         }`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between">
-            {/* 1. Brand Logo Lockup */}
+          <div className="flex items-center justify-between gap-4">
+            {/* 1. Official Brand Logo Lockup */}
             <div
               onClick={() => handleNav('home')}
-              className="flex items-center gap-3 cursor-pointer group select-none"
+              className="flex items-center gap-3 cursor-pointer group select-none shrink-0"
             >
-              <div className="w-10 h-10 rounded-full bg-gradient-to-br from-[#26452D] to-[#1A2018] border border-white/20 flex items-center justify-center shadow-lg group-hover:border-white transition-colors">
-                <span className="font-satoshi font-black text-lg text-white">T</span>
-              </div>
-              <div className="flex flex-col">
-                <span className="font-satoshi font-black text-lg tracking-[0.12em] text-[#ECE6DB] group-hover:text-white uppercase leading-none">
-                  TANUSH
-                </span>
-                <span className="text-[9px] font-mono tracking-[0.3em] text-[#F0EBE3] uppercase mt-0.5">
-                  FITNESS SANCTUARY
-                </span>
-              </div>
+              <TanushLogo variant="white" height={64} className="h-12 sm:h-14 md:h-16 w-auto group-hover:opacity-90 transition-opacity" />
             </div>
 
-            {/* 2. Desktop Quick Nav Links */}
-            <nav className="hidden lg:flex items-center gap-8 text-xs font-semibold uppercase tracking-[0.15em]">
-              <button
-                type="button"
-                onClick={() => handleNav('home')}
-                className={`transition-colors py-1 relative ${
-                  currentPage === 'home' ? 'text-white font-bold' : 'text-white/60 hover:text-white'
-                }`}
-              >
-                Overview
-                {currentPage === 'home' && (
-                  <span className="absolute bottom-0 left-0 right-0 h-[2px] bg-white rounded-full" />
-                )}
-              </button>
-
-              <button
-                type="button"
-                onClick={() => handleNav('services')}
-                className={`transition-colors py-1 relative ${
-                  currentPage === 'services' ? 'text-white font-bold' : 'text-white/60 hover:text-white'
-                }`}
-              >
-                Services
-                {currentPage === 'services' && (
-                  <span className="absolute bottom-0 left-0 right-0 h-[2px] bg-white rounded-full" />
-                )}
-              </button>
-
-              <button
-                type="button"
-                onClick={() => handleNav('equipment')}
-                className={`transition-colors py-1 relative ${
-                  currentPage === 'equipment' ? 'text-white font-bold' : 'text-white/60 hover:text-white'
-                }`}
-              >
-                Equipment
-                {currentPage === 'equipment' && (
-                  <span className="absolute bottom-0 left-0 right-0 h-[2px] bg-white rounded-full" />
-                )}
-              </button>
-
-              <button
-                type="button"
-                onClick={() => handleNav('manpower')}
-                className={`transition-colors py-1 relative ${
-                  currentPage === 'manpower' ? 'text-white font-bold' : 'text-white/60 hover:text-white'
-                }`}
-              >
-                Manpower
-                {currentPage === 'manpower' && (
-                  <span className="absolute bottom-0 left-0 right-0 h-[2px] bg-white rounded-full" />
-                )}
-              </button>
-
-              <button
-                type="button"
-                onClick={() => handleNav('about')}
-                className={`transition-colors py-1 relative ${
-                  currentPage === 'about' ? 'text-white font-bold' : 'text-white/60 hover:text-white'
-                }`}
-              >
-                About
-                {currentPage === 'about' && (
-                  <span className="absolute bottom-0 left-0 right-0 h-[2px] bg-white rounded-full" />
-                )}
-              </button>
+            {/* 2. Desktop Center Nav Pill Bar */}
+            <nav className="hidden lg:flex items-center gap-1 bg-[#0C1015] border border-[#2A2A2B] p-1.5 rounded-full shadow-inner">
+              {navLinks.map((item) => {
+                const isActive = currentPage === item.page;
+                return (
+                  <button
+                    key={item.label}
+                    type="button"
+                    onClick={() => handleNav(item.page)}
+                    className={`px-4 py-2 rounded-full font-satoshi text-xs uppercase tracking-wider transition-all duration-200 flex items-center gap-1.5 cursor-pointer select-none ${
+                      isActive
+                        ? 'bg-[#F2F0EC] text-[#0F1926] font-bold shadow-md'
+                        : 'text-[#D0CFCA] hover:text-[#F2F0EC] hover:bg-[#2A2A2B]/50'
+                    }`}
+                  >
+                    <span>{item.label}</span>
+                  </button>
+                );
+              })}
             </nav>
 
-            {/* 3. Action Hub (RFQ Cart, Consultation CTA, Menu Trigger) */}
-            <div className="flex items-center gap-3 sm:gap-4">
-              {/* RFQ Cart Badge */}
+            {/* 3. Action Hub (Consultation CTA, User Account, Menu Trigger) */}
+            <div className="flex items-center gap-2.5 sm:gap-3">
+              {/* User Account Login */}
               <button
                 type="button"
-                onClick={() => setIsEnquiryCartOpen(true)}
-                className="relative p-2.5 rounded-full bg-white/5 hover:bg-white/10 text-white/80 hover:text-white border border-white/5 transition"
-                title="commercial & residential outfitting RFQ Cart"
+                onClick={() => openAuthModal()}
+                className="p-2.5 rounded-full bg-[#0C1015] border border-[#2A2A2B] hover:border-[#D0CFCA] text-[#D0CFCA] hover:text-[#F2F0EC] transition cursor-pointer"
+                title={currentUser ? currentUser.name : 'Account Login'}
               >
-                <FileText className="w-4 h-4" />
-                {enquiryCount > 0 && (
-                  <span className="absolute -top-1 -right-1 bg-[#D26539] text-white text-[10px] font-black w-4 h-4 rounded-full flex items-center justify-center">
-                    {enquiryCount}
-                  </span>
-                )}
+                <User className="w-4 h-4" />
               </button>
 
-              {/* Consultation CTA */}
+              {/* Consultation Direct CTA */}
               <button
                 type="button"
                 onClick={() => handleNav('contact')}
-                className="hidden sm:inline-flex items-center gap-2 btn-vault text-xs py-2 px-5"
+                className="hidden xl:inline-flex items-center gap-2 btn-primary text-xs py-2.5 px-6 cursor-pointer shadow-md"
               >
-                <span>VIP Consultation</span>
+                <span>Book Consultation</span>
                 <ArrowRight className="w-3.5 h-3.5" />
               </button>
 
-              {/* Drawer Menu Button */}
+              {/* Mobile / Full Drawer Menu Button */}
               <button
                 type="button"
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
-                className="p-2.5 rounded-full bg-white/5 hover:bg-white/10 text-white/80 hover:text-white border border-white/10 transition"
+                className="lg:hidden p-2.5 rounded-xl bg-[#0C1015] border border-[#2A2A2B] text-[#F2F0EC] hover:text-white transition cursor-pointer"
                 aria-label="Toggle Navigation Menu"
               >
                 {isMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
@@ -231,89 +134,79 @@ export const Navbar: React.FC = () => {
             </div>
           </div>
         </div>
-      </header>
 
-      {/* Full-Screen Drawer Menu Modal */}
-      <AnimatePresence>
-        {isMenuOpen && (
-          <motion.div
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -20 }}
-            transition={{ duration: 0.25 }}
-            className="fixed inset-0 z-50 bg-[#090C10]/95 backdrop-blur-2xl flex flex-col justify-between p-6 sm:p-12 overflow-y-auto"
-          >
-            {/* Top Bar of Modal */}
-            <div className="flex items-center justify-between border-b border-white/10 pb-6">
-              <div
-                onClick={() => handleNav('home')}
-                className="flex items-center gap-3 cursor-pointer"
-              >
-                <div className="w-10 h-10 rounded-full bg-gradient-to-br from-[#26452D] to-[#1A2018] border border-white/20 flex items-center justify-center shadow-lg">
-                  <span className="font-satoshi font-black text-lg text-white">T</span>
+        {/* 📱 4. Mobile Navigation Drawer */}
+        <AnimatePresence>
+          {isMenuOpen && (
+            <motion.div
+              initial={{ opacity: 0, y: -20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -20 }}
+              transition={{ duration: 0.25 }}
+              className="fixed inset-0 z-50 bg-[#0C1015]/98 backdrop-blur-2xl flex flex-col justify-between p-6 sm:p-12 overflow-y-auto"
+            >
+              {/* Top Bar of Modal */}
+              <div className="flex items-center justify-between border-b border-[#2A2A2B] pb-6">
+                <div
+                  onClick={() => handleNav('home')}
+                  className="flex items-center gap-3 cursor-pointer"
+                >
+                  <TanushLogo variant="white" height={52} className="h-12 w-auto" />
                 </div>
-                <div className="flex flex-col">
-                  <span className="font-satoshi font-black text-lg tracking-[0.12em] text-[#ECE6DB] uppercase">
-                    TANUSH
-                  </span>
-                  <span className="text-[9px] font-mono tracking-[0.3em] text-[#A8A090] uppercase">
-                    FITNESS SANCTUARY
-                  </span>
-                </div>
+
+                <button
+                  type="button"
+                  onClick={() => setIsMenuOpen(false)}
+                  className="p-3 rounded-full bg-[#2A2A2B] text-[#F2F0EC] hover:bg-[#0F1926] transition cursor-pointer"
+                >
+                  <X className="w-6 h-6" />
+                </button>
               </div>
 
-              <button
-                type="button"
-                onClick={() => setIsMenuOpen(false)}
-                className="p-3 rounded-full bg-white/5 border border-white/10 text-white/80 hover:text-white transition"
-              >
-                <X className="w-6 h-6" />
-              </button>
-            </div>
-
-            {/* Menu Items */}
-            <div className="my-auto py-12 max-w-4xl mx-auto w-full">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                {navLinks.map((link, idx) => (
-                  <div
-                    key={link.label}
-                    onClick={() => handleNav(link.page)}
-                    className="p-6 rounded-none bg-[#0D1118] border border-white/10 hover:border-white/30 transition-all cursor-pointer group flex items-start justify-between"
-                  >
-                    <div className="space-y-1">
-                      <div className="flex items-center gap-3">
-                        <span className="text-xs font-mono text-white/40">0{idx + 1}</span>
-                        <h3 className="font-satoshi text-xl sm:text-2xl font-bold uppercase text-[#ECE6DB] group-hover:text-white transition">
-                          {link.label}
-                        </h3>
+              {/* Menu Items */}
+              <div className="py-8 space-y-4">
+                {navLinks.map((item, idx) => {
+                  const isActive = currentPage === item.page;
+                  return (
+                    <div
+                      key={item.label}
+                      onClick={() => handleNav(item.page)}
+                      className="group flex items-center justify-between py-3 border-b border-[#2A2A2B] cursor-pointer"
+                    >
+                      <div className="flex items-center gap-4">
+                        <span className="font-mono text-xs text-[#D0CFCA]">0{idx + 1}</span>
+                        <span
+                          className={`font-satoshi text-2xl font-bold uppercase tracking-tight transition ${
+                            isActive ? 'text-[#F2F0EC]' : 'text-[#D0CFCA] group-hover:text-[#F2F0EC]'
+                          }`}
+                        >
+                          {item.label}
+                        </span>
                       </div>
-                      <p className="text-xs text-[#A8A090] font-sans pl-7">
-                        {link.subtitle}
-                      </p>
-                    </div>
 
-                    <div className="w-8 h-8 rounded-full bg-white/5 flex items-center justify-center text-white/60 group-hover:text-white group-hover:bg-white/10 transition">
-                      <ArrowRight className="w-4 h-4" />
+                      <div className="w-8 h-8 rounded-full bg-[#2A2A2B] flex items-center justify-center text-[#D0CFCA] group-hover:text-[#F2F0EC] group-hover:bg-[#0F1926] transition">
+                        <ArrowUpRight className="w-4 h-4" />
+                      </div>
                     </div>
-                  </div>
-                ))}
+                  );
+                })}
               </div>
-            </div>
 
-            {/* Bottom Contact & GST Info */}
-            <div className="border-t border-white/10 pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-mono text-[#A8A090]">
-              <div className="flex items-center gap-4">
-                <span>GST: 07AAACT1234F1Z5</span>
-                <span>•</span>
-                <span>ISO 9001:2015 CERTIFIED</span>
+              {/* Bottom Contact & GST Info */}
+              <div className="border-t border-[#2A2A2B] pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-mono text-[#D0CFCA]">
+                <div className="flex items-center gap-4">
+                  <span>100% COMMERCIAL GST INVOICING (18% ITC)</span>
+                  <span>•</span>
+                  <span>ISO 9001:2015 CERTIFIED</span>
+                </div>
+                <a href="tel:+918160918894" className="text-[#F2F0EC] hover:text-[#D0CFCA] transition font-bold">
+                  Direct Desk: +91 81609 18894
+                </a>
               </div>
-              <a href="tel:+918160918894" className="text-white hover:underline">
-                Direct Desk: +91 81609 18894
-              </a>
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
+            </motion.div>
+          )}
+        </AnimatePresence>
+      </header>
     </>
   );
 };

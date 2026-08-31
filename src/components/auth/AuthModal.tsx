@@ -139,12 +139,12 @@ export const AuthModal: React.FC<AuthModalProps> = ({
 
   return (
     <AnimatePresence>
-      <div className="fixed inset-0 z-50 overflow-y-auto bg-[#090C10]/70 backdrop-blur-md flex items-center justify-center p-4 font-mono">
+      <div className="fixed inset-0 z-50 overflow-y-auto bg-[#0C1015]/80 backdrop-blur-md flex items-center justify-center p-4 font-mono">
         <motion.div
           initial={{ opacity: 0, scale: 0.95, y: 10 }}
           animate={{ opacity: 1, scale: 1, y: 0 }}
           exit={{ opacity: 0, scale: 0.95, y: 10 }}
-          className="bg-[#1A2018] rounded-none max-w-md w-full p-6 sm:p-8 overflow-hidden shadow-2xl border border-white/10 relative my-8"
+          className="bg-[#F2F0EC] rounded-2xl max-w-md w-full p-6 sm:p-8 overflow-hidden shadow-2xl border border-[#2A2A2B]/20 relative my-8 text-[#0F1926]"
         >
           {/* Close Button */}
           <button
@@ -152,32 +152,32 @@ export const AuthModal: React.FC<AuthModalProps> = ({
               resetForm();
               onClose();
             }}
-            className="absolute top-5 right-5 p-2 rounded-full bg-[#ECE6DB] text-[#6B6358] hover:text-[#090C10] transition-colors"
+            className="absolute top-5 right-5 p-2 rounded-full bg-[#0F1926]/10 text-[#2A2A2B] hover:text-[#0F1926] transition-colors cursor-pointer"
           >
             <X className="w-5 h-5" />
           </button>
 
           {/* Title Header */}
           <div className="mb-6">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 text-white/80 text-[10px] font-bold uppercase tracking-wider mb-2 border border-white/10">
-              <Lock className="w-3 h-3" />
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#0F1926]/10 text-[#0F1926] text-[10px] font-bold uppercase tracking-wider mb-2 border border-[#0F1926]/15">
+              <Lock className="w-3 h-3 text-[#0F1926]" />
               <span>AUTHENTICATION GATE</span>
             </div>
-            <h2 className="text-2xl font-black text-[#090C10] font-satoshi uppercase tracking-tight">
+            <h2 className="text-2xl font-black text-[#0F1926] font-satoshi uppercase tracking-tight">
               {isLogin ? 'Welcome Back' : 'Create Account'}
             </h2>
-            <p className="text-xs text-[#6B6358] mt-1 font-normal leading-relaxed">
+            <p className="text-xs text-[#2A2A2B]/80 mt-1 font-normal leading-relaxed">
               {subtitle}
             </p>
           </div>
 
           {/* Toggle Tabs (Login vs Register) */}
-          <div className="flex bg-[#ECE6DB] p-1 rounded-none mb-6">
+          <div className="flex bg-[#0F1926]/10 p-1 rounded-xl mb-6">
             <button
               type="button"
               onClick={() => handleSwitchTab(true)}
-              className={`flex-1 py-2.5 rounded-xl text-xs font-bold uppercase transition-all flex items-center justify-center gap-2 ${
-                isLogin ? 'bg-[#1A2018] text-[#F0EBE3] shadow-sm font-black' : 'text-[#6B6358] hover:text-[#090C10]'
+              className={`flex-1 py-2.5 rounded-lg text-xs font-bold uppercase transition-all flex items-center justify-center gap-2 cursor-pointer ${
+                isLogin ? 'bg-[#0F1926] text-white shadow-sm font-black' : 'text-[#2A2A2B] hover:text-[#0F1926]'
               }`}
             >
               <LogIn className="w-3.5 h-3.5" />
@@ -186,8 +186,8 @@ export const AuthModal: React.FC<AuthModalProps> = ({
             <button
               type="button"
               onClick={() => handleSwitchTab(false)}
-              className={`flex-1 py-2.5 rounded-xl text-xs font-bold uppercase transition-all flex items-center justify-center gap-2 ${
-                !isLogin ? 'bg-[#1A2018] text-[#F0EBE3] shadow-sm font-black' : 'text-[#6B6358] hover:text-[#090C10]'
+              className={`flex-1 py-2.5 rounded-lg text-xs font-bold uppercase transition-all flex items-center justify-center gap-2 cursor-pointer ${
+                !isLogin ? 'bg-[#0F1926] text-white shadow-sm font-black' : 'text-[#2A2A2B] hover:text-[#0F1926]'
               }`}
             >
               <UserPlus className="w-3.5 h-3.5" />
@@ -197,7 +197,7 @@ export const AuthModal: React.FC<AuthModalProps> = ({
 
           {/* Error Banner */}
           {errorMessage && (
-            <div className="mb-4 p-3.5 rounded-none bg-rose-50 border border-rose-200 text-rose-700 text-xs flex items-start gap-2.5">
+            <div className="mb-4 p-3.5 rounded-xl bg-white border border-[#2A2A2B]/20 text-[#0F1926] text-xs flex items-start gap-2.5">
               <AlertCircle className="w-4 h-4 shrink-0 mt-0.5" />
               <span className="font-medium leading-snug">{errorMessage}</span>
             </div>
@@ -209,150 +209,149 @@ export const AuthModal: React.FC<AuthModalProps> = ({
               <>
                 {/* Role Picker (Gym Owner vs Job Seeker) */}
                 <div>
-                  <label className="text-[10px] font-bold text-[#6B6358] uppercase block mb-1.5">
+                  <label className="text-[10px] font-bold text-[#2A2A2B] uppercase block mb-1.5">
                     Account Type *
                   </label>
                   <div className="grid grid-cols-2 gap-2">
                     <button
                       type="button"
                       onClick={() => setRole('GYM_OWNER')}
-                      className={`p-3 rounded-none border text-center transition-all ${
+                      className={`p-3 rounded-xl border text-center transition-all cursor-pointer ${
                         role === 'GYM_OWNER'
-                          ? 'border-[#090C10] bg-[#090C10] text-white font-bold'
-                          : 'border-black/10 text-[#7A7268] hover:bg-black/5'
+                          ? 'border-[#0F1926] bg-[#0F1926] text-white font-bold'
+                          : 'border-[#0F1926]/20 text-[#2A2A2B] hover:bg-[#0F1926]/5'
                       }`}
                     >
                       <Building2 className="w-4 h-4 mx-auto mb-1 text-current" />
                       <div className="text-[11px] font-bold uppercase">Gym Owner</div>
-                      <div className="text-[9px] text-[#A8A090] font-normal">Buy Gear & Post Jobs</div>
+                      <div className="text-[9px] text-[#D0CFCA] font-normal">Buy Gear & Post Jobs</div>
                     </button>
 
                     <button
                       type="button"
                       onClick={() => setRole('JOB_SEEKER')}
-                      className={`p-3 rounded-none border text-center transition-all ${
+                      className={`p-3 rounded-xl border text-center transition-all cursor-pointer ${
                         role === 'JOB_SEEKER'
-                          ? 'border-[#090C10] bg-[#090C10] text-white font-bold'
-                          : 'border-black/10 text-[#7A7268] hover:bg-black/5'
+                          ? 'border-[#0F1926] bg-[#0F1926] text-white font-bold'
+                          : 'border-[#0F1926]/20 text-[#2A2A2B] hover:bg-[#0F1926]/5'
                       }`}
                     >
                       <User className="w-4 h-4 mx-auto mb-1 text-current" />
                       <div className="text-[11px] font-bold uppercase">Job Seeker</div>
-                      <div className="text-[9px] text-[#A8A090] font-normal">Apply for Careers</div>
+                      <div className="text-[9px] text-[#D0CFCA] font-normal">Apply for Careers</div>
                     </button>
                   </div>
                 </div>
 
                 {/* Full Name */}
                 <div>
-                  <label className="text-[10px] font-bold text-[#6B6358] uppercase block mb-1">
+                  <label className="text-[10px] font-bold text-[#2A2A2B] uppercase block mb-1">
                     Full Name *
                   </label>
-                  <div className="relative">
-                    <User className="w-4 h-4 text-[#A8A090] absolute left-3 top-3" />
-                    <input
-                      type="text"
-                      required
-                      placeholder="Vikram Singhania"
-                      value={name}
-                      onChange={e => setName(e.target.value)}
-                      className="w-full bg-[#F0EBE3]/10 border border-white/10 rounded-xl py-2.5 px-3 pl-9 text-[#090C10] focus:outline-none focus:border-[#D26539]"
-                    />
-                  </div>
+                  <input
+                    type="text"
+                    required
+                    placeholder="Vikram Malhotra"
+                    value={name}
+                    onChange={e => setName(e.target.value)}
+                    className="w-full bg-white border border-[#0F1926]/20 rounded-xl py-2.5 px-3 text-[#0F1926] focus:outline-none focus:border-[#0F1926]"
+                  />
                 </div>
 
-                {/* Role Specific Fields */}
+                {/* Email Address */}
+                <div>
+                  <label className="text-[10px] font-bold text-[#2A2A2B] uppercase block mb-1">
+                    Email Address *
+                  </label>
+                  <input
+                    type="email"
+                    required
+                    placeholder="vikram@apexwellness.com"
+                    value={email}
+                    onChange={e => setEmail(e.target.value)}
+                    className="w-full bg-white border border-[#0F1926]/20 rounded-xl py-2.5 px-3 text-[#0F1926] focus:outline-none focus:border-[#0F1926]"
+                  />
+                </div>
+
+                {/* Mobile Number */}
+                <div>
+                  <label className="text-[10px] font-bold text-[#2A2A2B] uppercase block mb-1">
+                    Mobile Number *
+                  </label>
+                  <input
+                    type="tel"
+                    required
+                    placeholder="+91 98112 34567"
+                    value={mobile}
+                    onChange={e => setMobile(e.target.value)}
+                    className="w-full bg-white border border-[#0F1926]/20 rounded-xl py-2.5 px-3 text-[#0F1926] focus:outline-none focus:border-[#0F1926]"
+                  />
+                </div>
+
                 {role === 'GYM_OWNER' ? (
-                  <div className="grid grid-cols-2 gap-3">
+                  <>
+                    {/* Gym / Facility Name */}
                     <div>
-                      <label className="text-[10px] font-bold text-[#6B6358] uppercase block mb-1">
-                        Gym / Company Name *
+                      <label className="text-[10px] font-bold text-[#2A2A2B] uppercase block mb-1">
+                        Gym / Club Name *
                       </label>
                       <input
                         type="text"
                         required
-                        placeholder="Apex Fitness"
+                        placeholder="Apex Luxury Fitness Club"
                         value={gymName}
                         onChange={e => setGymName(e.target.value)}
-                        className="w-full bg-[#F0EBE3]/10 border border-white/10 rounded-xl p-2.5 text-[#090C10] focus:outline-none focus:border-[#D26539]"
+                        className="w-full bg-white border border-[#0F1926]/20 rounded-xl py-2.5 px-3 text-[#0F1926] focus:outline-none focus:border-[#0F1926]"
                       />
                     </div>
+
+                    {/* City */}
                     <div>
-                      <label className="text-[10px] font-bold text-[#6B6358] uppercase block mb-1">
-                        City *
+                      <label className="text-[10px] font-bold text-[#2A2A2B] uppercase block mb-1">
+                        Operating City *
                       </label>
                       <input
                         type="text"
                         required
-                        placeholder="Mumbai"
+                        placeholder="Ahmedabad / Gandhinagar / Delhi"
                         value={city}
                         onChange={e => setCity(e.target.value)}
-                        className="w-full bg-[#F0EBE3]/10 border border-white/10 rounded-xl p-2.5 text-[#090C10] focus:outline-none focus:border-[#D26539]"
+                        className="w-full bg-white border border-[#0F1926]/20 rounded-xl py-2.5 px-3 text-[#0F1926] focus:outline-none focus:border-[#0F1926]"
                       />
                     </div>
-                  </div>
+                  </>
                 ) : (
                   <div>
-                    <label className="text-[10px] font-bold text-[#6B6358] uppercase block mb-1">
-                      Preferred City *
+                    <label className="text-[10px] font-bold text-[#2A2A2B] uppercase block mb-1">
+                      Preferred Work City *
                     </label>
                     <input
                       type="text"
                       required
-                      placeholder="Gurugram / Bangalore"
+                      placeholder="Mumbai / Delhi / Bengaluru"
                       value={preferredCity}
                       onChange={e => setPreferredCity(e.target.value)}
-                      className="w-full bg-[#F0EBE3]/10 border border-white/10 rounded-xl p-2.5 text-[#090C10] focus:outline-none focus:border-[#D26539]"
+                      className="w-full bg-white border border-[#0F1926]/20 rounded-xl py-2.5 px-3 text-[#0F1926] focus:outline-none focus:border-[#0F1926]"
                     />
                   </div>
                 )}
-
-                {/* Email & Mobile */}
-                <div className="grid grid-cols-2 gap-3">
-                  <div>
-                    <label className="text-[10px] font-bold text-[#6B6358] uppercase block mb-1">
-                      Email Address *
-                    </label>
-                    <input
-                      type="email"
-                      required
-                      placeholder="vikram@apex.com"
-                      value={email}
-                      onChange={e => setEmail(e.target.value)}
-                      className="w-full bg-[#F0EBE3]/10 border border-white/10 rounded-xl p-2.5 text-[#090C10] focus:outline-none focus:border-[#D26539]"
-                    />
-                  </div>
-                  <div>
-                    <label className="text-[10px] font-bold text-[#6B6358] uppercase block mb-1">
-                      Mobile Number *
-                    </label>
-                    <input
-                      type="tel"
-                      required
-                      placeholder="9876543210"
-                      value={mobile}
-                      onChange={e => setMobile(e.target.value)}
-                      className="w-full bg-[#F0EBE3]/10 border border-white/10 rounded-xl p-2.5 text-[#090C10] focus:outline-none focus:border-[#D26539]"
-                    />
-                  </div>
-                </div>
               </>
             )}
 
             {isLogin && (
               <div>
-                <label className="text-[10px] font-bold text-[#6B6358] uppercase block mb-1">
+                <label className="text-[10px] font-bold text-[#2A2A2B] uppercase block mb-1">
                   Email or Mobile Number *
                 </label>
                 <div className="relative">
-                  <Mail className="w-4 h-4 text-[#A8A090] absolute left-3 top-3" />
+                  <Mail className="w-4 h-4 text-[#2A2A2B]/60 absolute left-3 top-3" />
                   <input
                     type="text"
                     required
                     placeholder="vikram@apex.com or 9876543210"
                     value={identifier}
                     onChange={e => setIdentifier(e.target.value)}
-                    className="w-full bg-[#F0EBE3]/10 border border-white/10 rounded-xl py-2.5 px-3 pl-9 text-[#090C10] focus:outline-none focus:border-[#D26539]"
+                    className="w-full bg-white border border-[#0F1926]/20 rounded-xl py-2.5 px-3 pl-9 text-[#0F1926] focus:outline-none focus:border-[#0F1926]"
                   />
                 </div>
               </div>
@@ -360,36 +359,36 @@ export const AuthModal: React.FC<AuthModalProps> = ({
 
             {/* Password Field */}
             <div>
-              <label className="text-[10px] font-bold text-[#6B6358] uppercase block mb-1">
+              <label className="text-[10px] font-bold text-[#2A2A2B] uppercase block mb-1">
                 Password *
               </label>
               <div className="relative">
-                <Lock className="w-4 h-4 text-[#A8A090] absolute left-3 top-3" />
+                <Lock className="w-4 h-4 text-[#2A2A2B]/60 absolute left-3 top-3" />
                 <input
                   type="password"
                   required
                   placeholder="Min 8 chars (A-z, 0-9)"
                   value={password}
                   onChange={e => setPassword(e.target.value)}
-                  className="w-full bg-[#F0EBE3]/10 border border-white/10 rounded-xl py-2.5 px-3 pl-9 text-[#090C10] focus:outline-none focus:border-[#D26539]"
+                  className="w-full bg-white border border-[#0F1926]/20 rounded-xl py-2.5 px-3 pl-9 text-[#0F1926] focus:outline-none focus:border-[#0F1926]"
                 />
               </div>
             </div>
 
             {!isLogin && (
               <div>
-                <label className="text-[10px] font-bold text-[#6B6358] uppercase block mb-1">
+                <label className="text-[10px] font-bold text-[#2A2A2B] uppercase block mb-1">
                   Confirm Password *
                 </label>
                 <div className="relative">
-                  <Lock className="w-4 h-4 text-[#A8A090] absolute left-3 top-3" />
+                  <Lock className="w-4 h-4 text-[#2A2A2B]/60 absolute left-3 top-3" />
                   <input
                     type="password"
                     required
                     placeholder="Re-enter password"
                     value={confirmPassword}
                     onChange={e => setConfirmPassword(e.target.value)}
-                    className="w-full bg-[#F0EBE3]/10 border border-white/10 rounded-xl py-2.5 px-3 pl-9 text-[#090C10] focus:outline-none focus:border-[#D26539]"
+                    className="w-full bg-white border border-[#0F1926]/20 rounded-xl py-2.5 px-3 pl-9 text-[#0F1926] focus:outline-none focus:border-[#0F1926]"
                   />
                 </div>
               </div>
@@ -398,7 +397,7 @@ export const AuthModal: React.FC<AuthModalProps> = ({
             <button
               type="submit"
               disabled={loading}
-              className="w-full py-3.5 px-4 rounded-xl bg-[#D26539] hover:bg-[#D26539] text-white font-black text-xs uppercase tracking-wider flex items-center justify-center gap-2 shadow-lg transition-all disabled:opacity-50 mt-4"
+              className="btn-dark w-full py-3.5 px-4 rounded-xl font-black text-xs uppercase tracking-wider flex items-center justify-center gap-2 shadow-lg transition-all disabled:opacity-50 mt-4 cursor-pointer"
             >
               {loading ? (
                 <span>Authenticating...</span>

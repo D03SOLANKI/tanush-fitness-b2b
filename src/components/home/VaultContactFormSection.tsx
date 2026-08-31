@@ -24,10 +24,8 @@ export const VaultContactFormSection: React.FC = () => {
   };
 
   return (
-    <section id="contact-form" className="relative bg-[#26452D] overflow-hidden border-t border-white/10">
-      {/* ========================================================================= */}
-      {/* 50/50 SPLIT SCREEN LAYOUT (EXPANDED TO FULL AVAILABLE SPACE)              */}
-      {/* ========================================================================= */}
+    <section id="contact-form" className="relative bg-[#0F1926] overflow-hidden border-t border-[#2A2A2B]">
+      {/* 50/50 SPLIT SCREEN LAYOUT */}
       <div className="grid grid-cols-1 lg:grid-cols-12 min-h-screen">
         {/* LEFT COLUMN: FULL-BLEED ATHLETIC & SANCTUARY IMAGERY */}
         <div className="lg:col-span-6 relative min-h-[440px] lg:min-h-full overflow-hidden">
@@ -37,59 +35,56 @@ export const VaultContactFormSection: React.FC = () => {
             className="w-full h-full object-cover"
           />
           {/* Subtle Dark Vignette */}
-          <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-black/20" />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#0C1015]/90 via-transparent to-[#0C1015]/40" />
 
           {/* Bottom Left Badge */}
-          <div className="absolute bottom-8 left-8 right-8 text-white space-y-1">
-            <div className="font-mono text-[11px] text-white/80 uppercase tracking-widest font-semibold">
-              ✦ BESPOKE COMMERCIAL FACILITY OUTFITTING
-            </div>
-            <h3 className="font-satoshi text-xl sm:text-2xl font-bold uppercase tracking-tight">
+          <div className="absolute bottom-8 left-8 right-8 text-[#F2F0EC] space-y-1 z-10">
+            <h3 className="font-satoshi text-xl sm:text-2xl font-bold uppercase tracking-tight text-[#F2F0EC]">
               ELEVATE YOUR ATHLETIC DESTINATION
             </h3>
           </div>
         </div>
 
-        {/* RIGHT COLUMN: WARM IVORY/LINEN FORM CANVAS */}
-        <div className="lg:col-span-6 bg-[#ECE6DB] text-[#090C10] relative p-8 sm:p-12 lg:p-16 flex flex-col justify-center overflow-hidden">
+        {/* RIGHT COLUMN: WARM OFF-WHITE FORM CANVAS */}
+        <div className="lg:col-span-6 bg-[#F2F0EC] text-[#0F1926] relative p-8 sm:p-12 lg:p-16 flex flex-col justify-center overflow-hidden">
           {/* Faint Star Watermark on Top Right */}
-          <div className="absolute -right-16 -top-16 pointer-events-none select-none opacity-10">
+          <div className="absolute -right-16 -top-16 pointer-events-none select-none opacity-5">
             <svg
-              className="w-96 h-96 text-[#090C10] fill-none stroke-current"
+              className="w-96 h-96 text-[#0F1926] fill-none stroke-current"
               viewBox="0 0 100 100"
               strokeWidth="2"
             >
-              <path d="M 50 5 L 56 38 L 88 20 L 64 46 L 95 50 L 64 54 L 88 80 L 56 62 L 50 95 L 44 62 L 12 80 L 36 54 L 5 50 L 36 46 L 12 20 L 44 38 Z" fill="rgba(9,12,16,0.08)" stroke="currentColor" />
+              <path d="M 50 5 L 56 38 L 88 20 L 64 46 L 95 50 L 64 54 L 88 80 L 56 62 L 50 95 L 44 62 L 12 80 L 36 54 L 5 50 L 36 46 L 12 20 L 44 38 Z" fill="rgba(15,25,38,0.08)" stroke="currentColor" />
             </svg>
           </div>
 
           <div className="relative z-10 max-w-xl w-full mx-auto space-y-8">
             {isSubmitted ? (
-              <div className="bg-white/90 border border-[#090C10]/20 p-8 text-center space-y-4 rounded-none shadow-xl">
-                <div className="w-12 h-12 rounded-full bg-[#26452D] text-white flex items-center justify-center mx-auto">
-                  <CheckCircle2 className="w-6 h-6 text-white" />
+              <div className="bg-white border border-[#0F1926]/15 p-8 text-center space-y-4 rounded-2xl shadow-xl">
+                <div className="w-12 h-12 rounded-full bg-[#0F1926] text-white flex items-center justify-center mx-auto">
+                  <CheckCircle2 className="w-6 h-6 text-[#F2F0EC]" />
                 </div>
-                <h3 className="font-satoshi text-2xl font-bold uppercase text-[#090C10]">
+                <h3 className="font-satoshi text-2xl font-bold uppercase text-[#0F1926]">
                   Proposal Request Received
                 </h3>
-                <p className="font-satoshi text-sm text-[#090C10]/80 leading-relaxed">
-                  Thank you, <strong className="text-[#090C10] font-bold">{name}</strong>. Our Commercial Outfitting Directorate will review your facility requirements and get in touch with you shortly.
+                <p className="font-sans text-sm text-[#2A2A2B] leading-relaxed">
+                  Thank you, <strong className="text-[#0F1926] font-bold">{name}</strong>. Our Commercial Outfitting Directorate will review your facility requirements and get in touch with you shortly.
                 </p>
                 <button
                   type="button"
                   onClick={() => setIsSubmitted(false)}
-                  className="btn-vault text-xs mt-2 cursor-pointer"
+                  className="btn-dark text-xs mt-2 cursor-pointer"
                 >
                   Send Another Inquiry
                 </button>
               </div>
             ) : (
               <form onSubmit={handleSubmit} className="space-y-7">
-                {/* 1. TOP ROW: NAME, CONTACT, EMAIL (UNDERLINED MINIMALIST INPUTS) */}
+                {/* 1. TOP ROW: NAME, CONTACT, EMAIL */}
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
                   {/* Name */}
                   <div className="space-y-1.5">
-                    <label className="block font-mono text-[10px] sm:text-[11px] font-bold text-[#090C10]/80 tracking-widest uppercase">
+                    <label className="block font-mono text-[10px] sm:text-[11px] font-bold text-[#0F1926]/80 tracking-widest uppercase">
                       NAME *
                     </label>
                     <input
@@ -98,13 +93,13 @@ export const VaultContactFormSection: React.FC = () => {
                       value={name}
                       onChange={(e) => setName(e.target.value)}
                       placeholder="John Doe"
-                      className="w-full bg-transparent border-b border-[#090C10] pb-2 text-xs font-mono text-[#090C10] placeholder-[#090C10]/40 focus:border-[#D26539] focus:outline-none transition-colors"
+                      className="w-full bg-transparent border-b border-[#0F1926] pb-2 text-xs font-mono text-[#0F1926] placeholder-[#0F1926]/40 focus:border-[#2A2A2B] focus:outline-none transition-colors"
                     />
                   </div>
 
                   {/* Contact */}
                   <div className="space-y-1.5">
-                    <label className="block font-mono text-[10px] sm:text-[11px] font-bold text-[#090C10]/80 tracking-widest uppercase">
+                    <label className="block font-mono text-[10px] sm:text-[11px] font-bold text-[#0F1926]/80 tracking-widest uppercase">
                       CONTACT *
                     </label>
                     <input
@@ -113,13 +108,13 @@ export const VaultContactFormSection: React.FC = () => {
                       value={contact}
                       onChange={(e) => setContact(e.target.value)}
                       placeholder="+91 91123 34451"
-                      className="w-full bg-transparent border-b border-[#090C10] pb-2 text-xs font-mono text-[#090C10] placeholder-[#090C10]/40 focus:border-[#D26539] focus:outline-none transition-colors"
+                      className="w-full bg-transparent border-b border-[#0F1926] pb-2 text-xs font-mono text-[#0F1926] placeholder-[#0F1926]/40 focus:border-[#2A2A2B] focus:outline-none transition-colors"
                     />
                   </div>
 
                   {/* Email */}
                   <div className="space-y-1.5">
-                    <label className="block font-mono text-[10px] sm:text-[11px] font-bold text-[#090C10]/80 tracking-widest uppercase">
+                    <label className="block font-mono text-[10px] sm:text-[11px] font-bold text-[#0F1926]/80 tracking-widest uppercase">
                       EMAIL
                     </label>
                     <input
@@ -127,21 +122,21 @@ export const VaultContactFormSection: React.FC = () => {
                       value={email}
                       onChange={(e) => setEmail(e.target.value)}
                       placeholder="johndoe@mail.com"
-                      className="w-full bg-transparent border-b border-[#090C10] pb-2 text-xs font-mono text-[#090C10] placeholder-[#090C10]/40 focus:border-[#D26539] focus:outline-none transition-colors"
+                      className="w-full bg-transparent border-b border-[#0F1926] pb-2 text-xs font-mono text-[#0F1926] placeholder-[#0F1926]/40 focus:border-[#2A2A2B] focus:outline-none transition-colors"
                     />
                   </div>
                 </div>
 
                 {/* 2. SUBJECT / REQUIREMENT SELECT DROPDOWN */}
                 <div className="space-y-1.5 pt-1">
-                  <label className="block font-mono text-[10px] sm:text-[11px] font-bold text-[#090C10]/80 tracking-widest uppercase">
+                  <label className="block font-mono text-[10px] sm:text-[11px] font-bold text-[#0F1926]/80 tracking-widest uppercase">
                     SUBJECT / REQUIREMENT
                   </label>
                   <div className="relative">
                     <select
                       value={subject}
                       onChange={(e) => setSubject(e.target.value)}
-                      className="w-full appearance-none bg-transparent border-b border-[#090C10] pb-2.5 pt-1 text-xs font-mono text-[#090C10] focus:border-[#D26539] focus:outline-none transition-colors cursor-pointer pr-8 font-semibold"
+                      className="w-full appearance-none bg-transparent border-b border-[#0F1926] pb-2.5 pt-1 text-xs font-mono text-[#0F1926] focus:border-[#2A2A2B] focus:outline-none transition-colors cursor-pointer pr-8 font-semibold"
                     >
                       <option value="Commercial & Residential Equipment Procurement">Commercial & Residential Equipment Procurement</option>
                       <option value="Residential Fitness Suite Outfitting">Residential Fitness Suite Outfitting</option>
@@ -150,22 +145,22 @@ export const VaultContactFormSection: React.FC = () => {
                       <option value="Hyperice Biohacking & Recovery Suite">Hyperice Biohacking & Recovery Suite</option>
                       <option value="Franchise & Institutional Outfitting">Franchise & Institutional Outfitting</option>
                     </select>
-                    <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-1 text-[#090C10]">
+                    <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-1 text-[#0F1926]">
                       <svg className="w-3.5 h-3.5 fill-current" viewBox="0 0 20 20"><path d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"/></svg>
                     </div>
                   </div>
                 </div>
 
-                {/* 3. CITY / REGION SELECT DROPDOWN */}
+                {/* 3. DESTINATION CITY SELECT DROPDOWN */}
                 <div className="space-y-1.5 pt-1">
-                  <label className="block font-mono text-[10px] sm:text-[11px] font-bold text-[#090C10]/80 tracking-widest uppercase">
+                  <label className="block font-mono text-[10px] sm:text-[11px] font-bold text-[#0F1926]/80 tracking-widest uppercase">
                     DESTINATION CITY
                   </label>
                   <div className="relative">
                     <select
                       value={city}
                       onChange={(e) => setCity(e.target.value)}
-                      className="w-full appearance-none bg-transparent border-b border-[#090C10] pb-2.5 pt-1 text-xs font-mono text-[#090C10] focus:border-[#D26539] focus:outline-none transition-colors cursor-pointer pr-8 font-semibold"
+                      className="w-full appearance-none bg-transparent border-b border-[#0F1926] pb-2.5 pt-1 text-xs font-mono text-[#0F1926] focus:border-[#2A2A2B] focus:outline-none transition-colors cursor-pointer pr-8 font-semibold"
                     >
                       <option value="Delhi NCR">Delhi NCR</option>
                       <option value="Mumbai & MMR">Mumbai & MMR</option>
@@ -177,15 +172,15 @@ export const VaultContactFormSection: React.FC = () => {
                       <option value="Chennai & South">Chennai & South</option>
                       <option value="Other Pan-India Location">Other Pan-India Location</option>
                     </select>
-                    <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-1 text-[#090C10]">
+                    <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-1 text-[#0F1926]">
                       <svg className="w-3.5 h-3.5 fill-current" viewBox="0 0 20 20"><path d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"/></svg>
                     </div>
                   </div>
                 </div>
 
-                {/* 4. MESSAGE TEXTAREA (UNDERLINED) */}
+                {/* 4. MESSAGE TEXTAREA */}
                 <div className="space-y-1.5">
-                  <label className="block font-mono text-[10px] sm:text-[11px] font-bold text-[#090C10]/80 tracking-widest uppercase">
+                  <label className="block font-mono text-[10px] sm:text-[11px] font-bold text-[#0F1926]/80 tracking-widest uppercase">
                     MESSAGE
                   </label>
                   <textarea
@@ -193,17 +188,17 @@ export const VaultContactFormSection: React.FC = () => {
                     value={message}
                     onChange={(e) => setMessage(e.target.value)}
                     placeholder="Type your message here"
-                    className="w-full bg-transparent border-b border-[#090C10] pb-2 text-xs font-mono text-[#090C10] placeholder-[#090C10]/40 focus:border-[#D26539] focus:outline-none resize-none transition-colors"
+                    className="w-full bg-transparent border-b border-[#0F1926] pb-2 text-xs font-mono text-[#0F1926] placeholder-[#0F1926]/40 focus:border-[#2A2A2B] focus:outline-none resize-none transition-colors"
                   />
                 </div>
 
-                {/* 5. SUBMIT BUTTON (RIGHT-ALIGNED OUTLINED VAULT STYLE) */}
+                {/* 5. SUBMIT BUTTON */}
                 <div className="flex justify-end pt-2">
                   <button
                     type="submit"
-                    className="bg-[#090C10] text-white hover:bg-black border border-[#090C10] px-10 py-3.5 font-mono text-xs uppercase tracking-[0.25em] font-bold transition-all duration-200 cursor-pointer shadow-sm"
+                    className="btn-dark px-10 py-3.5 text-xs font-bold uppercase tracking-[0.2em] shadow-lg cursor-pointer"
                   >
-                    SUBMIT
+                    SUBMIT INQUIRY
                   </button>
                 </div>
               </form>

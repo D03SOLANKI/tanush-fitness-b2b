@@ -59,35 +59,35 @@ export const AdminPage: React.FC = () => {
     }
   };
 
-  // RESTRICTED ACCESS SCREEN (If not authenticated) - Premium Light Theme
+  // RESTRICTED ACCESS SCREEN (If not authenticated)
   if (!isAdminAuthenticated) {
     return (
-      <main className="pt-20 pb-24 bg-slate-50 min-h-screen text-slate-900 font-mono flex items-center justify-center p-4">
+      <main className="pt-20 pb-24 bg-[#0F1926] min-h-screen text-[#F2F0EC] font-mono flex items-center justify-center p-4">
         <SEO title="Admin Security Authentication Gate | Tanush B2B" />
         <motion.div
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
-          className="max-w-md w-full rounded-3xl bg-white border border-slate-200 p-8 shadow-xl space-y-6 text-center"
+          className="max-w-md w-full rounded-3xl bg-[#F2F0EC] text-[#0F1926] border border-[#2A2A2B]/20 p-8 shadow-2xl space-y-6 text-center"
         >
-          <div className="w-16 h-16 rounded-2xl bg-blue-50 border border-blue-200 text-blue-600 mx-auto flex items-center justify-center shadow-inner">
-            <Lock className="w-8 h-8" />
+          <div className="w-16 h-16 rounded-2xl bg-[#0F1926]/10 border border-[#0F1926]/15 text-[#0F1926] mx-auto flex items-center justify-center shadow-inner">
+            <Lock className="w-8 h-8 text-[#0F1926]" />
           </div>
 
           <div className="space-y-1">
-            <span className="text-[10px] font-bold text-blue-600 uppercase tracking-widest block font-mono">
+            <span className="text-[10px] font-bold text-[#2A2A2B] uppercase tracking-widest block font-mono">
               RESTRICTED EXECUTIVE ACCESS
             </span>
-            <h1 className="text-2xl font-black text-slate-900 font-heading uppercase">
+            <h1 className="text-2xl font-black text-[#0F1926] font-satoshi uppercase">
               Tanush Admin Authentication
             </h1>
-            <p className="text-xs text-slate-500 leading-relaxed font-normal">
+            <p className="text-xs text-[#2A2A2B]/80 leading-relaxed font-sans font-normal">
               This panel is restricted exclusively to authorized Tanush Fitness directors, account managers, and system administrators.
             </p>
           </div>
 
           <form onSubmit={handleLoginSubmit} className="space-y-4 text-left">
             <div>
-              <label className="text-[10px] font-bold text-slate-600 uppercase font-mono block mb-1">
+              <label className="text-[10px] font-bold text-[#2A2A2B] uppercase font-mono block mb-1">
                 Enter Admin Security Passcode *
               </label>
               <div className="relative">
@@ -100,11 +100,11 @@ export const AdminPage: React.FC = () => {
                     setPasscode(e.target.value);
                     setAuthError(false);
                   }}
-                  className={`w-full bg-slate-50 border rounded-xl py-3 px-4 pl-10 text-xs font-mono text-slate-900 placeholder-slate-400 focus:outline-none ${
-                    authError ? 'border-rose-500' : 'border-slate-200 focus:border-blue-600'
+                  className={`w-full bg-white border rounded-xl py-3 px-4 pl-10 text-xs font-mono text-[#0F1926] placeholder-[#D0CFCA] focus:outline-none ${
+                    authError ? 'border-rose-500' : 'border-[#0F1926]/20 focus:border-[#0F1926]'
                   }`}
                 />
-                <KeyRound className="w-4 h-4 text-slate-400 absolute left-3.5 top-3.5" />
+                <KeyRound className="w-4 h-4 text-[#2A2A2B]/60 absolute left-3.5 top-3.5" />
               </div>
 
               {authError && (
@@ -117,18 +117,18 @@ export const AdminPage: React.FC = () => {
 
             <button
               type="submit"
-              className="w-full py-3.5 px-4 rounded-xl bg-blue-600 hover:bg-blue-700 text-white font-bold text-xs uppercase tracking-wider font-mono flex items-center justify-center gap-2 shadow-lg shadow-blue-600/20 transition-all"
+              className="btn-dark w-full py-3.5 px-4 text-xs font-mono uppercase tracking-wider flex items-center justify-center gap-2 cursor-pointer shadow-lg"
             >
-              <ShieldCheck className="w-4 h-4" />
+              <ShieldCheck className="w-4 h-4 text-[#F2F0EC]" />
               <span>Authenticate & Access Console</span>
             </button>
           </form>
 
-          <div className="pt-4 border-t border-slate-100 flex items-center justify-between text-[10px] text-slate-400 font-mono">
+          <div className="pt-4 border-t border-[#0F1926]/10 flex items-center justify-between text-[10px] text-[#2A2A2B] font-mono">
             <span>256-Bit SSL Encrypted Audit Log</span>
             <button
               onClick={() => navigateTo('home')}
-              className="text-blue-600 hover:underline font-bold"
+              className="text-[#0F1926] hover:underline font-bold cursor-pointer"
             >
               Return Home →
             </button>
@@ -141,20 +141,20 @@ export const AdminPage: React.FC = () => {
   const totalNotifications = equipmentEnquiries.length + jobApplications.length + serviceEnquiries.length;
 
   return (
-    <main className="pt-8 pb-24 bg-slate-50 min-h-screen text-slate-900 font-mono">
+    <main className="pt-8 pb-24 bg-[#0F1926] min-h-screen text-[#F2F0EC] font-mono">
       <SEO title="Executive Enterprise Admin Suite | Tanush Fitness B2B" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Top Executive Header Bar */}
-        <div className="mb-8 flex flex-col sm:flex-row sm:items-center justify-between gap-4 border border-slate-200 pb-6 bg-white p-6 rounded-3xl shadow-sm">
+        <div className="mb-8 flex flex-col sm:flex-row sm:items-center justify-between gap-4 border border-[#2A2A2B] pb-6 bg-[#0C1015] p-6 rounded-3xl shadow-xl">
           <div>
             <div className="flex items-center gap-2.5">
-              <ShieldCheck className="w-7 h-7 text-blue-600" />
-              <h1 className="text-2xl sm:text-3xl font-black text-slate-900 font-heading uppercase tracking-wide">
+              <ShieldCheck className="w-7 h-7 text-[#F2F0EC]" />
+              <h1 className="text-2xl sm:text-3xl font-black text-[#F2F0EC] font-satoshi uppercase tracking-wide">
                 Tanush Executive Console
               </h1>
             </div>
-            <p className="text-xs text-slate-500 mt-1">
+            <p className="text-xs text-[#D0CFCA] mt-1 font-sans">
               Centralized Enterprise Suite • User Verification, Equipment Catalog, PDF Quotes, Moderation & CSV Reports
             </p>
           </div>
@@ -164,11 +164,11 @@ export const AdminPage: React.FC = () => {
             <div className="relative">
               <button
                 onClick={() => setIsNotificationsOpen(!isNotificationsOpen)}
-                className="p-2.5 rounded-xl bg-slate-50 border border-slate-200 text-slate-700 hover:text-slate-900 relative transition shadow-sm"
+                className="p-2.5 rounded-xl bg-[#0F1926] border border-[#2A2A2B] text-[#F2F0EC] hover:text-white relative transition shadow-sm cursor-pointer"
               >
-                <Bell className="w-4 h-4 text-blue-600" />
+                <Bell className="w-4 h-4 text-[#F2F0EC]" />
                 {totalNotifications > 0 && (
-                  <span className="absolute -top-1 -right-1 w-4 h-4 rounded-full bg-rose-500 text-white text-[9px] font-black flex items-center justify-center">
+                  <span className="absolute -top-1 -right-1 w-4 h-4 rounded-full bg-[#F2F0EC] text-[#0F1926] text-[9px] font-black flex items-center justify-center">
                     {totalNotifications}
                   </span>
                 )}
@@ -176,21 +176,21 @@ export const AdminPage: React.FC = () => {
 
               {/* Notifications Dropdown */}
               {isNotificationsOpen && (
-                <div className="absolute right-0 mt-2 w-80 rounded-2xl bg-white border border-slate-200 shadow-2xl p-4 z-50 space-y-3">
-                  <div className="flex items-center justify-between border-b border-slate-100 pb-2">
-                    <span className="text-xs font-black uppercase text-slate-900">Live Enterprise Alerts</span>
-                    <button onClick={() => setIsNotificationsOpen(false)}>
-                      <X className="w-4 h-4 text-slate-400 hover:text-slate-600" />
+                <div className="absolute right-0 mt-2 w-80 rounded-2xl bg-[#F2F0EC] text-[#0F1926] border border-[#2A2A2B]/15 shadow-2xl p-4 z-50 space-y-3">
+                  <div className="flex items-center justify-between border-b border-[#0F1926]/10 pb-2">
+                    <span className="text-xs font-black uppercase text-[#0F1926]">Live Enterprise Alerts</span>
+                    <button onClick={() => setIsNotificationsOpen(false)} className="cursor-pointer">
+                      <X className="w-4 h-4 text-[#2A2A2B] hover:text-[#0F1926]" />
                     </button>
                   </div>
-                  <div className="space-y-2 text-xs">
+                  <div className="space-y-2 text-xs font-sans">
                     {equipmentEnquiries.length > 0 && (
-                      <div className="p-2.5 rounded-xl bg-blue-50 border border-blue-200 text-blue-900 font-bold">
+                      <div className="p-2.5 rounded-xl bg-[#0F1926]/10 border border-[#0F1926]/15 text-[#0F1926] font-bold">
                         ⚡ {equipmentEnquiries.length} Equipment RFQ Quotation Requests
                       </div>
                     )}
                     {jobApplications.length > 0 && (
-                      <div className="p-2.5 rounded-xl bg-amber-50 border border-amber-200 text-amber-900 font-bold">
+                      <div className="p-2.5 rounded-xl bg-[#0F1926]/10 border border-[#0F1926]/20 text-[#0F1926] font-bold">
                         ⚡ {jobApplications.length} Candidate Resume Applications
                       </div>
                     )}
@@ -199,29 +199,29 @@ export const AdminPage: React.FC = () => {
               )}
             </div>
 
-            <div className="px-3.5 py-2 rounded-xl bg-emerald-50 border border-emerald-200 text-xs font-bold text-emerald-800 flex items-center gap-2 shadow-sm">
-              <span className="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-ping" />
+            <div className="px-3.5 py-2 rounded-xl bg-[#0F1926] border border-[#2A2A2B] text-xs font-bold text-[#F2F0EC] flex items-center gap-2 shadow-sm">
+              <span className="w-2.5 h-2.5 rounded-full bg-[#F2F0EC] animate-ping" />
               <span>Admin Session Active</span>
             </div>
 
             <button
               onClick={logoutAdmin}
-              className="px-4 py-2 rounded-xl bg-slate-100 hover:bg-rose-50 border border-slate-200 hover:border-rose-200 text-slate-700 hover:text-rose-700 text-xs font-bold uppercase flex items-center gap-1.5 transition-all shadow-sm"
+              className="px-4 py-2 rounded-xl bg-[#0F1926] hover:bg-[#2A2A2B] border border-[#2A2A2B] text-[#F2F0EC] text-xs font-bold uppercase flex items-center gap-1.5 transition-all shadow-sm cursor-pointer"
             >
-              <LogOut className="w-4 h-4 text-rose-600" />
+              <LogOut className="w-4 h-4 text-[#F2F0EC]" />
               <span>Logout</span>
             </button>
           </div>
         </div>
 
-        {/* Clean Natural Horizontal Scrolling Tab Bar */}
-        <div className="flex items-center gap-3 overflow-x-auto p-2.5 bg-white rounded-3xl border border-slate-200 shadow-sm mb-8 scrollbar-thin">
+        {/* Horizontal Scrolling Tab Bar */}
+        <div className="flex items-center gap-3 overflow-x-auto p-2.5 bg-[#0C1015] rounded-3xl border border-[#2A2A2B] shadow-xl mb-8 scrollbar-thin">
           <button
             onClick={() => setActiveTab('users')}
-            className={`px-5 py-3 rounded-2xl text-xs font-black uppercase whitespace-nowrap transition-all flex items-center gap-2 font-mono shrink-0 ${
+            className={`px-5 py-3 rounded-2xl text-xs font-black uppercase whitespace-nowrap transition-all flex items-center gap-2 font-mono shrink-0 cursor-pointer ${
               activeTab === 'users'
-                ? 'bg-blue-600 text-white font-bold shadow-md shadow-blue-500/20'
-                : 'bg-slate-50 text-slate-700 border border-slate-200 hover:bg-slate-100 hover:text-slate-900'
+                ? 'bg-[#F2F0EC] text-[#0F1926] font-bold shadow-md'
+                : 'bg-[#0F1926] text-[#D0CFCA] border border-[#2A2A2B] hover:text-white'
             }`}
           >
             <UserCheck className="w-4 h-4" />
@@ -230,10 +230,10 @@ export const AdminPage: React.FC = () => {
 
           <button
             onClick={() => setActiveTab('catalog')}
-            className={`px-5 py-3 rounded-2xl text-xs font-black uppercase whitespace-nowrap transition-all flex items-center gap-2 font-mono shrink-0 ${
+            className={`px-5 py-3 rounded-2xl text-xs font-black uppercase whitespace-nowrap transition-all flex items-center gap-2 font-mono shrink-0 cursor-pointer ${
               activeTab === 'catalog'
-                ? 'bg-blue-600 text-white font-bold shadow-md shadow-blue-500/20'
-                : 'bg-slate-50 text-slate-700 border border-slate-200 hover:bg-slate-100 hover:text-slate-900'
+                ? 'bg-[#F2F0EC] text-[#0F1926] font-bold shadow-md'
+                : 'bg-[#0F1926] text-[#D0CFCA] border border-[#2A2A2B] hover:text-white'
             }`}
           >
             <Package className="w-4 h-4" />
@@ -242,10 +242,10 @@ export const AdminPage: React.FC = () => {
 
           <button
             onClick={() => setActiveTab('quotes')}
-            className={`px-5 py-3 rounded-2xl text-xs font-black uppercase whitespace-nowrap transition-all flex items-center gap-2 font-mono shrink-0 ${
+            className={`px-5 py-3 rounded-2xl text-xs font-black uppercase whitespace-nowrap transition-all flex items-center gap-2 font-mono shrink-0 cursor-pointer ${
               activeTab === 'quotes'
-                ? 'bg-blue-600 text-white font-bold shadow-md shadow-blue-500/20'
-                : 'bg-slate-50 text-slate-700 border border-slate-200 hover:bg-slate-100 hover:text-slate-900'
+                ? 'bg-[#F2F0EC] text-[#0F1926] font-bold shadow-md'
+                : 'bg-[#0F1926] text-[#D0CFCA] border border-[#2A2A2B] hover:text-white'
             }`}
           >
             <Printer className="w-4 h-4" />
@@ -254,10 +254,10 @@ export const AdminPage: React.FC = () => {
 
           <button
             onClick={() => setActiveTab('jobs-mod')}
-            className={`px-5 py-3 rounded-2xl text-xs font-black uppercase whitespace-nowrap transition-all flex items-center gap-2 font-mono shrink-0 ${
+            className={`px-5 py-3 rounded-2xl text-xs font-black uppercase whitespace-nowrap transition-all flex items-center gap-2 font-mono shrink-0 cursor-pointer ${
               activeTab === 'jobs-mod'
-                ? 'bg-blue-600 text-white font-bold shadow-md shadow-blue-500/20'
-                : 'bg-slate-50 text-slate-700 border border-slate-200 hover:bg-slate-100 hover:text-slate-900'
+                ? 'bg-[#F2F0EC] text-[#0F1926] font-bold shadow-md'
+                : 'bg-[#0F1926] text-[#D0CFCA] border border-[#2A2A2B] hover:text-white'
             }`}
           >
             <CheckSquare className="w-4 h-4" />
@@ -266,10 +266,10 @@ export const AdminPage: React.FC = () => {
 
           <button
             onClick={() => setActiveTab('reports')}
-            className={`px-5 py-3 rounded-2xl text-xs font-black uppercase whitespace-nowrap transition-all flex items-center gap-2 font-mono shrink-0 ${
+            className={`px-5 py-3 rounded-2xl text-xs font-black uppercase whitespace-nowrap transition-all flex items-center gap-2 font-mono shrink-0 cursor-pointer ${
               activeTab === 'reports'
-                ? 'bg-blue-600 text-white font-bold shadow-md shadow-blue-500/20'
-                : 'bg-slate-50 text-slate-700 border border-slate-200 hover:bg-slate-100 hover:text-slate-900'
+                ? 'bg-[#F2F0EC] text-[#0F1926] font-bold shadow-md'
+                : 'bg-[#0F1926] text-[#D0CFCA] border border-[#2A2A2B] hover:text-white'
             }`}
           >
             <FileSpreadsheet className="w-4 h-4" />
@@ -278,10 +278,10 @@ export const AdminPage: React.FC = () => {
 
           <button
             onClick={() => setActiveTab('settings')}
-            className={`px-5 py-3 rounded-2xl text-xs font-black uppercase whitespace-nowrap transition-all flex items-center gap-2 font-mono shrink-0 ${
+            className={`px-5 py-3 rounded-2xl text-xs font-black uppercase whitespace-nowrap transition-all flex items-center gap-2 font-mono shrink-0 cursor-pointer ${
               activeTab === 'settings'
-                ? 'bg-blue-600 text-white font-bold shadow-md shadow-blue-500/20'
-                : 'bg-slate-50 text-slate-700 border border-slate-200 hover:bg-slate-100 hover:text-slate-900'
+                ? 'bg-[#F2F0EC] text-[#0F1926] font-bold shadow-md'
+                : 'bg-[#0F1926] text-[#D0CFCA] border border-[#2A2A2B] hover:text-white'
             }`}
           >
             <Settings className="w-4 h-4" />
@@ -290,12 +290,14 @@ export const AdminPage: React.FC = () => {
         </div>
 
         {/* Render Tab Contents */}
-        {activeTab === 'users' && <UserManagementTab />}
-        {activeTab === 'catalog' && <CatalogManagerTab />}
-        {activeTab === 'quotes' && <PdfQuoteDispatcherTab />}
-        {activeTab === 'jobs-mod' && <JobModerationTab />}
-        {activeTab === 'reports' && <AnalyticsReportsTab />}
-        {activeTab === 'settings' && <PlatformSettingsTab />}
+        <div className="bg-[#0C1015] p-6 rounded-3xl border border-[#2A2A2B] shadow-xl">
+          {activeTab === 'users' && <UserManagementTab />}
+          {activeTab === 'catalog' && <CatalogManagerTab />}
+          {activeTab === 'quotes' && <PdfQuoteDispatcherTab />}
+          {activeTab === 'jobs-mod' && <JobModerationTab />}
+          {activeTab === 'reports' && <AnalyticsReportsTab />}
+          {activeTab === 'settings' && <PlatformSettingsTab />}
+        </div>
       </div>
     </main>
   );

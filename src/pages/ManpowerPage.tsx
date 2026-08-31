@@ -299,7 +299,7 @@ export const ManpowerPage: React.FC = () => {
   });
 
   return (
-    <main className="pt-24 pb-20 bg-[#090C10] min-h-screen text-[#F0EBE3]">
+    <main className="pt-24 pb-20 bg-[#0F1926] min-h-screen text-[#F2F0EC]">
       <SEO
         title="Master Coaches & Staffing Sanctuary | Tanush Fitness B2B"
         description="Recruit Club Managers, HR/Admin, Sales Executives, Fitness Trainers, Group Class Coaches, Nutritionists & Physiotherapists nationwide."
@@ -307,18 +307,13 @@ export const ManpowerPage: React.FC = () => {
 
       {/* Hero Header */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 pb-12">
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 border-b border-white/10 pb-8">
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 border-b border-[#2A2A2B] pb-8">
           <div className="space-y-3">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-xs font-mono text-white/80 tracking-widest uppercase">
-              <Sparkles className="w-3.5 h-3.5" />
-              <span>ELITE COMMERCIAL TALENT SANCTUARY</span>
-            </div>
-
-            <h1 className="font-satoshi text-3xl sm:text-5xl md:text-6xl font-extrabold uppercase text-white tracking-tight">
+            <h1 className="font-satoshi text-3xl sm:text-5xl md:text-6xl font-extrabold uppercase text-[#F2F0EC] tracking-tight">
               MASTER STAFFING
             </h1>
 
-            <p className="text-sm sm:text-base text-white/90 max-w-2xl font-sans leading-relaxed">
+            <p className="text-sm sm:text-base text-[#D0CFCA] max-w-2xl font-sans leading-relaxed">
               Complete 7-division talent placement and staffing infrastructure for commercial health clubs, high-performance gyms, and luxury wellness destinations nationwide.
             </p>
           </div>
@@ -328,9 +323,9 @@ export const ManpowerPage: React.FC = () => {
             <button
               type="button"
               onClick={() => setIsPostJobModalOpen(true)}
-              className="btn-vault px-6 py-3 text-xs flex items-center gap-2 cursor-pointer shadow-lg"
+              className="btn-primary px-6 py-3 text-xs flex items-center gap-2 cursor-pointer shadow-lg"
             >
-              <Plus className="w-4 h-4" />
+              <Plus className="w-4 h-4 text-[#0F1926]" />
               <span>Hire Facility Staff</span>
             </button>
             <button
@@ -352,9 +347,9 @@ export const ManpowerPage: React.FC = () => {
                 });
                 setIsApplyModalOpen(true);
               }}
-              className="px-5 py-3 rounded-none border border-white/20 hover:border-white text-white text-xs font-mono uppercase tracking-wider transition hover:bg-white/5 flex items-center gap-2 cursor-pointer"
+              className="px-5 py-3 rounded-full border border-[#2A2A2B] hover:border-[#D0CFCA] text-[#F2F0EC] text-xs font-mono uppercase tracking-wider transition hover:bg-[#0C1015] flex items-center gap-2 cursor-pointer"
             >
-              <UserCheck className="w-4 h-4" />
+              <UserCheck className="w-4 h-4 text-[#F2F0EC]" />
               <span>Join Talent Network</span>
             </button>
           </div>
@@ -362,19 +357,19 @@ export const ManpowerPage: React.FC = () => {
       </section>
 
       {/* Marquee Banner */}
-      <MarqueeStrip theme="orange" speed="slow" />
+      <MarqueeStrip theme="white" speed="slow" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 space-y-10">
         {/* Search & Category Filter Strip */}
-        <div className="flex flex-col md:flex-row items-stretch md:items-center justify-between gap-4 border-b border-white/10 pb-6">
+        <div className="flex flex-col md:flex-row items-stretch md:items-center justify-between gap-4 border-b border-[#2A2A2B] pb-6">
           <div className="relative flex-1 max-w-md">
-            <Search className="w-4 h-4 absolute left-3.5 top-1/2 -translate-y-1/2 text-[#6B6358]" />
+            <Search className="w-4 h-4 absolute left-3.5 top-1/2 -translate-y-1/2 text-[#D0CFCA]" />
             <input
               type="text"
               placeholder="Search category (e.g. Management, Yoga, Physiotherapist, Receptionist)..."
               value={searchQuery}
               onChange={e => setSearchQuery(e.target.value)}
-              className="w-full bg-[#0D1118] border border-white/10 rounded-full pl-10 pr-4 py-2.5 text-xs text-white placeholder-[#6B6358] focus:outline-none focus:border-white"
+              className="w-full bg-[#0C1015] border border-[#2A2A2B] rounded-full pl-10 pr-4 py-2.5 text-xs text-[#F2F0EC] placeholder-[#D0CFCA] focus:outline-none focus:border-[#F2F0EC] transition-colors"
             />
           </div>
 
@@ -384,10 +379,10 @@ export const ManpowerPage: React.FC = () => {
                 key={cat}
                 type="button"
                 onClick={() => setSelectedCategory(cat)}
-                className={`px-4 py-2 rounded-full text-xs font-mono uppercase tracking-wider transition whitespace-nowrap ${
+                className={`px-4 py-2 rounded-full text-xs font-mono uppercase tracking-wider transition whitespace-nowrap cursor-pointer ${
                   selectedCategory === cat
-                    ? 'bg-[#D26539] text-[#090C10] font-bold shadow-md'
-                    : 'bg-[#0D1118] text-[#A8A090] border border-white/5 hover:border-white/20 hover:text-white'
+                    ? 'bg-[#F2F0EC] text-[#0F1926] font-bold shadow-md'
+                    : 'bg-[#0C1015] text-[#D0CFCA] border border-[#2A2A2B] hover:border-[#D0CFCA] hover:text-white'
                 }`}
               >
                 {cat === 'all' ? 'All Services' : cat}
@@ -396,7 +391,7 @@ export const ManpowerPage: React.FC = () => {
           </div>
         </div>
 
-        {/* 7 MANPOWER VISUAL SERVICES GRID (3 PER ROW LIKE EQUIPMENT & SERVICES) */}
+        {/* 7 MANPOWER VISUAL SERVICES GRID (#F2F0EC LIGHT CARDS) */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
           {filteredServices.map((service) => (
             <motion.div
@@ -405,68 +400,68 @@ export const ManpowerPage: React.FC = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.3 }}
-              className="bg-[#0D1118] border border-white/10 rounded-none overflow-hidden flex flex-col justify-between group hover:border-white/30 transition-all duration-300 shadow-xl"
+              className="bg-[#F2F0EC] text-[#0F1926] border border-[#2A2A2B]/10 rounded-2xl overflow-hidden flex flex-col justify-between group hover:border-[#0F1926] transition-all duration-300 shadow-2xl hover:-translate-y-1.5"
             >
               <div>
                 {/* Visual Image Header */}
-                <div className="relative aspect-[16/10] w-full overflow-hidden bg-[#090C10]">
+                <div className="relative aspect-[16/10] w-full overflow-hidden bg-[#0F1926]">
                   <img
                     src={service.image}
                     alt={service.title}
                     onError={(e) => {
                       (e.target as HTMLImageElement).src = 'https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=1000&q=80';
                     }}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 opacity-90 group-hover:opacity-100"
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 opacity-95 group-hover:opacity-100"
                     loading="lazy"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#0D1118] via-[#0D1118]/30 to-transparent" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#0F1926]/60 via-transparent to-transparent" />
 
                   {/* Deployment Speed Pill */}
-                  <div className="absolute bottom-3 right-3 bg-[#090C10]/90 px-2.5 py-0.5 border border-white/10 rounded-none text-[9px] font-mono text-emerald-400 font-bold">
+                  <div className="absolute bottom-3 right-3 bg-[#0F1926] px-2.5 py-1 rounded-md text-[9px] font-mono text-[#F2F0EC] font-bold border border-white/15">
                     ⚡ {service.deploymentTime}
                   </div>
                 </div>
 
                 {/* Card Content */}
-                <div className="p-5 sm:p-6 space-y-5">
+                <div className="p-6 space-y-4">
                   <div>
-                    <div className="text-[11px] font-mono text-[#F0EBE3] uppercase tracking-wider font-bold">
+                    <div className="text-[11px] font-mono text-[#2A2A2B] uppercase tracking-wider font-bold">
                       {service.rolesIncluded}
                     </div>
-                    <h3 className="font-satoshi text-lg sm:text-xl font-bold uppercase text-white tracking-tight mt-1">
+                    <h3 className="font-satoshi text-lg sm:text-xl font-bold uppercase text-[#0F1926] tracking-tight mt-1 group-hover:text-[#2A2A2B] transition">
                       {service.title}
                     </h3>
-                    <p className="text-xs text-white/80 font-sans leading-relaxed mt-2 line-clamp-3">
+                    <p className="text-xs text-[#2A2A2B]/80 font-sans leading-relaxed mt-2 line-clamp-3">
                       {service.description}
                     </p>
                   </div>
 
                   {/* Roles Breakdown */}
-                  <div className="space-y-1.5 pt-2 border-t border-white/5">
-                    <div className="text-[10px] font-mono text-white/60 uppercase tracking-wider font-semibold">
+                  <div className="space-y-1.5 pt-3 border-t border-[#0F1926]/10">
+                    <div className="text-[10px] font-mono text-[#0F1926] uppercase tracking-wider font-bold">
                       Roles Included:
                     </div>
                     <div className="flex flex-wrap gap-1.5">
                       {service.rolesList.map((r, i) => (
                         <span
                           key={i}
-                          className="px-2 py-0.5 rounded-none bg-white/5 border border-white/10 text-white text-[10px] font-mono"
+                          className="px-2 py-0.5 rounded bg-[#0F1926]/10 text-[#0F1926] text-[10px] font-mono font-medium"
                         >
-                          ✦ {r}
+                          {r}
                         </span>
                       ))}
                     </div>
                   </div>
 
                   {/* Deliverables / Scope */}
-                  <div className="space-y-1.5 pt-2 border-t border-white/5">
-                    <div className="text-[10px] font-mono text-white/60 uppercase tracking-wider font-semibold">
+                  <div className="space-y-1.5 pt-3 border-t border-[#0F1926]/10">
+                    <div className="text-[10px] font-mono text-[#0F1926] uppercase tracking-wider font-bold">
                       Key Scope:
                     </div>
-                    <ul className="space-y-1.5 text-xs font-sans text-[#A8A090]">
+                    <ul className="space-y-1.5 text-xs font-sans text-[#2A2A2B]/80">
                       {service.deliverables.slice(0, 3).map((item, i) => (
                         <li key={i} className="flex items-start gap-2">
-                          <CheckCircle2 className="w-3.5 h-3.5 text-white shrink-0 mt-0.5" />
+                          <CheckCircle2 className="w-3.5 h-3.5 text-[#0F1926] shrink-0 mt-0.5" />
                           <span className="leading-snug text-[11px]">{item}</span>
                         </li>
                       ))}
@@ -476,7 +471,7 @@ export const ManpowerPage: React.FC = () => {
               </div>
 
               {/* Bottom Action Footer */}
-              <div className="p-5 sm:p-6 pt-0 flex flex-col sm:flex-row items-center gap-2.5 border-t border-white/5 mt-3">
+              <div className="p-6 pt-0 flex flex-col sm:flex-row items-center gap-2.5 border-t border-[#0F1926]/10 mt-3">
                 <button
                   type="button"
                   onClick={() => {
@@ -493,7 +488,7 @@ export const ManpowerPage: React.FC = () => {
                     });
                     setIsPostJobModalOpen(true);
                   }}
-                  className="btn-vault flex-1 w-full py-2.5 text-xs flex items-center justify-center gap-1.5 cursor-pointer"
+                  className="btn-dark flex-1 w-full py-2.5 text-xs flex items-center justify-center gap-1.5 cursor-pointer shadow-md"
                 >
                   <Plus className="w-3.5 h-3.5" />
                   <span>Hire Staff</span>
@@ -518,9 +513,9 @@ export const ManpowerPage: React.FC = () => {
                     });
                     setIsApplyModalOpen(true);
                   }}
-                  className="w-full sm:w-auto px-4 py-2.5 rounded-none border border-white/10 hover:border-white text-white text-xs font-mono uppercase tracking-wider transition hover:bg-white/5 flex items-center justify-center gap-1.5 cursor-pointer"
+                  className="w-full sm:w-auto px-4 py-2.5 rounded-lg border border-[#0F1926]/20 hover:border-[#0F1926] text-[#0F1926] text-xs font-mono uppercase tracking-wider transition bg-white/50 flex items-center justify-center gap-1.5 cursor-pointer font-bold"
                 >
-                  <UserCheck className="w-3.5 h-3.5" />
+                  <UserCheck className="w-3.5 h-3.5 text-[#0F1926]" />
                   <span>Apply</span>
                 </button>
               </div>
@@ -536,27 +531,27 @@ export const ManpowerPage: React.FC = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-50 bg-black/80  flex items-center justify-center p-4 sm:p-6 overflow-y-auto"
+            className="fixed inset-0 z-50 bg-[#0C1015]/80 backdrop-blur-md flex items-center justify-center p-4 sm:p-6 overflow-y-auto"
           >
             <motion.div
               initial={{ scale: 0.95, y: 20 }}
               animate={{ scale: 1, y: 0 }}
               exit={{ scale: 0.95, y: 20 }}
-              className="bg-[#0D1118] border border-white/10 rounded-none max-w-lg w-full p-6 sm:p-8 space-y-6 "
+              className="bg-[#F2F0EC] text-[#0F1926] border border-[#2A2A2B]/20 rounded-2xl max-w-lg w-full p-6 sm:p-8 space-y-6 shadow-2xl"
             >
-              <div className="flex items-start justify-between border-b border-white/10 pb-4">
+              <div className="flex items-start justify-between border-b border-[#0F1926]/15 pb-4">
                 <div>
-                  <span className="text-[10px] font-mono text-white/80 uppercase tracking-widest block mb-1">
+                  <span className="text-[10px] font-mono text-[#2A2A2B] uppercase tracking-widest block mb-1 font-bold">
                     EXECUTIVE CANDIDATE APPLICATION
                   </span>
-                  <h3 className="font-satoshi text-xl font-bold text-white uppercase">
+                  <h3 className="font-satoshi text-xl font-bold text-[#0F1926] uppercase">
                     {selectedJob.title} // {selectedJob.gymName}
                   </h3>
                 </div>
                 <button
                   type="button"
                   onClick={() => setIsApplyModalOpen(false)}
-                  className="p-2 rounded-full bg-white/5 hover:bg-white/10 text-[#A8A090] hover:text-white"
+                  className="p-2 rounded-full bg-[#0F1926]/10 hover:bg-[#0F1926]/20 text-[#0F1926] transition cursor-pointer"
                 >
                   <X className="w-5 h-5" />
                 </button>
@@ -564,52 +559,52 @@ export const ManpowerPage: React.FC = () => {
 
               <form onSubmit={handleApplySubmit} className="space-y-4">
                 <div>
-                  <label className="block text-xs font-mono text-[#A8A090] uppercase mb-1">Your Full Name</label>
+                  <label className="block text-xs font-mono text-[#2A2A2B] uppercase mb-1 font-bold">Your Full Name</label>
                   <input
                     type="text"
                     required
                     value={candidateForm.fullName}
                     onChange={e => setCandidateForm({ ...candidateForm, fullName: e.target.value })}
-                    className="w-full bg-[#090C10] border border-white/10 rounded-xl px-4 py-2.5 text-sm text-white placeholder-[#6B6358] focus:outline-none focus:border-[#D26539]"
+                    className="w-full bg-white border border-[#0F1926]/20 rounded-xl px-4 py-2.5 text-sm text-[#0F1926] placeholder-[#D0CFCA] focus:outline-none focus:border-[#0F1926]"
                   />
                 </div>
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
-                    <label className="block text-xs font-mono text-[#A8A090] uppercase mb-1">Mobile Hotline</label>
+                    <label className="block text-xs font-mono text-[#2A2A2B] uppercase mb-1 font-bold">Mobile Hotline</label>
                     <input
                       type="tel"
                       required
                       value={candidateForm.mobile}
                       onChange={e => setCandidateForm({ ...candidateForm, mobile: e.target.value })}
-                      className="w-full bg-[#090C10] border border-white/10 rounded-xl px-4 py-2.5 text-sm text-white placeholder-[#6B6358] focus:outline-none focus:border-[#D26539]"
+                      className="w-full bg-white border border-[#0F1926]/20 rounded-xl px-4 py-2.5 text-sm text-[#0F1926] placeholder-[#D0CFCA] focus:outline-none focus:border-[#0F1926]"
                     />
                   </div>
                   <div>
-                    <label className="block text-xs font-mono text-[#A8A090] uppercase mb-1">Current City</label>
+                    <label className="block text-xs font-mono text-[#2A2A2B] uppercase mb-1 font-bold">Current City</label>
                     <input
                       type="text"
                       placeholder="Delhi NCR"
                       value={candidateForm.preferredCity}
                       onChange={e => setCandidateForm({ ...candidateForm, preferredCity: e.target.value })}
-                      className="w-full bg-[#090C10] border border-white/10 rounded-xl px-4 py-2.5 text-sm text-white placeholder-[#6B6358] focus:outline-none focus:border-[#D26539]"
+                      className="w-full bg-white border border-[#0F1926]/20 rounded-xl px-4 py-2.5 text-sm text-[#0F1926] placeholder-[#D0CFCA] focus:outline-none focus:border-[#0F1926]"
                     />
                   </div>
                 </div>
 
                 <div>
-                  <label className="block text-xs font-mono text-[#A8A090] uppercase mb-1">Certifications & Accreditations</label>
+                  <label className="block text-xs font-mono text-[#2A2A2B] uppercase mb-1 font-bold">Certifications & Accreditations</label>
                   <input
                     type="text"
                     value={candidateForm.certifications}
                     onChange={e => setCandidateForm({ ...candidateForm, certifications: e.target.value })}
-                    className="w-full bg-[#090C10] border border-white/10 rounded-xl px-4 py-2.5 text-sm text-white placeholder-[#6B6358] focus:outline-none focus:border-[#D26539]"
+                    className="w-full bg-white border border-[#0F1926]/20 rounded-xl px-4 py-2.5 text-sm text-[#0F1926] placeholder-[#D0CFCA] focus:outline-none focus:border-[#0F1926]"
                   />
                 </div>
 
                 <button
                   type="submit"
-                  className="btn-vault w-full py-3 text-xs uppercase tracking-wider mt-2"
+                  className="btn-dark w-full py-3 text-xs uppercase tracking-wider mt-2 cursor-pointer shadow-lg"
                 >
                   Submit Application to Gym Director
                 </button>
@@ -626,27 +621,27 @@ export const ManpowerPage: React.FC = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-50 bg-black/80  flex items-center justify-center p-4 sm:p-6 overflow-y-auto"
+            className="fixed inset-0 z-50 bg-[#0C1015]/80 backdrop-blur-md flex items-center justify-center p-4 sm:p-6 overflow-y-auto"
           >
             <motion.div
               initial={{ scale: 0.95, y: 20 }}
               animate={{ scale: 1, y: 0 }}
               exit={{ scale: 0.95, y: 20 }}
-              className="bg-[#0D1118] border border-white/10 rounded-none max-w-lg w-full p-6 sm:p-8 space-y-6 "
+              className="bg-[#F2F0EC] text-[#0F1926] border border-[#2A2A2B]/20 rounded-2xl max-w-lg w-full p-6 sm:p-8 space-y-6 shadow-2xl"
             >
-              <div className="flex items-start justify-between border-b border-white/10 pb-4">
+              <div className="flex items-start justify-between border-b border-[#0F1926]/15 pb-4">
                 <div>
-                  <span className="text-[10px] font-mono text-white/80 uppercase tracking-widest block mb-1">
+                  <span className="text-[10px] font-mono text-[#2A2A2B] uppercase tracking-widest block mb-1 font-bold">
                     PUBLISH CLUB VACANCY
                   </span>
-                  <h3 className="font-satoshi text-xl font-bold text-white uppercase">
+                  <h3 className="font-satoshi text-xl font-bold text-[#0F1926] uppercase">
                     New Staffing Requirement
                   </h3>
                 </div>
                 <button
                   type="button"
                   onClick={() => setIsPostJobModalOpen(false)}
-                  className="p-2 rounded-full bg-white/5 hover:bg-white/10 text-[#A8A090] hover:text-white"
+                  className="p-2 rounded-full bg-[#0F1926]/10 hover:bg-[#0F1926]/20 text-[#0F1926] transition cursor-pointer"
                 >
                   <X className="w-5 h-5" />
                 </button>
@@ -654,49 +649,49 @@ export const ManpowerPage: React.FC = () => {
 
               <form onSubmit={handlePostJobSubmit} className="space-y-4">
                 <div>
-                  <label className="block text-xs font-mono text-[#A8A090] uppercase mb-1">Role Title</label>
+                  <label className="block text-xs font-mono text-[#2A2A2B] uppercase mb-1 font-bold">Role Title</label>
                   <input
                     type="text"
                     required
                     placeholder="Head Biomechanics Coach"
                     value={jobForm.title}
                     onChange={e => setJobForm({ ...jobForm, title: e.target.value })}
-                    className="w-full bg-[#090C10] border border-white/10 rounded-xl px-4 py-2.5 text-sm text-white placeholder-[#6B6358] focus:outline-none focus:border-[#D26539]"
+                    className="w-full bg-white border border-[#0F1926]/20 rounded-xl px-4 py-2.5 text-sm text-[#0F1926] placeholder-[#D0CFCA] focus:outline-none focus:border-[#0F1926]"
                   />
                 </div>
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
-                    <label className="block text-xs font-mono text-[#A8A090] uppercase mb-1">Gym / Club Name</label>
+                    <label className="block text-xs font-mono text-[#2A2A2B] uppercase mb-1 font-bold">Gym / Club Name</label>
                     <input
                       type="text"
                       required
                       placeholder="Empire Fitness"
                       value={jobForm.gymName}
                       onChange={e => setJobForm({ ...jobForm, gymName: e.target.value })}
-                      className="w-full bg-[#090C10] border border-white/10 rounded-xl px-4 py-2.5 text-sm text-white placeholder-[#6B6358] focus:outline-none focus:border-[#D26539]"
+                      className="w-full bg-white border border-[#0F1926]/20 rounded-xl px-4 py-2.5 text-sm text-[#0F1926] placeholder-[#D0CFCA] focus:outline-none focus:border-[#0F1926]"
                     />
                   </div>
                   <div>
-                    <label className="block text-xs font-mono text-[#A8A090] uppercase mb-1">Location</label>
+                    <label className="block text-xs font-mono text-[#2A2A2B] uppercase mb-1 font-bold">Location</label>
                     <input
                       type="text"
                       required
                       placeholder="Indiranagar, Bengaluru"
                       value={jobForm.location}
                       onChange={e => setJobForm({ ...jobForm, location: e.target.value })}
-                      className="w-full bg-[#090C10] border border-white/10 rounded-xl px-4 py-2.5 text-sm text-white placeholder-[#6B6358] focus:outline-none focus:border-[#D26539]"
+                      className="w-full bg-white border border-[#0F1926]/20 rounded-xl px-4 py-2.5 text-sm text-[#0F1926] placeholder-[#D0CFCA] focus:outline-none focus:border-[#0F1926]"
                     />
                   </div>
                 </div>
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
-                    <label className="block text-xs font-mono text-[#A8A090] uppercase mb-1">Category</label>
+                    <label className="block text-xs font-mono text-[#2A2A2B] uppercase mb-1 font-bold">Category</label>
                     <select
                       value={jobForm.category}
                       onChange={e => setJobForm({ ...jobForm, category: e.target.value as any })}
-                      className="w-full bg-[#090C10] border border-white/10 rounded-xl px-4 py-2.5 text-sm text-white focus:outline-none focus:border-white uppercase font-mono"
+                      className="w-full bg-white border border-[#0F1926]/20 rounded-xl px-4 py-2.5 text-sm text-[#0F1926] focus:outline-none focus:border-[#0F1926] uppercase font-mono cursor-pointer"
                     >
                       <option value="Management">Management (Club Manager)</option>
                       <option value="HR & Administration">HR & Administration (HR/Admin)</option>
@@ -708,31 +703,31 @@ export const ManpowerPage: React.FC = () => {
                     </select>
                   </div>
                   <div>
-                    <label className="block text-xs font-mono text-[#A8A090] uppercase mb-1">Salary Range</label>
+                    <label className="block text-xs font-mono text-[#2A2A2B] uppercase mb-1 font-bold">Salary Range</label>
                     <input
                       type="text"
                       placeholder="₹45,000 - ₹75,000 / month"
                       value={jobForm.salaryRange}
                       onChange={e => setJobForm({ ...jobForm, salaryRange: e.target.value })}
-                      className="w-full bg-[#090C10] border border-white/10 rounded-xl px-4 py-2.5 text-sm text-white placeholder-[#6B6358] focus:outline-none focus:border-[#D26539]"
+                      className="w-full bg-white border border-[#0F1926]/20 rounded-xl px-4 py-2.5 text-sm text-[#0F1926] placeholder-[#D0CFCA] focus:outline-none focus:border-[#0F1926]"
                     />
                   </div>
                 </div>
 
                 <div>
-                  <label className="block text-xs font-mono text-[#A8A090] uppercase mb-1">Job Description</label>
+                  <label className="block text-xs font-mono text-[#2A2A2B] uppercase mb-1 font-bold">Job Description</label>
                   <textarea
                     rows={3}
                     placeholder="Describe role responsibilities, required certifications..."
                     value={jobForm.description}
                     onChange={e => setJobForm({ ...jobForm, description: e.target.value })}
-                    className="w-full bg-[#090C10] border border-white/10 rounded-xl p-3 text-sm text-white placeholder-[#6B6358] focus:outline-none focus:border-[#D26539]"
+                    className="w-full bg-white border border-[#0F1926]/20 rounded-xl p-3 text-sm text-[#0F1926] placeholder-[#D0CFCA] focus:outline-none focus:border-[#0F1926]"
                   />
                 </div>
 
                 <button
                   type="submit"
-                  className="btn-vault w-full py-3 text-xs uppercase tracking-wider mt-2"
+                  className="btn-dark w-full py-3 text-xs uppercase tracking-wider mt-2 cursor-pointer shadow-lg"
                 >
                   Publish Opening to Roster
                 </button>

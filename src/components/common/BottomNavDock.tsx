@@ -1,6 +1,7 @@
 import React from 'react';
 import { useApp } from '../../context/AppContext';
 import { PageType } from '../../types';
+import { TanushLogo } from './TanushLogo';
 
 export const BottomNavDock: React.FC = () => {
   const { currentPage, navigateTo } = useApp();
@@ -29,21 +30,21 @@ export const BottomNavDock: React.FC = () => {
           <button
             type="button"
             onClick={() => handleNav('home')}
-            className="bg-[#0D1811] border border-white/20 hover:border-white px-6 sm:px-8 py-3 rounded-full font-satoshi font-black text-xs sm:text-sm tracking-[0.2em] text-white hover:bg-white hover:text-[#26452D] transition-all duration-300 shadow-2xl uppercase cursor-pointer"
+            className="bg-[#0C1015]/95 backdrop-blur-md border border-[#2A2A2B] hover:border-[#D0CFCA] px-5 sm:px-6 py-2.5 rounded-full flex items-center gap-2.5 transition-all duration-300 shadow-2xl cursor-pointer group hover:bg-[#0F1926]"
           >
-            TANUSH FITNESS
+            <TanushLogo variant="white" height={32} className="h-8 w-auto group-hover:scale-105 transition-transform" />
           </button>
         </div>
 
         {/* Center Floating Dock */}
-        <div className="pointer-events-auto hidden md:flex items-center gap-2 bg-[#0D1811] border border-white/15 p-2 rounded-full shadow-2xl font-satoshi text-xs sm:text-[13px] uppercase tracking-wider">
+        <div className="pointer-events-auto hidden md:flex items-center gap-1.5 bg-[#0C1015]/95 backdrop-blur-md border border-[#2A2A2B] p-2 rounded-full shadow-2xl font-satoshi text-xs sm:text-[13px] uppercase tracking-wider">
           <button
             type="button"
-            onClick={() => handleNav('home', 'about')}
-            className={`px-5 py-2.5 rounded-full font-bold transition-all duration-300 cursor-pointer ${
-              currentPage === 'home'
-                ? 'bg-[#D26539] text-white shadow-md hover:bg-white hover:text-[#26452D]'
-                : 'text-[#A8A090] hover:text-[#26452D] hover:bg-white'
+            onClick={() => handleNav('about')}
+            className={`px-5 py-2 rounded-full font-bold transition-all duration-300 cursor-pointer ${
+              currentPage === 'about'
+                ? 'bg-[#F2F0EC] text-[#0F1926] shadow-md font-black'
+                : 'text-[#D0CFCA] hover:text-[#F2F0EC] hover:bg-white/10'
             }`}
           >
             About
@@ -52,10 +53,10 @@ export const BottomNavDock: React.FC = () => {
           <button
             type="button"
             onClick={() => handleNav('equipment')}
-            className={`px-5 py-2.5 rounded-full font-semibold transition-all duration-300 cursor-pointer ${
+            className={`px-5 py-2 rounded-full font-semibold transition-all duration-300 cursor-pointer ${
               currentPage === 'equipment'
-                ? 'bg-[#D26539] text-white font-bold shadow-md hover:bg-white hover:text-[#26452D]'
-                : 'text-[#A8A090] hover:text-[#26452D] hover:bg-white'
+                ? 'bg-[#F2F0EC] text-[#0F1926] font-black shadow-md'
+                : 'text-[#D0CFCA] hover:text-[#F2F0EC] hover:bg-white/10'
             }`}
           >
             Equipment
@@ -64,10 +65,10 @@ export const BottomNavDock: React.FC = () => {
           <button
             type="button"
             onClick={() => handleNav('services')}
-            className={`px-5 py-2.5 rounded-full font-semibold transition-all duration-300 cursor-pointer ${
+            className={`px-5 py-2 rounded-full font-semibold transition-all duration-300 cursor-pointer ${
               currentPage === 'services'
-                ? 'bg-[#D26539] text-white font-bold shadow-md hover:bg-white hover:text-[#26452D]'
-                : 'text-[#A8A090] hover:text-[#26452D] hover:bg-white'
+                ? 'bg-[#F2F0EC] text-[#0F1926] font-black shadow-md'
+                : 'text-[#D0CFCA] hover:text-[#F2F0EC] hover:bg-white/10'
             }`}
           >
             Gym Management
@@ -76,10 +77,10 @@ export const BottomNavDock: React.FC = () => {
           <button
             type="button"
             onClick={() => handleNav('manpower')}
-            className={`px-5 py-2.5 rounded-full font-semibold transition-all duration-300 cursor-pointer ${
+            className={`px-5 py-2 rounded-full font-semibold transition-all duration-300 cursor-pointer ${
               currentPage === 'manpower'
-                ? 'bg-[#D26539] text-white font-bold shadow-md hover:bg-white hover:text-[#26452D]'
-                : 'text-[#A8A090] hover:text-[#26452D] hover:bg-white'
+                ? 'bg-[#F2F0EC] text-[#0F1926] font-black shadow-md'
+                : 'text-[#D0CFCA] hover:text-[#F2F0EC] hover:bg-white/10'
             }`}
           >
             Manpower
@@ -88,27 +89,27 @@ export const BottomNavDock: React.FC = () => {
           <button
             type="button"
             onClick={() => handleNav('contact')}
-            className={`px-5 py-2.5 rounded-full font-semibold transition-all duration-300 cursor-pointer ${
+            className={`px-5 py-2 rounded-full font-semibold transition-all duration-300 cursor-pointer ${
               currentPage === 'contact'
-                ? 'bg-[#D26539] text-white font-bold shadow-md hover:bg-white hover:text-[#26452D]'
-                : 'text-[#A8A090] hover:text-[#26452D] hover:bg-white'
+                ? 'bg-[#F2F0EC] text-[#0F1926] font-black shadow-md'
+                : 'text-[#D0CFCA] hover:text-[#F2F0EC] hover:bg-white/10'
             }`}
           >
             Consultation
           </button>
         </div>
 
-        {/* Right Floating Circular Hamburger Button */}
+        {/* Right Floating Circular Menu Button */}
         <div className="pointer-events-auto">
           <button
             type="button"
             onClick={() => handleNav('home', 'directory')}
-            className="w-13 h-13 sm:w-14 sm:h-14 rounded-full bg-[#0D1811] border border-white/15 hover:border-white hover:bg-white flex flex-col items-center justify-center gap-1.5 text-white transition-all duration-300 shadow-2xl group cursor-pointer"
+            className="w-13 h-13 sm:w-14 sm:h-14 rounded-full bg-[#0C1015]/95 backdrop-blur-md border border-[#2A2A2B] hover:border-[#D0CFCA] hover:bg-[#F2F0EC] flex flex-col items-center justify-center gap-1.5 text-[#F2F0EC] transition-all duration-300 shadow-2xl group cursor-pointer"
             aria-label="Scroll to Directory Section"
             title="Navigate to Directory"
           >
-            <span className="w-5 sm:w-6 h-[2px] bg-white group-hover:bg-[#26452D] rounded-full transition-all duration-300 group-hover:scale-x-110" />
-            <span className="w-5 sm:w-6 h-[2px] bg-white group-hover:bg-[#26452D] rounded-full transition-all duration-300 group-hover:scale-x-110" />
+            <span className="w-5 sm:w-6 h-[2px] bg-[#F2F0EC] group-hover:bg-[#0F1926] rounded-full transition-all duration-300 group-hover:scale-x-110" />
+            <span className="w-5 sm:w-6 h-[2px] bg-[#F2F0EC] group-hover:bg-[#0F1926] rounded-full transition-all duration-300 group-hover:scale-x-110" />
           </button>
         </div>
       </div>

@@ -1,15 +1,28 @@
+@import url('https://fonts.cdnfonts.com/css/monument-extended');
 @import "tailwindcss";
 
 :root {
-  --brand_orange: #D26539;
-  --brand_orange_hover: #C2552F;
-  --brand_green: #26452D;
-  --lighter_green: #3A563F;
-  --light: #ECE6DB;
-  --darker_creme: #D8CDC0;
-  --black: #090C10;
-  --surface: #0D1118;
-  --white: #FFFFFF;
+  /* Strict 5-Color Monochromatic Architectural Palette */
+  --primary-navy: #0F1926;
+  --dark-base: #0C1015;
+  --charcoal: #2A2A2B;
+  --off-white: #F2F0EC;
+  --light-gray: #D0CFCA;
+
+  /* Backward Compatibility Aliases */
+  --navy-bg: #0F1926;
+  --navy-card: #F2F0EC;
+  --navy-heading: #F2F0EC;
+  --navy-muted: #D0CFCA;
+  --navy-card-heading: #0F1926;
+  --navy-card-body: #2A2A2B;
+
+  --charcoal-bg: #0F1926;
+  --charcoal-card: #F2F0EC;
+  --charcoal-heading: #F2F0EC;
+  --charcoal-muted: #D0CFCA;
+  --charcoal-card-heading: #0F1926;
+  --charcoal-card-body: #2A2A2B;
 }
 
 @layer base {
@@ -25,25 +38,25 @@
   }
 
   ::selection {
-    background-color: #D26539;
-    color: #FFFFFF;
+    background-color: #F2F0EC;
+    color: #0F1926;
   }
 
   body {
-    background-color: var(--black);
-    color: var(--light);
-    font-family: 'Satoshi', sans-serif;
+    background-color: #0F1926;
+    color: #F2F0EC;
+    font-family: 'General Sans', 'Plus Jakarta Sans', 'Montserrat', system-ui, sans-serif;
     overflow-x: hidden;
   }
 
   h1, h2, h3, h4, h5, h6 {
-    font-family: 'Satoshi', sans-serif;
-    letter-spacing: -0.02em;
-    font-weight: 700;
+    font-family: 'Monument Extended', 'Unbounded', 'Syne', 'Clash Display', 'Satoshi', sans-serif;
+    letter-spacing: -0.01em;
+    font-weight: 800;
   }
 
-  .font-satoshi {
-    font-family: 'Satoshi', sans-serif;
+  .font-satoshi, .font-heading, .font-display {
+    font-family: 'Monument Extended', 'Unbounded', 'Syne', 'Clash Display', 'Satoshi', sans-serif;
   }
 
   .font-mono, code, pre {
@@ -58,22 +71,22 @@
 }
 
 ::-webkit-scrollbar-track {
-  background: #090C10;
+  background: #0C1015;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #3A563F;
+  background: #2A2A2B;
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #D26539;
+  background: #D0CFCA;
 }
 
 /* Hardware-Accelerated Card Hover Transitions */
 .luxury-card,
 .card-lift {
-  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.25s ease;
+  transition: transform 0.28s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.28s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.25s ease;
   transform: translateZ(0);
   backface-visibility: hidden;
 }
@@ -81,11 +94,12 @@
 .luxury-card:hover,
 .card-lift:hover {
   transform: translateY(-4px) translateZ(0);
-  box-shadow: 0 16px 32px -8px rgba(0, 0, 0, 0.75), 0 0 20px -4px rgba(210, 101, 57, 0.18);
-  border-color: rgba(210, 101, 57, 0.45) !important;
+  box-shadow: 0 20px 35px -10px rgba(0, 0, 0, 0.5), 0 0 20px -4px rgba(242, 240, 236, 0.08);
 }
 
-/* Vault Signature Button Styling */
+/* Monochromatic Signature Button Styles (No Orange) */
+.btn-primary,
+.btn-orange,
 .btn-vault {
   position: relative;
   display: inline-flex;
@@ -93,24 +107,86 @@
   justify-content: center;
   padding: 0.75rem 1.75rem;
   border-radius: 9999px;
-  font-family: 'Satoshi', sans-serif;
+  font-family: 'Monument Extended', 'Unbounded', 'Syne', 'Clash Display', 'Satoshi', sans-serif;
   font-size: 0.75rem;
   font-weight: 800;
   text-transform: uppercase;
-  letter-spacing: 0.1em;
-  background-color: #D26539;
-  color: #FFFFFF;
+  letter-spacing: 0.08em;
+  background-color: #F2F0EC;
+  color: #0F1926;
+  border: 1px solid #F2F0EC;
   transform: translateZ(0);
-  transition: transform 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease;
+  transition: transform 0.2s ease, background-color 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
+  cursor: pointer;
 }
 
+.btn-primary:hover,
+.btn-orange:hover,
 .btn-vault:hover {
-  background-color: #C2552F;
-  color: #FFFFFF;
+  background-color: #D0CFCA;
+  color: #0F1926;
+  border-color: #D0CFCA;
   transform: translateY(-2px) translateZ(0);
-  box-shadow: 0 8px 20px -4px rgba(210, 101, 57, 0.4);
+  box-shadow: 0 8px 24px -4px rgba(242, 240, 236, 0.2);
 }
 
+.btn-dark {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem 1.75rem;
+  border-radius: 9999px;
+  font-family: 'Monument Extended', 'Unbounded', 'Syne', 'Clash Display', 'Satoshi', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  background-color: #0F1926;
+  color: #F2F0EC;
+  border: 1px solid rgba(242, 240, 236, 0.2);
+  transform: translateZ(0);
+  transition: transform 0.2s ease, background-color 0.2s ease, border-color 0.2s ease;
+  cursor: pointer;
+}
+
+.btn-dark:hover {
+  background-color: #0C1015;
+  color: #F2F0EC;
+  border-color: #F2F0EC;
+  transform: translateY(-2px) translateZ(0);
+}
+
+.btn-charcoal,
+.btn-steel {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem 1.75rem;
+  border-radius: 9999px;
+  font-family: 'Monument Extended', 'Unbounded', 'Syne', 'Clash Display', 'Satoshi', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  background-color: #2A2A2B;
+  color: #F2F0EC;
+  border: 1px solid rgba(208, 207, 202, 0.2);
+  transform: translateZ(0);
+  transition: transform 0.2s ease, background-color 0.2s ease, border-color 0.2s ease;
+  cursor: pointer;
+}
+
+.btn-charcoal:hover,
+.btn-steel:hover {
+  background-color: #0F1926;
+  border-color: #F2F0EC;
+  color: #F2F0EC;
+  transform: translateY(-2px) translateZ(0);
+}
+
+.btn-outline,
 .btn-vault-outline {
   position: relative;
   display: inline-flex;
@@ -118,23 +194,26 @@
   justify-content: center;
   padding: 0.75rem 1.75rem;
   border-radius: 9999px;
-  border: 1px solid rgba(210, 101, 57, 0.4);
-  font-family: 'Satoshi', sans-serif;
+  border: 1px solid rgba(242, 240, 236, 0.3);
+  font-family: 'Monument Extended', 'Unbounded', 'Syne', 'Clash Display', 'Satoshi', sans-serif;
   font-size: 0.75rem;
   font-weight: 800;
   text-transform: uppercase;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.08em;
   background-color: transparent;
-  color: #D8CDC0;
+  color: #F2F0EC;
   transform: translateZ(0);
-  transition: transform 0.2s ease, border-color 0.2s ease, background-color 0.2s ease;
+  transition: transform 0.2s ease, border-color 0.2s ease, background-color 0.2s ease, color 0.2s ease;
+  cursor: pointer;
 }
 
+.btn-outline:hover,
 .btn-vault-outline:hover {
-  border-color: #D26539;
-  background-color: rgba(210, 101, 57, 0.12);
-  color: #FFFFFF;
+  border-color: #F2F0EC;
+  background-color: #F2F0EC;
+  color: #0F1926;
   transform: translateY(-2px) translateZ(0);
+  box-shadow: 0 8px 20px -4px rgba(242, 240, 236, 0.25);
 }
 
 
