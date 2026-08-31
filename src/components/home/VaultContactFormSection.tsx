@@ -82,7 +82,7 @@ export const VaultContactFormSection: React.FC = () => {
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
                   {/* Name */}
                   <div className="space-y-1.5">
-                    <label className="block font-mono text-[10px] sm:text-[11px] font-bold text-[#0F1926]/80 tracking-widest uppercase">
+                    <label className="block font-mono text-xs font-bold text-[#0F1926]/85 tracking-widest uppercase">
                       NAME *
                     </label>
                     <input
@@ -91,13 +91,13 @@ export const VaultContactFormSection: React.FC = () => {
                       value={name}
                       onChange={(e) => setName(e.target.value)}
                       placeholder="John Doe"
-                      className="w-full bg-transparent border-b border-[#0F1926] pb-2 text-xs font-mono text-[#0F1926] placeholder-[#0F1926]/40 focus:border-[#2A2A2B] focus:outline-none transition-colors"
+                      className="w-full bg-transparent border-b border-[#0F1926] pb-2 text-sm font-mono text-[#0F1926] placeholder-[#0F1926]/40 focus:border-[#2A2A2B] focus:outline-none transition-colors"
                     />
                   </div>
 
                   {/* Contact */}
                   <div className="space-y-1.5">
-                    <label className="block font-mono text-[10px] sm:text-[11px] font-bold text-[#0F1926]/80 tracking-widest uppercase">
+                    <label className="block font-mono text-xs font-bold text-[#0F1926]/85 tracking-widest uppercase">
                       CONTACT *
                     </label>
                     <input
@@ -106,13 +106,13 @@ export const VaultContactFormSection: React.FC = () => {
                       value={contact}
                       onChange={(e) => setContact(e.target.value)}
                       placeholder="+91 91123 34451"
-                      className="w-full bg-transparent border-b border-[#0F1926] pb-2 text-xs font-mono text-[#0F1926] placeholder-[#0F1926]/40 focus:border-[#2A2A2B] focus:outline-none transition-colors"
+                      className="w-full bg-transparent border-b border-[#0F1926] pb-2 text-sm font-mono text-[#0F1926] placeholder-[#0F1926]/40 focus:border-[#2A2A2B] focus:outline-none transition-colors"
                     />
                   </div>
 
                   {/* Email */}
                   <div className="space-y-1.5">
-                    <label className="block font-mono text-[10px] sm:text-[11px] font-bold text-[#0F1926]/80 tracking-widest uppercase">
+                    <label className="block font-mono text-xs font-bold text-[#0F1926]/85 tracking-widest uppercase">
                       EMAIL
                     </label>
                     <input
@@ -120,21 +120,21 @@ export const VaultContactFormSection: React.FC = () => {
                       value={email}
                       onChange={(e) => setEmail(e.target.value)}
                       placeholder="johndoe@mail.com"
-                      className="w-full bg-transparent border-b border-[#0F1926] pb-2 text-xs font-mono text-[#0F1926] placeholder-[#0F1926]/40 focus:border-[#2A2A2B] focus:outline-none transition-colors"
+                      className="w-full bg-transparent border-b border-[#0F1926] pb-2 text-sm font-mono text-[#0F1926] placeholder-[#0F1926]/40 focus:border-[#2A2A2B] focus:outline-none transition-colors"
                     />
                   </div>
                 </div>
 
                 {/* 2. SUBJECT / REQUIREMENT SELECT DROPDOWN */}
                 <div className="space-y-1.5 pt-1">
-                  <label className="block font-mono text-[10px] sm:text-[11px] font-bold text-[#0F1926]/80 tracking-widest uppercase">
+                  <label className="block font-mono text-xs font-bold text-[#0F1926]/85 tracking-widest uppercase">
                     SUBJECT / REQUIREMENT
                   </label>
                   <div className="relative">
                     <select
                       value={subject}
                       onChange={(e) => setSubject(e.target.value)}
-                      className="w-full appearance-none bg-transparent border-b border-[#0F1926] pb-2.5 pt-1 text-xs font-mono text-[#0F1926] focus:border-[#2A2A2B] focus:outline-none transition-colors cursor-pointer pr-8 font-semibold"
+                      className="w-full appearance-none bg-transparent border-b border-[#0F1926] pb-2.5 pt-1 text-sm font-mono text-[#0F1926] focus:border-[#2A2A2B] focus:outline-none transition-colors cursor-pointer pr-8 font-semibold"
                     >
                       <option value="Commercial & Residential Equipment Procurement">Commercial & Residential Equipment Procurement</option>
                       <option value="Residential Fitness Suite Outfitting">Residential Fitness Suite Outfitting</option>
@@ -151,14 +151,14 @@ export const VaultContactFormSection: React.FC = () => {
 
                 {/* 3. DESTINATION CITY SELECT DROPDOWN */}
                 <div className="space-y-1.5 pt-1">
-                  <label className="block font-mono text-[10px] sm:text-[11px] font-bold text-[#0F1926]/80 tracking-widest uppercase">
+                  <label className="block font-mono text-xs font-bold text-[#0F1926]/85 tracking-widest uppercase">
                     DESTINATION CITY
                   </label>
                   <div className="relative">
                     <select
                       value={city}
                       onChange={(e) => setCity(e.target.value)}
-                      className="w-full appearance-none bg-transparent border-b border-[#0F1926] pb-2.5 pt-1 text-xs font-mono text-[#0F1926] focus:border-[#2A2A2B] focus:outline-none transition-colors cursor-pointer pr-8 font-semibold"
+                      className="w-full appearance-none bg-transparent border-b border-[#0F1926] pb-2.5 pt-1 text-sm font-mono text-[#0F1926] focus:border-[#2A2A2B] focus:outline-none transition-colors cursor-pointer pr-8 font-semibold"
                     >
                       <option value="Delhi NCR">Delhi NCR</option>
                       <option value="Mumbai & MMR">Mumbai & MMR</option>
@@ -178,7 +178,7 @@ export const VaultContactFormSection: React.FC = () => {
 
                 {/* 4. MESSAGE TEXTAREA */}
                 <div className="space-y-1.5">
-                  <label className="block font-mono text-[10px] sm:text-[11px] font-bold text-[#0F1926]/80 tracking-widest uppercase">
+                  <label className="block font-mono text-xs font-bold text-[#0F1926]/85 tracking-widest uppercase">
                     MESSAGE
                   </label>
                   <textarea
@@ -186,7 +186,7 @@ export const VaultContactFormSection: React.FC = () => {
                     value={message}
                     onChange={(e) => setMessage(e.target.value)}
                     placeholder="Type your message here"
-                    className="w-full bg-transparent border-b border-[#0F1926] pb-2 text-xs font-mono text-[#0F1926] placeholder-[#0F1926]/40 focus:border-[#2A2A2B] focus:outline-none resize-none transition-colors"
+                    className="w-full bg-transparent border-b border-[#0F1926] pb-2 text-sm font-mono text-[#0F1926] placeholder-[#0F1926]/40 focus:border-[#2A2A2B] focus:outline-none resize-none transition-colors"
                   />
                 </div>
 
