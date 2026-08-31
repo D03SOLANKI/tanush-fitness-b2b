@@ -121,15 +121,6 @@ export const HomePage: React.FC = () => {
       {/* ========================================================================= */}
       <section className="relative w-full bg-gradient-to-b from-[#0F1926] via-[#0C1015] to-[#0F1926] text-[#E8E8E8] pt-14 sm:pt-20 pb-20 px-4 sm:px-6 lg:px-8 overflow-hidden">
         <div className="max-w-5xl mx-auto text-center space-y-8 relative z-10">
-          {/* Centered Brand Emblem (Vault Style) */}
-          <div className="flex justify-center pb-1">
-            <img
-              src="/tanush-symbol-white.png"
-              alt="Tanush"
-              className="w-14 h-14 sm:w-16 sm:h-16 object-contain opacity-95 hover:opacity-100 transition-opacity"
-            />
-          </div>
-
           {/* Clean Grand Headline */}
           <div className="space-y-4">
             <h1 className="font-satoshi text-2xl sm:text-3xl md:text-4xl lg:text-[42px] font-black uppercase tracking-[0.025em] text-[#E8E8E8] leading-[1.4] sm:leading-[1.3] max-w-5xl mx-auto">
