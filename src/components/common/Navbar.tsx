@@ -66,12 +66,12 @@ export const Navbar: React.FC = () => {
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between gap-4 pointer-events-auto">
-            {/* 1. Left: Vault-Style Brand Logo (No Box/Border) */}
+            {/* 1. Left: Vault-Style Brand Logo Capsule Pill */}
             <div
               onClick={() => handleNav('home')}
-              className="flex items-center gap-2 cursor-pointer group select-none shrink-0"
+              className="bg-[#0C1015]/95 backdrop-blur-md border border-[#2A2A2B] hover:border-[#E8E8E8]/40 px-4 sm:px-5 py-2 sm:py-2.5 rounded-full flex items-center gap-2.5 cursor-pointer shadow-2xl transition-all group shrink-0"
             >
-              <TanushLogo variant="white" height={36} className="h-8 sm:h-9 w-auto group-hover:opacity-85 transition-opacity drop-shadow-lg" />
+              <TanushLogo variant="white" height={28} className="h-6 sm:h-7 w-auto group-hover:opacity-90 transition-opacity" />
             </div>
 
             {/* 2. Center: Vault-Style Floating Pill Nav Bar with Scroll Indicator */}
@@ -93,9 +93,9 @@ export const Navbar: React.FC = () => {
                       key={item.label}
                       type="button"
                       onClick={() => handleNav(item.page)}
-                      className={`px-4 sm:px-5 py-2 rounded-full font-satoshi text-xs font-medium uppercase tracking-wider transition-all duration-200 flex items-center gap-1.5 cursor-pointer select-none ${
+                      className={`px-5 py-2 rounded-full font-satoshi text-xs font-bold uppercase tracking-wider transition-all duration-200 flex items-center gap-1.5 cursor-pointer select-none ${
                         isActive
-                          ? 'bg-[#E8E8E8] text-[#0F1926] font-semibold shadow-md'
+                          ? 'bg-[#E8E8E8] text-[#0F1926] font-bold shadow-md'
                           : 'text-[#D0CFCA] hover:text-[#E8E8E8] hover:bg-[#2A2A2B]/40'
                       }`}
                     >
@@ -106,26 +106,27 @@ export const Navbar: React.FC = () => {
               </nav>
             </div>
 
-            {/* 3. Right: Vault-Style Action Icons (No extra lines) */}
+            {/* 3. Right: Vault-Style Circular Action Icons & Menu Trigger (=) */}
             <div className="flex items-center gap-2.5 sm:gap-3 shrink-0">
               {/* User Account Login */}
               <button
                 type="button"
                 onClick={() => openAuthModal()}
-                className="w-10 h-10 sm:w-11 sm:h-11 rounded-full bg-[#0C1015]/95 backdrop-blur-md border border-[#2A2A2B] hover:border-[#E8E8E8]/40 text-[#D0CFCA] hover:text-[#E8E8E8] flex items-center justify-center transition cursor-pointer shadow-2xl"
+                className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-[#0C1015]/95 backdrop-blur-md border border-[#2A2A2B] hover:border-[#E8E8E8]/40 text-[#D0CFCA] hover:text-[#E8E8E8] flex items-center justify-center transition cursor-pointer shadow-2xl"
                 title={currentUser ? currentUser.name : 'Account Login'}
               >
                 <User className="w-4 h-4" />
               </button>
 
-              {/* Circular Hamburger Menu Button */}
+              {/* Circular Hamburger Menu Button (=) Matching Vault */}
               <button
                 type="button"
                 onClick={() => setIsMenuOpen(true)}
-                className="w-10 h-10 sm:w-11 sm:h-11 rounded-full bg-[#0C1015]/95 backdrop-blur-md border border-[#2A2A2B] hover:border-[#E8E8E8]/40 text-[#E8E8E8] flex items-center justify-center cursor-pointer transition-all duration-200 shadow-2xl group"
+                className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-[#0C1015]/95 backdrop-blur-md border border-[#2A2A2B] hover:border-[#E8E8E8]/40 text-[#E8E8E8] flex flex-col items-center justify-center gap-1.5 cursor-pointer transition-all duration-200 shadow-2xl group"
                 aria-label="Toggle Navigation Menu"
               >
-                <Menu className="w-4 h-4 text-[#E8E8E8] group-hover:scale-110 transition-transform" />
+                <span className="w-4 sm:w-5 h-[2px] bg-[#E8E8E8] rounded-full transition-transform duration-200 group-hover:scale-x-110" />
+                <span className="w-4 sm:w-5 h-[2px] bg-[#E8E8E8] rounded-full transition-transform duration-200 group-hover:scale-x-110" />
               </button>
             </div>
           </div>
