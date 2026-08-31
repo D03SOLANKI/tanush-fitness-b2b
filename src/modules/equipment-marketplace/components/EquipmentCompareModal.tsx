@@ -37,9 +37,11 @@ export const EquipmentCompareModal: React.FC<EquipmentCompareModalProps> = ({
         >
           <button
             onClick={onClose}
-            className="absolute top-4 right-4 p-2 rounded-full bg-[#0F1926]/10 text-[#0F1926] hover:bg-[#0F1926]/20 transition cursor-pointer"
+            className="absolute top-5 right-5 w-9 h-9 rounded-full bg-[#0F1926] text-[#E8E8E8] hover:bg-[#2A2A2B] hover:scale-105 flex items-center justify-center transition-all cursor-pointer shadow-lg z-10"
+            title="Close"
+            aria-label="Close Comparison Modal"
           >
-            <X className="w-5 h-5" />
+            <X className="w-4 h-4 stroke-[2.5]" />
           </button>
 
           <div className="mb-6">

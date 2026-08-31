@@ -139,72 +139,79 @@ export const AuthModal: React.FC<AuthModalProps> = ({
 
   return (
     <AnimatePresence>
-      <div className="fixed inset-0 z-50 overflow-y-auto bg-[#0C1015]/80 backdrop-blur-md flex items-center justify-center p-4 font-mono">
+      <div className="fixed inset-0 z-50 overflow-y-auto bg-[#0C1015]/85 backdrop-blur-md flex items-center justify-center p-3 sm:p-6 font-mono">
         <motion.div
           initial={{ opacity: 0, scale: 0.95, y: 10 }}
           animate={{ opacity: 1, scale: 1, y: 0 }}
           exit={{ opacity: 0, scale: 0.95, y: 10 }}
-          className="bg-[#E8E8E8] rounded-2xl max-w-md w-full p-6 sm:p-8 overflow-hidden shadow-2xl border border-[#2A2A2B]/20 relative my-8 text-[#0F1926]"
+          className="bg-[#E8E8E8] rounded-2xl max-w-md w-full p-5 sm:p-8 shadow-2xl border border-[#2A2A2B]/20 relative my-auto max-h-[94vh] flex flex-col text-[#0F1926] overflow-hidden"
         >
-          {/* Close Button */}
-          <button
-            onClick={() => {
-              resetForm();
-              onClose();
-            }}
-            className="absolute top-5 right-5 p-2 rounded-full bg-[#0F1926]/10 text-[#2A2A2B] hover:text-[#0F1926] transition-colors cursor-pointer"
-          >
-            <X className="w-5 h-5" />
-          </button>
-
-          {/* Title Header */}
-          <div className="mb-6">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#0F1926]/10 text-[#0F1926] text-[10px] font-bold uppercase tracking-wider mb-2 border border-[#0F1926]/15">
-              <Lock className="w-3 h-3 text-[#0F1926]" />
-              <span>AUTHENTICATION GATE</span>
+          {/* Fixed Top Header with High-Contrast Close Button */}
+          <div className="flex items-start justify-between gap-4 pb-4 border-b border-[#0F1926]/10 shrink-0">
+            <div>
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#0F1926]/10 text-[#0F1926] text-[10px] font-bold uppercase tracking-wider mb-2 border border-[#0F1926]/15">
+                <Lock className="w-3 h-3 text-[#0F1926]" />
+                <span>AUTHENTICATION GATE</span>
+              </div>
+              <h2 className="text-xl font-black text-[#0F1926] font-satoshi uppercase tracking-[0.03em] leading-snug">
+                {isLogin ? 'Welcome Back' : 'Create Account'}
+              </h2>
+              <p className="text-xs text-[#2A2A2B]/80 mt-1 font-normal leading-relaxed">
+                {subtitle}
+              </p>
             </div>
-            <h2 className="text-xl font-black text-[#0F1926] font-satoshi uppercase tracking-[0.03em] leading-snug">
-              {isLogin ? 'Welcome Back' : 'Create Account'}
-            </h2>
-            <p className="text-xs text-[#2A2A2B]/80 mt-1 font-normal leading-relaxed">
-              {subtitle}
-            </p>
-          </div>
 
-          {/* Toggle Tabs (Login vs Register) */}
-          <div className="flex bg-[#0F1926]/10 p-1 rounded-xl mb-6">
+            {/* High-Contrast Always-Visible Close Cross Button */}
             <button
               type="button"
-              onClick={() => handleSwitchTab(true)}
-              className={`flex-1 py-2.5 rounded-lg text-xs font-bold uppercase transition-all flex items-center justify-center gap-2 cursor-pointer ${
-                isLogin ? 'bg-[#0F1926] text-white shadow-sm font-black' : 'text-[#2A2A2B] hover:text-[#0F1926]'
-              }`}
+              onClick={() => {
+                resetForm();
+                onClose();
+              }}
+              className="w-9 h-9 rounded-full bg-[#0F1926] text-[#E8E8E8] hover:bg-[#2A2A2B] hover:scale-105 flex items-center justify-center transition-all cursor-pointer shadow-lg shrink-0"
+              title="Close modal"
+              aria-label="Close Authentication Modal"
             >
-              <LogIn className="w-3.5 h-3.5" />
-              <span>Login</span>
-            </button>
-            <button
-              type="button"
-              onClick={() => handleSwitchTab(false)}
-              className={`flex-1 py-2.5 rounded-lg text-xs font-bold uppercase transition-all flex items-center justify-center gap-2 cursor-pointer ${
-                !isLogin ? 'bg-[#0F1926] text-white shadow-sm font-black' : 'text-[#2A2A2B] hover:text-[#0F1926]'
-              }`}
-            >
-              <UserPlus className="w-3.5 h-3.5" />
-              <span>Register</span>
+              <X className="w-4 h-4 stroke-[2.5]" />
             </button>
           </div>
 
-          {/* Error Banner */}
-          {errorMessage && (
-            <div className="mb-4 p-3.5 rounded-xl bg-white border border-[#2A2A2B]/20 text-[#0F1926] text-xs flex items-start gap-2.5">
-              <AlertCircle className="w-4 h-4 shrink-0 mt-0.5" />
-              <span className="font-medium leading-snug">{errorMessage}</span>
+          {/* Scrollable Modal Content Body */}
+          <div className="overflow-y-auto pr-1 pt-4 flex-1">
+            {/* Toggle Tabs (Login vs Register) */}
+            <div className="flex bg-[#0F1926]/10 p-1 rounded-xl mb-5">
+              <button
+                type="button"
+                onClick={() => handleSwitchTab(true)}
+                className={`flex-1 py-2.5 rounded-lg text-xs font-bold uppercase transition-all flex items-center justify-center gap-2 cursor-pointer ${
+                  isLogin ? 'bg-[#0F1926] text-white shadow-sm font-black' : 'text-[#2A2A2B] hover:text-[#0F1926]'
+                }`}
+              >
+                <LogIn className="w-3.5 h-3.5" />
+                <span>Login</span>
+              </button>
+              <button
+                type="button"
+                onClick={() => handleSwitchTab(false)}
+                className={`flex-1 py-2.5 rounded-lg text-xs font-bold uppercase transition-all flex items-center justify-center gap-2 cursor-pointer ${
+                  !isLogin ? 'bg-[#0F1926] text-white shadow-sm font-black' : 'text-[#2A2A2B] hover:text-[#0F1926]'
+                }`}
+              >
+                <UserPlus className="w-3.5 h-3.5" />
+                <span>Register</span>
+              </button>
             </div>
-          )}
 
-          {/* Auth Form */}
-          <form onSubmit={handleSubmit} className="space-y-4 text-xs">
+            {/* Error Banner */}
+            {errorMessage && (
+              <div className="mb-4 p-3.5 rounded-xl bg-white border border-[#2A2A2B]/20 text-[#0F1926] text-xs flex items-start gap-2.5">
+                <AlertCircle className="w-4 h-4 shrink-0 mt-0.5" />
+                <span className="font-medium leading-snug">{errorMessage}</span>
+              </div>
+            )}
+
+            {/* Auth Form */}
+            <form onSubmit={handleSubmit} className="space-y-4 text-xs">
             {!isLogin && (
               <>
                 {/* Role Picker (Gym Owner vs Job Seeker) */}
@@ -414,6 +421,7 @@ export const AuthModal: React.FC<AuthModalProps> = ({
               )}
             </button>
           </form>
+          </div>
         </motion.div>
       </div>
     </AnimatePresence>
