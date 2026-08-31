@@ -50,7 +50,6 @@ export const Navbar: React.FC = () => {
     { label: 'Gym Management', page: 'services' },
     { label: 'Manpower Services', page: 'manpower' },
     { label: 'About', page: 'about' },
-    { label: 'Outfitting Desk', page: 'contact' },
   ];
 
   const handleNav = (page: PageType) => {
