@@ -332,11 +332,7 @@ export const HomePage: React.FC = () => {
                   alt="Tanush Fitness Sanctuary Vision"
                   className="w-full h-[400px] object-cover transform group-hover:scale-105 transition-transform duration-700 opacity-90"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#0C1015] via-transparent to-transparent opacity-60" />
-                <div className="absolute bottom-5 left-5 right-5 p-4 rounded-2xl bg-[#0C1015]/95 border border-[#2A2A2B] font-mono text-xs text-[#E8E8E8] flex items-center justify-between shadow-2xl">
-                  <span className="text-[#E8E8E8] font-bold">ISO 9001:2015 CERTIFIED</span>
-                  <span className="text-[#D0CFCA]">500+ SANCTUARIES</span>
-                </div>
+                <div className="absolute inset-0 bg-gradient-to-t from-[#0C1015]/40 via-transparent to-transparent" />
               </div>
             </div>
           </div>
