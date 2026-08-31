@@ -234,27 +234,29 @@ export const HomePage: React.FC = () => {
               </h2>
             </div>
 
-            {/* Vision Tab Buttons */}
-            <div className="flex items-center gap-1.5 p-1.5 rounded-full bg-[#0C1015] border border-[#2A2A2B] font-satoshi text-xs uppercase tracking-wider shadow-inner">
+            {/* Vision Tab Buttons (Montserrat 700) */}
+            <div className="flex items-center gap-1.5 p-1.5 rounded-full bg-[#0C1015] border border-[#2A2A2B] shadow-inner">
               <button
                 type="button"
                 onClick={() => setVisionTab('what')}
-                className={`px-6 py-2.5 rounded-full transition cursor-pointer ${
+                className={`px-6 py-2.5 rounded-full font-montserrat text-xs font-bold transition cursor-pointer whitespace-nowrap ${
                   visionTab === 'what'
                     ? 'bg-[#E8E8E8] text-[#0F1926] font-bold shadow-md'
                     : 'text-[#D0CFCA] hover:text-[#E8E8E8]'
                 }`}
+                style={{ fontFamily: "'Montserrat', sans-serif", fontWeight: 700 }}
               >
                 What is Tanush?
               </button>
               <button
                 type="button"
                 onClick={() => setVisionTab('why')}
-                className={`px-6 py-2.5 rounded-full transition cursor-pointer ${
+                className={`px-6 py-2.5 rounded-full font-montserrat text-xs font-bold transition cursor-pointer whitespace-nowrap ${
                   visionTab === 'why'
                     ? 'bg-[#E8E8E8] text-[#0F1926] font-bold shadow-md'
                     : 'text-[#D0CFCA] hover:text-[#E8E8E8]'
                 }`}
+                style={{ fontFamily: "'Montserrat', sans-serif", fontWeight: 700 }}
               >
                 Why Tanush?
               </button>
