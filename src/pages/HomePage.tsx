@@ -195,27 +195,7 @@ export const HomePage: React.FC = () => {
                 alt="Tanush Commercial Fitness Sanctuary"
                 className="w-full h-full object-cover opacity-90"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#0C1015]/90 via-transparent to-transparent" />
-
-              {/* Clean 4-Stat Ribbon Overlay */}
-              <div className="absolute bottom-4 left-4 right-4 sm:bottom-6 sm:left-6 sm:right-6 p-4 sm:p-5 rounded-2xl bg-[#0C1015]/95 backdrop-blur-md border border-[#2A2A2B] grid grid-cols-2 sm:grid-cols-4 gap-4 text-center font-mono">
-                <div>
-                  <div className="font-satoshi text-lg sm:text-2xl font-black text-[#E8E8E8]">500+</div>
-                  <div className="text-[10px] text-[#D0CFCA] uppercase font-bold">Clubs Outfitted</div>
-                </div>
-                <div>
-                  <div className="font-satoshi text-lg sm:text-2xl font-black text-[#E8E8E8]">11-GAUGE</div>
-                  <div className="text-[10px] text-[#D0CFCA] uppercase font-bold">Laser-Cut Steel</div>
-                </div>
-                <div>
-                  <div className="font-satoshi text-lg sm:text-2xl font-black text-[#E8E8E8]">ISO 9001</div>
-                  <div className="text-[10px] text-[#D0CFCA] uppercase font-bold">Certified Plant</div>
-                </div>
-                <div>
-                  <div className="font-satoshi text-lg sm:text-2xl font-black text-[#E8E8E8]">18% ITC</div>
-                  <div className="text-[10px] text-[#D0CFCA] uppercase font-bold">GST Direct Billing</div>
-                </div>
-              </div>
+              <div className="absolute inset-0 bg-gradient-to-t from-[#0C1015]/40 via-transparent to-transparent" />
             </div>
           </div>
         </div>
