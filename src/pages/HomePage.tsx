@@ -111,7 +111,7 @@ export const HomePage: React.FC = () => {
   const [visionTab, setVisionTab] = useState<'what' | 'why'>('what');
 
   return (
-    <main className="min-h-screen bg-[#0F1926] text-[#F2F0EC] overflow-hidden pb-0">
+    <main className="min-h-screen bg-[#0F1926] text-[#5E656E] overflow-hidden pb-0">
       <SEO
         title="Tanush Fitness | Commercial & Residential Equipment · Gym Management · Manpower Services"
         description="Experience India's premier commercial & residential fitness sanctuary. World-class 11-gauge equipment, 3D GYM MANAGEMENT gym management, and certified trainer staffing."
@@ -120,11 +120,11 @@ export const HomePage: React.FC = () => {
       {/* ========================================================================= */}
       {/* SECTION 1: SERENE & ELEGANT MONOCHROMATIC HERO                            */}
       {/* ========================================================================= */}
-      <section className="relative w-full bg-gradient-to-b from-[#0F1926] via-[#0C1015] to-[#0F1926] text-[#F2F0EC] pt-14 sm:pt-20 pb-20 px-4 sm:px-6 lg:px-8 overflow-hidden">
+      <section className="relative w-full bg-gradient-to-b from-[#0F1926] via-[#0C1015] to-[#0F1926] text-[#5E656E] pt-14 sm:pt-20 pb-20 px-4 sm:px-6 lg:px-8 overflow-hidden">
         <div className="max-w-5xl mx-auto text-center space-y-8 relative z-10">
           {/* Clean Grand Headline */}
           <div className="space-y-4">
-            <h1 className="font-satoshi text-2xl sm:text-3xl md:text-4xl lg:text-[42px] font-black uppercase tracking-[0.025em] text-[#F2F0EC] leading-[1.4] sm:leading-[1.3] max-w-5xl mx-auto">
+            <h1 className="font-satoshi text-2xl sm:text-3xl md:text-4xl lg:text-[42px] font-black uppercase tracking-[0.025em] text-[#5E656E] leading-[1.4] sm:leading-[1.3] max-w-5xl mx-auto">
               <span className="inline-flex items-center justify-center flex-wrap gap-x-3 gap-y-2">
                 <span className="relative">
                   GET READY
@@ -199,19 +199,19 @@ export const HomePage: React.FC = () => {
               {/* Clean 4-Stat Ribbon Overlay */}
               <div className="absolute bottom-4 left-4 right-4 sm:bottom-6 sm:left-6 sm:right-6 p-4 sm:p-5 rounded-2xl bg-[#0C1015]/95 backdrop-blur-md border border-[#2A2A2B] grid grid-cols-2 sm:grid-cols-4 gap-4 text-center font-mono">
                 <div>
-                  <div className="font-satoshi text-lg sm:text-2xl font-black text-[#F2F0EC]">500+</div>
+                  <div className="font-satoshi text-lg sm:text-2xl font-black text-[#5E656E]">500+</div>
                   <div className="text-[10px] text-[#D0CFCA] uppercase font-bold">Clubs Outfitted</div>
                 </div>
                 <div>
-                  <div className="font-satoshi text-lg sm:text-2xl font-black text-[#F2F0EC]">11-GAUGE</div>
+                  <div className="font-satoshi text-lg sm:text-2xl font-black text-[#5E656E]">11-GAUGE</div>
                   <div className="text-[10px] text-[#D0CFCA] uppercase font-bold">Laser-Cut Steel</div>
                 </div>
                 <div>
-                  <div className="font-satoshi text-lg sm:text-2xl font-black text-[#F2F0EC]">ISO 9001</div>
+                  <div className="font-satoshi text-lg sm:text-2xl font-black text-[#5E656E]">ISO 9001</div>
                   <div className="text-[10px] text-[#D0CFCA] uppercase font-bold">Certified Plant</div>
                 </div>
                 <div>
-                  <div className="font-satoshi text-lg sm:text-2xl font-black text-[#F2F0EC]">18% ITC</div>
+                  <div className="font-satoshi text-lg sm:text-2xl font-black text-[#5E656E]">18% ITC</div>
                   <div className="text-[10px] text-[#D0CFCA] uppercase font-bold">GST Direct Billing</div>
                 </div>
               </div>
@@ -248,7 +248,7 @@ export const HomePage: React.FC = () => {
           {/* Header & Tab Switcher */}
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-6">
             <div className="space-y-2">
-              <h2 className="font-satoshi text-2xl sm:text-4xl font-extrabold uppercase text-[#F2F0EC] tracking-[0.03em] leading-snug">
+              <h2 className="font-satoshi text-2xl sm:text-4xl font-extrabold uppercase text-[#5E656E] tracking-[0.03em] leading-snug">
                 {visionTab === 'what' ? 'What is Tanush?' : 'Why Tanush?'}
               </h2>
             </div>
@@ -260,8 +260,8 @@ export const HomePage: React.FC = () => {
                 onClick={() => setVisionTab('what')}
                 className={`px-6 py-2.5 rounded-full transition cursor-pointer ${
                   visionTab === 'what'
-                    ? 'bg-[#F2F0EC] text-[#0F1926] font-bold shadow-md'
-                    : 'text-[#D0CFCA] hover:text-[#F2F0EC]'
+                    ? 'bg-[#5E656E] text-[#0F1926] font-bold shadow-md'
+                    : 'text-[#D0CFCA] hover:text-[#5E656E]'
                 }`}
               >
                 What is Tanush?
@@ -271,8 +271,8 @@ export const HomePage: React.FC = () => {
                 onClick={() => setVisionTab('why')}
                 className={`px-6 py-2.5 rounded-full transition cursor-pointer ${
                   visionTab === 'why'
-                    ? 'bg-[#F2F0EC] text-[#0F1926] font-bold shadow-md'
-                    : 'text-[#D0CFCA] hover:text-[#F2F0EC]'
+                    ? 'bg-[#5E656E] text-[#0F1926] font-bold shadow-md'
+                    : 'text-[#D0CFCA] hover:text-[#5E656E]'
                 }`}
               >
                 Why Tanush?
@@ -286,10 +286,10 @@ export const HomePage: React.FC = () => {
               {visionTab === 'what' ? (
                 <div className="space-y-5 text-[#D0CFCA] font-sans text-sm sm:text-base leading-relaxed">
                   <p>
-                    Introducing India's premier commercial & residential fitness sanctuary & outfitting brand: <span className="text-[#F2F0EC] font-bold">Tanush Fitness</span>, where precision engineering reaches new heights and commercial strength takes center stage.
+                    Introducing India's premier commercial & residential fitness sanctuary & outfitting brand: <span className="text-[#5E656E] font-bold">Tanush Fitness</span>, where precision engineering reaches new heights and commercial strength takes center stage.
                   </p>
                   <p>
-                    At Tanush, we redefine the fitness outfitting landscape with <span className="text-[#F2F0EC] font-semibold">state-of-the-art 11-gauge laser-cut equipment</span>, curated to empower facility owners to launch world-class destinations. Our commitment goes beyond machinery; we deliver a holistic <span className="text-[#F2F0EC] font-semibold">360-degree comprehensive solution</span> encompassing Commercial & Residential Equipment, Gym Management, and Manpower Services.
+                    At Tanush, we redefine the fitness outfitting landscape with <span className="text-[#5E656E] font-semibold">state-of-the-art 11-gauge laser-cut equipment</span>, curated to empower facility owners to launch world-class destinations. Our commitment goes beyond machinery; we deliver a holistic <span className="text-[#5E656E] font-semibold">360-degree comprehensive solution</span> encompassing Commercial & Residential Equipment, Gym Management, and Manpower Services.
                   </p>
                   <div className="pt-2">
                     <button
@@ -305,9 +305,9 @@ export const HomePage: React.FC = () => {
               ) : (
                 <div className="space-y-5 text-[#D0CFCA] font-sans text-sm sm:text-base leading-relaxed">
                   <p>
-                    As a testament to unwavering commitment to biomechanical excellence, <span className="text-[#F2F0EC] font-bold">Tanush Fitness</span> aims to redefine commercial fitness spaces by offering direct factory procurement, 18% GST Input Tax Credit invoicing, zero middleman trading markups, and verified trainer placement pipelines.
+                    As a testament to unwavering commitment to biomechanical excellence, <span className="text-[#5E656E] font-bold">Tanush Fitness</span> aims to redefine commercial fitness spaces by offering direct factory procurement, 18% GST Input Tax Credit invoicing, zero middleman trading markups, and verified trainer placement pipelines.
                   </p>
-                  <blockquote className="p-6 sm:p-8 rounded-3xl bg-[#0C1015] border-l-4 border-[#F2F0EC] text-[#F2F0EC] italic font-sans text-base sm:text-lg leading-relaxed shadow-2xl">
+                  <blockquote className="p-6 sm:p-8 rounded-3xl bg-[#0C1015] border-l-4 border-[#5E656E] text-[#5E656E] italic font-sans text-base sm:text-lg leading-relaxed shadow-2xl">
                     "Tanush Fitness is not merely an equipment vendor; it is an end-to-end commercial infrastructure partner built for gym owners who demand perfection in every square foot."
                   </blockquote>
                   <div className="pt-2">
@@ -332,8 +332,8 @@ export const HomePage: React.FC = () => {
                   className="w-full h-[400px] object-cover transform group-hover:scale-105 transition-transform duration-700 opacity-90"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#0C1015] via-transparent to-transparent opacity-60" />
-                <div className="absolute bottom-5 left-5 right-5 p-4 rounded-2xl bg-[#0C1015]/95 border border-[#2A2A2B] font-mono text-xs text-[#F2F0EC] flex items-center justify-between shadow-2xl">
-                  <span className="text-[#F2F0EC] font-bold">ISO 9001:2015 CERTIFIED</span>
+                <div className="absolute bottom-5 left-5 right-5 p-4 rounded-2xl bg-[#0C1015]/95 border border-[#2A2A2B] font-mono text-xs text-[#5E656E] flex items-center justify-between shadow-2xl">
+                  <span className="text-[#5E656E] font-bold">ISO 9001:2015 CERTIFIED</span>
                   <span className="text-[#D0CFCA]">500+ SANCTUARIES</span>
                 </div>
               </div>
@@ -343,13 +343,13 @@ export const HomePage: React.FC = () => {
       </section>
 
       {/* ========================================================================= */}
-      {/* SECTION 4: CORE VERTICALS (#F2F0EC OFF-WHITE LUXURY CARDS)                 */}
+      {/* SECTION 4: CORE VERTICALS (#5E656E OFF-WHITE LUXURY CARDS)                 */}
       {/* ========================================================================= */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 border-b border-[#2A2A2B]">
         <div className="space-y-12">
           <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-6">
             <div className="space-y-2">
-              <h2 className="font-satoshi text-2xl sm:text-4xl font-extrabold uppercase text-[#F2F0EC] tracking-[0.03em] leading-snug">
+              <h2 className="font-satoshi text-2xl sm:text-4xl font-extrabold uppercase text-[#5E656E] tracking-[0.03em] leading-snug">
                 CORE PROCUREMENT VERTICALS
               </h2>
               <p className="text-sm text-[#D0CFCA] font-sans max-w-2xl mt-1 leading-relaxed">
@@ -372,7 +372,7 @@ export const HomePage: React.FC = () => {
               return (
                 <div
                   key={vertical.id}
-                  className="bg-[#F2F0EC] text-[#0F1926] border border-[#2A2A2B]/10 rounded-3xl overflow-hidden flex flex-col justify-between group hover:border-[#0F1926] transition-all duration-300 shadow-2xl hover:-translate-y-2"
+                  className="bg-[#5E656E] text-[#0F1926] border border-[#2A2A2B]/10 rounded-3xl overflow-hidden flex flex-col justify-between group hover:border-[#0F1926] transition-all duration-300 shadow-2xl hover:-translate-y-2"
                 >
                   <div>
                     <div
@@ -387,7 +387,7 @@ export const HomePage: React.FC = () => {
                       <div className="absolute inset-0 bg-gradient-to-t from-[#0F1926]/60 via-transparent to-transparent" />
 
                       <div className="absolute top-4 right-4 w-10 h-10 rounded-full bg-[#0F1926]/90 border border-white/20 flex items-center justify-center text-white shadow-lg">
-                        <IconComp className="w-4 h-4 text-[#F2F0EC]" />
+                        <IconComp className="w-4 h-4 text-[#5E656E]" />
                       </div>
                     </div>
 
@@ -439,13 +439,13 @@ export const HomePage: React.FC = () => {
       </section>
 
       {/* ========================================================================= */}
-      {/* SECTION 5: OUR USPs & VALUE PROPOSITIONS (#F2F0EC LIGHT CARDS)            */}
+      {/* SECTION 5: OUR USPs & VALUE PROPOSITIONS (#5E656E LIGHT CARDS)            */}
       {/* ========================================================================= */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 border-b border-[#2A2A2B]">
         <div className="space-y-12">
           <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-6">
             <div className="space-y-2">
-              <h2 className="font-satoshi text-2xl sm:text-4xl font-extrabold uppercase text-[#F2F0EC] tracking-[0.03em] leading-snug">
+              <h2 className="font-satoshi text-2xl sm:text-4xl font-extrabold uppercase text-[#5E656E] tracking-[0.03em] leading-snug">
                 OUR USP
               </h2>
             </div>
@@ -463,7 +463,7 @@ export const HomePage: React.FC = () => {
             {USP_CARDS.map((card) => (
               <div
                 key={card.id}
-                className="bg-[#F2F0EC] text-[#0F1926] border border-[#2A2A2B]/10 rounded-3xl p-7 space-y-5 flex flex-col justify-between group shadow-2xl hover:-translate-y-2 transition-all duration-300 hover:border-[#0F1926]"
+                className="bg-[#5E656E] text-[#0F1926] border border-[#2A2A2B]/10 rounded-3xl p-7 space-y-5 flex flex-col justify-between group shadow-2xl hover:-translate-y-2 transition-all duration-300 hover:border-[#0F1926]"
               >
                 <div className="space-y-4">
                   <div className="w-14 h-14 rounded-2xl bg-[#0F1926]/10 border border-[#0F1926]/15 flex items-center justify-center group-hover:border-[#0F1926] transition-colors shadow-sm">

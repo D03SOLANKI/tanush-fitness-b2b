@@ -66,7 +66,7 @@ export const ServicesPage: React.FC = () => {
   };
 
   return (
-    <main className="pt-24 pb-20 bg-[#0F1926] min-h-screen text-[#F2F0EC]">
+    <main className="pt-24 pb-20 bg-[#0F1926] min-h-screen text-[#5E656E]">
       <SEO
         title="Gym Architecture & Outfitting Services | Tanush Fitness"
         description="3D CAD space modeling, acoustic rubber flooring, digital access turnstiles, marketing launch funnels, and AMC facility maintenance."
@@ -76,7 +76,7 @@ export const ServicesPage: React.FC = () => {
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 pb-12">
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 border-b border-[#2A2A2B] pb-8">
           <div className="space-y-3">
-            <h1 className="font-satoshi text-2xl sm:text-4xl md:text-5xl font-extrabold uppercase text-[#F2F0EC] tracking-[0.04em] leading-snug">
+            <h1 className="font-satoshi text-2xl sm:text-4xl md:text-5xl font-extrabold uppercase text-[#5E656E] tracking-[0.04em] leading-snug">
               GYM MANAGEMENT OUTFITTING
             </h1>
 
@@ -110,7 +110,7 @@ export const ServicesPage: React.FC = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.3, delay: idx * 0.05 }}
-              className="bg-[#F2F0EC] text-[#0F1926] border border-[#2A2A2B]/10 rounded-2xl overflow-hidden flex flex-col justify-between group hover:border-[#0F1926] transition-all duration-300 shadow-2xl hover:-translate-y-1.5"
+              className="bg-[#5E656E] text-[#0F1926] border border-[#2A2A2B]/10 rounded-2xl overflow-hidden flex flex-col justify-between group hover:border-[#0F1926] transition-all duration-300 shadow-2xl hover:-translate-y-1.5"
             >
               <div>
                 {/* Visual Image Header */}
@@ -128,7 +128,7 @@ export const ServicesPage: React.FC = () => {
 
                   {/* Impact Tag in Bottom Right */}
                   {service.badge && (
-                    <div className="absolute bottom-3 right-3 bg-[#0F1926] px-2.5 py-1 rounded-md text-[9px] font-mono text-[#F2F0EC] font-bold border border-white/15">
+                    <div className="absolute bottom-3 right-3 bg-[#0F1926] px-2.5 py-1 rounded-md text-[9px] font-mono text-[#5E656E] font-bold border border-white/15">
                       ⚡ {service.badge}
                     </div>
                   )}
@@ -196,7 +196,7 @@ export const ServicesPage: React.FC = () => {
               initial={{ scale: 0.95, y: 20 }}
               animate={{ scale: 1, y: 0 }}
               exit={{ scale: 0.95, y: 20 }}
-              className="bg-[#F2F0EC] text-[#0F1926] border border-[#2A2A2B]/20 rounded-2xl max-w-xl w-full p-6 sm:p-8 space-y-6 shadow-2xl"
+              className="bg-[#5E656E] text-[#0F1926] border border-[#2A2A2B]/20 rounded-2xl max-w-xl w-full p-6 sm:p-8 space-y-6 shadow-2xl"
             >
               <div className="flex items-start justify-between border-b border-[#0F1926]/15 pb-4">
                 <div>

@@ -9,7 +9,7 @@ export const AboutPage: React.FC = () => {
   const [activeTab, setActiveTab] = useState<'what' | 'why'>('what');
 
   return (
-    <main className="pt-24 pb-20 bg-[#0F1926] min-h-screen text-[#F2F0EC]">
+    <main className="pt-24 pb-20 bg-[#0F1926] min-h-screen text-[#5E656E]">
       <SEO
         title="The Tanush Legacy & Precision Biomechanics | Tanush Fitness"
         description="Engineering high-performance athletic sanctuaries. 11-gauge laser cut steel, ISO 9001:2015 precision manufacturing, and nationwide commercial & residential outfitting."
@@ -19,7 +19,7 @@ export const AboutPage: React.FC = () => {
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 pb-12">
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 border-b border-[#2A2A2B] pb-8">
           <div className="space-y-3">
-            <h1 className="font-satoshi text-2xl sm:text-4xl md:text-5xl font-extrabold uppercase text-[#F2F0EC] tracking-[0.04em] leading-snug">
+            <h1 className="font-satoshi text-2xl sm:text-4xl md:text-5xl font-extrabold uppercase text-[#5E656E] tracking-[0.04em] leading-snug">
               THE TANUSH LEGACY
             </h1>
 
@@ -49,7 +49,7 @@ export const AboutPage: React.FC = () => {
         <div className="bg-[#0C1015] border border-[#2A2A2B] rounded-3xl p-8 sm:p-12 space-y-8 shadow-2xl">
           <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6 border-b border-[#2A2A2B] pb-6">
             <div className="space-y-1">
-              <h2 className="font-satoshi text-xl sm:text-2xl font-extrabold text-[#F2F0EC] uppercase tracking-[0.03em] leading-snug">
+              <h2 className="font-satoshi text-xl sm:text-2xl font-extrabold text-[#5E656E] uppercase tracking-[0.03em] leading-snug">
                 {activeTab === 'what' ? 'What is Tanush Fitness?' : 'Why Choose Tanush Fitness?'}
               </h2>
             </div>
@@ -60,8 +60,8 @@ export const AboutPage: React.FC = () => {
                 onClick={() => setActiveTab('what')}
                 className={`px-6 py-2 rounded-full text-xs font-mono uppercase tracking-wider transition cursor-pointer ${
                   activeTab === 'what'
-                    ? 'bg-[#F2F0EC] text-[#0F1926] font-bold shadow-md'
-                    : 'text-[#D0CFCA] hover:text-[#F2F0EC]'
+                    ? 'bg-[#5E656E] text-[#0F1926] font-bold shadow-md'
+                    : 'text-[#D0CFCA] hover:text-[#5E656E]'
                 }`}
               >
                 What is Tanush?
@@ -71,8 +71,8 @@ export const AboutPage: React.FC = () => {
                 onClick={() => setActiveTab('why')}
                 className={`px-6 py-2 rounded-full text-xs font-mono uppercase tracking-wider transition cursor-pointer ${
                   activeTab === 'why'
-                    ? 'bg-[#F2F0EC] text-[#0F1926] font-bold shadow-md'
-                    : 'text-[#D0CFCA] hover:text-[#F2F0EC]'
+                    ? 'bg-[#5E656E] text-[#0F1926] font-bold shadow-md'
+                    : 'text-[#D0CFCA] hover:text-[#5E656E]'
                 }`}
               >
                 Why Tanush?
@@ -85,24 +85,24 @@ export const AboutPage: React.FC = () => {
               {activeTab === 'what' ? (
                 <div className="space-y-4 text-[#D0CFCA] font-sans leading-relaxed text-sm sm:text-base">
                   <p>
-                    Introducing India's premier commercial & residential fitness sanctuary & outfitting brand: <span className="text-[#F2F0EC] font-bold">Tanush Fitness</span>, where precision biomechanical engineering and commercial strength take center stage.
+                    Introducing India's premier commercial & residential fitness sanctuary & outfitting brand: <span className="text-[#5E656E] font-bold">Tanush Fitness</span>, where precision biomechanical engineering and commercial strength take center stage.
                   </p>
                   <p>
                     At Tanush, we redefine the fitness outfitting landscape with state-of-the-art 11-gauge laser-cut equipment, certified trainer placements, and bespoke 3D CAD facility design.
                   </p>
                   <p>
-                    Our commitment goes beyond machinery; we offer a holistic <span className="text-[#F2F0EC] font-semibold">360-degree comprehensive solution</span> to transform empty commercial square footage into world-class athletic destinations.
+                    Our commitment goes beyond machinery; we offer a holistic <span className="text-[#5E656E] font-semibold">360-degree comprehensive solution</span> to transform empty commercial square footage into world-class athletic destinations.
                   </p>
                 </div>
               ) : (
                 <div className="space-y-4 text-[#D0CFCA] font-sans leading-relaxed text-sm sm:text-base">
                   <p>
-                    As a testament to unwavering commitment to quality and athletic excellence, <span className="text-[#F2F0EC] font-bold">Tanush Fitness</span> redefines the B2B procurement experience.
+                    As a testament to unwavering commitment to quality and athletic excellence, <span className="text-[#5E656E] font-bold">Tanush Fitness</span> redefines the B2B procurement experience.
                   </p>
                   <p>
                     With direct-from-factory pricing, 100% GST 18% Input Tax Credit invoicing, zero middleman markups, and dedicated master coach recruitment, Tanush is the trusted infrastructure partner for over 500+ commercial clubs nationwide.
                   </p>
-                  <div className="p-5 rounded-xl bg-[#0F1926] border-l-4 border-[#F2F0EC] font-sans text-sm text-[#F2F0EC] italic shadow-lg">
+                  <div className="p-5 rounded-xl bg-[#0F1926] border-l-4 border-[#5E656E] font-sans text-sm text-[#5E656E] italic shadow-lg">
                     "Tanush Fitness is not merely an equipment vendor; it is an end-to-end commercial infrastructure partner built for gym owners who demand perfection."
                   </div>
                 </div>
@@ -111,19 +111,19 @@ export const AboutPage: React.FC = () => {
               {/* 4-Stat Metric Ribbon */}
               <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 pt-4 font-mono text-xs text-[#D0CFCA] border-t border-[#2A2A2B]">
                 <div className="p-3 rounded-xl bg-[#0F1926]/80 border border-[#2A2A2B]">
-                  <span className="text-[#F2F0EC] font-extrabold block text-2xl font-satoshi">500+</span>
+                  <span className="text-[#5E656E] font-extrabold block text-2xl font-satoshi">500+</span>
                   <span className="text-[#D0CFCA] text-[10px] uppercase">Clubs Outfitted</span>
                 </div>
                 <div className="p-3 rounded-xl bg-[#0F1926]/80 border border-[#2A2A2B]">
-                  <span className="text-[#F2F0EC] font-extrabold block text-2xl font-satoshi">11-GAUGE</span>
+                  <span className="text-[#5E656E] font-extrabold block text-2xl font-satoshi">11-GAUGE</span>
                   <span className="text-[#D0CFCA] text-[10px] uppercase">Laser Cut Steel</span>
                 </div>
                 <div className="p-3 rounded-xl bg-[#0F1926]/80 border border-[#2A2A2B]">
-                  <span className="text-[#F2F0EC] font-extrabold block text-2xl font-satoshi">ISO 9001</span>
+                  <span className="text-[#5E656E] font-extrabold block text-2xl font-satoshi">ISO 9001</span>
                   <span className="text-[#D0CFCA] text-[10px] uppercase">Certified Plant</span>
                 </div>
                 <div className="p-3 rounded-xl bg-[#0F1926]/80 border border-[#2A2A2B]">
-                  <span className="text-[#F2F0EC] font-extrabold block text-2xl font-satoshi">18% ITC</span>
+                  <span className="text-[#5E656E] font-extrabold block text-2xl font-satoshi">18% ITC</span>
                   <span className="text-[#D0CFCA] text-[10px] uppercase">GST Invoices</span>
                 </div>
               </div>
@@ -146,9 +146,9 @@ export const AboutPage: React.FC = () => {
           </div>
         </div>
 
-        {/* Pillars / USPs (#F2F0EC Off-White Light Card Palette) */}
+        {/* Pillars / USPs (#5E656E Off-White Light Card Palette) */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          <div className="bg-[#F2F0EC] text-[#0F1926] border border-[#2A2A2B]/10 rounded-2xl p-8 space-y-4 group shadow-2xl hover:-translate-y-1.5 transition-all duration-300 hover:border-[#0F1926]">
+          <div className="bg-[#5E656E] text-[#0F1926] border border-[#2A2A2B]/10 rounded-2xl p-8 space-y-4 group shadow-2xl hover:-translate-y-1.5 transition-all duration-300 hover:border-[#0F1926]">
             <div className="w-12 h-12 rounded-xl bg-[#0F1926]/10 border border-[#0F1926]/15 flex items-center justify-center text-[#0F1926] group-hover:text-[#0F1926] transition-colors">
               <Wrench className="w-6 h-6" />
             </div>
@@ -158,7 +158,7 @@ export const AboutPage: React.FC = () => {
             </p>
           </div>
 
-          <div className="bg-[#F2F0EC] text-[#0F1926] border border-[#2A2A2B]/10 rounded-2xl p-8 space-y-4 group shadow-2xl hover:-translate-y-1.5 transition-all duration-300 hover:border-[#0F1926]">
+          <div className="bg-[#5E656E] text-[#0F1926] border border-[#2A2A2B]/10 rounded-2xl p-8 space-y-4 group shadow-2xl hover:-translate-y-1.5 transition-all duration-300 hover:border-[#0F1926]">
             <div className="w-12 h-12 rounded-xl bg-[#0F1926]/10 border border-[#0F1926]/15 flex items-center justify-center text-[#0F1926] group-hover:text-[#0F1926] transition-colors">
               <Cpu className="w-6 h-6" />
             </div>
@@ -168,7 +168,7 @@ export const AboutPage: React.FC = () => {
             </p>
           </div>
 
-          <div className="bg-[#F2F0EC] text-[#0F1926] border border-[#2A2A2B]/10 rounded-2xl p-8 space-y-4 group shadow-2xl hover:-translate-y-1.5 transition-all duration-300 hover:border-[#0F1926]">
+          <div className="bg-[#5E656E] text-[#0F1926] border border-[#2A2A2B]/10 rounded-2xl p-8 space-y-4 group shadow-2xl hover:-translate-y-1.5 transition-all duration-300 hover:border-[#0F1926]">
             <div className="w-12 h-12 rounded-xl bg-[#0F1926]/10 border border-[#0F1926]/15 flex items-center justify-center text-[#0F1926] group-hover:text-[#0F1926] transition-colors">
               <Award className="w-6 h-6" />
             </div>
@@ -179,10 +179,10 @@ export const AboutPage: React.FC = () => {
           </div>
         </div>
 
-        {/* Executive Engineering Leadership (#F2F0EC Light Card Palette) */}
+        {/* Executive Engineering Leadership (#5E656E Light Card Palette) */}
         <div className="space-y-8">
           <div className="text-center max-w-2xl mx-auto space-y-2">
-            <h2 className="font-satoshi text-2xl sm:text-3xl font-extrabold text-[#F2F0EC] uppercase">
+            <h2 className="font-satoshi text-2xl sm:text-3xl font-extrabold text-[#5E656E] uppercase">
               The Minds Behind Tanush Precision
             </h2>
           </div>
@@ -193,7 +193,7 @@ export const AboutPage: React.FC = () => {
               { name: 'Rohan Mehta', title: 'Director of Laser Manufacturing', image: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=400&q=80', bio: 'Directs ISO 9001:2015 robotic welding calibration and heavy tensile stress tests for selectorized machines.' },
               { name: 'Priya Sharma', title: 'VP of Master Staffing & Academy', image: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=400&q=80', bio: 'Head of credential vetting for NASM, CSCS, and ACE certified master personal trainer placements.' }
             ].map((team, i) => (
-              <div key={i} className="bg-[#F2F0EC] text-[#0F1926] border border-[#2A2A2B]/10 rounded-2xl p-6 space-y-4 shadow-2xl group hover:-translate-y-1.5 transition-all duration-300 hover:border-[#0F1926]">
+              <div key={i} className="bg-[#5E656E] text-[#0F1926] border border-[#2A2A2B]/10 rounded-2xl p-6 space-y-4 shadow-2xl group hover:-translate-y-1.5 transition-all duration-300 hover:border-[#0F1926]">
                 <img src={team.image} alt={team.name} className="w-20 h-20 rounded-xl object-cover border border-[#0F1926]/15 shadow-md" />
                 <div className="space-y-1">
                   <h3 className="font-satoshi text-lg font-bold text-[#0F1926] uppercase">{team.name}</h3>
@@ -208,7 +208,7 @@ export const AboutPage: React.FC = () => {
         {/* CTA Bar */}
         <div className="bg-[#0C1015] border border-[#2A2A2B] rounded-3xl p-8 sm:p-12 flex flex-col md:flex-row items-center justify-between gap-6 shadow-2xl">
           <div className="space-y-2">
-            <h3 className="font-satoshi text-2xl sm:text-3xl font-extrabold text-[#F2F0EC] uppercase">
+            <h3 className="font-satoshi text-2xl sm:text-3xl font-extrabold text-[#5E656E] uppercase">
               Ready to Outfit Your Commercial Sanctuary?
             </h3>
             <p className="text-[#D0CFCA] text-sm font-sans max-w-xl">

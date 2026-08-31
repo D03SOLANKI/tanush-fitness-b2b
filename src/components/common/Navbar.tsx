@@ -90,8 +90,8 @@ export const Navbar: React.FC = () => {
                     onClick={() => handleNav(item.page)}
                     className={`px-4 py-2 rounded-full font-satoshi text-xs uppercase tracking-wider transition-all duration-200 flex items-center gap-1.5 cursor-pointer select-none ${
                       isActive
-                        ? 'bg-[#F2F0EC] text-[#0F1926] font-bold shadow-md'
-                        : 'text-[#D0CFCA] hover:text-[#F2F0EC] hover:bg-[#2A2A2B]/50'
+                        ? 'bg-[#5E656E] text-[#0F1926] font-bold shadow-md'
+                        : 'text-[#D0CFCA] hover:text-[#5E656E] hover:bg-[#2A2A2B]/50'
                     }`}
                   >
                     <span>{item.label}</span>
@@ -106,7 +106,7 @@ export const Navbar: React.FC = () => {
               <button
                 type="button"
                 onClick={() => openAuthModal()}
-                className="p-2.5 rounded-full bg-[#0C1015] border border-[#2A2A2B] hover:border-[#D0CFCA] text-[#D0CFCA] hover:text-[#F2F0EC] transition cursor-pointer"
+                className="p-2.5 rounded-full bg-[#0C1015] border border-[#2A2A2B] hover:border-[#D0CFCA] text-[#D0CFCA] hover:text-[#5E656E] transition cursor-pointer"
                 title={currentUser ? currentUser.name : 'Account Login'}
               >
                 <User className="w-4 h-4" />
@@ -126,7 +126,7 @@ export const Navbar: React.FC = () => {
               <button
                 type="button"
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
-                className="lg:hidden p-2.5 rounded-xl bg-[#0C1015] border border-[#2A2A2B] text-[#F2F0EC] hover:text-white transition cursor-pointer"
+                className="lg:hidden p-2.5 rounded-xl bg-[#0C1015] border border-[#2A2A2B] text-[#5E656E] hover:text-white transition cursor-pointer"
                 aria-label="Toggle Navigation Menu"
               >
                 {isMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
@@ -157,7 +157,7 @@ export const Navbar: React.FC = () => {
                 <button
                   type="button"
                   onClick={() => setIsMenuOpen(false)}
-                  className="p-3 rounded-full bg-[#2A2A2B] text-[#F2F0EC] hover:bg-[#0F1926] transition cursor-pointer"
+                  className="p-3 rounded-full bg-[#2A2A2B] text-[#5E656E] hover:bg-[#0F1926] transition cursor-pointer"
                 >
                   <X className="w-6 h-6" />
                 </button>
@@ -177,14 +177,14 @@ export const Navbar: React.FC = () => {
                         <span className="font-mono text-xs text-[#D0CFCA]">0{idx + 1}</span>
                         <span
                           className={`font-satoshi text-xl font-bold uppercase tracking-[0.04em] transition ${
-                            isActive ? 'text-[#F2F0EC]' : 'text-[#D0CFCA] group-hover:text-[#F2F0EC]'
+                            isActive ? 'text-[#5E656E]' : 'text-[#D0CFCA] group-hover:text-[#5E656E]'
                           }`}
                         >
                           {item.label}
                         </span>
                       </div>
 
-                      <div className="w-8 h-8 rounded-full bg-[#2A2A2B] flex items-center justify-center text-[#D0CFCA] group-hover:text-[#F2F0EC] group-hover:bg-[#0F1926] transition">
+                      <div className="w-8 h-8 rounded-full bg-[#2A2A2B] flex items-center justify-center text-[#D0CFCA] group-hover:text-[#5E656E] group-hover:bg-[#0F1926] transition">
                         <ArrowUpRight className="w-4 h-4" />
                       </div>
                     </div>
@@ -199,7 +199,7 @@ export const Navbar: React.FC = () => {
                   <span>•</span>
                   <span>ISO 9001:2015 CERTIFIED</span>
                 </div>
-                <a href="tel:+918160918894" className="text-[#F2F0EC] hover:text-[#D0CFCA] transition font-bold">
+                <a href="tel:+918160918894" className="text-[#5E656E] hover:text-[#D0CFCA] transition font-bold">
                   Direct Desk: +91 81609 18894
                 </a>
               </div>

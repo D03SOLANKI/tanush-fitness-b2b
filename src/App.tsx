@@ -77,7 +77,7 @@ const MainContent: React.FC = () => {
   const isAdmin = currentPage === 'admin';
 
   return (
-    <div className="min-h-screen bg-[#0F1926] text-[#F2F0EC] flex flex-col justify-between selection:bg-[#F2F0EC] selection:text-[#0F1926] font-sans antialiased">
+    <div className="min-h-screen bg-[#0F1926] text-[#5E656E] flex flex-col justify-between selection:bg-[#5E656E] selection:text-[#0F1926] font-sans antialiased">
       {isAdmin ? <AdminHeader /> : <Navbar />}
       <div className="flex-1">{renderPage()}</div>
       {!isAdmin && <Footer />}

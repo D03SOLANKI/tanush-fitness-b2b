@@ -35,10 +35,10 @@ export const VaultMenuDrawer: React.FC<VaultMenuDrawerProps> = ({ isOpen, onClos
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: -20 }}
           transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
-          className="fixed inset-0 z-50 bg-[#0F1926] text-[#F2F0EC] flex flex-col justify-between overflow-y-auto"
+          className="fixed inset-0 z-50 bg-[#0F1926] text-[#5E656E] flex flex-col justify-between overflow-y-auto"
         >
           {/* TOP UTILITY HEADER */}
-          <div className="bg-[#0C1015] text-[#F2F0EC] py-3 sm:py-4 px-6 sm:px-12 flex items-center justify-between border-b border-[#2A2A2B] z-20 shrink-0">
+          <div className="bg-[#0C1015] text-[#5E656E] py-3 sm:py-4 px-6 sm:px-12 flex items-center justify-between border-b border-[#2A2A2B] z-20 shrink-0">
             <div>
               <a
                 href="mailto:Info@tanushfitness.com"
@@ -111,10 +111,10 @@ export const VaultMenuDrawer: React.FC<VaultMenuDrawerProps> = ({ isOpen, onClos
                   </span>
 
                   <div className="relative flex-1">
-                    <span className="font-satoshi text-2xl sm:text-3xl md:text-4xl lg:text-[42px] font-extrabold uppercase text-[#F2F0EC] group-hover:text-[#D0CFCA] group-hover:translate-x-2 transition-all duration-300 block leading-tight">
+                    <span className="font-satoshi text-2xl sm:text-3xl md:text-4xl lg:text-[42px] font-extrabold uppercase text-[#5E656E] group-hover:text-[#D0CFCA] group-hover:translate-x-2 transition-all duration-300 block leading-tight">
                       {item.title}
                     </span>
-                    <div className="h-[1.5px] sm:h-[2px] bg-[#2A2A2B] w-full mt-1 group-hover:bg-[#F2F0EC] transition-colors duration-300" />
+                    <div className="h-[1.5px] sm:h-[2px] bg-[#2A2A2B] w-full mt-1 group-hover:bg-[#5E656E] transition-colors duration-300" />
                   </div>
                 </div>
               ))}
@@ -128,7 +128,7 @@ export const VaultMenuDrawer: React.FC<VaultMenuDrawerProps> = ({ isOpen, onClos
                 <button
                   type="button"
                   onClick={() => handleNav('home')}
-                  className="bg-[#0F1926] text-[#F2F0EC] border border-[#2A2A2B] hover:border-[#D0CFCA] px-6 sm:px-7 py-2.5 sm:py-3 rounded-full font-satoshi font-black text-xs sm:text-sm uppercase tracking-[0.2em] shadow-xl transition-all duration-300"
+                  className="bg-[#0F1926] text-[#5E656E] border border-[#2A2A2B] hover:border-[#D0CFCA] px-6 sm:px-7 py-2.5 sm:py-3 rounded-full font-satoshi font-black text-xs sm:text-sm uppercase tracking-[0.2em] shadow-xl transition-all duration-300"
                 >
                   TANUSH FITNESS
                 </button>
@@ -144,7 +144,7 @@ export const VaultMenuDrawer: React.FC<VaultMenuDrawerProps> = ({ isOpen, onClos
 
               {/* Right Credits */}
               <div className="text-xs font-mono text-[#D0CFCA]">
-                Made for <span className="font-bold text-[#F2F0EC]">Tanush Fitness Sanctuary</span>
+                Made for <span className="font-bold text-[#5E656E]">Tanush Fitness Sanctuary</span>
               </div>
             </div>
           </div>
