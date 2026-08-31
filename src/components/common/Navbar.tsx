@@ -60,73 +60,75 @@ export const Navbar: React.FC = () => {
 
   return (
     <>
-      {/* Floating Bottom Navigation Dock (Vault Style) */}
+      {/* Main Sticky Header */}
       <header
-        className="fixed bottom-4 sm:bottom-6 left-0 right-0 z-40 pointer-events-none transition-all duration-300"
+        className={`sticky top-0 left-0 right-0 z-40 transition-all duration-300 ${
+          isScrolled
+            ? 'bg-[#0C1015]/95 backdrop-blur-md border-b border-[#2A2A2B] shadow-2xl py-3'
+            : 'bg-[#0F1926]/90 backdrop-blur-sm border-b border-[#2A2A2B]/60 py-3 sm:py-4'
+        }`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between gap-4 pointer-events-auto">
-            {/* 1. Left: Vault-Style Brand Logo Capsule Pill */}
+          <div className="flex items-center justify-between gap-4">
+            {/* 1. Official Brand Logo Lockup */}
             <div
               onClick={() => handleNav('home')}
-              className="bg-[#0C1015]/95 backdrop-blur-md border border-[#2A2A2B] hover:border-[#E8E8E8]/40 px-4 sm:px-5 py-2 sm:py-2.5 rounded-full flex items-center gap-2.5 cursor-pointer shadow-2xl transition-all group shrink-0"
+              className="flex items-center gap-3 cursor-pointer group select-none shrink-0"
             >
-              <TanushLogo variant="white" height={28} className="h-6 sm:h-7 w-auto group-hover:opacity-90 transition-opacity" />
+              <TanushLogo variant="white" height={64} className="h-12 sm:h-14 md:h-16 w-auto group-hover:opacity-90 transition-opacity" />
             </div>
 
-            {/* 2. Center: Vault-Style Floating Pill Nav Bar with Scroll Indicator */}
-            <div className="hidden lg:flex items-center relative">
-              <button
-                type="button"
-                onClick={() => window.scrollBy({ top: window.innerHeight * 0.85, behavior: 'smooth' })}
-                className="absolute -top-3.5 left-1/2 -translate-x-1/2 w-6 h-6 rounded-full bg-[#0C1015] border border-[#2A2A2B] hover:border-[#E8E8E8] text-[#D0CFCA] hover:text-[#E8E8E8] flex items-center justify-center shadow-lg transition-colors cursor-pointer"
-                title="Scroll down"
-              >
-                <ArrowRight className="w-2.5 h-2.5 rotate-90" />
-              </button>
+            {/* 2. Desktop Center Nav Pill Bar */}
+            <nav className="hidden lg:flex items-center gap-1 bg-[#0C1015] border border-[#2A2A2B] p-1.5 rounded-full shadow-inner">
+              {navLinks.map((item) => {
+                const isActive = currentPage === item.page;
+                return (
+                  <button
+                    key={item.label}
+                    type="button"
+                    onClick={() => handleNav(item.page)}
+                    className={`px-4 py-2 rounded-full font-satoshi text-xs uppercase tracking-wider transition-all duration-200 flex items-center gap-1.5 cursor-pointer select-none ${
+                      isActive
+                        ? 'bg-[#E8E8E8] text-[#0F1926] font-bold shadow-md'
+                        : 'text-[#D0CFCA] hover:text-[#E8E8E8] hover:bg-[#2A2A2B]/50'
+                    }`}
+                  >
+                    <span>{item.label}</span>
+                  </button>
+                );
+              })}
+            </nav>
 
-              <nav className="flex items-center gap-1 bg-[#0C1015]/95 backdrop-blur-md border border-[#2A2A2B] p-1.5 rounded-full shadow-2xl">
-                {navLinks.map((item) => {
-                  const isActive = currentPage === item.page;
-                  return (
-                    <button
-                      key={item.label}
-                      type="button"
-                      onClick={() => handleNav(item.page)}
-                      className={`px-5 py-2 rounded-full font-satoshi text-xs font-bold uppercase tracking-wider transition-all duration-200 flex items-center gap-1.5 cursor-pointer select-none ${
-                        isActive
-                          ? 'bg-[#E8E8E8] text-[#0F1926] font-bold shadow-md'
-                          : 'text-[#D0CFCA] hover:text-[#E8E8E8] hover:bg-[#2A2A2B]/40'
-                      }`}
-                    >
-                      <span>{item.label}</span>
-                    </button>
-                  );
-                })}
-              </nav>
-            </div>
-
-            {/* 3. Right: Vault-Style Circular Action Icons & Menu Trigger (=) */}
-            <div className="flex items-center gap-2.5 sm:gap-3 shrink-0">
+            {/* 3. Action Hub (Consultation CTA, User Account, Menu Trigger) */}
+            <div className="flex items-center gap-2.5 sm:gap-3">
               {/* User Account Login */}
               <button
                 type="button"
                 onClick={() => openAuthModal()}
-                className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-[#0C1015]/95 backdrop-blur-md border border-[#2A2A2B] hover:border-[#E8E8E8]/40 text-[#D0CFCA] hover:text-[#E8E8E8] flex items-center justify-center transition cursor-pointer shadow-2xl"
+                className="p-2.5 rounded-full bg-[#0C1015] border border-[#2A2A2B] hover:border-[#D0CFCA] text-[#D0CFCA] hover:text-[#E8E8E8] transition cursor-pointer"
                 title={currentUser ? currentUser.name : 'Account Login'}
               >
                 <User className="w-4 h-4" />
               </button>
 
-              {/* Circular Hamburger Menu Button (=) Matching Vault */}
+              {/* Consultation Direct CTA */}
               <button
                 type="button"
-                onClick={() => setIsMenuOpen(true)}
-                className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-[#0C1015]/95 backdrop-blur-md border border-[#2A2A2B] hover:border-[#E8E8E8]/40 text-[#E8E8E8] flex flex-col items-center justify-center gap-1.5 cursor-pointer transition-all duration-200 shadow-2xl group"
+                onClick={() => handleNav('contact')}
+                className="hidden xl:inline-flex items-center gap-2 btn-primary text-xs py-2.5 px-6 cursor-pointer shadow-md"
+              >
+                <span>Book Consultation</span>
+                <ArrowRight className="w-3.5 h-3.5" />
+              </button>
+
+              {/* Mobile / Full Drawer Menu Button */}
+              <button
+                type="button"
+                onClick={() => setIsMenuOpen(!isMenuOpen)}
+                className="lg:hidden p-2.5 rounded-xl bg-[#0C1015] border border-[#2A2A2B] text-[#E8E8E8] hover:text-white transition cursor-pointer"
                 aria-label="Toggle Navigation Menu"
               >
-                <span className="w-4 sm:w-5 h-[2px] bg-[#E8E8E8] rounded-full transition-transform duration-200 group-hover:scale-x-110" />
-                <span className="w-4 sm:w-5 h-[2px] bg-[#E8E8E8] rounded-full transition-transform duration-200 group-hover:scale-x-110" />
+                {isMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
               </button>
             </div>
           </div>
