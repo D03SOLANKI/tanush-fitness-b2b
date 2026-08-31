@@ -121,14 +121,20 @@ export const HomePage: React.FC = () => {
       {/* ========================================================================= */}
       <section className="relative w-full bg-gradient-to-b from-[#0F1926] via-[#0C1015] to-[#0F1926] text-[#E8E8E8] pt-14 sm:pt-20 pb-20 px-4 sm:px-6 lg:px-8 overflow-hidden">
         <div className="max-w-5xl mx-auto text-center space-y-8 relative z-10">
+          {/* Centered Brand Emblem (Vault Style) */}
+          <div className="flex justify-center pb-1">
+            <img
+              src="/tanush-symbol-white.png"
+              alt="Tanush"
+              className="w-14 h-14 sm:w-16 sm:h-16 object-contain opacity-95 hover:opacity-100 transition-opacity"
+            />
+          </div>
+
           {/* Clean Grand Headline */}
           <div className="space-y-4">
             <h1 className="font-satoshi text-2xl sm:text-3xl md:text-4xl lg:text-[42px] font-black uppercase tracking-[0.025em] text-[#E8E8E8] leading-[1.4] sm:leading-[1.3] max-w-5xl mx-auto">
               <span className="inline-flex items-center justify-center flex-wrap gap-x-3 gap-y-2">
-                <span className="relative">
-                  GET READY
-                  <span className="absolute -bottom-1 left-0 right-0 h-[2px] bg-[#D0CFCA]/40 rounded-full" />
-                </span>
+                <span>GET READY</span>
                 <span className="inline-block h-7 sm:h-9 md:h-10 w-16 sm:w-24 md:w-28 rounded-full overflow-hidden border border-white/20 shadow-md align-middle shrink-0">
                   <img
                     src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=400&q=80"
