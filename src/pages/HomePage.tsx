@@ -124,10 +124,40 @@ export const HomePage: React.FC = () => {
         <div className="max-w-5xl mx-auto text-center space-y-8 relative z-10">
           {/* Clean Grand Headline */}
           <div className="space-y-4">
-            <h1 className="font-satoshi text-3xl sm:text-5xl md:text-6xl font-black uppercase tracking-[0.04em] text-[#F2F0EC] leading-[1.25] sm:leading-[1.2]">
-              UNLOCK YOUR STRENGTH.
+            <h1 className="font-satoshi text-2xl sm:text-3xl md:text-4xl lg:text-[42px] font-black uppercase tracking-[0.025em] text-[#F2F0EC] leading-[1.4] sm:leading-[1.3] max-w-5xl mx-auto">
+              <span className="inline-flex items-center justify-center flex-wrap gap-x-3 gap-y-2">
+                <span className="relative">
+                  GET READY
+                  <span className="absolute -bottom-1 left-0 right-0 h-[2px] bg-[#D0CFCA]/40 rounded-full" />
+                </span>
+                <span className="inline-block h-7 sm:h-9 md:h-10 w-16 sm:w-24 md:w-28 rounded-full overflow-hidden border border-white/20 shadow-md align-middle shrink-0">
+                  <img
+                    src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=400&q=80"
+                    alt="Tanush Athlete"
+                    className="w-full h-full object-cover"
+                  />
+                </span>
+                <span>TO UNLEASH</span>
+              </span>
               <br />
-              <span className="text-[#D0CFCA]">OWN YOUR POTENTIAL.</span>
+              <span className="inline-flex items-center justify-center flex-wrap gap-x-3 gap-y-2 mt-1 sm:mt-2">
+                <span>YOUR</span>
+                <span className="inline-block h-7 sm:h-9 md:h-10 w-16 sm:w-24 md:w-28 rounded-full overflow-hidden border border-white/20 shadow-md align-middle shrink-0">
+                  <img
+                    src="https://images.unsplash.com/photo-1540497077202-7c8a3999166f?auto=format&fit=crop&w=400&q=80"
+                    alt="Tanush Strength"
+                    className="w-full h-full object-cover"
+                  />
+                </span>
+                <span className="text-[#D0CFCA]">INNER POTENTIAL</span>
+                <span className="hidden sm:inline-block h-7 sm:h-9 md:h-10 w-16 sm:w-24 md:w-28 rounded-full overflow-hidden border border-white/20 shadow-md align-middle shrink-0">
+                  <img
+                    src="https://images.unsplash.com/photo-1517838277536-f5f99be501cd?auto=format&fit=crop&w=400&q=80"
+                    alt="Tanush Performance"
+                    className="w-full h-full object-cover"
+                  />
+                </span>
+              </span>
             </h1>
 
             <p className="font-sans text-base sm:text-lg text-[#D0CFCA] max-w-2xl mx-auto leading-relaxed font-normal">
