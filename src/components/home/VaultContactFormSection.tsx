@@ -77,15 +77,12 @@ export const VaultContactFormSection: React.FC = () => {
                 </button>
               </div>
             ) : (
-              <form onSubmit={handleSubmit} className="space-y-8">
+              <form onSubmit={handleSubmit} className="space-y-7">
                 {/* 1. TOP ROW: NAME, CONTACT, EMAIL */}
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
                   {/* Name */}
-                  <div className="space-y-2">
-                    <label
-                      className="block font-montserrat text-xs sm:text-sm font-bold text-[#0F1926] tracking-wider uppercase"
-                      style={{ fontFamily: "'Montserrat', sans-serif", fontWeight: 700 }}
-                    >
+                  <div className="space-y-1.5">
+                    <label className="block font-mono text-[10px] sm:text-[11px] font-bold text-[#0F1926]/80 tracking-widest uppercase">
                       NAME *
                     </label>
                     <input
@@ -94,17 +91,13 @@ export const VaultContactFormSection: React.FC = () => {
                       value={name}
                       onChange={(e) => setName(e.target.value)}
                       placeholder="John Doe"
-                      className="w-full bg-transparent border-b-2 border-[#0F1926] pb-2 text-sm sm:text-base font-montserrat font-medium text-[#0F1926] placeholder-[#0F1926]/40 focus:border-[#2A2A2B] focus:outline-none transition-colors"
-                      style={{ fontFamily: "'Montserrat', sans-serif" }}
+                      className="w-full bg-transparent border-b border-[#0F1926] pb-2 text-xs font-mono text-[#0F1926] placeholder-[#0F1926]/40 focus:border-[#2A2A2B] focus:outline-none transition-colors"
                     />
                   </div>
 
                   {/* Contact */}
-                  <div className="space-y-2">
-                    <label
-                      className="block font-montserrat text-xs sm:text-sm font-bold text-[#0F1926] tracking-wider uppercase"
-                      style={{ fontFamily: "'Montserrat', sans-serif", fontWeight: 700 }}
-                    >
+                  <div className="space-y-1.5">
+                    <label className="block font-mono text-[10px] sm:text-[11px] font-bold text-[#0F1926]/80 tracking-widest uppercase">
                       CONTACT *
                     </label>
                     <input
@@ -113,17 +106,13 @@ export const VaultContactFormSection: React.FC = () => {
                       value={contact}
                       onChange={(e) => setContact(e.target.value)}
                       placeholder="+91 91123 34451"
-                      className="w-full bg-transparent border-b-2 border-[#0F1926] pb-2 text-sm sm:text-base font-montserrat font-medium text-[#0F1926] placeholder-[#0F1926]/40 focus:border-[#2A2A2B] focus:outline-none transition-colors"
-                      style={{ fontFamily: "'Montserrat', sans-serif" }}
+                      className="w-full bg-transparent border-b border-[#0F1926] pb-2 text-xs font-mono text-[#0F1926] placeholder-[#0F1926]/40 focus:border-[#2A2A2B] focus:outline-none transition-colors"
                     />
                   </div>
 
                   {/* Email */}
-                  <div className="space-y-2">
-                    <label
-                      className="block font-montserrat text-xs sm:text-sm font-bold text-[#0F1926] tracking-wider uppercase"
-                      style={{ fontFamily: "'Montserrat', sans-serif", fontWeight: 700 }}
-                    >
+                  <div className="space-y-1.5">
+                    <label className="block font-mono text-[10px] sm:text-[11px] font-bold text-[#0F1926]/80 tracking-widest uppercase">
                       EMAIL
                     </label>
                     <input
@@ -131,26 +120,21 @@ export const VaultContactFormSection: React.FC = () => {
                       value={email}
                       onChange={(e) => setEmail(e.target.value)}
                       placeholder="johndoe@mail.com"
-                      className="w-full bg-transparent border-b-2 border-[#0F1926] pb-2 text-sm sm:text-base font-montserrat font-medium text-[#0F1926] placeholder-[#0F1926]/40 focus:border-[#2A2A2B] focus:outline-none transition-colors"
-                      style={{ fontFamily: "'Montserrat', sans-serif" }}
+                      className="w-full bg-transparent border-b border-[#0F1926] pb-2 text-xs font-mono text-[#0F1926] placeholder-[#0F1926]/40 focus:border-[#2A2A2B] focus:outline-none transition-colors"
                     />
                   </div>
                 </div>
 
                 {/* 2. SUBJECT / REQUIREMENT SELECT DROPDOWN */}
-                <div className="space-y-2 pt-1">
-                  <label
-                    className="block font-montserrat text-xs sm:text-sm font-bold text-[#0F1926] tracking-wider uppercase"
-                    style={{ fontFamily: "'Montserrat', sans-serif", fontWeight: 700 }}
-                  >
+                <div className="space-y-1.5 pt-1">
+                  <label className="block font-mono text-[10px] sm:text-[11px] font-bold text-[#0F1926]/80 tracking-widest uppercase">
                     SUBJECT / REQUIREMENT
                   </label>
                   <div className="relative">
                     <select
                       value={subject}
                       onChange={(e) => setSubject(e.target.value)}
-                      className="w-full appearance-none bg-transparent border-b-2 border-[#0F1926] pb-2.5 pt-1 text-sm sm:text-base font-montserrat font-bold text-[#0F1926] focus:border-[#2A2A2B] focus:outline-none transition-colors cursor-pointer pr-8"
-                      style={{ fontFamily: "'Montserrat', sans-serif", fontWeight: 700 }}
+                      className="w-full appearance-none bg-transparent border-b border-[#0F1926] pb-2.5 pt-1 text-xs font-mono text-[#0F1926] focus:border-[#2A2A2B] focus:outline-none transition-colors cursor-pointer pr-8 font-semibold"
                     >
                       <option value="Commercial & Residential Equipment Procurement">Commercial & Residential Equipment Procurement</option>
                       <option value="Residential Fitness Suite Outfitting">Residential Fitness Suite Outfitting</option>
@@ -160,25 +144,21 @@ export const VaultContactFormSection: React.FC = () => {
                       <option value="Franchise & Institutional Outfitting">Franchise & Institutional Outfitting</option>
                     </select>
                     <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-1 text-[#0F1926]">
-                      <svg className="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"/></svg>
+                      <svg className="w-3.5 h-3.5 fill-current" viewBox="0 0 20 20"><path d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"/></svg>
                     </div>
                   </div>
                 </div>
 
                 {/* 3. DESTINATION CITY SELECT DROPDOWN */}
-                <div className="space-y-2 pt-1">
-                  <label
-                    className="block font-montserrat text-xs sm:text-sm font-bold text-[#0F1926] tracking-wider uppercase"
-                    style={{ fontFamily: "'Montserrat', sans-serif", fontWeight: 700 }}
-                  >
+                <div className="space-y-1.5 pt-1">
+                  <label className="block font-mono text-[10px] sm:text-[11px] font-bold text-[#0F1926]/80 tracking-widest uppercase">
                     DESTINATION CITY
                   </label>
                   <div className="relative">
                     <select
                       value={city}
                       onChange={(e) => setCity(e.target.value)}
-                      className="w-full appearance-none bg-transparent border-b-2 border-[#0F1926] pb-2.5 pt-1 text-sm sm:text-base font-montserrat font-bold text-[#0F1926] focus:border-[#2A2A2B] focus:outline-none transition-colors cursor-pointer pr-8"
-                      style={{ fontFamily: "'Montserrat', sans-serif", fontWeight: 700 }}
+                      className="w-full appearance-none bg-transparent border-b border-[#0F1926] pb-2.5 pt-1 text-xs font-mono text-[#0F1926] focus:border-[#2A2A2B] focus:outline-none transition-colors cursor-pointer pr-8 font-semibold"
                     >
                       <option value="Delhi NCR">Delhi NCR</option>
                       <option value="Mumbai & MMR">Mumbai & MMR</option>
@@ -191,17 +171,14 @@ export const VaultContactFormSection: React.FC = () => {
                       <option value="Other Pan-India Location">Other Pan-India Location</option>
                     </select>
                     <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-1 text-[#0F1926]">
-                      <svg className="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"/></svg>
+                      <svg className="w-3.5 h-3.5 fill-current" viewBox="0 0 20 20"><path d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"/></svg>
                     </div>
                   </div>
                 </div>
 
                 {/* 4. MESSAGE TEXTAREA */}
-                <div className="space-y-2">
-                  <label
-                    className="block font-montserrat text-xs sm:text-sm font-bold text-[#0F1926] tracking-wider uppercase"
-                    style={{ fontFamily: "'Montserrat', sans-serif", fontWeight: 700 }}
-                  >
+                <div className="space-y-1.5">
+                  <label className="block font-mono text-[10px] sm:text-[11px] font-bold text-[#0F1926]/80 tracking-widest uppercase">
                     MESSAGE
                   </label>
                   <textarea
@@ -209,17 +186,15 @@ export const VaultContactFormSection: React.FC = () => {
                     value={message}
                     onChange={(e) => setMessage(e.target.value)}
                     placeholder="Type your message here"
-                    className="w-full bg-transparent border-b-2 border-[#0F1926] pb-2 text-sm sm:text-base font-montserrat font-medium text-[#0F1926] placeholder-[#0F1926]/40 focus:border-[#2A2A2B] focus:outline-none resize-none transition-colors"
-                    style={{ fontFamily: "'Montserrat', sans-serif" }}
+                    className="w-full bg-transparent border-b border-[#0F1926] pb-2 text-xs font-mono text-[#0F1926] placeholder-[#0F1926]/40 focus:border-[#2A2A2B] focus:outline-none resize-none transition-colors"
                   />
                 </div>
 
                 {/* 5. SUBMIT BUTTON */}
-                <div className="flex justify-end pt-3">
+                <div className="flex justify-end pt-2">
                   <button
                     type="submit"
-                    className="btn-dark px-10 py-4 text-xs sm:text-sm font-bold uppercase tracking-[0.15em] shadow-xl cursor-pointer"
-                    style={{ fontFamily: "'Montserrat', sans-serif", fontWeight: 700 }}
+                    className="btn-dark px-10 py-3.5 text-xs font-bold uppercase tracking-[0.2em] shadow-lg cursor-pointer"
                   >
                     SUBMIT INQUIRY
                   </button>
