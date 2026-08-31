@@ -65,17 +65,17 @@ export const Navbar: React.FC = () => {
         className="fixed bottom-4 sm:bottom-6 left-0 right-0 z-40 pointer-events-none transition-all duration-300"
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between gap-4 pointer-events-auto">
-            {/* 1. Left: Vault-Style Brand Logo (No Box/Border) */}
+          <div className="flex items-center justify-between gap-3 sm:gap-4 pointer-events-auto">
+            {/* 1. Left: Brand Logo in Elevated Capsule Box (Enlarged) */}
             <div
               onClick={() => handleNav('home')}
-              className="flex items-center gap-2 cursor-pointer group select-none shrink-0"
+              className="bg-[#0C1015]/95 backdrop-blur-md border border-[#2A2A2B] hover:border-[#E8E8E8]/40 px-4 sm:px-6 py-2 sm:py-2.5 rounded-full flex items-center gap-2 cursor-pointer shadow-2xl transition-all group shrink-0"
             >
-              <TanushLogo variant="white" height={36} className="h-8 sm:h-9 w-auto group-hover:opacity-85 transition-opacity drop-shadow-lg" />
+              <TanushLogo variant="white" height={42} className="h-8 sm:h-10 w-auto group-hover:opacity-95 transition-opacity drop-shadow-md" />
             </div>
 
             {/* 2. Center: Vault-Style Floating Pill Nav Bar with Scroll Indicator */}
-            <div className="hidden lg:flex items-center relative">
+            <div className="hidden md:flex items-center relative">
               <button
                 type="button"
                 onClick={() => window.scrollBy({ top: window.innerHeight * 0.85, behavior: 'smooth' })}
@@ -93,7 +93,7 @@ export const Navbar: React.FC = () => {
                       key={item.label}
                       type="button"
                       onClick={() => handleNav(item.page)}
-                      className={`px-4 sm:px-5 py-2 rounded-full font-satoshi text-xs font-bold uppercase tracking-wider transition-all duration-200 flex items-center gap-1.5 cursor-pointer select-none ${
+                      className={`px-3.5 sm:px-5 py-2 rounded-full font-satoshi text-xs font-bold uppercase tracking-wider transition-all duration-200 flex items-center gap-1.5 cursor-pointer select-none ${
                         isActive
                           ? 'bg-[#E8E8E8] text-[#0F1926] font-bold shadow-md'
                           : 'text-[#D0CFCA] hover:text-[#E8E8E8] hover:bg-[#2A2A2B]/40'
@@ -106,9 +106,8 @@ export const Navbar: React.FC = () => {
               </nav>
             </div>
 
-            {/* 3. Right: Vault-Style Action Icons */}
-            <div className="flex items-center gap-2.5 sm:gap-3 shrink-0">
-              {/* User Account Login */}
+            {/* 3. Right: User Account Action Button (Menu Button Removed) */}
+            <div className="flex items-center gap-2.5 shrink-0">
               <button
                 type="button"
                 onClick={() => openAuthModal()}
@@ -116,16 +115,6 @@ export const Navbar: React.FC = () => {
                 title={currentUser ? currentUser.name : 'Account Login'}
               >
                 <User className="w-4 h-4" />
-              </button>
-
-              {/* Circular Hamburger Menu Button */}
-              <button
-                type="button"
-                onClick={() => setIsMenuOpen(true)}
-                className="w-10 h-10 sm:w-11 sm:h-11 rounded-full bg-[#0C1015]/95 backdrop-blur-md border border-[#2A2A2B] hover:border-[#E8E8E8]/40 text-[#E8E8E8] flex items-center justify-center cursor-pointer transition-all duration-200 shadow-2xl group"
-                aria-label="Toggle Navigation Menu"
-              >
-                <Menu className="w-4 h-4 text-[#E8E8E8] group-hover:scale-110 transition-transform" />
               </button>
             </div>
           </div>
