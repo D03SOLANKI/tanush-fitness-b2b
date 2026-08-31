@@ -121,11 +121,14 @@ export const HomePage: React.FC = () => {
       {/* ========================================================================= */}
       <section className="relative w-full bg-gradient-to-b from-[#0F1926] via-[#0C1015] to-[#0F1926] text-[#E8E8E8] pt-14 sm:pt-20 pb-20 px-4 sm:px-6 lg:px-8 overflow-hidden">
         <div className="max-w-5xl mx-auto text-center space-y-8 relative z-10">
-          {/* Clean Grand Headline (Unbolded) */}
+          {/* Clean Grand Headline */}
           <div className="space-y-4">
-            <h1 className="font-satoshi text-2xl sm:text-3xl md:text-4xl lg:text-[40px] font-normal uppercase tracking-[0.035em] text-[#E8E8E8] leading-[1.4] sm:leading-[1.35] max-w-5xl mx-auto">
+            <h1 className="font-satoshi text-2xl sm:text-3xl md:text-4xl lg:text-[42px] font-black uppercase tracking-[0.025em] text-[#E8E8E8] leading-[1.4] sm:leading-[1.3] max-w-5xl mx-auto">
               <span className="inline-flex items-center justify-center flex-wrap gap-x-3 gap-y-2">
-                <span>GET READY</span>
+                <span className="relative">
+                  GET READY
+                  <span className="absolute -bottom-1 left-0 right-0 h-[2px] bg-[#D0CFCA]/40 rounded-full" />
+                </span>
                 <span className="inline-block h-7 sm:h-9 md:h-10 w-16 sm:w-24 md:w-28 rounded-full overflow-hidden border border-white/20 shadow-md align-middle shrink-0">
                   <img
                     src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=400&q=80"
@@ -156,7 +159,7 @@ export const HomePage: React.FC = () => {
               </span>
             </h1>
 
-            <p className="font-sans text-sm sm:text-base text-[#D0CFCA] max-w-2xl mx-auto leading-relaxed font-normal">
+            <p className="font-sans text-base sm:text-lg text-[#D0CFCA] max-w-2xl mx-auto leading-relaxed font-normal">
               India's premier commercial & residential fitness infrastructure manufacturer. We engineer heavy-duty 11-gauge laser-cut machinery, deliver 3D CAD space modeling, and supply certified 7-division gym personnel.
             </p>
           </div>
@@ -195,20 +198,20 @@ export const HomePage: React.FC = () => {
               {/* Clean 4-Stat Ribbon Overlay */}
               <div className="absolute bottom-4 left-4 right-4 sm:bottom-6 sm:left-6 sm:right-6 p-4 sm:p-5 rounded-2xl bg-[#0C1015]/95 backdrop-blur-md border border-[#2A2A2B] grid grid-cols-2 sm:grid-cols-4 gap-4 text-center font-mono">
                 <div>
-                  <div className="font-satoshi text-lg sm:text-2xl font-medium text-[#E8E8E8]">500+</div>
-                  <div className="text-[10px] text-[#D0CFCA] uppercase font-medium">Clubs Outfitted</div>
+                  <div className="font-satoshi text-lg sm:text-2xl font-black text-[#E8E8E8]">500+</div>
+                  <div className="text-[10px] text-[#D0CFCA] uppercase font-bold">Clubs Outfitted</div>
                 </div>
                 <div>
-                  <div className="font-satoshi text-lg sm:text-2xl font-medium text-[#E8E8E8]">11-GAUGE</div>
-                  <div className="text-[10px] text-[#D0CFCA] uppercase font-medium">Laser-Cut Steel</div>
+                  <div className="font-satoshi text-lg sm:text-2xl font-black text-[#E8E8E8]">11-GAUGE</div>
+                  <div className="text-[10px] text-[#D0CFCA] uppercase font-bold">Laser-Cut Steel</div>
                 </div>
                 <div>
-                  <div className="font-satoshi text-lg sm:text-2xl font-medium text-[#E8E8E8]">ISO 9001</div>
-                  <div className="text-[10px] text-[#D0CFCA] uppercase font-medium">Certified Plant</div>
+                  <div className="font-satoshi text-lg sm:text-2xl font-black text-[#E8E8E8]">ISO 9001</div>
+                  <div className="text-[10px] text-[#D0CFCA] uppercase font-bold">Certified Plant</div>
                 </div>
                 <div>
-                  <div className="font-satoshi text-lg sm:text-2xl font-medium text-[#E8E8E8]">18% ITC</div>
-                  <div className="text-[10px] text-[#D0CFCA] uppercase font-medium">GST Direct Billing</div>
+                  <div className="font-satoshi text-lg sm:text-2xl font-black text-[#E8E8E8]">18% ITC</div>
+                  <div className="text-[10px] text-[#D0CFCA] uppercase font-bold">GST Direct Billing</div>
                 </div>
               </div>
             </div>
@@ -244,7 +247,7 @@ export const HomePage: React.FC = () => {
           {/* Header & Tab Switcher */}
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-6">
             <div className="space-y-2">
-              <h2 className="font-satoshi text-2xl sm:text-3xl font-medium uppercase text-[#E8E8E8] tracking-[0.03em] leading-snug">
+              <h2 className="font-satoshi text-2xl sm:text-4xl font-extrabold uppercase text-[#E8E8E8] tracking-[0.03em] leading-snug">
                 {visionTab === 'what' ? 'What is Tanush?' : 'Why Tanush?'}
               </h2>
             </div>
@@ -345,7 +348,7 @@ export const HomePage: React.FC = () => {
         <div className="space-y-12">
           <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-6">
             <div className="space-y-2">
-              <h2 className="font-satoshi text-2xl sm:text-3xl font-medium uppercase text-[#E8E8E8] tracking-[0.03em] leading-snug">
+              <h2 className="font-satoshi text-2xl sm:text-4xl font-extrabold uppercase text-[#E8E8E8] tracking-[0.03em] leading-snug">
                 CORE PROCUREMENT VERTICALS
               </h2>
               <p className="text-sm text-[#D0CFCA] font-sans max-w-2xl mt-1 leading-relaxed">
@@ -391,7 +394,7 @@ export const HomePage: React.FC = () => {
                       <div>
                         <h3
                           onClick={() => navigateTo(vertical.page)}
-                          className="font-satoshi text-lg sm:text-xl font-medium uppercase text-[#0F1926] tracking-[0.03em] mt-1 group-hover:text-[#2A2A2B] transition cursor-pointer leading-snug"
+                          className="font-satoshi text-lg sm:text-xl font-bold uppercase text-[#0F1926] tracking-[0.03em] mt-1 group-hover:text-[#2A2A2B] transition cursor-pointer leading-snug"
                         >
                           {vertical.title}
                         </h3>
@@ -402,14 +405,14 @@ export const HomePage: React.FC = () => {
                       </div>
 
                       <div className="space-y-2 pt-4 border-t border-[#0F1926]/10 font-sans text-xs text-[#2A2A2B]">
-                        <div className="text-xs font-sans text-[#0F1926] uppercase tracking-wider font-medium">
+                        <div className="text-xs font-sans text-[#0F1926] uppercase tracking-wider font-extrabold">
                           Core Focus:
                         </div>
                         <ul className="space-y-2">
                           {vertical.points.map((pt, ptIdx) => (
                             <li key={ptIdx} className="flex items-start gap-2.5">
                               <CheckCircle2 className="w-4 h-4 text-[#0F1926] shrink-0 mt-0.5" />
-                              <span className="leading-snug text-xs text-[#2A2A2B] font-normal">{pt}</span>
+                              <span className="leading-snug text-xs text-[#2A2A2B] font-medium">{pt}</span>
                             </li>
                           ))}
                         </ul>
@@ -441,7 +444,7 @@ export const HomePage: React.FC = () => {
         <div className="space-y-12">
           <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-6">
             <div className="space-y-2">
-              <h2 className="font-satoshi text-2xl sm:text-3xl font-medium uppercase text-[#E8E8E8] tracking-[0.03em] leading-snug">
+              <h2 className="font-satoshi text-2xl sm:text-4xl font-extrabold uppercase text-[#E8E8E8] tracking-[0.03em] leading-snug">
                 OUR USP
               </h2>
             </div>
@@ -466,7 +469,7 @@ export const HomePage: React.FC = () => {
                     {card.icon}
                   </div>
 
-                  <h3 className="font-satoshi text-lg sm:text-xl font-medium text-[#0F1926] transition uppercase leading-snug">
+                  <h3 className="font-satoshi text-lg sm:text-xl font-bold text-[#0F1926] transition uppercase leading-snug">
                     {card.title}
                   </h3>
 
