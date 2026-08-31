@@ -1,7 +1,7 @@
 import React from 'react';
 
 interface TanushLogoProps {
-  variant?: 'white' | 'dark' | 'symbol' | 'symbol-white';
+  variant?: 'white' | 'dark' | 'symbol' | 'symbol-white' | 'full' | 'full-white';
   className?: string;
   height?: number | string;
   showText?: boolean;
@@ -13,7 +13,7 @@ export const TanushLogo: React.FC<TanushLogoProps> = ({
   className = '',
   height = 50,
   showText = true,
-  alt = 'Tanush',
+  alt = 'Tanush Fitness LLP',
 }) => {
   if (variant === 'symbol' || variant === 'symbol-white' || !showText) {
     const src = variant === 'symbol' ? '/tanush-symbol.png' : '/tanush-symbol-white.png';
@@ -27,7 +27,12 @@ export const TanushLogo: React.FC<TanushLogoProps> = ({
     );
   }
 
-  const src = variant === 'dark' ? '/tanush-logo.png' : '/tanush-logo-white.png';
+  let src = '/tanush-logo-white.png';
+  if (variant === 'full' || variant === 'full-white') {
+    src = variant === 'full' ? '/tanush-logo-full-dark.png' : '/tanush-logo-full-white.png';
+  } else if (variant === 'dark') {
+    src = '/tanush-logo.png';
+  }
 
   return (
     <img

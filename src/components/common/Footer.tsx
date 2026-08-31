@@ -59,7 +59,7 @@ export const Footer: React.FC = () => {
               }}
               className="flex items-center gap-3 cursor-pointer group select-none"
             >
-              <TanushLogo variant="white" height={56} className="h-14 w-auto group-hover:opacity-90 transition-opacity" />
+              <TanushLogo variant="full-white" height={56} className="h-12 sm:h-14 w-auto group-hover:opacity-90 transition-opacity" />
             </div>
 
             <p className="text-xs text-[#D0CFCA] leading-relaxed font-sans">
