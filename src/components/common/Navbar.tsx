@@ -74,17 +74,8 @@ export const Navbar: React.FC = () => {
               <TanushLogo variant="white" height={42} className="h-8 sm:h-10 w-auto group-hover:opacity-95 transition-opacity drop-shadow-md" />
             </div>
 
-            {/* 2. Center: Vault-Style Floating Pill Nav Bar with Scroll Indicator */}
-            <div className="hidden md:flex items-center relative">
-              <button
-                type="button"
-                onClick={() => window.scrollBy({ top: window.innerHeight * 0.85, behavior: 'smooth' })}
-                className="absolute -top-3.5 left-1/2 -translate-x-1/2 w-6 h-6 rounded-full bg-[#0C1015] border border-[#2A2A2B] hover:border-[#E8E8E8] text-[#D0CFCA] hover:text-[#E8E8E8] flex items-center justify-center shadow-lg transition-colors cursor-pointer"
-                title="Scroll down"
-              >
-                <ArrowRight className="w-2.5 h-2.5 rotate-90" />
-              </button>
-
+            {/* 2. Center: Floating Pill Nav Bar */}
+            <div className="hidden md:flex items-center">
               <nav className="flex items-center gap-1 bg-[#0C1015]/95 backdrop-blur-md border border-[#2A2A2B] p-1.5 rounded-full shadow-2xl">
                 {navLinks.map((item) => {
                   const isActive = currentPage === item.page;
