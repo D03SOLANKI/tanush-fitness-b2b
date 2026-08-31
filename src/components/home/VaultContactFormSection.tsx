@@ -47,15 +47,13 @@ export const VaultContactFormSection: React.FC = () => {
 
         {/* RIGHT COLUMN: WARM OFF-WHITE FORM CANVAS */}
         <div className="lg:col-span-6 bg-[#E8E8E8] text-[#0F1926] relative p-8 sm:p-12 lg:p-16 flex flex-col justify-center overflow-hidden">
-          {/* Faint Star Watermark on Top Right */}
-          <div className="absolute -right-16 -top-16 pointer-events-none select-none opacity-5">
-            <svg
-              className="w-96 h-96 text-[#0F1926] fill-none stroke-current"
-              viewBox="0 0 100 100"
-              strokeWidth="2"
-            >
-              <path d="M 50 5 L 56 38 L 88 20 L 64 46 L 95 50 L 64 54 L 88 80 L 56 62 L 50 95 L 44 62 L 12 80 L 36 54 L 5 50 L 36 46 L 12 20 L 44 38 Z" fill="rgba(15,25,38,0.08)" stroke="currentColor" />
-            </svg>
+          {/* Faint Tanush Emblem Watermark on Top Right (No Text) */}
+          <div className="absolute -right-16 -top-16 pointer-events-none select-none opacity-[0.07] w-96 h-96">
+            <img
+              src="/tanush-symbol.png"
+              alt=""
+              className="w-full h-full object-contain"
+            />
           </div>
 
           <div className="relative z-10 max-w-xl w-full mx-auto space-y-8">

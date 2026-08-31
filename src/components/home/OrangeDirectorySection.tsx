@@ -77,15 +77,13 @@ export const OrangeDirectorySection: React.FC = () => {
 
       {/* MAIN NAVY BODY */}
       <div className="relative flex-1 max-w-7xl mx-auto w-full px-6 sm:px-12 my-auto flex items-center overflow-hidden">
-        {/* Giant Faint Star Watermark on Right */}
-        <div className="absolute -right-20 top-1/2 -translate-y-1/2 pointer-events-none select-none opacity-10 hidden md:block">
-          <svg
-            className="w-[580px] h-[580px] text-white/5 fill-none stroke-current"
-            viewBox="0 0 100 100"
-            strokeWidth="1.5"
-          >
-            <path d="M 50 5 L 56 38 L 88 20 L 64 46 L 95 50 L 64 54 L 88 80 L 56 62 L 50 95 L 44 62 L 12 80 L 36 54 L 5 50 L 36 46 L 12 20 L 44 38 Z" fill="rgba(255,255,255,0.01)" stroke="currentColor" />
-          </svg>
+        {/* Giant Faint Tanush Emblem Watermark on Right */}
+        <div className="absolute -right-20 top-1/2 -translate-y-1/2 pointer-events-none select-none opacity-10 hidden md:block w-[540px] h-[540px]">
+          <img
+            src="/tanush-symbol-white.png"
+            alt=""
+            className="w-full h-full object-contain"
+          />
         </div>
 
         {/* Left Numbered Large Underlined Links */}
