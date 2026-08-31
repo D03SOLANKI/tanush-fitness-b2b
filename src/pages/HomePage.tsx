@@ -17,7 +17,6 @@ import {
 } from 'lucide-react';
 import { MarqueeStrip } from '../components/common/MarqueeStrip';
 import { VaultContactFormSection } from '../components/home/VaultContactFormSection';
-import { OrangeDirectorySection } from '../components/home/OrangeDirectorySection';
 import { SEO } from '../components/common/SEO';
 import { TanushLogo } from '../components/common/TanushLogo';
 
@@ -499,11 +498,6 @@ export const HomePage: React.FC = () => {
       {/* SECTION 6: VAULT-STYLE SPLIT SCREEN INTAKE FORM                           */}
       {/* ========================================================================= */}
       <VaultContactFormSection />
-
-      {/* ========================================================================= */}
-      {/* SECTION 7: FULL NUMBERED DIRECTORY                                        */}
-      {/* ========================================================================= */}
-      <OrangeDirectorySection />
     </main>
   );
 };

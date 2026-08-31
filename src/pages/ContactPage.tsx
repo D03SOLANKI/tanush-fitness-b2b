@@ -1,7 +1,6 @@
 import React from 'react';
 import { SEO } from '../components/common/SEO';
 import { VaultContactFormSection } from '../components/home/VaultContactFormSection';
-import { OrangeDirectorySection } from '../components/home/OrangeDirectorySection';
 import { Phone, Mail, MessageSquare, ShieldCheck, MapPin } from 'lucide-react';
 
 export const ContactPage: React.FC = () => {
@@ -90,8 +89,6 @@ export const ContactPage: React.FC = () => {
         </div>
       </section>
 
-      {/* Directory Section Above Footer */}
-      <OrangeDirectorySection />
     </main>
   );
 };
