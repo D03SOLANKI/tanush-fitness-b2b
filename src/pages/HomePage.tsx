@@ -121,13 +121,19 @@ export const HomePage: React.FC = () => {
       {/* ========================================================================= */}
       <section className="relative w-full min-h-[calc(100vh-90px)] flex flex-col justify-center bg-gradient-to-b from-[#0F1926] via-[#0C1015] to-[#0F1926] text-[#E8E8E8] pt-8 sm:pt-12 pb-14 sm:pb-16 px-4 sm:px-6 lg:px-8 overflow-hidden">
         <div className="max-w-5xl mx-auto text-center relative z-10 my-auto flex flex-col justify-center">
-          {/* Centered Brand Logo Lockup (Original Authentic Font - Slightly Decreased Scale, Shifted Upwards) */}
-          <div className="flex items-center justify-center pb-10 sm:pb-14 md:pb-16 -mt-4 sm:-mt-6 select-none">
-            <TanushLogo
-              variant="white"
-              height={70}
-              className="h-12 sm:h-14 md:h-16 lg:h-[72px] w-auto drop-shadow-2xl hover:scale-105 transition-transform"
+          {/* Centered Brand Logo Lockup (Emblem + Enlarged Tanush Typography with Expanded Gap) */}
+          <div className="flex items-center justify-center gap-6 sm:gap-8 md:gap-10 pb-10 sm:pb-14 md:pb-16 -mt-4 sm:-mt-6 select-none">
+            <img
+              src="/tanush-symbol-white.png"
+              alt="Tanush Emblem"
+              className="h-12 w-12 sm:h-16 sm:w-16 md:h-20 md:w-20 lg:h-[84px] lg:w-[84px] object-contain drop-shadow-2xl hover:scale-105 transition-transform shrink-0"
             />
+            <span
+              className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-light text-[#E8E8E8] tracking-[0.03em] drop-shadow-2xl leading-none select-none"
+              style={{ fontWeight: 250 }}
+            >
+              Tanush
+            </span>
           </div>
 
           {/* Clean Grand Headline */}
