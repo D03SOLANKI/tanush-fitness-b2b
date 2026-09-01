@@ -265,7 +265,7 @@ export const ManpowerPage: React.FC = () => {
       rolesList: ['Housekeeping & Sanitation Crew', 'Equipment Maintenance Technician', 'Facility Security Officer'],
       deliverables: [
         'Continuous locker room, shower & steam suite sanitation',
-        '11-gauge machinery cable inspection & preventive lubrication',
+        'Heavy commercial machinery cable inspection & preventive lubrication',
         'Disinfectant wiping across all free-weight & selectorized zones',
         'RFID turnstile access monitoring & front-gate security vigilance'
       ],

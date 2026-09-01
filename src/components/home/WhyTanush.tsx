@@ -8,7 +8,7 @@ export const WhyTanush: React.FC = () => {
     {
       icon: <ShieldCheck className="w-6 h-6 text-[#A8A090] group-hover:text-white transition-colors" />,
       title: 'Verified Commercial & Residential Manufacturers',
-      description: '100% of equipment suppliers pass rigorous ISO structural safety and commercial & residential durability audits before listing on our marketplace.'
+      description: '100% of equipment suppliers pass rigorous structural safety and commercial & residential durability audits before listing on our marketplace.'
     },
     {
       icon: <Percent className="w-6 h-6 text-[#A8A090] group-hover:text-white transition-colors" />,

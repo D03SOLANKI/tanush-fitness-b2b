@@ -12,7 +12,7 @@ export const AboutPage: React.FC = () => {
     <main className="pt-24 pb-20 bg-[#0F1926] min-h-screen text-[#E8E8E8]">
       <SEO
         title="The Tanush Legacy & Precision Biomechanics | Tanush Fitness"
-        description="Engineering high-performance athletic sanctuaries. 11-gauge laser cut steel, ISO 9001:2015 precision manufacturing, and nationwide commercial & residential outfitting."
+        description="Engineering high-performance athletic sanctuaries. Heavy laser cut structural steel, precision manufacturing, and nationwide commercial & residential outfitting."
       />
 
       {/* Hero Header */}
@@ -24,7 +24,7 @@ export const AboutPage: React.FC = () => {
             </h1>
 
             <p className="text-sm sm:text-base text-[#D0CFCA] max-w-2xl font-sans leading-relaxed">
-              We design and manufacture commercial & residential fitness environments where precision biomechanics, structural 11-gauge steel, and architectural luxury converge.
+              We design and manufacture commercial & residential fitness environments where precision biomechanics, heavy structural steel, and architectural luxury converge.
             </p>
           </div>
 
@@ -88,7 +88,7 @@ export const AboutPage: React.FC = () => {
                     Introducing India's premier commercial & residential fitness sanctuary & outfitting brand: <span className="text-[#E8E8E8] font-bold">Tanush Fitness</span>, where precision biomechanical engineering and commercial strength take center stage.
                   </p>
                   <p>
-                    At Tanush, we redefine the fitness outfitting landscape with state-of-the-art 11-gauge laser-cut equipment, certified trainer placements, and bespoke 3D CAD facility design.
+                    At Tanush, we redefine the fitness outfitting landscape with state-of-the-art heavy laser-cut equipment, certified trainer placements, and bespoke 3D CAD facility design.
                   </p>
                   <p>
                     Our commitment goes beyond machinery; we offer a holistic <span className="text-[#E8E8E8] font-semibold">360-degree comprehensive solution</span> to transform empty commercial square footage into world-class athletic destinations.
@@ -109,18 +109,14 @@ export const AboutPage: React.FC = () => {
               )}
 
               {/* 4-Stat Metric Ribbon */}
-              <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 pt-4 font-mono text-xs text-[#D0CFCA] border-t border-[#2A2A2B]">
+              <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 pt-4 font-mono text-xs text-[#D0CFCA] border-t border-[#2A2A2B]">
                 <div className="p-3 rounded-xl bg-[#0F1926]/80 border border-[#2A2A2B]">
                   <span className="text-[#E8E8E8] font-extrabold block text-2xl font-satoshi">500+</span>
                   <span className="text-[#D0CFCA] text-[10px] uppercase">Clubs Outfitted</span>
                 </div>
                 <div className="p-3 rounded-xl bg-[#0F1926]/80 border border-[#2A2A2B]">
-                  <span className="text-[#E8E8E8] font-extrabold block text-2xl font-satoshi">11-GAUGE</span>
-                  <span className="text-[#D0CFCA] text-[10px] uppercase">Laser Cut Steel</span>
-                </div>
-                <div className="p-3 rounded-xl bg-[#0F1926]/80 border border-[#2A2A2B]">
-                  <span className="text-[#E8E8E8] font-extrabold block text-2xl font-satoshi">ISO 9001</span>
-                  <span className="text-[#D0CFCA] text-[10px] uppercase">Certified Plant</span>
+                  <span className="text-[#E8E8E8] font-extrabold block text-2xl font-satoshi">HEAVY STEEL</span>
+                  <span className="text-[#D0CFCA] text-[10px] uppercase">Laser Cut Precision</span>
                 </div>
                 <div className="p-3 rounded-xl bg-[#0F1926]/80 border border-[#2A2A2B]">
                   <span className="text-[#E8E8E8] font-extrabold block text-2xl font-satoshi">18% ITC</span>
@@ -189,7 +185,7 @@ export const AboutPage: React.FC = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
             {[
-              { name: 'Pravinsinh Zala', title: 'Founder & Managing Director', image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=400&q=80', bio: 'Specializing in 11-gauge industrial frame geometry and commercial facility outfitting nationwide.' },
+              { name: 'Pravinsinh Zala', title: 'Founder & Managing Director', image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=400&q=80', bio: 'Specializing in industrial frame geometry, heavy fabrication, and commercial facility outfitting nationwide.' },
               { name: 'Greeshma Patel', title: 'Director of Operations & Gym Management', image: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=400&q=80', bio: 'Head of credential vetting, 3D CAD space modeling, and institutional commercial gym outfitting.' }
             ].map((team, i) => (
               <div key={i} className="bg-[#E8E8E8] text-[#0F1926] border border-[#2A2A2B]/10 rounded-2xl p-6 sm:p-8 space-y-4 shadow-2xl group hover:-translate-y-1.5 transition-all duration-300 hover:border-[#0F1926]">

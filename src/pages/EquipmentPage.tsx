@@ -102,7 +102,7 @@ export const EquipmentPage: React.FC = () => {
     <main className="pt-24 pb-20 bg-[#0F1926] min-h-screen text-[#E8E8E8]">
       <SEO
         title="Commercial & Residential Equipment Sanctuary | Tanush Fitness B2B"
-        description="Factory direct 11-gauge power racks, plate-loaded selectorized machines, cardio consoles, and urethane free weights. 100% itemized RFQ quotations."
+        description="Factory direct heavy power racks, plate-loaded selectorized machines, cardio consoles, and urethane free weights. 100% itemized RFQ quotations."
       />
 
       {/* Hero Header */}
@@ -242,7 +242,7 @@ export const EquipmentPage: React.FC = () => {
 
                     {/* Bottom Right Steel Spec Pill */}
                     <div className="absolute bottom-3 right-3 bg-[#0F1926] px-2.5 py-1 rounded-md text-[9px] font-mono text-[#E8E8E8] font-bold border border-white/15">
-                      ⚡ {product.specs?.['Steel Frame'] || '11-GAUGE STEEL'}
+                      ⚡ {product.specs?.['Steel Frame'] || 'HEAVY STEEL FRAME'}
                     </div>
 
                     <button
@@ -409,7 +409,7 @@ export const EquipmentPage: React.FC = () => {
                   <div className="space-y-2.5 font-mono text-xs text-[#2A2A2B] bg-white p-4 rounded-xl border border-[#0F1926]/15 shadow-sm">
                     <div className="flex justify-between py-1 border-b border-[#0F1926]/10">
                       <span className="text-[#2A2A2B]/70">FRAME STEEL:</span>
-                      <span className="text-[#0F1926] font-bold">{selectedProduct.specs?.['Steel Frame'] || '11-Gauge (3.0mm) Laser Cut'}</span>
+                      <span className="text-[#0F1926] font-bold">{selectedProduct.specs?.['Steel Frame'] || 'Heavy Structural Laser Cut'}</span>
                     </div>
                     <div className="flex justify-between py-1 border-b border-[#0F1926]/10">
                       <span className="text-[#2A2A2B]/70">WEIGHT CAPACITY:</span>

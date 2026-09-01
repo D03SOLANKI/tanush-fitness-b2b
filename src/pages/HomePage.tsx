@@ -24,7 +24,7 @@ const USP_CARDS = [
   {
     id: 1,
     title: 'Commercial & Residential Equipment',
-    description: 'Experience biomechanical perfection with Tanush meticulously curated 11-gauge laser-cut strength lines, modular rigs, and cardio suites.',
+    description: 'Experience biomechanical perfection with Tanush meticulously curated heavy laser-cut strength lines, modular rigs, and cardio suites.',
     brands: ['Matrix', 'Torque USA', 'Concept 2', 'Precor'],
     icon: <Dumbbell className="w-6 h-6 text-[#0F1926]" />,
   },
@@ -58,7 +58,7 @@ const CORE_VERTICALS = [
     category: 'CORE VERTICAL',
     title: 'Commercial & Residential Equipment',
     tagline: 'Complete professional gym equipment supply for commercial fitness facilities & residential luxury suites',
-    description: 'Direct-from-factory ISO 9001 certified 11-gauge laser-cut power racks, selectorized pin-stack machinery, plate-loaded strength stations, and commercial & residential urethane free-weights.',
+    description: 'Direct-from-factory heavy laser-cut power racks, selectorized pin-stack machinery, plate-loaded strength stations, and commercial & residential urethane free-weights.',
     image: 'https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=800&q=80',
     icon: Dumbbell,
     page: 'equipment' as const,
@@ -113,7 +113,7 @@ export const HomePage: React.FC = () => {
     <main className="min-h-screen bg-[#0F1926] text-[#E8E8E8] overflow-hidden pb-0">
       <SEO
         title="Tanush Fitness | Commercial & Residential Equipment · Gym Management · Manpower Services"
-        description="Experience India's premier commercial & residential fitness sanctuary. World-class 11-gauge equipment, 3D CAD gym management, and certified trainer staffing."
+        description="Experience India's premier commercial & residential fitness sanctuary. World-class commercial equipment, 3D CAD gym management, and certified trainer staffing."
       />
 
       {/* ========================================================================= */}
@@ -121,19 +121,13 @@ export const HomePage: React.FC = () => {
       {/* ========================================================================= */}
       <section className="relative w-full min-h-[calc(100vh-90px)] flex flex-col justify-center bg-gradient-to-b from-[#0F1926] via-[#0C1015] to-[#0F1926] text-[#E8E8E8] pt-10 sm:pt-14 pb-14 sm:pb-16 px-4 sm:px-6 lg:px-8 overflow-hidden">
         <div className="max-w-5xl mx-auto text-center relative z-10 my-auto flex flex-col justify-center">
-          {/* Centered Brand Logo Lockup (Emblem + Large Tanush Typography with Generous Gap & Spacing) */}
-          <div className="flex items-center justify-center gap-3.5 sm:gap-5 pb-8 sm:pb-12 md:pb-14 select-none">
-            <img
-              src="/tanush-symbol-white.png"
-              alt="Tanush"
-              className="w-12 h-12 sm:w-16 sm:h-16 md:w-20 md:h-20 object-contain drop-shadow-2xl hover:scale-105 transition-transform"
+          {/* Centered Brand Logo Lockup (Original Official Brand Typography - Enlarged) */}
+          <div className="flex items-center justify-center pb-8 sm:pb-12 md:pb-14 select-none">
+            <TanushLogo
+              variant="white"
+              height={85}
+              className="h-16 sm:h-20 md:h-24 lg:h-28 w-auto drop-shadow-2xl hover:scale-105 transition-transform"
             />
-            <span
-              className="font-montserrat text-2xl sm:text-4xl md:text-5xl font-bold tracking-tight text-[#E8E8E8] drop-shadow-2xl"
-              style={{ fontFamily: "'Montserrat', sans-serif", fontWeight: 700 }}
-            >
-              Tanush
-            </span>
           </div>
 
           {/* Clean Grand Headline */}
@@ -207,9 +201,9 @@ export const HomePage: React.FC = () => {
           'COMMERCIAL & RESIDENTIAL EQUIPMENT',
           'GYM MANAGEMENT',
           'MANPOWER SERVICES',
-          '11-GAUGE PRECISION STEEL',
-          'PAN-INDIA GYM MANAGEMENT ASSEMBLY',
-          'ISO 9001:2015 CERTIFIED',
+          'PRECISION STRUCTURAL STEEL',
+          'PAN-INDIA GYM OUTFITTING',
+          '100% COMMERCIAL GST INVOICING',
         ]}
         theme="white"
         speed="normal"
@@ -266,7 +260,7 @@ export const HomePage: React.FC = () => {
                     Introducing India's premier commercial & residential fitness sanctuary & outfitting brand: <span className="text-[#E8E8E8] font-bold">Tanush Fitness</span>, where precision engineering reaches new heights and commercial strength takes center stage.
                   </p>
                   <p>
-                    At Tanush, we redefine the fitness outfitting landscape with <span className="text-[#E8E8E8] font-semibold">state-of-the-art 11-gauge laser-cut equipment</span>, curated to empower facility owners to launch world-class destinations. Our commitment goes beyond machinery; we deliver a holistic <span className="text-[#E8E8E8] font-semibold">360-degree comprehensive solution</span> encompassing Commercial & Residential Equipment, Gym Management, and Manpower Services.
+                    At Tanush, we redefine the fitness outfitting landscape with <span className="text-[#E8E8E8] font-semibold">state-of-the-art heavy laser-cut equipment</span>, curated to empower facility owners to launch world-class destinations. Our commitment goes beyond machinery; we deliver a holistic <span className="text-[#E8E8E8] font-semibold">360-degree comprehensive solution</span> encompassing Commercial & Residential Equipment, Gym Management, and Manpower Services.
                   </p>
                   <div className="pt-2">
                     <button

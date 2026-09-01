@@ -235,7 +235,7 @@ export const EnquiryCartDrawer: React.FC = () => {
                             <div>
                               <div className="font-satoshi text-xs font-bold text-[#E8E8E8] line-clamp-1">{item.product.name}</div>
                               <div className="text-[10px] text-[#D0CFCA] font-mono">
-                                {item.product.brand} · 11-Gauge
+                                {item.product.brand} · Commercial Grade
                               </div>
                             </div>
                           </div>

@@ -265,7 +265,7 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
       category: productData.categoryName || 'Commercial & Residential Strength',
       minOrderQty: productData.minOrderQty || 1,
       leadTime: productData.leadTime || '7-14 Days',
-      badge: productData.badge || 'ISO-Certified',
+      badge: productData.badge || 'Commercial-Grade',
       rating: 4.9,
       reviewCount: 12,
       inStock: true,

@@ -63,12 +63,12 @@ export const Footer: React.FC = () => {
             </div>
 
             <p className="text-xs text-[#D0CFCA] leading-relaxed font-sans">
-              India's premier direct-manufacturer commercial fitness destination & outfitting brand. Elevating physical performance through 11-gauge heavy steel engineering and custom 360° gym architecture.
+              India's premier direct-manufacturer commercial fitness destination & outfitting brand. Elevating physical performance through heavy structural steel engineering and custom 360° gym architecture.
             </p>
 
             <div className="flex flex-wrap items-center gap-3 text-xs font-mono text-[#D0CFCA] pt-2">
               <span className="flex items-center gap-1.5 text-[#E8E8E8] font-bold">
-                <ShieldCheck className="w-4 h-4 text-[#D0CFCA]" /> ISO 9001:2015
+                <ShieldCheck className="w-4 h-4 text-[#D0CFCA]" /> Commercial Grade
               </span>
               <span className="text-[#2A2A2B]">•</span>
               <span className="text-[#D0CFCA]">18% GST ITC Compliant</span>
@@ -83,7 +83,7 @@ export const Footer: React.FC = () => {
             <ul className="space-y-2.5 text-xs text-[#D0CFCA]">
               <li>
                 <button onClick={() => { navigateTo('equipment'); scrollToTop(); }} className="hover:text-[#E8E8E8] transition-colors text-left cursor-pointer flex items-center gap-1.5">
-                  <span>11-Gauge Strength Machines</span>
+                  <span>Heavy Commercial Strength Machines</span>
                 </button>
               </li>
               <li>

@@ -27,7 +27,7 @@ export const PRODUCTS: Product[] = [
       'Weight Capacity': '2,500 lbs Static Load',
       'Upright Pattern': '2" Hole Center Spacing with Laser Engraved Numbers',
       'Warranty': 'Lifetime Structural Frame',
-      'Certification': 'ISO 9001 / EN 957 COMMERCIAL & RESIDENTIAL GRADE'
+      'Certification': 'EN 957 COMMERCIAL & RESIDENTIAL GRADE'
     },
     vendor: {
       id: 'v-titanforge',
@@ -311,7 +311,7 @@ export const PRODUCTS: Product[] = [
     ],
     description: 'Modular wall-mounted rig system with 6 lifting bays, monkey bar bridges, landmine stations, and wall ball target panels for group functional classes.',
     specs: {
-      'Steel Spec': '3" x 3" 11-Gauge Structural Tubing',
+      'Steel Spec': '3" x 3" Heavy Structural Tubing',
       'Bay Count': '6 Lifting Stations + 4 Pull-Up Zones',
       'Warranty': 'Lifetime Structural Frame'
     },

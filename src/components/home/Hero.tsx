@@ -28,7 +28,7 @@ export const Hero: React.FC = () => {
             {/* Enterprise Eyebrow Badge */}
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded bg-[#ECE6DB] border border-white/15 text-[#3A3028] font-mono text-[11px] font-bold uppercase tracking-wider">
               <span className="w-2 h-2 rounded-full bg-[#D26539]"></span>
-              <span>DIRECT FACTORY commercial & residential outfitting · ISO 9001:2015</span>
+              <span>DIRECT FACTORY commercial & residential outfitting</span>
             </div>
 
             {/* Master Headline */}
@@ -39,7 +39,7 @@ export const Hero: React.FC = () => {
 
             {/* Value Proposition Description */}
             <p className="text-sm sm:text-base text-[#6B6358] max-w-2xl font-normal leading-relaxed">
-              Engineered with 11-gauge precision laser-cut structural steel. We outfit health clubs, CrossFit boxes, university athletic centers, and luxury residential gyms across India with certified machinery and GYM MANAGEMENT ASSEMBLY.
+              Engineered with heavy precision laser-cut structural steel. We outfit health clubs, CrossFit boxes, university athletic centers, and luxury residential gyms across India with certified machinery and GYM MANAGEMENT ASSEMBLY.
             </p>
 
             {/* Industrial B2B Action Buttons */}
@@ -78,7 +78,7 @@ export const Hero: React.FC = () => {
             <div className="pt-4 border-t border-[#090C10]/10 grid grid-cols-2 sm:grid-cols-3 gap-3 font-mono text-xs text-[#6B6358]">
               <div className="flex items-center gap-1.5">
                 <CheckCircle2 className="w-4 h-4 text-[#26452D] shrink-0" />
-                <span className="font-semibold text-[#090C10]">11-Gauge Solid Steel</span>
+                <span className="font-semibold text-[#090C10]">Heavy Solid Steel</span>
               </div>
               <div className="flex items-center gap-1.5">
                 <CheckCircle2 className="w-4 h-4 text-[#26452D] shrink-0" />
@@ -120,12 +120,12 @@ export const Hero: React.FC = () => {
                 {/* Engineering Callout Overlay Badges */}
                 <div className="absolute top-3 left-3 bg-[#090C10]/90 text-white text-[10px] font-mono font-bold px-2 py-1 rounded border border-white/10 shadow-sm flex items-center gap-1">
                   <Layers className="w-3 h-3 text-white/80" />
-                  <span>3x3" 11-Gauge Structural Uprights</span>
+                  <span>3x3" Heavy Structural Uprights</span>
                 </div>
 
                 <div className="absolute bottom-3 right-3 bg-[#090C10]/90 text-white text-[10px] font-mono font-bold px-2 py-1 rounded border border-white/10 shadow-sm flex items-center gap-1">
                   <Award className="w-3 h-3 text-white/80" />
-                  <span>ISO 9001 Structural Rig</span>
+                  <span>Commercial Grade Rig</span>
                 </div>
               </div>
 

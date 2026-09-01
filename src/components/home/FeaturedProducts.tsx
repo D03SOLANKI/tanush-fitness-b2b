@@ -17,7 +17,7 @@ export const FeaturedProducts: React.FC = () => {
         <SectionHeader
           subtitle="FACTORY DIRECT INDUSTRIAL MACHINERY"
           title="Featured Commercial & Residential Equipment"
-          description="Source 11-gauge power rigs, pin-selected stacks, commercial & residential cardio, and urethane free weights directly from verified manufacturers."
+          description="Source heavy power rigs, pin-selected stacks, commercial & residential cardio, and urethane free weights directly from verified manufacturers."
           actionText="View Full Equipment Catalog"
           onActionClick={() => navigateTo('equipment')}
         />

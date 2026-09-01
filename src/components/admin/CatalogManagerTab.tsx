@@ -16,7 +16,7 @@ export const CatalogManagerTab: React.FC = () => {
   const [equipmentType, setEquipmentType] = useState('Strength');
   const [minOrderQty, setMinOrderQty] = useState(1);
   const [leadTime, setLeadTime] = useState('7-14 Days');
-  const [badge, setBadge] = useState('ISO-Certified');
+  const [badge, setBadge] = useState('Commercial-Grade');
   const [description, setDescription] = useState('');
   const [image, setImage] = useState('');
 
@@ -28,7 +28,7 @@ export const CatalogManagerTab: React.FC = () => {
     setEquipmentType('Strength');
     setMinOrderQty(1);
     setLeadTime('7-14 Days');
-    setBadge('ISO-Certified');
+    setBadge('Commercial-Grade');
     setDescription('');
     setImage('https://images.unsplash.com/photo-1540497077202-7c8a3999166f?auto=format&fit=crop&w=800&q=80');
     setIsModalOpen(true);
@@ -157,7 +157,7 @@ export const CatalogManagerTab: React.FC = () => {
                   </td>
                   <td className="py-4 px-6">
                     <span className="inline-flex items-center gap-1 bg-amber-100 text-amber-900 text-xs font-bold px-2.5 py-1 rounded-full border border-amber-300">
-                      <CheckCircle className="w-3 h-3 text-amber-700" /> {p.badge || 'ISO-Certified'}
+                      <CheckCircle className="w-3 h-3 text-amber-700" /> {p.badge || 'Commercial-Grade'}
                     </span>
                   </td>
                   <td className="py-4 px-6 text-right">
@@ -286,7 +286,7 @@ export const CatalogManagerTab: React.FC = () => {
                     type="text"
                     value={badge}
                     onChange={e => setBadge(e.target.value)}
-                    placeholder="e.g. ISO-Certified, Heavy Duty"
+                    placeholder="e.g. Commercial-Grade, Heavy Duty"
                     className="w-full bg-slate-50 border border-slate-200 rounded-xl px-3.5 py-2.5 text-slate-900 text-sm focus:outline-none focus:border-blue-600 focus:bg-white transition"
                   />
                 </div>
