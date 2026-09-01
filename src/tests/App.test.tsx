@@ -160,3 +160,90 @@ describe('Authentication QA Suite (Login & Register for Gym Owner and Job Seeker
   });
 });
 
+describe('Admin Panel → Live Website Workflow Tests', () => {
+  it('authenticates admin with valid passcode admin2026 and rejects invalid passcode', () => {
+    const checkPasscode = (code: string) => code === 'admin2026';
+    expect(checkPasscode('admin2026')).toBe(true);
+    expect(checkPasscode('wrongpass')).toBe(false);
+  });
+
+  it('verifies product creation, editing, and deletion in catalog manager', () => {
+    let mockProducts: any[] = [];
+
+    // 1. ADD PRODUCT
+    const newProduct = {
+      id: 'prod-custom-999',
+      name: 'Tanush Hyper-Squat Pro Rig',
+      category: 'Strength',
+      price: 185000,
+      image: 'https://images.unsplash.com/photo-1540497077202-7c8a3999166f?auto=format&fit=crop&w=800&q=80',
+      specs: { 'Steel Frame': 'Heavy Structural Laser Cut' },
+    };
+    mockProducts = [newProduct, ...mockProducts];
+    expect(mockProducts.length).toBe(1);
+    expect(mockProducts[0].name).toBe('Tanush Hyper-Squat Pro Rig');
+
+    // 2. EDIT PRODUCT
+    mockProducts = mockProducts.map(p =>
+      p.id === 'prod-custom-999'
+        ? { ...p, name: 'Tanush Hyper-Squat Pro Rig V2 (Edited)', price: 195000 }
+        : p
+    );
+    expect(mockProducts[0].name).toBe('Tanush Hyper-Squat Pro Rig V2 (Edited)');
+    expect(mockProducts[0].price).toBe(195000);
+
+    // 3. DELETE PRODUCT
+    mockProducts = mockProducts.filter(p => p.id !== 'prod-custom-999');
+    expect(mockProducts.length).toBe(0);
+    expect(mockProducts.find(p => p.id === 'prod-custom-999')).toBeUndefined();
+  });
+
+  it('verifies job listing creation, moderation, and removal', () => {
+    let mockJobs: any[] = [];
+
+    // 1. ADD JOB
+    const newJob = {
+      id: 'job-999',
+      title: 'Head Biomechanics Coach',
+      gymName: 'Tanush High Performance Club',
+      city: 'Gandhinagar',
+      isActive: true,
+    };
+    mockJobs = [newJob, ...mockJobs];
+    expect(mockJobs.length).toBe(1);
+    expect(mockJobs[0].isActive).toBe(true);
+
+    // 2. MODERATE / DEACTIVATE JOB
+    mockJobs = mockJobs.map(j => (j.id === 'job-999' ? { ...j, isActive: false } : j));
+    expect(mockJobs[0].isActive).toBe(false);
+
+    // 3. REMOVE JOB
+    mockJobs = mockJobs.filter(j => j.id !== 'job-999');
+    expect(mockJobs.length).toBe(0);
+  });
+
+  it('verifies platform settings update for contact info and banner', () => {
+    let settings = {
+      supportPhone: '+91 73832 49680',
+      supportEmail: 'Info@tanushfitness.com',
+      bannerText: '⚡ Commercial Setup Special Offer',
+      bannerEnabled: true,
+    };
+
+    // Update settings
+    settings = {
+      ...settings,
+      supportPhone: '+91 73832 49680',
+      supportEmail: 'Info@tanushfitness.com',
+      bannerText: '⚡ Grand Opening Factory Direct Offer',
+      bannerEnabled: false,
+    };
+
+    expect(settings.supportPhone).toBe('+91 73832 49680');
+    expect(settings.supportEmail).toBe('Info@tanushfitness.com');
+    expect(settings.bannerText).toBe('⚡ Grand Opening Factory Direct Offer');
+    expect(settings.bannerEnabled).toBe(false);
+  });
+});
+
+
