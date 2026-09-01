@@ -121,13 +121,9 @@ export const HomePage: React.FC = () => {
       {/* ========================================================================= */}
       <section className="relative w-full bg-gradient-to-b from-[#0F1926] via-[#0C1015] to-[#0F1926] text-[#E8E8E8] pt-14 sm:pt-20 pb-20 px-4 sm:px-6 lg:px-8 overflow-hidden">
         <div className="max-w-5xl mx-auto text-center space-y-8 relative z-10">
-          {/* Centered Brand Emblem (Vault Style) */}
-          <div className="flex justify-center pb-1">
-            <img
-              src="/tanush-symbol-white.png"
-              alt="Tanush"
-              className="w-14 h-14 sm:w-16 sm:h-16 object-contain opacity-95 hover:opacity-100 transition-opacity"
-            />
+          {/* Centered Brand Logo Lockup with Tanush Text */}
+          <div className="flex items-center justify-center pb-2">
+            <TanushLogo variant="white" height={52} className="h-10 sm:h-12 md:h-14 w-auto drop-shadow-lg" />
           </div>
 
           {/* Clean Grand Headline */}
@@ -185,18 +181,6 @@ export const HomePage: React.FC = () => {
               <Briefcase className="w-4 h-4 text-[#D0CFCA]" />
               <span>Book 3D CAD Blueprint</span>
             </button>
-          </div>
-
-          {/* Hero Cinematic Showcase Image */}
-          <div className="pt-6">
-            <div className="relative rounded-3xl overflow-hidden border border-[#2A2A2B] shadow-2xl bg-[#0C1015] aspect-[16/9] max-h-[520px] w-full">
-              <img
-                src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=1600&q=85"
-                alt="Tanush Commercial Fitness Sanctuary"
-                className="w-full h-full object-cover opacity-90"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#0C1015]/40 via-transparent to-transparent" />
-            </div>
           </div>
         </div>
       </section>
