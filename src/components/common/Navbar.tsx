@@ -121,12 +121,13 @@ export const Navbar: React.FC = () => {
                 <User className="w-4 h-4" />
               </button>
 
-              {/* Hamburger Menu Button (Mobile & Tablet) */}
+              {/* Hamburger Menu Button (Available on Desktop, Tablet & Mobile) */}
               <button
                 type="button"
                 onClick={() => setIsMenuOpen(true)}
-                className="lg:hidden w-10 h-10 sm:w-11 sm:h-11 rounded-full bg-[#0C1015]/95 backdrop-blur-md border border-[#2A2A2B] hover:border-[#E8E8E8]/40 text-[#E8E8E8] flex items-center justify-center cursor-pointer transition-all duration-200 shadow-2xl group"
+                className="w-10 h-10 sm:w-11 sm:h-11 rounded-full bg-[#0C1015]/95 backdrop-blur-md border border-[#2A2A2B] hover:border-[#E8E8E8]/40 text-[#E8E8E8] flex items-center justify-center cursor-pointer transition-all duration-200 shadow-2xl group"
                 aria-label="Open Navigation Menu"
+                title="Open Menu"
               >
                 <Menu className="w-4 h-4 sm:w-5 sm:h-5 text-[#E8E8E8] group-hover:scale-110 transition-transform" />
               </button>
