@@ -119,11 +119,11 @@ export const HomePage: React.FC = () => {
       {/* ========================================================================= */}
       {/* SECTION 1: SERENE & ELEGANT MONOCHROMATIC HERO                            */}
       {/* ========================================================================= */}
-      <section className="relative w-full bg-gradient-to-b from-[#0F1926] via-[#0C1015] to-[#0F1926] text-[#E8E8E8] pt-14 sm:pt-20 pb-20 px-4 sm:px-6 lg:px-8 overflow-hidden">
-        <div className="max-w-5xl mx-auto text-center space-y-8 relative z-10">
-          {/* Centered Brand Logo Lockup with Tanush Text */}
-          <div className="flex items-center justify-center pb-2">
-            <TanushLogo variant="white" height={52} className="h-10 sm:h-12 md:h-14 w-auto drop-shadow-lg" />
+      <section className="relative w-full min-h-[calc(100vh-90px)] flex flex-col justify-center bg-gradient-to-b from-[#0F1926] via-[#0C1015] to-[#0F1926] text-[#E8E8E8] pt-10 sm:pt-14 pb-14 sm:pb-16 px-4 sm:px-6 lg:px-8 overflow-hidden">
+        <div className="max-w-5xl mx-auto text-center space-y-7 sm:space-y-9 relative z-10 my-auto">
+          {/* Centered Brand Logo Lockup with Tanush Text (Enlarged) */}
+          <div className="flex items-center justify-center pb-1">
+            <TanushLogo variant="white" height={72} className="h-14 sm:h-16 md:h-20 w-auto drop-shadow-xl" />
           </div>
 
           {/* Clean Grand Headline */}
@@ -163,7 +163,7 @@ export const HomePage: React.FC = () => {
           </div>
 
           {/* Action CTAs */}
-          <div className="flex flex-wrap items-center justify-center gap-4 pt-2">
+          <div className="flex flex-wrap items-center justify-center gap-4 pt-1">
             <button
               type="button"
               onClick={() => navigateTo('equipment')}
