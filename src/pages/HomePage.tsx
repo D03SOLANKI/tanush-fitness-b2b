@@ -120,14 +120,14 @@ export const HomePage: React.FC = () => {
       {/* SECTION 1: SERENE & ELEGANT MONOCHROMATIC HERO                            */}
       {/* ========================================================================= */}
       <section className="relative w-full min-h-[calc(100vh-90px)] flex flex-col justify-center bg-gradient-to-b from-[#0F1926] via-[#0C1015] to-[#0F1926] text-[#E8E8E8] pt-10 sm:pt-14 pb-14 sm:pb-16 px-4 sm:px-6 lg:px-8 overflow-hidden">
-        <div className="max-w-5xl mx-auto text-center space-y-7 sm:space-y-9 relative z-10 my-auto">
-          {/* Centered Brand Logo Lockup with Tanush Text (Enlarged) */}
-          <div className="flex items-center justify-center pb-1">
+        <div className="max-w-5xl mx-auto text-center relative z-10 my-auto flex flex-col justify-center">
+          {/* Centered Brand Logo Lockup (Shifted Upwards with Increased Spacing) */}
+          <div className="flex items-center justify-center pb-6 sm:pb-8">
             <TanushLogo variant="white" height={72} className="h-14 sm:h-16 md:h-20 w-auto drop-shadow-xl" />
           </div>
 
           {/* Clean Grand Headline */}
-          <div className="space-y-4">
+          <div className="space-y-4 my-2 sm:my-3">
             <h1 className="font-satoshi text-2xl sm:text-3xl md:text-4xl lg:text-[42px] font-black uppercase tracking-[0.025em] text-[#E8E8E8] leading-[1.4] sm:leading-[1.3] max-w-5xl mx-auto">
               <span className="inline-flex items-center justify-center flex-wrap gap-x-3 gap-y-2">
                 <span>GET READY</span>
@@ -162,8 +162,8 @@ export const HomePage: React.FC = () => {
             </h1>
           </div>
 
-          {/* Action CTAs */}
-          <div className="flex flex-wrap items-center justify-center gap-4 pt-1">
+          {/* Action CTAs (Shifted Downwards with Increased Spacing) */}
+          <div className="flex flex-wrap items-center justify-center gap-4 pt-6 sm:pt-8">
             <button
               type="button"
               onClick={() => navigateTo('equipment')}
