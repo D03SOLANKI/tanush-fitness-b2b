@@ -44,6 +44,17 @@ export const Navbar: React.FC = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  useEffect(() => {
+    if (isMenuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [isMenuOpen]);
+
   const navLinks: { label: string; page: PageType }[] = [
     { label: 'Overview', page: 'home' },
     { label: 'Equipment Sanctuary', page: 'equipment' },
@@ -66,7 +77,7 @@ export const Navbar: React.FC = () => {
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between gap-3 sm:gap-4 pointer-events-auto">
-            {/* 1. Left: Brand Logo in Elevated Capsule Box (Enlarged) */}
+            {/* 1. Left: Brand Logo in Elevated Capsule Box */}
             <div
               onClick={() => handleNav('home')}
               className="bg-[#0C1015]/95 backdrop-blur-md border border-[#2A2A2B] hover:border-[#E8E8E8]/40 px-4 sm:px-6 py-2 sm:py-2.5 rounded-full flex items-center gap-2 cursor-pointer shadow-2xl transition-all group shrink-0"
@@ -122,80 +133,113 @@ export const Navbar: React.FC = () => {
             </div>
           </div>
         </div>
+      </header>
 
-        {/* 📱 4. Mobile Navigation Drawer */}
-        <AnimatePresence>
-          {isMenuOpen && (
-            <motion.div
-              initial={{ opacity: 0, y: -20 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -20 }}
-              transition={{ duration: 0.25 }}
-              className="fixed inset-0 z-50 bg-[#0C1015]/98 backdrop-blur-2xl flex flex-col justify-between p-6 sm:p-12 overflow-y-auto"
-            >
-              {/* Top Bar of Modal */}
-              <div className="flex items-center justify-between border-b border-[#2A2A2B] pb-6">
-                <div
-                  onClick={() => handleNav('home')}
-                  className="flex items-center gap-3 cursor-pointer"
+      {/* 📱 4. Mobile & Tablet Navigation Drawer (Fully Interactive Fullscreen Modal) */}
+      <AnimatePresence>
+        {isMenuOpen && (
+          <motion.div
+            initial={{ opacity: 0, y: -15 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -15 }}
+            transition={{ duration: 0.22, ease: 'easeOut' }}
+            className="fixed inset-0 z-50 bg-[#0C1015]/98 backdrop-blur-2xl flex flex-col justify-between p-6 sm:p-10 overflow-y-auto pointer-events-auto"
+          >
+            {/* Top Bar: Brand Logo & Close Button */}
+            <div className="flex items-center justify-between border-b border-[#2A2A2B] pb-5 shrink-0">
+              <div
+                onClick={() => handleNav('home')}
+                className="flex items-center gap-2.5 cursor-pointer select-none"
+              >
+                <TanushLogo variant="white" height={40} className="h-9 sm:h-10 w-auto" />
+              </div>
+
+              <button
+                type="button"
+                onClick={() => setIsMenuOpen(false)}
+                className="w-11 h-11 rounded-full bg-[#2A2A2B] hover:bg-[#0F1926] text-[#E8E8E8] flex items-center justify-center transition cursor-pointer border border-white/10 shadow-lg"
+                aria-label="Close Navigation Menu"
+              >
+                <X className="w-5 h-5" />
+              </button>
+            </div>
+
+            {/* Navigation Links */}
+            <div className="py-6 sm:py-8 space-y-2.5 sm:space-y-3 flex-1 flex flex-col justify-center max-w-xl w-full mx-auto">
+              {navLinks.map((item, idx) => {
+                const isActive = currentPage === item.page;
+                return (
+                  <button
+                    key={item.label}
+                    type="button"
+                    onClick={() => handleNav(item.page)}
+                    className={`w-full group flex items-center justify-between py-3.5 px-5 rounded-2xl transition-all duration-200 cursor-pointer text-left ${
+                      isActive
+                        ? 'bg-[#E8E8E8] text-[#0F1926] shadow-xl'
+                        : 'bg-[#0F1926]/70 border border-[#2A2A2B] text-[#D0CFCA] hover:text-[#E8E8E8] hover:border-[#E8E8E8]/30 hover:bg-[#15202E]'
+                    }`}
+                  >
+                    <div className="flex items-center gap-4">
+                      <span className={`font-mono text-xs ${isActive ? 'text-[#0F1926]/70 font-bold' : 'text-[#D0CFCA]/70'}`}>
+                        0{idx + 1}
+                      </span>
+                      <span
+                        className="font-montserrat text-sm sm:text-base font-bold uppercase tracking-wider"
+                        style={{ fontFamily: "'Montserrat', sans-serif", fontWeight: 700 }}
+                      >
+                        {item.label}
+                      </span>
+                    </div>
+
+                    <div
+                      className={`w-8 h-8 rounded-full flex items-center justify-center transition ${
+                        isActive
+                          ? 'bg-[#0F1926] text-[#E8E8E8]'
+                          : 'bg-[#2A2A2B] text-[#D0CFCA] group-hover:text-[#E8E8E8] group-hover:bg-[#0F1926]'
+                      }`}
+                    >
+                      <ArrowUpRight className="w-4 h-4" />
+                    </div>
+                  </button>
+                );
+              })}
+            </div>
+
+            {/* Quick Actions & Contact Footer */}
+            <div className="space-y-4 pt-4 border-t border-[#2A2A2B] shrink-0 max-w-xl w-full mx-auto">
+              <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
+                <button
+                  type="button"
+                  onClick={() => handleNav('contact')}
+                  className="btn-primary w-full py-3.5 text-xs font-bold uppercase tracking-wider flex items-center justify-center gap-2 cursor-pointer shadow-xl"
                 >
-                  <TanushLogo variant="white" height={52} className="h-12 w-auto" />
-                </div>
+                  <span>Book Consultation</span>
+                  <ArrowRight className="w-4 h-4" />
+                </button>
 
                 <button
                   type="button"
-                  onClick={() => setIsMenuOpen(false)}
-                  className="p-3 rounded-full bg-[#2A2A2B] text-[#E8E8E8] hover:bg-[#0F1926] transition cursor-pointer"
+                  onClick={() => {
+                    setIsMenuOpen(false);
+                    openAuthModal();
+                  }}
+                  className="btn-dark w-full py-3.5 text-xs font-bold uppercase tracking-wider flex items-center justify-center gap-2 cursor-pointer shadow-lg"
                 >
-                  <X className="w-6 h-6" />
+                  <User className="w-4 h-4" />
+                  <span>{currentUser ? currentUser.name : 'Account Login'}</span>
                 </button>
               </div>
 
-              {/* Menu Items */}
-              <div className="py-8 space-y-4">
-                {navLinks.map((item, idx) => {
-                  const isActive = currentPage === item.page;
-                  return (
-                    <div
-                      key={item.label}
-                      onClick={() => handleNav(item.page)}
-                      className="group flex items-center justify-between py-3 border-b border-[#2A2A2B] cursor-pointer"
-                    >
-                      <div className="flex items-center gap-4">
-                        <span className="font-mono text-xs text-[#D0CFCA]">0{idx + 1}</span>
-                        <span
-                          className={`font-montserrat text-lg font-bold uppercase tracking-[0.04em] transition ${
-                            isActive ? 'text-[#E8E8E8]' : 'text-[#D0CFCA] group-hover:text-[#E8E8E8]'
-                          }`}
-                          style={{ fontFamily: "'Montserrat', sans-serif", fontWeight: 700 }}
-                        >
-                          {item.label}
-                        </span>
-                      </div>
-
-                      <div className="w-8 h-8 rounded-full bg-[#2A2A2B] flex items-center justify-center text-[#D0CFCA] group-hover:text-[#E8E8E8] group-hover:bg-[#0F1926] transition">
-                        <ArrowUpRight className="w-4 h-4" />
-                      </div>
-                    </div>
-                  );
-                })}
-              </div>
-
-              {/* Bottom Contact & GST Info */}
-              <div className="border-t border-[#2A2A2B] pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-mono text-[#D0CFCA]">
-                <div className="flex items-center gap-4">
-                  <span>100% COMMERCIAL GST INVOICING (18% ITC)</span>
-                  <span>•</span>
-                  <span>ISO 9001:2015 CERTIFIED</span>
-                </div>
-                <a href="tel:+918160918894" className="text-[#E8E8E8] hover:text-[#D0CFCA] transition font-bold">
+              <div className="flex flex-col sm:flex-row items-center justify-between gap-2 text-[11px] font-mono text-[#D0CFCA]/80 pt-2 text-center sm:text-left">
+                <span>100% COMMERCIAL GST INVOICING (18% ITC) • ISO 9001:2015</span>
+                <a href="tel:+918160918894" className="text-[#E8E8E8] hover:underline font-bold">
                   Direct Desk: +91 81609 18894
                 </a>
               </div>
-            </motion.div>
-          )}
-        </AnimatePresence>
-      </header>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </>
   );
 };
