@@ -30,7 +30,7 @@ const USP_CARDS = [
   },
   {
     id: 2,
-    title: 'GYM MANAGEMENT Gym Management',
+    title: 'Gym Management',
     description: '360° architectural 3D CAD space modeling, acoustic rubber isolation, digital RFID access turnstiles, and launch funnels.',
     brands: ['3D CAD Layouts', 'Acoustics', 'RFID Access', 'AMC Care'],
     icon: <Briefcase className="w-6 h-6 text-[#0F1926]" />,
@@ -113,7 +113,7 @@ export const HomePage: React.FC = () => {
     <main className="min-h-screen bg-[#0F1926] text-[#E8E8E8] overflow-hidden pb-0">
       <SEO
         title="Tanush Fitness | Commercial & Residential Equipment · Gym Management · Manpower Services"
-        description="Experience India's premier commercial & residential fitness sanctuary. World-class 11-gauge equipment, 3D GYM MANAGEMENT gym management, and certified trainer staffing."
+        description="Experience India's premier commercial & residential fitness sanctuary. World-class 11-gauge equipment, 3D CAD gym management, and certified trainer staffing."
       />
 
       {/* ========================================================================= */}
