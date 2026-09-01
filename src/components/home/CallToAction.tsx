@@ -26,7 +26,7 @@ export const CallToAction: React.FC = () => {
               </p>
 
               <div className="pt-2 flex flex-wrap items-center gap-4 text-xs font-mono text-[#A8A090]">
-                <span>📞 Hotline: <a href="tel:+918160918894" className="text-white font-bold hover:underline transition-colors">+91 81609 18894</a></span>
+                <span>📞 Hotline: <a href="tel:+917383249680" className="text-white font-bold hover:underline transition-colors">+91 73832 49680</a></span>
                 <span>•</span>
                 <span>📧 <a href="mailto:Info@tanushfitness.com" className="text-white hover:underline transition-colors">Info@tanushfitness.com</a></span>
               </div>

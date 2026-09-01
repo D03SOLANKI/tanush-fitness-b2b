@@ -64,11 +64,11 @@ export const Hero: React.FC = () => {
             {/* Direct Line & Fast Invoicing Notice */}
             <div className="pt-2 flex flex-wrap items-center gap-4 text-xs font-mono text-[#6B6358]">
               <a
-                href="tel:+918160918894"
+                href="tel:+917383249680"
                 className="inline-flex items-center gap-1.5 text-white/90 hover:text-white font-bold"
               >
                 <PhoneCall className="w-3.5 h-3.5" />
-                <span>Commercial & Residential Desk: +91 81609 18894</span>
+                <span>Commercial & Residential Desk: +91 73832 49680</span>
               </a>
               <span className="text-[#A8A090] hidden sm:inline">•</span>
               <span className="text-[#6B6358]">GST Invoice Ready (18% ITC)</span>

@@ -120,7 +120,7 @@ export const EquipmentPage: React.FC = () => {
 
           <div className="flex items-center gap-3 shrink-0">
             <a
-              href="tel:+918160918894"
+              href="tel:+917383249680"
               className="btn-primary flex items-center gap-2 text-xs py-3 px-6 shadow-lg cursor-pointer"
             >
               <Phone className="w-3.5 h-3.5 text-[#0F1926]" />

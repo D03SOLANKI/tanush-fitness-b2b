@@ -232,8 +232,8 @@ export const Navbar: React.FC = () => {
 
               <div className="flex flex-col sm:flex-row items-center justify-between gap-2 text-[11px] font-mono text-[#D0CFCA]/80 pt-2 text-center sm:text-left">
                 <span>100% COMMERCIAL GST INVOICING (18% ITC) • COMMERCIAL GRADE</span>
-                <a href="tel:+918160918894" className="text-[#E8E8E8] hover:underline font-bold">
-                  Direct Desk: +91 81609 18894
+                <a href="tel:+917383249680" className="text-[#E8E8E8] hover:underline font-bold">
+                  Direct Desk: +91 73832 49680
                 </a>
               </div>
             </div>

@@ -309,7 +309,7 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
     return saved
       ? JSON.parse(saved)
       : {
-          supportPhone: '+91 81609 18894',
+          supportPhone: '+91 73832 49680',
           supportEmail: 'Info@tanushfitness.com',
           corporateAddress: 'The landmark Complex, A - 301 - 304, near Podar International School, Urjanagar 1, Kudasan, Gandhinagar, Gujarat 382419',
           gstRate: '18',

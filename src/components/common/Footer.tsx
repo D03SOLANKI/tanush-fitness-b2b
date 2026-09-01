@@ -37,11 +37,11 @@ export const Footer: React.FC = () => {
               <ArrowRight className="w-3.5 h-3.5" />
             </button>
             <a
-              href="tel:+918160918894"
+              href="tel:+917383249680"
               className="px-5 py-3 rounded-full border border-[#2A2A2B] hover:border-[#D0CFCA] text-[#E8E8E8] text-xs font-mono uppercase tracking-wider transition hover:bg-[#2A2A2B]/40 flex items-center gap-2"
             >
               <Phone className="w-3.5 h-3.5 text-[#D0CFCA]" />
-              <span>+91 81609 18894</span>
+              <span>+91 73832 49680</span>
             </a>
           </div>
         </div>
@@ -155,8 +155,8 @@ export const Footer: React.FC = () => {
               </div>
               <div className="flex items-center gap-2.5">
                 <Phone className="w-4 h-4 text-[#D0CFCA] shrink-0" />
-                <a href="tel:+918160918894" className="hover:text-[#E8E8E8] transition font-mono text-[#E8E8E8]">
-                  +91 81609 18894
+                <a href="tel:+917383249680" className="hover:text-[#E8E8E8] transition font-mono text-[#E8E8E8]">
+                  +91 73832 49680
                 </a>
               </div>
               <div className="flex items-center gap-2.5">
