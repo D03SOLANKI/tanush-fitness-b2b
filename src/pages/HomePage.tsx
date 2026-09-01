@@ -121,9 +121,19 @@ export const HomePage: React.FC = () => {
       {/* ========================================================================= */}
       <section className="relative w-full min-h-[calc(100vh-90px)] flex flex-col justify-center bg-gradient-to-b from-[#0F1926] via-[#0C1015] to-[#0F1926] text-[#E8E8E8] pt-10 sm:pt-14 pb-14 sm:pb-16 px-4 sm:px-6 lg:px-8 overflow-hidden">
         <div className="max-w-5xl mx-auto text-center relative z-10 my-auto flex flex-col justify-center">
-          {/* Centered Brand Logo Lockup (Shifted Upwards with Increased Spacing) */}
-          <div className="flex items-center justify-center pb-6 sm:pb-8">
-            <TanushLogo variant="white" height={72} className="h-14 sm:h-16 md:h-20 w-auto drop-shadow-xl" />
+          {/* Centered Brand Logo Lockup (Emblem + Large Tanush Typography with Generous Gap & Spacing) */}
+          <div className="flex items-center justify-center gap-3.5 sm:gap-5 pb-8 sm:pb-12 md:pb-14 select-none">
+            <img
+              src="/tanush-symbol-white.png"
+              alt="Tanush"
+              className="w-12 h-12 sm:w-16 sm:h-16 md:w-20 md:h-20 object-contain drop-shadow-2xl hover:scale-105 transition-transform"
+            />
+            <span
+              className="font-montserrat text-2xl sm:text-4xl md:text-5xl font-bold tracking-tight text-[#E8E8E8] drop-shadow-2xl"
+              style={{ fontFamily: "'Montserrat', sans-serif", fontWeight: 700 }}
+            >
+              Tanush
+            </span>
           </div>
 
           {/* Clean Grand Headline */}
