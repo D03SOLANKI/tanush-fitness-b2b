@@ -74,8 +74,8 @@ export const Navbar: React.FC = () => {
               <TanushLogo variant="white" height={42} className="h-8 sm:h-10 w-auto group-hover:opacity-95 transition-opacity drop-shadow-md" />
             </div>
 
-            {/* 2. Center: Floating Pill Nav Bar */}
-            <div className="hidden md:flex items-center">
+            {/* 2. Center: Floating Pill Nav Bar (Desktop Only) */}
+            <div className="hidden lg:flex items-center">
               <nav className="flex items-center gap-1 bg-[#0C1015]/95 backdrop-blur-md border border-[#2A2A2B] p-1.5 rounded-full shadow-2xl">
                 {navLinks.map((item) => {
                   const isActive = currentPage === item.page;
@@ -98,8 +98,9 @@ export const Navbar: React.FC = () => {
               </nav>
             </div>
 
-            {/* 3. Right: User Account Action Button (Menu Button Removed) */}
-            <div className="flex items-center gap-2.5 shrink-0">
+            {/* 3. Right: User Account Action & Mobile/Tablet Menu Button */}
+            <div className="flex items-center gap-2 sm:gap-2.5 shrink-0">
+              {/* User Account Login */}
               <button
                 type="button"
                 onClick={() => openAuthModal()}
@@ -107,6 +108,16 @@ export const Navbar: React.FC = () => {
                 title={currentUser ? currentUser.name : 'Account Login'}
               >
                 <User className="w-4 h-4" />
+              </button>
+
+              {/* Hamburger Menu Button (Mobile & Tablet) */}
+              <button
+                type="button"
+                onClick={() => setIsMenuOpen(true)}
+                className="lg:hidden w-10 h-10 sm:w-11 sm:h-11 rounded-full bg-[#0C1015]/95 backdrop-blur-md border border-[#2A2A2B] hover:border-[#E8E8E8]/40 text-[#E8E8E8] flex items-center justify-center cursor-pointer transition-all duration-200 shadow-2xl group"
+                aria-label="Open Navigation Menu"
+              >
+                <Menu className="w-4 h-4 sm:w-5 sm:h-5 text-[#E8E8E8] group-hover:scale-110 transition-transform" />
               </button>
             </div>
           </div>
