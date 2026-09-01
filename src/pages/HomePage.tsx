@@ -119,15 +119,21 @@ export const HomePage: React.FC = () => {
       {/* ========================================================================= */}
       {/* SECTION 1: SERENE & ELEGANT MONOCHROMATIC HERO                            */}
       {/* ========================================================================= */}
-      <section className="relative w-full min-h-[calc(100vh-90px)] flex flex-col justify-center bg-gradient-to-b from-[#0F1926] via-[#0C1015] to-[#0F1926] text-[#E8E8E8] pt-10 sm:pt-14 pb-14 sm:pb-16 px-4 sm:px-6 lg:px-8 overflow-hidden">
+      <section className="relative w-full min-h-[calc(100vh-90px)] flex flex-col justify-center bg-gradient-to-b from-[#0F1926] via-[#0C1015] to-[#0F1926] text-[#E8E8E8] pt-8 sm:pt-12 pb-14 sm:pb-16 px-4 sm:px-6 lg:px-8 overflow-hidden">
         <div className="max-w-5xl mx-auto text-center relative z-10 my-auto flex flex-col justify-center">
-          {/* Centered Brand Logo Lockup (Original Official Brand Typography - Enlarged) */}
-          <div className="flex items-center justify-center pb-8 sm:pb-12 md:pb-14 select-none">
-            <TanushLogo
-              variant="white"
-              height={85}
-              className="h-16 sm:h-20 md:h-24 lg:h-28 w-auto drop-shadow-2xl hover:scale-105 transition-transform"
+          {/* Centered Brand Logo Lockup (Shifted Upwards, Expanded Gap, Enlarged Tanush Typography) */}
+          <div className="flex items-center justify-center gap-4 sm:gap-6 md:gap-8 pb-12 sm:pb-16 md:pb-20 -mt-4 sm:-mt-6 select-none">
+            <img
+              src="/tanush-symbol-white.png"
+              alt="Tanush Emblem"
+              className="w-14 h-14 sm:w-16 sm:h-16 md:w-20 md:h-20 lg:w-24 lg:h-24 object-contain drop-shadow-2xl hover:scale-105 transition-transform"
             />
+            <span
+              className="text-3xl sm:text-4xl md:text-5xl lg:text-[54px] font-light text-[#E8E8E8] tracking-[0.04em] drop-shadow-2xl leading-none"
+              style={{ fontWeight: 300 }}
+            >
+              Tanush
+            </span>
           </div>
 
           {/* Clean Grand Headline */}
