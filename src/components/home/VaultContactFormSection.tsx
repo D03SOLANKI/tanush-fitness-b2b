@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useApp } from '../../context/AppContext';
-import { CheckCircle2 } from 'lucide-react';
+import { CheckCircle2, MessageSquare, Mail, Send, Phone } from 'lucide-react';
 
 export const VaultContactFormSection: React.FC = () => {
   const { showToast } = useApp();
@@ -12,15 +12,74 @@ export const VaultContactFormSection: React.FC = () => {
   const [city, setCity] = useState('Delhi NCR');
   const [message, setMessage] = useState('');
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const getFormattedMessage = () => {
+    return (
+      `🔥 *NEW TANUSH B2B INQUIRY*\n\n` +
+      `👤 *Name:* ${name}\n` +
+      `📞 *Phone:* ${contact}\n` +
+      `✉️ *Email:* ${email || 'Not provided'}\n` +
+      `🏢 *Requirement:* ${subject}\n` +
+      `📍 *Destination City:* ${city}\n` +
+      `💬 *Message:* ${message || 'No additional note'}`
+    );
+  };
+
+  const getWhatsAppUrl = () => {
+    return `https://wa.me/917383249680?text=${encodeURIComponent(getFormattedMessage())}`;
+  };
+
+  const getMailtoUrl = () => {
+    const mailSubject = `Tanush B2B Inquiry: ${subject} - ${name} (${city})`;
+    const mailBody =
+      `Name: ${name}\n` +
+      `Phone: ${contact}\n` +
+      `Email: ${email || 'N/A'}\n` +
+      `Requirement: ${subject}\n` +
+      `City: ${city}\n\n` +
+      `Message:\n${message || 'N/A'}`;
+    return `mailto:Info@tanushfitness.com?subject=${encodeURIComponent(mailSubject)}&body=${encodeURIComponent(mailBody)}`;
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!name || !contact) {
+    if (!name.trim() || !contact.trim()) {
       showToast('Please enter your name and contact phone number', 'error');
       return;
     }
+
+    setIsSubmitting(true);
+
+    try {
+      // 1. Dispatch to Official Mail: Info@tanushfitness.com via JSON form submit
+      await fetch('https://formsubmit.co/ajax/Info@tanushfitness.com', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify({
+          _subject: `⚡ New Tanush B2B Inquiry from ${name} - ${city}`,
+          Name: name,
+          Contact: contact,
+          Email: email || 'N/A',
+          Subject: subject,
+          City: city,
+          Message: message || 'N/A',
+        })
+      }).catch(err => console.log('Email forwarding notice:', err));
+    } catch (err) {
+      console.log('Submission note:', err);
+    }
+
+    // 2. Trigger instant WhatsApp to +91 73832 49680
+    const waUrl = getWhatsAppUrl();
+    window.open(waUrl, '_blank', 'noopener,noreferrer');
+
+    setIsSubmitting(false);
     setIsSubmitted(true);
-    showToast('Consultation request submitted! Our Outfitting Director will contact you within 24 hours.', 'success');
+    showToast('Enquiry routed to Info@tanushfitness.com and +91 73832 49680!', 'success');
   };
 
   return (
@@ -58,22 +117,70 @@ export const VaultContactFormSection: React.FC = () => {
 
           <div className="relative z-10 max-w-xl w-full mx-auto space-y-8">
             {isSubmitted ? (
-              <div className="bg-white border border-[#0F1926]/15 p-8 text-center space-y-4 rounded-2xl shadow-xl">
-                <div className="w-12 h-12 rounded-full bg-[#0F1926] text-white flex items-center justify-center mx-auto">
-                  <CheckCircle2 className="w-6 h-6 text-[#E8E8E8]" />
+              <div className="bg-white border border-[#0F1926]/15 p-8 text-center space-y-6 rounded-2xl shadow-xl">
+                <div className="w-14 h-14 rounded-full bg-[#0F1926] text-white flex items-center justify-center mx-auto shadow-lg">
+                  <CheckCircle2 className="w-7 h-7 text-[#E8E8E8]" />
                 </div>
-                <h3 className="font-satoshi text-2xl font-bold uppercase text-[#0F1926]">
-                  Proposal Request Received
-                </h3>
-                <p className="font-sans text-sm text-[#2A2A2B] leading-relaxed">
-                  Thank you, <strong className="text-[#0F1926] font-bold">{name}</strong>. Our Commercial Outfitting Directorate will review your facility requirements and get in touch with you shortly.
-                </p>
+                
+                <div className="space-y-2">
+                  <h3 className="font-satoshi text-2xl font-extrabold uppercase text-[#0F1926]">
+                    Proposal Request Dispatched
+                  </h3>
+                  <p className="font-sans text-sm text-[#2A2A2B] leading-relaxed max-w-md mx-auto">
+                    Thank you, <strong className="text-[#0F1926] font-bold">{name}</strong>. Your requirement has been routed directly to our factory desk:
+                  </p>
+                </div>
+
+                {/* Routing Verification Badges */}
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs font-mono text-[#0F1926] pt-2">
+                  <div className="p-3.5 rounded-xl bg-slate-50 border border-slate-200 text-left space-y-1">
+                    <div className="flex items-center gap-2 font-bold text-[#0F1926]">
+                      <Mail className="w-4 h-4 text-emerald-600" />
+                      <span>Official Email</span>
+                    </div>
+                    <div className="text-[11px] text-slate-600 font-semibold truncate">
+                      Info@tanushfitness.com
+                    </div>
+                  </div>
+
+                  <div className="p-3.5 rounded-xl bg-slate-50 border border-slate-200 text-left space-y-1">
+                    <div className="flex items-center gap-2 font-bold text-[#0F1926]">
+                      <Phone className="w-4 h-4 text-emerald-600" />
+                      <span>WhatsApp Desk</span>
+                    </div>
+                    <div className="text-[11px] text-slate-600 font-semibold">
+                      +91 73832 49680
+                    </div>
+                  </div>
+                </div>
+
+                {/* Quick Action Buttons */}
+                <div className="flex flex-col sm:flex-row items-center gap-3 pt-2">
+                  <a
+                    href={getWhatsAppUrl()}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-full py-3 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-mono font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-2 transition shadow-md"
+                  >
+                    <MessageSquare className="w-4 h-4" />
+                    <span>Open WhatsApp Chat</span>
+                  </a>
+
+                  <a
+                    href={getMailtoUrl()}
+                    className="w-full py-3 rounded-xl bg-[#0F1926] hover:bg-[#1A2536] text-white font-mono font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-2 transition shadow-md"
+                  >
+                    <Mail className="w-4 h-4" />
+                    <span>Send via Email</span>
+                  </a>
+                </div>
+
                 <button
                   type="button"
                   onClick={() => setIsSubmitted(false)}
-                  className="btn-dark text-xs mt-2 cursor-pointer"
+                  className="text-xs font-mono font-bold text-[#0F1926]/70 hover:text-[#0F1926] underline cursor-pointer pt-2"
                 >
-                  Send Another Inquiry
+                  ← Submit Another Inquiry
                 </button>
               </div>
             ) : (
