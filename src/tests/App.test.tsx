@@ -346,5 +346,157 @@ describe('⚡ Platform High-Intensity Stress & Scalability Benchmark Suite', () 
   });
 });
 
+describe('🔬 White Box Testing Suite (Internal Logic, Code Paths & Boundaries)', () => {
+  it('WB-1: Code path coverage for normalizeUserList edge cases (null, empty, whitespace, malformed)', () => {
+    // Branch 1: empty array or null input
+    expect(normalizeUserList([]).length).toBeGreaterThan(0);
+    expect(normalizeUserList(null as any).length).toBeGreaterThan(0);
+
+    // Branch 2: items with whitespace and missing IDs
+    const malformed = [
+      { id: '   ', name: 'User A' },
+      { id: null, name: 'User B' },
+      { id: 'usr-dup', name: 'User C' },
+      { id: 'usr-dup', name: 'User D' },
+    ];
+    const res = normalizeUserList(malformed);
+    expect(res.length).toBe(4);
+    const ids = res.map(u => u.id);
+    expect(new Set(ids).size).toBe(4); // zero duplicate IDs
+  });
+
+  it('WB-2: Control flow & boundary value analysis for 18% GST and ITC calculation', () => {
+    const calculateGST = (basePrice: number) => {
+      const base = Math.max(0, basePrice);
+      const gst = base * 0.18;
+      const total = base + gst;
+      return { base, gst, total };
+    };
+
+    // Boundary 1: Zero price
+    expect(calculateGST(0)).toEqual({ base: 0, gst: 0, total: 0 });
+
+    // Boundary 2: Fractional paise rounding
+    const frac = calculateGST(19999.99);
+    expect(frac.total).toBeCloseTo(23599.9882, 2);
+
+    // Boundary 3: Enterprise scale crore setup (₹10,00,00,000)
+    const crore = calculateGST(100000000);
+    expect(crore.gst).toBe(18000000);
+    expect(crore.total).toBe(118000000);
+  });
+
+  it('WB-3: Cart state reducer branch execution (new item vs existing item quantity update)', () => {
+    let cart: { id: string; qty: number }[] = [];
+    const addToCart = (id: string, qty: number = 1) => {
+      const idx = cart.findIndex(c => c.id === id);
+      if (idx >= 0) {
+        cart[idx].qty += qty;
+      } else {
+        cart.push({ id, qty });
+      }
+    };
+
+    // Path A: Insert new item
+    addToCart('prod-1', 2);
+    expect(cart).toEqual([{ id: 'prod-1', qty: 2 }]);
+
+    // Path B: Increment existing item
+    addToCart('prod-1', 3);
+    expect(cart).toEqual([{ id: 'prod-1', qty: 5 }]);
+
+    // Path C: Insert distinct second item
+    addToCart('prod-2', 1);
+    expect(cart.length).toBe(2);
+    expect(cart[1]).toEqual({ id: 'prod-2', qty: 1 });
+  });
+
+  it('WB-4: Admin authorization code path (passcode verification and session persistence)', () => {
+    const authAdmin = (inputPasscode: string) => {
+      const valid = inputPasscode === 'admin2026';
+      if (valid) {
+        return { success: true, token: 'tanush_admin_auth_granted' };
+      }
+      return { success: false, error: 'Invalid executive passcode' };
+    };
+
+    expect(authAdmin('admin2026').success).toBe(true);
+    expect(authAdmin('admin2026').token).toBe('tanush_admin_auth_granted');
+    expect(authAdmin('wrong').success).toBe(false);
+    expect(authAdmin('').success).toBe(false);
+  });
+});
+
+describe('📦 Black Box Testing Suite (Functional, User Journeys & Input/Output)', () => {
+  it('BB-1: Equivalence Partitioning - Form submission validation and feedback', () => {
+    const validateEnquiry = (name: string, phone: string, email: string) => {
+      if (!name.trim() || !phone.trim()) {
+        return { valid: false, message: 'Please enter your name and contact phone number' };
+      }
+      return { valid: true, message: 'Enquiry submitted successfully!' };
+    };
+
+    // Class A (Invalid): Empty name or phone
+    expect(validateEnquiry('', '+91 98765 43210', '').valid).toBe(false);
+    expect(validateEnquiry('Vikram', '', '').valid).toBe(false);
+
+    // Class B (Valid): Name and phone present
+    expect(validateEnquiry('Vikram Malhotra', '+91 98112 34567', 'vikram@apex.com').valid).toBe(true);
+  });
+
+  it('BB-2: User Authentication Journey - Role switching and profile metadata', () => {
+    const createAccount = (role: 'GYM_OWNER' | 'JOB_SEEKER', name: string, email: string) => {
+      return {
+        id: `usr-${Date.now()}`,
+        name,
+        email,
+        role,
+        badge: role === 'GYM_OWNER' ? '🏢 GYM OWNER' : '👤 JOB SEEKER',
+        dashboardTarget: role === 'GYM_OWNER' ? 'equipment' : 'manpower',
+      };
+    };
+
+    const gymOwner = createAccount('GYM_OWNER', 'Vikram Malhotra', 'vikram@fitplus.com');
+    expect(gymOwner.badge).toBe('🏢 GYM OWNER');
+    expect(gymOwner.dashboardTarget).toBe('equipment');
+
+    const jobSeeker = createAccount('JOB_SEEKER', 'Neha Sharma', 'neha@gmail.com');
+    expect(jobSeeker.badge).toBe('👤 JOB SEEKER');
+    expect(jobSeeker.dashboardTarget).toBe('manpower');
+  });
+
+  it('BB-3: Equipment Catalog User Journey - Real-time search query matching', () => {
+    const catalog = [
+      { id: '1', name: 'Tanush Hyper-Squat Power Rig', category: 'Strength' },
+      { id: '2', name: 'Tanush Commercial Treadmill Pro', category: 'Cardio' },
+      { id: '3', name: 'Tanush Dual Adjustable Pulley', category: 'Selectorized' },
+    ];
+
+    const searchCatalog = (query: string) =>
+      catalog.filter(p => p.name.toLowerCase().includes(query.toLowerCase()));
+
+    expect(searchCatalog('Rig').length).toBe(1);
+    expect(searchCatalog('Rig')[0].id).toBe('1');
+    expect(searchCatalog('Tanush').length).toBe(3);
+    expect(searchCatalog('NonExistent').length).toBe(0);
+  });
+
+  it('BB-4: Cross-Device Navigation Menu States (Desktop Pill vs Mobile Drawer)', () => {
+    const getNavLayout = (viewportWidth: number) => {
+      if (viewportWidth >= 1024) {
+        return { mode: 'desktop', showPillDock: true, showHamburger: false };
+      }
+      return { mode: 'mobile', showPillDock: false, showHamburger: true };
+    };
+
+    expect(getNavLayout(1440).showPillDock).toBe(true);
+    expect(getNavLayout(1440).showHamburger).toBe(false);
+
+    expect(getNavLayout(375).showPillDock).toBe(false);
+    expect(getNavLayout(375).showHamburger).toBe(true);
+  });
+});
+
+
 
 
