@@ -139,12 +139,16 @@ export const AuthModal: React.FC<AuthModalProps> = ({
 
   return (
     <AnimatePresence>
-      <div className="fixed inset-0 z-50 overflow-y-auto bg-[#0C1015]/85 backdrop-blur-md flex items-center justify-center p-3 sm:p-6 font-mono">
+      <div
+        data-lenis-prevent
+        className="fixed inset-0 z-50 bg-[#0C1015]/85 backdrop-blur-md flex items-center justify-center p-3 sm:p-6 font-mono overflow-y-auto"
+      >
         <motion.div
           initial={{ opacity: 0, scale: 0.95, y: 10 }}
           animate={{ opacity: 1, scale: 1, y: 0 }}
           exit={{ opacity: 0, scale: 0.95, y: 10 }}
-          className="bg-[#E8E8E8] rounded-2xl max-w-md w-full p-5 sm:p-8 shadow-2xl border border-[#2A2A2B]/20 relative my-auto max-h-[94vh] flex flex-col text-[#0F1926] overflow-hidden"
+          data-lenis-prevent
+          className="bg-[#E8E8E8] rounded-2xl max-w-md w-full p-5 sm:p-8 shadow-2xl border border-[#2A2A2B]/20 relative my-auto max-h-[90vh] flex flex-col text-[#0F1926] overflow-hidden"
         >
           {/* Fixed Top Header with High-Contrast Close Button */}
           <div className="flex items-start justify-between gap-4 pb-4 border-b border-[#0F1926]/10 shrink-0">
@@ -177,7 +181,10 @@ export const AuthModal: React.FC<AuthModalProps> = ({
           </div>
 
           {/* Scrollable Modal Content Body */}
-          <div className="overflow-y-auto pr-1 pt-4 flex-1">
+          <div
+            data-lenis-prevent
+            className="overflow-y-auto overscroll-contain modal-scrollbar pr-2 pt-4 pb-2 flex-1"
+          >
             {/* Toggle Tabs (Login vs Register) */}
             <div className="flex bg-[#0F1926]/10 p-1 rounded-xl mb-5">
               <button

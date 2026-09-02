@@ -329,3 +329,30 @@ html.lenis, html.lenis body {
   pointer-events: none;
 }
 
+/* Custom Sleek Modal Scrollbar */
+.modal-scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: #2A2A2B #D0CFCA;
+}
+
+.modal-scrollbar::-webkit-scrollbar {
+  width: 6px;
+}
+
+.modal-scrollbar::-webkit-scrollbar-track {
+  background: rgba(42, 42, 43, 0.08);
+  border-radius: 9999px;
+  margin: 6px 0;
+}
+
+.modal-scrollbar::-webkit-scrollbar-thumb {
+  background: #2A2A2B;
+  border-radius: 9999px;
+  opacity: 0.8;
+}
+
+.modal-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #0F1926;
+}
+
+
