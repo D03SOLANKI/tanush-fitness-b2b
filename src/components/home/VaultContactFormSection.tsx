@@ -73,13 +73,9 @@ export const VaultContactFormSection: React.FC = () => {
       console.log('Submission note:', err);
     }
 
-    // 2. Trigger instant WhatsApp to +91 73832 49680
-    const waUrl = getWhatsAppUrl();
-    window.open(waUrl, '_blank', 'noopener,noreferrer');
-
     setIsSubmitting(false);
     setIsSubmitted(true);
-    showToast('Enquiry routed to Info@tanushfitness.com and +91 73832 49680!', 'success');
+    showToast('Enquiry submitted successfully! Our Outfitting Director will contact you shortly.', 'success');
   };
 
   return (
