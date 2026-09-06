@@ -471,9 +471,8 @@ export const EquipmentPage: React.FC = () => {
                 <div className="lg:col-span-6 space-y-4">
                   {/* Scrollable Description Box */}
                   <div>
-                    <div className="text-[10px] font-bold uppercase tracking-wider text-[#2A2A2B]/70 mb-1.5 flex items-center justify-between font-mono">
-                      <span>Equipment Overview</span>
-                      <span className="text-[9px] text-[#0F1926] font-bold uppercase bg-white/80 px-2 py-0.5 rounded border border-[#0F1926]/10">Scroll for details ↓</span>
+                    <div className="text-[10px] font-bold uppercase tracking-wider text-[#2A2A2B]/70 mb-1.5 font-mono">
+                      Equipment Overview
                     </div>
                     <div
                       onWheel={handleNestedScrollWheel}
@@ -495,11 +494,10 @@ export const EquipmentPage: React.FC = () => {
                   <div className="bg-white rounded-xl border border-[#0F1926]/15 shadow-sm overflow-hidden">
                     <div className="px-3.5 py-2 bg-[#0F1926]/5 border-b border-[#0F1926]/10 flex items-center justify-between">
                       <span className="text-[10px] font-bold uppercase tracking-wider text-[#0F1926] font-mono">
-                        Engineering Specifications
+                        Specifications
                       </span>
-                      <span className="text-[9px] font-mono text-[#0F1926] font-bold uppercase bg-white px-2 py-0.5 rounded border border-[#0F1926]/10 shadow-2xs flex items-center gap-1">
-                        <span>Scroll Full Specs</span>
-                        <span>↓</span>
+                      <span className="text-[9px] font-mono text-[#2A2A2B]/60 uppercase font-semibold">
+                        Commercial Grade
                       </span>
                     </div>
                     <div
