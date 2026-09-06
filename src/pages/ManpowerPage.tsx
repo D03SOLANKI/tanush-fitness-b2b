@@ -6,7 +6,6 @@ import {
   Users,
   Briefcase,
   Plus,
-  Search,
   MapPin,
   CheckCircle2,
   UserCheck,
@@ -30,7 +29,6 @@ export const ManpowerPage: React.FC = () => {
 
   const [activeUserRole, setActiveUserRole] = useState<'candidate' | 'employer'>('candidate');
   const [selectedCategory, setSelectedCategory] = useState<string>('all');
-  const [searchQuery, setSearchQuery] = useState<string>('');
 
   // Modals
   const [isApplyModalOpen, setIsApplyModalOpen] = useState(false);
@@ -287,14 +285,6 @@ export const ManpowerPage: React.FC = () => {
 
   const filteredServices = MANPOWER_SERVICES.filter(serv => {
     if (selectedCategory !== 'all' && serv.category !== selectedCategory) return false;
-    if (searchQuery) {
-      const q = searchQuery.toLowerCase();
-      const matchTitle = serv.title.toLowerCase().includes(q);
-      const matchRoles = serv.rolesIncluded.toLowerCase().includes(q);
-      const matchDesc = serv.description.toLowerCase().includes(q);
-      const matchCat = serv.category.toLowerCase().includes(q);
-      if (!matchTitle && !matchRoles && !matchDesc && !matchCat) return false;
-    }
     return true;
   });
 
@@ -360,35 +350,22 @@ export const ManpowerPage: React.FC = () => {
       <MarqueeStrip theme="white" speed="slow" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 space-y-10">
-        {/* Search & Category Filter Strip */}
-        <div className="flex flex-col md:flex-row items-stretch md:items-center justify-between gap-4 border-b border-[#2A2A2B] pb-6">
-          <div className="relative flex-1 max-w-md">
-            <Search className="w-4 h-4 absolute left-3.5 top-1/2 -translate-y-1/2 text-[#D0CFCA]" />
-            <input
-              type="text"
-              placeholder="Search category (e.g. Management, Yoga, Physiotherapist, Receptionist)..."
-              value={searchQuery}
-              onChange={e => setSearchQuery(e.target.value)}
-              className="w-full bg-[#0C1015] border border-[#2A2A2B] rounded-full pl-10 pr-4 py-2.5 text-xs text-[#E8E8E8] placeholder-[#D0CFCA] focus:outline-none focus:border-[#E8E8E8] transition-colors"
-            />
-          </div>
-
-          <div className="flex items-center gap-2 overflow-x-auto pb-2 scrollbar-none">
-            {CATEGORY_TABS.map((cat) => (
-              <button
-                key={cat}
-                type="button"
-                onClick={() => setSelectedCategory(cat)}
-                className={`px-4 py-2 rounded-full text-xs font-mono uppercase tracking-wider transition whitespace-nowrap cursor-pointer ${
-                  selectedCategory === cat
-                    ? 'bg-[#E8E8E8] text-[#0F1926] font-bold shadow-md'
-                    : 'bg-[#0C1015] text-[#D0CFCA] border border-[#2A2A2B] hover:border-[#D0CFCA] hover:text-white'
-                }`}
-              >
-                {cat === 'all' ? 'All Services' : cat}
-              </button>
-            ))}
-          </div>
+        {/* Clean Category Filter Strip */}
+        <div className="flex items-center justify-start lg:justify-center gap-2 overflow-x-auto pb-4 border-b border-[#2A2A2B] scrollbar-none">
+          {CATEGORY_TABS.map((cat) => (
+            <button
+              key={cat}
+              type="button"
+              onClick={() => setSelectedCategory(cat)}
+              className={`px-4 py-2 rounded-full text-xs font-mono uppercase tracking-wider transition whitespace-nowrap cursor-pointer ${
+                selectedCategory === cat
+                  ? 'bg-[#E8E8E8] text-[#0F1926] font-bold shadow-md'
+                  : 'bg-[#0C1015] text-[#D0CFCA] border border-[#2A2A2B] hover:border-[#D0CFCA] hover:text-white'
+              }`}
+            >
+              {cat === 'all' ? 'All Services' : cat}
+            </button>
+          ))}
         </div>
 
         {/* 7 MANPOWER VISUAL SERVICES GRID (#E8E8E8 LIGHT CARDS) */}
