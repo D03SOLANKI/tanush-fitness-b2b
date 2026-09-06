@@ -391,7 +391,8 @@ export const EquipmentPage: React.FC = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-50 overflow-y-auto bg-black/80 backdrop-blur-md flex items-center justify-center p-4 sm:p-6 font-mono"
+            data-lenis-prevent="true"
+            className="fixed inset-0 z-50 overflow-y-auto bg-black/80 backdrop-blur-md flex items-center justify-center p-4 sm:p-6 font-mono overscroll-contain"
             onClick={() => setSelectedProduct(null)}
           >
             <motion.div
@@ -399,7 +400,8 @@ export const EquipmentPage: React.FC = () => {
               animate={{ scale: 1, opacity: 1, y: 0 }}
               exit={{ scale: 0.95, opacity: 0, y: 15 }}
               onClick={(e) => e.stopPropagation()}
-              className="bg-[#E8E8E8] text-[#0F1926] rounded-2xl max-w-4xl lg:max-w-5xl w-full p-5 sm:p-7 md:p-8 shadow-2xl border border-[#2A2A2B]/20 relative my-6 sm:my-8 max-h-[92vh] overflow-y-auto"
+              data-lenis-prevent="true"
+              className="bg-[#E8E8E8] text-[#0F1926] rounded-2xl max-w-4xl lg:max-w-5xl w-full p-5 sm:p-7 md:p-8 shadow-2xl border border-[#2A2A2B]/20 relative my-6 sm:my-8 max-h-[92vh] overflow-y-auto overscroll-contain touch-pan-y"
             >
               <div className="flex items-start justify-between gap-4 pb-5 border-b border-[#0F1926]/15">
                 <div>
@@ -475,6 +477,7 @@ export const EquipmentPage: React.FC = () => {
                       Equipment Overview
                     </div>
                     <div
+                      data-lenis-prevent="true"
                       onWheel={handleNestedScrollWheel}
                       className="bg-white/90 rounded-xl p-3 sm:p-3.5 border border-[#0F1926]/15 shadow-sm max-h-24 sm:max-h-28 overflow-y-auto overscroll-contain touch-pan-y light-scrollbar text-xs text-[#2A2A2B] font-sans leading-relaxed space-y-1.5"
                     >
@@ -501,6 +504,7 @@ export const EquipmentPage: React.FC = () => {
                       </span>
                     </div>
                     <div
+                      data-lenis-prevent="true"
                       onWheel={handleNestedScrollWheel}
                       className="divide-y divide-[#0F1926]/10 font-mono text-xs max-h-40 sm:max-h-44 overflow-y-auto overscroll-contain touch-pan-y light-scrollbar"
                     >

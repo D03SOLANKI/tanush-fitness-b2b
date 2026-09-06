@@ -51,11 +51,12 @@ export const EquipmentCompareModal: React.FC<EquipmentCompareModalProps> = ({
 
   return (
     <AnimatePresence>
-      <div className="fixed inset-0 z-50 overflow-y-auto bg-black/80 backdrop-blur-md flex items-center justify-center p-4">
+      <div data-lenis-prevent="true" className="fixed inset-0 z-50 overflow-y-auto bg-black/80 backdrop-blur-md flex items-center justify-center p-4">
         <motion.div
           initial={{ scale: 0.95, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
           exit={{ scale: 0.95, opacity: 0 }}
+          data-lenis-prevent="true"
           className="bg-[#E8E8E8] text-[#0F1926] rounded-2xl max-w-5xl w-full p-6 sm:p-8 overflow-hidden shadow-2xl border border-[#2A2A2B]/20 relative my-8"
         >
           <button
