@@ -452,7 +452,10 @@ export const EquipmentPage: React.FC = () => {
                       <span>Equipment Overview</span>
                       <span className="text-[9px] text-[#0F1926] font-bold uppercase bg-white/80 px-2 py-0.5 rounded border border-[#0F1926]/10">Scroll for details ↓</span>
                     </div>
-                    <div className="bg-white/90 rounded-xl p-3 sm:p-3.5 border border-[#0F1926]/15 shadow-sm max-h-24 sm:max-h-28 overflow-y-auto light-scrollbar text-xs text-[#2A2A2B] font-sans leading-relaxed space-y-1.5">
+                    <div
+                      onWheel={(e) => e.stopPropagation()}
+                      className="bg-white/90 rounded-xl p-3 sm:p-3.5 border border-[#0F1926]/15 shadow-sm max-h-24 sm:max-h-28 overflow-y-auto overscroll-contain touch-pan-y light-scrollbar text-xs text-[#2A2A2B] font-sans leading-relaxed space-y-1.5"
+                    >
                       {selectedProduct.description ? (
                         selectedProduct.description.split(/\\n|\n/).map((para: string, pIdx: number) => (
                           <p key={pIdx} className="leading-relaxed">
@@ -476,7 +479,10 @@ export const EquipmentPage: React.FC = () => {
                         <span>↓</span>
                       </span>
                     </div>
-                    <div className="divide-y divide-[#0F1926]/10 font-mono text-xs max-h-36 sm:max-h-40 overflow-y-auto light-scrollbar">
+                    <div
+                      onWheel={(e) => e.stopPropagation()}
+                      className="divide-y divide-[#0F1926]/10 font-mono text-xs max-h-40 sm:max-h-44 overflow-y-auto overscroll-contain touch-pan-y light-scrollbar"
+                    >
                       {selectedProduct.specs && Object.entries(selectedProduct.specs).map(([key, val]) => (
                         <div key={key} className="grid grid-cols-12 gap-2 px-3.5 py-2 hover:bg-[#0F1926]/[0.02] transition-colors items-start">
                           <span className="col-span-5 text-[#2A2A2B]/70 uppercase text-[10px] font-bold tracking-wider pt-0.5">
