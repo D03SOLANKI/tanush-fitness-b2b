@@ -78,6 +78,29 @@ export const EquipmentPage: React.FC = () => {
     });
   }, [activeCategory, selectedBrand, activeApplication, searchQuery]);
 
+  React.useEffect(() => {
+    if (selectedProduct) {
+      const originalOverflow = document.body.style.overflow;
+      document.body.style.overflow = 'hidden';
+      return () => {
+        document.body.style.overflow = originalOverflow;
+      };
+    }
+  }, [selectedProduct]);
+
+  const handleNestedScrollWheel = (e: React.WheelEvent<HTMLDivElement>) => {
+    e.stopPropagation();
+    const target = e.currentTarget;
+    const isDown = e.deltaY > 0;
+    const isUp = e.deltaY < 0;
+    const isAtBottom = target.scrollHeight - target.scrollTop <= target.clientHeight + 1;
+    const isAtTop = target.scrollTop <= 0;
+
+    if ((isDown && isAtBottom) || (isUp && isAtTop)) {
+      e.preventDefault();
+    }
+  };
+
   const handleOpenDetailModal = (product: Product) => {
     setSelectedProduct(product);
     setSelectedImage(0);
@@ -453,7 +476,7 @@ export const EquipmentPage: React.FC = () => {
                       <span className="text-[9px] text-[#0F1926] font-bold uppercase bg-white/80 px-2 py-0.5 rounded border border-[#0F1926]/10">Scroll for details ↓</span>
                     </div>
                     <div
-                      onWheel={(e) => e.stopPropagation()}
+                      onWheel={handleNestedScrollWheel}
                       className="bg-white/90 rounded-xl p-3 sm:p-3.5 border border-[#0F1926]/15 shadow-sm max-h-24 sm:max-h-28 overflow-y-auto overscroll-contain touch-pan-y light-scrollbar text-xs text-[#2A2A2B] font-sans leading-relaxed space-y-1.5"
                     >
                       {selectedProduct.description ? (
@@ -480,7 +503,7 @@ export const EquipmentPage: React.FC = () => {
                       </span>
                     </div>
                     <div
-                      onWheel={(e) => e.stopPropagation()}
+                      onWheel={handleNestedScrollWheel}
                       className="divide-y divide-[#0F1926]/10 font-mono text-xs max-h-40 sm:max-h-44 overflow-y-auto overscroll-contain touch-pan-y light-scrollbar"
                     >
                       {selectedProduct.specs && Object.entries(selectedProduct.specs).map(([key, val]) => (

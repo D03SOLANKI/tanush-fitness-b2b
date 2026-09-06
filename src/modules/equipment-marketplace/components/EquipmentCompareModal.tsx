@@ -19,6 +19,29 @@ export const EquipmentCompareModal: React.FC<EquipmentCompareModalProps> = ({
 }) => {
   const { addToEnquiryCart, setIsEnquiryCartOpen } = useApp();
 
+  React.useEffect(() => {
+    if (isOpen) {
+      const originalOverflow = document.body.style.overflow;
+      document.body.style.overflow = 'hidden';
+      return () => {
+        document.body.style.overflow = originalOverflow;
+      };
+    }
+  }, [isOpen]);
+
+  const handleNestedScrollWheel = (e: React.WheelEvent<HTMLDivElement>) => {
+    e.stopPropagation();
+    const target = e.currentTarget;
+    const isDown = e.deltaY > 0;
+    const isUp = e.deltaY < 0;
+    const isAtBottom = target.scrollHeight - target.scrollTop <= target.clientHeight + 1;
+    const isAtTop = target.scrollTop <= 0;
+
+    if ((isDown && isAtBottom) || (isUp && isAtTop)) {
+      e.preventDefault();
+    }
+  };
+
   if (!isOpen || products.length === 0) return null;
 
   // Extract all unique spec keys across selected products
@@ -56,7 +79,10 @@ export const EquipmentCompareModal: React.FC<EquipmentCompareModalProps> = ({
           </div>
 
           {/* Comparison Matrix Table */}
-          <div className="overflow-x-auto border border-[#0F1926]/15 rounded-xl bg-white">
+          <div
+            onWheel={handleNestedScrollWheel}
+            className="overflow-x-auto max-h-[60vh] overflow-y-auto overscroll-contain touch-pan-y light-scrollbar border border-[#0F1926]/15 rounded-xl bg-white"
+          >
             <table className="w-full text-left border-collapse">
               <thead>
                 <tr className="bg-[#0F1926]/5 border-b border-[#0F1926]/15">
