@@ -140,7 +140,9 @@ export const CatalogManagerTab: React.FC = () => {
                 <tr key={p.id} className="odd:bg-[#F4F9FF] even:bg-white hover:bg-[#E4F0FF] transition">
                   <td className="py-4 px-6">
                     <div className="flex items-center gap-3">
-                      <img src={p.image} alt={p.name} className="w-12 h-12 rounded-lg object-cover bg-slate-100 border border-slate-200 shrink-0" />
+                      <div className="w-12 h-12 rounded-lg bg-slate-900 border border-slate-700 flex items-center justify-center p-1 shrink-0">
+                        <img src={p.image} alt={p.name} className="max-w-full max-h-full object-contain" />
+                      </div>
                       <div>
                         <div className="font-bold text-slate-900">{p.name}</div>
                         <div className="text-xs text-slate-500 font-medium font-mono">ID: {p.id}</div>

@@ -227,11 +227,13 @@ export const EnquiryCartDrawer: React.FC = () => {
                       {enquiryCart.map(item => (
                         <div key={item.product.id} className="p-4 flex items-center justify-between gap-3">
                           <div className="flex items-center gap-3">
-                            <img
-                              src={item.product.image || 'https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=300&q=80'}
-                              alt={item.product.name}
-                              className="w-12 h-12 rounded-lg object-cover border border-[#2A2A2B]"
-                            />
+                            <div className="w-12 h-12 rounded-lg bg-[#0F1926] border border-[#2A2A2B] flex items-center justify-center p-1 shrink-0">
+                              <img
+                                src={item.product.image || 'https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=300&q=80'}
+                                alt={item.product.name}
+                                className="max-w-full max-h-full object-contain"
+                              />
+                            </div>
                             <div>
                               <div className="font-satoshi text-xs font-bold text-[#E8E8E8] line-clamp-1">{item.product.name}</div>
                               <div className="text-[10px] text-[#D0CFCA] font-mono">

@@ -36,14 +36,14 @@ export const FeaturedProducts: React.FC = () => {
                 className="group rounded-none bg-[#0D1118] border border-white/10 hover:border-white/20 overflow-hidden flex flex-col justify-between shadow-sm"
               >
                 {/* Image & Badges */}
-                <div className="relative aspect-[16/10] bg-[#090C10] overflow-hidden border-b border-white/10">
+                <div className="relative aspect-[16/11] bg-[#090C10] overflow-hidden border-b border-white/10 flex items-center justify-center p-4">
                   <img
                     src={product.image}
                     alt={product.name}
                     onError={(e) => {
                       (e.target as HTMLImageElement).src = fallbackImage;
                     }}
-                    className="w-full h-full object-cover group-hover:scale-102 transition-transform duration-300"
+                    className="max-w-full max-h-full object-contain group-hover:scale-105 transition-transform duration-500 drop-shadow-xl"
                   />
 
                   <button

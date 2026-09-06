@@ -24,7 +24,7 @@ export const PRODUCTS: Product[] = [
     "gallery": [
       "/images/equipment/cardio/MX_ES climbmill_TOUCHXL_Matte Blk AW_hero.png"
     ],
-    "description": "Heavy-duty commercial stair climber featuring smart sweat-management architecture and deep non-slip revolving steps.\\nEngineered for high-intensity lower-body conditioning and metabolic endurance in high-traffic gym environments.",
+    "description": "Heavy-duty commercial stair climber featuring smart sweat-management architecture and deep non-slip revolving steps. Engineered for high-intensity lower-body conditioning and metabolic endurance in high-traffic gym environments.",
     "specs": {
       "Frame Construction": "Heavy 11-Gauge Structural Steel Tubing (2.5 - 3.0mm)",
       "Finish": "Proprietary Dual-Coat Electrostatic Powder Coating",
@@ -74,7 +74,7 @@ export const PRODUCTS: Product[] = [
     "gallery": [
       "/images/equipment/cardio/MX_ES elliptical_TOUCH_Matte Blk AW_hero.png"
     ],
-    "description": "Patented ergonomic suspension design engineered with constant-rate acceleration and whisper-quiet magnetic resistance.\\nProvides joint-friendly cardiovascular performance and variable incline control for all fitness levels.",
+    "description": "Patented ergonomic suspension design engineered with constant-rate acceleration and whisper-quiet magnetic resistance. Provides joint-friendly cardiovascular performance and variable incline control for all fitness levels.",
     "specs": {
       "Frame Construction": "Heavy 11-Gauge Structural Steel Tubing (2.5 - 3.0mm)",
       "Finish": "Proprietary Dual-Coat Electrostatic Powder Coating",
@@ -124,7 +124,7 @@ export const PRODUCTS: Product[] = [
     "gallery": [
       "/images/equipment/cardio/MX_ES recumbent cycle_TOUCH_Matte Blk AW_hero.png"
     ],
-    "description": "Commercial-grade magnetic resistance flywheel delivering authentic road-feel, ergonomic multi-position handlebars, and instant wattage tracking.\\nEngineered for low-maintenance durability across demanding commercial studio and cardio floor zones.",
+    "description": "Commercial-grade magnetic resistance flywheel delivering authentic road-feel, ergonomic multi-position handlebars, and instant wattage tracking. Engineered for low-maintenance durability across demanding commercial studio and cardio floor zones.",
     "specs": {
       "Frame Construction": "Heavy 11-Gauge Structural Steel Tubing (2.5 - 3.0mm)",
       "Finish": "Proprietary Dual-Coat Electrostatic Powder Coating",
@@ -173,7 +173,7 @@ export const PRODUCTS: Product[] = [
     "gallery": [
       "/images/equipment/cardio/MX_ES stepper_TOUCH_Matte Blk AW_hero.png"
     ],
-    "description": "Heavy-duty commercial stair climber featuring smart sweat-management architecture and deep non-slip revolving steps.\\nEngineered for high-intensity lower-body conditioning and metabolic endurance in high-traffic gym environments.",
+    "description": "Heavy-duty commercial stair climber featuring smart sweat-management architecture and deep non-slip revolving steps. Engineered for high-intensity lower-body conditioning and metabolic endurance in high-traffic gym environments.",
     "specs": {
       "Frame Construction": "Heavy 11-Gauge Structural Steel Tubing (2.5 - 3.0mm)",
       "Finish": "Proprietary Dual-Coat Electrostatic Powder Coating",
@@ -219,7 +219,7 @@ export const PRODUCTS: Product[] = [
     "gallery": [
       "/images/equipment/cardio/MX_ES treadmill_LED_Matte Blk_hero.png"
     ],
-    "description": "Engineered for heavy continuous commercial duty with dynamic shock-absorbing cushioning, industrial AC motor drive, and responsive console feedback.\\nDelivers ultra-smooth acceleration and biometric tracking for premier fitness facilities.",
+    "description": "Engineered for heavy continuous commercial duty with dynamic shock-absorbing cushioning, industrial AC motor drive, and responsive console feedback. Delivers ultra-smooth acceleration and biometric tracking for premier fitness facilities.",
     "specs": {
       "Frame Construction": "Heavy 11-Gauge Structural Steel Tubing (2.5 - 3.0mm)",
       "Finish": "Proprietary Dual-Coat Electrostatic Powder Coating",
@@ -269,7 +269,7 @@ export const PRODUCTS: Product[] = [
     "gallery": [
       "/images/equipment/cardio/MX_ES upright cycle_TOUCH_Matte Blk AW_hero.png"
     ],
-    "description": "Commercial-grade magnetic resistance flywheel delivering authentic road-feel, ergonomic multi-position handlebars, and instant wattage tracking.\\nEngineered for low-maintenance durability across demanding commercial studio and cardio floor zones.",
+    "description": "Commercial-grade magnetic resistance flywheel delivering authentic road-feel, ergonomic multi-position handlebars, and instant wattage tracking. Engineered for low-maintenance durability across demanding commercial studio and cardio floor zones.",
     "specs": {
       "Frame Construction": "Heavy 11-Gauge Structural Steel Tubing (2.5 - 3.0mm)",
       "Finish": "Proprietary Dual-Coat Electrostatic Powder Coating",
@@ -318,7 +318,7 @@ export const PRODUCTS: Product[] = [
     "gallery": [
       "/images/equipment/cardio/MX_LS elliptical_TOUCH_Grpht AW hero.png"
     ],
-    "description": "Patented ergonomic suspension design engineered with constant-rate acceleration and whisper-quiet magnetic resistance.\\nProvides joint-friendly cardiovascular performance and variable incline control for all fitness levels.",
+    "description": "Patented ergonomic suspension design engineered with constant-rate acceleration and whisper-quiet magnetic resistance. Provides joint-friendly cardiovascular performance and variable incline control for all fitness levels.",
     "specs": {
       "Frame Construction": "Heavy 11-Gauge Structural Steel Tubing (2.5 - 3.0mm)",
       "Finish": "Proprietary Dual-Coat Electrostatic Powder Coating",
@@ -368,7 +368,7 @@ export const PRODUCTS: Product[] = [
     "gallery": [
       "/images/equipment/cardio/MX_LS recumbent cycle_TOUCH_Matte Blk AW_hero.png"
     ],
-    "description": "Commercial-grade magnetic resistance flywheel delivering authentic road-feel, ergonomic multi-position handlebars, and instant wattage tracking.\\nEngineered for low-maintenance durability across demanding commercial studio and cardio floor zones.",
+    "description": "Commercial-grade magnetic resistance flywheel delivering authentic road-feel, ergonomic multi-position handlebars, and instant wattage tracking. Engineered for low-maintenance durability across demanding commercial studio and cardio floor zones.",
     "specs": {
       "Frame Construction": "Heavy 11-Gauge Structural Steel Tubing (2.5 - 3.0mm)",
       "Finish": "Proprietary Dual-Coat Electrostatic Powder Coating",
@@ -417,7 +417,7 @@ export const PRODUCTS: Product[] = [
     "gallery": [
       "/images/equipment/cardio/MX_LS treadmill_LED_Grpht_hero.png"
     ],
-    "description": "Engineered for heavy continuous commercial duty with dynamic shock-absorbing cushioning, industrial AC motor drive, and responsive console feedback.\\nDelivers ultra-smooth acceleration and biometric tracking for premier fitness facilities.",
+    "description": "Engineered for heavy continuous commercial duty with dynamic shock-absorbing cushioning, industrial AC motor drive, and responsive console feedback. Delivers ultra-smooth acceleration and biometric tracking for premier fitness facilities.",
     "specs": {
       "Frame Construction": "Heavy 11-Gauge Structural Steel Tubing (2.5 - 3.0mm)",
       "Finish": "Proprietary Dual-Coat Electrostatic Powder Coating",
@@ -467,7 +467,7 @@ export const PRODUCTS: Product[] = [
     "gallery": [
       "/images/equipment/cardio/MX_LS upright cycle_LED_Matte Blk_hero.png"
     ],
-    "description": "Commercial-grade magnetic resistance flywheel delivering authentic road-feel, ergonomic multi-position handlebars, and instant wattage tracking.\\nEngineered for low-maintenance durability across demanding commercial studio and cardio floor zones.",
+    "description": "Commercial-grade magnetic resistance flywheel delivering authentic road-feel, ergonomic multi-position handlebars, and instant wattage tracking. Engineered for low-maintenance durability across demanding commercial studio and cardio floor zones.",
     "specs": {
       "Frame Construction": "Heavy 11-Gauge Structural Steel Tubing (2.5 - 3.0mm)",
       "Finish": "Proprietary Dual-Coat Electrostatic Powder Coating",
@@ -516,7 +516,7 @@ export const PRODUCTS: Product[] = [
     "gallery": [
       "/images/equipment/cardio/MX_PPS treadmill_TOUCHXL_Matte Blk AW_hero.png"
     ],
-    "description": "Engineered for heavy continuous commercial duty with dynamic shock-absorbing cushioning, industrial AC motor drive, and responsive console feedback.\\nDelivers ultra-smooth acceleration and biometric tracking for premier fitness facilities.",
+    "description": "Engineered for heavy continuous commercial duty with dynamic shock-absorbing cushioning, industrial AC motor drive, and responsive console feedback. Delivers ultra-smooth acceleration and biometric tracking for premier fitness facilities.",
     "specs": {
       "Frame Construction": "Heavy 11-Gauge Structural Steel Tubing (2.5 - 3.0mm)",
       "Finish": "Proprietary Dual-Coat Electrostatic Powder Coating",
@@ -566,7 +566,7 @@ export const PRODUCTS: Product[] = [
     "gallery": [
       "/images/equipment/cardio/MX_PS ascent lower body_LED_Matte Blk_hero.png"
     ],
-    "description": "Patented ergonomic suspension design engineered with constant-rate acceleration and whisper-quiet magnetic resistance.\\nProvides joint-friendly cardiovascular performance and variable incline control for all fitness levels.",
+    "description": "Patented ergonomic suspension design engineered with constant-rate acceleration and whisper-quiet magnetic resistance. Provides joint-friendly cardiovascular performance and variable incline control for all fitness levels.",
     "specs": {
       "Frame Construction": "Heavy 11-Gauge Structural Steel Tubing (2.5 - 3.0mm)",
       "Finish": "Proprietary Dual-Coat Electrostatic Powder Coating",
@@ -616,7 +616,7 @@ export const PRODUCTS: Product[] = [
     "gallery": [
       "/images/equipment/cardio/MX_PS climbmill_LED_Matte Blk_hero.png"
     ],
-    "description": "Heavy-duty commercial stair climber featuring smart sweat-management architecture and deep non-slip revolving steps.\\nEngineered for high-intensity lower-body conditioning and metabolic endurance in high-traffic gym environments.",
+    "description": "Heavy-duty commercial stair climber featuring smart sweat-management architecture and deep non-slip revolving steps. Engineered for high-intensity lower-body conditioning and metabolic endurance in high-traffic gym environments.",
     "specs": {
       "Frame Construction": "Heavy 11-Gauge Structural Steel Tubing (2.5 - 3.0mm)",
       "Finish": "Proprietary Dual-Coat Electrostatic Powder Coating",
@@ -666,7 +666,7 @@ export const PRODUCTS: Product[] = [
     "gallery": [
       "/images/equipment/cardio/MX_PS elliptical_LED_Matte Blk_hero.png"
     ],
-    "description": "Patented ergonomic suspension design engineered with constant-rate acceleration and whisper-quiet magnetic resistance.\\nProvides joint-friendly cardiovascular performance and variable incline control for all fitness levels.",
+    "description": "Patented ergonomic suspension design engineered with constant-rate acceleration and whisper-quiet magnetic resistance. Provides joint-friendly cardiovascular performance and variable incline control for all fitness levels.",
     "specs": {
       "Frame Construction": "Heavy 11-Gauge Structural Steel Tubing (2.5 - 3.0mm)",
       "Finish": "Proprietary Dual-Coat Electrostatic Powder Coating",
@@ -716,7 +716,7 @@ export const PRODUCTS: Product[] = [
     "gallery": [
       "/images/equipment/cardio/MX_PS hybrid cycle_LED_Matte Blk_hero.png"
     ],
-    "description": "Commercial-grade magnetic resistance flywheel delivering authentic road-feel, ergonomic multi-position handlebars, and instant wattage tracking.\\nEngineered for low-maintenance durability across demanding commercial studio and cardio floor zones.",
+    "description": "Commercial-grade magnetic resistance flywheel delivering authentic road-feel, ergonomic multi-position handlebars, and instant wattage tracking. Engineered for low-maintenance durability across demanding commercial studio and cardio floor zones.",
     "specs": {
       "Frame Construction": "Heavy 11-Gauge Structural Steel Tubing (2.5 - 3.0mm)",
       "Finish": "Proprietary Dual-Coat Electrostatic Powder Coating",
@@ -765,7 +765,7 @@ export const PRODUCTS: Product[] = [
     "gallery": [
       "/images/equipment/cardio/MX_PS treadmill_TOUCHXL_Matte Blk AW_hero.png"
     ],
-    "description": "Engineered for heavy continuous commercial duty with dynamic shock-absorbing cushioning, industrial AC motor drive, and responsive console feedback.\\nDelivers ultra-smooth acceleration and biometric tracking for premier fitness facilities.",
+    "description": "Engineered for heavy continuous commercial duty with dynamic shock-absorbing cushioning, industrial AC motor drive, and responsive console feedback. Delivers ultra-smooth acceleration and biometric tracking for premier fitness facilities.",
     "specs": {
       "Frame Construction": "Heavy 11-Gauge Structural Steel Tubing (2.5 - 3.0mm)",
       "Finish": "Proprietary Dual-Coat Electrostatic Powder Coating",
@@ -815,7 +815,7 @@ export const PRODUCTS: Product[] = [
     "gallery": [
       "/images/equipment/cardio/MX_PS upright cycle_TOUCH_Matte Blk AW_hero.png"
     ],
-    "description": "Commercial-grade magnetic resistance flywheel delivering authentic road-feel, ergonomic multi-position handlebars, and instant wattage tracking.\\nEngineered for low-maintenance durability across demanding commercial studio and cardio floor zones.",
+    "description": "Commercial-grade magnetic resistance flywheel delivering authentic road-feel, ergonomic multi-position handlebars, and instant wattage tracking. Engineered for low-maintenance durability across demanding commercial studio and cardio floor zones.",
     "specs": {
       "Frame Construction": "Heavy 11-Gauge Structural Steel Tubing (2.5 - 3.0mm)",
       "Finish": "Proprietary Dual-Coat Electrostatic Powder Coating",
@@ -864,7 +864,7 @@ export const PRODUCTS: Product[] = [
     "gallery": [
       "/images/equipment/strength/MX_AURA G3-MS40 INT 4-stack multi-station_Matte Blk_hero.png"
     ],
-    "description": "Heavy commercial strength machine engineered for biomechanically sound muscle isolation and joint-friendly motion arcs.\\nBuilt with 11-gauge steel tubing, electrostatic powder coating, and precision machined weight stacks.",
+    "description": "Heavy commercial strength machine engineered for biomechanically sound muscle isolation and joint-friendly motion arcs. Built with 11-gauge steel tubing, electrostatic powder coating, and precision machined weight stacks.",
     "specs": {
       "Frame Construction": "Heavy 11-Gauge Structural Steel Tubing (2.5 - 3.0mm)",
       "Finish": "Proprietary Dual-Coat Electrostatic Powder Coating",
@@ -913,7 +913,7 @@ export const PRODUCTS: Product[] = [
     "gallery": [
       "/images/equipment/strength/MX_AURA G3-MS50 INT 5-stack multi-station_Grpht_hero.png"
     ],
-    "description": "Heavy commercial strength machine engineered for biomechanically sound muscle isolation and joint-friendly motion arcs.\\nBuilt with 11-gauge steel tubing, electrostatic powder coating, and precision machined weight stacks.",
+    "description": "Heavy commercial strength machine engineered for biomechanically sound muscle isolation and joint-friendly motion arcs. Built with 11-gauge steel tubing, electrostatic powder coating, and precision machined weight stacks.",
     "specs": {
       "Frame Construction": "Heavy 11-Gauge Structural Steel Tubing (2.5 - 3.0mm)",
       "Finish": "Proprietary Dual-Coat Electrostatic Powder Coating",
@@ -962,7 +962,7 @@ export const PRODUCTS: Product[] = [
     "gallery": [
       "/images/equipment/strength/MX_AURA G3-MS51 lat pulldown_Matte Blk_hero.png"
     ],
-    "description": "Diverging movement plane delivers an authentic natural range of motion and superior latissimus dorsi muscle recruitment.\\nEquipped with ergonomic rotating handles, thigh stabilization rollers, and precision weight stacks.",
+    "description": "Diverging movement plane delivers an authentic natural range of motion and superior latissimus dorsi muscle recruitment. Equipped with ergonomic rotating handles, thigh stabilization rollers, and precision weight stacks.",
     "specs": {
       "Frame Construction": "Heavy 11-Gauge Structural Steel Tubing (2.5 - 3.0mm)",
       "Finish": "Proprietary Dual-Coat Electrostatic Powder Coating",
@@ -1011,7 +1011,7 @@ export const PRODUCTS: Product[] = [
     "gallery": [
       "/images/equipment/strength/MX_AURA G3-MS52 triceps pressdown_Matte Blk_hero.png"
     ],
-    "description": "Biomechanical converging axis kinematics engineered to mirror the natural human movement curve during pressing motions.\\nFeatures ultra-smooth incremental weight stack adjustments and heavy-duty commercial upholstery.",
+    "description": "Biomechanical converging axis kinematics engineered to mirror the natural human movement curve during pressing motions. Features ultra-smooth incremental weight stack adjustments and heavy-duty commercial upholstery.",
     "specs": {
       "Frame Construction": "Heavy 11-Gauge Structural Steel Tubing (2.5 - 3.0mm)",
       "Finish": "Proprietary Dual-Coat Electrostatic Powder Coating",
@@ -1060,7 +1060,7 @@ export const PRODUCTS: Product[] = [
     "gallery": [
       "/images/equipment/strength/MX_AURA G3-MS53 low row_Matte Blk_hero.png"
     ],
-    "description": "Diverging movement plane delivers an authentic natural range of motion and superior latissimus dorsi muscle recruitment.\\nEquipped with ergonomic rotating handles, thigh stabilization rollers, and precision weight stacks.",
+    "description": "Diverging movement plane delivers an authentic natural range of motion and superior latissimus dorsi muscle recruitment. Equipped with ergonomic rotating handles, thigh stabilization rollers, and precision weight stacks.",
     "specs": {
       "Frame Construction": "Heavy 11-Gauge Structural Steel Tubing (2.5 - 3.0mm)",
       "Finish": "Proprietary Dual-Coat Electrostatic Powder Coating",
@@ -1109,7 +1109,7 @@ export const PRODUCTS: Product[] = [
     "gallery": [
       "/images/equipment/strength/MX_AURA G3-MS80 INT 8-stack multi-station_Matte Blk_hero.png"
     ],
-    "description": "Heavy commercial strength machine engineered for biomechanically sound muscle isolation and joint-friendly motion arcs.\\nBuilt with 11-gauge steel tubing, electrostatic powder coating, and precision machined weight stacks.",
+    "description": "Heavy commercial strength machine engineered for biomechanically sound muscle isolation and joint-friendly motion arcs. Built with 11-gauge steel tubing, electrostatic powder coating, and precision machined weight stacks.",
     "specs": {
       "Frame Construction": "Heavy 11-Gauge Structural Steel Tubing (2.5 - 3.0mm)",
       "Finish": "Proprietary Dual-Coat Electrostatic Powder Coating",
@@ -1158,7 +1158,7 @@ export const PRODUCTS: Product[] = [
     "gallery": [
       "/images/equipment/strength/MX_AURA G3-S10 chest press_Matte Blk_hero.png"
     ],
-    "description": "Biomechanical converging axis kinematics engineered to mirror the natural human movement curve during pressing motions.\\nFeatures ultra-smooth incremental weight stack adjustments and heavy-duty commercial upholstery.",
+    "description": "Biomechanical converging axis kinematics engineered to mirror the natural human movement curve during pressing motions. Features ultra-smooth incremental weight stack adjustments and heavy-duty commercial upholstery.",
     "specs": {
       "Frame Construction": "Heavy 11-Gauge Structural Steel Tubing (2.5 - 3.0mm)",
       "Finish": "Proprietary Dual-Coat Electrostatic Powder Coating",
@@ -1207,7 +1207,7 @@ export const PRODUCTS: Product[] = [
     "gallery": [
       "/images/equipment/strength/MX_AURA G3-S12 pectoral fly_Matte Blk_hero.png"
     ],
-    "description": "Heavy commercial strength machine engineered for biomechanically sound muscle isolation and joint-friendly motion arcs.\\nBuilt with 11-gauge steel tubing, electrostatic powder coating, and precision machined weight stacks.",
+    "description": "Heavy commercial strength machine engineered for biomechanically sound muscle isolation and joint-friendly motion arcs. Built with 11-gauge steel tubing, electrostatic powder coating, and precision machined weight stacks.",
     "specs": {
       "Frame Construction": "Heavy 11-Gauge Structural Steel Tubing (2.5 - 3.0mm)",
       "Finish": "Proprietary Dual-Coat Electrostatic Powder Coating",
@@ -1256,7 +1256,7 @@ export const PRODUCTS: Product[] = [
     "gallery": [
       "/images/equipment/strength/MX_AURA G3-S13 converging chest press_Matte Blk_hero.png"
     ],
-    "description": "Biomechanical converging axis kinematics engineered to mirror the natural human movement curve during pressing motions.\\nFeatures ultra-smooth incremental weight stack adjustments and heavy-duty commercial upholstery.",
+    "description": "Biomechanical converging axis kinematics engineered to mirror the natural human movement curve during pressing motions. Features ultra-smooth incremental weight stack adjustments and heavy-duty commercial upholstery.",
     "specs": {
       "Frame Construction": "Heavy 11-Gauge Structural Steel Tubing (2.5 - 3.0mm)",
       "Finish": "Proprietary Dual-Coat Electrostatic Powder Coating",
@@ -1305,7 +1305,7 @@ export const PRODUCTS: Product[] = [
     "gallery": [
       "/images/equipment/strength/MX_AURA G3-S20 shoulder press_Matte Blk_hero.png"
     ],
-    "description": "Biomechanical converging axis kinematics engineered to mirror the natural human movement curve during pressing motions.\\nFeatures ultra-smooth incremental weight stack adjustments and heavy-duty commercial upholstery.",
+    "description": "Biomechanical converging axis kinematics engineered to mirror the natural human movement curve during pressing motions. Features ultra-smooth incremental weight stack adjustments and heavy-duty commercial upholstery.",
     "specs": {
       "Frame Construction": "Heavy 11-Gauge Structural Steel Tubing (2.5 - 3.0mm)",
       "Finish": "Proprietary Dual-Coat Electrostatic Powder Coating",
@@ -1354,7 +1354,7 @@ export const PRODUCTS: Product[] = [
     "gallery": [
       "/images/equipment/strength/MX_AURA G3-S21 lateral raise_Matte Blk_hero.png"
     ],
-    "description": "Diverging movement plane delivers an authentic natural range of motion and superior latissimus dorsi muscle recruitment.\\nEquipped with ergonomic rotating handles, thigh stabilization rollers, and precision weight stacks.",
+    "description": "Diverging movement plane delivers an authentic natural range of motion and superior latissimus dorsi muscle recruitment. Equipped with ergonomic rotating handles, thigh stabilization rollers, and precision weight stacks.",
     "specs": {
       "Frame Construction": "Heavy 11-Gauge Structural Steel Tubing (2.5 - 3.0mm)",
       "Finish": "Proprietary Dual-Coat Electrostatic Powder Coating",
@@ -1403,7 +1403,7 @@ export const PRODUCTS: Product[] = [
     "gallery": [
       "/images/equipment/strength/MX_AURA G3-S22-03 INT rear delt-fly_Matte Blk_hero.png"
     ],
-    "description": "Heavy commercial strength machine engineered for biomechanically sound muscle isolation and joint-friendly motion arcs.\\nBuilt with 11-gauge steel tubing, electrostatic powder coating, and precision machined weight stacks.",
+    "description": "Heavy commercial strength machine engineered for biomechanically sound muscle isolation and joint-friendly motion arcs. Built with 11-gauge steel tubing, electrostatic powder coating, and precision machined weight stacks.",
     "specs": {
       "Frame Construction": "Heavy 11-Gauge Structural Steel Tubing (2.5 - 3.0mm)",
       "Finish": "Proprietary Dual-Coat Electrostatic Powder Coating",
@@ -1452,7 +1452,7 @@ export const PRODUCTS: Product[] = [
     "gallery": [
       "/images/equipment/strength/MX_AURA G3-S23 converging shoulder press_Matte Blk_hero.png"
     ],
-    "description": "Biomechanical converging axis kinematics engineered to mirror the natural human movement curve during pressing motions.\\nFeatures ultra-smooth incremental weight stack adjustments and heavy-duty commercial upholstery.",
+    "description": "Biomechanical converging axis kinematics engineered to mirror the natural human movement curve during pressing motions. Features ultra-smooth incremental weight stack adjustments and heavy-duty commercial upholstery.",
     "specs": {
       "Frame Construction": "Heavy 11-Gauge Structural Steel Tubing (2.5 - 3.0mm)",
       "Finish": "Proprietary Dual-Coat Electrostatic Powder Coating",
@@ -1501,7 +1501,7 @@ export const PRODUCTS: Product[] = [
     "gallery": [
       "/images/equipment/strength/MX_AURA G3-S30-03 lat pulldown_Grpht_hero.png"
     ],
-    "description": "Diverging movement plane delivers an authentic natural range of motion and superior latissimus dorsi muscle recruitment.\\nEquipped with ergonomic rotating handles, thigh stabilization rollers, and precision weight stacks.",
+    "description": "Diverging movement plane delivers an authentic natural range of motion and superior latissimus dorsi muscle recruitment. Equipped with ergonomic rotating handles, thigh stabilization rollers, and precision weight stacks.",
     "specs": {
       "Frame Construction": "Heavy 11-Gauge Structural Steel Tubing (2.5 - 3.0mm)",
       "Finish": "Proprietary Dual-Coat Electrostatic Powder Coating",
@@ -1550,7 +1550,7 @@ export const PRODUCTS: Product[] = [
     "gallery": [
       "/images/equipment/strength/MX_AURA G3-S31 seated row_Matte Blk_hero.png"
     ],
-    "description": "Diverging movement plane delivers an authentic natural range of motion and superior latissimus dorsi muscle recruitment.\\nEquipped with ergonomic rotating handles, thigh stabilization rollers, and precision weight stacks.",
+    "description": "Diverging movement plane delivers an authentic natural range of motion and superior latissimus dorsi muscle recruitment. Equipped with ergonomic rotating handles, thigh stabilization rollers, and precision weight stacks.",
     "specs": {
       "Frame Construction": "Heavy 11-Gauge Structural Steel Tubing (2.5 - 3.0mm)",
       "Finish": "Proprietary Dual-Coat Electrostatic Powder Coating",
@@ -1599,7 +1599,7 @@ export const PRODUCTS: Product[] = [
     "gallery": [
       "/images/equipment/strength/MX_AURA G3-S33 diverging lat pulldown_Matte Blk_hero.png"
     ],
-    "description": "Diverging movement plane delivers an authentic natural range of motion and superior latissimus dorsi muscle recruitment.\\nEquipped with ergonomic rotating handles, thigh stabilization rollers, and precision weight stacks.",
+    "description": "Diverging movement plane delivers an authentic natural range of motion and superior latissimus dorsi muscle recruitment. Equipped with ergonomic rotating handles, thigh stabilization rollers, and precision weight stacks.",
     "specs": {
       "Frame Construction": "Heavy 11-Gauge Structural Steel Tubing (2.5 - 3.0mm)",
       "Finish": "Proprietary Dual-Coat Electrostatic Powder Coating",
@@ -1648,7 +1648,7 @@ export const PRODUCTS: Product[] = [
     "gallery": [
       "/images/equipment/strength/MX_AURA G3-S34 diverging seated row_Matte Blk_hero.png"
     ],
-    "description": "Diverging movement plane delivers an authentic natural range of motion and superior latissimus dorsi muscle recruitment.\\nEquipped with ergonomic rotating handles, thigh stabilization rollers, and precision weight stacks.",
+    "description": "Diverging movement plane delivers an authentic natural range of motion and superior latissimus dorsi muscle recruitment. Equipped with ergonomic rotating handles, thigh stabilization rollers, and precision weight stacks.",
     "specs": {
       "Frame Construction": "Heavy 11-Gauge Structural Steel Tubing (2.5 - 3.0mm)",
       "Finish": "Proprietary Dual-Coat Electrostatic Powder Coating",
@@ -1697,7 +1697,7 @@ export const PRODUCTS: Product[] = [
     "gallery": [
       "/images/equipment/strength/MX_AURA G3-S40 arm curl_Matte Blk_hero.png"
     ],
-    "description": "Targeted isolation arm machine with precision pivot axis aligning directly with the anatomical elbow joint.\\nProvides continuous tension throughout the full range of motion with premium ergonomic arm pads.",
+    "description": "Targeted isolation arm machine with precision pivot axis aligning directly with the anatomical elbow joint. Provides continuous tension throughout the full range of motion with premium ergonomic arm pads.",
     "specs": {
       "Frame Construction": "Heavy 11-Gauge Structural Steel Tubing (2.5 - 3.0mm)",
       "Finish": "Proprietary Dual-Coat Electrostatic Powder Coating",
@@ -1746,7 +1746,7 @@ export const PRODUCTS: Product[] = [
     "gallery": [
       "/images/equipment/strength/MX_AURA G3-S42 triceps press_Matte Blk_hero.png"
     ],
-    "description": "Biomechanical converging axis kinematics engineered to mirror the natural human movement curve during pressing motions.\\nFeatures ultra-smooth incremental weight stack adjustments and heavy-duty commercial upholstery.",
+    "description": "Biomechanical converging axis kinematics engineered to mirror the natural human movement curve during pressing motions. Features ultra-smooth incremental weight stack adjustments and heavy-duty commercial upholstery.",
     "specs": {
       "Frame Construction": "Heavy 11-Gauge Structural Steel Tubing (2.5 - 3.0mm)",
       "Finish": "Proprietary Dual-Coat Electrostatic Powder Coating",
@@ -1795,7 +1795,7 @@ export const PRODUCTS: Product[] = [
     "gallery": [
       "/images/equipment/strength/MX_AURA G3-S45 triceps extension_Matte Blk_hero.png"
     ],
-    "description": "Targeted isolation arm machine with precision pivot axis aligning directly with the anatomical elbow joint.\\nProvides continuous tension throughout the full range of motion with premium ergonomic arm pads.",
+    "description": "Targeted isolation arm machine with precision pivot axis aligning directly with the anatomical elbow joint. Provides continuous tension throughout the full range of motion with premium ergonomic arm pads.",
     "specs": {
       "Frame Construction": "Heavy 11-Gauge Structural Steel Tubing (2.5 - 3.0mm)",
       "Finish": "Proprietary Dual-Coat Electrostatic Powder Coating",
@@ -1844,7 +1844,7 @@ export const PRODUCTS: Product[] = [
     "gallery": [
       "/images/equipment/strength/MX_AURA G3-S50 INT abdominal_Matte Blk_hero.png"
     ],
-    "description": "Heavy commercial strength machine engineered for biomechanically sound muscle isolation and joint-friendly motion arcs.\\nBuilt with 11-gauge steel tubing, electrostatic powder coating, and precision machined weight stacks.",
+    "description": "Heavy commercial strength machine engineered for biomechanically sound muscle isolation and joint-friendly motion arcs. Built with 11-gauge steel tubing, electrostatic powder coating, and precision machined weight stacks.",
     "specs": {
       "Frame Construction": "Heavy 11-Gauge Structural Steel Tubing (2.5 - 3.0mm)",
       "Finish": "Proprietary Dual-Coat Electrostatic Powder Coating",
@@ -1893,7 +1893,7 @@ export const PRODUCTS: Product[] = [
     "gallery": [
       "/images/equipment/strength/MX_AURA G3-S51 abdominal crunch_Matte Blk_hero.png"
     ],
-    "description": "Heavy commercial strength machine engineered for biomechanically sound muscle isolation and joint-friendly motion arcs.\\nBuilt with 11-gauge steel tubing, electrostatic powder coating, and precision machined weight stacks.",
+    "description": "Heavy commercial strength machine engineered for biomechanically sound muscle isolation and joint-friendly motion arcs. Built with 11-gauge steel tubing, electrostatic powder coating, and precision machined weight stacks.",
     "specs": {
       "Frame Construction": "Heavy 11-Gauge Structural Steel Tubing (2.5 - 3.0mm)",
       "Finish": "Proprietary Dual-Coat Electrostatic Powder Coating",
@@ -1942,7 +1942,7 @@ export const PRODUCTS: Product[] = [
     "gallery": [
       "/images/equipment/strength/MX_AURA G3-S52 back extension_Matte Blk_hero.png"
     ],
-    "description": "Heavy commercial strength machine engineered for biomechanically sound muscle isolation and joint-friendly motion arcs.\\nBuilt with 11-gauge steel tubing, electrostatic powder coating, and precision machined weight stacks.",
+    "description": "Heavy commercial strength machine engineered for biomechanically sound muscle isolation and joint-friendly motion arcs. Built with 11-gauge steel tubing, electrostatic powder coating, and precision machined weight stacks.",
     "specs": {
       "Frame Construction": "Heavy 11-Gauge Structural Steel Tubing (2.5 - 3.0mm)",
       "Finish": "Proprietary Dual-Coat Electrostatic Powder Coating",
@@ -1991,7 +1991,7 @@ export const PRODUCTS: Product[] = [
     "gallery": [
       "/images/equipment/strength/MX_AURA G3-S55 rotary torso_Matte Blk_hero.png"
     ],
-    "description": "Heavy commercial strength machine engineered for biomechanically sound muscle isolation and joint-friendly motion arcs.\\nBuilt with 11-gauge steel tubing, electrostatic powder coating, and precision machined weight stacks.",
+    "description": "Heavy commercial strength machine engineered for biomechanically sound muscle isolation and joint-friendly motion arcs. Built with 11-gauge steel tubing, electrostatic powder coating, and precision machined weight stacks.",
     "specs": {
       "Frame Construction": "Heavy 11-Gauge Structural Steel Tubing (2.5 - 3.0mm)",
       "Finish": "Proprietary Dual-Coat Electrostatic Powder Coating",
@@ -2040,7 +2040,7 @@ export const PRODUCTS: Product[] = [
     "gallery": [
       "/images/equipment/strength/MX_AURA G3-S60-03 dip chin assist_Matte Blk_hero.png"
     ],
-    "description": "Heavy commercial strength machine engineered for biomechanically sound muscle isolation and joint-friendly motion arcs.\\nBuilt with 11-gauge steel tubing, electrostatic powder coating, and precision machined weight stacks.",
+    "description": "Heavy commercial strength machine engineered for biomechanically sound muscle isolation and joint-friendly motion arcs. Built with 11-gauge steel tubing, electrostatic powder coating, and precision machined weight stacks.",
     "specs": {
       "Frame Construction": "Heavy 11-Gauge Structural Steel Tubing (2.5 - 3.0mm)",
       "Finish": "Proprietary Dual-Coat Electrostatic Powder Coating",
@@ -2089,7 +2089,7 @@ export const PRODUCTS: Product[] = [
     "gallery": [
       "/images/equipment/strength/MX_AURA G3-S70 leg press_Matte Blk_hero.png"
     ],
-    "description": "Biomechanical converging axis kinematics engineered to mirror the natural human movement curve during pressing motions.\\nFeatures ultra-smooth incremental weight stack adjustments and heavy-duty commercial upholstery.",
+    "description": "Biomechanical converging axis kinematics engineered to mirror the natural human movement curve during pressing motions. Features ultra-smooth incremental weight stack adjustments and heavy-duty commercial upholstery.",
     "specs": {
       "Frame Construction": "Heavy 11-Gauge Structural Steel Tubing (2.5 - 3.0mm)",
       "Finish": "Proprietary Dual-Coat Electrostatic Powder Coating",
@@ -2138,7 +2138,7 @@ export const PRODUCTS: Product[] = [
     "gallery": [
       "/images/equipment/strength/MX_AURA G3-S71-03 leg extension_Matte Blk_hero.png"
     ],
-    "description": "Heavy structural steel plate-loaded lower-body station engineered for maximum quad, hamstring, and glute muscle activation.\\nDelivers smooth linear bearings, oversized non-slip footplates, and easy-access safety locking mechanisms.",
+    "description": "Heavy structural steel plate-loaded lower-body station engineered for maximum quad, hamstring, and glute muscle activation. Delivers smooth linear bearings, oversized non-slip footplates, and easy-access safety locking mechanisms.",
     "specs": {
       "Frame Construction": "Heavy 11-Gauge Structural Steel Tubing (2.5 - 3.0mm)",
       "Finish": "Proprietary Dual-Coat Electrostatic Powder Coating",
@@ -2187,7 +2187,7 @@ export const PRODUCTS: Product[] = [
     "gallery": [
       "/images/equipment/strength/MX_AURA G3-S72-03 seated leg curl_Matte Blk_hero.png"
     ],
-    "description": "Heavy structural steel plate-loaded lower-body station engineered for maximum quad, hamstring, and glute muscle activation.\\nDelivers smooth linear bearings, oversized non-slip footplates, and easy-access safety locking mechanisms.",
+    "description": "Heavy structural steel plate-loaded lower-body station engineered for maximum quad, hamstring, and glute muscle activation. Delivers smooth linear bearings, oversized non-slip footplates, and easy-access safety locking mechanisms.",
     "specs": {
       "Frame Construction": "Heavy 11-Gauge Structural Steel Tubing (2.5 - 3.0mm)",
       "Finish": "Proprietary Dual-Coat Electrostatic Powder Coating",
@@ -2236,7 +2236,7 @@ export const PRODUCTS: Product[] = [
     "gallery": [
       "/images/equipment/strength/MX_AURA G3-S73-03 prone leg curl_Matte Blk_hero.png"
     ],
-    "description": "Heavy structural steel plate-loaded lower-body station engineered for maximum quad, hamstring, and glute muscle activation.\\nDelivers smooth linear bearings, oversized non-slip footplates, and easy-access safety locking mechanisms.",
+    "description": "Heavy structural steel plate-loaded lower-body station engineered for maximum quad, hamstring, and glute muscle activation. Delivers smooth linear bearings, oversized non-slip footplates, and easy-access safety locking mechanisms.",
     "specs": {
       "Frame Construction": "Heavy 11-Gauge Structural Steel Tubing (2.5 - 3.0mm)",
       "Finish": "Proprietary Dual-Coat Electrostatic Powder Coating",
@@ -2285,7 +2285,7 @@ export const PRODUCTS: Product[] = [
     "gallery": [
       "/images/equipment/strength/MX_AURA G3-S74 hip adductor_Matte Blk_hero.png"
     ],
-    "description": "Heavy commercial strength machine engineered for biomechanically sound muscle isolation and joint-friendly motion arcs.\\nBuilt with 11-gauge steel tubing, electrostatic powder coating, and precision machined weight stacks.",
+    "description": "Heavy commercial strength machine engineered for biomechanically sound muscle isolation and joint-friendly motion arcs. Built with 11-gauge steel tubing, electrostatic powder coating, and precision machined weight stacks.",
     "specs": {
       "Frame Construction": "Heavy 11-Gauge Structural Steel Tubing (2.5 - 3.0mm)",
       "Finish": "Proprietary Dual-Coat Electrostatic Powder Coating",
@@ -2334,7 +2334,7 @@ export const PRODUCTS: Product[] = [
     "gallery": [
       "/images/equipment/strength/MX_AURA G3-S75 hip abductor_Matte Blk_hero.png"
     ],
-    "description": "Heavy commercial strength machine engineered for biomechanically sound muscle isolation and joint-friendly motion arcs.\\nBuilt with 11-gauge steel tubing, electrostatic powder coating, and precision machined weight stacks.",
+    "description": "Heavy commercial strength machine engineered for biomechanically sound muscle isolation and joint-friendly motion arcs. Built with 11-gauge steel tubing, electrostatic powder coating, and precision machined weight stacks.",
     "specs": {
       "Frame Construction": "Heavy 11-Gauge Structural Steel Tubing (2.5 - 3.0mm)",
       "Finish": "Proprietary Dual-Coat Electrostatic Powder Coating",
@@ -2383,7 +2383,7 @@ export const PRODUCTS: Product[] = [
     "gallery": [
       "/images/equipment/strength/MX_AURA G3-S76 rotary hip_Matte Blk_hero.png"
     ],
-    "description": "Heavy commercial strength machine engineered for biomechanically sound muscle isolation and joint-friendly motion arcs.\\nBuilt with 11-gauge steel tubing, electrostatic powder coating, and precision machined weight stacks.",
+    "description": "Heavy commercial strength machine engineered for biomechanically sound muscle isolation and joint-friendly motion arcs. Built with 11-gauge steel tubing, electrostatic powder coating, and precision machined weight stacks.",
     "specs": {
       "Frame Construction": "Heavy 11-Gauge Structural Steel Tubing (2.5 - 3.0mm)",
       "Finish": "Proprietary Dual-Coat Electrostatic Powder Coating",
@@ -2432,7 +2432,7 @@ export const PRODUCTS: Product[] = [
     "gallery": [
       "/images/equipment/strength/MX_AURA G3-S77 calf press_Matte Blk_hero.png"
     ],
-    "description": "Biomechanical converging axis kinematics engineered to mirror the natural human movement curve during pressing motions.\\nFeatures ultra-smooth incremental weight stack adjustments and heavy-duty commercial upholstery.",
+    "description": "Biomechanical converging axis kinematics engineered to mirror the natural human movement curve during pressing motions. Features ultra-smooth incremental weight stack adjustments and heavy-duty commercial upholstery.",
     "specs": {
       "Frame Construction": "Heavy 11-Gauge Structural Steel Tubing (2.5 - 3.0mm)",
       "Finish": "Proprietary Dual-Coat Electrostatic Powder Coating",
@@ -2481,7 +2481,7 @@ export const PRODUCTS: Product[] = [
     "gallery": [
       "/images/equipment/strength/MX_G1-FW161 smith machine_Matte Blk_hero.png"
     ],
-    "description": "Heavy commercial strength machine engineered for biomechanically sound muscle isolation and joint-friendly motion arcs.\\nBuilt with 11-gauge steel tubing, electrostatic powder coating, and precision machined weight stacks.",
+    "description": "Heavy commercial strength machine engineered for biomechanically sound muscle isolation and joint-friendly motion arcs. Built with 11-gauge steel tubing, electrostatic powder coating, and precision machined weight stacks.",
     "specs": {
       "Frame Construction": "Heavy 11-Gauge Structural Steel Tubing (2.5 - 3.0mm)",
       "Finish": "Proprietary Dual-Coat Electrostatic Powder Coating",
@@ -2530,7 +2530,7 @@ export const PRODUCTS: Product[] = [
     "gallery": [
       "/images/equipment/strength/MX_G1-MG30 3-stack multi-gym_Matte Blk_hero.png"
     ],
-    "description": "Heavy commercial strength machine engineered for biomechanically sound muscle isolation and joint-friendly motion arcs.\\nBuilt with 11-gauge steel tubing, electrostatic powder coating, and precision machined weight stacks.",
+    "description": "Heavy commercial strength machine engineered for biomechanically sound muscle isolation and joint-friendly motion arcs. Built with 11-gauge steel tubing, electrostatic powder coating, and precision machined weight stacks.",
     "specs": {
       "Frame Construction": "Heavy 11-Gauge Structural Steel Tubing (2.5 - 3.0mm)",
       "Finish": "Proprietary Dual-Coat Electrostatic Powder Coating",
@@ -2579,7 +2579,7 @@ export const PRODUCTS: Product[] = [
     "gallery": [
       "/images/equipment/strength/MX_G1-MS40 4-stack multi-station_Matte Blk_hero.png"
     ],
-    "description": "Heavy commercial strength machine engineered for biomechanically sound muscle isolation and joint-friendly motion arcs.\\nBuilt with 11-gauge steel tubing, electrostatic powder coating, and precision machined weight stacks.",
+    "description": "Heavy commercial strength machine engineered for biomechanically sound muscle isolation and joint-friendly motion arcs. Built with 11-gauge steel tubing, electrostatic powder coating, and precision machined weight stacks.",
     "specs": {
       "Frame Construction": "Heavy 11-Gauge Structural Steel Tubing (2.5 - 3.0mm)",
       "Finish": "Proprietary Dual-Coat Electrostatic Powder Coating",
@@ -2628,7 +2628,7 @@ export const PRODUCTS: Product[] = [
     "gallery": [
       "/images/equipment/strength/MX_G1-MS50 5-stack multi-station_Matte Blk_hero.png"
     ],
-    "description": "Heavy commercial strength machine engineered for biomechanically sound muscle isolation and joint-friendly motion arcs.\\nBuilt with 11-gauge steel tubing, electrostatic powder coating, and precision machined weight stacks.",
+    "description": "Heavy commercial strength machine engineered for biomechanically sound muscle isolation and joint-friendly motion arcs. Built with 11-gauge steel tubing, electrostatic powder coating, and precision machined weight stacks.",
     "specs": {
       "Frame Construction": "Heavy 11-Gauge Structural Steel Tubing (2.5 - 3.0mm)",
       "Finish": "Proprietary Dual-Coat Electrostatic Powder Coating",
@@ -2677,7 +2677,7 @@ export const PRODUCTS: Product[] = [
     "gallery": [
       "/images/equipment/strength/MX_G1-MS80 8-stack multi-station_Matte Blk_hero.png"
     ],
-    "description": "Heavy commercial strength machine engineered for biomechanically sound muscle isolation and joint-friendly motion arcs.\\nBuilt with 11-gauge steel tubing, electrostatic powder coating, and precision machined weight stacks.",
+    "description": "Heavy commercial strength machine engineered for biomechanically sound muscle isolation and joint-friendly motion arcs. Built with 11-gauge steel tubing, electrostatic powder coating, and precision machined weight stacks.",
     "specs": {
       "Frame Construction": "Heavy 11-Gauge Structural Steel Tubing (2.5 - 3.0mm)",
       "Finish": "Proprietary Dual-Coat Electrostatic Powder Coating",
@@ -2726,7 +2726,7 @@ export const PRODUCTS: Product[] = [
     "gallery": [
       "/images/equipment/strength/MX_GO-SERIES GO-S13 chest press_Matte Blk_hero.png"
     ],
-    "description": "Biomechanical converging axis kinematics engineered to mirror the natural human movement curve during pressing motions.\\nFeatures ultra-smooth incremental weight stack adjustments and heavy-duty commercial upholstery.",
+    "description": "Biomechanical converging axis kinematics engineered to mirror the natural human movement curve during pressing motions. Features ultra-smooth incremental weight stack adjustments and heavy-duty commercial upholstery.",
     "specs": {
       "Frame Construction": "Heavy 11-Gauge Structural Steel Tubing (2.5 - 3.0mm)",
       "Finish": "Proprietary Dual-Coat Electrostatic Powder Coating",
@@ -2775,7 +2775,7 @@ export const PRODUCTS: Product[] = [
     "gallery": [
       "/images/equipment/strength/MX_GO-SERIES GO-S23 shoulder press_Matte Blk_hero.png"
     ],
-    "description": "Biomechanical converging axis kinematics engineered to mirror the natural human movement curve during pressing motions.\\nFeatures ultra-smooth incremental weight stack adjustments and heavy-duty commercial upholstery.",
+    "description": "Biomechanical converging axis kinematics engineered to mirror the natural human movement curve during pressing motions. Features ultra-smooth incremental weight stack adjustments and heavy-duty commercial upholstery.",
     "specs": {
       "Frame Construction": "Heavy 11-Gauge Structural Steel Tubing (2.5 - 3.0mm)",
       "Finish": "Proprietary Dual-Coat Electrostatic Powder Coating",
@@ -2824,7 +2824,7 @@ export const PRODUCTS: Product[] = [
     "gallery": [
       "/images/equipment/strength/MX_GO-SERIES GO-S33 lat pulldown_Matte Blk_hero.png"
     ],
-    "description": "Diverging movement plane delivers an authentic natural range of motion and superior latissimus dorsi muscle recruitment.\\nEquipped with ergonomic rotating handles, thigh stabilization rollers, and precision weight stacks.",
+    "description": "Diverging movement plane delivers an authentic natural range of motion and superior latissimus dorsi muscle recruitment. Equipped with ergonomic rotating handles, thigh stabilization rollers, and precision weight stacks.",
     "specs": {
       "Frame Construction": "Heavy 11-Gauge Structural Steel Tubing (2.5 - 3.0mm)",
       "Finish": "Proprietary Dual-Coat Electrostatic Powder Coating",
@@ -2873,7 +2873,7 @@ export const PRODUCTS: Product[] = [
     "gallery": [
       "/images/equipment/strength/MX_GO-SERIES GO-S34 seated row_Matte Blk_hero.png"
     ],
-    "description": "Diverging movement plane delivers an authentic natural range of motion and superior latissimus dorsi muscle recruitment.\\nEquipped with ergonomic rotating handles, thigh stabilization rollers, and precision weight stacks.",
+    "description": "Diverging movement plane delivers an authentic natural range of motion and superior latissimus dorsi muscle recruitment. Equipped with ergonomic rotating handles, thigh stabilization rollers, and precision weight stacks.",
     "specs": {
       "Frame Construction": "Heavy 11-Gauge Structural Steel Tubing (2.5 - 3.0mm)",
       "Finish": "Proprietary Dual-Coat Electrostatic Powder Coating",
@@ -2922,7 +2922,7 @@ export const PRODUCTS: Product[] = [
     "gallery": [
       "/images/equipment/strength/MX_GO-SERIES GO-S40 bicep curl_Matte Blk_hero.png"
     ],
-    "description": "Targeted isolation arm machine with precision pivot axis aligning directly with the anatomical elbow joint.\\nProvides continuous tension throughout the full range of motion with premium ergonomic arm pads.",
+    "description": "Targeted isolation arm machine with precision pivot axis aligning directly with the anatomical elbow joint. Provides continuous tension throughout the full range of motion with premium ergonomic arm pads.",
     "specs": {
       "Frame Construction": "Heavy 11-Gauge Structural Steel Tubing (2.5 - 3.0mm)",
       "Finish": "Proprietary Dual-Coat Electrostatic Powder Coating",
@@ -2971,7 +2971,7 @@ export const PRODUCTS: Product[] = [
     "gallery": [
       "/images/equipment/strength/MX_GO-SERIES GO-S42 tricep press_Matte Blk_hero.png"
     ],
-    "description": "Biomechanical converging axis kinematics engineered to mirror the natural human movement curve during pressing motions.\\nFeatures ultra-smooth incremental weight stack adjustments and heavy-duty commercial upholstery.",
+    "description": "Biomechanical converging axis kinematics engineered to mirror the natural human movement curve during pressing motions. Features ultra-smooth incremental weight stack adjustments and heavy-duty commercial upholstery.",
     "specs": {
       "Frame Construction": "Heavy 11-Gauge Structural Steel Tubing (2.5 - 3.0mm)",
       "Finish": "Proprietary Dual-Coat Electrostatic Powder Coating",
@@ -3020,7 +3020,7 @@ export const PRODUCTS: Product[] = [
     "gallery": [
       "/images/equipment/strength/MX_GO-SERIES GO-S53 abdominal_Matte Blk_hero.png"
     ],
-    "description": "Heavy commercial strength machine engineered for biomechanically sound muscle isolation and joint-friendly motion arcs.\\nBuilt with 11-gauge steel tubing, electrostatic powder coating, and precision machined weight stacks.",
+    "description": "Heavy commercial strength machine engineered for biomechanically sound muscle isolation and joint-friendly motion arcs. Built with 11-gauge steel tubing, electrostatic powder coating, and precision machined weight stacks.",
     "specs": {
       "Frame Construction": "Heavy 11-Gauge Structural Steel Tubing (2.5 - 3.0mm)",
       "Finish": "Proprietary Dual-Coat Electrostatic Powder Coating",
@@ -3069,7 +3069,7 @@ export const PRODUCTS: Product[] = [
     "gallery": [
       "/images/equipment/strength/MX_GO-SERIES GO-S70 leg press_Matte Blk_hero.png"
     ],
-    "description": "Biomechanical converging axis kinematics engineered to mirror the natural human movement curve during pressing motions.\\nFeatures ultra-smooth incremental weight stack adjustments and heavy-duty commercial upholstery.",
+    "description": "Biomechanical converging axis kinematics engineered to mirror the natural human movement curve during pressing motions. Features ultra-smooth incremental weight stack adjustments and heavy-duty commercial upholstery.",
     "specs": {
       "Frame Construction": "Heavy 11-Gauge Structural Steel Tubing (2.5 - 3.0mm)",
       "Finish": "Proprietary Dual-Coat Electrostatic Powder Coating",
@@ -3118,7 +3118,7 @@ export const PRODUCTS: Product[] = [
     "gallery": [
       "/images/equipment/strength/MX_GO-SERIES GO-S71 leg extension_Matte Blk_hero.png"
     ],
-    "description": "Heavy structural steel plate-loaded lower-body station engineered for maximum quad, hamstring, and glute muscle activation.\\nDelivers smooth linear bearings, oversized non-slip footplates, and easy-access safety locking mechanisms.",
+    "description": "Heavy structural steel plate-loaded lower-body station engineered for maximum quad, hamstring, and glute muscle activation. Delivers smooth linear bearings, oversized non-slip footplates, and easy-access safety locking mechanisms.",
     "specs": {
       "Frame Construction": "Heavy 11-Gauge Structural Steel Tubing (2.5 - 3.0mm)",
       "Finish": "Proprietary Dual-Coat Electrostatic Powder Coating",
@@ -3167,7 +3167,7 @@ export const PRODUCTS: Product[] = [
     "gallery": [
       "/images/equipment/strength/MX_GO-SERIES GO-S72 leg curl_Matte Blk_hero.png"
     ],
-    "description": "Heavy structural steel plate-loaded lower-body station engineered for maximum quad, hamstring, and glute muscle activation.\\nDelivers smooth linear bearings, oversized non-slip footplates, and easy-access safety locking mechanisms.",
+    "description": "Heavy structural steel plate-loaded lower-body station engineered for maximum quad, hamstring, and glute muscle activation. Delivers smooth linear bearings, oversized non-slip footplates, and easy-access safety locking mechanisms.",
     "specs": {
       "Frame Construction": "Heavy 11-Gauge Structural Steel Tubing (2.5 - 3.0mm)",
       "Finish": "Proprietary Dual-Coat Electrostatic Powder Coating",
@@ -3216,7 +3216,7 @@ export const PRODUCTS: Product[] = [
     "gallery": [
       "/images/equipment/strength/MX_MAGNUM MG-PL12 vertical bench press_Matte Blk_hero.png"
     ],
-    "description": "Biomechanical converging axis kinematics engineered to mirror the natural human movement curve during pressing motions.\\nFeatures ultra-smooth incremental weight stack adjustments and heavy-duty commercial upholstery.",
+    "description": "Biomechanical converging axis kinematics engineered to mirror the natural human movement curve during pressing motions. Features ultra-smooth incremental weight stack adjustments and heavy-duty commercial upholstery.",
     "specs": {
       "Frame Construction": "Heavy 11-Gauge Structural Steel Tubing (2.5 - 3.0mm)",
       "Finish": "Proprietary Dual-Coat Electrostatic Powder Coating",
@@ -3265,7 +3265,7 @@ export const PRODUCTS: Product[] = [
     "gallery": [
       "/images/equipment/strength/MX_MAGNUM MG-PL13-02 supine bench press_Matte Blk_hero.png"
     ],
-    "description": "Biomechanical converging axis kinematics engineered to mirror the natural human movement curve during pressing motions.\\nFeatures ultra-smooth incremental weight stack adjustments and heavy-duty commercial upholstery.",
+    "description": "Biomechanical converging axis kinematics engineered to mirror the natural human movement curve during pressing motions. Features ultra-smooth incremental weight stack adjustments and heavy-duty commercial upholstery.",
     "specs": {
       "Frame Construction": "Heavy 11-Gauge Structural Steel Tubing (2.5 - 3.0mm)",
       "Finish": "Proprietary Dual-Coat Electrostatic Powder Coating",
@@ -3314,7 +3314,7 @@ export const PRODUCTS: Product[] = [
     "gallery": [
       "/images/equipment/strength/MX_MAGNUM MG-PL14 incline bench press_Matte Blk_hero.png"
     ],
-    "description": "Biomechanical converging axis kinematics engineered to mirror the natural human movement curve during pressing motions.\\nFeatures ultra-smooth incremental weight stack adjustments and heavy-duty commercial upholstery.",
+    "description": "Biomechanical converging axis kinematics engineered to mirror the natural human movement curve during pressing motions. Features ultra-smooth incremental weight stack adjustments and heavy-duty commercial upholstery.",
     "specs": {
       "Frame Construction": "Heavy 11-Gauge Structural Steel Tubing (2.5 - 3.0mm)",
       "Finish": "Proprietary Dual-Coat Electrostatic Powder Coating",
@@ -3363,7 +3363,7 @@ export const PRODUCTS: Product[] = [
     "gallery": [
       "/images/equipment/strength/MX_MAGNUM MG-PL15 vertical decline bench press_Matte Blk_hero.png"
     ],
-    "description": "Biomechanical converging axis kinematics engineered to mirror the natural human movement curve during pressing motions.\\nFeatures ultra-smooth incremental weight stack adjustments and heavy-duty commercial upholstery.",
+    "description": "Biomechanical converging axis kinematics engineered to mirror the natural human movement curve during pressing motions. Features ultra-smooth incremental weight stack adjustments and heavy-duty commercial upholstery.",
     "specs": {
       "Frame Construction": "Heavy 11-Gauge Structural Steel Tubing (2.5 - 3.0mm)",
       "Finish": "Proprietary Dual-Coat Electrostatic Powder Coating",
@@ -3412,7 +3412,7 @@ export const PRODUCTS: Product[] = [
     "gallery": [
       "/images/equipment/strength/MX_MAGNUM MG-PL23 shoulder press_Matte Blk_hero.png"
     ],
-    "description": "Biomechanical converging axis kinematics engineered to mirror the natural human movement curve during pressing motions.\\nFeatures ultra-smooth incremental weight stack adjustments and heavy-duty commercial upholstery.",
+    "description": "Biomechanical converging axis kinematics engineered to mirror the natural human movement curve during pressing motions. Features ultra-smooth incremental weight stack adjustments and heavy-duty commercial upholstery.",
     "specs": {
       "Frame Construction": "Heavy 11-Gauge Structural Steel Tubing (2.5 - 3.0mm)",
       "Finish": "Proprietary Dual-Coat Electrostatic Powder Coating",
@@ -3461,7 +3461,7 @@ export const PRODUCTS: Product[] = [
     "gallery": [
       "/images/equipment/strength/MX_MAGNUM MG-PL33 lat pulldown_Matte Blk_hero.png"
     ],
-    "description": "Diverging movement plane delivers an authentic natural range of motion and superior latissimus dorsi muscle recruitment.\\nEquipped with ergonomic rotating handles, thigh stabilization rollers, and precision weight stacks.",
+    "description": "Diverging movement plane delivers an authentic natural range of motion and superior latissimus dorsi muscle recruitment. Equipped with ergonomic rotating handles, thigh stabilization rollers, and precision weight stacks.",
     "specs": {
       "Frame Construction": "Heavy 11-Gauge Structural Steel Tubing (2.5 - 3.0mm)",
       "Finish": "Proprietary Dual-Coat Electrostatic Powder Coating",
@@ -3510,7 +3510,7 @@ export const PRODUCTS: Product[] = [
     "gallery": [
       "/images/equipment/strength/MX_MAGNUM MG-PL34 seated row_Matte Blk_hero.png"
     ],
-    "description": "Diverging movement plane delivers an authentic natural range of motion and superior latissimus dorsi muscle recruitment.\\nEquipped with ergonomic rotating handles, thigh stabilization rollers, and precision weight stacks.",
+    "description": "Diverging movement plane delivers an authentic natural range of motion and superior latissimus dorsi muscle recruitment. Equipped with ergonomic rotating handles, thigh stabilization rollers, and precision weight stacks.",
     "specs": {
       "Frame Construction": "Heavy 11-Gauge Structural Steel Tubing (2.5 - 3.0mm)",
       "Finish": "Proprietary Dual-Coat Electrostatic Powder Coating",
@@ -3559,7 +3559,7 @@ export const PRODUCTS: Product[] = [
     "gallery": [
       "/images/equipment/strength/MX_MAGNUM MG-PL35 t-bar row_Matte Blk_hero.png"
     ],
-    "description": "Diverging movement plane delivers an authentic natural range of motion and superior latissimus dorsi muscle recruitment.\\nEquipped with ergonomic rotating handles, thigh stabilization rollers, and precision weight stacks.",
+    "description": "Diverging movement plane delivers an authentic natural range of motion and superior latissimus dorsi muscle recruitment. Equipped with ergonomic rotating handles, thigh stabilization rollers, and precision weight stacks.",
     "specs": {
       "Frame Construction": "Heavy 11-Gauge Structural Steel Tubing (2.5 - 3.0mm)",
       "Finish": "Proprietary Dual-Coat Electrostatic Powder Coating",
@@ -3608,7 +3608,7 @@ export const PRODUCTS: Product[] = [
     "gallery": [
       "/images/equipment/strength/MX_MAGNUM MG-PL36 lever row_Matte Blk_hero.png"
     ],
-    "description": "Diverging movement plane delivers an authentic natural range of motion and superior latissimus dorsi muscle recruitment.\\nEquipped with ergonomic rotating handles, thigh stabilization rollers, and precision weight stacks.",
+    "description": "Diverging movement plane delivers an authentic natural range of motion and superior latissimus dorsi muscle recruitment. Equipped with ergonomic rotating handles, thigh stabilization rollers, and precision weight stacks.",
     "specs": {
       "Frame Construction": "Heavy 11-Gauge Structural Steel Tubing (2.5 - 3.0mm)",
       "Finish": "Proprietary Dual-Coat Electrostatic Powder Coating",
@@ -3657,7 +3657,7 @@ export const PRODUCTS: Product[] = [
     "gallery": [
       "/images/equipment/strength/MX_MAGNUM MG-PL37 high row_Matte Blk_hero.png"
     ],
-    "description": "Diverging movement plane delivers an authentic natural range of motion and superior latissimus dorsi muscle recruitment.\\nEquipped with ergonomic rotating handles, thigh stabilization rollers, and precision weight stacks.",
+    "description": "Diverging movement plane delivers an authentic natural range of motion and superior latissimus dorsi muscle recruitment. Equipped with ergonomic rotating handles, thigh stabilization rollers, and precision weight stacks.",
     "specs": {
       "Frame Construction": "Heavy 11-Gauge Structural Steel Tubing (2.5 - 3.0mm)",
       "Finish": "Proprietary Dual-Coat Electrostatic Powder Coating",
@@ -3706,7 +3706,7 @@ export const PRODUCTS: Product[] = [
     "gallery": [
       "/images/equipment/strength/MX_MAGNUM MG-PL38 low row_Matte Blk_hero.png"
     ],
-    "description": "Diverging movement plane delivers an authentic natural range of motion and superior latissimus dorsi muscle recruitment.\\nEquipped with ergonomic rotating handles, thigh stabilization rollers, and precision weight stacks.",
+    "description": "Diverging movement plane delivers an authentic natural range of motion and superior latissimus dorsi muscle recruitment. Equipped with ergonomic rotating handles, thigh stabilization rollers, and precision weight stacks.",
     "specs": {
       "Frame Construction": "Heavy 11-Gauge Structural Steel Tubing (2.5 - 3.0mm)",
       "Finish": "Proprietary Dual-Coat Electrostatic Powder Coating",
@@ -3755,7 +3755,7 @@ export const PRODUCTS: Product[] = [
     "gallery": [
       "/images/equipment/strength/MX_MAGNUM MG-PL41 elevated biceps curl_Matte Blk_hero.png"
     ],
-    "description": "Targeted isolation arm machine with precision pivot axis aligning directly with the anatomical elbow joint.\\nProvides continuous tension throughout the full range of motion with premium ergonomic arm pads.",
+    "description": "Targeted isolation arm machine with precision pivot axis aligning directly with the anatomical elbow joint. Provides continuous tension throughout the full range of motion with premium ergonomic arm pads.",
     "specs": {
       "Frame Construction": "Heavy 11-Gauge Structural Steel Tubing (2.5 - 3.0mm)",
       "Finish": "Proprietary Dual-Coat Electrostatic Powder Coating",
@@ -3804,7 +3804,7 @@ export const PRODUCTS: Product[] = [
     "gallery": [
       "/images/equipment/strength/MX_MAGNUM MG-PL62-05 smith machine_Matte Blk_hero.png"
     ],
-    "description": "Heavy commercial strength machine engineered for biomechanically sound muscle isolation and joint-friendly motion arcs.\\nBuilt with 11-gauge steel tubing, electrostatic powder coating, and precision machined weight stacks.",
+    "description": "Heavy commercial strength machine engineered for biomechanically sound muscle isolation and joint-friendly motion arcs. Built with 11-gauge steel tubing, electrostatic powder coating, and precision machined weight stacks.",
     "specs": {
       "Frame Construction": "Heavy 11-Gauge Structural Steel Tubing (2.5 - 3.0mm)",
       "Finish": "Proprietary Dual-Coat Electrostatic Powder Coating",
@@ -3853,7 +3853,7 @@ export const PRODUCTS: Product[] = [
     "gallery": [
       "/images/equipment/strength/MX_MAGNUM MG-PL70-05 45 degree leg press_Matte Blk_hero.png"
     ],
-    "description": "Biomechanical converging axis kinematics engineered to mirror the natural human movement curve during pressing motions.\\nFeatures ultra-smooth incremental weight stack adjustments and heavy-duty commercial upholstery.",
+    "description": "Biomechanical converging axis kinematics engineered to mirror the natural human movement curve during pressing motions. Features ultra-smooth incremental weight stack adjustments and heavy-duty commercial upholstery.",
     "specs": {
       "Frame Construction": "Heavy 11-Gauge Structural Steel Tubing (2.5 - 3.0mm)",
       "Finish": "Proprietary Dual-Coat Electrostatic Powder Coating",
@@ -3902,7 +3902,7 @@ export const PRODUCTS: Product[] = [
     "gallery": [
       "/images/equipment/strength/MX_MAGNUM MG-PL71 hack squat_Matte Blk_hero.png"
     ],
-    "description": "Heavy structural steel plate-loaded lower-body station engineered for maximum quad, hamstring, and glute muscle activation.\\nDelivers smooth linear bearings, oversized non-slip footplates, and easy-access safety locking mechanisms.",
+    "description": "Heavy structural steel plate-loaded lower-body station engineered for maximum quad, hamstring, and glute muscle activation. Delivers smooth linear bearings, oversized non-slip footplates, and easy-access safety locking mechanisms.",
     "specs": {
       "Frame Construction": "Heavy 11-Gauge Structural Steel Tubing (2.5 - 3.0mm)",
       "Finish": "Proprietary Dual-Coat Electrostatic Powder Coating",
@@ -3951,7 +3951,7 @@ export const PRODUCTS: Product[] = [
     "gallery": [
       "/images/equipment/strength/MX_MAGNUM MG-PL72 kneeling leg curl_Matte Blk_hero.png"
     ],
-    "description": "Heavy structural steel plate-loaded lower-body station engineered for maximum quad, hamstring, and glute muscle activation.\\nDelivers smooth linear bearings, oversized non-slip footplates, and easy-access safety locking mechanisms.",
+    "description": "Heavy structural steel plate-loaded lower-body station engineered for maximum quad, hamstring, and glute muscle activation. Delivers smooth linear bearings, oversized non-slip footplates, and easy-access safety locking mechanisms.",
     "specs": {
       "Frame Construction": "Heavy 11-Gauge Structural Steel Tubing (2.5 - 3.0mm)",
       "Finish": "Proprietary Dual-Coat Electrostatic Powder Coating",
@@ -4000,7 +4000,7 @@ export const PRODUCTS: Product[] = [
     "gallery": [
       "/images/equipment/strength/MX_MAGNUM MG-PL73 reclining leg extension_Matte Blk_hero.png"
     ],
-    "description": "Heavy structural steel plate-loaded lower-body station engineered for maximum quad, hamstring, and glute muscle activation.\\nDelivers smooth linear bearings, oversized non-slip footplates, and easy-access safety locking mechanisms.",
+    "description": "Heavy structural steel plate-loaded lower-body station engineered for maximum quad, hamstring, and glute muscle activation. Delivers smooth linear bearings, oversized non-slip footplates, and easy-access safety locking mechanisms.",
     "specs": {
       "Frame Construction": "Heavy 11-Gauge Structural Steel Tubing (2.5 - 3.0mm)",
       "Finish": "Proprietary Dual-Coat Electrostatic Powder Coating",
@@ -4049,7 +4049,7 @@ export const PRODUCTS: Product[] = [
     "gallery": [
       "/images/equipment/strength/MX_MAGNUM MG-PL76 standing calf_Matte Blk_hero.png"
     ],
-    "description": "Heavy structural steel plate-loaded lower-body station engineered for maximum quad, hamstring, and glute muscle activation.\\nDelivers smooth linear bearings, oversized non-slip footplates, and easy-access safety locking mechanisms.",
+    "description": "Heavy structural steel plate-loaded lower-body station engineered for maximum quad, hamstring, and glute muscle activation. Delivers smooth linear bearings, oversized non-slip footplates, and easy-access safety locking mechanisms.",
     "specs": {
       "Frame Construction": "Heavy 11-Gauge Structural Steel Tubing (2.5 - 3.0mm)",
       "Finish": "Proprietary Dual-Coat Electrostatic Powder Coating",
@@ -4098,7 +4098,7 @@ export const PRODUCTS: Product[] = [
     "gallery": [
       "/images/equipment/strength/MX_MAGNUM MG-PL77 seated calf_Matte Blk_hero.png"
     ],
-    "description": "Heavy structural steel plate-loaded lower-body station engineered for maximum quad, hamstring, and glute muscle activation.\\nDelivers smooth linear bearings, oversized non-slip footplates, and easy-access safety locking mechanisms.",
+    "description": "Heavy structural steel plate-loaded lower-body station engineered for maximum quad, hamstring, and glute muscle activation. Delivers smooth linear bearings, oversized non-slip footplates, and easy-access safety locking mechanisms.",
     "specs": {
       "Frame Construction": "Heavy 11-Gauge Structural Steel Tubing (2.5 - 3.0mm)",
       "Finish": "Proprietary Dual-Coat Electrostatic Powder Coating",
@@ -4147,7 +4147,7 @@ export const PRODUCTS: Product[] = [
     "gallery": [
       "/images/equipment/strength/MX_MAGNUM MG-PL78 glute trainer_Matte Blk_hero.png"
     ],
-    "description": "Heavy commercial strength machine engineered for biomechanically sound muscle isolation and joint-friendly motion arcs.\\nBuilt with 11-gauge steel tubing, electrostatic powder coating, and precision machined weight stacks.",
+    "description": "Heavy commercial strength machine engineered for biomechanically sound muscle isolation and joint-friendly motion arcs. Built with 11-gauge steel tubing, electrostatic powder coating, and precision machined weight stacks.",
     "specs": {
       "Frame Construction": "Heavy 11-Gauge Structural Steel Tubing (2.5 - 3.0mm)",
       "Finish": "Proprietary Dual-Coat Electrostatic Powder Coating",
@@ -4196,7 +4196,7 @@ export const PRODUCTS: Product[] = [
     "gallery": [
       "/images/equipment/strength/MX_MAGNUM MG-PL79 squat-lunge_Matte Blk_hero.png"
     ],
-    "description": "Heavy structural steel plate-loaded lower-body station engineered for maximum quad, hamstring, and glute muscle activation.\\nDelivers smooth linear bearings, oversized non-slip footplates, and easy-access safety locking mechanisms.",
+    "description": "Heavy structural steel plate-loaded lower-body station engineered for maximum quad, hamstring, and glute muscle activation. Delivers smooth linear bearings, oversized non-slip footplates, and easy-access safety locking mechanisms.",
     "specs": {
       "Frame Construction": "Heavy 11-Gauge Structural Steel Tubing (2.5 - 3.0mm)",
       "Finish": "Proprietary Dual-Coat Electrostatic Powder Coating",
@@ -4245,7 +4245,7 @@ export const PRODUCTS: Product[] = [
     "gallery": [
       "/images/equipment/strength/MX_MAGNUM MG-PL80 pendulum squat_Matte Blk_hero.png"
     ],
-    "description": "Heavy structural steel plate-loaded lower-body station engineered for maximum quad, hamstring, and glute muscle activation.\\nDelivers smooth linear bearings, oversized non-slip footplates, and easy-access safety locking mechanisms.",
+    "description": "Heavy structural steel plate-loaded lower-body station engineered for maximum quad, hamstring, and glute muscle activation. Delivers smooth linear bearings, oversized non-slip footplates, and easy-access safety locking mechanisms.",
     "specs": {
       "Frame Construction": "Heavy 11-Gauge Structural Steel Tubing (2.5 - 3.0mm)",
       "Finish": "Proprietary Dual-Coat Electrostatic Powder Coating",
@@ -4294,7 +4294,7 @@ export const PRODUCTS: Product[] = [
     "gallery": [
       "/images/equipment/strength/MX_MAGNUM MG-PL81 belt squat_Matte Blk_hero.png"
     ],
-    "description": "Heavy structural steel plate-loaded lower-body station engineered for maximum quad, hamstring, and glute muscle activation.\\nDelivers smooth linear bearings, oversized non-slip footplates, and easy-access safety locking mechanisms.",
+    "description": "Heavy structural steel plate-loaded lower-body station engineered for maximum quad, hamstring, and glute muscle activation. Delivers smooth linear bearings, oversized non-slip footplates, and easy-access safety locking mechanisms.",
     "specs": {
       "Frame Construction": "Heavy 11-Gauge Structural Steel Tubing (2.5 - 3.0mm)",
       "Finish": "Proprietary Dual-Coat Electrostatic Powder Coating",
@@ -4343,7 +4343,7 @@ export const PRODUCTS: Product[] = [
     "gallery": [
       "/images/equipment/strength/MX_MAGNUM MG-PL82 standing hip thrust_Matte Blk_hero.png"
     ],
-    "description": "Heavy commercial strength machine engineered for biomechanically sound muscle isolation and joint-friendly motion arcs.\\nBuilt with 11-gauge steel tubing, electrostatic powder coating, and precision machined weight stacks.",
+    "description": "Heavy commercial strength machine engineered for biomechanically sound muscle isolation and joint-friendly motion arcs. Built with 11-gauge steel tubing, electrostatic powder coating, and precision machined weight stacks.",
     "specs": {
       "Frame Construction": "Heavy 11-Gauge Structural Steel Tubing (2.5 - 3.0mm)",
       "Finish": "Proprietary Dual-Coat Electrostatic Powder Coating",
@@ -4392,7 +4392,7 @@ export const PRODUCTS: Product[] = [
     "gallery": [
       "/images/equipment/strength/MX_ULTRA G7-S13-03 converging chest press_Matte Blk_hero.png"
     ],
-    "description": "Biomechanical converging axis kinematics engineered to mirror the natural human movement curve during pressing motions.\\nFeatures ultra-smooth incremental weight stack adjustments and heavy-duty commercial upholstery.",
+    "description": "Biomechanical converging axis kinematics engineered to mirror the natural human movement curve during pressing motions. Features ultra-smooth incremental weight stack adjustments and heavy-duty commercial upholstery.",
     "specs": {
       "Frame Construction": "Heavy 11-Gauge Structural Steel Tubing (2.5 - 3.0mm)",
       "Finish": "Proprietary Dual-Coat Electrostatic Powder Coating",
@@ -4441,7 +4441,7 @@ export const PRODUCTS: Product[] = [
     "gallery": [
       "/images/equipment/strength/MX_ULTRA G7-S21-03 lateral raise_Matte Blk_hero.png"
     ],
-    "description": "Diverging movement plane delivers an authentic natural range of motion and superior latissimus dorsi muscle recruitment.\\nEquipped with ergonomic rotating handles, thigh stabilization rollers, and precision weight stacks.",
+    "description": "Diverging movement plane delivers an authentic natural range of motion and superior latissimus dorsi muscle recruitment. Equipped with ergonomic rotating handles, thigh stabilization rollers, and precision weight stacks.",
     "specs": {
       "Frame Construction": "Heavy 11-Gauge Structural Steel Tubing (2.5 - 3.0mm)",
       "Finish": "Proprietary Dual-Coat Electrostatic Powder Coating",
@@ -4490,7 +4490,7 @@ export const PRODUCTS: Product[] = [
     "gallery": [
       "/images/equipment/strength/MX_ULTRA G7-S22-03 pec fly-rear delt_Matte Blk_hero.png"
     ],
-    "description": "Heavy commercial strength machine engineered for biomechanically sound muscle isolation and joint-friendly motion arcs.\\nBuilt with 11-gauge steel tubing, electrostatic powder coating, and precision machined weight stacks.",
+    "description": "Heavy commercial strength machine engineered for biomechanically sound muscle isolation and joint-friendly motion arcs. Built with 11-gauge steel tubing, electrostatic powder coating, and precision machined weight stacks.",
     "specs": {
       "Frame Construction": "Heavy 11-Gauge Structural Steel Tubing (2.5 - 3.0mm)",
       "Finish": "Proprietary Dual-Coat Electrostatic Powder Coating",
@@ -4539,7 +4539,7 @@ export const PRODUCTS: Product[] = [
     "gallery": [
       "/images/equipment/strength/MX_ULTRA G7-S23-03 converging shoulder press_Matte Blk_hero.png"
     ],
-    "description": "Biomechanical converging axis kinematics engineered to mirror the natural human movement curve during pressing motions.\\nFeatures ultra-smooth incremental weight stack adjustments and heavy-duty commercial upholstery.",
+    "description": "Biomechanical converging axis kinematics engineered to mirror the natural human movement curve during pressing motions. Features ultra-smooth incremental weight stack adjustments and heavy-duty commercial upholstery.",
     "specs": {
       "Frame Construction": "Heavy 11-Gauge Structural Steel Tubing (2.5 - 3.0mm)",
       "Finish": "Proprietary Dual-Coat Electrostatic Powder Coating",
@@ -4588,7 +4588,7 @@ export const PRODUCTS: Product[] = [
     "gallery": [
       "/images/equipment/strength/MX_ULTRA G7-S33-03 diverging lat pulldown_Matte Blk_hero.png"
     ],
-    "description": "Diverging movement plane delivers an authentic natural range of motion and superior latissimus dorsi muscle recruitment.\\nEquipped with ergonomic rotating handles, thigh stabilization rollers, and precision weight stacks.",
+    "description": "Diverging movement plane delivers an authentic natural range of motion and superior latissimus dorsi muscle recruitment. Equipped with ergonomic rotating handles, thigh stabilization rollers, and precision weight stacks.",
     "specs": {
       "Frame Construction": "Heavy 11-Gauge Structural Steel Tubing (2.5 - 3.0mm)",
       "Finish": "Proprietary Dual-Coat Electrostatic Powder Coating",
@@ -4637,7 +4637,7 @@ export const PRODUCTS: Product[] = [
     "gallery": [
       "/images/equipment/strength/MX_ULTRA G7-S34-03 diverging seated row_Matte Blk_hero.png"
     ],
-    "description": "Diverging movement plane delivers an authentic natural range of motion and superior latissimus dorsi muscle recruitment.\\nEquipped with ergonomic rotating handles, thigh stabilization rollers, and precision weight stacks.",
+    "description": "Diverging movement plane delivers an authentic natural range of motion and superior latissimus dorsi muscle recruitment. Equipped with ergonomic rotating handles, thigh stabilization rollers, and precision weight stacks.",
     "specs": {
       "Frame Construction": "Heavy 11-Gauge Structural Steel Tubing (2.5 - 3.0mm)",
       "Finish": "Proprietary Dual-Coat Electrostatic Powder Coating",
@@ -4686,7 +4686,7 @@ export const PRODUCTS: Product[] = [
     "gallery": [
       "/images/equipment/strength/MX_ULTRA G7-S40-03 independent biceps curl_Matte Blk_hero.png"
     ],
-    "description": "Targeted isolation arm machine with precision pivot axis aligning directly with the anatomical elbow joint.\\nProvides continuous tension throughout the full range of motion with premium ergonomic arm pads.",
+    "description": "Targeted isolation arm machine with precision pivot axis aligning directly with the anatomical elbow joint. Provides continuous tension throughout the full range of motion with premium ergonomic arm pads.",
     "specs": {
       "Frame Construction": "Heavy 11-Gauge Structural Steel Tubing (2.5 - 3.0mm)",
       "Finish": "Proprietary Dual-Coat Electrostatic Powder Coating",
@@ -4735,7 +4735,7 @@ export const PRODUCTS: Product[] = [
     "gallery": [
       "/images/equipment/strength/MX_ULTRA G7-S41-03 dependent arm curl_Matte Blk_hero.png"
     ],
-    "description": "Targeted isolation arm machine with precision pivot axis aligning directly with the anatomical elbow joint.\\nProvides continuous tension throughout the full range of motion with premium ergonomic arm pads.",
+    "description": "Targeted isolation arm machine with precision pivot axis aligning directly with the anatomical elbow joint. Provides continuous tension throughout the full range of motion with premium ergonomic arm pads.",
     "specs": {
       "Frame Construction": "Heavy 11-Gauge Structural Steel Tubing (2.5 - 3.0mm)",
       "Finish": "Proprietary Dual-Coat Electrostatic Powder Coating",
@@ -4784,7 +4784,7 @@ export const PRODUCTS: Product[] = [
     "gallery": [
       "/images/equipment/strength/MX_ULTRA G7-S42-03 triceps press_Matte Blk_hero.png"
     ],
-    "description": "Biomechanical converging axis kinematics engineered to mirror the natural human movement curve during pressing motions.\\nFeatures ultra-smooth incremental weight stack adjustments and heavy-duty commercial upholstery.",
+    "description": "Biomechanical converging axis kinematics engineered to mirror the natural human movement curve during pressing motions. Features ultra-smooth incremental weight stack adjustments and heavy-duty commercial upholstery.",
     "specs": {
       "Frame Construction": "Heavy 11-Gauge Structural Steel Tubing (2.5 - 3.0mm)",
       "Finish": "Proprietary Dual-Coat Electrostatic Powder Coating",
@@ -4833,7 +4833,7 @@ export const PRODUCTS: Product[] = [
     "gallery": [
       "/images/equipment/strength/MX_ULTRA G7-S45-03 triceps extension_Matte Blk_hero.png"
     ],
-    "description": "Targeted isolation arm machine with precision pivot axis aligning directly with the anatomical elbow joint.\\nProvides continuous tension throughout the full range of motion with premium ergonomic arm pads.",
+    "description": "Targeted isolation arm machine with precision pivot axis aligning directly with the anatomical elbow joint. Provides continuous tension throughout the full range of motion with premium ergonomic arm pads.",
     "specs": {
       "Frame Construction": "Heavy 11-Gauge Structural Steel Tubing (2.5 - 3.0mm)",
       "Finish": "Proprietary Dual-Coat Electrostatic Powder Coating",
@@ -4882,7 +4882,7 @@ export const PRODUCTS: Product[] = [
     "gallery": [
       "/images/equipment/strength/MX_ULTRA G7-S51-03 abdominal crunch_Matte Blk_hero.png"
     ],
-    "description": "Heavy commercial strength machine engineered for biomechanically sound muscle isolation and joint-friendly motion arcs.\\nBuilt with 11-gauge steel tubing, electrostatic powder coating, and precision machined weight stacks.",
+    "description": "Heavy commercial strength machine engineered for biomechanically sound muscle isolation and joint-friendly motion arcs. Built with 11-gauge steel tubing, electrostatic powder coating, and precision machined weight stacks.",
     "specs": {
       "Frame Construction": "Heavy 11-Gauge Structural Steel Tubing (2.5 - 3.0mm)",
       "Finish": "Proprietary Dual-Coat Electrostatic Powder Coating",
@@ -4931,7 +4931,7 @@ export const PRODUCTS: Product[] = [
     "gallery": [
       "/images/equipment/strength/MX_ULTRA G7-S52-03 back extension_Matte Blk_hero-1250.png"
     ],
-    "description": "Heavy commercial strength machine engineered for biomechanically sound muscle isolation and joint-friendly motion arcs.\\nBuilt with 11-gauge steel tubing, electrostatic powder coating, and precision machined weight stacks.",
+    "description": "Heavy commercial strength machine engineered for biomechanically sound muscle isolation and joint-friendly motion arcs. Built with 11-gauge steel tubing, electrostatic powder coating, and precision machined weight stacks.",
     "specs": {
       "Frame Construction": "Heavy 11-Gauge Structural Steel Tubing (2.5 - 3.0mm)",
       "Finish": "Proprietary Dual-Coat Electrostatic Powder Coating",
@@ -4980,7 +4980,7 @@ export const PRODUCTS: Product[] = [
     "gallery": [
       "/images/equipment/strength/MX_ULTRA G7-S55-03 rotary torso_Matte Blk_hero.png"
     ],
-    "description": "Heavy commercial strength machine engineered for biomechanically sound muscle isolation and joint-friendly motion arcs.\\nBuilt with 11-gauge steel tubing, electrostatic powder coating, and precision machined weight stacks.",
+    "description": "Heavy commercial strength machine engineered for biomechanically sound muscle isolation and joint-friendly motion arcs. Built with 11-gauge steel tubing, electrostatic powder coating, and precision machined weight stacks.",
     "specs": {
       "Frame Construction": "Heavy 11-Gauge Structural Steel Tubing (2.5 - 3.0mm)",
       "Finish": "Proprietary Dual-Coat Electrostatic Powder Coating",
@@ -5029,7 +5029,7 @@ export const PRODUCTS: Product[] = [
     "gallery": [
       "/images/equipment/strength/MX_ULTRA G7-S70-03 leg press_Matte Blk_hero.png"
     ],
-    "description": "Biomechanical converging axis kinematics engineered to mirror the natural human movement curve during pressing motions.\\nFeatures ultra-smooth incremental weight stack adjustments and heavy-duty commercial upholstery.",
+    "description": "Biomechanical converging axis kinematics engineered to mirror the natural human movement curve during pressing motions. Features ultra-smooth incremental weight stack adjustments and heavy-duty commercial upholstery.",
     "specs": {
       "Frame Construction": "Heavy 11-Gauge Structural Steel Tubing (2.5 - 3.0mm)",
       "Finish": "Proprietary Dual-Coat Electrostatic Powder Coating",
@@ -5078,7 +5078,7 @@ export const PRODUCTS: Product[] = [
     "gallery": [
       "/images/equipment/strength/MX_ULTRA G7-S71-03 leg extension_Matte Blk_hero.png"
     ],
-    "description": "Heavy structural steel plate-loaded lower-body station engineered for maximum quad, hamstring, and glute muscle activation.\\nDelivers smooth linear bearings, oversized non-slip footplates, and easy-access safety locking mechanisms.",
+    "description": "Heavy structural steel plate-loaded lower-body station engineered for maximum quad, hamstring, and glute muscle activation. Delivers smooth linear bearings, oversized non-slip footplates, and easy-access safety locking mechanisms.",
     "specs": {
       "Frame Construction": "Heavy 11-Gauge Structural Steel Tubing (2.5 - 3.0mm)",
       "Finish": "Proprietary Dual-Coat Electrostatic Powder Coating",
@@ -5127,7 +5127,7 @@ export const PRODUCTS: Product[] = [
     "gallery": [
       "/images/equipment/strength/MX_ULTRA G7-S72-03 seated leg curl_Matte Blk_hero.png"
     ],
-    "description": "Heavy structural steel plate-loaded lower-body station engineered for maximum quad, hamstring, and glute muscle activation.\\nDelivers smooth linear bearings, oversized non-slip footplates, and easy-access safety locking mechanisms.",
+    "description": "Heavy structural steel plate-loaded lower-body station engineered for maximum quad, hamstring, and glute muscle activation. Delivers smooth linear bearings, oversized non-slip footplates, and easy-access safety locking mechanisms.",
     "specs": {
       "Frame Construction": "Heavy 11-Gauge Structural Steel Tubing (2.5 - 3.0mm)",
       "Finish": "Proprietary Dual-Coat Electrostatic Powder Coating",
@@ -5176,7 +5176,7 @@ export const PRODUCTS: Product[] = [
     "gallery": [
       "/images/equipment/strength/MX_ULTRA G7-S73-03 prone leg curl_Matte Blk_hero.png"
     ],
-    "description": "Heavy structural steel plate-loaded lower-body station engineered for maximum quad, hamstring, and glute muscle activation.\\nDelivers smooth linear bearings, oversized non-slip footplates, and easy-access safety locking mechanisms.",
+    "description": "Heavy structural steel plate-loaded lower-body station engineered for maximum quad, hamstring, and glute muscle activation. Delivers smooth linear bearings, oversized non-slip footplates, and easy-access safety locking mechanisms.",
     "specs": {
       "Frame Construction": "Heavy 11-Gauge Structural Steel Tubing (2.5 - 3.0mm)",
       "Finish": "Proprietary Dual-Coat Electrostatic Powder Coating",
@@ -5225,7 +5225,7 @@ export const PRODUCTS: Product[] = [
     "gallery": [
       "/images/equipment/strength/MX_ULTRA G7-S74-03 hip adductor_Matte Blk_hero.png"
     ],
-    "description": "Heavy commercial strength machine engineered for biomechanically sound muscle isolation and joint-friendly motion arcs.\\nBuilt with 11-gauge steel tubing, electrostatic powder coating, and precision machined weight stacks.",
+    "description": "Heavy commercial strength machine engineered for biomechanically sound muscle isolation and joint-friendly motion arcs. Built with 11-gauge steel tubing, electrostatic powder coating, and precision machined weight stacks.",
     "specs": {
       "Frame Construction": "Heavy 11-Gauge Structural Steel Tubing (2.5 - 3.0mm)",
       "Finish": "Proprietary Dual-Coat Electrostatic Powder Coating",
@@ -5274,7 +5274,7 @@ export const PRODUCTS: Product[] = [
     "gallery": [
       "/images/equipment/strength/MX_ULTRA G7-S75-03 hip abductor_Matte Blk_hero.png"
     ],
-    "description": "Heavy commercial strength machine engineered for biomechanically sound muscle isolation and joint-friendly motion arcs.\\nBuilt with 11-gauge steel tubing, electrostatic powder coating, and precision machined weight stacks.",
+    "description": "Heavy commercial strength machine engineered for biomechanically sound muscle isolation and joint-friendly motion arcs. Built with 11-gauge steel tubing, electrostatic powder coating, and precision machined weight stacks.",
     "specs": {
       "Frame Construction": "Heavy 11-Gauge Structural Steel Tubing (2.5 - 3.0mm)",
       "Finish": "Proprietary Dual-Coat Electrostatic Powder Coating",
@@ -5323,7 +5323,7 @@ export const PRODUCTS: Product[] = [
     "gallery": [
       "/images/equipment/strength/MX_ULTRA G7-S77-03 calf extension_Matte Blk_hero.png"
     ],
-    "description": "Heavy structural steel plate-loaded lower-body station engineered for maximum quad, hamstring, and glute muscle activation.\\nDelivers smooth linear bearings, oversized non-slip footplates, and easy-access safety locking mechanisms.",
+    "description": "Heavy structural steel plate-loaded lower-body station engineered for maximum quad, hamstring, and glute muscle activation. Delivers smooth linear bearings, oversized non-slip footplates, and easy-access safety locking mechanisms.",
     "specs": {
       "Frame Construction": "Heavy 11-Gauge Structural Steel Tubing (2.5 - 3.0mm)",
       "Finish": "Proprietary Dual-Coat Electrostatic Powder Coating",
@@ -5372,7 +5372,7 @@ export const PRODUCTS: Product[] = [
     "gallery": [
       "/images/equipment/strength/MX_ULTRA G7-S78-03 glute_Matte Blk_hero.png"
     ],
-    "description": "Heavy commercial strength machine engineered for biomechanically sound muscle isolation and joint-friendly motion arcs.\\nBuilt with 11-gauge steel tubing, electrostatic powder coating, and precision machined weight stacks.",
+    "description": "Heavy commercial strength machine engineered for biomechanically sound muscle isolation and joint-friendly motion arcs. Built with 11-gauge steel tubing, electrostatic powder coating, and precision machined weight stacks.",
     "specs": {
       "Frame Construction": "Heavy 11-Gauge Structural Steel Tubing (2.5 - 3.0mm)",
       "Finish": "Proprietary Dual-Coat Electrostatic Powder Coating",
@@ -5421,7 +5421,7 @@ export const PRODUCTS: Product[] = [
     "gallery": [
       "/images/equipment/strength/MX_ULTRA G7-S79-03 hip thrust_Matte Blk_hero.png"
     ],
-    "description": "Heavy commercial strength machine engineered for biomechanically sound muscle isolation and joint-friendly motion arcs.\\nBuilt with 11-gauge steel tubing, electrostatic powder coating, and precision machined weight stacks.",
+    "description": "Heavy commercial strength machine engineered for biomechanically sound muscle isolation and joint-friendly motion arcs. Built with 11-gauge steel tubing, electrostatic powder coating, and precision machined weight stacks.",
     "specs": {
       "Frame Construction": "Heavy 11-Gauge Structural Steel Tubing (2.5 - 3.0mm)",
       "Finish": "Proprietary Dual-Coat Electrostatic Powder Coating",
@@ -5470,7 +5470,7 @@ export const PRODUCTS: Product[] = [
     "gallery": [
       "/images/equipment/strength/MX_VERSA VS-S13 converging chest press BASIC INT_Matte Blk_hero.png"
     ],
-    "description": "Biomechanical converging axis kinematics engineered to mirror the natural human movement curve during pressing motions.\\nFeatures ultra-smooth incremental weight stack adjustments and heavy-duty commercial upholstery.",
+    "description": "Biomechanical converging axis kinematics engineered to mirror the natural human movement curve during pressing motions. Features ultra-smooth incremental weight stack adjustments and heavy-duty commercial upholstery.",
     "specs": {
       "Frame Construction": "Heavy 11-Gauge Structural Steel Tubing (2.5 - 3.0mm)",
       "Finish": "Proprietary Dual-Coat Electrostatic Powder Coating",
@@ -5519,7 +5519,7 @@ export const PRODUCTS: Product[] = [
     "gallery": [
       "/images/equipment/strength/MX_VERSA VS-S131 multi-press BASIC_Iced Slvr_hero.png"
     ],
-    "description": "Biomechanical converging axis kinematics engineered to mirror the natural human movement curve during pressing motions.\\nFeatures ultra-smooth incremental weight stack adjustments and heavy-duty commercial upholstery.",
+    "description": "Biomechanical converging axis kinematics engineered to mirror the natural human movement curve during pressing motions. Features ultra-smooth incremental weight stack adjustments and heavy-duty commercial upholstery.",
     "specs": {
       "Frame Construction": "Heavy 11-Gauge Structural Steel Tubing (2.5 - 3.0mm)",
       "Finish": "Proprietary Dual-Coat Electrostatic Powder Coating",
@@ -5568,7 +5568,7 @@ export const PRODUCTS: Product[] = [
     "gallery": [
       "/images/equipment/strength/MX_VERSA VS-S22 pectoral fly-rear delt BASIC INT_Matte Blk_hero-1250.png"
     ],
-    "description": "Heavy commercial strength machine engineered for biomechanically sound muscle isolation and joint-friendly motion arcs.\\nBuilt with 11-gauge steel tubing, electrostatic powder coating, and precision machined weight stacks.",
+    "description": "Heavy commercial strength machine engineered for biomechanically sound muscle isolation and joint-friendly motion arcs. Built with 11-gauge steel tubing, electrostatic powder coating, and precision machined weight stacks.",
     "specs": {
       "Frame Construction": "Heavy 11-Gauge Structural Steel Tubing (2.5 - 3.0mm)",
       "Finish": "Proprietary Dual-Coat Electrostatic Powder Coating",
@@ -5617,7 +5617,7 @@ export const PRODUCTS: Product[] = [
     "gallery": [
       "/images/equipment/strength/MX_VERSA VS-S23 converging shoulder press BASIC INT_Matte Blk_hero.png"
     ],
-    "description": "Biomechanical converging axis kinematics engineered to mirror the natural human movement curve during pressing motions.\\nFeatures ultra-smooth incremental weight stack adjustments and heavy-duty commercial upholstery.",
+    "description": "Biomechanical converging axis kinematics engineered to mirror the natural human movement curve during pressing motions. Features ultra-smooth incremental weight stack adjustments and heavy-duty commercial upholstery.",
     "specs": {
       "Frame Construction": "Heavy 11-Gauge Structural Steel Tubing (2.5 - 3.0mm)",
       "Finish": "Proprietary Dual-Coat Electrostatic Powder Coating",
@@ -5666,7 +5666,7 @@ export const PRODUCTS: Product[] = [
     "gallery": [
       "/images/equipment/strength/MX_VERSA VS-S33 diverging lat pulldown PLUS_Matte Blk_hero.tif"
     ],
-    "description": "Diverging movement plane delivers an authentic natural range of motion and superior latissimus dorsi muscle recruitment.\\nEquipped with ergonomic rotating handles, thigh stabilization rollers, and precision weight stacks.",
+    "description": "Diverging movement plane delivers an authentic natural range of motion and superior latissimus dorsi muscle recruitment. Equipped with ergonomic rotating handles, thigh stabilization rollers, and precision weight stacks.",
     "specs": {
       "Frame Construction": "Heavy 11-Gauge Structural Steel Tubing (2.5 - 3.0mm)",
       "Finish": "Proprietary Dual-Coat Electrostatic Powder Coating",
@@ -5715,7 +5715,7 @@ export const PRODUCTS: Product[] = [
     "gallery": [
       "/images/equipment/strength/MX_VERSA VS-S331 lat pulldown seated row BASIC INT_Matte Blk_hero.png"
     ],
-    "description": "Diverging movement plane delivers an authentic natural range of motion and superior latissimus dorsi muscle recruitment.\\nEquipped with ergonomic rotating handles, thigh stabilization rollers, and precision weight stacks.",
+    "description": "Diverging movement plane delivers an authentic natural range of motion and superior latissimus dorsi muscle recruitment. Equipped with ergonomic rotating handles, thigh stabilization rollers, and precision weight stacks.",
     "specs": {
       "Frame Construction": "Heavy 11-Gauge Structural Steel Tubing (2.5 - 3.0mm)",
       "Finish": "Proprietary Dual-Coat Electrostatic Powder Coating",
@@ -5764,7 +5764,7 @@ export const PRODUCTS: Product[] = [
     "gallery": [
       "/images/equipment/strength/MX_VERSA VS-S34 diverging seated row PLUS_Matte Blk_hero.png"
     ],
-    "description": "Diverging movement plane delivers an authentic natural range of motion and superior latissimus dorsi muscle recruitment.\\nEquipped with ergonomic rotating handles, thigh stabilization rollers, and precision weight stacks.",
+    "description": "Diverging movement plane delivers an authentic natural range of motion and superior latissimus dorsi muscle recruitment. Equipped with ergonomic rotating handles, thigh stabilization rollers, and precision weight stacks.",
     "specs": {
       "Frame Construction": "Heavy 11-Gauge Structural Steel Tubing (2.5 - 3.0mm)",
       "Finish": "Proprietary Dual-Coat Electrostatic Powder Coating",
@@ -5813,7 +5813,7 @@ export const PRODUCTS: Product[] = [
     "gallery": [
       "/images/equipment/strength/MX_VERSA VS-S40 biceps curl PLUS_Matte Blk_hero.png"
     ],
-    "description": "Targeted isolation arm machine with precision pivot axis aligning directly with the anatomical elbow joint.\\nProvides continuous tension throughout the full range of motion with premium ergonomic arm pads.",
+    "description": "Targeted isolation arm machine with precision pivot axis aligning directly with the anatomical elbow joint. Provides continuous tension throughout the full range of motion with premium ergonomic arm pads.",
     "specs": {
       "Frame Construction": "Heavy 11-Gauge Structural Steel Tubing (2.5 - 3.0mm)",
       "Finish": "Proprietary Dual-Coat Electrostatic Powder Coating",
@@ -5862,7 +5862,7 @@ export const PRODUCTS: Product[] = [
     "gallery": [
       "/images/equipment/strength/MX_VERSA VS-S401 bicep tricep BASIC INT_Matte Blk_hero.png"
     ],
-    "description": "Targeted isolation arm machine with precision pivot axis aligning directly with the anatomical elbow joint.\\nProvides continuous tension throughout the full range of motion with premium ergonomic arm pads.",
+    "description": "Targeted isolation arm machine with precision pivot axis aligning directly with the anatomical elbow joint. Provides continuous tension throughout the full range of motion with premium ergonomic arm pads.",
     "specs": {
       "Frame Construction": "Heavy 11-Gauge Structural Steel Tubing (2.5 - 3.0mm)",
       "Finish": "Proprietary Dual-Coat Electrostatic Powder Coating",
@@ -5911,7 +5911,7 @@ export const PRODUCTS: Product[] = [
     "gallery": [
       "/images/equipment/strength/MX_VERSA VS-S42 triceps press BASIC NA_Matte Blk_hero.png"
     ],
-    "description": "Biomechanical converging axis kinematics engineered to mirror the natural human movement curve during pressing motions.\\nFeatures ultra-smooth incremental weight stack adjustments and heavy-duty commercial upholstery.",
+    "description": "Biomechanical converging axis kinematics engineered to mirror the natural human movement curve during pressing motions. Features ultra-smooth incremental weight stack adjustments and heavy-duty commercial upholstery.",
     "specs": {
       "Frame Construction": "Heavy 11-Gauge Structural Steel Tubing (2.5 - 3.0mm)",
       "Finish": "Proprietary Dual-Coat Electrostatic Powder Coating",
@@ -5960,7 +5960,7 @@ export const PRODUCTS: Product[] = [
     "gallery": [
       "/images/equipment/strength/MX_VERSA VS-S53 abdominal PLUS_Matte Blk_hero.png"
     ],
-    "description": "Heavy commercial strength machine engineered for biomechanically sound muscle isolation and joint-friendly motion arcs.\\nBuilt with 11-gauge steel tubing, electrostatic powder coating, and precision machined weight stacks.",
+    "description": "Heavy commercial strength machine engineered for biomechanically sound muscle isolation and joint-friendly motion arcs. Built with 11-gauge steel tubing, electrostatic powder coating, and precision machined weight stacks.",
     "specs": {
       "Frame Construction": "Heavy 11-Gauge Structural Steel Tubing (2.5 - 3.0mm)",
       "Finish": "Proprietary Dual-Coat Electrostatic Powder Coating",
@@ -6009,7 +6009,7 @@ export const PRODUCTS: Product[] = [
     "gallery": [
       "/images/equipment/strength/MX_VERSA VS-S531 ab low back BASIC INT_Matte Blk_hero.png"
     ],
-    "description": "Heavy commercial strength machine engineered for biomechanically sound muscle isolation and joint-friendly motion arcs.\\nBuilt with 11-gauge steel tubing, electrostatic powder coating, and precision machined weight stacks.",
+    "description": "Heavy commercial strength machine engineered for biomechanically sound muscle isolation and joint-friendly motion arcs. Built with 11-gauge steel tubing, electrostatic powder coating, and precision machined weight stacks.",
     "specs": {
       "Frame Construction": "Heavy 11-Gauge Structural Steel Tubing (2.5 - 3.0mm)",
       "Finish": "Proprietary Dual-Coat Electrostatic Powder Coating",
@@ -6058,7 +6058,7 @@ export const PRODUCTS: Product[] = [
     "gallery": [
       "/images/equipment/strength/MX_VERSA VS-S601 chin dip assist BASIC INT_Matte Blk_hero.png"
     ],
-    "description": "Heavy commercial strength machine engineered for biomechanically sound muscle isolation and joint-friendly motion arcs.\\nBuilt with 11-gauge steel tubing, electrostatic powder coating, and precision machined weight stacks.",
+    "description": "Heavy commercial strength machine engineered for biomechanically sound muscle isolation and joint-friendly motion arcs. Built with 11-gauge steel tubing, electrostatic powder coating, and precision machined weight stacks.",
     "specs": {
       "Frame Construction": "Heavy 11-Gauge Structural Steel Tubing (2.5 - 3.0mm)",
       "Finish": "Proprietary Dual-Coat Electrostatic Powder Coating",
@@ -6107,7 +6107,7 @@ export const PRODUCTS: Product[] = [
     "gallery": [
       "/images/equipment/strength/MX_VERSA VS-S70 leg press PLUS_Matte Blk_hero.png"
     ],
-    "description": "Biomechanical converging axis kinematics engineered to mirror the natural human movement curve during pressing motions.\\nFeatures ultra-smooth incremental weight stack adjustments and heavy-duty commercial upholstery.",
+    "description": "Biomechanical converging axis kinematics engineered to mirror the natural human movement curve during pressing motions. Features ultra-smooth incremental weight stack adjustments and heavy-duty commercial upholstery.",
     "specs": {
       "Frame Construction": "Heavy 11-Gauge Structural Steel Tubing (2.5 - 3.0mm)",
       "Finish": "Proprietary Dual-Coat Electrostatic Powder Coating",
@@ -6156,7 +6156,7 @@ export const PRODUCTS: Product[] = [
     "gallery": [
       "/images/equipment/strength/MX_VERSA VS-S71 leg extension PLUS_Matte Blk_hero.png"
     ],
-    "description": "Heavy structural steel plate-loaded lower-body station engineered for maximum quad, hamstring, and glute muscle activation.\\nDelivers smooth linear bearings, oversized non-slip footplates, and easy-access safety locking mechanisms.",
+    "description": "Heavy structural steel plate-loaded lower-body station engineered for maximum quad, hamstring, and glute muscle activation. Delivers smooth linear bearings, oversized non-slip footplates, and easy-access safety locking mechanisms.",
     "specs": {
       "Frame Construction": "Heavy 11-Gauge Structural Steel Tubing (2.5 - 3.0mm)",
       "Finish": "Proprietary Dual-Coat Electrostatic Powder Coating",
@@ -6205,7 +6205,7 @@ export const PRODUCTS: Product[] = [
     "gallery": [
       "/images/equipment/strength/MX_VERSA VS-S711 leg extension leg curl BASIC INT_Matte Blk_hero.png"
     ],
-    "description": "Heavy structural steel plate-loaded lower-body station engineered for maximum quad, hamstring, and glute muscle activation.\\nDelivers smooth linear bearings, oversized non-slip footplates, and easy-access safety locking mechanisms.",
+    "description": "Heavy structural steel plate-loaded lower-body station engineered for maximum quad, hamstring, and glute muscle activation. Delivers smooth linear bearings, oversized non-slip footplates, and easy-access safety locking mechanisms.",
     "specs": {
       "Frame Construction": "Heavy 11-Gauge Structural Steel Tubing (2.5 - 3.0mm)",
       "Finish": "Proprietary Dual-Coat Electrostatic Powder Coating",
@@ -6254,7 +6254,7 @@ export const PRODUCTS: Product[] = [
     "gallery": [
       "/images/equipment/strength/MX_VERSA VS-S72 seated leg curl BASIC NA_Matte Blk_hero.png"
     ],
-    "description": "Heavy structural steel plate-loaded lower-body station engineered for maximum quad, hamstring, and glute muscle activation.\\nDelivers smooth linear bearings, oversized non-slip footplates, and easy-access safety locking mechanisms.",
+    "description": "Heavy structural steel plate-loaded lower-body station engineered for maximum quad, hamstring, and glute muscle activation. Delivers smooth linear bearings, oversized non-slip footplates, and easy-access safety locking mechanisms.",
     "specs": {
       "Frame Construction": "Heavy 11-Gauge Structural Steel Tubing (2.5 - 3.0mm)",
       "Finish": "Proprietary Dual-Coat Electrostatic Powder Coating",
@@ -6303,7 +6303,7 @@ export const PRODUCTS: Product[] = [
     "gallery": [
       "/images/equipment/strength/MX_VERSA VS-S74 hip adductor-abductor BASIC INT_Matte Blk_hero.png"
     ],
-    "description": "Heavy commercial strength machine engineered for biomechanically sound muscle isolation and joint-friendly motion arcs.\\nBuilt with 11-gauge steel tubing, electrostatic powder coating, and precision machined weight stacks.",
+    "description": "Heavy commercial strength machine engineered for biomechanically sound muscle isolation and joint-friendly motion arcs. Built with 11-gauge steel tubing, electrostatic powder coating, and precision machined weight stacks.",
     "specs": {
       "Frame Construction": "Heavy 11-Gauge Structural Steel Tubing (2.5 - 3.0mm)",
       "Finish": "Proprietary Dual-Coat Electrostatic Powder Coating",
@@ -6352,7 +6352,7 @@ export const PRODUCTS: Product[] = [
     "gallery": [
       "/images/equipment/strength/MX_VERSA VS-S78 glute BASIC INT_Matte Blk_hero.png"
     ],
-    "description": "Heavy commercial strength machine engineered for biomechanically sound muscle isolation and joint-friendly motion arcs.\\nBuilt with 11-gauge steel tubing, electrostatic powder coating, and precision machined weight stacks.",
+    "description": "Heavy commercial strength machine engineered for biomechanically sound muscle isolation and joint-friendly motion arcs. Built with 11-gauge steel tubing, electrostatic powder coating, and precision machined weight stacks.",
     "specs": {
       "Frame Construction": "Heavy 11-Gauge Structural Steel Tubing (2.5 - 3.0mm)",
       "Finish": "Proprietary Dual-Coat Electrostatic Powder Coating",
@@ -6401,7 +6401,7 @@ export const PRODUCTS: Product[] = [
     "gallery": [
       "/images/equipment/free-weights/MX_G1-FW151 flat bench_Matte Blk_hero.png"
     ],
-    "description": "Heavy-gauge Olympic lifting bench built with molded urethane bar catches, spotter platform, and high-density vinyl upholstery.\\nEngineered for maximum stability, safety, and heavy commercial powerlifting workouts.",
+    "description": "Heavy-gauge Olympic lifting bench built with molded urethane bar catches, spotter platform, and high-density vinyl upholstery. Engineered for maximum stability, safety, and heavy commercial powerlifting workouts.",
     "specs": {
       "Frame Construction": "Heavy 11-Gauge Structural Steel Tubing (2.5 - 3.0mm)",
       "Finish": "Proprietary Dual-Coat Electrostatic Powder Coating",
@@ -6449,7 +6449,7 @@ export const PRODUCTS: Product[] = [
     "gallery": [
       "/images/equipment/free-weights/MX_G1-FW152 adj decline bench_Matte Blk_hero.png"
     ],
-    "description": "Heavy-gauge Olympic lifting bench built with molded urethane bar catches, spotter platform, and high-density vinyl upholstery.\\nEngineered for maximum stability, safety, and heavy commercial powerlifting workouts.",
+    "description": "Heavy-gauge Olympic lifting bench built with molded urethane bar catches, spotter platform, and high-density vinyl upholstery. Engineered for maximum stability, safety, and heavy commercial powerlifting workouts.",
     "specs": {
       "Frame Construction": "Heavy 11-Gauge Structural Steel Tubing (2.5 - 3.0mm)",
       "Finish": "Proprietary Dual-Coat Electrostatic Powder Coating",
@@ -6497,7 +6497,7 @@ export const PRODUCTS: Product[] = [
     "gallery": [
       "/images/equipment/free-weights/MX_G1-FW153 adj incline bench_Matte Blk_hero.png"
     ],
-    "description": "Heavy-gauge Olympic lifting bench built with molded urethane bar catches, spotter platform, and high-density vinyl upholstery.\\nEngineered for maximum stability, safety, and heavy commercial powerlifting workouts.",
+    "description": "Heavy-gauge Olympic lifting bench built with molded urethane bar catches, spotter platform, and high-density vinyl upholstery. Engineered for maximum stability, safety, and heavy commercial powerlifting workouts.",
     "specs": {
       "Frame Construction": "Heavy 11-Gauge Structural Steel Tubing (2.5 - 3.0mm)",
       "Finish": "Proprietary Dual-Coat Electrostatic Powder Coating",
@@ -6545,7 +6545,7 @@ export const PRODUCTS: Product[] = [
     "gallery": [
       "/images/equipment/free-weights/MX_G1-FW155 preacher curl_Matte Blk_hero.png"
     ],
-    "description": "Industrial-grade heavy steel construction with laser-cut angle indicators, UHMW wear guards, and high-density vinyl padding.\\nBuilt for maximum stability, safety, and durability in high-demand free-weight zones.",
+    "description": "Industrial-grade heavy steel construction with laser-cut angle indicators, UHMW wear guards, and high-density vinyl padding. Built for maximum stability, safety, and durability in high-demand free-weight zones.",
     "specs": {
       "Frame Construction": "Heavy 11-Gauge Structural Steel Tubing (2.5 - 3.0mm)",
       "Finish": "Proprietary Dual-Coat Electrostatic Powder Coating",
@@ -6593,7 +6593,7 @@ export const PRODUCTS: Product[] = [
     "gallery": [
       "/images/equipment/free-weights/MX_G1-FW156 upright bench_Matte Blk_hero.png"
     ],
-    "description": "Heavy-gauge Olympic lifting bench built with molded urethane bar catches, spotter platform, and high-density vinyl upholstery.\\nEngineered for maximum stability, safety, and heavy commercial powerlifting workouts.",
+    "description": "Heavy-gauge Olympic lifting bench built with molded urethane bar catches, spotter platform, and high-density vinyl upholstery. Engineered for maximum stability, safety, and heavy commercial powerlifting workouts.",
     "specs": {
       "Frame Construction": "Heavy 11-Gauge Structural Steel Tubing (2.5 - 3.0mm)",
       "Finish": "Proprietary Dual-Coat Electrostatic Powder Coating",
@@ -6641,7 +6641,7 @@ export const PRODUCTS: Product[] = [
     "gallery": [
       "/images/equipment/free-weights/MX_G1-FW157 weight rack_Matte Blk_hero.png"
     ],
-    "description": "Industrial space-saving weight plate storage tree with chrome-plated Olympic horns and integrated barbell holders.\\nEngineered for maximum stability, fast plate loading, and high-density gym floor organization.",
+    "description": "Industrial space-saving weight plate storage tree with chrome-plated Olympic horns and integrated barbell holders. Engineered for maximum stability, fast plate loading, and high-density gym floor organization.",
     "specs": {
       "Frame Construction": "Heavy 11-Gauge Structural Steel Tubing (2.5 - 3.0mm)",
       "Finish": "Proprietary Dual-Coat Electrostatic Powder Coating",
@@ -6689,7 +6689,7 @@ export const PRODUCTS: Product[] = [
     "gallery": [
       "/images/equipment/free-weights/MX_G1-FW158 5-pair dumbbell rack_Matte Blk_hero.png"
     ],
-    "description": "Heavy-gauge structural steel dumbbell storage rack with laser-cut angle trays and durable urethane saddle cradles.\\nKeeps free-weight zones organized, safe, and visually clean while protecting dumbbell finishes.",
+    "description": "Heavy-gauge structural steel dumbbell storage rack with laser-cut angle trays and durable urethane saddle cradles. Keeps free-weight zones organized, safe, and visually clean while protecting dumbbell finishes.",
     "specs": {
       "Frame Construction": "Heavy 11-Gauge Structural Steel Tubing (2.5 - 3.0mm)",
       "Finish": "Proprietary Dual-Coat Electrostatic Powder Coating",
@@ -6737,7 +6737,7 @@ export const PRODUCTS: Product[] = [
     "gallery": [
       "/images/equipment/free-weights/MX_G1-FW159 10-pair dumbbell rack_Matte Blk_hero.png"
     ],
-    "description": "Heavy-gauge structural steel dumbbell storage rack with laser-cut angle trays and durable urethane saddle cradles.\\nKeeps free-weight zones organized, safe, and visually clean while protecting dumbbell finishes.",
+    "description": "Heavy-gauge structural steel dumbbell storage rack with laser-cut angle trays and durable urethane saddle cradles. Keeps free-weight zones organized, safe, and visually clean while protecting dumbbell finishes.",
     "specs": {
       "Frame Construction": "Heavy 11-Gauge Structural Steel Tubing (2.5 - 3.0mm)",
       "Finish": "Proprietary Dual-Coat Electrostatic Powder Coating",
@@ -6785,7 +6785,7 @@ export const PRODUCTS: Product[] = [
     "gallery": [
       "/images/equipment/free-weights/MX_G1-FW160 barbell rack_Matte Blk_hero.png"
     ],
-    "description": "Industrial space-saving weight plate storage tree with chrome-plated Olympic horns and integrated barbell holders.\\nEngineered for maximum stability, fast plate loading, and high-density gym floor organization.",
+    "description": "Industrial space-saving weight plate storage tree with chrome-plated Olympic horns and integrated barbell holders. Engineered for maximum stability, fast plate loading, and high-density gym floor organization.",
     "specs": {
       "Frame Construction": "Heavy 11-Gauge Structural Steel Tubing (2.5 - 3.0mm)",
       "Finish": "Proprietary Dual-Coat Electrostatic Powder Coating",
@@ -6833,7 +6833,7 @@ export const PRODUCTS: Product[] = [
     "gallery": [
       "/images/equipment/free-weights/MX_G1-FW163 olym flat bench_Matte Blk_hero.png"
     ],
-    "description": "Heavy-gauge Olympic lifting bench built with molded urethane bar catches, spotter platform, and high-density vinyl upholstery.\\nEngineered for maximum stability, safety, and heavy commercial powerlifting workouts.",
+    "description": "Heavy-gauge Olympic lifting bench built with molded urethane bar catches, spotter platform, and high-density vinyl upholstery. Engineered for maximum stability, safety, and heavy commercial powerlifting workouts.",
     "specs": {
       "Frame Construction": "Heavy 11-Gauge Structural Steel Tubing (2.5 - 3.0mm)",
       "Finish": "Proprietary Dual-Coat Electrostatic Powder Coating",
@@ -6881,7 +6881,7 @@ export const PRODUCTS: Product[] = [
     "gallery": [
       "/images/equipment/free-weights/MX_G1-FW164 olym incline bench_Matte Blk_hero.png"
     ],
-    "description": "Heavy-gauge Olympic lifting bench built with molded urethane bar catches, spotter platform, and high-density vinyl upholstery.\\nEngineered for maximum stability, safety, and heavy commercial powerlifting workouts.",
+    "description": "Heavy-gauge Olympic lifting bench built with molded urethane bar catches, spotter platform, and high-density vinyl upholstery. Engineered for maximum stability, safety, and heavy commercial powerlifting workouts.",
     "specs": {
       "Frame Construction": "Heavy 11-Gauge Structural Steel Tubing (2.5 - 3.0mm)",
       "Finish": "Proprietary Dual-Coat Electrostatic Powder Coating",
@@ -6929,7 +6929,7 @@ export const PRODUCTS: Product[] = [
     "gallery": [
       "/images/equipment/free-weights/MX_G1-FW165 olym decline bench_Matte Blk_hero.png"
     ],
-    "description": "Heavy-gauge Olympic lifting bench built with molded urethane bar catches, spotter platform, and high-density vinyl upholstery.\\nEngineered for maximum stability, safety, and heavy commercial powerlifting workouts.",
+    "description": "Heavy-gauge Olympic lifting bench built with molded urethane bar catches, spotter platform, and high-density vinyl upholstery. Engineered for maximum stability, safety, and heavy commercial powerlifting workouts.",
     "specs": {
       "Frame Construction": "Heavy 11-Gauge Structural Steel Tubing (2.5 - 3.0mm)",
       "Finish": "Proprietary Dual-Coat Electrostatic Powder Coating",
@@ -6977,7 +6977,7 @@ export const PRODUCTS: Product[] = [
     "gallery": [
       "/images/equipment/free-weights/MX_MAGNUM MG-A505 5-pair pro-style dumbbell rack_Matte Blk_hero.png"
     ],
-    "description": "Heavy-gauge structural steel dumbbell storage rack with laser-cut angle trays and durable urethane saddle cradles.\\nKeeps free-weight zones organized, safe, and visually clean while protecting dumbbell finishes.",
+    "description": "Heavy-gauge structural steel dumbbell storage rack with laser-cut angle trays and durable urethane saddle cradles. Keeps free-weight zones organized, safe, and visually clean while protecting dumbbell finishes.",
     "specs": {
       "Frame Construction": "Heavy 11-Gauge Structural Steel Tubing (2.5 - 3.0mm)",
       "Finish": "Proprietary Dual-Coat Electrostatic Powder Coating",
@@ -7025,7 +7025,7 @@ export const PRODUCTS: Product[] = [
     "gallery": [
       "/images/equipment/free-weights/MX_MAGNUM MG-A510 10-pair pro-style dumbbell rack_Matte Blk_hero.png"
     ],
-    "description": "Heavy-gauge structural steel dumbbell storage rack with laser-cut angle trays and durable urethane saddle cradles.\\nKeeps free-weight zones organized, safe, and visually clean while protecting dumbbell finishes.",
+    "description": "Heavy-gauge structural steel dumbbell storage rack with laser-cut angle trays and durable urethane saddle cradles. Keeps free-weight zones organized, safe, and visually clean while protecting dumbbell finishes.",
     "specs": {
       "Frame Construction": "Heavy 11-Gauge Structural Steel Tubing (2.5 - 3.0mm)",
       "Finish": "Proprietary Dual-Coat Electrostatic Powder Coating",
@@ -7073,7 +7073,7 @@ export const PRODUCTS: Product[] = [
     "gallery": [
       "/images/equipment/free-weights/MX_MAGNUM MG-A515 15-pair pro-style dumbbell rack_Matte Blk_hero.png"
     ],
-    "description": "Heavy-gauge structural steel dumbbell storage rack with laser-cut angle trays and durable urethane saddle cradles.\\nKeeps free-weight zones organized, safe, and visually clean while protecting dumbbell finishes.",
+    "description": "Heavy-gauge structural steel dumbbell storage rack with laser-cut angle trays and durable urethane saddle cradles. Keeps free-weight zones organized, safe, and visually clean while protecting dumbbell finishes.",
     "specs": {
       "Frame Construction": "Heavy 11-Gauge Structural Steel Tubing (2.5 - 3.0mm)",
       "Finish": "Proprietary Dual-Coat Electrostatic Powder Coating",
@@ -7121,7 +7121,7 @@ export const PRODUCTS: Product[] = [
     "gallery": [
       "/images/equipment/free-weights/MX_MAGNUM MG-A526 2-tier flat tray dumbbell rack_Matte Blk_hero-1250.png"
     ],
-    "description": "Heavy-gauge structural steel dumbbell storage rack with laser-cut angle trays and durable urethane saddle cradles.\\nKeeps free-weight zones organized, safe, and visually clean while protecting dumbbell finishes.",
+    "description": "Heavy-gauge structural steel dumbbell storage rack with laser-cut angle trays and durable urethane saddle cradles. Keeps free-weight zones organized, safe, and visually clean while protecting dumbbell finishes.",
     "specs": {
       "Frame Construction": "Heavy 11-Gauge Structural Steel Tubing (2.5 - 3.0mm)",
       "Finish": "Proprietary Dual-Coat Electrostatic Powder Coating",
@@ -7169,7 +7169,7 @@ export const PRODUCTS: Product[] = [
     "gallery": [
       "/images/equipment/free-weights/MX_MAGNUM MG-A528 2-tier flat tray dumbbell rack_Matte Blk_hero.png"
     ],
-    "description": "Heavy-gauge structural steel dumbbell storage rack with laser-cut angle trays and durable urethane saddle cradles.\\nKeeps free-weight zones organized, safe, and visually clean while protecting dumbbell finishes.",
+    "description": "Heavy-gauge structural steel dumbbell storage rack with laser-cut angle trays and durable urethane saddle cradles. Keeps free-weight zones organized, safe, and visually clean while protecting dumbbell finishes.",
     "specs": {
       "Frame Construction": "Heavy 11-Gauge Structural Steel Tubing (2.5 - 3.0mm)",
       "Finish": "Proprietary Dual-Coat Electrostatic Powder Coating",
@@ -7217,7 +7217,7 @@ export const PRODUCTS: Product[] = [
     "gallery": [
       "/images/equipment/free-weights/MX_MAGNUM MG-A536 3-tier flat tray dumbbell rack_Matte Blk_hero (1).png"
     ],
-    "description": "Heavy-gauge structural steel dumbbell storage rack with laser-cut angle trays and durable urethane saddle cradles.\\nKeeps free-weight zones organized, safe, and visually clean while protecting dumbbell finishes.",
+    "description": "Heavy-gauge structural steel dumbbell storage rack with laser-cut angle trays and durable urethane saddle cradles. Keeps free-weight zones organized, safe, and visually clean while protecting dumbbell finishes.",
     "specs": {
       "Frame Construction": "Heavy 11-Gauge Structural Steel Tubing (2.5 - 3.0mm)",
       "Finish": "Proprietary Dual-Coat Electrostatic Powder Coating",
@@ -7265,7 +7265,7 @@ export const PRODUCTS: Product[] = [
     "gallery": [
       "/images/equipment/free-weights/MX_MAGNUM MG-A536 3-tier flat tray dumbbell rack_Matte Blk_hero.png"
     ],
-    "description": "Heavy-gauge structural steel dumbbell storage rack with laser-cut angle trays and durable urethane saddle cradles.\\nKeeps free-weight zones organized, safe, and visually clean while protecting dumbbell finishes.",
+    "description": "Heavy-gauge structural steel dumbbell storage rack with laser-cut angle trays and durable urethane saddle cradles. Keeps free-weight zones organized, safe, and visually clean while protecting dumbbell finishes.",
     "specs": {
       "Frame Construction": "Heavy 11-Gauge Structural Steel Tubing (2.5 - 3.0mm)",
       "Finish": "Proprietary Dual-Coat Electrostatic Powder Coating",
@@ -7313,7 +7313,7 @@ export const PRODUCTS: Product[] = [
     "gallery": [
       "/images/equipment/free-weights/MX_MAGNUM MG-A538 3-tier flat tray dumbbell rack_Matte Blk_hero.png"
     ],
-    "description": "Heavy-gauge structural steel dumbbell storage rack with laser-cut angle trays and durable urethane saddle cradles.\\nKeeps free-weight zones organized, safe, and visually clean while protecting dumbbell finishes.",
+    "description": "Heavy-gauge structural steel dumbbell storage rack with laser-cut angle trays and durable urethane saddle cradles. Keeps free-weight zones organized, safe, and visually clean while protecting dumbbell finishes.",
     "specs": {
       "Frame Construction": "Heavy 11-Gauge Structural Steel Tubing (2.5 - 3.0mm)",
       "Finish": "Proprietary Dual-Coat Electrostatic Powder Coating",
@@ -7361,7 +7361,7 @@ export const PRODUCTS: Product[] = [
     "gallery": [
       "/images/equipment/free-weights/MX_MAGNUM MG-A541 studio pro-style dumbbell rack_Matte Blk_hero.png"
     ],
-    "description": "Heavy-gauge structural steel dumbbell storage rack with laser-cut angle trays and durable urethane saddle cradles.\\nKeeps free-weight zones organized, safe, and visually clean while protecting dumbbell finishes.",
+    "description": "Heavy-gauge structural steel dumbbell storage rack with laser-cut angle trays and durable urethane saddle cradles. Keeps free-weight zones organized, safe, and visually clean while protecting dumbbell finishes.",
     "specs": {
       "Frame Construction": "Heavy 11-Gauge Structural Steel Tubing (2.5 - 3.0mm)",
       "Finish": "Proprietary Dual-Coat Electrostatic Powder Coating",
@@ -7409,7 +7409,7 @@ export const PRODUCTS: Product[] = [
     "gallery": [
       "/images/equipment/free-weights/MX_MAGNUM MG-A59-05 flat bench_Matte Blk_hero.png"
     ],
-    "description": "Heavy-gauge Olympic lifting bench built with molded urethane bar catches, spotter platform, and high-density vinyl upholstery.\\nEngineered for maximum stability, safety, and heavy commercial powerlifting workouts.",
+    "description": "Heavy-gauge Olympic lifting bench built with molded urethane bar catches, spotter platform, and high-density vinyl upholstery. Engineered for maximum stability, safety, and heavy commercial powerlifting workouts.",
     "specs": {
       "Frame Construction": "Heavy 11-Gauge Structural Steel Tubing (2.5 - 3.0mm)",
       "Finish": "Proprietary Dual-Coat Electrostatic Powder Coating",
@@ -7457,7 +7457,7 @@ export const PRODUCTS: Product[] = [
     "gallery": [
       "/images/equipment/free-weights/MX_MAGNUM MG-A61-03 INT adj decline bench_Matte Blk_hero.png"
     ],
-    "description": "Heavy-gauge Olympic lifting bench built with molded urethane bar catches, spotter platform, and high-density vinyl upholstery.\\nEngineered for maximum stability, safety, and heavy commercial powerlifting workouts.",
+    "description": "Heavy-gauge Olympic lifting bench built with molded urethane bar catches, spotter platform, and high-density vinyl upholstery. Engineered for maximum stability, safety, and heavy commercial powerlifting workouts.",
     "specs": {
       "Frame Construction": "Heavy 11-Gauge Structural Steel Tubing (2.5 - 3.0mm)",
       "Finish": "Proprietary Dual-Coat Electrostatic Powder Coating",
@@ -7505,7 +7505,7 @@ export const PRODUCTS: Product[] = [
     "gallery": [
       "/images/equipment/free-weights/MX_MAGNUM MG-A62-05 preacher curl_Matte Blk_hero.png"
     ],
-    "description": "Industrial-grade heavy steel construction with laser-cut angle indicators, UHMW wear guards, and high-density vinyl padding.\\nBuilt for maximum stability, safety, and durability in high-demand free-weight zones.",
+    "description": "Industrial-grade heavy steel construction with laser-cut angle indicators, UHMW wear guards, and high-density vinyl padding. Built for maximum stability, safety, and durability in high-demand free-weight zones.",
     "specs": {
       "Frame Construction": "Heavy 11-Gauge Structural Steel Tubing (2.5 - 3.0mm)",
       "Finish": "Proprietary Dual-Coat Electrostatic Powder Coating",
@@ -7553,7 +7553,7 @@ export const PRODUCTS: Product[] = [
     "gallery": [
       "/images/equipment/free-weights/MX_MAGNUM MG-A63C-03 INT VKR w-chin_Matte Blk_hero.png"
     ],
-    "description": "Industrial-grade heavy steel construction with laser-cut angle indicators, UHMW wear guards, and high-density vinyl padding.\\nBuilt for maximum stability, safety, and durability in high-demand free-weight zones.",
+    "description": "Industrial-grade heavy steel construction with laser-cut angle indicators, UHMW wear guards, and high-density vinyl padding. Built for maximum stability, safety, and durability in high-demand free-weight zones.",
     "specs": {
       "Frame Construction": "Heavy 11-Gauge Structural Steel Tubing (2.5 - 3.0mm)",
       "Finish": "Proprietary Dual-Coat Electrostatic Powder Coating",
@@ -7601,7 +7601,7 @@ export const PRODUCTS: Product[] = [
     "gallery": [
       "/images/equipment/free-weights/MX_MAGNUM MG-A67B vertical weight tree_Matte Blk_hero.png"
     ],
-    "description": "Industrial space-saving weight plate storage tree with chrome-plated Olympic horns and integrated barbell holders.\\nEngineered for maximum stability, fast plate loading, and high-density gym floor organization.",
+    "description": "Industrial space-saving weight plate storage tree with chrome-plated Olympic horns and integrated barbell holders. Engineered for maximum stability, fast plate loading, and high-density gym floor organization.",
     "specs": {
       "Frame Construction": "Heavy 11-Gauge Structural Steel Tubing (2.5 - 3.0mm)",
       "Finish": "Proprietary Dual-Coat Electrostatic Powder Coating",
@@ -7649,7 +7649,7 @@ export const PRODUCTS: Product[] = [
     "gallery": [
       "/images/equipment/free-weights/MX_MAGNUM MG-A71-03 standing arm curl_Matte Blk_hero.png"
     ],
-    "description": "Industrial-grade heavy steel construction with laser-cut angle indicators, UHMW wear guards, and high-density vinyl padding.\\nBuilt for maximum stability, safety, and durability in high-demand free-weight zones.",
+    "description": "Industrial-grade heavy steel construction with laser-cut angle indicators, UHMW wear guards, and high-density vinyl padding. Built for maximum stability, safety, and durability in high-demand free-weight zones.",
     "specs": {
       "Frame Construction": "Heavy 11-Gauge Structural Steel Tubing (2.5 - 3.0mm)",
       "Finish": "Proprietary Dual-Coat Electrostatic Powder Coating",
@@ -7697,7 +7697,7 @@ export const PRODUCTS: Product[] = [
     "gallery": [
       "/images/equipment/free-weights/MX_MAGNUM MG-A73 power station_Matte Blk_hero.png"
     ],
-    "description": "Industrial-grade heavy steel construction with laser-cut angle indicators, UHMW wear guards, and high-density vinyl padding.\\nBuilt for maximum stability, safety, and durability in high-demand free-weight zones.",
+    "description": "Industrial-grade heavy steel construction with laser-cut angle indicators, UHMW wear guards, and high-density vinyl padding. Built for maximum stability, safety, and durability in high-demand free-weight zones.",
     "specs": {
       "Frame Construction": "Heavy 11-Gauge Structural Steel Tubing (2.5 - 3.0mm)",
       "Finish": "Proprietary Dual-Coat Electrostatic Powder Coating",
@@ -7745,7 +7745,7 @@ export const PRODUCTS: Product[] = [
     "gallery": [
       "/images/equipment/free-weights/MX_MAGNUM MG-A77-03 adj ab bench_Matte Blk_hero.png"
     ],
-    "description": "Heavy-gauge Olympic lifting bench built with molded urethane bar catches, spotter platform, and high-density vinyl upholstery.\\nEngineered for maximum stability, safety, and heavy commercial powerlifting workouts.",
+    "description": "Heavy-gauge Olympic lifting bench built with molded urethane bar catches, spotter platform, and high-density vinyl upholstery. Engineered for maximum stability, safety, and heavy commercial powerlifting workouts.",
     "specs": {
       "Frame Construction": "Heavy 11-Gauge Structural Steel Tubing (2.5 - 3.0mm)",
       "Finish": "Proprietary Dual-Coat Electrostatic Powder Coating",
@@ -7793,7 +7793,7 @@ export const PRODUCTS: Product[] = [
     "gallery": [
       "/images/equipment/free-weights/MX_MAGNUM MG-A81-05 squat rack_Matte Blk.png"
     ],
-    "description": "Industrial space-saving weight plate storage tree with chrome-plated Olympic horns and integrated barbell holders.\\nEngineered for maximum stability, fast plate loading, and high-density gym floor organization.",
+    "description": "Industrial space-saving weight plate storage tree with chrome-plated Olympic horns and integrated barbell holders. Engineered for maximum stability, fast plate loading, and high-density gym floor organization.",
     "specs": {
       "Frame Construction": "Heavy 11-Gauge Structural Steel Tubing (2.5 - 3.0mm)",
       "Finish": "Proprietary Dual-Coat Electrostatic Powder Coating",
@@ -7841,7 +7841,7 @@ export const PRODUCTS: Product[] = [
     "gallery": [
       "/images/equipment/free-weights/MX_MAGNUM MG-A82 multi-adj bench_Matte Blk_hero.png"
     ],
-    "description": "Heavy-gauge Olympic lifting bench built with molded urethane bar catches, spotter platform, and high-density vinyl upholstery.\\nEngineered for maximum stability, safety, and heavy commercial powerlifting workouts.",
+    "description": "Heavy-gauge Olympic lifting bench built with molded urethane bar catches, spotter platform, and high-density vinyl upholstery. Engineered for maximum stability, safety, and heavy commercial powerlifting workouts.",
     "specs": {
       "Frame Construction": "Heavy 11-Gauge Structural Steel Tubing (2.5 - 3.0mm)",
       "Finish": "Proprietary Dual-Coat Electrostatic Powder Coating",
@@ -7889,7 +7889,7 @@ export const PRODUCTS: Product[] = [
     "gallery": [
       "/images/equipment/free-weights/MX_MAGNUM MG-A85-05 multi-adj bench_Matte Blk_hero.png"
     ],
-    "description": "Heavy-gauge Olympic lifting bench built with molded urethane bar catches, spotter platform, and high-density vinyl upholstery.\\nEngineered for maximum stability, safety, and heavy commercial powerlifting workouts.",
+    "description": "Heavy-gauge Olympic lifting bench built with molded urethane bar catches, spotter platform, and high-density vinyl upholstery. Engineered for maximum stability, safety, and heavy commercial powerlifting workouts.",
     "specs": {
       "Frame Construction": "Heavy 11-Gauge Structural Steel Tubing (2.5 - 3.0mm)",
       "Finish": "Proprietary Dual-Coat Electrostatic Powder Coating",
@@ -7937,7 +7937,7 @@ export const PRODUCTS: Product[] = [
     "gallery": [
       "/images/equipment/free-weights/MX_MAGNUM MG-A86-04 NA multi-adj bench w-decline_Matte Blk_hero.png"
     ],
-    "description": "Heavy-gauge Olympic lifting bench built with molded urethane bar catches, spotter platform, and high-density vinyl upholstery.\\nEngineered for maximum stability, safety, and heavy commercial powerlifting workouts.",
+    "description": "Heavy-gauge Olympic lifting bench built with molded urethane bar catches, spotter platform, and high-density vinyl upholstery. Engineered for maximum stability, safety, and heavy commercial powerlifting workouts.",
     "specs": {
       "Frame Construction": "Heavy 11-Gauge Structural Steel Tubing (2.5 - 3.0mm)",
       "Finish": "Proprietary Dual-Coat Electrostatic Powder Coating",
@@ -7985,7 +7985,7 @@ export const PRODUCTS: Product[] = [
     "gallery": [
       "/images/equipment/free-weights/MX_MAGNUM MG-A87-05 utility bench_Matte Blk_hero.png"
     ],
-    "description": "Heavy-gauge Olympic lifting bench built with molded urethane bar catches, spotter platform, and high-density vinyl upholstery.\\nEngineered for maximum stability, safety, and heavy commercial powerlifting workouts.",
+    "description": "Heavy-gauge Olympic lifting bench built with molded urethane bar catches, spotter platform, and high-density vinyl upholstery. Engineered for maximum stability, safety, and heavy commercial powerlifting workouts.",
     "specs": {
       "Frame Construction": "Heavy 11-Gauge Structural Steel Tubing (2.5 - 3.0mm)",
       "Finish": "Proprietary Dual-Coat Electrostatic Powder Coating",
@@ -8033,7 +8033,7 @@ export const PRODUCTS: Product[] = [
     "gallery": [
       "/images/equipment/free-weights/MX_MAGNUM MG-A94 olympic weight tree_Matte Blk_hero.png"
     ],
-    "description": "Industrial space-saving weight plate storage tree with chrome-plated Olympic horns and integrated barbell holders.\\nEngineered for maximum stability, fast plate loading, and high-density gym floor organization.",
+    "description": "Industrial space-saving weight plate storage tree with chrome-plated Olympic horns and integrated barbell holders. Engineered for maximum stability, fast plate loading, and high-density gym floor organization.",
     "specs": {
       "Frame Construction": "Heavy 11-Gauge Structural Steel Tubing (2.5 - 3.0mm)",
       "Finish": "Proprietary Dual-Coat Electrostatic Powder Coating",
@@ -8081,7 +8081,7 @@ export const PRODUCTS: Product[] = [
     "gallery": [
       "/images/equipment/free-weights/MX_MAGNUM MG-PL50 ab crunch bench_Matte Blk_hero.png"
     ],
-    "description": "Heavy-gauge Olympic lifting bench built with molded urethane bar catches, spotter platform, and high-density vinyl upholstery.\\nEngineered for maximum stability, safety, and heavy commercial powerlifting workouts.",
+    "description": "Heavy-gauge Olympic lifting bench built with molded urethane bar catches, spotter platform, and high-density vinyl upholstery. Engineered for maximum stability, safety, and heavy commercial powerlifting workouts.",
     "specs": {
       "Frame Construction": "Heavy 11-Gauge Structural Steel Tubing (2.5 - 3.0mm)",
       "Finish": "Proprietary Dual-Coat Electrostatic Powder Coating",
@@ -8129,7 +8129,7 @@ export const PRODUCTS: Product[] = [
     "gallery": [
       "/images/equipment/functional/MX_AURA G3-MS20AFT adj cable crossover_Matte Blk_hero.png"
     ],
-    "description": "Dual-adjustable commercial cable crossover system with multi-position aluminum pulley columns and integrated chin-up bar.\\nEnables unrestricted functional motion planes and simultaneous dual-user strength training.",
+    "description": "Dual-adjustable commercial cable crossover system with multi-position aluminum pulley columns and integrated chin-up bar. Enables unrestricted functional motion planes and simultaneous dual-user strength training.",
     "specs": {
       "Frame Construction": "Heavy 11-Gauge Structural Steel Tubing (2.5 - 3.0mm)",
       "Finish": "Proprietary Dual-Coat Electrostatic Powder Coating",
@@ -8178,7 +8178,7 @@ export const PRODUCTS: Product[] = [
     "gallery": [
       "/images/equipment/functional/MX_AURA G3-MS24 INT adj pulley_Matte Blk_hero.png"
     ],
-    "description": "Multi-station modular cable tower equipped with precision aluminum pulleys and multi-plane adjustment columns.\\nProvides infinite functional movement pathways and multi-user simultaneous strength training.",
+    "description": "Multi-station modular cable tower equipped with precision aluminum pulleys and multi-plane adjustment columns. Provides infinite functional movement pathways and multi-user simultaneous strength training.",
     "specs": {
       "Frame Construction": "Heavy 11-Gauge Structural Steel Tubing (2.5 - 3.0mm)",
       "Finish": "Proprietary Dual-Coat Electrostatic Powder Coating",
@@ -8227,7 +8227,7 @@ export const PRODUCTS: Product[] = [
     "gallery": [
       "/images/equipment/functional/MX_AURA G3-MS24FS INT adj pulley floor mount_Matte Blk_hero.png"
     ],
-    "description": "Multi-station modular cable tower equipped with precision aluminum pulleys and multi-plane adjustment columns.\\nProvides infinite functional movement pathways and multi-user simultaneous strength training.",
+    "description": "Multi-station modular cable tower equipped with precision aluminum pulleys and multi-plane adjustment columns. Provides infinite functional movement pathways and multi-user simultaneous strength training.",
     "specs": {
       "Frame Construction": "Heavy 11-Gauge Structural Steel Tubing (2.5 - 3.0mm)",
       "Finish": "Proprietary Dual-Coat Electrostatic Powder Coating",
@@ -8276,7 +8276,7 @@ export const PRODUCTS: Product[] = [
     "gallery": [
       "/images/equipment/functional/MX_AURA G3-MSFT INT functional trainer_Matte Blk_hero.png"
     ],
-    "description": "Compact multi-plane functional trainer featuring 1:2 pulley ratio for low starting resistance and high-speed explosive movements.\\nEquipped with dual independent weight stacks, ergonomic grips, and comprehensive attachment kit.",
+    "description": "Compact multi-plane functional trainer featuring 1:2 pulley ratio for low starting resistance and high-speed explosive movements. Equipped with dual independent weight stacks, ergonomic grips, and comprehensive attachment kit.",
     "specs": {
       "Frame Construction": "Heavy 11-Gauge Structural Steel Tubing (2.5 - 3.0mm)",
       "Finish": "Proprietary Dual-Coat Electrostatic Powder Coating",
@@ -8325,7 +8325,7 @@ export const PRODUCTS: Product[] = [
     "gallery": [
       "/images/equipment/functional/MX_G1-MS20 adj cable crossover_Matte Blk_hero.png"
     ],
-    "description": "Dual-adjustable commercial cable crossover system with multi-position aluminum pulley columns and integrated chin-up bar.\\nEnables unrestricted functional motion planes and simultaneous dual-user strength training.",
+    "description": "Dual-adjustable commercial cable crossover system with multi-position aluminum pulley columns and integrated chin-up bar. Enables unrestricted functional motion planes and simultaneous dual-user strength training.",
     "specs": {
       "Frame Construction": "Heavy 11-Gauge Structural Steel Tubing (2.5 - 3.0mm)",
       "Finish": "Proprietary Dual-Coat Electrostatic Powder Coating",
@@ -8374,7 +8374,7 @@ export const PRODUCTS: Product[] = [
     "gallery": [
       "/images/equipment/functional/MX_GO-SERIES GO-FT functional trainer wo-acc_Matte Blk_hero.png"
     ],
-    "description": "Compact multi-plane functional trainer featuring 1:2 pulley ratio for low starting resistance and high-speed explosive movements.\\nEquipped with dual independent weight stacks, ergonomic grips, and comprehensive attachment kit.",
+    "description": "Compact multi-plane functional trainer featuring 1:2 pulley ratio for low starting resistance and high-speed explosive movements. Equipped with dual independent weight stacks, ergonomic grips, and comprehensive attachment kit.",
     "specs": {
       "Frame Construction": "Heavy 11-Gauge Structural Steel Tubing (2.5 - 3.0mm)",
       "Finish": "Proprietary Dual-Coat Electrostatic Powder Coating",
@@ -8423,7 +8423,7 @@ export const PRODUCTS: Product[] = [
     "gallery": [
       "/images/equipment/functional/MX_VERSA VS-VFT VS-FTS30 functional trainer_Matte Blk_hero.png"
     ],
-    "description": "Compact multi-plane functional trainer featuring 1:2 pulley ratio for low starting resistance and high-speed explosive movements.\\nEquipped with dual independent weight stacks, ergonomic grips, and comprehensive attachment kit.",
+    "description": "Compact multi-plane functional trainer featuring 1:2 pulley ratio for low starting resistance and high-speed explosive movements. Equipped with dual independent weight stacks, ergonomic grips, and comprehensive attachment kit.",
     "specs": {
       "Frame Construction": "Heavy 11-Gauge Structural Steel Tubing (2.5 - 3.0mm)",
       "Finish": "Proprietary Dual-Coat Electrostatic Powder Coating",
@@ -8472,7 +8472,7 @@ export const PRODUCTS: Product[] = [
     "gallery": [
       "/images/equipment/stretching-recovery/MX_G1-FW162 back extension_Matte Blk_hero.png"
     ],
-    "description": "Precision biomechanical back extension and core decompression bench with contoured pelvic pads and dual support handles.\\nOptimized for spinal erector strengthening, hamstring flexibility, and posture restoration.",
+    "description": "Precision biomechanical back extension and core decompression bench with contoured pelvic pads and dual support handles. Optimized for spinal erector strengthening, hamstring flexibility, and posture restoration.",
     "specs": {
       "Frame Construction": "Heavy 11-Gauge Structural Steel Tubing (2.5 - 3.0mm)",
       "Finish": "Proprietary Dual-Coat Electrostatic Powder Coating",
@@ -8518,7 +8518,7 @@ export const PRODUCTS: Product[] = [
     "gallery": [
       "/images/equipment/stretching-recovery/MX_MAGNUM MD-FW52 MI back trainer_Matte Blk_hero.png"
     ],
-    "description": "Precision biomechanical back extension and core decompression bench with contoured pelvic pads and dual support handles.\\nOptimized for spinal erector strengthening, hamstring flexibility, and posture restoration.",
+    "description": "Precision biomechanical back extension and core decompression bench with contoured pelvic pads and dual support handles. Optimized for spinal erector strengthening, hamstring flexibility, and posture restoration.",
     "specs": {
       "Frame Construction": "Heavy 11-Gauge Structural Steel Tubing (2.5 - 3.0mm)",
       "Finish": "Proprietary Dual-Coat Electrostatic Powder Coating",
@@ -8564,7 +8564,7 @@ export const PRODUCTS: Product[] = [
     "gallery": [
       "/images/equipment/stretching-recovery/MX_MAGNUM MG-405-02 reverse back extension_Matte Blk_hero.png"
     ],
-    "description": "Precision biomechanical back extension and core decompression bench with contoured pelvic pads and dual support handles.\\nOptimized for spinal erector strengthening, hamstring flexibility, and posture restoration.",
+    "description": "Precision biomechanical back extension and core decompression bench with contoured pelvic pads and dual support handles. Optimized for spinal erector strengthening, hamstring flexibility, and posture restoration.",
     "specs": {
       "Frame Construction": "Heavy 11-Gauge Structural Steel Tubing (2.5 - 3.0mm)",
       "Finish": "Proprietary Dual-Coat Electrostatic Powder Coating",
@@ -8610,7 +8610,7 @@ export const PRODUCTS: Product[] = [
     "gallery": [
       "/images/equipment/stretching-recovery/MX_MAGNUM MG-A52 back extension bench_Matte Blk_hero.png"
     ],
-    "description": "Precision biomechanical back extension and core decompression bench with contoured pelvic pads and dual support handles.\\nOptimized for spinal erector strengthening, hamstring flexibility, and posture restoration.",
+    "description": "Precision biomechanical back extension and core decompression bench with contoured pelvic pads and dual support handles. Optimized for spinal erector strengthening, hamstring flexibility, and posture restoration.",
     "specs": {
       "Frame Construction": "Heavy 11-Gauge Structural Steel Tubing (2.5 - 3.0mm)",
       "Finish": "Proprietary Dual-Coat Electrostatic Powder Coating",
@@ -8656,7 +8656,7 @@ export const PRODUCTS: Product[] = [
     "gallery": [
       "/images/equipment/stretching-recovery/MX_MAGNUM MG-A96-03 glute ham bench_Matte Blk_hero.png"
     ],
-    "description": "Heavy-duty glute ham developer engineered for posterior chain strengthening, hamstring hyper-extensions, and core stability.\\nFeatures oversized split thigh pads and rapid-adjust horizontal and vertical footplate settings.",
+    "description": "Heavy-duty glute ham developer engineered for posterior chain strengthening, hamstring hyper-extensions, and core stability. Features oversized split thigh pads and rapid-adjust horizontal and vertical footplate settings.",
     "specs": {
       "Frame Construction": "Heavy 11-Gauge Structural Steel Tubing (2.5 - 3.0mm)",
       "Finish": "Proprietary Dual-Coat Electrostatic Powder Coating",
@@ -8702,7 +8702,7 @@ export const PRODUCTS: Product[] = [
     "gallery": [
       "/images/equipment/accessories/MX_MAGNUM MG-A97 accessory rack_Matte Blk_hero.png"
     ],
-    "description": "Heavy-duty commercial storage rack and gym floor utility solution built with robust steel framing and protective finish.\\nEnsures organized floor management, seamless equipment access, and clean aesthetics for commercial gym facilities.",
+    "description": "Heavy-duty commercial storage rack and gym floor utility solution built with robust steel framing and protective finish. Ensures organized floor management, seamless equipment access, and clean aesthetics for commercial gym facilities.",
     "specs": {
       "Frame Construction": "Heavy 11-Gauge Structural Steel Tubing (2.5 - 3.0mm)",
       "Finish": "Proprietary Dual-Coat Electrostatic Powder Coating",
@@ -8748,7 +8748,7 @@ export const PRODUCTS: Product[] = [
     "gallery": [
       "/images/equipment/accessories/MX_MAGNUM MG-A99-02 portable seat_Matte Blk_hero.png"
     ],
-    "description": "Heavy-duty commercial storage rack and gym floor utility solution built with robust steel framing and protective finish.\\nEnsures organized floor management, seamless equipment access, and clean aesthetics for commercial gym facilities.",
+    "description": "Heavy-duty commercial storage rack and gym floor utility solution built with robust steel framing and protective finish. Ensures organized floor management, seamless equipment access, and clean aesthetics for commercial gym facilities.",
     "specs": {
       "Frame Construction": "Heavy 11-Gauge Structural Steel Tubing (2.5 - 3.0mm)",
       "Finish": "Proprietary Dual-Coat Electrostatic Powder Coating",
@@ -8794,7 +8794,7 @@ export const PRODUCTS: Product[] = [
     "gallery": [
       "https://images.unsplash.com/photo-1517838277536-f5f99be501cd?auto=format&fit=crop&w=1000&q=80"
     ],
-    "description": "High-density 20mm dual-layer vulcanized rubber tiles engineered for heavy free-weight impact and deadlift shock absorption.\\nProvides unmatched acoustic dampening, subfloor protection, and non-porous anti-bacterial hygiene.",
+    "description": "High-density 20mm dual-layer vulcanized rubber tiles engineered for heavy free-weight impact and deadlift shock absorption. Provides unmatched acoustic dampening, subfloor protection, and non-porous anti-bacterial hygiene.",
     "specs": {
       "Thickness": "20mm Solid Vulcanized Composite",
       "Tile Size": "1m x 1m (10.76 sq ft)",
@@ -8840,7 +8840,7 @@ export const PRODUCTS: Product[] = [
     "gallery": [
       "https://images.unsplash.com/photo-1574680096145-d05b474e2155?auto=format&fit=crop&w=1000&q=80"
     ],
-    "description": "Short-pile non-directional polyethylene synthetic athletic turf with woven meter markings engineered for high-friction sled pushes.\\nFeatures reinforced polyurethane backing for extreme tear-resistance and zero pile flattening.",
+    "description": "Short-pile non-directional polyethylene synthetic athletic turf with woven meter markings engineered for high-friction sled pushes. Features reinforced polyurethane backing for extreme tear-resistance and zero pile flattening.",
     "specs": {
       "Pile Height": "15mm High-Density Textured Monofilament",
       "Dimensions": "15m Length x 2m Width",
@@ -8886,7 +8886,7 @@ export const PRODUCTS: Product[] = [
     "gallery": [
       "https://images.unsplash.com/photo-1584735935682-2f2b69dff9d2?auto=format&fit=crop&w=1000&q=80"
     ],
-    "description": "Heavy composite acoustic foam drop pads designed to absorb barbell drops and eliminate building vibration.\\nEnclosed in heavy-duty rip-stop 1000D vinyl with reinforced nylon carry handles and air relief mesh valves.",
+    "description": "Heavy composite acoustic foam drop pads designed to absorb barbell drops and eliminate building vibration. Enclosed in heavy-duty rip-stop 1000D vinyl with reinforced nylon carry handles and air relief mesh valves.",
     "specs": {
       "Dimensions (Per Pad)": "75cm x 60cm x 15cm",
       "Core": "Multi-Density High-Rebound Foam Core",
@@ -8932,7 +8932,7 @@ export const PRODUCTS: Product[] = [
     "gallery": [
       "https://images.unsplash.com/photo-1549060279-7e168fcee0c2?auto=format&fit=crop&w=1000&q=80"
     ],
-    "description": "Full-grain 2.2mm top-tier cowhide leather heavy bag hand-stitched with reinforced Kevlar seams and 360-degree steel swivel chain.\\nPacked with shredded textile blend to deliver consistent shock dispersal and zero hard spots.",
+    "description": "Full-grain 2.2mm top-tier cowhide leather heavy bag hand-stitched with reinforced Kevlar seams and 360-degree steel swivel chain. Packed with shredded textile blend to deliver consistent shock dispersal and zero hard spots.",
     "specs": {
       "Height & Weight": "6 Feet (183 cm) | 65 kg Filled",
       "Material": "2.2mm Genuine Top-Grain Leather",
@@ -8978,7 +8978,7 @@ export const PRODUCTS: Product[] = [
     "gallery": [
       "https://images.unsplash.com/photo-1517438322307-e67111335449?auto=format&fit=crop&w=1000&q=80"
     ],
-    "description": "Ultra-dense 50mm hardwood rebound drum mounted on dual-tube structural steel tracks with precision height index pins.\\nDelivers lightning-fast true rebounds with frictionless stainless steel bearing swivel.",
+    "description": "Ultra-dense 50mm hardwood rebound drum mounted on dual-tube structural steel tracks with precision height index pins. Delivers lightning-fast true rebounds with frictionless stainless steel bearing swivel.",
     "specs": {
       "Drum Diameter": "60 cm Solid Hardwood Platform (50mm Thick)",
       "Adjustment Track": "45 cm Quick-Release Height Range",
@@ -9024,7 +9024,7 @@ export const PRODUCTS: Product[] = [
     "gallery": [
       "https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&fit=crop&w=1000&q=80"
     ],
-    "description": "Complete 20-station studio pump package with color-coded urethane weight plates, padded studio bars, and quick-clamp collars.\\nIncludes commercial vertical steel storage rack engineered for ultra-compact group fitness studio organization.",
+    "description": "Complete 20-station studio pump package with color-coded urethane weight plates, padded studio bars, and quick-clamp collars. Includes commercial vertical steel storage rack engineered for ultra-compact group fitness studio organization.",
     "specs": {
       "Capacity": "20 Full Stations (400 kg Total Urethane Plates)",
       "Plates Included": "1.25kg, 2.5kg, 5kg Anti-Roll Octagonal Plates",
@@ -9070,7 +9070,7 @@ export const PRODUCTS: Product[] = [
     "gallery": [
       "https://images.unsplash.com/photo-1586401100295-7a8096fd231a?auto=format&fit=crop&w=1000&q=80"
     ],
-    "description": "Precision-weighted color-coded steel competition kettlebells featuring uniform dimensions across all weights and smooth bare-steel handles.\\nMounted on heavy rubber-lined dual-tier commercial steel tray rack.",
+    "description": "Precision-weighted color-coded steel competition kettlebells featuring uniform dimensions across all weights and smooth bare-steel handles. Mounted on heavy rubber-lined dual-tier commercial steel tray rack.",
     "specs": {
       "Weight Range": "4kg, 8kg, 12kg, 16kg, 20kg, 24kg, 28kg, 32kg (16 Total Bells)",
       "Rack Construction": "Heavy 3-Gauge Steel with Rubber Tray Mats",
@@ -9115,7 +9115,7 @@ export const PRODUCTS: Product[] = [
     "gallery": [
       "https://images.unsplash.com/photo-1517836357463-d25dfeac3438?auto=format&fit=crop&w=1000&q=80"
     ],
-    "description": "Heavy hot-dip galvanized and UV-resistant powder-coated outdoor calisthenics system with monkey bars, dip bars, and multi-height pull-ups.\\nEngineered for all-season climate resistance in luxury resort grounds, campus parks, and open-air rooftop gyms.",
+    "description": "Heavy hot-dip galvanized and UV-resistant powder-coated outdoor calisthenics system with monkey bars, dip bars, and multi-height pull-ups. Engineered for all-season climate resistance in luxury resort grounds, campus parks, and open-air rooftop gyms.",
     "specs": {
       "Corrosion Protection": "Hot-Dip Galvanized + Anti-UV Thermal Powder Coating",
       "Uprights": "80x80mm 4mm Thick Structural Steel Posts",
@@ -9161,7 +9161,7 @@ export const PRODUCTS: Product[] = [
     "gallery": [
       "https://images.unsplash.com/photo-1571902943202-507ec2618e8f?auto=format&fit=crop&w=1000&q=80"
     ],
-    "description": "Vandal-resistant outdoor bodyweight leverage training station with sealed maintenance-free stainless steel pivot bearings.\\nDesigned for self-guided full-body strength training with zero pinch points and non-marking rubberized seats.",
+    "description": "Vandal-resistant outdoor bodyweight leverage training station with sealed maintenance-free stainless steel pivot bearings. Designed for self-guided full-body strength training with zero pinch points and non-marking rubberized seats.",
     "specs": {
       "Bearings": "Fully Sealed Stainless Steel Industrial Bearings",
       "Footprint": "220cm x 110cm x 195cm",

@@ -72,8 +72,8 @@ export const EquipmentCompareModal: React.FC<EquipmentCompareModalProps> = ({
                       >
                         <X className="w-3.5 h-3.5" />
                       </button>
-                      <div className="aspect-square w-20 h-20 rounded-xl overflow-hidden mb-2 border border-[#0F1926]/15 bg-[#0F1926] mx-auto">
-                        <img src={p.image} alt={p.name} className="w-full h-full object-cover" />
+                      <div className="aspect-square w-20 h-20 rounded-xl overflow-hidden mb-2 border border-[#0F1926]/15 bg-[#0C1015] mx-auto flex items-center justify-center p-2">
+                        <img src={p.image} alt={p.name} className="max-w-full max-h-full object-contain" />
                       </div>
                       <div className="text-xs font-black text-[#0F1926] font-satoshi uppercase text-center line-clamp-2">
                         {p.name}
