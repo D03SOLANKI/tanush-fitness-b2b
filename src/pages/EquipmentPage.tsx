@@ -368,20 +368,26 @@ export const EquipmentPage: React.FC = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-50 overflow-y-auto bg-black/80 backdrop-blur-md flex items-center justify-center p-4 font-mono"
+            className="fixed inset-0 z-50 overflow-y-auto bg-black/80 backdrop-blur-md flex items-center justify-center p-4 sm:p-6 font-mono"
+            onClick={() => setSelectedProduct(null)}
           >
             <motion.div
-              initial={{ scale: 0.95, opacity: 0 }}
-              animate={{ scale: 1, opacity: 1 }}
-              exit={{ scale: 0.95, opacity: 0 }}
-              className="bg-[#E8E8E8] text-[#0F1926] rounded-2xl max-w-3xl w-full p-6 sm:p-8 overflow-hidden shadow-2xl border border-[#2A2A2B]/20 relative my-8"
+              initial={{ scale: 0.95, opacity: 0, y: 15 }}
+              animate={{ scale: 1, opacity: 1, y: 0 }}
+              exit={{ scale: 0.95, opacity: 0, y: 15 }}
+              onClick={(e) => e.stopPropagation()}
+              className="bg-[#E8E8E8] text-[#0F1926] rounded-2xl max-w-4xl lg:max-w-5xl w-full p-5 sm:p-7 md:p-8 shadow-2xl border border-[#2A2A2B]/20 relative my-6 sm:my-8 max-h-[92vh] overflow-y-auto"
             >
-              <div className="flex items-start justify-between gap-4 pb-6 border-b border-[#0F1926]/15">
+              <div className="flex items-start justify-between gap-4 pb-5 border-b border-[#0F1926]/15">
                 <div>
-                  <div className="text-[10px] font-bold uppercase text-[#2A2A2B] tracking-wider mb-1">
-                    COMMERCIAL & RESIDENTIAL MACHINERY SCHEMATICS // {selectedProduct.brand}
+                  <div className="text-[10px] font-bold uppercase text-[#2A2A2B] tracking-wider mb-1 flex items-center gap-2">
+                    <span>COMMERCIAL MACHINERY CAD SCHEMATICS</span>
+                    <span className="opacity-40">//</span>
+                    <span className="font-bold text-[#0F1926]">{selectedProduct.brand}</span>
+                    <span className="opacity-40">//</span>
+                    <span className="text-[#2A2A2B]/70">{selectedProduct.category}</span>
                   </div>
-                  <h2 className="text-xl sm:text-2xl font-black text-[#0F1926] font-satoshi uppercase leading-snug">
+                  <h2 className="text-xl sm:text-2xl md:text-3xl font-black text-[#0F1926] font-satoshi uppercase leading-snug">
                     {selectedProduct.name}
                   </h2>
                 </div>
@@ -389,16 +395,17 @@ export const EquipmentPage: React.FC = () => {
                 <button
                   type="button"
                   onClick={() => setSelectedProduct(null)}
-                  className="p-2 rounded-full bg-[#0F1926]/10 hover:bg-[#0F1926]/20 text-[#0F1926] transition cursor-pointer"
+                  className="p-2.5 rounded-full bg-[#0F1926]/10 hover:bg-[#0F1926]/20 text-[#0F1926] transition cursor-pointer shrink-0"
+                  aria-label="Close modal"
                 >
                   <X className="w-5 h-5" />
                 </button>
               </div>
 
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start pt-6">
-                {/* Images */}
-                <div className="space-y-4">
-                  <div className="h-72 sm:h-80 rounded-2xl overflow-hidden bg-[#0C1015] border border-[#0F1926]/15 shadow-inner flex items-center justify-center p-4 sm:p-6">
+              <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-start pt-6">
+                {/* Left Column: Images & Badges */}
+                <div className="lg:col-span-6 space-y-4">
+                  <div className="aspect-[4/3] rounded-2xl overflow-hidden bg-[#0C1015] border border-[#0F1926]/15 shadow-inner flex items-center justify-center p-4 sm:p-6">
                     <img
                       src={selectedProduct.gallery?.[selectedImage] || selectedProduct.image || fallbackImage}
                       alt={selectedProduct.name}
@@ -409,13 +416,13 @@ export const EquipmentPage: React.FC = () => {
                     />
                   </div>
                   {selectedProduct.gallery && selectedProduct.gallery.length > 1 && (
-                    <div className="flex items-center gap-2">
+                    <div className="flex items-center gap-2 overflow-x-auto pb-1">
                       {selectedProduct.gallery.map((img: string, idx: number) => (
                         <div
                           key={idx}
                           onClick={() => setSelectedImage(idx)}
-                          className={`w-16 h-16 rounded-xl overflow-hidden cursor-pointer border flex items-center justify-center p-1.5 ${
-                            selectedImage === idx ? 'border-[#0F1926] bg-[#0C1015]' : 'border-[#0F1926]/15 bg-[#0C1015]/40 opacity-60'
+                          className={`w-16 h-16 rounded-xl overflow-hidden cursor-pointer border flex items-center justify-center p-1.5 shrink-0 transition-all ${
+                            selectedImage === idx ? 'border-[#0F1926] bg-[#0C1015] shadow-md scale-105' : 'border-[#0F1926]/15 bg-[#0C1015]/60 opacity-60 hover:opacity-100'
                           }`}
                         >
                           <img src={img} alt="thumbnail" className="max-w-full max-h-full object-contain" />
@@ -423,39 +430,70 @@ export const EquipmentPage: React.FC = () => {
                       ))}
                     </div>
                   )}
+
+                  {/* Highlights Pill Row */}
+                  <div className="grid grid-cols-2 gap-2 pt-1 font-mono text-[10px]">
+                    <div className="bg-white/80 p-2.5 rounded-xl border border-[#0F1926]/10 shadow-xs">
+                      <div className="text-[#2A2A2B]/70 uppercase font-bold text-[9px]">Certification</div>
+                      <div className="text-[#0F1926] font-bold mt-0.5">EN 957 / ASTM Grade</div>
+                    </div>
+                    <div className="bg-white/80 p-2.5 rounded-xl border border-[#0F1926]/10 shadow-xs">
+                      <div className="text-[#2A2A2B]/70 uppercase font-bold text-[9px]">Tax Compliance</div>
+                      <div className="text-[#0F1926] font-bold mt-0.5">18% GST ITC Eligible</div>
+                    </div>
+                  </div>
                 </div>
 
-                {/* Specifications & Actions */}
-                <div className="space-y-6">
-                  <p className="text-sm text-[#2A2A2B] font-sans leading-relaxed">
-                    {selectedProduct.description}
-                  </p>
-
-                  {/* Spec List */}
-                  <div className="space-y-2.5 font-mono text-xs text-[#2A2A2B] bg-white p-4 rounded-xl border border-[#0F1926]/15 shadow-sm max-h-60 overflow-y-auto">
-                    {selectedProduct.specs && Object.entries(selectedProduct.specs).map(([key, val]) => (
-                      <div key={key} className="flex justify-between py-1 border-b border-[#0F1926]/10 last:border-b-0">
-                        <span className="text-[#2A2A2B]/70 uppercase text-[10px]">{key}:</span>
-                        <span className="text-[#0F1926] font-bold text-right ml-2 text-[11px]">{val}</span>
-                      </div>
-                    ))}
+                {/* Right Column: Descriptions, Technical Specs & Actions */}
+                <div className="lg:col-span-6 space-y-5">
+                  <div>
+                    <div className="text-[10px] font-bold uppercase tracking-wider text-[#2A2A2B]/70 mb-1">Equipment Overview</div>
+                    <p className="text-xs sm:text-sm text-[#2A2A2B] font-sans leading-relaxed">
+                      {selectedProduct.description}
+                    </p>
                   </div>
 
-                  {/* Quantity & Cart Button */}
-                  <div className="flex items-center gap-4">
-                    <div className="flex items-center gap-3 bg-white border border-[#0F1926]/20 rounded-full px-4 py-2">
+                  {/* Structured Spec List */}
+                  <div className="bg-white rounded-xl border border-[#0F1926]/15 shadow-sm overflow-hidden">
+                    <div className="px-4 py-2.5 bg-[#0F1926]/5 border-b border-[#0F1926]/10 flex items-center justify-between">
+                      <span className="text-[10px] font-bold uppercase tracking-wider text-[#0F1926] font-mono">
+                        Engineering Specifications
+                      </span>
+                      <span className="text-[9px] font-mono text-[#2A2A2B]/60 uppercase font-semibold">
+                        Commercial Grade
+                      </span>
+                    </div>
+                    <div className="divide-y divide-[#0F1926]/10 font-mono text-xs max-h-64 overflow-y-auto">
+                      {selectedProduct.specs && Object.entries(selectedProduct.specs).map(([key, val]) => (
+                        <div key={key} className="grid grid-cols-12 gap-2 px-4 py-2.5 hover:bg-[#0F1926]/[0.02] transition-colors items-start">
+                          <span className="col-span-5 text-[#2A2A2B]/70 uppercase text-[10px] font-bold tracking-wider pt-0.5">
+                            {key}:
+                          </span>
+                          <span className="col-span-7 text-[#0F1926] font-bold text-[11px] leading-snug break-words">
+                            {val}
+                          </span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* Quantity & Cart Action */}
+                  <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 pt-2">
+                    <div className="flex items-center justify-between sm:justify-center gap-3 bg-white border border-[#0F1926]/20 rounded-full px-4 py-2.5 shrink-0 shadow-sm">
                       <button
                         type="button"
                         onClick={() => setModalQuantity(Math.max(1, modalQuantity - 1))}
-                        className="text-[#2A2A2B] hover:text-[#0F1926] font-bold cursor-pointer"
+                        className="text-[#2A2A2B] hover:text-[#0F1926] font-bold text-base px-1.5 cursor-pointer transition"
+                        aria-label="Decrease quantity"
                       >
                         -
                       </button>
-                      <span className="font-mono text-sm font-bold text-[#0F1926] px-2">{modalQuantity}</span>
+                      <span className="font-mono text-sm font-bold text-[#0F1926] px-2 min-w-[1.5rem] text-center">{modalQuantity}</span>
                       <button
                         type="button"
                         onClick={() => setModalQuantity(modalQuantity + 1)}
-                        className="text-[#2A2A2B] hover:text-[#0F1926] font-bold cursor-pointer"
+                        className="text-[#2A2A2B] hover:text-[#0F1926] font-bold text-base px-1.5 cursor-pointer transition"
+                        aria-label="Increase quantity"
                       >
                         +
                       </button>
@@ -468,10 +506,10 @@ export const EquipmentPage: React.FC = () => {
                         setSelectedProduct(null);
                         setIsEnquiryCartOpen(true);
                       }}
-                      className="btn-dark flex-1 py-3 text-xs flex items-center justify-center gap-2 cursor-pointer shadow-lg"
+                      className="btn-dark flex-1 py-3 px-4 text-xs font-bold flex items-center justify-center gap-2 cursor-pointer shadow-lg hover:shadow-xl transition-all"
                     >
-                      <FileText className="w-4 h-4" />
-                      <span>Add to Outfitting RFQ Project</span>
+                      <FileText className="w-4 h-4 shrink-0" />
+                      <span className="truncate sm:whitespace-normal">Add to Outfitting RFQ Project</span>
                     </button>
                   </div>
                 </div>
