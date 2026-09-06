@@ -445,17 +445,29 @@ export const EquipmentPage: React.FC = () => {
                 </div>
 
                 {/* Right Column: Descriptions, Technical Specs & Actions */}
-                <div className="lg:col-span-6 space-y-5">
+                <div className="lg:col-span-6 space-y-4">
+                  {/* Scrollable Description Box */}
                   <div>
-                    <div className="text-[10px] font-bold uppercase tracking-wider text-[#2A2A2B]/70 mb-1">Equipment Overview</div>
-                    <p className="text-xs sm:text-sm text-[#2A2A2B] font-sans leading-relaxed">
-                      {selectedProduct.description}
-                    </p>
+                    <div className="text-[10px] font-bold uppercase tracking-wider text-[#2A2A2B]/70 mb-1.5 flex items-center justify-between font-mono">
+                      <span>Equipment Overview</span>
+                      <span className="text-[9px] text-[#2A2A2B]/50 uppercase">Scrollable Description</span>
+                    </div>
+                    <div className="bg-white/90 rounded-xl p-3 sm:p-3.5 border border-[#0F1926]/15 shadow-sm max-h-24 sm:max-h-28 overflow-y-auto text-xs text-[#2A2A2B] font-sans leading-relaxed space-y-1.5">
+                      {selectedProduct.description ? (
+                        selectedProduct.description.split(/\\n|\n/).map((para: string, pIdx: number) => (
+                          <p key={pIdx} className="leading-relaxed">
+                            {para.trim()}
+                          </p>
+                        ))
+                      ) : (
+                        <p>Heavy-duty commercial grade machinery engineered for professional gym performance.</p>
+                      )}
+                    </div>
                   </div>
 
                   {/* Structured Spec List */}
                   <div className="bg-white rounded-xl border border-[#0F1926]/15 shadow-sm overflow-hidden">
-                    <div className="px-4 py-2.5 bg-[#0F1926]/5 border-b border-[#0F1926]/10 flex items-center justify-between">
+                    <div className="px-3.5 py-2 bg-[#0F1926]/5 border-b border-[#0F1926]/10 flex items-center justify-between">
                       <span className="text-[10px] font-bold uppercase tracking-wider text-[#0F1926] font-mono">
                         Engineering Specifications
                       </span>
@@ -463,9 +475,9 @@ export const EquipmentPage: React.FC = () => {
                         Commercial Grade
                       </span>
                     </div>
-                    <div className="divide-y divide-[#0F1926]/10 font-mono text-xs max-h-64 overflow-y-auto">
+                    <div className="divide-y divide-[#0F1926]/10 font-mono text-xs max-h-44 sm:max-h-48 overflow-y-auto">
                       {selectedProduct.specs && Object.entries(selectedProduct.specs).map(([key, val]) => (
-                        <div key={key} className="grid grid-cols-12 gap-2 px-4 py-2.5 hover:bg-[#0F1926]/[0.02] transition-colors items-start">
+                        <div key={key} className="grid grid-cols-12 gap-2 px-3.5 py-2 hover:bg-[#0F1926]/[0.02] transition-colors items-start">
                           <span className="col-span-5 text-[#2A2A2B]/70 uppercase text-[10px] font-bold tracking-wider pt-0.5">
                             {key}:
                           </span>
@@ -477,13 +489,13 @@ export const EquipmentPage: React.FC = () => {
                     </div>
                   </div>
 
-                  {/* Quantity & Cart Action */}
-                  <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 pt-2">
-                    <div className="flex items-center justify-between sm:justify-center gap-3 bg-white border border-[#0F1926]/20 rounded-full px-4 py-2.5 shrink-0 shadow-sm">
+                  {/* Quantity & Cart Action - Perfectly Fitted & Responsive */}
+                  <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-2.5 pt-1">
+                    <div className="flex items-center justify-between sm:justify-center gap-3 bg-white border border-[#0F1926]/20 rounded-xl px-4 py-2.5 shrink-0 shadow-sm">
                       <button
                         type="button"
                         onClick={() => setModalQuantity(Math.max(1, modalQuantity - 1))}
-                        className="text-[#2A2A2B] hover:text-[#0F1926] font-bold text-base px-1.5 cursor-pointer transition"
+                        className="text-[#2A2A2B] hover:text-[#0F1926] font-bold text-base px-2 cursor-pointer transition hover:scale-110"
                         aria-label="Decrease quantity"
                       >
                         -
@@ -492,7 +504,7 @@ export const EquipmentPage: React.FC = () => {
                       <button
                         type="button"
                         onClick={() => setModalQuantity(modalQuantity + 1)}
-                        className="text-[#2A2A2B] hover:text-[#0F1926] font-bold text-base px-1.5 cursor-pointer transition"
+                        className="text-[#2A2A2B] hover:text-[#0F1926] font-bold text-base px-2 cursor-pointer transition hover:scale-110"
                         aria-label="Increase quantity"
                       >
                         +
@@ -506,10 +518,10 @@ export const EquipmentPage: React.FC = () => {
                         setSelectedProduct(null);
                         setIsEnquiryCartOpen(true);
                       }}
-                      className="btn-dark flex-1 py-3 px-4 text-xs font-bold flex items-center justify-center gap-2 cursor-pointer shadow-lg hover:shadow-xl transition-all"
+                      className="btn-dark flex-1 py-3 px-4 text-xs font-bold flex items-center justify-center gap-2 cursor-pointer shadow-lg hover:shadow-xl transition-all !whitespace-normal text-center leading-snug rounded-xl"
                     >
                       <FileText className="w-4 h-4 shrink-0" />
-                      <span className="truncate sm:whitespace-normal">Add to Outfitting RFQ Project</span>
+                      <span>Add to Outfitting RFQ Project</span>
                     </button>
                   </div>
                 </div>
