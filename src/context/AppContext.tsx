@@ -249,10 +249,23 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
   const [currentPage, setCurrentPage] = useState<PageType>('home');
   const [selectedProductId, setSelectedProductId] = useState<string | null>(null);
 
-  // Dynamic Products State
+  // Dynamic Products State (V2 Original Matrix & Commercial Catalog)
   const [products, setProducts] = useState<Product[]>(() => {
     const saved = localStorage.getItem('tanush_products');
-    return saved ? JSON.parse(saved) : PRODUCTS;
+    const version = localStorage.getItem('tanush_catalog_version');
+    if (saved && version === '2.0.0') {
+      try {
+        const parsed = JSON.parse(saved);
+        if (Array.isArray(parsed) && parsed.length > 0 && !parsed[0].id.includes('titanforge')) {
+          return parsed;
+        }
+      } catch (e) {
+        // fallback to fresh PRODUCTS
+      }
+    }
+    localStorage.setItem('tanush_products', JSON.stringify(PRODUCTS));
+    localStorage.setItem('tanush_catalog_version', '2.0.0');
+    return PRODUCTS;
   });
 
   const addProduct = (productData: any): Product => {

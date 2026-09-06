@@ -249,10 +249,16 @@ export const CatalogManagerTab: React.FC = () => {
                     onChange={e => setEquipmentType(e.target.value)}
                     className="w-full bg-slate-50 border border-slate-200 rounded-xl px-3.5 py-2.5 text-slate-900 text-sm focus:outline-none focus:border-blue-600 focus:bg-white transition"
                   >
-                    <option value="Strength">Strength</option>
-                    <option value="Cardio">Cardio</option>
+                    <option value="Cardio">Cardio Equipment</option>
+                    <option value="Strength">Strength Equipment</option>
                     <option value="Free Weights">Free Weights</option>
-                    <option value="Functional">Functional</option>
+                    <option value="Functional">Functional Training</option>
+                    <option value="Flooring">Flooring & Turf</option>
+                    <option value="Stretching & Recovery">Stretching & Recovery</option>
+                    <option value="Boxing & Combat">Boxing & Combat</option>
+                    <option value="Studio & Group Fitness">Studio & Group Fitness</option>
+                    <option value="Outdoor Fitness">Outdoor Fitness</option>
+                    <option value="Accessories">Accessories & Gym Essentials</option>
                   </select>
                 </div>
 

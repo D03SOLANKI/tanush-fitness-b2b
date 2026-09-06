@@ -13,14 +13,14 @@ export interface Testimonial {
 export const TESTIMONIALS: Testimonial[] = [
   {
     id: 't-1',
-    quote: 'Tanush Fitness completely transformed our procurement lifecycle. Sourcing 35 TitanForge power racks and 12 EliteMotion curved treadmills on a single wholesale purchase order saved our franchise network over $64,000 in freight and equipment costs.',
+    quote: 'Tanush Fitness completely transformed our procurement lifecycle. Sourcing Matrix Ultra selectorized lines, Magnum plate-loaded racks, and Performance Plus treadmills on a single commercial purchase order saved our franchise network over 18% in equipment and freight costs.',
     author: 'Vikram Singhania',
     title: 'Co-Founder & VP of Operations',
     gymName: 'Apex Athletics Franchise (14 Clubs)',
     location: 'Chicago, IL',
     image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=300&q=80',
     rating: 5,
-    stats: '$64k Freight Savings'
+    stats: '18% ITC Invoicing Savings'
   },
   {
     id: 't-2',
