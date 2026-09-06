@@ -450,9 +450,9 @@ export const EquipmentPage: React.FC = () => {
                   <div>
                     <div className="text-[10px] font-bold uppercase tracking-wider text-[#2A2A2B]/70 mb-1.5 flex items-center justify-between font-mono">
                       <span>Equipment Overview</span>
-                      <span className="text-[9px] text-[#2A2A2B]/50 uppercase">Scrollable Description</span>
+                      <span className="text-[9px] text-[#0F1926] font-bold uppercase bg-white/80 px-2 py-0.5 rounded border border-[#0F1926]/10">Scroll for details ↓</span>
                     </div>
-                    <div className="bg-white/90 rounded-xl p-3 sm:p-3.5 border border-[#0F1926]/15 shadow-sm max-h-24 sm:max-h-28 overflow-y-auto text-xs text-[#2A2A2B] font-sans leading-relaxed space-y-1.5">
+                    <div className="bg-white/90 rounded-xl p-3 sm:p-3.5 border border-[#0F1926]/15 shadow-sm max-h-24 sm:max-h-28 overflow-y-auto light-scrollbar text-xs text-[#2A2A2B] font-sans leading-relaxed space-y-1.5">
                       {selectedProduct.description ? (
                         selectedProduct.description.split(/\\n|\n/).map((para: string, pIdx: number) => (
                           <p key={pIdx} className="leading-relaxed">
@@ -465,17 +465,18 @@ export const EquipmentPage: React.FC = () => {
                     </div>
                   </div>
 
-                  {/* Structured Spec List */}
+                  {/* Structured & Scrollable Spec List */}
                   <div className="bg-white rounded-xl border border-[#0F1926]/15 shadow-sm overflow-hidden">
                     <div className="px-3.5 py-2 bg-[#0F1926]/5 border-b border-[#0F1926]/10 flex items-center justify-between">
                       <span className="text-[10px] font-bold uppercase tracking-wider text-[#0F1926] font-mono">
                         Engineering Specifications
                       </span>
-                      <span className="text-[9px] font-mono text-[#2A2A2B]/60 uppercase font-semibold">
-                        Commercial Grade
+                      <span className="text-[9px] font-mono text-[#0F1926] font-bold uppercase bg-white px-2 py-0.5 rounded border border-[#0F1926]/10 shadow-2xs flex items-center gap-1">
+                        <span>Scroll Full Specs</span>
+                        <span>↓</span>
                       </span>
                     </div>
-                    <div className="divide-y divide-[#0F1926]/10 font-mono text-xs max-h-44 sm:max-h-48 overflow-y-auto">
+                    <div className="divide-y divide-[#0F1926]/10 font-mono text-xs max-h-36 sm:max-h-40 overflow-y-auto light-scrollbar">
                       {selectedProduct.specs && Object.entries(selectedProduct.specs).map(([key, val]) => (
                         <div key={key} className="grid grid-cols-12 gap-2 px-3.5 py-2 hover:bg-[#0F1926]/[0.02] transition-colors items-start">
                           <span className="col-span-5 text-[#2A2A2B]/70 uppercase text-[10px] font-bold tracking-wider pt-0.5">

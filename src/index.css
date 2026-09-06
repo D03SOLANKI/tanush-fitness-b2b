@@ -113,6 +113,31 @@
   background: #D0CFCA;
 }
 
+/* Light Card Custom Scrollbars */
+.light-scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: #0F1926 #F0EFEA;
+}
+
+.light-scrollbar::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+.light-scrollbar::-webkit-scrollbar-track {
+  background: #F0EFEA;
+  border-radius: 4px;
+}
+
+.light-scrollbar::-webkit-scrollbar-thumb {
+  background: #0F1926;
+  border-radius: 4px;
+}
+
+.light-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #2A2A2B;
+}
+
 /* Hardware-Accelerated Card Hover Transitions */
 .luxury-card,
 .card-lift {
