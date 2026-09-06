@@ -115,7 +115,9 @@ export const GlobalSearchModal: React.FC<GlobalSearchModalProps> = ({ isOpen, on
                           className="p-3 hover:bg-white/5 flex items-center justify-between cursor-pointer transition-colors"
                         >
                           <div className="flex items-center gap-3">
-                            <img src={p.image} alt={p.name} className="w-10 h-10 object-cover rounded-none border border-white/10" />
+                            <div className="w-10 h-10 bg-[#0C1015] border border-white/10 flex items-center justify-center p-1 shrink-0">
+                              <img src={p.image} alt={p.name} className="max-w-full max-h-full object-contain" />
+                            </div>
                             <div>
                               <div className="text-xs font-bold text-white font-satoshi uppercase">{p.name}</div>
                               <div className="text-[10px] font-mono text-[#A8A090]">{p.brand} • {p.category}</div>
