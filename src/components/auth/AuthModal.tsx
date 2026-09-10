@@ -53,33 +53,52 @@ export const AuthModal: React.FC<AuthModalProps> = ({
     setErrorMessage('');
   };
 
+  const normalizePhone = (phone: string): string => {
+    if (!phone) return '';
+    return phone.replace(/[^0-9]/g, '').slice(-10);
+  };
+
+  const normalizeEmail = (emailStr: string): string => {
+    return (emailStr || '').trim().toLowerCase();
+  };
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setErrorMessage('');
-
-    if (!isLogin) {
-      if (password !== confirmPassword) {
-        setErrorMessage('Passwords do not match');
-        return;
-      }
-    }
 
     setLoading(true);
     const baseUrl = `${API_BASE_URL}/api/v1/auth`;
 
     try {
       if (isLogin) {
-        // LOGIN REQUEST
-        let loggedInUser = null;
+        // --- 1. LOGIN FLOW ---
+        const cleanId = identifier.trim();
+        if (!cleanId) {
+          setErrorMessage('Please enter your registered email or mobile number.');
+          setLoading(false);
+          return;
+        }
+
+        if (!password) {
+          setErrorMessage('Please enter your account password.');
+          setLoading(false);
+          return;
+        }
+
+        const inputPhoneDigits = normalizePhone(cleanId);
+        const inputEmail = normalizeEmail(cleanId);
+
+        let loggedInUser: any = null;
         let token = '';
 
+        // Try Backend API
         try {
           const controller = new AbortController();
-          const timeoutId = setTimeout(() => controller.abort(), 3500);
+          const timeoutId = setTimeout(() => controller.abort(), 3000);
           const res = await fetch(`${baseUrl}/login`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ identifier, password }),
+            body: JSON.stringify({ identifier: cleanId, password }),
             signal: controller.signal,
           });
           clearTimeout(timeoutId);
@@ -90,66 +109,155 @@ export const AuthModal: React.FC<AuthModalProps> = ({
               loggedInUser = data.data.user;
               token = data.data.accessToken || `tok_${Date.now()}`;
             }
+          } else {
+            const errData = await res.json().catch(() => null);
+            if (errData?.message && res.status === 404) {
+              setErrorMessage('Account not found. Please register first to create an account.');
+              setLoading(false);
+              return;
+            } else if (errData?.message && res.status === 401) {
+              setErrorMessage('Incorrect password. Please enter the correct password.');
+              setLoading(false);
+              return;
+            }
           }
         } catch (apiErr) {
-          console.log('Backend sync notice (offline mode active):', apiErr);
+          console.log('Backend sync notice (verifying with local user registry):', apiErr);
         }
 
-        // Resilient fallback if remote backend is sleeping or unreachable
+        // Strict Offline / Local Database Verification
         if (!loggedInUser) {
           const rawStored = localStorage.getItem('tanush_user_list');
-          const storedList = rawStored ? JSON.parse(rawStored) : [];
-          const match = storedList.find(
-            (u: any) =>
-              u.email?.toLowerCase() === identifier.toLowerCase() ||
-              u.mobile === identifier
-          );
+          const storedList: any[] = rawStored ? JSON.parse(rawStored) : [];
 
-          if (match) {
-            loggedInUser = match;
-            token = `tok_${Date.now()}`;
-          } else {
-            loggedInUser = {
-              id: `usr-${Date.now()}`,
-              name: identifier.split('@')[0] || 'Member',
-              email: identifier.includes('@') ? identifier : `${identifier}@tanushfitness.com`,
-              mobile: !identifier.includes('@') ? identifier : '+91 98000 00000',
-              role: role || 'GYM_OWNER',
-              isVerified: true,
-              status: 'ACTIVE',
-              createdAt: new Date().toISOString().split('T')[0],
-            };
-            token = `tok_${Date.now()}`;
+          const match = storedList.find((u: any) => {
+            const uEmail = normalizeEmail(u.email);
+            const uPhoneDigits = normalizePhone(u.mobile);
+
+            if (cleanId.includes('@')) {
+              return uEmail === inputEmail;
+            }
+            if (inputPhoneDigits.length === 10) {
+              return uPhoneDigits === inputPhoneDigits;
+            }
+            return uEmail === inputEmail || (u.mobile && u.mobile.trim() === cleanId);
+          });
+
+          // 🛑 CHECK 1: Is user registered?
+          if (!match) {
+            setErrorMessage(
+              `No registered account found with "${cleanId}". Please register first to create an account.`
+            );
+            setLoading(false);
+            return;
           }
+
+          // 🛑 CHECK 2: Account active status
+          if (match.status === 'SUSPENDED' || match.status === 'DEACTIVATED') {
+            setErrorMessage(
+              `This account is ${match.status.toLowerCase()}. Please contact our commercial support desk at +91 73832 49680.`
+            );
+            setLoading(false);
+            return;
+          }
+
+          // 🛑 CHECK 3: Password verification
+          if (match.password) {
+            if (match.password !== password) {
+              setErrorMessage('Incorrect password. Please enter the correct password.');
+              setLoading(false);
+              return;
+            }
+          } else {
+            // For initial seeded demo users without explicit password
+            const validDemoPasswords = ['Tanush@123', 'Admin@123', 'password123', '12345678', 'admin2026'];
+            if (!validDemoPasswords.includes(password) && password.length < 6) {
+              setErrorMessage('Incorrect password. Please enter the correct password.');
+              setLoading(false);
+              return;
+            }
+          }
+
+          loggedInUser = match;
+          token = `tok_${Date.now()}`;
         }
 
         onSuccess(loggedInUser, token);
         resetForm();
         onClose();
       } else {
-        // REGISTER REQUEST
+        // --- 2. REGISTER FLOW ---
+        if (!name.trim()) {
+          setErrorMessage('Please enter your full name.');
+          setLoading(false);
+          return;
+        }
+        if (!email.trim() || !email.includes('@')) {
+          setErrorMessage('Please enter a valid email address.');
+          setLoading(false);
+          return;
+        }
+        if (!mobile.trim()) {
+          setErrorMessage('Please enter your mobile number.');
+          setLoading(false);
+          return;
+        }
+        if (!password || password.length < 6) {
+          setErrorMessage('Password must be at least 6 characters.');
+          setLoading(false);
+          return;
+        }
+        if (password !== confirmPassword) {
+          setErrorMessage('Passwords do not match');
+          setLoading(false);
+          return;
+        }
+
+        const rawStored = localStorage.getItem('tanush_user_list');
+        const storedList: any[] = rawStored ? JSON.parse(rawStored) : [];
+        const regEmail = normalizeEmail(email);
+        const regPhoneDigits = normalizePhone(mobile);
+
+        // Check if already registered
+        const existing = storedList.find((u: any) => {
+          const uEmail = normalizeEmail(u.email);
+          const uPhoneDigits = normalizePhone(u.mobile);
+          return (
+            (regEmail && uEmail === regEmail) ||
+            (regPhoneDigits.length === 10 && uPhoneDigits === regPhoneDigits)
+          );
+        });
+
+        if (existing) {
+          setErrorMessage(
+            `An account with this ${existing.email === regEmail ? 'email' : 'mobile number'} is already registered. Please login instead.`
+          );
+          setLoading(false);
+          return;
+        }
+
         const payload: any = {
-          name,
-          email,
-          mobile,
+          name: name.trim(),
+          email: regEmail,
+          mobile: mobile.trim(),
           password,
           confirmPassword,
           role,
         };
 
         if (role === 'GYM_OWNER') {
-          payload.gymName = gymName;
-          payload.city = city;
+          payload.gymName = gymName.trim() || 'Partner Gym';
+          payload.city = city.trim() || 'Ahmedabad';
         } else {
-          payload.preferredCity = preferredCity;
+          payload.preferredCity = preferredCity.trim() || 'Ahmedabad';
         }
 
-        let registeredUser = null;
+        let registeredUser: any = null;
         let token = '';
 
         try {
           const controller = new AbortController();
-          const timeoutId = setTimeout(() => controller.abort(), 3500);
+          const timeoutId = setTimeout(() => controller.abort(), 3000);
           const res = await fetch(`${baseUrl}/register`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
@@ -166,25 +274,35 @@ export const AuthModal: React.FC<AuthModalProps> = ({
             }
           }
         } catch (apiErr) {
-          console.log('Backend registration sync notice (offline mode active):', apiErr);
+          console.log('Backend registration sync notice (saving to local registry):', apiErr);
         }
 
-        // Resilient fallback guarantees instant registration success
+        const newId = `usr-${Date.now()}`;
         if (!registeredUser) {
           registeredUser = {
-            id: `usr-${Date.now()}`,
-            name: name || 'Registered User',
-            email: email,
-            mobile: mobile || '+91 98000 00000',
+            id: newId,
+            name: name.trim(),
+            email: regEmail,
+            mobile: mobile.trim(),
+            password: password, // Saved so subsequent logins verify this password strictly
             role: role,
-            companyName: role === 'GYM_OWNER' ? gymName : undefined,
-            city: role === 'GYM_OWNER' ? city : preferredCity,
+            companyName: role === 'GYM_OWNER' ? gymName.trim() || 'Tanush Partner Gym' : undefined,
+            city: role === 'GYM_OWNER' ? city.trim() || 'Ahmedabad' : preferredCity.trim() || 'Ahmedabad',
             isVerified: true,
             status: 'ACTIVE',
             createdAt: new Date().toISOString().split('T')[0],
           };
           token = `tok_${Date.now()}`;
+        } else {
+          registeredUser.password = password;
         }
+
+        // Save into tanush_user_list with password
+        const updatedList = [
+          registeredUser,
+          ...storedList.filter((u: any) => u.id !== registeredUser.id && u.email !== registeredUser.email),
+        ];
+        localStorage.setItem('tanush_user_list', JSON.stringify(updatedList));
 
         onSuccess(registeredUser, token);
         resetForm();
@@ -271,11 +389,47 @@ export const AuthModal: React.FC<AuthModalProps> = ({
               </button>
             </div>
 
-            {/* Error Banner */}
+            {/* Error Banner with 1-Click Action */}
             {errorMessage && (
-              <div className="mb-4 p-3.5 rounded-xl bg-white border border-[#2A2A2B]/20 text-[#0F1926] text-xs flex items-start gap-2.5">
-                <AlertCircle className="w-4 h-4 shrink-0 mt-0.5" />
-                <span className="font-medium leading-snug">{errorMessage}</span>
+              <div className="mb-4 p-3.5 rounded-xl bg-white border border-red-300 text-[#0F1926] text-xs space-y-2.5 shadow-sm">
+                <div className="flex items-start gap-2">
+                  <AlertCircle className="w-4 h-4 text-red-600 shrink-0 mt-0.5" />
+                  <span className="font-semibold leading-snug text-red-800">{errorMessage}</span>
+                </div>
+
+                {errorMessage.includes('register first') && (
+                  <button
+                    type="button"
+                    onClick={() => {
+                      setIsLogin(false);
+                      setErrorMessage('');
+                      if (identifier.includes('@')) {
+                        setEmail(identifier);
+                      } else {
+                        setMobile(identifier);
+                      }
+                    }}
+                    className="w-full py-2 px-3 rounded-lg bg-[#0F1926] hover:bg-[#2A2A2B] text-white text-[11px] font-bold uppercase tracking-wider transition cursor-pointer flex items-center justify-center gap-1.5 shadow-sm"
+                  >
+                    <UserPlus className="w-3.5 h-3.5" />
+                    <span>Click Here to Register Now</span>
+                  </button>
+                )}
+
+                {errorMessage.includes('already registered') && (
+                  <button
+                    type="button"
+                    onClick={() => {
+                      setIsLogin(true);
+                      setErrorMessage('');
+                      setIdentifier(email || mobile);
+                    }}
+                    className="w-full py-2 px-3 rounded-lg bg-[#0F1926] hover:bg-[#2A2A2B] text-white text-[11px] font-bold uppercase tracking-wider transition cursor-pointer flex items-center justify-center gap-1.5 shadow-sm"
+                  >
+                    <LogIn className="w-3.5 h-3.5" />
+                    <span>Click Here to Login Now</span>
+                  </button>
+                )}
               </div>
             )}
 

@@ -37,6 +37,7 @@ export interface UserAccount {
   name: string;
   email: string;
   mobile: string;
+  password?: string;
   role: 'GYM_OWNER' | 'JOB_SEEKER' | 'ADMIN';
   gstNumber?: string;
   companyName?: string;
@@ -147,6 +148,7 @@ const INITIAL_USERS: UserAccount[] = [
     name: 'Vikram Malhotra',
     email: 'vikram@fitplusgym.com',
     mobile: '+91 98112 34567',
+    password: 'Tanush@123',
     role: 'GYM_OWNER',
     companyName: 'FitPlus Commercial & Residential Gym',
     gstNumber: '07AAAAA0000A1Z5',
@@ -159,6 +161,7 @@ const INITIAL_USERS: UserAccount[] = [
     name: 'Rajesh Kumar',
     email: 'rajesh@powerhouse.in',
     mobile: '+91 98991 22334',
+    password: 'Tanush@123',
     role: 'GYM_OWNER',
     companyName: 'PowerHouse Fitness Club',
     gstNumber: '09BBBCC1111B2Z3',
@@ -171,6 +174,7 @@ const INITIAL_USERS: UserAccount[] = [
     name: 'Neha Sharma',
     email: 'neha.trainer@gmail.com',
     mobile: '+91 97110 55443',
+    password: 'Tanush@123',
     role: 'JOB_SEEKER',
     isVerified: true,
     status: 'ACTIVE',
@@ -181,6 +185,7 @@ const INITIAL_USERS: UserAccount[] = [
     name: 'Spam Bot Account',
     email: 'spam.bot99@tempmail.com',
     mobile: '+91 90000 00000',
+    password: 'Tanush@123',
     role: 'GYM_OWNER',
     companyName: 'Unverified Fake Gym',
     isVerified: false,
@@ -192,6 +197,7 @@ const INITIAL_USERS: UserAccount[] = [
     name: 'Amitabh Sen',
     email: 'amitabh@apexwellness.org',
     mobile: '+91 98223 99881',
+    password: 'Tanush@123',
     role: 'GYM_OWNER',
     companyName: 'Apex Luxury Health Club',
     gstNumber: '27AABCA1234F1Z8',
@@ -204,6 +210,7 @@ const INITIAL_USERS: UserAccount[] = [
     name: 'Karan Mehra',
     email: 'karan.strength@outlook.com',
     mobile: '+91 98450 11223',
+    password: 'Tanush@123',
     role: 'JOB_SEEKER',
     isVerified: false,
     status: 'DEACTIVATED',
@@ -233,6 +240,7 @@ export const normalizeUserList = (users: any[]): UserAccount[] => {
       name: String(u?.name || `User ${idx + 1}`),
       email: String(u?.email || `user${idx + 1}@domain.com`),
       mobile: String(u?.mobile || `+91 98000 ${String(10000 + idx).slice(1)}`),
+      password: u?.password || 'Tanush@123',
       role: u?.role === 'JOB_SEEKER' ? 'JOB_SEEKER' : u?.role === 'ADMIN' ? 'ADMIN' : 'GYM_OWNER',
       companyName: u?.companyName || (u?.role === 'GYM_OWNER' ? `Club ${idx + 1}` : undefined),
       gstNumber: u?.gstNumber,
@@ -462,6 +470,7 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
             name: user.name || updated[existingIndex].name,
             email: user.email || updated[existingIndex].email,
             mobile: user.mobile || updated[existingIndex].mobile,
+            password: user.password || updated[existingIndex].password,
             role: user.role || updated[existingIndex].role,
             companyName: user.gymOwnerProfile?.companyName || user.companyName || updated[existingIndex].companyName,
             gstNumber: user.gymOwnerProfile?.gstNumber || user.gstNumber || updated[existingIndex].gstNumber,
@@ -474,6 +483,7 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
             name: user.name || 'Registered User',
             email: user.email,
             mobile: user.mobile || '+91 90000 00000',
+            password: user.password || 'Tanush@123',
             role: user.role || 'GYM_OWNER',
             companyName: user.gymOwnerProfile?.companyName || user.companyName,
             gstNumber: user.gymOwnerProfile?.gstNumber || user.gstNumber,

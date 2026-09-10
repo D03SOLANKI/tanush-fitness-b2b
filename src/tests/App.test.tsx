@@ -1,6 +1,6 @@
 import React from 'react';
 import { describe, it, expect, beforeAll, vi } from 'vitest';
-import { render, screen, fireEvent } from '@testing-library/react';
+import { render, screen, fireEvent, waitFor } from '@testing-library/react';
 import App from '../App';
 import { normalizeUserList } from '../context/AppContext';
 import { AuthModal } from '../components/auth/AuthModal';
@@ -157,6 +157,120 @@ describe('Authentication QA Suite (Login & Register for Gym Owner and Job Seeker
     fireEvent.click(submitBtn);
 
     expect(screen.getByText(/Passwords do not match/i)).toBeInTheDocument();
+  });
+
+  it('rejects login when mobile/email is not registered and instructs user to register first', async () => {
+    const onClose = vi.fn();
+    const onSuccess = vi.fn();
+
+    // Clear local storage for clean test
+    localStorage.setItem('tanush_user_list', JSON.stringify([]));
+
+    render(
+      <AuthModal
+        isOpen={true}
+        onClose={onClose}
+        onSuccess={onSuccess}
+      />
+    );
+
+    const idInput = screen.getByPlaceholderText(/vikram@apex.com or 9876543210/i);
+    const passInput = screen.getByPlaceholderText(/Min 8 chars \(A-z, 0-9\)/i);
+
+    fireEvent.change(idInput, { target: { value: '9999999999' } });
+    fireEvent.change(passInput, { target: { value: 'MySecretPassword123' } });
+
+    const loginBtn = screen.getByRole('button', { name: /Login & Continue/i });
+    fireEvent.click(loginBtn);
+
+    expect(await screen.findByText(/No registered account found with "9999999999"/i)).toBeInTheDocument();
+    expect(screen.getByText(/Please register first/i)).toBeInTheDocument();
+    expect(onSuccess).not.toHaveBeenCalled();
+  });
+
+  it('rejects login when password is incorrect for registered user', async () => {
+    const onClose = vi.fn();
+    const onSuccess = vi.fn();
+
+    const testUsers = [
+      {
+        id: 'usr-test-1',
+        name: 'Dev Solanki',
+        email: 'dev@tanushfitness.com',
+        mobile: '+91 98765 00000',
+        password: 'CorrectPassword123',
+        role: 'GYM_OWNER',
+        status: 'ACTIVE',
+      },
+    ];
+    localStorage.setItem('tanush_user_list', JSON.stringify(testUsers));
+
+    render(
+      <AuthModal
+        isOpen={true}
+        onClose={onClose}
+        onSuccess={onSuccess}
+      />
+    );
+
+    const idInput = screen.getByPlaceholderText(/vikram@apex.com or 9876543210/i);
+    const passInput = screen.getByPlaceholderText(/Min 8 chars \(A-z, 0-9\)/i);
+
+    // Enter correct email but wrong password
+    fireEvent.change(idInput, { target: { value: 'dev@tanushfitness.com' } });
+    fireEvent.change(passInput, { target: { value: 'WrongPassword999' } });
+
+    const loginBtn = screen.getByRole('button', { name: /Login & Continue/i });
+    fireEvent.click(loginBtn);
+
+    expect(await screen.findByText(/Incorrect password/i)).toBeInTheDocument();
+    expect(onSuccess).not.toHaveBeenCalled();
+  });
+
+  it('authenticates registered user with correct mobile and password', async () => {
+    const onClose = vi.fn();
+    const onSuccess = vi.fn();
+
+    const testUsers = [
+      {
+        id: 'usr-test-2',
+        name: 'Dev Solanki',
+        email: 'dev@tanushfitness.com',
+        mobile: '+91 98765 43210',
+        password: 'MyPassword123',
+        role: 'GYM_OWNER',
+        status: 'ACTIVE',
+      },
+    ];
+    localStorage.setItem('tanush_user_list', JSON.stringify(testUsers));
+
+    render(
+      <AuthModal
+        isOpen={true}
+        onClose={onClose}
+        onSuccess={onSuccess}
+      />
+    );
+
+    const idInput = screen.getByPlaceholderText(/vikram@apex.com or 9876543210/i);
+    const passInput = screen.getByPlaceholderText(/Min 8 chars \(A-z, 0-9\)/i);
+
+    // Enter 10-digit mobile number and correct password
+    fireEvent.change(idInput, { target: { value: '9876543210' } });
+    fireEvent.change(passInput, { target: { value: 'MyPassword123' } });
+
+    const loginBtn = screen.getByRole('button', { name: /Login & Continue/i });
+    fireEvent.click(loginBtn);
+
+    await waitFor(() => {
+      expect(onSuccess).toHaveBeenCalledWith(
+        expect.objectContaining({
+          name: 'Dev Solanki',
+          email: 'dev@tanushfitness.com',
+        }),
+        expect.any(String)
+      );
+    });
   });
 });
 
