@@ -45,18 +45,6 @@ export const FeaturedProducts: React.FC = () => {
                     }}
                     className="max-w-full max-h-full object-contain group-hover:scale-105 transition-transform duration-500 drop-shadow-xl"
                   />
-
-                  <button
-                    onClick={() => toggleWishlist(product.id)}
-                    className={`absolute top-2.5 right-2.5 p-1.5 rounded-lg border transition-colors ${
-                      inWishlist
-                        ? 'bg-[#D26539] text-white border-[#D26539]'
-                        : 'bg-black/60 text-[#A8A090] border-white/10 hover:text-white'
-                    }`}
-                    title="Save to Project Wishlist"
-                  >
-                    <Heart className={`w-3.5 h-3.5 ${inWishlist ? 'fill-white' : ''}`} />
-                  </button>
                 </div>
 
                 {/* Body Content */}

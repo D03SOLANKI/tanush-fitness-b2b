@@ -262,26 +262,6 @@ export const EquipmentPage: React.FC = () => {
                       loading="lazy"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-[#0C1015]/30 via-transparent to-transparent pointer-events-none" />
-
-                    {/* Bottom Right Steel Spec Pill */}
-                    <div className="absolute bottom-2.5 right-2.5 bg-[#0F1926]/90 backdrop-blur-sm px-2.5 py-1 rounded-md text-[9px] font-mono text-[#E8E8E8] font-bold border border-white/15 shadow-md">
-                      ⚡ {product.specs?.['Frame Construction'] || product.specs?.['Steel Frame'] || 'COMMERCIAL GRADE'}
-                    </div>
-
-                    <button
-                      type="button"
-                      onClick={(e) => {
-                        e.stopPropagation();
-                        toggleWishlist(product.id);
-                      }}
-                      className={`absolute top-3 right-3 p-2 rounded-full border transition cursor-pointer ${
-                        isWish
-                          ? 'bg-[#0F1926] text-[#E8E8E8] border-[#0F1926]'
-                          : 'bg-[#0C1015]/80 text-[#D0CFCA] border-white/15 hover:text-white'
-                      }`}
-                    >
-                      <Heart className="w-3.5 h-3.5 fill-current" />
-                    </button>
                   </div>
 
                   {/* Card Content */}
@@ -301,18 +281,6 @@ export const EquipmentPage: React.FC = () => {
                       <p className="text-xs text-[#2A2A2B]/80 font-sans leading-relaxed mt-2 line-clamp-2">
                         {product.description}
                       </p>
-                    </div>
-
-                    {/* Specifications Grid */}
-                    <div className="grid grid-cols-2 gap-2 pt-2 border-t border-[#0F1926]/10 font-mono text-[10px]">
-                      <div className="bg-[#0F1926]/5 p-2 rounded-lg border border-[#0F1926]/10">
-                        <span className="text-[#2A2A2B] block text-[9px] font-mono uppercase font-semibold">CAPACITY / LOAD:</span>
-                        <span className="text-[#0F1926] font-bold truncate block">{product.specs?.['Max User Weight'] || product.specs?.['Max Training Load'] || product.specs?.['Weight Capacity'] || 'Commercial Rated'}</span>
-                      </div>
-                      <div className="bg-[#0F1926]/5 p-2 rounded-lg border border-[#0F1926]/10">
-                        <span className="text-[#2A2A2B] block text-[9px] font-mono uppercase font-semibold">WARRANTY:</span>
-                        <span className="text-[#0F1926] font-bold truncate block">{product.specs?.['Warranty'] || '10-Year Frame'}</span>
-                      </div>
                     </div>
                   </div>
                 </div>
