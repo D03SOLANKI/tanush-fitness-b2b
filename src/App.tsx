@@ -18,27 +18,6 @@ import { AdminHeader } from './components/admin/AdminHeader';
 const MainContent: React.FC = () => {
   const { currentPage, navigateTo } = useApp();
 
-  // Developer & Admin Direct Route Listener (Hash / URL parameter)
-  useEffect(() => {
-    const handleUrlRouting = () => {
-      const hash = window.location.hash;
-      const params = new URLSearchParams(window.location.search);
-      const path = window.location.pathname;
-
-      if (hash === '#admin' || hash === '#/admin' || params.get('page') === 'admin' || path === '/admin') {
-        navigateTo('admin');
-      }
-    };
-
-    handleUrlRouting();
-    window.addEventListener('hashchange', handleUrlRouting);
-    window.addEventListener('popstate', handleUrlRouting);
-    return () => {
-      window.removeEventListener('hashchange', handleUrlRouting);
-      window.removeEventListener('popstate', handleUrlRouting);
-    };
-  }, [navigateTo]);
-
   // Developer & Admin Keyboard Hotkey: Ctrl + Shift + A (or Cmd + Shift + A)
   useEffect(() => {
     const handleAdminHotkey = (e: KeyboardEvent) => {

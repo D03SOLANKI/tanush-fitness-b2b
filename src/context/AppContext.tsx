@@ -251,11 +251,70 @@ export const normalizeUserList = (users: any[]): UserAccount[] => {
   });
 };
 
+export const VALID_PAGES: PageType[] = ['home', 'about', 'equipment', 'manpower', 'services', 'contact', 'admin'];
+
+export const getPageFromLocation = (): PageType => {
+  if (typeof window === 'undefined') return 'home';
+
+  // 1. Check Hash: e.g. /#equipment, #/services, #about
+  const rawHash = window.location.hash.replace(/^#\/?/, '').trim().toLowerCase();
+  if (VALID_PAGES.includes(rawHash as PageType)) {
+    return rawHash as PageType;
+  }
+
+  // 2. Check Query Param: e.g. ?page=equipment
+  const params = new URLSearchParams(window.location.search);
+  const pageParam = params.get('page')?.trim().toLowerCase();
+  if (pageParam && VALID_PAGES.includes(pageParam as PageType)) {
+    return pageParam as PageType;
+  }
+
+  // 3. Check Pathname: e.g. /equipment, /about
+  const rawPath = window.location.pathname.replace(/^\//, '').split('/')[0].trim().toLowerCase();
+  if (VALID_PAGES.includes(rawPath as PageType)) {
+    return rawPath as PageType;
+  }
+
+  return 'home';
+};
+
 const AppContext = createContext<AppContextType | undefined>(undefined);
 
 export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
-  const [currentPage, setCurrentPage] = useState<PageType>('home');
+  const [currentPage, setCurrentPage] = useState<PageType>(() => getPageFromLocation());
   const [selectedProductId, setSelectedProductId] = useState<string | null>(null);
+
+  // Synchronize initial browser history baseline on mount
+  useEffect(() => {
+    if (typeof window === 'undefined') return;
+
+    const initialPage = getPageFromLocation();
+    const urlHash = initialPage === 'home' ? '' : `#${initialPage}`;
+    window.history.replaceState(
+      { page: initialPage, productId: null },
+      '',
+      urlHash || window.location.pathname
+    );
+  }, []);
+
+  // Listen for browser Back and Forward button navigation (popstate event)
+  useEffect(() => {
+    if (typeof window === 'undefined') return;
+
+    const handlePopState = (event: PopStateEvent) => {
+      if (event.state && event.state.page && VALID_PAGES.includes(event.state.page)) {
+        setCurrentPage(event.state.page);
+        setSelectedProductId(event.state.productId || null);
+      } else {
+        const targetPage = getPageFromLocation();
+        setCurrentPage(targetPage);
+      }
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    };
+
+    window.addEventListener('popstate', handlePopState);
+    return () => window.removeEventListener('popstate', handlePopState);
+  }, []);
 
   // Dynamic Products State (V2 Original Matrix & Commercial Catalog)
   const [products, setProducts] = useState<Product[]>(() => {
@@ -561,15 +620,31 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
     setIsAdminAuthenticated(false);
     localStorage.removeItem('tanush_admin_auth');
     showToast('Admin Session Ended.', 'info');
-    setCurrentPage('home');
+    navigateTo('home');
   };
 
-  const navigateTo = (page: PageType, productId?: string) => {
+  const navigateTo = (page: PageType, productId?: string, replace = false) => {
     setCurrentPage(page);
-    if (productId) {
-      setSelectedProductId(productId);
+    if (productId !== undefined) {
+      setSelectedProductId(productId || null);
     }
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+
+    if (typeof window !== 'undefined') {
+      const urlHash = page === 'home' ? '' : `#${page}`;
+      const stateObj = { page, productId: productId || null };
+      const currentHash = window.location.hash.replace(/^#\/?/, '').trim().toLowerCase();
+
+      try {
+        if (replace) {
+          window.history.replaceState(stateObj, '', urlHash || window.location.pathname);
+        } else if (currentHash !== page && (page !== 'home' || currentHash !== '')) {
+          window.history.pushState(stateObj, '', urlHash || window.location.pathname);
+        }
+      } catch (err) {
+        console.warn('History navigation sync fallback:', err);
+      }
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
   };
 
   // Enquiry Cart Functions

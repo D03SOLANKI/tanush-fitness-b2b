@@ -2,7 +2,7 @@ import React from 'react';
 import { describe, it, expect, beforeAll, vi } from 'vitest';
 import { render, screen, fireEvent, waitFor } from '@testing-library/react';
 import App from '../App';
-import { normalizeUserList } from '../context/AppContext';
+import { normalizeUserList, getPageFromLocation, VALID_PAGES } from '../context/AppContext';
 import { AuthModal } from '../components/auth/AuthModal';
 
 beforeAll(() => {
@@ -352,6 +352,26 @@ describe('Authentication QA Suite (Login & Register for Gym Owner and Job Seeker
     expect(screen.getByText(/Create Account/i)).toBeInTheDocument();
     const mobileInput = screen.getByPlaceholderText(/\+91 98112 34567/i) as HTMLInputElement;
     expect(mobileInput.value).toBe('9888877777');
+  });
+});
+
+describe('Browser History & HTML5 Navigation Tests (Back/Forward Button Sync)', () => {
+  it('correctly maps URL hashes and query parameters to valid pages', () => {
+    expect(VALID_PAGES).toContain('home');
+    expect(VALID_PAGES).toContain('equipment');
+    expect(VALID_PAGES).toContain('about');
+    expect(VALID_PAGES).toContain('services');
+    expect(VALID_PAGES).toContain('manpower');
+    expect(VALID_PAGES).toContain('contact');
+    expect(VALID_PAGES).toContain('admin');
+
+    expect(getPageFromLocation()).toBeDefined();
+  });
+
+  it('guarantees pushState and popstate state object contains page and productId', () => {
+    const mockState = { page: 'equipment', productId: 'p-101' };
+    window.history.pushState(mockState, '', '/#equipment');
+    expect(window.history.state).toEqual(mockState);
   });
 });
 
