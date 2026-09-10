@@ -30,12 +30,14 @@ export const AboutPage: React.FC = () => {
 
           <div className="flex flex-wrap items-center gap-3 shrink-0">
             <a
-              href="/downloads/Tanush_Fitness_Corporate_Deck.pptx"
-              download="Tanush_Fitness_Corporate_Deck.pptx"
+              href="/downloads/Tanush Fitness Premium B2B Fitness Blueprint (1).pdf"
+              download="Tanush_Fitness_Premium_B2B_Fitness_Blueprint.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
               className="btn-primary flex items-center gap-2 text-xs py-3 px-5 cursor-pointer shadow-lg font-mono font-bold uppercase tracking-wider"
             >
               <FileDown className="w-4 h-4 text-[#0F1926]" />
-              <span>Download Brand Deck (PPT)</span>
+              <span>Download Deck</span>
             </a>
 
             <button
@@ -198,12 +200,14 @@ export const AboutPage: React.FC = () => {
 
           <div className="flex flex-wrap items-center gap-3 shrink-0">
             <a
-              href="/downloads/Tanush_Fitness_Corporate_Deck.pptx"
-              download="Tanush_Fitness_Corporate_Deck.pptx"
+              href="/downloads/Tanush Fitness Premium B2B Fitness Blueprint (1).pdf"
+              download="Tanush_Fitness_Premium_B2B_Fitness_Blueprint.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
               className="px-6 py-3.5 rounded-full bg-[#0F1926] border border-[#2A2A2B] hover:border-[#E8E8E8] text-[#E8E8E8] text-xs font-mono font-bold uppercase tracking-wider flex items-center gap-2 transition cursor-pointer shadow-md"
             >
               <FileDown className="w-3.5 h-3.5 text-[#E8E8E8]" />
-              <span>Download PPT Deck</span>
+              <span>Download Deck</span>
             </a>
 
             <button

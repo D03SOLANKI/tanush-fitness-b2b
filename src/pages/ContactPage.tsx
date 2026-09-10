@@ -22,12 +22,14 @@ export const ContactPage: React.FC = () => {
 
           <div className="flex flex-wrap items-center gap-3">
             <a
-              href="/downloads/Tanush_Fitness_Corporate_Deck.pptx"
-              download="Tanush_Fitness_Corporate_Deck.pptx"
+              href="/downloads/Tanush Fitness Premium B2B Fitness Blueprint (1).pdf"
+              download="Tanush_Fitness_Premium_B2B_Fitness_Blueprint.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
               className="bg-[#E8E8E8] hover:bg-white text-[#0F1926] px-5 py-2.5 rounded-full font-mono text-xs font-bold uppercase tracking-wider flex items-center gap-2 transition cursor-pointer shadow-lg"
             >
               <FileDown className="w-3.5 h-3.5 text-[#0F1926]" />
-              <span>Download Brand Deck (PPT)</span>
+              <span>Download Deck</span>
             </a>
 
             <a

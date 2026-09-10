@@ -26,12 +26,14 @@ export const Footer: React.FC = () => {
 
           <div className="flex flex-wrap items-center gap-3 shrink-0">
             <a
-              href="/downloads/Tanush_Fitness_Corporate_Deck.pptx"
-              download="Tanush_Fitness_Corporate_Deck.pptx"
+              href="/downloads/Tanush Fitness Premium B2B Fitness Blueprint (1).pdf"
+              download="Tanush_Fitness_Premium_B2B_Fitness_Blueprint.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
               className="px-5 py-3 rounded-full bg-[#0C1015] border border-[#2A2A2B] hover:border-[#D0CFCA] text-[#E8E8E8] text-xs font-mono font-bold uppercase tracking-wider transition hover:bg-[#2A2A2B]/40 flex items-center gap-2 cursor-pointer shadow-md"
             >
               <FileDown className="w-3.5 h-3.5 text-[#D0CFCA]" />
-              <span>Download Deck (PPT)</span>
+              <span>Download Deck</span>
             </a>
 
             <button

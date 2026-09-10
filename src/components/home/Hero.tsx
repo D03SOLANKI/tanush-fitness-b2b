@@ -53,12 +53,14 @@ export const Hero: React.FC = () => {
               </button>
 
               <a
-                href="/downloads/Tanush_Fitness_Corporate_Deck.pptx"
-                download="Tanush_Fitness_Corporate_Deck.pptx"
+                href="/downloads/Tanush Fitness Premium B2B Fitness Blueprint (1).pdf"
+                download="Tanush_Fitness_Premium_B2B_Fitness_Blueprint.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="px-6 py-3.5 rounded-none bg-[#090C10] hover:bg-[#1A2018] text-white font-bold text-xs uppercase font-mono flex items-center justify-center gap-2 transition-colors shadow-sm cursor-pointer border border-white/10"
               >
                 <FileDown className="w-4 h-4 text-white/80" />
-                <span>Download Brand Deck (PPT)</span>
+                <span>Download Deck</span>
               </a>
             </div>
 
