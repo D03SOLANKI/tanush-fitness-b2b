@@ -319,16 +319,28 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
   // Platform Settings State
   const [platformSettings, setPlatformSettings] = useState<PlatformSettings>(() => {
     const saved = localStorage.getItem('tanush_settings');
-    return saved
-      ? JSON.parse(saved)
-      : {
-          supportPhone: '+91 73832 49680',
-          supportEmail: 'Info@tanushfitness.com',
-          corporateAddress: 'The landmark Complex, A - 301 - 304, near Podar International School, Urjanagar 1, Kudasan, Gandhinagar, Gujarat 382419',
-          gstRate: '18',
-          bannerText: '⚡ Special B2B Bulk Discount: Up to 25% Off Commercial & Residential Gym Setup Bundles This Month!',
-          bannerEnabled: true,
-        };
+    if (saved) {
+      try {
+        const parsed = JSON.parse(saved);
+        if (parsed.corporateAddress && (parsed.corporateAddress.includes('Kudasan') || parsed.corporateAddress.includes('Gandhinagar'))) {
+          parsed.corporateAddress = 'Naroda, Ahmedabad, Gujarat';
+          localStorage.setItem('tanush_settings', JSON.stringify(parsed));
+        }
+        return parsed;
+      } catch (e) {
+        // fallback
+      }
+    }
+    const defaultSettings: PlatformSettings = {
+      supportPhone: '+91 73832 49680',
+      supportEmail: 'Info@tanushfitness.com',
+      corporateAddress: 'Naroda, Ahmedabad, Gujarat',
+      gstRate: '18',
+      bannerText: '⚡ Special B2B Bulk Discount: Up to 25% Off Commercial & Residential Gym Setup Bundles This Month!',
+      bannerEnabled: true,
+    };
+    localStorage.setItem('tanush_settings', JSON.stringify(defaultSettings));
+    return defaultSettings;
   });
 
   const updatePlatformSettings = (newSettings: Partial<PlatformSettings>) => {

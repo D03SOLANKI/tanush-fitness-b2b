@@ -51,26 +51,26 @@ export const ContactPage: React.FC = () => {
           <div className="bg-[#E8E8E8] text-[#0F1926] border border-[#2A2A2B]/10 rounded-2xl p-8 space-y-3 group hover:border-[#0F1926] transition-all duration-300 shadow-2xl hover:-translate-y-1">
             <div className="flex items-center gap-2 text-[#0F1926] font-mono text-xs uppercase tracking-wider font-bold">
               <MapPin className="w-4 h-4" />
-              <span>National Showroom</span>
+              <span>Corporate Office</span>
             </div>
             <h3 className="font-satoshi text-lg font-bold text-[#0F1926] uppercase">
-              Tanush Experience Center
+              Headquarters & Logistics
             </h3>
             <p className="font-sans text-xs text-[#2A2A2B]/80 leading-relaxed">
-              Industrial Area Phase 2, Okhla, New Delhi, Delhi 110020
+              Naroda, Ahmedabad, Gujarat
             </p>
           </div>
 
           <div className="bg-[#E8E8E8] text-[#0F1926] border border-[#2A2A2B]/10 rounded-2xl p-8 space-y-3 group hover:border-[#0F1926] transition-all duration-300 shadow-2xl hover:-translate-y-1">
             <div className="flex items-center gap-2 text-[#0F1926] font-mono text-xs uppercase tracking-wider font-bold">
               <ShieldCheck className="w-4 h-4" />
-              <span>Manufacturing Works</span>
+              <span>Direct Support</span>
             </div>
             <h3 className="font-satoshi text-lg font-bold text-[#0F1926] uppercase">
-              Laser Steel Heavy Fabrication
+              Commercial Consultation
             </h3>
             <p className="font-sans text-xs text-[#2A2A2B]/80 leading-relaxed">
-              Plot 42-45, Precision Engineering Zone, Meerut Industrial Corridor, UP
+              +91 73832 49680 • Mon-Sat 9:00 AM - 8:00 PM
             </p>
           </div>
 

@@ -151,7 +151,7 @@ export const Footer: React.FC = () => {
             <div className="space-y-3 text-[#D0CFCA] text-xs">
               <div className="flex items-start gap-2.5">
                 <MapPin className="w-4 h-4 text-[#D0CFCA] shrink-0 mt-0.5" />
-                <span>The Landmark Complex, A-301-304, Kudasan, Gandhinagar, Gujarat 382419</span>
+                <span>Naroda, Ahmedabad, Gujarat</span>
               </div>
               <div className="flex items-center gap-2.5">
                 <Phone className="w-4 h-4 text-[#D0CFCA] shrink-0" />
@@ -164,11 +164,6 @@ export const Footer: React.FC = () => {
                 <a href="mailto:Info@tanushfitness.com" className="hover:text-[#E8E8E8] transition font-mono text-[#E8E8E8]">
                   Info@tanushfitness.com
                 </a>
-              </div>
-              <div className="pt-2 text-[11px] font-mono text-[#D0CFCA]">
-                ⚡ Experience Center: Okhla, New Delhi
-                <br />
-                ⚡ Manufacturing Works: Meerut Industrial Corridor
               </div>
             </div>
           </div>
