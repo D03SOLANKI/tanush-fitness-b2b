@@ -272,6 +272,87 @@ describe('Authentication QA Suite (Login & Register for Gym Owner and Job Seeker
       );
     });
   });
+
+  it('prevents duplicate registration when mobile or email is already registered', async () => {
+    const onClose = vi.fn();
+    const onSuccess = vi.fn();
+
+    const existingUsers = [
+      {
+        id: 'usr-existing-1',
+        name: 'Existing Member',
+        email: 'existing@tanushfitness.com',
+        mobile: '+91 91234 56789',
+        password: 'Password123',
+        role: 'GYM_OWNER',
+        status: 'ACTIVE',
+      },
+    ];
+    localStorage.setItem('tanush_user_list', JSON.stringify(existingUsers));
+
+    render(
+      <AuthModal
+        isOpen={true}
+        onClose={onClose}
+        onSuccess={onSuccess}
+      />
+    );
+
+    // Switch to Register tab
+    const registerTab = screen.getByRole('button', { name: /Register/i });
+    fireEvent.click(registerTab);
+
+    // Fill form with duplicate mobile
+    fireEvent.change(screen.getByPlaceholderText(/Vikram Malhotra/i), { target: { value: 'New Person' } });
+    fireEvent.change(screen.getByPlaceholderText(/vikram@apexwellness.com/i), { target: { value: 'different@gmail.com' } });
+    fireEvent.change(screen.getByPlaceholderText(/\+91 98112 34567/i), { target: { value: '9123456789' } });
+    fireEvent.change(screen.getByPlaceholderText(/Apex Luxury Fitness Club/i), { target: { value: 'New Gym' } });
+    fireEvent.change(screen.getByPlaceholderText(/Ahmedabad \/ Gandhinagar \/ Delhi/i), { target: { value: 'Ahmedabad' } });
+    fireEvent.change(screen.getByPlaceholderText(/Min 8 chars \(A-z, 0-9\)/i), { target: { value: 'Password123' } });
+    fireEvent.change(screen.getByPlaceholderText(/Re-enter password/i), { target: { value: 'Password123' } });
+
+    const submitBtn = screen.getByRole('button', { name: /Register & Continue/i });
+    fireEvent.click(submitBtn);
+
+    expect(await screen.findByText(/already registered. Please login instead/i)).toBeInTheDocument();
+    expect(onSuccess).not.toHaveBeenCalled();
+  });
+
+  it('allows 1-click transition from unregistered error to Register tab with prefilled mobile', async () => {
+    const onClose = vi.fn();
+    const onSuccess = vi.fn();
+
+    localStorage.setItem('tanush_user_list', JSON.stringify([]));
+
+    render(
+      <AuthModal
+        isOpen={true}
+        onClose={onClose}
+        onSuccess={onSuccess}
+      />
+    );
+
+    // Try login with unregistered number
+    const idInput = screen.getByPlaceholderText(/vikram@apex.com or 9876543210/i);
+    const passInput = screen.getByPlaceholderText(/Min 8 chars \(A-z, 0-9\)/i);
+
+    fireEvent.change(idInput, { target: { value: '9888877777' } });
+    fireEvent.change(passInput, { target: { value: 'SomePassword123' } });
+
+    const loginBtn = screen.getByRole('button', { name: /Login & Continue/i });
+    fireEvent.click(loginBtn);
+
+    // Find 1-click register button
+    const registerNowBtn = await screen.findByRole('button', { name: /Click Here to Register Now/i });
+    expect(registerNowBtn).toBeInTheDocument();
+
+    // Click it to switch to register mode
+    fireEvent.click(registerNowBtn);
+
+    expect(screen.getByText(/Create Account/i)).toBeInTheDocument();
+    const mobileInput = screen.getByPlaceholderText(/\+91 98112 34567/i) as HTMLInputElement;
+    expect(mobileInput.value).toBe('9888877777');
+  });
 });
 
 describe('Admin Panel → Live Website Workflow Tests', () => {
