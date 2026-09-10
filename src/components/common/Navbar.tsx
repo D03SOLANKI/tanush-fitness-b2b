@@ -31,6 +31,7 @@ export const Navbar: React.FC = () => {
     openAuthModal,
     currentUser,
     logoutUser,
+    isAdminAuthenticated,
   } = useApp();
 
   const [isScrolled, setIsScrolled] = useState(false);
@@ -240,6 +241,20 @@ export const Navbar: React.FC = () => {
                             <Settings className="w-4 h-4 text-[#0F1926]" />
                             <span>Settings & Direct Desk</span>
                           </button>
+
+                          {(isAdminAuthenticated || currentUser?.role === 'ADMIN') && (
+                            <button
+                              type="button"
+                              onClick={() => {
+                                setIsProfileDropdownOpen(false);
+                                handleNav('admin');
+                              }}
+                              className="w-full flex items-center gap-2.5 p-2.5 rounded-xl bg-amber-500/10 hover:bg-amber-500/20 text-[#0F1926] text-left font-bold transition cursor-pointer border border-amber-500/30"
+                            >
+                              <ShieldCheck className="w-4 h-4 text-amber-700" />
+                              <span>Admin Console</span>
+                            </button>
+                          )}
                         </div>
 
                         {/* Dropdown Footer: Logout */}
@@ -409,6 +424,20 @@ export const Navbar: React.FC = () => {
                       <span>Sign Out</span>
                     </button>
                   </div>
+
+                  {(isAdminAuthenticated || currentUser?.role === 'ADMIN') && (
+                    <button
+                      type="button"
+                      onClick={() => {
+                        setIsMenuOpen(false);
+                        handleNav('admin');
+                      }}
+                      className="w-full py-2.5 px-3 rounded-xl bg-amber-500/15 hover:bg-amber-500/25 text-amber-300 border border-amber-500/30 font-bold text-xs uppercase tracking-wider transition cursor-pointer flex items-center justify-center gap-2 shadow-sm"
+                    >
+                      <ShieldCheck className="w-4 h-4 text-amber-400" />
+                      <span>🛡️ Executive Admin Console</span>
+                    </button>
+                  )}
                 </div>
               ) : (
                 /* Not Logged In - Quick Login Button */

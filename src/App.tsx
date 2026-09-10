@@ -16,7 +16,42 @@ import { AdminPage } from './pages/AdminPage';
 import { AdminHeader } from './components/admin/AdminHeader';
 
 const MainContent: React.FC = () => {
-  const { currentPage } = useApp();
+  const { currentPage, navigateTo } = useApp();
+
+  // Developer & Admin Direct Route Listener (Hash / URL parameter)
+  useEffect(() => {
+    const handleUrlRouting = () => {
+      const hash = window.location.hash;
+      const params = new URLSearchParams(window.location.search);
+      const path = window.location.pathname;
+
+      if (hash === '#admin' || hash === '#/admin' || params.get('page') === 'admin' || path === '/admin') {
+        navigateTo('admin');
+      }
+    };
+
+    handleUrlRouting();
+    window.addEventListener('hashchange', handleUrlRouting);
+    window.addEventListener('popstate', handleUrlRouting);
+    return () => {
+      window.removeEventListener('hashchange', handleUrlRouting);
+      window.removeEventListener('popstate', handleUrlRouting);
+    };
+  }, [navigateTo]);
+
+  // Developer & Admin Keyboard Hotkey: Ctrl + Shift + A (or Cmd + Shift + A)
+  useEffect(() => {
+    const handleAdminHotkey = (e: KeyboardEvent) => {
+      if ((e.ctrlKey || e.metaKey) && e.shiftKey && (e.key === 'A' || e.key === 'a')) {
+        e.preventDefault();
+        navigateTo('admin');
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+    };
+
+    window.addEventListener('keydown', handleAdminHotkey);
+    return () => window.removeEventListener('keydown', handleAdminHotkey);
+  }, [navigateTo]);
 
   useEffect(() => {
     if (typeof window === 'undefined' || typeof window.matchMedia !== 'function') {

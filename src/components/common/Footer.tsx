@@ -4,11 +4,29 @@ import { TanushLogo } from './TanushLogo';
 import { Sparkles, Phone, Mail, MapPin, ShieldCheck, ArrowRight, ArrowUpRight, Lock, ArrowUp, FileDown } from 'lucide-react';
 
 export const Footer: React.FC = () => {
-  const { navigateTo } = useApp();
+  const { navigateTo, isAdminAuthenticated, currentUser } = useApp();
+  const [secretClicks, setSecretClicks] = React.useState(0);
+  const clickTimerRef = React.useRef<any>(null);
 
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
+
+  const handleSecretDeveloperTrigger = () => {
+    setSecretClicks((prev) => {
+      const updated = prev + 1;
+      if (updated >= 3) {
+        navigateTo('admin');
+        scrollToTop();
+        return 0;
+      }
+      clearTimeout(clickTimerRef.current);
+      clickTimerRef.current = setTimeout(() => setSecretClicks(0), 1800);
+      return updated;
+    });
+  };
+
+  const isAuthorizedAdmin = isAdminAuthenticated || currentUser?.role === 'ADMIN';
 
   return (
     <footer className="bg-[#0C1015] text-[#E8E8E8] border-t border-[#2A2A2B] relative overflow-hidden">
@@ -182,19 +200,27 @@ export const Footer: React.FC = () => {
 
         {/* 🏢 3. BOTTOM UTILITY BAR */}
         <div className="pt-8 border-t border-[#2A2A2B] flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-mono text-[#D0CFCA]">
-          <div className="flex items-center gap-4 text-center sm:text-left">
+          <div
+            onClick={handleSecretDeveloperTrigger}
+            className="flex items-center gap-4 text-center sm:text-left cursor-default select-none group"
+            title="Tanush Precision Engineering"
+          >
             <span>© 2026 Tanush Fitness Commercial Infrastructure Pvt Ltd. All rights reserved.</span>
           </div>
 
           <div className="flex items-center gap-5">
-            <button
-              onClick={() => { navigateTo('admin'); scrollToTop(); }}
-              className="flex items-center gap-1.5 hover:text-[#E8E8E8] transition-colors cursor-pointer"
-            >
-              <Lock className="w-3 h-3 text-[#D0CFCA]" />
-              <span>Admin Console</span>
-            </button>
-            <span className="text-[#2A2A2B]">•</span>
+            {isAuthorizedAdmin && (
+              <>
+                <button
+                  onClick={() => { navigateTo('admin'); scrollToTop(); }}
+                  className="flex items-center gap-1.5 text-amber-400 hover:text-amber-300 font-bold transition-colors cursor-pointer"
+                >
+                  <Lock className="w-3 h-3 text-amber-400" />
+                  <span>Admin Console</span>
+                </button>
+                <span className="text-[#2A2A2B]">•</span>
+              </>
+            )}
             <button onClick={() => { navigateTo('contact'); scrollToTop(); }} className="hover:text-[#E8E8E8] transition-colors cursor-pointer">
               Outfitting Desk
             </button>

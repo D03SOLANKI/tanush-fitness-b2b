@@ -94,13 +94,13 @@ export const AdminPage: React.FC = () => {
                 <input
                   type="password"
                   required
-                  placeholder="Enter passcode (Hint: admin2026)"
+                  placeholder="Enter admin security passcode"
                   value={passcode}
                   onChange={(e) => {
                     setPasscode(e.target.value);
                     setAuthError(false);
                   }}
-                  className={`w-full bg-white border rounded-xl py-3 px-4 pl-10 text-xs font-mono text-[#0F1926] placeholder-[#D0CFCA] focus:outline-none ${
+                  className={`w-full bg-white border rounded-xl py-3 px-4 pl-10 text-xs font-mono text-[#0F1926] placeholder-[#2A2A2B]/40 focus:outline-none ${
                     authError ? 'border-rose-500' : 'border-[#0F1926]/20 focus:border-[#0F1926]'
                   }`}
                 />
