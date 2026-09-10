@@ -1,7 +1,7 @@
 import React from 'react';
 import { SEO } from '../components/common/SEO';
 import { VaultContactFormSection } from '../components/home/VaultContactFormSection';
-import { Phone, Mail, MessageSquare, ShieldCheck, MapPin } from 'lucide-react';
+import { Phone, Mail, MessageSquare, ShieldCheck, MapPin, FileDown } from 'lucide-react';
 
 export const ContactPage: React.FC = () => {
   return (
@@ -20,7 +20,16 @@ export const ContactPage: React.FC = () => {
             </h1>
           </div>
 
-          <div className="flex flex-wrap items-center gap-4">
+          <div className="flex flex-wrap items-center gap-3">
+            <a
+              href="/downloads/Tanush_Fitness_Corporate_Deck.pptx"
+              download="Tanush_Fitness_Corporate_Deck.pptx"
+              className="bg-[#E8E8E8] hover:bg-white text-[#0F1926] px-5 py-2.5 rounded-full font-mono text-xs font-bold uppercase tracking-wider flex items-center gap-2 transition cursor-pointer shadow-lg"
+            >
+              <FileDown className="w-3.5 h-3.5 text-[#0F1926]" />
+              <span>Download Brand Deck (PPT)</span>
+            </a>
+
             <a
               href="https://wa.me/917383249680?text=Hello%20Tanush%20Fitness,%20I%20want%20a%20commercial%20outfitting%20quotation."
               target="_blank"

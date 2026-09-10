@@ -46,19 +46,20 @@ export const Hero: React.FC = () => {
             <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 pt-2">
               <button
                 onClick={() => navigateTo('equipment')}
-                className="px-6 py-3.5 rounded-none bg-[#D26539] hover:bg-[#C2552F] text-white font-bold text-xs uppercase font-mono flex items-center justify-center gap-2 transition-colors shadow-sm"
+                className="px-6 py-3.5 rounded-none bg-[#D26539] hover:bg-[#C2552F] text-white font-bold text-xs uppercase font-mono flex items-center justify-center gap-2 transition-colors shadow-sm cursor-pointer"
               >
                 <span>Build RFQ Package</span>
                 <ArrowRight className="w-4 h-4" />
               </button>
 
-              <button
-                onClick={() => navigateTo('contact')}
-                className="px-6 py-3.5 rounded-none bg-[#090C10] hover:bg-[#1A2018] text-white font-bold text-xs uppercase font-mono flex items-center justify-center gap-2 transition-colors shadow-sm"
+              <a
+                href="/downloads/Tanush_Fitness_Corporate_Deck.pptx"
+                download="Tanush_Fitness_Corporate_Deck.pptx"
+                className="px-6 py-3.5 rounded-none bg-[#090C10] hover:bg-[#1A2018] text-white font-bold text-xs uppercase font-mono flex items-center justify-center gap-2 transition-colors shadow-sm cursor-pointer border border-white/10"
               >
                 <FileDown className="w-4 h-4 text-white/80" />
-                <span>Request 2026 Master Spec Sheet</span>
-              </button>
+                <span>Download Brand Deck (PPT)</span>
+              </a>
             </div>
 
             {/* Direct Line & Fast Invoicing Notice */}

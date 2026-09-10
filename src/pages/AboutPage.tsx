@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useApp } from '../context/AppContext';
-import { ShieldCheck, Target, Eye, Award, Building2, Users, ArrowRight, CheckCircle2, Sparkles, Phone, Compass, Cpu, Wrench, Briefcase, Layers } from 'lucide-react';
+import { ShieldCheck, Target, Eye, Award, Building2, Users, ArrowRight, CheckCircle2, Sparkles, Phone, Compass, Cpu, Wrench, Briefcase, Layers, FileDown } from 'lucide-react';
 import { SEO } from '../components/common/SEO';
 import { MarqueeStrip } from '../components/common/MarqueeStrip';
 
@@ -28,13 +28,22 @@ export const AboutPage: React.FC = () => {
             </p>
           </div>
 
-          <div className="flex items-center gap-3 shrink-0">
+          <div className="flex flex-wrap items-center gap-3 shrink-0">
+            <a
+              href="/downloads/Tanush_Fitness_Corporate_Deck.pptx"
+              download="Tanush_Fitness_Corporate_Deck.pptx"
+              className="btn-primary flex items-center gap-2 text-xs py-3 px-5 cursor-pointer shadow-lg font-mono font-bold uppercase tracking-wider"
+            >
+              <FileDown className="w-4 h-4 text-[#0F1926]" />
+              <span>Download Brand Deck (PPT)</span>
+            </a>
+
             <button
               onClick={() => navigateTo('services')}
-              className="btn-primary flex items-center gap-2 text-xs py-3 px-6 cursor-pointer shadow-lg"
+              className="bg-[#0C1015] border border-[#2A2A2B] hover:border-[#E8E8E8] text-[#E8E8E8] flex items-center gap-2 text-xs py-3 px-5 rounded-full cursor-pointer shadow-md transition font-mono uppercase tracking-wider"
             >
-              <Briefcase className="w-3.5 h-3.5 text-[#0F1926]" />
-              <span>Explore Management Solutions</span>
+              <Briefcase className="w-3.5 h-3.5 text-[#D0CFCA]" />
+              <span>Management Solutions</span>
             </button>
           </div>
         </div>
@@ -187,12 +196,23 @@ export const AboutPage: React.FC = () => {
             </p>
           </div>
 
-          <button
-            onClick={() => navigateTo('contact')}
-            className="btn-primary shrink-0 px-8 py-3.5 text-xs uppercase tracking-wider cursor-pointer shadow-lg"
-          >
-            Connect With Factory Desk
-          </button>
+          <div className="flex flex-wrap items-center gap-3 shrink-0">
+            <a
+              href="/downloads/Tanush_Fitness_Corporate_Deck.pptx"
+              download="Tanush_Fitness_Corporate_Deck.pptx"
+              className="px-6 py-3.5 rounded-full bg-[#0F1926] border border-[#2A2A2B] hover:border-[#E8E8E8] text-[#E8E8E8] text-xs font-mono font-bold uppercase tracking-wider flex items-center gap-2 transition cursor-pointer shadow-md"
+            >
+              <FileDown className="w-3.5 h-3.5 text-[#E8E8E8]" />
+              <span>Download PPT Deck</span>
+            </a>
+
+            <button
+              onClick={() => navigateTo('contact')}
+              className="btn-primary shrink-0 px-8 py-3.5 text-xs uppercase tracking-wider cursor-pointer shadow-lg"
+            >
+              Connect With Factory Desk
+            </button>
+          </div>
         </div>
       </div>
     </main>

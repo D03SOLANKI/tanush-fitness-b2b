@@ -1,7 +1,7 @@
 import React from 'react';
 import { useApp } from '../../context/AppContext';
 import { TanushLogo } from './TanushLogo';
-import { Sparkles, Phone, Mail, MapPin, ShieldCheck, ArrowRight, ArrowUpRight, Lock, ArrowUp } from 'lucide-react';
+import { Sparkles, Phone, Mail, MapPin, ShieldCheck, ArrowRight, ArrowUpRight, Lock, ArrowUp, FileDown } from 'lucide-react';
 
 export const Footer: React.FC = () => {
   const { navigateTo } = useApp();
@@ -25,13 +25,22 @@ export const Footer: React.FC = () => {
           </div>
 
           <div className="flex flex-wrap items-center gap-3 shrink-0">
+            <a
+              href="/downloads/Tanush_Fitness_Corporate_Deck.pptx"
+              download="Tanush_Fitness_Corporate_Deck.pptx"
+              className="px-5 py-3 rounded-full bg-[#0C1015] border border-[#2A2A2B] hover:border-[#D0CFCA] text-[#E8E8E8] text-xs font-mono font-bold uppercase tracking-wider transition hover:bg-[#2A2A2B]/40 flex items-center gap-2 cursor-pointer shadow-md"
+            >
+              <FileDown className="w-3.5 h-3.5 text-[#D0CFCA]" />
+              <span>Download Deck (PPT)</span>
+            </a>
+
             <button
               type="button"
               onClick={() => {
                 navigateTo('contact');
                 scrollToTop();
               }}
-              className="btn-primary px-6 py-3 text-xs flex items-center gap-2 cursor-pointer shadow-lg"
+              className="btn-primary px-6 py-3 text-xs flex items-center gap-2 cursor-pointer shadow-lg font-mono font-bold uppercase tracking-wider"
             >
               <span>Book VIP Consultation</span>
               <ArrowRight className="w-3.5 h-3.5" />
