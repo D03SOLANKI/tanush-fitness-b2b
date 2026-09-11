@@ -560,16 +560,132 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
     showToast(`Welcome back, ${user.name || user.email}!`);
   };
 
+  const getUserRfqKey = (user: any | null): string | null => {
+    if (!user) return null;
+    const raw = (user.id || user._id || user.email || '').trim().toLowerCase();
+    return raw || null;
+  };
+
+  const getCachedUserCart = (user: any | null): CartItem[] => {
+    const key = getUserRfqKey(user);
+    if (!key) return [];
+    try {
+      const stored = localStorage.getItem(`tanush_rfq_cart_${key}`);
+      return stored ? JSON.parse(stored) : [];
+    } catch {
+      return [];
+    }
+  };
+
+  const syncCartToBackend = (user: any | null, items: CartItem[]) => {
+    const userKey = getUserRfqKey(user);
+    if (!userKey) return;
+
+    const queryParams = new URLSearchParams({
+      userId: user.id || userKey,
+      email: user.email || '',
+    });
+
+    const headers: Record<string, string> = {
+      'Content-Type': 'application/json',
+      'x-user-id': user.id || userKey,
+      'x-user-email': user.email || '',
+    };
+    const token = localStorage.getItem('tanush_token');
+    if (token) {
+      headers['Authorization'] = `Bearer ${token}`;
+    }
+
+    fetch(`${API_BASE_URL}/api/v1/equipment/cart?${queryParams.toString()}`, {
+      method: 'POST',
+      headers,
+      body: JSON.stringify({
+        userId: user.id || userKey,
+        email: user.email || '',
+        items,
+      }),
+    }).catch(err => {
+      console.log('Backend RFQ cart sync notice:', err.message);
+    });
+  };
+
   const logoutUser = () => {
     setCurrentUser(null);
     setAccessToken(null);
+    setEnquiryCart([]); // Immediately reset RFQ list so no subsequent or guest user sees this user's list
     localStorage.removeItem('tanush_user');
     localStorage.removeItem('tanush_token');
     showToast('Logged out successfully', 'info');
   };
 
-  const [enquiryCart, setEnquiryCart] = useState<CartItem[]>([]);
+  const [enquiryCart, setEnquiryCart] = useState<CartItem[]>(() => {
+    const savedUser = localStorage.getItem('tanush_user');
+    const parsedUser = savedUser ? JSON.parse(savedUser) : null;
+    return getCachedUserCart(parsedUser);
+  });
   const [isEnquiryCartOpen, setIsEnquiryCartOpen] = useState(false);
+
+  // Sync user RFQ list from backend whenever user logs in or currentUser changes
+  useEffect(() => {
+    const userKey = getUserRfqKey(currentUser);
+    if (!userKey) {
+      setEnquiryCart([]);
+      return;
+    }
+
+    // 1. Immediately load this user's cached cart so UI displays instantly
+    const cached = getCachedUserCart(currentUser);
+    setEnquiryCart(cached);
+
+    // 2. Fetch saved RFQ list from backend/database for this specific user
+    const controller = new AbortController();
+    const fetchUserCart = async () => {
+      try {
+        const queryParams = new URLSearchParams({
+          userId: currentUser.id || userKey,
+          email: currentUser.email || '',
+        });
+        const headers: Record<string, string> = {
+          'x-user-id': currentUser.id || userKey,
+          'x-user-email': currentUser.email || '',
+        };
+        const token = localStorage.getItem('tanush_token') || accessToken;
+        if (token) {
+          headers['Authorization'] = `Bearer ${token}`;
+        }
+
+        const res = await fetch(`${API_BASE_URL}/api/v1/equipment/cart?${queryParams.toString()}`, {
+          method: 'GET',
+          headers,
+          signal: controller.signal,
+        });
+
+        if (res.ok) {
+          const data = await res.json();
+          if (data.success && Array.isArray(data.data?.items)) {
+            const backendItems: CartItem[] = data.data.items;
+            if (backendItems.length > 0) {
+              setEnquiryCart(backendItems);
+              localStorage.setItem(`tanush_rfq_cart_${userKey}`, JSON.stringify(backendItems));
+            } else if (cached.length > 0) {
+              // Sync up if backend was empty but client had cached RFQs
+              syncCartToBackend(currentUser, cached);
+            }
+          }
+        }
+      } catch (err: any) {
+        if (err.name !== 'AbortError') {
+          console.log('Notice retrieving saved RFQ list from backend:', err);
+        }
+      }
+    };
+
+    fetchUserCart();
+
+    return () => {
+      controller.abort();
+    };
+  }, [currentUser?.id, currentUser?.email, accessToken]);
 
   const [wishlist, setWishlist] = useState<string[]>([]);
   const [filters, setFilters] = useState<FilterState>(defaultFilters);
@@ -651,19 +767,36 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
   const addToEnquiryCart = (product: Product, quantity = 1) => {
     setEnquiryCart(prev => {
       const existing = prev.find(item => item.product.id === product.id);
+      let updated: CartItem[];
       if (existing) {
-        return prev.map(item =>
+        updated = prev.map(item =>
           item.product.id === product.id ? { ...item, quantity: item.quantity + quantity } : item
         );
+      } else {
+        updated = [...prev, { product, quantity }];
       }
-      return [...prev, { product, quantity }];
+
+      const userKey = getUserRfqKey(currentUser);
+      if (userKey) {
+        localStorage.setItem(`tanush_rfq_cart_${userKey}`, JSON.stringify(updated));
+        syncCartToBackend(currentUser, updated);
+      }
+      return updated;
     });
-    showToast(`Added ${product.name} to Enquiry Cart`);
+    showToast(`Added ${product.name} to Project RFQ Basket`);
   };
 
   const removeFromEnquiryCart = (productId: string) => {
-    setEnquiryCart(prev => prev.filter(item => item.product.id !== productId));
-    showToast('Item removed from Enquiry Cart', 'info');
+    setEnquiryCart(prev => {
+      const updated = prev.filter(item => item.product.id !== productId);
+      const userKey = getUserRfqKey(currentUser);
+      if (userKey) {
+        localStorage.setItem(`tanush_rfq_cart_${userKey}`, JSON.stringify(updated));
+        syncCartToBackend(currentUser, updated);
+      }
+      return updated;
+    });
+    showToast('Item removed from Project RFQ Basket', 'info');
   };
 
   const updateEnquiryCartQuantity = (productId: string, quantity: number) => {
@@ -671,13 +804,24 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
       removeFromEnquiryCart(productId);
       return;
     }
-    setEnquiryCart(prev =>
-      prev.map(item => (item.product.id === productId ? { ...item, quantity } : item))
-    );
+    setEnquiryCart(prev => {
+      const updated = prev.map(item => (item.product.id === productId ? { ...item, quantity } : item));
+      const userKey = getUserRfqKey(currentUser);
+      if (userKey) {
+        localStorage.setItem(`tanush_rfq_cart_${userKey}`, JSON.stringify(updated));
+        syncCartToBackend(currentUser, updated);
+      }
+      return updated;
+    });
   };
 
   const clearEnquiryCart = () => {
     setEnquiryCart([]);
+    const userKey = getUserRfqKey(currentUser);
+    if (userKey) {
+      localStorage.removeItem(`tanush_rfq_cart_${userKey}`);
+      syncCartToBackend(currentUser, []);
+    }
   };
 
   const toggleWishlist = (productId: string) => {

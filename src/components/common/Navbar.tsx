@@ -19,7 +19,8 @@ import {
   Layers,
   Calendar,
   Settings,
-  Sparkles
+  Sparkles,
+  ShoppingBag,
 } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { TanushLogo } from './TanushLogo';
@@ -32,6 +33,8 @@ export const Navbar: React.FC = () => {
     currentUser,
     logoutUser,
     isAdminAuthenticated,
+    enquiryCart,
+    setIsEnquiryCartOpen,
   } = useApp();
 
   const [isScrolled, setIsScrolled] = useState(false);
@@ -152,6 +155,25 @@ export const Navbar: React.FC = () => {
 
             {/* 3. Right: User Account Action & Mobile/Tablet Menu Button */}
             <div ref={dropdownRef} className="flex items-center gap-2 sm:gap-2.5 shrink-0 relative">
+              {/* Project RFQ Basket Button - Visible only in Equipment Sanctuary */}
+              {currentPage === 'equipment' && (
+                <button
+                  type="button"
+                  onClick={() => setIsEnquiryCartOpen(true)}
+                  className="px-3 sm:px-4 py-2 rounded-full bg-[#D26539] hover:bg-[#C2552F] text-white flex items-center gap-2 transition cursor-pointer shadow-xl font-mono text-xs font-bold uppercase tracking-wider group"
+                  title="Open Project RFQ Basket"
+                >
+                  <ShoppingBag className="w-3.5 h-3.5 text-white group-hover:scale-110 transition-transform" />
+                  <span className="hidden md:inline">Project RFQ Basket</span>
+                  <span className="md:hidden">RFQ</span>
+                  {enquiryCart.length > 0 && (
+                    <span className="w-5 h-5 rounded-full bg-[#0F1926] text-white text-[10px] font-bold flex items-center justify-center -mr-1">
+                      {enquiryCart.reduce((sum, item) => sum + item.quantity, 0)}
+                    </span>
+                  )}
+                </button>
+              )}
+
               {/* Logged-In User Profile Button (Desktop & Mobile) */}
               {currentUser ? (
                 <div className="relative">

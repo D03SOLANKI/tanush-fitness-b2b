@@ -122,16 +122,25 @@ export const EnquiryCartDrawer: React.FC = () => {
 
   return (
     <AnimatePresence>
-      <div className="fixed inset-0 z-50 overflow-hidden bg-black/80 backdrop-blur-md flex justify-end">
+      <div
+        data-lenis-prevent="true"
+        className="fixed inset-0 z-50 overflow-hidden bg-black/80 backdrop-blur-md flex justify-end pointer-events-auto"
+        onClick={() => {
+          setIsEnquiryCartOpen(false);
+          setIsSubmitted(false);
+        }}
+      >
         <motion.div
+          data-lenis-prevent="true"
           initial={{ x: '100%' }}
           animate={{ x: 0 }}
           exit={{ x: '100%' }}
           transition={{ type: 'spring', damping: 30, stiffness: 280 }}
-          className="w-full max-w-lg bg-[#0F1926] h-full shadow-2xl flex flex-col justify-between overflow-hidden border-l border-[#2A2A2B]"
+          className="w-full max-w-lg bg-[#0F1926] h-full shadow-2xl flex flex-col justify-between overflow-hidden border-l border-[#2A2A2B] pointer-events-auto"
+          onClick={(e) => e.stopPropagation()}
         >
           {/* Header */}
-          <div className="p-6 border-b border-[#2A2A2B] bg-[#0C1015] text-[#E8E8E8] flex items-center justify-between">
+          <div className="p-6 border-b border-[#2A2A2B] bg-[#0C1015] text-[#E8E8E8] flex items-center justify-between shrink-0">
             <div className="flex items-center gap-3">
               <div className="w-10 h-10 rounded-xl bg-white/5 border border-[#2A2A2B] flex items-center justify-center text-[#E8E8E8]">
                 <FileText className="w-5 h-5" />
@@ -164,7 +173,12 @@ export const EnquiryCartDrawer: React.FC = () => {
           </div>
 
           {/* Body Content */}
-          <div className="flex-1 overflow-y-auto p-6 space-y-6">
+          <div
+            data-lenis-prevent="true"
+            onWheel={(e) => e.stopPropagation()}
+            className="flex-1 overflow-y-auto p-6 space-y-6 overscroll-contain modal-scrollbar"
+            style={{ overscrollBehavior: 'contain', WebkitOverflowScrolling: 'touch' }}
+          >
             {isSubmitted ? (
               /* RFQ Summary Confirmation */
               <div className="p-6 rounded-2xl bg-[#0C1015] border border-[#2A2A2B] text-[#E8E8E8] space-y-5 text-center">

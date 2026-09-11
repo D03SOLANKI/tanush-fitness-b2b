@@ -21,4 +21,9 @@ equipmentRouter.post(
   EquipmentController.createEnquiry
 );
 
+// User Project RFQ Basket / Cart Sync Routes
+equipmentRouter.get('/cart', EquipmentController.getUserCart);
+equipmentRouter.post('/cart', EquipmentController.syncUserCart);
+equipmentRouter.delete('/cart', EquipmentController.clearUserCart);
+
 export default equipmentRouter;

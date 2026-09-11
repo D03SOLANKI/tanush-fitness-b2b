@@ -23,7 +23,8 @@ import {
   CheckCircle2,
   Zap,
   Activity,
-  Award
+  Award,
+  ShoppingBag,
 } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { MarqueeStrip } from '../components/common/MarqueeStrip';
@@ -31,6 +32,7 @@ import { MarqueeStrip } from '../components/common/MarqueeStrip';
 export const EquipmentPage: React.FC = () => {
   const {
     products,
+    enquiryCart,
     addToEnquiryCart,
     toggleWishlist,
     isInWishlist,
@@ -141,7 +143,22 @@ export const EquipmentPage: React.FC = () => {
             </p>
           </div>
 
-          <div className="flex items-center gap-3 shrink-0">
+          <div className="flex flex-wrap items-center gap-3 shrink-0">
+            <button
+              type="button"
+              onClick={() => setIsEnquiryCartOpen(true)}
+              className="px-5 py-3 rounded-full bg-[#D26539] hover:bg-[#C2552F] text-white flex items-center gap-2 text-xs font-mono font-bold uppercase tracking-wider shadow-xl transition-all cursor-pointer group"
+              title="Open Project RFQ Basket"
+            >
+              <ShoppingBag className="w-4 h-4 text-white group-hover:scale-110 transition-transform" />
+              <span>Project RFQ Basket</span>
+              {enquiryCart.length > 0 && (
+                <span className="px-2 py-0.5 rounded-full bg-[#0F1926] text-white text-[11px] font-mono font-bold">
+                  {enquiryCart.reduce((sum, item) => sum + item.quantity, 0)}
+                </span>
+              )}
+            </button>
+
             <a
               href="tel:+917383249680"
               className="btn-primary flex items-center gap-2 text-xs py-3 px-6 shadow-lg cursor-pointer"
@@ -540,6 +557,29 @@ export const EquipmentPage: React.FC = () => {
           onRemoveItem={(id) => setCompareList(prev => prev.filter(p => p.id !== id))}
         />
       )}
+
+      {/* 🚀 Floating Project RFQ Basket Button - Visible only in Equipment Sanctuary */}
+      <div className="fixed bottom-24 right-4 sm:right-8 z-40 pointer-events-auto">
+        <button
+          type="button"
+          onClick={() => setIsEnquiryCartOpen(true)}
+          className="flex items-center gap-3 px-5 py-3.5 rounded-full bg-[#D26539] hover:bg-[#C2552F] text-white font-mono text-xs font-bold uppercase tracking-wider shadow-2xl hover:scale-105 transition-all duration-300 cursor-pointer border border-white/20 group"
+          title="Open Project RFQ Basket"
+        >
+          <div className="relative">
+            <ShoppingBag className="w-4 h-4 text-white group-hover:scale-110 transition-transform" />
+            {enquiryCart.length > 0 && (
+              <span className="absolute -top-2 -right-2.5 w-4 h-4 rounded-full bg-[#0F1926] text-white text-[9px] font-bold flex items-center justify-center ring-2 ring-[#D26539]">
+                {enquiryCart.reduce((sum, item) => sum + item.quantity, 0)}
+              </span>
+            )}
+          </div>
+          <span>Project RFQ Basket</span>
+          <span className="px-2 py-0.5 rounded-full bg-[#0F1926]/70 text-white text-[11px] font-mono">
+            {enquiryCart.reduce((sum, item) => sum + item.quantity, 0)} {enquiryCart.reduce((sum, item) => sum + item.quantity, 0) === 1 ? 'Unit' : 'Units'}
+          </span>
+        </button>
+      </div>
     </main>
   );
 };

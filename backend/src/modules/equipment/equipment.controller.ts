@@ -52,4 +52,65 @@ export class EquipmentController {
       HTTP_STATUS.CREATED
     );
   });
+
+  /**
+   * GET /api/v1/equipment/cart
+   */
+  static getUserCart = asyncHandler(async (req: Request, res: Response) => {
+    const authReq = req as AuthenticatedRequest;
+    const userKey =
+      authReq.user?.userId ||
+      (req.query.userId as string) ||
+      (req.query.email as string) ||
+      (req.headers['x-user-id'] as string) ||
+      (req.headers['x-user-email'] as string);
+
+    if (!userKey) {
+      return ApiResponse.success(res, 'User RFQ basket items retrieved', { items: [] });
+    }
+
+    const items = await EquipmentService.getUserCart(userKey);
+    return ApiResponse.success(res, 'User RFQ basket items retrieved', { items });
+  });
+
+  /**
+   * POST /api/v1/equipment/cart
+   */
+  static syncUserCart = asyncHandler(async (req: Request, res: Response) => {
+    const authReq = req as AuthenticatedRequest;
+    const userKey =
+      authReq.user?.userId ||
+      req.body?.userId ||
+      req.body?.email ||
+      (req.query.userId as string) ||
+      (req.headers['x-user-id'] as string) ||
+      (req.headers['x-user-email'] as string);
+
+    if (!userKey) {
+      return ApiResponse.error(res, 'User identification required to persist Project RFQ basket', 400);
+    }
+
+    const items = req.body?.items || [];
+    const syncedItems = await EquipmentService.syncUserCart(userKey, items, req.body?.metadata);
+    return ApiResponse.success(res, 'Project RFQ basket synchronized successfully', { items: syncedItems });
+  });
+
+  /**
+   * DELETE /api/v1/equipment/cart
+   */
+  static clearUserCart = asyncHandler(async (req: Request, res: Response) => {
+    const authReq = req as AuthenticatedRequest;
+    const userKey =
+      authReq.user?.userId ||
+      req.body?.userId ||
+      req.body?.email ||
+      (req.query.userId as string) ||
+      (req.headers['x-user-id'] as string) ||
+      (req.headers['x-user-email'] as string);
+
+    if (userKey) {
+      await EquipmentService.clearUserCart(userKey);
+    }
+    return ApiResponse.success(res, 'Project RFQ basket cleared', { items: [] });
+  });
 }

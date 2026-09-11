@@ -1,6 +1,8 @@
 import crypto from 'crypto';
 import { prisma } from '../../config/database';
 import { ApiError } from '../../utils/apiError';
+import { supabaseAdmin } from '../../config/supabase';
+import { UserCartStorage } from './userCartStorage';
 import { ProductQueryFilters, CreateEquipmentEnquiryInput } from './equipment.types';
 
 export class EquipmentService {
@@ -170,5 +172,79 @@ export class EquipmentService {
     });
 
     return enquiry;
+  }
+
+  /**
+   * User Project RFQ Basket: Get saved items for a specific user
+   */
+  static async getUserCart(userKey: string) {
+    if (!userKey || !userKey.trim()) return [];
+    const cleanKey = userKey.trim().toLowerCase();
+
+    // 1. Try Supabase
+    try {
+      const { data, error } = await supabaseAdmin
+        .from('user_rfq_baskets')
+        .select('*')
+        .eq('user_key', cleanKey)
+        .maybeSingle();
+
+      if (!error && data?.items && Array.isArray(data.items)) {
+        UserCartStorage.save(cleanKey, data.items, data.metadata);
+        return data.items;
+      }
+    } catch (_err) {
+      // ignore, fall back to local store
+    }
+
+    // 2. Return from resilient persistent store
+    return UserCartStorage.get(cleanKey);
+  }
+
+  /**
+   * User Project RFQ Basket: Save or sync items for a specific user
+   */
+  static async syncUserCart(userKey: string, items: any[], metadata?: any) {
+    if (!userKey || !userKey.trim()) return [];
+    const cleanKey = userKey.trim().toLowerCase();
+    const safeItems = Array.isArray(items) ? items : [];
+
+    // 1. Persist locally immediately
+    UserCartStorage.save(cleanKey, safeItems, metadata);
+
+    // 2. Sync to Supabase
+    try {
+      await supabaseAdmin.from('user_rfq_baskets').upsert(
+        {
+          user_key: cleanKey,
+          items: safeItems,
+          metadata: metadata || {},
+          updated_at: new Date().toISOString(),
+        },
+        { onConflict: 'user_key' }
+      );
+    } catch (_err) {
+      // ignore error
+    }
+
+    return safeItems;
+  }
+
+  /**
+   * User Project RFQ Basket: Clear saved items for a specific user
+   */
+  static async clearUserCart(userKey: string) {
+    if (!userKey || !userKey.trim()) return [];
+    const cleanKey = userKey.trim().toLowerCase();
+
+    UserCartStorage.delete(cleanKey);
+
+    try {
+      await supabaseAdmin.from('user_rfq_baskets').delete().eq('user_key', cleanKey);
+    } catch (_err) {
+      // ignore error
+    }
+
+    return [];
   }
 }
