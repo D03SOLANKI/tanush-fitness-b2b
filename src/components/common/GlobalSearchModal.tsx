@@ -106,9 +106,11 @@ export const GlobalSearchModal: React.FC<GlobalSearchModalProps> = ({ isOpen, on
                     </div>
                     <div className="divide-y divide-white/10 bg-[#090C10] rounded-none border border-white/10 overflow-hidden">
                       {searchResults.products.map(p => (
-                        <div
+                        <a
                           key={p.id}
-                          onClick={() => {
+                          href="#equipment"
+                          onClick={(e) => {
+                            e.preventDefault();
                             navigateTo('equipment');
                             onClose();
                           }}
@@ -124,7 +126,7 @@ export const GlobalSearchModal: React.FC<GlobalSearchModalProps> = ({ isOpen, on
                             </div>
                           </div>
                           <ArrowRight className="w-4 h-4 text-white/60" />
-                        </div>
+                        </a>
                       ))}
                     </div>
                   </div>
@@ -139,9 +141,11 @@ export const GlobalSearchModal: React.FC<GlobalSearchModalProps> = ({ isOpen, on
                     </div>
                     <div className="divide-y divide-white/10 bg-[#090C10] rounded-none border border-white/10 overflow-hidden">
                       {searchResults.jobs.map(j => (
-                        <div
+                        <a
                           key={j.id}
-                          onClick={() => {
+                          href="#manpower"
+                          onClick={(e) => {
+                            e.preventDefault();
                             navigateTo('manpower');
                             onClose();
                           }}
@@ -152,7 +156,7 @@ export const GlobalSearchModal: React.FC<GlobalSearchModalProps> = ({ isOpen, on
                             <div className="text-[10px] font-mono text-[#A8A090]">{j.gymName} • {j.location}</div>
                           </div>
                           <ArrowRight className="w-4 h-4 text-white/60" />
-                        </div>
+                        </a>
                       ))}
                     </div>
                   </div>
@@ -167,9 +171,11 @@ export const GlobalSearchModal: React.FC<GlobalSearchModalProps> = ({ isOpen, on
                     </div>
                     <div className="divide-y divide-white/10 bg-[#090C10] rounded-none border border-white/10 overflow-hidden">
                       {searchResults.services.map(s => (
-                        <div
+                        <a
                           key={s.id}
-                          onClick={() => {
+                          href="#services"
+                          onClick={(e) => {
+                            e.preventDefault();
                             navigateTo('services');
                             onClose();
                           }}
@@ -183,7 +189,7 @@ export const GlobalSearchModal: React.FC<GlobalSearchModalProps> = ({ isOpen, on
                             </div>
                           </div>
                           <ArrowRight className="w-4 h-4 text-white/60" />
-                        </div>
+                        </a>
                       ))}
                     </div>
                   </div>

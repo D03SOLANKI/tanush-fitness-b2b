@@ -27,20 +27,26 @@ export const BottomNavDock: React.FC = () => {
       <div className="max-w-7xl mx-auto flex items-center justify-between gap-4">
         {/* Left Floating Pill: TANUSH FITNESS */}
         <div className="pointer-events-auto">
-          <button
-            type="button"
-            onClick={() => handleNav('home')}
+          <a
+            href="/"
+            onClick={(e) => {
+              e.preventDefault();
+              handleNav('home');
+            }}
             className="bg-[#0C1015]/95 backdrop-blur-md border border-[#2A2A2B] hover:border-[#D0CFCA] px-5 sm:px-6 py-2.5 rounded-full flex items-center gap-2.5 transition-all duration-300 shadow-2xl cursor-pointer group hover:bg-[#0F1926]"
           >
             <TanushLogo variant="white" height={32} className="h-8 w-auto group-hover:scale-105 transition-transform" />
-          </button>
+          </a>
         </div>
 
         {/* Center Floating Dock */}
         <div className="pointer-events-auto hidden md:flex items-center gap-1.5 bg-[#0C1015]/95 backdrop-blur-md border border-[#2A2A2B] p-2 rounded-full shadow-2xl font-satoshi text-xs sm:text-[13px] uppercase tracking-wider">
-          <button
-            type="button"
-            onClick={() => handleNav('about')}
+          <a
+            href="#about"
+            onClick={(e) => {
+              e.preventDefault();
+              handleNav('about');
+            }}
             className={`px-5 py-2 rounded-full font-bold transition-all duration-300 cursor-pointer ${
               currentPage === 'about'
                 ? 'bg-[#E8E8E8] text-[#0F1926] shadow-md font-black'
@@ -48,11 +54,14 @@ export const BottomNavDock: React.FC = () => {
             }`}
           >
             About
-          </button>
+          </a>
 
-          <button
-            type="button"
-            onClick={() => handleNav('equipment')}
+          <a
+            href="#equipment"
+            onClick={(e) => {
+              e.preventDefault();
+              handleNav('equipment');
+            }}
             className={`px-5 py-2 rounded-full font-semibold transition-all duration-300 cursor-pointer ${
               currentPage === 'equipment'
                 ? 'bg-[#E8E8E8] text-[#0F1926] font-black shadow-md'
@@ -60,11 +69,14 @@ export const BottomNavDock: React.FC = () => {
             }`}
           >
             Equipment
-          </button>
+          </a>
 
-          <button
-            type="button"
-            onClick={() => handleNav('services')}
+          <a
+            href="#services"
+            onClick={(e) => {
+              e.preventDefault();
+              handleNav('services');
+            }}
             className={`px-5 py-2 rounded-full font-semibold transition-all duration-300 cursor-pointer ${
               currentPage === 'services'
                 ? 'bg-[#E8E8E8] text-[#0F1926] font-black shadow-md'
@@ -72,11 +84,14 @@ export const BottomNavDock: React.FC = () => {
             }`}
           >
             Gym Management
-          </button>
+          </a>
 
-          <button
-            type="button"
-            onClick={() => handleNav('manpower')}
+          <a
+            href="#manpower"
+            onClick={(e) => {
+              e.preventDefault();
+              handleNav('manpower');
+            }}
             className={`px-5 py-2 rounded-full font-semibold transition-all duration-300 cursor-pointer ${
               currentPage === 'manpower'
                 ? 'bg-[#E8E8E8] text-[#0F1926] font-black shadow-md'
@@ -84,11 +99,14 @@ export const BottomNavDock: React.FC = () => {
             }`}
           >
             Manpower
-          </button>
+          </a>
 
-          <button
-            type="button"
-            onClick={() => handleNav('contact')}
+          <a
+            href="#contact"
+            onClick={(e) => {
+              e.preventDefault();
+              handleNav('contact');
+            }}
             className={`px-5 py-2 rounded-full font-semibold transition-all duration-300 cursor-pointer ${
               currentPage === 'contact'
                 ? 'bg-[#E8E8E8] text-[#0F1926] font-black shadow-md'
@@ -96,21 +114,24 @@ export const BottomNavDock: React.FC = () => {
             }`}
           >
             Consultation
-          </button>
+          </a>
         </div>
 
         {/* Right Floating Circular Menu Button */}
         <div className="pointer-events-auto">
-          <button
-            type="button"
-            onClick={() => handleNav('home', 'directory')}
+          <a
+            href="/#directory"
+            onClick={(e) => {
+              e.preventDefault();
+              handleNav('home', 'directory');
+            }}
             className="w-13 h-13 sm:w-14 sm:h-14 rounded-full bg-[#0C1015]/95 backdrop-blur-md border border-[#2A2A2B] hover:border-[#D0CFCA] hover:bg-[#E8E8E8] flex flex-col items-center justify-center gap-1.5 text-[#E8E8E8] transition-all duration-300 shadow-2xl group cursor-pointer"
             aria-label="Scroll to Directory Section"
             title="Navigate to Directory"
           >
             <span className="w-5 sm:w-6 h-[2px] bg-[#E8E8E8] group-hover:bg-[#0F1926] rounded-full transition-all duration-300 group-hover:scale-x-110" />
             <span className="w-5 sm:w-6 h-[2px] bg-[#E8E8E8] group-hover:bg-[#0F1926] rounded-full transition-all duration-300 group-hover:scale-x-110" />
-          </button>
+          </a>
         </div>
       </div>
     </div>

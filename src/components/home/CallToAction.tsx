@@ -33,22 +33,30 @@ export const CallToAction: React.FC = () => {
             </div>
 
             <div className="lg:col-span-4 flex flex-col sm:flex-row lg:flex-col gap-3 font-mono">
-              <button
-                onClick={() => navigateTo('equipment')}
-                className="w-full py-3 px-5 rounded-lg bg-[#D26539] hover:bg-[#C2552F] text-white font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-2 transition-colors shadow-sm"
+              <a
+                href="#equipment"
+                onClick={(e) => {
+                  e.preventDefault();
+                  navigateTo('equipment');
+                }}
+                className="w-full py-3 px-5 rounded-lg bg-[#D26539] hover:bg-[#C2552F] text-white font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-2 transition-colors shadow-sm cursor-pointer text-center"
               >
                 <Dumbbell className="w-3.5 h-3.5 text-white/80" />
                 <span>Build Project RFQ</span>
                 <ArrowRight className="w-3.5 h-3.5" />
-              </button>
+              </a>
 
-              <button
-                onClick={() => navigateTo('contact')}
-                className="w-full py-3 px-5 rounded-lg bg-[#1A2018] hover:bg-[#1A2018] text-[#D8CDC0] border border-white/10 font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-2 transition-colors"
+              <a
+                href="#contact"
+                onClick={(e) => {
+                  e.preventDefault();
+                  navigateTo('contact');
+                }}
+                className="w-full py-3 px-5 rounded-lg bg-[#1A2018] hover:bg-[#1A2018] text-[#D8CDC0] border border-white/10 font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-2 transition-colors cursor-pointer text-center"
               >
                 <PhoneCall className="w-3.5 h-3.5 text-white/80" />
                 <span>Schedule Consultation</span>
-              </button>
+              </a>
             </div>
 
           </div>

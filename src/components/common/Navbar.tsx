@@ -107,8 +107,12 @@ export const Navbar: React.FC = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between gap-3 sm:gap-4 pointer-events-auto relative">
             {/* 1. Left: Brand Logo in Elevated Capsule Box */}
-            <div
-              onClick={() => handleNav('home')}
+            <a
+              href="/"
+              onClick={(e) => {
+                e.preventDefault();
+                handleNav('home');
+              }}
               className="bg-[#0C1015]/95 backdrop-blur-md border border-[#2A2A2B] hover:border-[#E8E8E8]/40 px-4 sm:px-6 py-2 sm:py-2.5 rounded-full flex items-center gap-2 cursor-pointer shadow-2xl transition-all group shrink-0"
             >
               <TanushLogo
@@ -116,18 +120,22 @@ export const Navbar: React.FC = () => {
                 height={42}
                 className="h-8 sm:h-10 w-auto group-hover:opacity-95 transition-opacity drop-shadow-md"
               />
-            </div>
+            </a>
 
             {/* 2. Center: Floating Pill Nav Bar (Desktop Only) */}
             <div className="hidden lg:flex items-center">
               <nav className="flex items-center gap-1 bg-[#0C1015]/95 backdrop-blur-md border border-[#2A2A2B] p-1.5 rounded-full shadow-2xl">
                 {navLinks.map((item) => {
                   const isActive = currentPage === item.page;
+                  const href = item.page === 'home' ? '/' : `#${item.page}`;
                   return (
-                    <button
+                    <a
                       key={item.label}
-                      type="button"
-                      onClick={() => handleNav(item.page)}
+                      href={href}
+                      onClick={(e) => {
+                        e.preventDefault();
+                        handleNav(item.page);
+                      }}
                       className={`px-3.5 sm:px-5 py-2 rounded-full font-montserrat text-xs font-bold uppercase tracking-wider transition-all duration-200 flex items-center gap-1.5 cursor-pointer select-none whitespace-nowrap ${
                         isActive
                           ? 'bg-[#E8E8E8] text-[#0F1926] font-bold shadow-md'
@@ -136,7 +144,7 @@ export const Navbar: React.FC = () => {
                       style={{ fontFamily: "'Montserrat', sans-serif", fontWeight: 700 }}
                     >
                       <span>{item.label}</span>
-                    </button>
+                    </a>
                   );
                 })}
               </nav>
@@ -313,12 +321,16 @@ export const Navbar: React.FC = () => {
           >
             {/* Top Bar: Brand Logo & Close Button */}
             <div className="flex items-center justify-between border-b border-[#2A2A2B] pb-5 shrink-0">
-              <div
-                onClick={() => handleNav('home')}
+              <a
+                href="/"
+                onClick={(e) => {
+                  e.preventDefault();
+                  handleNav('home');
+                }}
                 className="flex items-center gap-2.5 cursor-pointer select-none"
               >
                 <TanushLogo variant="white" height={40} className="h-9 sm:h-10 w-auto" />
-              </div>
+              </a>
 
               <button
                 type="button"
@@ -335,10 +347,13 @@ export const Navbar: React.FC = () => {
               {navLinks.map((item, idx) => {
                 const isActive = currentPage === item.page;
                 return (
-                  <button
+                  <a
                     key={item.label}
-                    type="button"
-                    onClick={() => handleNav(item.page)}
+                    href={item.page === 'home' ? '/' : `#${item.page}`}
+                    onClick={(e) => {
+                      e.preventDefault();
+                      handleNav(item.page);
+                    }}
                     className={`w-full group flex items-center justify-between py-3.5 px-5 rounded-2xl transition-all duration-200 cursor-pointer text-left ${
                       isActive
                         ? 'bg-[#E8E8E8] text-[#0F1926] shadow-xl'
@@ -370,7 +385,7 @@ export const Navbar: React.FC = () => {
                     >
                       <ArrowUpRight className="w-4 h-4" />
                     </div>
-                  </button>
+                  </a>
                 );
               })}
             </div>
@@ -426,9 +441,10 @@ export const Navbar: React.FC = () => {
                   </div>
 
                   {(isAdminAuthenticated || currentUser?.role === 'ADMIN') && (
-                    <button
-                      type="button"
-                      onClick={() => {
+                    <a
+                      href="#admin"
+                      onClick={(e) => {
+                        e.preventDefault();
                         setIsMenuOpen(false);
                         handleNav('admin');
                       }}
@@ -436,20 +452,23 @@ export const Navbar: React.FC = () => {
                     >
                       <ShieldCheck className="w-4 h-4 text-amber-400" />
                       <span>🛡️ Executive Admin Console</span>
-                    </button>
+                    </a>
                   )}
                 </div>
               ) : (
                 /* Not Logged In - Quick Login Button */
                 <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
-                  <button
-                    type="button"
-                    onClick={() => handleNav('contact')}
-                    className="btn-primary w-full py-3.5 text-xs font-bold uppercase tracking-wider flex items-center justify-center gap-2 cursor-pointer shadow-xl"
+                  <a
+                    href="#contact"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      handleNav('contact');
+                    }}
+                    className="btn-primary w-full py-3.5 text-xs font-bold uppercase tracking-wider flex items-center justify-center gap-2 cursor-pointer shadow-xl text-center"
                   >
                     <span>Book Consultation</span>
                     <ArrowRight className="w-4 h-4" />
-                  </button>
+                  </a>
 
                   <button
                     type="button"

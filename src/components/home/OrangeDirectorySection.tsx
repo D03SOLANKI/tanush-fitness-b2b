@@ -89,9 +89,13 @@ export const OrangeDirectorySection: React.FC = () => {
         {/* Left Numbered Large Underlined Links */}
         <div className="space-y-4 sm:space-y-5 md:space-y-6 z-10 w-full max-w-3xl">
           {DIRECTORY_ITEMS.map((item) => (
-            <div
+            <a
               key={item.num}
-              onClick={() => handleNav(item.page)}
+              href={item.page === 'home' ? '/' : `#${item.page}`}
+              onClick={(e) => {
+                e.preventDefault();
+                handleNav(item.page);
+              }}
               className="group flex items-baseline gap-4 sm:gap-6 cursor-pointer select-none"
             >
               <span className="font-mono text-xs sm:text-sm md:text-base text-[#D0CFCA] group-hover:text-[#E8E8E8] font-bold tracking-widest shrink-0 transition-colors">
@@ -104,7 +108,7 @@ export const OrangeDirectorySection: React.FC = () => {
                 </span>
                 <div className="h-[1px] bg-[#2A2A2B] w-full mt-2 group-hover:bg-[#E8E8E8] transition-colors duration-300" />
               </div>
-            </div>
+            </a>
           ))}
         </div>
       </div>

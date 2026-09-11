@@ -5,6 +5,7 @@ interface SectionHeaderProps {
   title: string;
   description?: string;
   actionText?: string;
+  actionHref?: string;
   onActionClick?: () => void;
   align?: 'left' | 'center';
 }
@@ -14,6 +15,7 @@ export const SectionHeader: React.FC<SectionHeaderProps> = ({
   title,
   description,
   actionText,
+  actionHref,
   onActionClick,
   align = 'left'
 }) => {
@@ -36,16 +38,22 @@ export const SectionHeader: React.FC<SectionHeaderProps> = ({
         )}
       </div>
 
-      {actionText && onActionClick && align === 'left' && (
-        <button
-          onClick={onActionClick}
-          className="inline-flex items-center gap-2.5 text-xs font-black text-white hover:text-white/80 transition-colors group shrink-0 uppercase tracking-widest font-mono"
+      {actionText && (onActionClick || actionHref) && align === 'left' && (
+        <a
+          href={actionHref || '#'}
+          onClick={(e) => {
+            if (onActionClick) {
+              e.preventDefault();
+              onActionClick();
+            }
+          }}
+          className="inline-flex items-center gap-2.5 text-xs font-black text-white hover:text-white/80 transition-colors group shrink-0 uppercase tracking-widest font-mono cursor-pointer"
         >
           <span>{actionText}</span>
           <span className="w-9 h-9 rounded-xl bg-white/10 group-hover:bg-white group-hover:text-[#090C10] flex items-center justify-center transition-all duration-300 border border-white/20 shadow-sm">
             →
           </span>
-        </button>
+        </a>
       )}
     </div>
   );

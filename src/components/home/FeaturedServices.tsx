@@ -18,6 +18,7 @@ export const FeaturedServices: React.FC = () => {
           title="GYM MANAGEMENT Commercial & Residential Gym Services"
           description="Contract on-demand equipment technicians, 3D interior floor layout planners, WhatsApp CRM specialists, and performance marketing directors."
           actionText="View All 18 GYM MANAGEMENT Services"
+          actionHref="#services"
           onActionClick={() => navigateTo('services')}
         />
 

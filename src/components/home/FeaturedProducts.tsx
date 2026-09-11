@@ -19,6 +19,7 @@ export const FeaturedProducts: React.FC = () => {
           title="Featured Commercial & Residential Equipment"
           description="Source heavy power rigs, pin-selected stacks, commercial & residential cardio, and urethane free weights directly from verified manufacturers."
           actionText="View Full Equipment Catalog"
+          actionHref="#equipment"
           onActionClick={() => navigateTo('equipment')}
         />
 
@@ -58,11 +59,17 @@ export const FeaturedProducts: React.FC = () => {
                       </div>
                     </div>
 
-                    <h3
-                      onClick={() => navigateTo('equipment')}
-                      className="text-base font-bold text-white hover:text-white transition-colors leading-snug cursor-pointer line-clamp-1 font-satoshi uppercase"
-                    >
-                      {product.name}
+                    <h3 className="text-base font-bold text-white hover:text-white transition-colors leading-snug line-clamp-1 font-satoshi uppercase">
+                      <a
+                        href="#equipment"
+                        onClick={(e) => {
+                          e.preventDefault();
+                          navigateTo('equipment');
+                        }}
+                        className="hover:underline cursor-pointer"
+                      >
+                        {product.name}
+                      </a>
                     </h3>
                     <p className="mt-1.5 text-xs text-[#A8A090] line-clamp-2 leading-relaxed">
                       {product.description}
@@ -81,19 +88,23 @@ export const FeaturedProducts: React.FC = () => {
                     <div className="grid grid-cols-2 gap-2 font-mono">
                       <button
                         onClick={() => addToEnquiryCart(product, 1)}
-                        className="w-full py-2.5 px-2 rounded-none bg-[#090C10] hover:bg-[#D26539] text-white font-semibold text-xs flex items-center justify-center gap-1.5 transition-colors shadow-sm uppercase"
+                        className="w-full py-2.5 px-2 rounded-none bg-[#090C10] hover:bg-[#D26539] text-white font-semibold text-xs flex items-center justify-center gap-1.5 transition-colors shadow-sm uppercase cursor-pointer"
                       >
                         <FileText className="w-3.5 h-3.5 text-white/80" />
                         <span>+ Add to RFQ</span>
                       </button>
 
-                      <button
-                        onClick={() => navigateTo('equipment')}
-                        className="w-full py-2.5 px-2 rounded-none bg-white/5 hover:bg-white/10 border border-white/10 text-white font-semibold text-xs flex items-center justify-center gap-1 transition-colors uppercase"
+                      <a
+                        href="#equipment"
+                        onClick={(e) => {
+                          e.preventDefault();
+                          navigateTo('equipment');
+                        }}
+                        className="w-full py-2.5 px-2 rounded-none bg-white/5 hover:bg-white/10 border border-white/10 text-white font-semibold text-xs flex items-center justify-center gap-1 transition-colors uppercase text-center cursor-pointer"
                       >
                         <span>Full Specs</span>
                         <ArrowRight className="w-3 h-3 text-[#A8A090]" />
-                      </button>
+                      </a>
                     </div>
                   </div>
                 </div>

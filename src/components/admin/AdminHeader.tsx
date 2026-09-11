@@ -49,15 +49,19 @@ export const AdminHeader: React.FC = () => {
             )}
 
             {/* Return to Public Website */}
-            <button
-              onClick={() => navigateTo('home')}
-              className="flex items-center gap-1.5 px-3 py-2 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 hover:text-slate-900 border border-slate-200 text-xs font-bold transition shadow-sm"
+            <a
+              href="/"
+              onClick={(e) => {
+                e.preventDefault();
+                navigateTo('home');
+              }}
+              className="flex items-center gap-1.5 px-3 py-2 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 hover:text-slate-900 border border-slate-200 text-xs font-bold transition shadow-sm cursor-pointer"
               title="Return to Main Website"
             >
               <ArrowLeft className="w-3.5 h-3.5 text-blue-600" />
               <span className="hidden sm:inline">Exit to Main Site</span>
               <span className="sm:hidden">Exit</span>
-            </button>
+            </a>
 
             {isAdminAuthenticated && (
               <button

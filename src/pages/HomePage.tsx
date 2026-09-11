@@ -168,23 +168,29 @@ export const HomePage: React.FC = () => {
 
           {/* Action CTAs (Shifted Downwards with Increased Spacing) */}
           <div className="flex flex-wrap items-center justify-center gap-4 pt-6 sm:pt-8">
-            <button
-              type="button"
-              onClick={() => navigateTo('equipment')}
+            <a
+              href="#equipment"
+              onClick={(e) => {
+                e.preventDefault();
+                navigateTo('equipment');
+              }}
               className="btn-primary px-8 py-3.5 text-xs font-bold uppercase tracking-wider flex items-center gap-2 cursor-pointer shadow-xl"
             >
               <span>Explore Equipment Sanctuary</span>
               <ArrowRight className="w-4 h-4" />
-            </button>
+            </a>
 
-            <button
-              type="button"
-              onClick={() => navigateTo('services')}
+            <a
+              href="#services"
+              onClick={(e) => {
+                e.preventDefault();
+                navigateTo('services');
+              }}
               className="btn-outline px-8 py-3.5 text-xs font-bold uppercase tracking-wider flex items-center gap-2 cursor-pointer"
             >
               <Briefcase className="w-4 h-4 text-[#D0CFCA]" />
               <span>Book 3D CAD Blueprint</span>
-            </button>
+            </a>
           </div>
         </div>
       </section>
@@ -263,14 +269,17 @@ export const HomePage: React.FC = () => {
                     At Tanush, we redefine the fitness outfitting landscape with <span className="text-[#E8E8E8] font-semibold">state-of-the-art heavy laser-cut equipment</span>, curated to empower facility owners to launch world-class destinations. Our commitment goes beyond machinery; we deliver a holistic <span className="text-[#E8E8E8] font-semibold">360-degree comprehensive solution</span> encompassing Commercial & Residential Equipment, Gym Management, and Manpower Services.
                   </p>
                   <div className="pt-2">
-                    <button
-                      type="button"
-                      onClick={() => navigateTo('about')}
-                      className="btn-primary text-xs flex items-center gap-2 cursor-pointer shadow-lg"
+                    <a
+                      href="#about"
+                      onClick={(e) => {
+                        e.preventDefault();
+                        navigateTo('about');
+                      }}
+                      className="btn-primary text-xs flex items-center gap-2 cursor-pointer shadow-lg inline-flex"
                     >
                       <span>Read Our Full Story</span>
                       <ArrowRight className="w-3.5 h-3.5" />
-                    </button>
+                    </a>
                   </div>
                 </div>
               ) : (
@@ -282,14 +291,17 @@ export const HomePage: React.FC = () => {
                     "Tanush Fitness is not merely an equipment vendor; it is an end-to-end commercial infrastructure partner built for gym owners who demand perfection in every square foot."
                   </blockquote>
                   <div className="pt-2">
-                    <button
-                      type="button"
-                      onClick={() => navigateTo('contact')}
-                      className="btn-primary text-xs flex items-center gap-2 cursor-pointer shadow-lg"
+                    <a
+                      href="#contact"
+                      onClick={(e) => {
+                        e.preventDefault();
+                        navigateTo('contact');
+                      }}
+                      className="btn-primary text-xs flex items-center gap-2 cursor-pointer shadow-lg inline-flex"
                     >
                       <span>Connect With Factory Desk</span>
                       <ArrowRight className="w-3.5 h-3.5" />
-                    </button>
+                    </a>
                   </div>
                 </div>
               )}
@@ -323,14 +335,17 @@ export const HomePage: React.FC = () => {
                 Complete commercial & residential equipment supply, 3D CAD gym management, and verified manpower recruitment.
               </p>
             </div>
-            <button
-              type="button"
-              onClick={() => navigateTo('services')}
-              className="btn-primary text-xs flex items-center gap-2 shrink-0 cursor-pointer shadow-lg"
+            <a
+              href="#services"
+              onClick={(e) => {
+                e.preventDefault();
+                navigateTo('services');
+              }}
+              className="btn-primary text-xs flex items-center gap-2 shrink-0 cursor-pointer shadow-lg inline-flex"
             >
               <span>Explore All Solutions</span>
               <ArrowRight className="w-3.5 h-3.5" />
-            </button>
+            </a>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -342,9 +357,13 @@ export const HomePage: React.FC = () => {
                   className="bg-[#E8E8E8] text-[#0F1926] border border-[#2A2A2B]/10 rounded-3xl overflow-hidden flex flex-col justify-between group hover:border-[#0F1926] transition-all duration-300 shadow-2xl hover:-translate-y-2"
                 >
                   <div>
-                    <div
-                      className="relative aspect-[16/10] w-full overflow-hidden cursor-pointer bg-[#0F1926]"
-                      onClick={() => navigateTo(vertical.page)}
+                    <a
+                      href={`#${vertical.page}`}
+                      onClick={(e) => {
+                        e.preventDefault();
+                        navigateTo(vertical.page);
+                      }}
+                      className="relative aspect-[16/10] w-full overflow-hidden cursor-pointer bg-[#0F1926] block"
                     >
                       <img
                         src={vertical.image}
@@ -356,15 +375,21 @@ export const HomePage: React.FC = () => {
                       <div className="absolute top-4 right-4 w-10 h-10 rounded-full bg-[#0F1926]/90 border border-white/20 flex items-center justify-center text-white shadow-lg">
                         <IconComp className="w-4 h-4 text-[#E8E8E8]" />
                       </div>
-                    </div>
+                    </a>
 
                     <div className="p-7 space-y-4">
                       <div>
-                        <h3
-                          onClick={() => navigateTo(vertical.page)}
-                          className="font-satoshi text-lg sm:text-xl font-bold uppercase text-[#0F1926] tracking-[0.03em] mt-1 group-hover:text-[#2A2A2B] transition cursor-pointer leading-snug"
-                        >
-                          {vertical.title}
+                        <h3 className="font-satoshi text-lg sm:text-xl font-bold uppercase text-[#0F1926] tracking-[0.03em] mt-1 group-hover:text-[#2A2A2B] transition leading-snug">
+                          <a
+                            href={`#${vertical.page}`}
+                            onClick={(e) => {
+                              e.preventDefault();
+                              navigateTo(vertical.page);
+                            }}
+                            className="cursor-pointer hover:underline"
+                          >
+                            {vertical.title}
+                          </a>
                         </h3>
 
                         <p className="text-xs sm:text-sm text-[#2A2A2B]/80 font-sans leading-relaxed mt-2 line-clamp-3">
@@ -389,14 +414,17 @@ export const HomePage: React.FC = () => {
                   </div>
 
                   <div className="p-7 pt-0 border-t border-[#0F1926]/10 mt-3">
-                    <button
-                      type="button"
-                      onClick={() => navigateTo(vertical.page)}
-                      className="btn-dark w-full py-3 text-xs flex items-center justify-center gap-1.5 uppercase tracking-wider cursor-pointer shadow-lg"
+                    <a
+                      href={`#${vertical.page}`}
+                      onClick={(e) => {
+                        e.preventDefault();
+                        navigateTo(vertical.page);
+                      }}
+                      className="btn-dark w-full py-3 text-xs flex items-center justify-center gap-1.5 uppercase tracking-wider cursor-pointer shadow-lg text-center"
                     >
                       <span>{vertical.btnText}</span>
                       <ArrowRight className="w-3.5 h-3.5" />
-                    </button>
+                    </a>
                   </div>
                 </div>
               );
@@ -416,14 +444,17 @@ export const HomePage: React.FC = () => {
                 OUR USP
               </h2>
             </div>
-            <button
-              type="button"
-              onClick={() => navigateTo('equipment')}
-              className="btn-primary text-xs flex items-center gap-2 cursor-pointer shadow-lg"
+            <a
+              href="#equipment"
+              onClick={(e) => {
+                e.preventDefault();
+                navigateTo('equipment');
+              }}
+              className="btn-primary text-xs flex items-center gap-2 cursor-pointer shadow-lg inline-flex"
             >
               <span>Know More</span>
               <ArrowRight className="w-3.5 h-3.5" />
-            </button>
+            </a>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">

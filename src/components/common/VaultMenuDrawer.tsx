@@ -101,9 +101,13 @@ export const VaultMenuDrawer: React.FC<VaultMenuDrawerProps> = ({ isOpen, onClos
           <div className="relative flex-1 max-w-7xl mx-auto w-full px-6 sm:px-12 py-6 sm:py-8 my-auto flex items-center overflow-hidden">
             <div className="space-y-3 sm:space-y-4 md:space-y-4.5 z-10 w-full max-w-3xl">
               {MENU_ITEMS.map((item) => (
-                <div
+                <a
                   key={item.num}
-                  onClick={() => handleNav(item.page)}
+                  href={item.page === 'home' ? '/' : `#${item.page}`}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    handleNav(item.page);
+                  }}
                   className="group flex items-baseline gap-3 sm:gap-5 cursor-pointer select-none"
                 >
                   <span className="font-mono text-xs sm:text-sm md:text-base text-[#D0CFCA] font-bold tracking-widest shrink-0">
@@ -116,7 +120,7 @@ export const VaultMenuDrawer: React.FC<VaultMenuDrawerProps> = ({ isOpen, onClos
                     </span>
                     <div className="h-[1.5px] sm:h-[2px] bg-[#2A2A2B] w-full mt-1 group-hover:bg-[#E8E8E8] transition-colors duration-300" />
                   </div>
-                </div>
+                </a>
               ))}
             </div>
           </div>
@@ -125,21 +129,27 @@ export const VaultMenuDrawer: React.FC<VaultMenuDrawerProps> = ({ isOpen, onClos
           <div className="py-4 sm:py-5 px-6 sm:px-12 z-20 shrink-0 bg-[#0C1015] border-t border-[#2A2A2B]">
             <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
               <div className="flex items-center gap-5 sm:gap-6">
-                <button
-                  type="button"
-                  onClick={() => handleNav('home')}
-                  className="bg-[#0F1926] text-[#E8E8E8] border border-[#2A2A2B] hover:border-[#D0CFCA] px-6 sm:px-7 py-2.5 sm:py-3 rounded-full font-satoshi font-black text-xs sm:text-sm uppercase tracking-[0.2em] shadow-xl transition-all duration-300"
+                <a
+                  href="/"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    handleNav('home');
+                  }}
+                  className="bg-[#0F1926] text-[#E8E8E8] border border-[#2A2A2B] hover:border-[#D0CFCA] px-6 sm:px-7 py-2.5 sm:py-3 rounded-full font-satoshi font-black text-xs sm:text-sm uppercase tracking-[0.2em] shadow-xl transition-all duration-300 cursor-pointer"
                 >
                   TANUSH FITNESS
-                </button>
+                </a>
 
-                <button
-                  type="button"
-                  onClick={() => handleNav('about')}
+                <a
+                  href="#about"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    handleNav('about');
+                  }}
                   className="text-[#D0CFCA] hover:text-white font-mono text-xs tracking-wider underline sm:no-underline hover:underline cursor-pointer"
                 >
                   Terms & Conditions
-                </button>
+                </a>
               </div>
 
               {/* Right Credits */}

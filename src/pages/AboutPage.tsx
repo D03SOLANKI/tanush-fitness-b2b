@@ -40,13 +40,17 @@ export const AboutPage: React.FC = () => {
               <span>Download Deck</span>
             </a>
 
-            <button
-              onClick={() => navigateTo('services')}
+            <a
+              href="#services"
+              onClick={(e) => {
+                e.preventDefault();
+                navigateTo('services');
+              }}
               className="bg-[#0C1015] border border-[#2A2A2B] hover:border-[#E8E8E8] text-[#E8E8E8] flex items-center gap-2 text-xs py-3 px-5 rounded-full cursor-pointer shadow-md transition font-mono uppercase tracking-wider"
             >
               <Briefcase className="w-3.5 h-3.5 text-[#D0CFCA]" />
               <span>Management Solutions</span>
-            </button>
+            </a>
           </div>
         </div>
       </section>
@@ -210,12 +214,16 @@ export const AboutPage: React.FC = () => {
               <span>Download Deck</span>
             </a>
 
-            <button
-              onClick={() => navigateTo('contact')}
-              className="btn-primary shrink-0 px-8 py-3.5 text-xs uppercase tracking-wider cursor-pointer shadow-lg"
+            <a
+              href="#contact"
+              onClick={(e) => {
+                e.preventDefault();
+                navigateTo('contact');
+              }}
+              className="btn-primary shrink-0 px-8 py-3.5 text-xs uppercase tracking-wider cursor-pointer shadow-lg inline-block text-center"
             >
               Connect With Factory Desk
-            </button>
+            </a>
           </div>
         </div>
       </div>

@@ -126,12 +126,16 @@ export const AdminPage: React.FC = () => {
 
           <div className="pt-4 border-t border-[#0F1926]/10 flex items-center justify-between text-[10px] text-[#2A2A2B] font-mono">
             <span>256-Bit SSL Encrypted Audit Log</span>
-            <button
-              onClick={() => navigateTo('home')}
+            <a
+              href="/"
+              onClick={(e) => {
+                e.preventDefault();
+                navigateTo('home');
+              }}
               className="text-[#0F1926] hover:underline font-bold cursor-pointer"
             >
               Return Home →
-            </button>
+            </a>
           </div>
         </motion.div>
       </main>

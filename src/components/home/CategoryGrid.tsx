@@ -18,18 +18,21 @@ export const CategoryGrid: React.FC = () => {
           title="Explore Equipment Categories"
           description="Source commercial & residential power racks, precision cardio, urethane weights, functional rigs, rubber flooring, and lockers directly from verified B2B manufacturers."
           actionText="View Full Equipment Catalog"
+          actionHref="#equipment"
           onActionClick={() => navigateTo('equipment')}
         />
 
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
           {EQUIPMENT_CATEGORIES.map((cat, idx) => (
-            <motion.div
+            <motion.a
               key={cat.id}
+              href="#equipment"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.4, delay: idx * 0.05 }}
-              onClick={() => {
+              onClick={(e) => {
+                e.preventDefault();
                 setFilter('category', cat.id);
                 navigateTo('equipment');
               }}
@@ -70,7 +73,7 @@ export const CategoryGrid: React.FC = () => {
                   <ArrowRight className="w-4 h-4" />
                 </div>
               </div>
-            </motion.div>
+            </motion.a>
           ))}
         </div>
       </div>

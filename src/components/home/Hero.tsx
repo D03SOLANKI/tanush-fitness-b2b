@@ -44,13 +44,17 @@ export const Hero: React.FC = () => {
 
             {/* Industrial B2B Action Buttons */}
             <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 pt-2">
-              <button
-                onClick={() => navigateTo('equipment')}
+              <a
+                href="#equipment"
+                onClick={(e) => {
+                  e.preventDefault();
+                  navigateTo('equipment');
+                }}
                 className="px-6 py-3.5 rounded-none bg-[#D26539] hover:bg-[#C2552F] text-white font-bold text-xs uppercase font-mono flex items-center justify-center gap-2 transition-colors shadow-sm cursor-pointer"
               >
                 <span>Build RFQ Package</span>
                 <ArrowRight className="w-4 h-4" />
-              </button>
+              </a>
 
               <a
                 href="/downloads/Tanush Fitness Premium B2B Fitness Blueprint (1).pdf"
