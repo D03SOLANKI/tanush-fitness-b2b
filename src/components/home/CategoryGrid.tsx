@@ -36,7 +36,7 @@ export const CategoryGrid: React.FC = () => {
                 setFilter('category', cat.id);
                 navigateTo('equipment');
               }}
-              className="group relative rounded-none overflow-hidden bg-[#1A2018] border border-white/10 hover:border-[#D26539] transition-all duration-300 cursor-pointer flex flex-col justify-between hover:shadow-2xl hover:-translate-y-1 text-[#F0EBE3]"
+              className="group relative rounded-none overflow-hidden bg-[#1A2018] border border-white/10 hover:border-[#E8E8E8] transition-all duration-300 cursor-pointer flex flex-col justify-between hover:shadow-2xl hover:-translate-y-1 text-[#F0EBE3]"
             >
               {/* Top Bright Photo */}
               <div className="relative aspect-[16/10] bg-[#ECE6DB] overflow-hidden border-b border-white/10">

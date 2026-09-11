@@ -147,13 +147,13 @@ export const EquipmentPage: React.FC = () => {
             <button
               type="button"
               onClick={() => setIsEnquiryCartOpen(true)}
-              className="px-5 py-3 rounded-full bg-[#D26539] hover:bg-[#C2552F] text-white flex items-center gap-2 text-xs font-mono font-bold uppercase tracking-wider shadow-xl transition-all cursor-pointer group"
+              className="btn-primary flex items-center gap-2 text-xs py-3 px-6 shadow-lg cursor-pointer group"
               title="Open Project RFQ Basket"
             >
-              <ShoppingBag className="w-4 h-4 text-white group-hover:scale-110 transition-transform" />
+              <ShoppingBag className="w-3.5 h-3.5 text-[#0F1926] group-hover:scale-110 transition-transform" />
               <span>Project RFQ Basket</span>
               {enquiryCart.length > 0 && (
-                <span className="px-2 py-0.5 rounded-full bg-[#0F1926] text-white text-[11px] font-mono font-bold">
+                <span className="px-2 py-0.5 rounded-full bg-[#0F1926] text-[#E8E8E8] text-[10px] font-mono font-bold">
                   {enquiryCart.reduce((sum, item) => sum + item.quantity, 0)}
                 </span>
               )}
@@ -161,9 +161,9 @@ export const EquipmentPage: React.FC = () => {
 
             <a
               href="tel:+917383249680"
-              className="btn-primary flex items-center gap-2 text-xs py-3 px-6 shadow-lg cursor-pointer"
+              className="btn-dark flex items-center gap-2 text-xs py-3 px-6 shadow-lg cursor-pointer"
             >
-              <Phone className="w-3.5 h-3.5 text-[#0F1926]" />
+              <Phone className="w-3.5 h-3.5 text-[#E8E8E8]" />
               <span>Direct Outfitting Desk</span>
             </a>
           </div>
@@ -558,28 +558,7 @@ export const EquipmentPage: React.FC = () => {
         />
       )}
 
-      {/* 🚀 Floating Project RFQ Basket Button - Visible only in Equipment Sanctuary */}
-      <div className="fixed bottom-24 right-4 sm:right-8 z-40 pointer-events-auto">
-        <button
-          type="button"
-          onClick={() => setIsEnquiryCartOpen(true)}
-          className="flex items-center gap-3 px-5 py-3.5 rounded-full bg-[#D26539] hover:bg-[#C2552F] text-white font-mono text-xs font-bold uppercase tracking-wider shadow-2xl hover:scale-105 transition-all duration-300 cursor-pointer border border-white/20 group"
-          title="Open Project RFQ Basket"
-        >
-          <div className="relative">
-            <ShoppingBag className="w-4 h-4 text-white group-hover:scale-110 transition-transform" />
-            {enquiryCart.length > 0 && (
-              <span className="absolute -top-2 -right-2.5 w-4 h-4 rounded-full bg-[#0F1926] text-white text-[9px] font-bold flex items-center justify-center ring-2 ring-[#D26539]">
-                {enquiryCart.reduce((sum, item) => sum + item.quantity, 0)}
-              </span>
-            )}
-          </div>
-          <span>Project RFQ Basket</span>
-          <span className="px-2 py-0.5 rounded-full bg-[#0F1926]/70 text-white text-[11px] font-mono">
-            {enquiryCart.reduce((sum, item) => sum + item.quantity, 0)} {enquiryCart.reduce((sum, item) => sum + item.quantity, 0) === 1 ? 'Unit' : 'Units'}
-          </span>
-        </button>
-      </div>
+
     </main>
   );
 };

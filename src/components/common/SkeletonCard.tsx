@@ -11,7 +11,7 @@ export const SkeletonCard: React.FC = () => {
       </div>
       <div className="pt-4 border-t border-white/5 flex items-center justify-between mt-auto">
         <div className="h-7 bg-white/5 rounded-none w-1/4" />
-        <div className="h-10 bg-[#D26539]/20 rounded-none w-1/3" />
+        <div className="h-10 bg-white/10 rounded-none w-1/3" />
       </div>
     </div>
   );

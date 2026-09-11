@@ -39,11 +39,11 @@ export const CallToAction: React.FC = () => {
                   e.preventDefault();
                   navigateTo('equipment');
                 }}
-                className="w-full py-3 px-5 rounded-lg bg-[#D26539] hover:bg-[#C2552F] text-white font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-2 transition-colors shadow-sm cursor-pointer text-center"
+                className="w-full py-3 px-5 rounded-lg bg-[#E8E8E8] hover:bg-[#D0CFCA] text-[#0F1926] font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-2 transition-colors shadow-sm cursor-pointer text-center"
               >
-                <Dumbbell className="w-3.5 h-3.5 text-white/80" />
+                <Dumbbell className="w-3.5 h-3.5 text-[#0F1926]" />
                 <span>Build Project RFQ</span>
-                <ArrowRight className="w-3.5 h-3.5" />
+                <ArrowRight className="w-3.5 h-3.5 text-[#0F1926]" />
               </a>
 
               <a

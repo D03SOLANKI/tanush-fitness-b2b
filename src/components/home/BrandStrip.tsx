@@ -18,7 +18,7 @@ export const BrandStrip: React.FC = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.4, delay: idx * 0.08 }}
-              className="p-4 rounded-none bg-[#1A2018] border border-white/10 shadow-sm hover:border-[#D26539]/50 hover: transition-all flex flex-col items-center justify-center text-center group cursor-pointer"
+              className="p-4 rounded-none bg-[#1A2018] border border-white/10 shadow-sm hover:border-white/40 transition-all flex flex-col items-center justify-center text-center group cursor-pointer"
             >
               <div
                 dangerouslySetInnerHTML={{ __html: partner.symbolSvg.replace(/text-zinc-400/g, 'text-white/40 group-hover:text-white') }}

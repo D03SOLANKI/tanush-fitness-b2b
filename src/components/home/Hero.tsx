@@ -27,7 +27,7 @@ export const Hero: React.FC = () => {
             
             {/* Enterprise Eyebrow Badge */}
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded bg-[#ECE6DB] border border-white/15 text-[#3A3028] font-mono text-[11px] font-bold uppercase tracking-wider">
-              <span className="w-2 h-2 rounded-full bg-[#D26539]"></span>
+              <span className="w-2 h-2 rounded-full bg-emerald-500"></span>
               <span>DIRECT FACTORY commercial & residential outfitting</span>
             </div>
 
@@ -50,7 +50,7 @@ export const Hero: React.FC = () => {
                   e.preventDefault();
                   navigateTo('equipment');
                 }}
-                className="px-6 py-3.5 rounded-none bg-[#D26539] hover:bg-[#C2552F] text-white font-bold text-xs uppercase font-mono flex items-center justify-center gap-2 transition-colors shadow-sm cursor-pointer"
+                className="px-6 py-3.5 rounded-none bg-[#E8E8E8] hover:bg-[#D0CFCA] text-[#0F1926] font-bold text-xs uppercase font-mono flex items-center justify-center gap-2 transition-colors shadow-sm cursor-pointer"
               >
                 <span>Build RFQ Package</span>
                 <ArrowRight className="w-4 h-4" />
@@ -106,7 +106,7 @@ export const Hero: React.FC = () => {
               {/* Product Header Bar */}
               <div className="bg-[#090C10] text-white px-4 py-3 flex items-center justify-between border-b border-white/10">
                 <div className="flex items-center gap-2">
-                  <span className="w-2 h-2 rounded-full bg-[#D26539]"></span>
+                  <span className="w-2 h-2 rounded-full bg-emerald-500"></span>
                   <span className="font-mono text-xs font-bold uppercase tracking-wider text-[#D8CDC0]">
                     FEATURED SPEC // RIG-900-X
                   </span>
@@ -152,9 +152,9 @@ export const Hero: React.FC = () => {
                 {/* Direct Action Button */}
                 <button
                   onClick={() => setIsEnquiryCartOpen(true)}
-                  className="w-full py-2.5 px-4 rounded-lg bg-[#C2552F] hover:bg-[#090C10] text-white text-xs font-bold font-mono uppercase tracking-wider flex items-center justify-center gap-2 transition-colors"
+                  className="w-full py-2.5 px-4 rounded-lg bg-[#E8E8E8] hover:bg-[#D0CFCA] text-[#0F1926] text-xs font-bold font-mono uppercase tracking-wider flex items-center justify-center gap-2 transition-colors cursor-pointer"
                 >
-                  <FileText className="w-3.5 h-3.5" />
+                  <FileText className="w-3.5 h-3.5 text-[#0F1926]" />
                   <span>Add Model to RFQ Quote</span>
                 </button>
               </div>

@@ -88,9 +88,9 @@ export const FeaturedProducts: React.FC = () => {
                     <div className="grid grid-cols-2 gap-2 font-mono">
                       <button
                         onClick={() => addToEnquiryCart(product, 1)}
-                        className="w-full py-2.5 px-2 rounded-none bg-[#090C10] hover:bg-[#D26539] text-white font-semibold text-xs flex items-center justify-center gap-1.5 transition-colors shadow-sm uppercase cursor-pointer"
+                        className="w-full py-2.5 px-2 rounded-none bg-[#090C10] hover:bg-[#E8E8E8] hover:text-[#0F1926] text-white font-semibold text-xs flex items-center justify-center gap-1.5 transition-colors shadow-sm uppercase cursor-pointer group"
                       >
-                        <FileText className="w-3.5 h-3.5 text-white/80" />
+                        <FileText className="w-3.5 h-3.5 text-white/80 group-hover:text-[#0F1926] transition-colors" />
                         <span>+ Add to RFQ</span>
                       </button>
 
