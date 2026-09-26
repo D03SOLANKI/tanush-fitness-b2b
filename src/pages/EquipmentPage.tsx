@@ -603,26 +603,6 @@ export const EquipmentPage: React.FC = () => {
 
                 return (
                   <div key={catKey} className="space-y-10 border-b border-[#2A2A2B] pb-14">
-                    {/* Big Category Anchor Banner */}
-                    <div className="flex items-center justify-between border-b border-[#2A2A2B] pb-4">
-                      <div>
-                        <span className="text-[11px] font-mono text-[#D0CFCA] uppercase font-bold tracking-widest">
-                          CATEGORY // 0{MAIN_EQUIPMENT_CATEGORY_IDS.indexOf(catKey) + 1}
-                        </span>
-                        <h2 className="font-satoshi text-2xl sm:text-3xl font-extrabold uppercase text-[#E8E8E8] tracking-wider mt-0.5">
-                          {catKey === 'cardio' ? 'CARDIO EQUIPMENT' : catKey === 'strength' ? 'STRENGTH EQUIPMENT' : 'VISION COMMERCIAL'}
-                        </h2>
-                      </div>
-                      <button
-                        type="button"
-                        onClick={() => handleCategoryChange(catKey)}
-                        className="btn-dark text-xs py-2 px-4 flex items-center gap-1.5"
-                      >
-                        <span>Focus Category</span>
-                        <ChevronRight className="w-3.5 h-3.5" />
-                      </button>
-                    </div>
-
                     {/* Series within this category in required order */}
                     <div className="space-y-12">
                       {seriesList.map((series, sIdx) => {
