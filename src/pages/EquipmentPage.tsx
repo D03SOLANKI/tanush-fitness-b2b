@@ -339,38 +339,44 @@ export const EquipmentPage: React.FC = () => {
                   className={`p-6 rounded-2xl border text-left transition-all duration-300 cursor-pointer relative overflow-hidden group ${
                     isActive
                       ? 'bg-[#E8E8E8] text-[#0F1926] border-[#E8E8E8] shadow-2xl scale-[1.02]'
-                      : 'bg-[#0C1015] text-[#E8E8E8] border-[#2A2A2B] hover:border-[#E8E8E8]/50 hover:bg-[#10151E]'
+                      : 'bg-[#0C1015] text-[#E8E8E8] border-[#2A2A2B] hover:bg-[#E8E8E8] hover:text-[#0F1926] hover:border-[#E8E8E8] hover:shadow-2xl hover:scale-[1.01]'
                   }`}
                 >
                   <div className="flex items-center justify-between mb-3">
                     <div
                       className={`w-10 h-10 rounded-xl flex items-center justify-center transition-colors ${
-                        isActive ? 'bg-[#0F1926] text-[#E8E8E8]' : 'bg-white/10 text-white group-hover:bg-[#E8E8E8] group-hover:text-[#0F1926]'
+                        isActive
+                          ? 'bg-[#0F1926] text-[#E8E8E8]'
+                          : 'bg-white/10 text-white group-hover:bg-[#0F1926] group-hover:text-[#E8E8E8]'
                       }`}
                     >
                       <IconComp className="w-5 h-5" />
                     </div>
                     <span
-                      className={`text-xs font-mono font-bold px-2.5 py-1 rounded-full ${
-                        isActive ? 'bg-[#0F1926]/10 text-[#0F1926]' : 'bg-white/10 text-[#D0CFCA]'
+                      className={`text-xs font-mono font-bold px-2.5 py-1 rounded-full transition-colors ${
+                        isActive
+                          ? 'bg-[#0F1926]/10 text-[#0F1926]'
+                          : 'bg-white/10 text-[#D0CFCA] group-hover:bg-[#0F1926]/10 group-hover:text-[#0F1926]'
                       }`}
                     >
                       {cat.count} Units
                     </span>
                   </div>
 
-                  <h2 className="font-satoshi text-xl font-black uppercase tracking-wider">
+                  <h2 className="font-satoshi text-xl font-black uppercase tracking-wider transition-colors">
                     {cat.name}
                   </h2>
                   <p
-                    className={`text-xs mt-1 font-sans line-clamp-1 ${
-                      isActive ? 'text-[#0F1926]/80' : 'text-[#D0CFCA]'
+                    className={`text-xs mt-1 font-sans line-clamp-1 transition-colors ${
+                      isActive ? 'text-[#0F1926]/80' : 'text-[#D0CFCA] group-hover:text-[#0F1926]/80'
                     }`}
                   >
                     {cat.sublabel}
                   </p>
 
-                  <div className="mt-4 flex items-center gap-1.5 text-xs font-mono font-bold uppercase tracking-wider">
+                  <div className={`mt-4 flex items-center gap-1.5 text-xs font-mono font-bold uppercase tracking-wider transition-colors ${
+                    isActive ? 'text-[#0F1926]' : 'text-[#E8E8E8] group-hover:text-[#0F1926]'
+                  }`}>
                     <span>{isActive ? 'Active Category' : 'Browse Series'}</span>
                     <ChevronRight className={`w-3.5 h-3.5 transition-transform ${isActive ? 'translate-x-1' : 'group-hover:translate-x-1'}`} />
                   </div>
