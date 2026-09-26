@@ -21,7 +21,6 @@ import {
   SlidersHorizontal,
   Activity,
   ShoppingBag,
-  Sparkles,
   ChevronRight,
   Filter,
 } from 'lucide-react';
@@ -267,10 +266,6 @@ export const EquipmentPage: React.FC = () => {
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 pb-10">
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 border-b border-[#2A2A2B] pb-8">
           <div className="space-y-3">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded bg-[#E8E8E8]/10 border border-white/10 text-[#E8E8E8] font-mono text-[11px] font-bold uppercase tracking-wider">
-              <Sparkles className="w-3 h-3 text-emerald-400" />
-              <span>OFFICIAL SERIES-WISE PROCUREMENT ARCHITECTURE</span>
-            </div>
             <h1 className="font-satoshi text-2xl sm:text-4xl md:text-5xl font-extrabold uppercase text-[#E8E8E8] tracking-[0.04em] leading-snug">
               EQUIPMENT SANCTUARY
             </h1>
