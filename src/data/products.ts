@@ -9184,4 +9184,857 @@ export const PRODUCTS: Product[] = [
       "Backed by Tanush Fitness Pan-India warranty and preventive maintenance network"
     ]
   }
+,
+  {
+  "id": "matrix-jeevan-lat-pulldown-low-row",
+  "name": "Matrix Jeevan Series Lat Pulldown / Low Row",
+  "slug": "matrix-jeevan-lat-pulldown-low-row",
+  "brand": "Matrix Fitness",
+  "category": "Strength Equipment",
+  "categoryId": "strength",
+  "series": "Matrix Jeevan Series",
+  "equipmentType": "Strength",
+  "applicationTypes": [
+    "Commercial & Residential Gym",
+    "Hotel & Resort Gym",
+    "Corporate Wellness Hub"
+  ],
+  "rating": 4.95,
+  "reviewCount": 28,
+  "inStock": true,
+  "leadTime": "3-7 Business Days",
+  "badge": "Matrix Commercial Standard",
+  "minOrderQty": 1,
+  "image": "/images/equipment/strength/MX_AURA G3-S33 lat pulldown_Matte Blk_hero.png",
+  "gallery": [
+    "/images/equipment/strength/MX_AURA G3-S33 lat pulldown_Matte Blk_hero.png"
+  ],
+  "description": "High-capacity commercial dual-exercise machine for latissimus dorsi and upper back development. Heavy 11-gauge laser-cut structural steel with aircraft-grade nylon-coated steel cable and smooth selector pin stack.",
+  "specs": {
+    "Frame Construction": "Heavy 11-Gauge Structural Steel Tubing (75 x 75 x 3.0mm)",
+    "Weight Stack": "110 kg / 242 lbs Precision Steel Stack with Magnetic Pin",
+    "Pulleys": "Glass-Fiber Reinforced Nylon Pulleys with Sealed Bearings",
+    "Warranty": "10-Year Frame, 5-Year Weight Stack, 1-Year Wear Items"
+  },
+  "vendor": {
+    "id": "v-tanush-direct",
+    "name": "Tanush Fitness Commercial Direct",
+    "logo": "/tanush-symbol.png",
+    "verified": true,
+    "rating": 4.98,
+    "responseRate": "100% (Instant Desk)",
+    "fulfillmentRate": "99.9% Pan-India Freight",
+    "location": "Ahmedabad, Gujarat \u00b7 Authorized Commercial Distributor"
+  },
+  "features": [
+    "Heavy commercial 3.0mm steel tubing engineered for Indian high-traffic clubs",
+    "Dual thigh pads with quick multi-position pneumatic pin adjustment",
+    "100% eligible for official 18% GST Input Tax Credit (ITC)"
+  ]
+},
+  {
+  "id": "matrix-jeevan-chest-incline-press",
+  "name": "Matrix Jeevan Series Chest & Incline Press",
+  "slug": "matrix-jeevan-chest-incline-press",
+  "brand": "Matrix Fitness",
+  "category": "Strength Equipment",
+  "categoryId": "strength",
+  "series": "Matrix Jeevan Series",
+  "equipmentType": "Strength",
+  "applicationTypes": [
+    "Commercial & Residential Gym",
+    "Hotel & Resort Gym",
+    "Corporate Wellness Hub"
+  ],
+  "rating": 4.92,
+  "reviewCount": 24,
+  "inStock": true,
+  "leadTime": "3-7 Business Days",
+  "badge": "Matrix Commercial Standard",
+  "minOrderQty": 1,
+  "image": "/images/equipment/strength/MX_AURA G3-S13 converging chest press_Matte Blk_hero.png",
+  "gallery": [
+    "/images/equipment/strength/MX_AURA G3-S13 converging chest press_Matte Blk_hero.png"
+  ],
+  "description": "Multi-angle selectorized upper body press with natural converging arm path. Accommodates standard flat chest press and elevated incline chest press with counterbalanced lifting arm.",
+  "specs": {
+    "Frame Construction": "Heavy 11-Gauge Structural Steel Tubing (75 x 75 x 3.0mm)",
+    "Weight Stack": "100 kg / 220 lbs Steel Weight Plates",
+    "Upholstery": "High-Density Molded Ergonomic Vinyl",
+    "Warranty": "10-Year Frame, 5-Year Weight Stack"
+  },
+  "vendor": {
+    "id": "v-tanush-direct",
+    "name": "Tanush Fitness Commercial Direct",
+    "logo": "/tanush-symbol.png",
+    "verified": true,
+    "rating": 4.98,
+    "responseRate": "100% (Instant Desk)",
+    "fulfillmentRate": "99.9% Pan-India Freight",
+    "location": "Ahmedabad, Gujarat \u00b7 Authorized Commercial Distributor"
+  },
+  "features": [
+    "Natural biomechanical converging motion for shoulder joint protection",
+    "Gas-assisted seat adjustment for rapid single-handed height setting",
+    "Commercial dual electrostatic powder-coated wear surface"
+  ]
+},
+  {
+  "id": "matrix-jeevan-leg-press-hack-squat",
+  "name": "Matrix Jeevan Series 45\u00b0 Leg Press & Hack Squat",
+  "slug": "matrix-jeevan-leg-press-hack-squat",
+  "brand": "Matrix Fitness",
+  "category": "Strength Equipment",
+  "categoryId": "strength",
+  "series": "Matrix Jeevan Series",
+  "equipmentType": "Strength",
+  "applicationTypes": [
+    "Commercial & Residential Gym",
+    "Hotel & Resort Gym",
+    "Corporate Wellness Hub"
+  ],
+  "rating": 4.97,
+  "reviewCount": 31,
+  "inStock": true,
+  "leadTime": "3-7 Business Days",
+  "badge": "Matrix Commercial Standard",
+  "minOrderQty": 1,
+  "image": "/images/equipment/strength/MX_MAGNUM MG-PL70 45deg leg press_Matte Blk_hero.png",
+  "gallery": [
+    "/images/equipment/strength/MX_MAGNUM MG-PL70 45deg leg press_Matte Blk_hero.png"
+  ],
+  "description": "Heavy-duty commercial 45-degree angle linear bearing leg press and hack squat carriage. Rated for 800 kg heavy working load with oversized diamond-tread footplate.",
+  "specs": {
+    "Frame Construction": "Laser-Cut Structural Steel (100 x 50 x 3.0mm)",
+    "Bearings": "Industrial Linear Bearings on Hardened Solid Steel Rods",
+    "Max Training Load": "800 kg / 1760 lbs",
+    "Warranty": "10-Year Frame, 3-Year Bearings"
+  },
+  "vendor": {
+    "id": "v-tanush-direct",
+    "name": "Tanush Fitness Commercial Direct",
+    "logo": "/tanush-symbol.png",
+    "verified": true,
+    "rating": 4.98,
+    "responseRate": "100% (Instant Desk)",
+    "fulfillmentRate": "99.9% Pan-India Freight",
+    "location": "Ahmedabad, Gujarat \u00b7 Authorized Commercial Distributor"
+  },
+  "features": [
+    "Dual safety lockout handles accessible at both lower and upper travel stops",
+    "Ergonomic angled backrest with high-durability double-stitched leatherette",
+    "Integrated plate storage horns holding up to 500 kg in Olympic plates"
+  ]
+},
+  {
+  "id": "matrix-jeevan-bicep-tricep",
+  "name": "Matrix Jeevan Series Dual Bicep Curl & Tricep Extension",
+  "slug": "matrix-jeevan-bicep-tricep",
+  "brand": "Matrix Fitness",
+  "category": "Strength Equipment",
+  "categoryId": "strength",
+  "series": "Matrix Jeevan Series",
+  "equipmentType": "Strength",
+  "applicationTypes": [
+    "Commercial & Residential Gym",
+    "Hotel & Resort Gym",
+    "Corporate Wellness Hub"
+  ],
+  "rating": 4.89,
+  "reviewCount": 19,
+  "inStock": true,
+  "leadTime": "3-7 Business Days",
+  "badge": "Matrix Commercial Standard",
+  "minOrderQty": 1,
+  "image": "/images/equipment/strength/MX_AURA G3-S40 arm curl_Matte Blk_hero.png",
+  "gallery": [
+    "/images/equipment/strength/MX_AURA G3-S40 arm curl_Matte Blk_hero.png"
+  ],
+  "description": "Dual-function commercial arm station targeting biceps and triceps from an angled preacher pad. Features pivoting handle design that self-aligns with user forearm length.",
+  "specs": {
+    "Frame Construction": "Heavy 11-Gauge Structural Steel Tubing (75 x 75 x 3.0mm)",
+    "Weight Stack": "80 kg / 176 lbs Solid Steel Stack",
+    "Warranty": "10-Year Frame, 5-Year Weight Stack"
+  },
+  "vendor": {
+    "id": "v-tanush-direct",
+    "name": "Tanush Fitness Commercial Direct",
+    "logo": "/tanush-symbol.png",
+    "verified": true,
+    "rating": 4.98,
+    "responseRate": "100% (Instant Desk)",
+    "fulfillmentRate": "99.9% Pan-India Freight",
+    "location": "Ahmedabad, Gujarat \u00b7 Authorized Commercial Distributor"
+  },
+  "features": [
+    "Rotating multi-grip handlebar eliminates wrist torque during intense curls",
+    "Compact footprint maximizes usable workout floor capacity",
+    "Backed by Tanush Fitness Pan-India warranty and preventive maintenance network"
+  ]
+},
+  {
+  "id": "matrix-versity-commercial-power-rack",
+  "name": "Matrix Versity Series Institutional Power Rack",
+  "slug": "matrix-versity-commercial-power-rack",
+  "brand": "Matrix Fitness",
+  "category": "Strength Equipment",
+  "categoryId": "strength",
+  "series": "Matrix Versity Series",
+  "equipmentType": "Strength",
+  "applicationTypes": [
+    "Commercial & Residential Gym",
+    "Hotel & Resort Gym",
+    "Corporate Wellness Hub"
+  ],
+  "rating": 4.96,
+  "reviewCount": 35,
+  "inStock": true,
+  "leadTime": "3-7 Business Days",
+  "badge": "Matrix Commercial Standard",
+  "minOrderQty": 1,
+  "image": "/images/equipment/strength/MX_MAGNUM MG-MR47 mega rack_Matte Blk_hero.png",
+  "gallery": [
+    "/images/equipment/strength/MX_MAGNUM MG-MR47 mega rack_Matte Blk_hero.png"
+  ],
+  "description": "Institutional-grade athletic power cage engineered for heavy university strength programs and athletic training centers. Includes heavy-gauge safety spotter bars, laser-etched upright numbering, and multi-grip pull-up crossbeam.",
+  "specs": {
+    "Upright Construction": "75 x 75mm 11-Gauge Laser-Cut Steel with 2-Inch Hole Spacing",
+    "Max Tested Load": "900 kg / 1980 lbs",
+    "Accessories Included": "Heavy J-Hooks, Safety Spotter Straps/Pins, Multi-Grip Bar",
+    "Warranty": "15-Year Institutional Structural Frame Warranty"
+  },
+  "vendor": {
+    "id": "v-tanush-direct",
+    "name": "Tanush Fitness Commercial Direct",
+    "logo": "/tanush-symbol.png",
+    "verified": true,
+    "rating": 4.98,
+    "responseRate": "100% (Instant Desk)",
+    "fulfillmentRate": "99.9% Pan-India Freight",
+    "location": "Ahmedabad, Gujarat \u00b7 Authorized Commercial Distributor"
+  },
+  "features": [
+    "Ultra-stable wide base requiring zero floor bolting for high-load squats",
+    "Eight integrated stainless steel Olympic plate storage pegs",
+    "100% eligible for official 18% GST Input Tax Credit (ITC)"
+  ]
+},
+  {
+  "id": "matrix-versity-olympic-bench",
+  "name": "Matrix Versity Series Olympic Flat & Incline Bench",
+  "slug": "matrix-versity-olympic-bench",
+  "brand": "Matrix Fitness",
+  "category": "Strength Equipment",
+  "categoryId": "strength",
+  "series": "Matrix Versity Series",
+  "equipmentType": "Strength",
+  "applicationTypes": [
+    "Commercial & Residential Gym",
+    "Hotel & Resort Gym",
+    "Corporate Wellness Hub"
+  ],
+  "rating": 4.91,
+  "reviewCount": 26,
+  "inStock": true,
+  "leadTime": "3-7 Business Days",
+  "badge": "Matrix Commercial Standard",
+  "minOrderQty": 1,
+  "image": "/images/equipment/free-weights/MX_G1-FW163 olym flat bench_Matte Blk_hero.png",
+  "gallery": [
+    "/images/equipment/free-weights/MX_G1-FW163 olym flat bench_Matte Blk_hero.png"
+  ],
+  "description": "Heavy Olympic pressing bench featuring integrated spotter footplate and dual-tier molded urethane barbell cradles that protect knurling and minimize noise.",
+  "specs": {
+    "Frame": "Heavy 11-Gauge Steel (75 x 50 x 3.0mm)",
+    "Barbell Catches": "High-Impact Molded Urethane Bar Cradles",
+    "Max User + Load Weight": "500 kg / 1100 lbs",
+    "Warranty": "10-Year Frame, 1-Year Upholstery"
+  },
+  "vendor": {
+    "id": "v-tanush-direct",
+    "name": "Tanush Fitness Commercial Direct",
+    "logo": "/tanush-symbol.png",
+    "verified": true,
+    "rating": 4.98,
+    "responseRate": "100% (Instant Desk)",
+    "fulfillmentRate": "99.9% Pan-India Freight",
+    "location": "Ahmedabad, Gujarat \u00b7 Authorized Commercial Distributor"
+  },
+  "features": [
+    "Diamond-plate spotter stand ensures secure leverage for spotters during max attempts",
+    "Tough, high-resilience double-stitched antimicrobial upholstery",
+    "Backed by Tanush Fitness Pan-India warranty"
+  ]
+},
+  {
+  "id": "matrix-versity-dual-cable-column",
+  "name": "Matrix Versity Series Dual Adjustable Cable Column",
+  "slug": "matrix-versity-dual-cable-column",
+  "brand": "Matrix Fitness",
+  "category": "Strength Equipment",
+  "categoryId": "strength",
+  "series": "Matrix Versity Series",
+  "equipmentType": "Strength",
+  "applicationTypes": [
+    "Commercial & Residential Gym",
+    "Hotel & Resort Gym",
+    "Corporate Wellness Hub"
+  ],
+  "rating": 4.94,
+  "reviewCount": 29,
+  "inStock": true,
+  "leadTime": "3-7 Business Days",
+  "badge": "Matrix Commercial Standard",
+  "minOrderQty": 1,
+  "image": "/images/equipment/functional/MX_VERSA VS-VFT VS-FTS30 functional trainer_Matte Blk_hero.png",
+  "gallery": [
+    "/images/equipment/functional/MX_VERSA VS-VFT VS-FTS30 functional trainer_Matte Blk_hero.png"
+  ],
+  "description": "Multi-height dual functional pulley column station with 1:2 resistance ratio for high-speed sports conditioning and multi-joint athletic movement training.",
+  "specs": {
+    "Frame": "Structural 11-Gauge Tubular Steel with Powder Coat",
+    "Weight Stack": "2 x 95 kg / 209 lbs Dual Independent Stacks",
+    "Cable Travel": "230 cm Smooth Unilateral Travel",
+    "Warranty": "10-Year Frame, 5-Year Weight Stack"
+  },
+  "vendor": {
+    "id": "v-tanush-direct",
+    "name": "Tanush Fitness Commercial Direct",
+    "logo": "/tanush-symbol.png",
+    "verified": true,
+    "rating": 4.98,
+    "responseRate": "100% (Instant Desk)",
+    "fulfillmentRate": "99.9% Pan-India Freight",
+    "location": "Ahmedabad, Gujarat \u00b7 Authorized Commercial Distributor"
+  },
+  "features": [
+    "One-handed pulley carriage adjustment with 24 laser-etched height positions",
+    "Multi-grip chin-up crossbeam with neutral, wide, and rock climbing grips",
+    "Includes ankle straps, tricep ropes, and rubberized D-handles"
+  ]
+},
+  {
+  "id": "vision-t60-commercial-treadmill",
+  "name": "Vision 60 Series T60 Commercial Treadmill",
+  "slug": "vision-t60-commercial-treadmill",
+  "brand": "Vision Fitness",
+  "category": "Vision Commercial",
+  "categoryId": "vision",
+  "series": "Vision 60 Series Commercial",
+  "equipmentType": "Cardio",
+  "applicationTypes": [
+    "Commercial & Residential Gym",
+    "Hotel & Resort Gym",
+    "Corporate Wellness Hub"
+  ],
+  "rating": 4.93,
+  "reviewCount": 38,
+  "inStock": true,
+  "leadTime": "3-7 Business Days",
+  "badge": "Vision Commercial Standard",
+  "minOrderQty": 1,
+  "image": "https://images.unsplash.com/photo-1540497077202-7c8a3999166f?auto=format&fit=crop&w=1000&q=80",
+  "gallery": [
+    "https://images.unsplash.com/photo-1540497077202-7c8a3999166f?auto=format&fit=crop&w=1000&q=80"
+  ],
+  "description": "Heavy-duty commercial treadmill featuring a maintenance-free 3.2 HP continuous-duty AC dynamic drive system and reversible pre-waxed running deck for 24/7 reliability in busy hotel and commercial clubs.",
+  "specs": {
+    "Motor": "3.2 HP Continuous-Duty Commercial AC Dynamic Response Drive",
+    "Running Surface": "152 x 51 cm / 60 x 20 in 2-Ply Pre-Waxed Belt",
+    "Speed Range": "0.8 - 20 km/h / 0.5 - 12 mph",
+    "Incline Range": "0 - 15% Power Incline",
+    "Max User Weight": "182 kg / 400 lbs",
+    "Warranty": "7-Year Frame, 5-Year AC Motor, 2-Year Electronics"
+  },
+  "vendor": {
+    "id": "v-tanush-direct",
+    "name": "Tanush Fitness Commercial Direct",
+    "logo": "/tanush-symbol.png",
+    "verified": true,
+    "rating": 4.98,
+    "responseRate": "100% (Instant Desk)",
+    "fulfillmentRate": "99.9% Pan-India Freight",
+    "location": "Ahmedabad, Gujarat \u00b7 Authorized Commercial Distributor"
+  },
+  "features": [
+    "Ultra-Zone cushioning system provides optimal progressive absorption at footstrike",
+    "Bright LED display console with profile matrix and one-touch speed/incline keys",
+    "Heavy heavy-gauge welded steel frame built for high-traffic commercial environments"
+  ]
+},
+  {
+  "id": "vision-s60-commercial-elliptical",
+  "name": "Vision 60 Series S60 Suspension Elliptical",
+  "slug": "vision-s60-commercial-elliptical",
+  "brand": "Vision Fitness",
+  "category": "Vision Commercial",
+  "categoryId": "vision",
+  "series": "Vision 60 Series Commercial",
+  "equipmentType": "Cardio",
+  "applicationTypes": [
+    "Commercial & Residential Gym",
+    "Hotel & Resort Gym",
+    "Corporate Wellness Hub"
+  ],
+  "rating": 4.91,
+  "reviewCount": 32,
+  "inStock": true,
+  "leadTime": "3-7 Business Days",
+  "badge": "Vision Commercial Standard",
+  "minOrderQty": 1,
+  "image": "https://images.unsplash.com/photo-1517838277536-f5f99be501cd?auto=format&fit=crop&w=1000&q=80",
+  "gallery": [
+    "https://images.unsplash.com/photo-1517838277536-f5f99be501cd?auto=format&fit=crop&w=1000&q=80"
+  ],
+  "description": "Suspension design without traditional wheels and tracks for whisper-quiet low-friction biomechanics. Self-generating cordless drive system allows placement anywhere on the workout floor.",
+  "specs": {
+    "Drive System": "Two-Stage Self-Powered Cordless Generator Drive",
+    "Stride Length": "53.4 cm / 21 in Ergonomic Stride",
+    "Resistance Levels": "1 - 25 Electronic Programmable Resistance Levels",
+    "Pedals": "Over-Sized Cushioned Footplates with Joint Relief Angle",
+    "Max User Weight": "182 kg / 400 lbs",
+    "Warranty": "7-Year Frame, 5-Year Generator, 2-Year Parts"
+  },
+  "vendor": {
+    "id": "v-tanush-direct",
+    "name": "Tanush Fitness Commercial Direct",
+    "logo": "/tanush-symbol.png",
+    "verified": true,
+    "rating": 4.98,
+    "responseRate": "100% (Instant Desk)",
+    "fulfillmentRate": "99.9% Pan-India Freight",
+    "location": "Ahmedabad, Gujarat \u00b7 Authorized Commercial Distributor"
+  },
+  "features": [
+    "Cordless self-powered generator requires zero external wall power outlets",
+    "Suspension elliptical motion eliminates track wheel squeaks and roller wear",
+    "Multi-position dual-action handlebars with heart rate contact grips"
+  ]
+},
+  {
+  "id": "vision-u60-commercial-upright-bike",
+  "name": "Vision 60 Series U60 Commercial Upright Cycle",
+  "slug": "vision-u60-commercial-upright-bike",
+  "brand": "Vision Fitness",
+  "category": "Vision Commercial",
+  "categoryId": "vision",
+  "series": "Vision 60 Series Commercial",
+  "equipmentType": "Cardio",
+  "applicationTypes": [
+    "Commercial & Residential Gym",
+    "Hotel & Resort Gym",
+    "Corporate Wellness Hub"
+  ],
+  "rating": 4.88,
+  "reviewCount": 27,
+  "inStock": true,
+  "leadTime": "3-7 Business Days",
+  "badge": "Vision Commercial Standard",
+  "minOrderQty": 1,
+  "image": "https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&fit=crop&w=1000&q=80",
+  "gallery": [
+    "https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&fit=crop&w=1000&q=80"
+  ],
+  "description": "Ergonomically refined commercial upright cycle featuring multi-position aero handlebars with elbow rests, self-balancing pedals, and cordless two-stage generator power.",
+  "specs": {
+    "Resistance System": "Self-Powered Two-Stage Hybrid Generator",
+    "Resistance Levels": "25 Levels (Watts Range: 40 - 250W)",
+    "Seat Adjustment": "15-Position Vertical Adjustment with High-Density Foam",
+    "Max User Weight": "182 kg / 400 lbs",
+    "Warranty": "7-Year Frame, 5-Year Generator"
+  },
+  "vendor": {
+    "id": "v-tanush-direct",
+    "name": "Tanush Fitness Commercial Direct",
+    "logo": "/tanush-symbol.png",
+    "verified": true,
+    "rating": 4.98,
+    "responseRate": "100% (Instant Desk)",
+    "fulfillmentRate": "99.9% Pan-India Freight",
+    "location": "Ahmedabad, Gujarat \u00b7 Authorized Commercial Distributor"
+  },
+  "features": [
+    "Cordless operation allows freedom of layout placement across hotel and club gym floors",
+    "Self-balancing pedals with easy-adjust ratcheting foot straps",
+    "Integrated smartphone/tablet reading rack and dual water bottle holders"
+  ]
+},
+  {
+  "id": "vision-r60-commercial-recumbent-bike",
+  "name": "Vision 60 Series R60 Comfort Recumbent Cycle",
+  "slug": "vision-r60-commercial-recumbent-bike",
+  "brand": "Vision Fitness",
+  "category": "Vision Commercial",
+  "categoryId": "vision",
+  "series": "Vision 60 Series Commercial",
+  "equipmentType": "Cardio",
+  "applicationTypes": [
+    "Commercial & Residential Gym",
+    "Hotel & Resort Gym",
+    "Corporate Wellness Hub"
+  ],
+  "rating": 4.92,
+  "reviewCount": 30,
+  "inStock": true,
+  "leadTime": "3-7 Business Days",
+  "badge": "Vision Commercial Standard",
+  "minOrderQty": 1,
+  "image": "https://images.unsplash.com/photo-1517836357463-d25dfeac3438?auto=format&fit=crop&w=1000&q=80",
+  "gallery": [
+    "https://images.unsplash.com/photo-1517836357463-d25dfeac3438?auto=format&fit=crop&w=1000&q=80"
+  ],
+  "description": "Step-thru recumbent cycle with breathable mesh contoured backrest providing maximum lumbar support and low-impact cardiovascular training for all fitness demographics.",
+  "specs": {
+    "Design": "Open Step-Thru Walk-Through Frame",
+    "Resistance": "Cordless Self-Generating Hybrid Generator (25 Levels)",
+    "Seat Back": "Ergonomic Breathable Mesh with Multi-Angle Adjustment",
+    "Max User Weight": "182 kg / 400 lbs",
+    "Warranty": "7-Year Frame, 5-Year Generator"
+  },
+  "vendor": {
+    "id": "v-tanush-direct",
+    "name": "Tanush Fitness Commercial Direct",
+    "logo": "/tanush-symbol.png",
+    "verified": true,
+    "rating": 4.98,
+    "responseRate": "100% (Instant Desk)",
+    "fulfillmentRate": "99.9% Pan-India Freight",
+    "location": "Ahmedabad, Gujarat \u00b7 Authorized Commercial Distributor"
+  },
+  "features": [
+    "Open step-through chassis allows easy mounting for senior living and rehab users",
+    "Integrated seat-side handlebars with quick-key resistance controls and telemetry pulse sensors",
+    "Full compliance with 18% GST Input Tax Credit procurement billing"
+  ]
+},
+  {
+  "id": "vision-t30-commercial-treadmill",
+  "name": "Vision 30 Series T30 Commercial Treadmill",
+  "slug": "vision-t30-commercial-treadmill",
+  "brand": "Vision Fitness",
+  "category": "Vision Commercial",
+  "categoryId": "vision",
+  "series": "Vision 30 Series Commercial",
+  "equipmentType": "Cardio",
+  "applicationTypes": [
+    "Commercial & Residential Gym",
+    "Hotel & Resort Gym",
+    "Corporate Wellness Hub"
+  ],
+  "rating": 4.87,
+  "reviewCount": 22,
+  "inStock": true,
+  "leadTime": "3-7 Business Days",
+  "badge": "Vision Commercial Standard",
+  "minOrderQty": 1,
+  "image": "https://images.unsplash.com/photo-1540497077202-7c8a3999166f?auto=format&fit=crop&w=1000&q=80",
+  "gallery": [
+    "https://images.unsplash.com/photo-1540497077202-7c8a3999166f?auto=format&fit=crop&w=1000&q=80"
+  ],
+  "description": "Streamlined commercial folding treadmill designed for boutique fitness studios, corporate offices, and premium residential clubhouse gyms where space efficiency is critical.",
+  "specs": {
+    "Motor": "3.0 HP Continuous-Duty DC Drive Motor",
+    "Running Area": "140 x 51 cm / 55 x 20 in",
+    "Incline": "0 - 12% Incline System",
+    "Speed": "0.8 - 18 km/h",
+    "Warranty": "5-Year Frame, 3-Year Motor"
+  },
+  "vendor": {
+    "id": "v-tanush-direct",
+    "name": "Tanush Fitness Commercial Direct",
+    "logo": "/tanush-symbol.png",
+    "verified": true,
+    "rating": 4.98,
+    "responseRate": "100% (Instant Desk)",
+    "fulfillmentRate": "99.9% Pan-India Freight",
+    "location": "Ahmedabad, Gujarat \u00b7 Authorized Commercial Distributor"
+  },
+  "features": [
+    "Hydraulic EasyFold design allows single-action vertical stowage when floor space is needed",
+    "Vibrant high-contrast backlit LCD console with quick-speed shortcuts",
+    "100% eligible for official 18% GST Input Tax Credit (ITC)"
+  ]
+},
+  {
+  "id": "vision-s30-compact-elliptical",
+  "name": "Vision 30 Series S30 Compact Suspension Elliptical",
+  "slug": "vision-s30-compact-elliptical",
+  "brand": "Vision Fitness",
+  "category": "Vision Commercial",
+  "categoryId": "vision",
+  "series": "Vision 30 Series Commercial",
+  "equipmentType": "Cardio",
+  "applicationTypes": [
+    "Commercial & Residential Gym",
+    "Hotel & Resort Gym",
+    "Corporate Wellness Hub"
+  ],
+  "rating": 4.86,
+  "reviewCount": 19,
+  "inStock": true,
+  "leadTime": "3-7 Business Days",
+  "badge": "Vision Commercial Standard",
+  "minOrderQty": 1,
+  "image": "https://images.unsplash.com/photo-1517838277536-f5f99be501cd?auto=format&fit=crop&w=1000&q=80",
+  "gallery": [
+    "https://images.unsplash.com/photo-1517838277536-f5f99be501cd?auto=format&fit=crop&w=1000&q=80"
+  ],
+  "description": "Ultra-compact suspension elliptical trainer delivering standard 20-inch stride length in a total machine length 30% shorter than conventional rear-drive commercial ellipticals.",
+  "specs": {
+    "Resistance": "ECB Magnetic Brake with 20 Digital Levels",
+    "Stride": "51 cm / 20 in Natural Ergonomic Stride",
+    "Flywheel": "10.5 kg Heavy Balanced Inertia Wheel",
+    "Warranty": "5-Year Frame, 2-Year Electronics"
+  },
+  "vendor": {
+    "id": "v-tanush-direct",
+    "name": "Tanush Fitness Commercial Direct",
+    "logo": "/tanush-symbol.png",
+    "verified": true,
+    "rating": 4.98,
+    "responseRate": "100% (Instant Desk)",
+    "fulfillmentRate": "99.9% Pan-India Freight",
+    "location": "Ahmedabad, Gujarat \u00b7 Authorized Commercial Distributor"
+  },
+  "features": [
+    "Compact footprint engineered specifically for boutique suites and executive gyms",
+    "Silent magnetic resistance system requires zero periodic lubrication",
+    "Backed by Tanush Fitness Pan-India warranty"
+  ]
+},
+  {
+  "id": "vision-u30-upright-bike",
+  "name": "Vision 30 Series U30 Commercial Fitness Bike",
+  "slug": "vision-u30-upright-bike",
+  "brand": "Vision Fitness",
+  "category": "Vision Commercial",
+  "categoryId": "vision",
+  "series": "Vision 30 Series Commercial",
+  "equipmentType": "Cardio",
+  "applicationTypes": [
+    "Commercial & Residential Gym",
+    "Hotel & Resort Gym",
+    "Corporate Wellness Hub"
+  ],
+  "rating": 4.85,
+  "reviewCount": 21,
+  "inStock": true,
+  "leadTime": "3-7 Business Days",
+  "badge": "Vision Commercial Standard",
+  "minOrderQty": 1,
+  "image": "https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&fit=crop&w=1000&q=80",
+  "gallery": [
+    "https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&fit=crop&w=1000&q=80"
+  ],
+  "description": "Reliable light-commercial upright bicycle featuring dual-form steel frame architecture and Comfort Arc seat for exceptional stability and lower back ergonomics.",
+  "specs": {
+    "Resistance": "ECB Magnetic Resistance (20 Levels)",
+    "Seat": "Comfort Arc Ergonomic Saddle with Vertical Adjustment",
+    "Max User Weight": "160 kg / 350 lbs",
+    "Warranty": "5-Year Frame, 2-Year Parts"
+  },
+  "vendor": {
+    "id": "v-tanush-direct",
+    "name": "Tanush Fitness Commercial Direct",
+    "logo": "/tanush-symbol.png",
+    "verified": true,
+    "rating": 4.98,
+    "responseRate": "100% (Instant Desk)",
+    "fulfillmentRate": "99.9% Pan-India Freight",
+    "location": "Ahmedabad, Gujarat \u00b7 Authorized Commercial Distributor"
+  },
+  "features": [
+    "Dual-Form steel frame offers vastly superior step-over access compared to standard mono-frames",
+    "Telemetry and contact heart rate sensors on racing handlebars",
+    "100% eligible for official 18% GST Input Tax Credit (ITC)"
+  ]
+},
+  {
+  "id": "vision-dual-chest-shoulder-press",
+  "name": "Vision Dual Series Multi-Press Chest & Shoulder Station",
+  "slug": "vision-dual-chest-shoulder-press",
+  "brand": "Vision Fitness",
+  "category": "Vision Commercial",
+  "categoryId": "vision",
+  "series": "Vision Dual Strength Series",
+  "equipmentType": "Strength",
+  "applicationTypes": [
+    "Commercial & Residential Gym",
+    "Hotel & Resort Gym",
+    "Corporate Wellness Hub"
+  ],
+  "rating": 4.95,
+  "reviewCount": 28,
+  "inStock": true,
+  "leadTime": "3-7 Business Days",
+  "badge": "Vision Commercial Standard",
+  "minOrderQty": 1,
+  "image": "/images/equipment/strength/MX_VERSA VS-S131 multi press_Matte Blk_hero.png",
+  "gallery": [
+    "/images/equipment/strength/MX_VERSA VS-S131 multi press_Matte Blk_hero.png"
+  ],
+  "description": "Space-saving dual-function commercial machine enabling both seated flat chest press and overhead vertical shoulder press on a single compact selectorized frame.",
+  "specs": {
+    "Frame": "Heavy 11-Gauge Structural Oval Steel Tubing",
+    "Weight Stack": "95 kg / 210 lbs Solid Steel Stack",
+    "Adjustments": "Multi-Position Press Arm and Gas-Assisted Seat",
+    "Warranty": "10-Year Frame, 5-Year Weight Stack"
+  },
+  "vendor": {
+    "id": "v-tanush-direct",
+    "name": "Tanush Fitness Commercial Direct",
+    "logo": "/tanush-symbol.png",
+    "verified": true,
+    "rating": 4.98,
+    "responseRate": "100% (Instant Desk)",
+    "fulfillmentRate": "99.9% Pan-India Freight",
+    "location": "Ahmedabad, Gujarat \u00b7 Authorized Commercial Distributor"
+  },
+  "features": [
+    "Instant dual-exercise transition via intuitive pull-pin press arm adjustment",
+    "Space-saving 2-in-1 architecture reduces gym floor square footage requirements",
+    "Full commercial heavy steel construction with magnetic pin selection"
+  ]
+},
+  {
+  "id": "vision-dual-lat-pulldown-seated-row",
+  "name": "Vision Dual Series Lat Pulldown & Seated Low Row",
+  "slug": "vision-dual-lat-pulldown-seated-row",
+  "brand": "Vision Fitness",
+  "category": "Vision Commercial",
+  "categoryId": "vision",
+  "series": "Vision Dual Strength Series",
+  "equipmentType": "Strength",
+  "applicationTypes": [
+    "Commercial & Residential Gym",
+    "Hotel & Resort Gym",
+    "Corporate Wellness Hub"
+  ],
+  "rating": 4.93,
+  "reviewCount": 25,
+  "inStock": true,
+  "leadTime": "3-7 Business Days",
+  "badge": "Vision Commercial Standard",
+  "minOrderQty": 1,
+  "image": "/images/equipment/strength/MX_VERSA VS-S331 lat pull down low row_Matte Blk_hero.png",
+  "gallery": [
+    "/images/equipment/strength/MX_VERSA VS-S331 lat pull down low row_Matte Blk_hero.png"
+  ],
+  "description": "Commercial dual back station delivering high-pulley lat pulldowns and mid-pulley seated horizontal cable rows with elevated foot rests and adjustable thigh hold-down rollers.",
+  "specs": {
+    "Frame": "Heavy Oval Steel Tubing (100 x 50 x 3.0mm)",
+    "Weight Stack": "100 kg / 220 lbs Steel Weight Plates",
+    "Cables": "Military-Spec 4.8mm Nylon-Coated Aircraft Cable",
+    "Warranty": "10-Year Frame, 5-Year Weight Stack"
+  },
+  "vendor": {
+    "id": "v-tanush-direct",
+    "name": "Tanush Fitness Commercial Direct",
+    "logo": "/tanush-symbol.png",
+    "verified": true,
+    "rating": 4.98,
+    "responseRate": "100% (Instant Desk)",
+    "fulfillmentRate": "99.9% Pan-India Freight",
+    "location": "Ahmedabad, Gujarat \u00b7 Authorized Commercial Distributor"
+  },
+  "features": [
+    "No cable changes required between pulldown and low row exercises",
+    "Dual foot-brace platforms keep body securely positioned during heavy rowing",
+    "Backed by Tanush Fitness Pan-India warranty"
+  ]
+},
+  {
+  "id": "vision-dual-leg-extension-curl",
+  "name": "Vision Dual Series Leg Extension & Seated Leg Curl",
+  "slug": "vision-dual-leg-extension-curl",
+  "brand": "Vision Fitness",
+  "category": "Vision Commercial",
+  "categoryId": "vision",
+  "series": "Vision Dual Strength Series",
+  "equipmentType": "Strength",
+  "applicationTypes": [
+    "Commercial & Residential Gym",
+    "Hotel & Resort Gym",
+    "Corporate Wellness Hub"
+  ],
+  "rating": 4.94,
+  "reviewCount": 30,
+  "inStock": true,
+  "leadTime": "3-7 Business Days",
+  "badge": "Vision Commercial Standard",
+  "minOrderQty": 1,
+  "image": "/images/equipment/strength/MX_VERSA VS-S711 leg extension curl_Matte Blk_hero.png",
+  "gallery": [
+    "/images/equipment/strength/MX_VERSA VS-S711 leg extension curl_Matte Blk_hero.png"
+  ],
+  "description": "Dual-purpose lower body selectorized machine providing isolated quadriceps extensions and seated hamstring curls with backrest and tibia roller quick-adjustments.",
+  "specs": {
+    "Frame": "Structural 11-Gauge Steel Tubing",
+    "Weight Stack": "90 kg / 198 lbs Steel Plates",
+    "Cam Design": "Anatomically Contoured Variable Resistance Cam",
+    "Warranty": "10-Year Frame, 5-Year Weight Stack"
+  },
+  "vendor": {
+    "id": "v-tanush-direct",
+    "name": "Tanush Fitness Commercial Direct",
+    "logo": "/tanush-symbol.png",
+    "verified": true,
+    "rating": 4.98,
+    "responseRate": "100% (Instant Desk)",
+    "fulfillmentRate": "99.9% Pan-India Freight",
+    "location": "Ahmedabad, Gujarat \u00b7 Authorized Commercial Distributor"
+  },
+  "features": [
+    "Self-aligning tibia roller eliminates manual pad adjustments for different user heights",
+    "Comfortable thigh hold-down pad locks legs in place during intense hamstring curls",
+    "100% eligible for official 18% GST Input Tax Credit (ITC)"
+  ]
+},
+  {
+  "id": "vision-dual-functional-cable-trainer",
+  "name": "Vision Dual Series Functional Cable Crossover",
+  "slug": "vision-dual-functional-cable-trainer",
+  "brand": "Vision Fitness",
+  "category": "Vision Commercial",
+  "categoryId": "vision",
+  "series": "Vision Dual Strength Series",
+  "equipmentType": "Strength",
+  "applicationTypes": [
+    "Commercial & Residential Gym",
+    "Hotel & Resort Gym",
+    "Corporate Wellness Hub"
+  ],
+  "rating": 4.96,
+  "reviewCount": 33,
+  "inStock": true,
+  "leadTime": "3-7 Business Days",
+  "badge": "Vision Commercial Standard",
+  "minOrderQty": 1,
+  "image": "/images/equipment/functional/MX_VERSA VS-VFT VS-FTS30 functional trainer_Matte Blk_hero.png",
+  "gallery": [
+    "/images/equipment/functional/MX_VERSA VS-VFT VS-FTS30 functional trainer_Matte Blk_hero.png"
+  ],
+  "description": "Dual adjustable pulley station designed for total body functional strength, core stabilization, and sport-specific training with 1:2 weight resistance ratio.",
+  "specs": {
+    "Frame": "Heavy Steel Column Construction (100 x 50mm)",
+    "Weight Stacks": "2 x 80 kg / 176 lbs Dual Stacks",
+    "Pulley Positions": "18 Vertical Height Adjustment Settings",
+    "Warranty": "10-Year Frame, 5-Year Weight Stacks"
+  },
+  "vendor": {
+    "id": "v-tanush-direct",
+    "name": "Tanush Fitness Commercial Direct",
+    "logo": "/tanush-symbol.png",
+    "verified": true,
+    "rating": 4.98,
+    "responseRate": "100% (Instant Desk)",
+    "fulfillmentRate": "99.9% Pan-India Freight",
+    "location": "Ahmedabad, Gujarat \u00b7 Authorized Commercial Distributor"
+  },
+  "features": [
+    "Dual swivel pulleys rotate 180 degrees for unrestricted multi-planar training paths",
+    "Built-in multi-grip pull-up crossbar and accessory storage rack",
+    "Compact corner-friendly footprint ideal for fitness facilities"
+  ]
+}
 ];

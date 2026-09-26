@@ -27,6 +27,7 @@ export interface Product {
   brand: string;
   category: string;
   categoryId: string; // 'cardio' | 'strength' | 'free-weights' | 'functional' | 'flooring' | 'lockers' | 'accessories'
+  series?: string;
   equipmentType?: string;
   applicationTypes?: ('Commercial & Residential Gym' | 'Hotel & Resort Gym' | 'Corporate Wellness Hub')[];
   rating: number;

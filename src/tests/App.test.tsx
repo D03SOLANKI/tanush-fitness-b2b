@@ -811,6 +811,131 @@ describe('Project RFQ Basket & Per-User Persistence QA Suite', () => {
   });
 });
 
+describe('Equipment Sanctuary Series-wise Organization Architecture', () => {
+  it('verifies primary equipment categories include Cardio, Strength, and Vision', async () => {
+    const { MAIN_EQUIPMENT_CATEGORY_IDS } = await import('../data/seriesConfig');
+    expect(MAIN_EQUIPMENT_CATEGORY_IDS).toContain('cardio');
+    expect(MAIN_EQUIPMENT_CATEGORY_IDS).toContain('strength');
+    expect(MAIN_EQUIPMENT_CATEGORY_IDS).toContain('vision');
+  });
+
+  it('maintains the exact requested series order for CARDIO', async () => {
+    const { CATEGORY_SERIES_CONFIG } = await import('../data/seriesConfig');
+    const cardioSeries = CATEGORY_SERIES_CONFIG['cardio'];
+    expect(cardioSeries).toBeDefined();
+    expect(cardioSeries.length).toBe(3);
+
+    expect(cardioSeries[0].id).toBe('matrix-cardio-performance-series');
+    expect(cardioSeries[0].name).toBe('Matrix Cardio Performance Series');
+
+    expect(cardioSeries[1].id).toBe('matrix-indurance-series');
+    expect(cardioSeries[1].name).toBe('Matrix Indurance Series');
+
+    expect(cardioSeries[2].id).toBe('matrix-lifestyle-series');
+    expect(cardioSeries[2].name).toBe('Matrix Lifestyle Series');
+  });
+
+  it('maintains the exact requested series order for STRENGTH (7 series)', async () => {
+    const { CATEGORY_SERIES_CONFIG } = await import('../data/seriesConfig');
+    const strengthSeries = CATEGORY_SERIES_CONFIG['strength'];
+    expect(strengthSeries).toBeDefined();
+    expect(strengthSeries.length).toBe(7);
+
+    // 1. Matrix Ultra Series
+    expect(strengthSeries[0].id).toBe('matrix-ultra-series');
+    expect(strengthSeries[0].name).toBe('Matrix Ultra Series');
+
+    // 2. Matrix Versa Series
+    expect(strengthSeries[1].id).toBe('matrix-versa-series');
+    expect(strengthSeries[1].name).toBe('Matrix Versa Series');
+
+    // 3. Matrix Aura Series
+    expect(strengthSeries[2].id).toBe('matrix-aura-series');
+    expect(strengthSeries[2].name).toBe('Matrix Aura Series');
+
+    // 4. Matrix Go Series
+    expect(strengthSeries[3].id).toBe('matrix-go-series');
+    expect(strengthSeries[3].name).toBe('Matrix Go Series');
+
+    // 5. Matrix Magnum Series
+    expect(strengthSeries[4].id).toBe('matrix-magnum-series');
+    expect(strengthSeries[4].name).toBe('Matrix Magnum Series');
+
+    // 6. Matrix Jeevan Series
+    expect(strengthSeries[5].id).toBe('matrix-jeevan-series');
+    expect(strengthSeries[5].name).toBe('Matrix Jeevan Series');
+
+    // 7. Matrix Versity Series
+    expect(strengthSeries[6].id).toBe('matrix-versity-series');
+    expect(strengthSeries[6].name).toBe('Matrix Versity Series');
+  });
+
+  it('maintains the exact requested series order for VISION (3 series)', async () => {
+    const { CATEGORY_SERIES_CONFIG } = await import('../data/seriesConfig');
+    const visionSeries = CATEGORY_SERIES_CONFIG['vision'];
+    expect(visionSeries).toBeDefined();
+    expect(visionSeries.length).toBe(3);
+
+    // 1. Vision 60 Series Commercial
+    expect(visionSeries[0].id).toBe('vision-60-series');
+    expect(visionSeries[0].name).toBe('Vision 60 Series Commercial');
+
+    // 2. Vision 30 Series Commercial
+    expect(visionSeries[1].id).toBe('vision-30-series');
+    expect(visionSeries[1].name).toBe('Vision 30 Series Commercial');
+
+    // 3. Vision Dual Strength Series
+    expect(visionSeries[2].id).toBe('vision-strength-series');
+    expect(visionSeries[2].name).toBe('Vision Dual Strength Series');
+  });
+
+  it('verifies product catalog contains active items across every configured series', async () => {
+    const { PRODUCTS } = await import('../data/products');
+    const { CATEGORY_SERIES_CONFIG, resolveProductSeries } = await import('../data/seriesConfig');
+
+    // Test Cardio series coverage
+    for (const series of CATEGORY_SERIES_CONFIG['cardio']) {
+      const items = PRODUCTS.filter(
+        p => (p.categoryId === 'cardio' || p.category.toLowerCase().includes('cardio')) &&
+             resolveProductSeries(p) === series.id
+      );
+      expect(items.length, `Expected items for Cardio series: ${series.name}`).toBeGreaterThan(0);
+    }
+
+    // Test Strength series coverage
+    for (const series of CATEGORY_SERIES_CONFIG['strength']) {
+      const items = PRODUCTS.filter(
+        p => (p.categoryId === 'strength' || p.category.toLowerCase().includes('strength')) &&
+             resolveProductSeries(p) === series.id
+      );
+      expect(items.length, `Expected items for Strength series: ${series.name}`).toBeGreaterThan(0);
+    }
+
+    // Test Vision series coverage
+    for (const series of CATEGORY_SERIES_CONFIG['vision']) {
+      const items = PRODUCTS.filter(
+        p => (p.categoryId === 'vision' || p.category.toLowerCase().includes('vision') || p.brand?.toLowerCase().includes('vision')) &&
+             resolveProductSeries(p) === series.id
+      );
+      expect(items.length, `Expected items for Vision series: ${series.name}`).toBeGreaterThan(0);
+    }
+  });
+
+  it('correctly maps Jeevan, Versity, Endurance and Vision series using resolveProductSeries', async () => {
+    const { resolveProductSeries } = await import('../data/seriesConfig');
+
+    expect(resolveProductSeries({ name: 'Matrix Jeevan Lat Pulldown', description: '' } as any)).toBe('matrix-jeevan-series');
+    expect(resolveProductSeries({ name: 'Matrix Versity Power Rack', description: '' } as any)).toBe('matrix-versity-series');
+    expect(resolveProductSeries({ name: 'Matrix Varsity Olympic Bench', description: '' } as any)).toBe('matrix-versity-series');
+    expect(resolveProductSeries({ name: 'Matrix Endurance Treadmill', description: '' } as any)).toBe('matrix-indurance-series');
+    expect(resolveProductSeries({ name: 'Matrix Indurance Ascent Trainer', description: '' } as any)).toBe('matrix-indurance-series');
+    expect(resolveProductSeries({ name: 'Vision T60 Commercial Treadmill', description: '' } as any)).toBe('vision-60-series');
+    expect(resolveProductSeries({ name: 'Vision S30 Elliptical', description: '' } as any)).toBe('vision-30-series');
+    expect(resolveProductSeries({ name: 'Vision Dual Multi-Press Chest / Shoulder', description: '' } as any)).toBe('vision-strength-series');
+  });
+});
+
+
 
 
 

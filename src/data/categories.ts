@@ -22,6 +22,16 @@ export const EQUIPMENT_CATEGORIES: CategoryTile[] = [
     "image": "/images/equipment/strength/MX_ULTRA G7-S13-03 converging chest press_Matte Blk_hero.png"
   },
   {
+    "id": "vision",
+    "name": "Vision Commercial",
+    "type": "equipment",
+    "iconName": "Eye",
+    "itemCount": 11,
+    "isPopulated": true,
+    "description": "Commercial Vision 60 Series, 30 Series, and dual-function selectorized strength machinery.",
+    "image": "https://images.unsplash.com/photo-1540497077202-7c8a3999166f?auto=format&fit=crop&w=1000&q=80"
+  },
+  {
     "id": "free-weights",
     "name": "Free Weights",
     "type": "equipment",
