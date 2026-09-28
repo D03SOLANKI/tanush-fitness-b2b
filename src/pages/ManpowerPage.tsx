@@ -250,25 +250,6 @@ export const ManpowerPage: React.FC = () => {
       ],
       experienceLevel: '3+ to 7+ Years (B.Sc / M.Sc / BPT / MPT)',
       deploymentTime: '7-14 Days Pan-India'
-    },
-    {
-      id: 'facility-operations',
-      category: 'Facility Operations',
-      title: 'Facility Hygiene, Maintenance & Security',
-      rolesIncluded: 'Housekeeping + Maintenance + Security',
-      image: 'https://images.unsplash.com/photo-1584820927498-cfe5211fd8bf?auto=format&fit=crop&w=800&q=80',
-      badge: 'Sanitation & Safety',
-      tagline: 'Round-the-Clock Hygiene Crew, Machine Technicians & Security',
-      description: 'Dedicated housekeeping crew, equipment preventive maintenance technicians, and security personnel ensuring spotless hygiene, sanitized steam rooms, smooth cable machinery, and visitor safety.',
-      rolesList: ['Housekeeping & Sanitation Crew', 'Equipment Maintenance Technician', 'Facility Security Officer'],
-      deliverables: [
-        'Continuous locker room, shower & steam suite sanitation',
-        'Heavy commercial machinery cable inspection & preventive lubrication',
-        'Disinfectant wiping across all free-weight & selectorized zones',
-        'RFID turnstile access monitoring & front-gate security vigilance'
-      ],
-      experienceLevel: '1+ to 4+ Years Experience',
-      deploymentTime: '3-7 Days Pan-India'
     }
   ];
 
@@ -279,8 +260,7 @@ export const ManpowerPage: React.FC = () => {
     'Sales & Front Desk',
     'Fitness Team',
     'Group Classes',
-    'Nutrition & Recovery',
-    'Facility Operations'
+    'Nutrition & Recovery'
   ];
 
   const filteredServices = MANPOWER_SERVICES.filter(serv => {
@@ -676,7 +656,6 @@ export const ManpowerPage: React.FC = () => {
                       <option value="Fitness Team">Fitness Team (Head Trainer, Gym Trainers, PTs)</option>
                       <option value="Group Classes">Group Classes (Yoga, Zumba, CrossFit/HIIT, Sound Healing)</option>
                       <option value="Nutrition & Recovery">Nutrition & Recovery (Dietitian/Nutritionist, Physiotherapist)</option>
-                      <option value="Facility Operations">Facility Operations (Housekeeping, Maintenance, Security)</option>
                     </select>
                   </div>
                   <div>
