@@ -248,7 +248,7 @@ export const Footer: React.FC = () => {
             className="flex items-center gap-4 text-center sm:text-left cursor-default select-none group"
             title="Tanush Precision Engineering"
           >
-            <span>© 2026 Tanush Fitness Commercial Infrastructure Pvt Ltd. All rights reserved.</span>
+            <span>© 2026 Tanush Fitness LLP. All rights reserved.</span>
           </div>
 
           <div className="flex items-center gap-5">
